@@ -1,0 +1,7 @@
+node_modules
+
+# environment files
+.env
+
+# misc
+.sw*
