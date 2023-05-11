@@ -16,3 +16,4 @@ export { Publications } from "./OpenSourcePublications";
 export { Volunteers } from "./Volunteers";
 export { WhosWho } from "./WhosWho";
 export { FossilCollection } from "./FossilCollection";
+export { Restricted } from "./Restricted";

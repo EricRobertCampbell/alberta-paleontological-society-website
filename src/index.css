@@ -22,12 +22,23 @@ body {
 	display: flex;
 }
 
+button {
+	border-radius: 4px;
+	background-color: white;
+	border: solid 1px black;
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+	transition: box-shadow 0.3s ease-in-out;
+}
+button:hover {
+	box-shadow: none;
+}
+
 #header {
 	margin-top: 12px;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 }
 
 #header img.logo {
@@ -45,6 +56,35 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
+}
+
+#header #profile {
+	max-width: 150px;
+	max-height: 150px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 4px;
+}
+
+#header #profile img {
+	max-width: 50px;
+	max-height: 50px;
+}
+
+#header #user-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#header #top-component {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 }
 
 #sidebar {

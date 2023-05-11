@@ -19,6 +19,7 @@ const links: Array<{ path: string; name: string }> = [
   { path: "volunteers", name: "Volunteers" },
   { path: "publications", name: "Open Source Publications" },
   { path: "faq", name: "FAQ" },
+  { path: "restricted", name: "Restricted" },
 ];
 
 export const Sidebar = () => {

@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
@@ -24,6 +25,7 @@ import {
   Volunteers,
   WhosWho,
   FossilCollection,
+  Restricted,
 } from "./pages";
 
 const router = createBrowserRouter([
@@ -49,12 +51,21 @@ const router = createBrowserRouter([
       { path: "volunteers", element: <Volunteers /> },
       { path: "publications", element: <Publications /> },
       { path: "faq", element: <FAQ /> },
+      { path: "restricted", element: <Restricted /> },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Auth0Provider
+      domain="dev-itbptwh0b3ae01w1.us.auth0.com"
+      clientId="WLob52hjjKY9WhxiNTEgtadv48N4u38x"
+      authorizationParams={{
+        redirect_uri: `${window.location.origin}/restricted`,
+      }}
+    >
+      <RouterProvider router={router} />
+    </Auth0Provider>
   </React.StrictMode>
 );
