@@ -1,11 +1,13 @@
 import { Outlet } from "react-router-dom";
+import { Header } from "./Header";
+import { Sidebar } from "./Sidebar";
 
 export const Root = () => {
   return (
     <>
-      <div id="header">header</div>
-      <div id="sidebar">sidebar</div>
+      <Sidebar />
       <div id="main">
+        <Header />
         <Outlet />
       </div>
     </>
