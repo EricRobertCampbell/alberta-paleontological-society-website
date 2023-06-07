@@ -15,17 +15,17 @@ export const Header = () => {
         </div>
         <div id="other-logos">
           <img
-            src="/aps-logo.gif"
+            src="/logos/aps-logo.gif"
             alt="Alberta Paleontological Society Logo"
             className="logo"
           />
           <img
-            src="/CEGA_logo.png"
+            src="/logos/CEGA_logo.png"
             alt="Canadian Energy Geoscience Association Logo"
             className="logo"
           />
           <img
-            src="/MRU_logo1.png"
+            src="/logos/MRU_logo1.png"
             alt="Mount Royal Univerity Logo"
             className="logo"
           />

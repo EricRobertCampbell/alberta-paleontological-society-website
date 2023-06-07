@@ -12,7 +12,7 @@ import {
   Bulletin,
   BulletinArchive,
   Events,
-  FAQ,
+  Faq,
   FieldTrips,
   FieldTripPictures,
   Home,
@@ -25,7 +25,7 @@ import {
   Volunteers,
   WhosWho,
   FossilCollection,
-  Restricted,
+  Disclaimers,
 } from "./pages";
 
 const router = createBrowserRouter([
@@ -50,8 +50,8 @@ const router = createBrowserRouter([
       { path: "links", element: <Links /> },
       { path: "volunteers", element: <Volunteers /> },
       { path: "publications", element: <Publications /> },
-      { path: "faq", element: <FAQ /> },
-      { path: "restricted", element: <Restricted /> },
+      { path: "faq", element: <Faq /> },
+      { path: "disclaimers", element: <Disclaimers /> },
     ],
   },
 ]);
