@@ -4,4 +4,5 @@ node_modules
 .env
 
 # misc
+*:Zone.Identifier
 .sw*
