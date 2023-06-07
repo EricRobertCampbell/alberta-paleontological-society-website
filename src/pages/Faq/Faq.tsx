@@ -1,4 +1,5 @@
 import { slugify } from "../../utilities";
+import { LinkToTop } from "../../components";
 
 interface QuestionAnswerPair {
   question: string;
@@ -82,25 +83,45 @@ const questionAnswerPairs: Array<QuestionAnswerPair> = [
           parking areas. The University does charge a small fee for parking.
         </p>
         <p>
-          A map of the parking areas can also be found on the last page of the
-          {" "}<a href="guide3web">MEMBERS' GUIDE</a>.
+          A map of the parking areas can also be found on the last page of the{" "}
+          <a href="guide3web">MEMBERS' GUIDE</a>.
         </p>
       </>
     ),
   },
-  {question: "Can I sign books out of the APS library?",
-    answer: <p>
-       Yes, any member may sign out a book from the APS library. Speak with the APS librarian at the monthly meeting.
-    </p>},{ question: "I've found a fossil I'd like to have identified. Who should I contact?",
-       answer: <p>
-          Refer to the <a href="guide3web">MEMBERS' GUIDE</a> tab on this website. The <a href="guide3web">MEMBERS' GUIDE</a> includes a section on this topic and provides recommendations.
-       </p>
-       },
-       {question: "I'm planning to visit Alberta next summer; what are the regulations about fossil collecting?", answer: <>
-         <p>
-            Refer to the <a href="guide3web">MEMBERS' GUIDE</a> tab on this website. The <a href="guide3web">MEMBERS' GUIDE</a> includes a section on the regulations about fossil collecting.
-         </p>
-       </>}
+  {
+    question: "Can I sign books out of the APS library?",
+    answer: (
+      <p>
+        Yes, any member may sign out a book from the APS library. Speak with the
+        APS librarian at the monthly meeting.
+      </p>
+    ),
+  },
+  {
+    question:
+      "I've found a fossil I'd like to have identified. Who should I contact?",
+    answer: (
+      <p>
+        Refer to the <a href="guide3web">MEMBERS' GUIDE</a> tab on this website.
+        The <a href="guide3web">MEMBERS' GUIDE</a> includes a section on this
+        topic and provides recommendations.
+      </p>
+    ),
+  },
+  {
+    question:
+      "I'm planning to visit Alberta next summer; what are the regulations about fossil collecting?",
+    answer: (
+      <>
+        <p>
+          Refer to the <a href="guide3web">MEMBERS' GUIDE</a> tab on this
+          website. The <a href="guide3web">MEMBERS' GUIDE</a> includes a section
+          on the regulations about fossil collecting.
+        </p>
+      </>
+    ),
+  },
 ];
 
 export const Faq = () => {
@@ -109,35 +130,26 @@ export const Faq = () => {
       <h2>Frequently Asked Questions</h2>
       <ul>
         {questionAnswerPairs.map(({ question }) => (
-          <li key={slugify( question )}>
-            <a href={`#${slugify(question)}`}>
-              {question}
-            </a>
+          <li key={slugify(question)}>
+            <a href={`#${slugify(question)}`}>{question}</a>
           </li>
         ))}
       </ul>
       <main>
-      {questionAnswerPairs.map(({ question, answer }) => {
-        return (
-        <section id={slugify(question)}>
-        <h3 >{question}</h3>
-        {answer}
-        <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "flex-end",
-          }}
-        >
-          <a href="#top">Back to Top</a>
-        </div>
-        <hr />
-        </section>
-        );
-      })}
-        </main>
-      <footer style={{marginBottom: "24px"}}>
-        To find out more please contact the webmaster, Vaclav Marsovsky at <a href="tel:(403) 547-0182">(403) 547-0182</a> 
+        {questionAnswerPairs.map(({ question, answer }) => {
+          return (
+            <section id={slugify(question)}>
+              <h3>{question}</h3>
+              {answer}
+              <LinkToTop />
+              <hr />
+            </section>
+          );
+        })}
+      </main>
+      <footer style={{ marginBottom: "24px" }}>
+        To find out more please contact the webmaster, Vaclav Marsovsky at{" "}
+        <a href="tel:(403) 547-0182">(403) 547-0182</a>
       </footer>
     </>
   );
