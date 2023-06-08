@@ -1,0 +1,104 @@
+---
+export const prerender = false;
+
+import Layout from "../../layouts/Layout.astro";
+import EmailLink from "../../components/EmailLink.astro";
+import HeaderWithBackground from "../../components/HeaderWithBackground.astro";
+import Event from "../../components/Event.astro";
+
+import { getCollection } from "astro:content";
+
+// get the next monthly meeting
+const today = new Date();
+const offset = today.getTimezoneOffset();
+const todayWithOffset = new Date(today.getTime() - offset * 60 * 1000);
+const todayString = todayWithOffset.toISOString().split("T")[0];
+
+const allEvents = await getCollection("events");
+const renderedEvents = (
+	await Promise.all(
+		allEvents.map(async (event) => {
+			return await event.render();
+		})
+	)
+)
+	.filter((e) => {
+		console.log({
+			startDate: e.remarkPluginFrontmatter.startDate,
+			todayString,
+		});
+		return (
+			e.remarkPluginFrontmatter.startDate > todayString &&
+			e.remarkPluginFrontmatter.type === "Monthly Meeting"
+		);
+	})
+	.sort((e1, e2) => {
+		return -e1.remarkPluginFrontmatter.startDate.localeCompare(
+			e2.remarkPluginFrontmatter.startDate
+		);
+	});
+
+let nextEvent;
+if (renderedEvents.length > 0) {
+	nextEvent = renderedEvents[renderedEvents.length - 1];
+}
+---
+
+<Layout subtitle="Monthly Meetings">
+	<HeaderWithBackground
+		background="/assets/devilsCouleeMuseum.jpg"
+		backgroundPositionY="37%"
+	>
+		<h1>Monthly Meetings</h1>
+	</HeaderWithBackground>
+	<p>
+		Monthly seminars and meetings are open to the public and generally occur
+		on the third Friday of each month.
+	</p>
+
+	<p>
+		If you would like to receive emails about upcoming events or further
+		information about the scheduled events, contact Harold Whittaker at <EmailLink
+			email="programs1@albertapaleo.org"
+		/>.
+	</p>
+
+	<p>
+		Monthly meetings are held in room B108 in Mount Royal University, as
+		shown on <a href="/level 1 map.pdf">this map</a>. Our room is shown with
+		a red dot.
+	</p>
+
+	<p>
+		<a
+			href="http://www.mtroyal.ca/ AboutMountRoyal/CampusesTours/CampusLocations/index.htm"
+			>University Lincoln Park Campus General Maps</a
+		>
+	</p>
+
+	If you use the East Entrance (on the 1st level), turn right immediately
+	after you enter through the revolving door. If you use the West Entrance (on
+	the 2nd level) descend the steps to the lower floor and proceed to the end
+	of the long hall and turn left into B wing.
+
+	<p>
+		<a
+			href="http://www.mtroyal.ca/AboutMountRoyal/TransportationParking/ParkingMaps/index.htm"
+			>Parking map - Lincoln Park Campus, Mount Royal University</a
+		>
+	</p>
+
+	{
+		nextEvent && (
+			<>
+				<h2>Next Meeting</h2>
+				<Event
+					frontmatter={nextEvent.remarkPluginFrontmatter}
+					last={true}
+				>
+					<nextEvent.Content />
+				</Event>
+			</>
+		)
+	}
+</Layout>

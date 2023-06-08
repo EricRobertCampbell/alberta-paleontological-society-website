@@ -1,0 +1,12 @@
+---
+export interface Props {
+	destination: string;
+	label: string;
+}
+
+const { destination, label } = Astro.props;
+---
+
+<a href={destination}>
+	{label}
+</a>

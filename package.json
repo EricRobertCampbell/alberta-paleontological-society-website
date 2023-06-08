@@ -1,5 +1,5 @@
 {
-  "name": "aps-update",
+  "name": "alberta-paleontological-society-website",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,6 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.5.6"
+    "@astrojs/netlify": "^2.5.0",
+    "astro": "^2.9.0",
+    "prettier": "^2.8.8"
+  },
+  "devDependencies": {
+    "prettier-plugin-astro": "^0.10.0"
   }
 }
