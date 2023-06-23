@@ -1,5 +1,22 @@
 ---
+const links: Array<{href: string; label: string}> = [
+{href: '/', label: "Home"},
+{href: "/events", label: "Events"}
+]
 ---
-<p>
-	Nav Bar
-</p>
+<nav>
+	<ul>
+		{links.map(({href, label}) => <li>
+			<a href={href}>
+				{label}
+			</a>
+		</li>)}
+	</ul>
+</nav>
+<style>
+	nav {
+		padding: 8px;
+		position: sticky;
+		top: 0;
+	}
+</style>

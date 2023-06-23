@@ -2,12 +2,14 @@
 import NavBar from '../components/NavBar.astro'
 import Header from '../components/Header.astro'
 export interface Props {
-	title: string;
+	title?: string;
 	subtitle: string;
 }
 
-const defaultTitle = "Alberta Paleontological Society"
+const defaultTitle = "APS"
 const { title=defaultTitle, subtitle } = Astro.props;
+const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ''}`
+console.log({formattedTitle, title, subtitle})
 ---
 
 <!DOCTYPE html>
@@ -18,10 +20,10 @@ const { title=defaultTitle, subtitle } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/logos/aps-logo.gif" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{`${title}${subtitle ? ` | ${subtitle}` : ''}`}</title>
+		<title>{formattedTitle}</title>
 	</head>
 	<body>
-		<div id="nav">
+		<div id="nav-container">
 			<NavBar />
 		</div>
 		<div id="main">
@@ -38,6 +40,8 @@ const { title=defaultTitle, subtitle } = Astro.props;
 	html {
 		font-family: system-ui, sans-serif;
 		background-color: #F6F6F6;
+		margin: 0;
+		padding: 0;
 	}
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
@@ -49,12 +53,12 @@ const { title=defaultTitle, subtitle } = Astro.props;
 	body {
 		display: flex;
 		justify-content: space-between;
+		min-height: 200vh;
 	}
-	.nav {
-		position: sticky;
-		top: 0;
+	#main {
+		flex-grow: 1;
 	}
-	.main {
-		min-width: 60%;
+	#nav-container {
+		flex-grow: 1
 	}
 </style>
