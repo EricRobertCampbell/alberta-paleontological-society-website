@@ -1,8 +1,35 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import { getCollection } from "astro:content";
+
+import Layout from "../layouts/Layout.astro";
+import Event from "../components/Event.astro";
+
+const allEvents = await getCollection("events");
+const renderedEvents = (
+	await Promise.all(
+		allEvents.map(async (event) => {
+			return await event.render();
+		})
+	)
+).sort((e1, e2) => {
+	console.log({ e1, e2 });
+
+	return e1.remarkPluginFrontmatter.startDate.localeCompare(
+		e2.remarkPluginFrontmatter.startDate
+	);
+});
 ---
+
 <Layout subtitle="Events">
-	<h2>
-		Events
-	</h2>
+	<h2>Events</h2>
+	{
+		renderedEvents.map((event) => {
+			const { Content, headings } = event;
+			return (
+				<Event>
+					<Content />
+				</Event>
+			);
+		})
+	}
 </Layout>

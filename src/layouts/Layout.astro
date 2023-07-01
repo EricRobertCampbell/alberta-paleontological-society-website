@@ -1,22 +1,24 @@
 ---
-import NavBar from '../components/NavBar.astro'
-import Header from '../components/Header.astro'
+import NavBar from "../components/NavBar.astro";
+import Header from "../components/Header.astro";
 export interface Props {
 	title?: string;
-	subtitle: string;
+	subtitle?: string;
 }
 
-const defaultTitle = "APS"
-const { title=defaultTitle, subtitle } = Astro.props;
-const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ''}`
-console.log({formattedTitle, title, subtitle})
+const defaultTitle = "APS";
+const { title = defaultTitle, subtitle } = Astro.props;
+const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ""}`;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Website for the Alberta Paleontological Society">
+		<meta
+			name="description"
+			content="Website for the Alberta Paleontological Society"
+		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/logos/aps-logo.gif" />
 		<meta name="generator" content={Astro.generator} />
@@ -35,17 +37,22 @@ console.log({formattedTitle, title, subtitle})
 <style is:global>
 	:root {
 		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			#da62c4 30%,
+			white 60%
+		);
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
+		background-color: #f6f6f6;
 		margin: 0;
 		padding: 0;
 	}
 	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+			DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 	}
 	* {
 		box-sizing: border-box;
@@ -53,12 +60,12 @@ console.log({formattedTitle, title, subtitle})
 	body {
 		display: flex;
 		justify-content: space-between;
-		min-height: 200vh;
+		min-height: 100vh;
 	}
 	#main {
 		flex-grow: 1;
 	}
 	#nav-container {
-		flex-grow: 1
+		flex-grow: 1;
 	}
 </style>
