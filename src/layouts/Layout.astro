@@ -32,6 +32,13 @@ const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ""}`;
 			<Header />
 			<slot />
 		</div>
+		<script>
+			document
+				.querySelector(".hamburger")
+				.addEventListener("click", () =>
+					document.querySelector("nav").classList.toggle("expanded")
+				);
+		</script>
 	</body>
 </html>
 <style is:global>
@@ -67,5 +74,17 @@ const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ""}`;
 	}
 	#nav-container {
 		flex-grow: 1;
+	}
+	.expanded {
+		display: unset;
+	}
+	@media screen and (min-width: 636px) {
+		nav {
+			margin-left: 5em;
+			display: block;
+			position: static;
+			width: auto;
+			background: none;
+		}
 	}
 </style>

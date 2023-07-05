@@ -1,16 +1,21 @@
 ---
-const links: Array<{href: string; label: string}> = [
-{href: '/', label: "Home"},
-{href: "/events", label: "Events"}
-]
+import Hamburger from "../components/Hamburger.astro";
+const links: Array<{ href: string; label: string }> = [
+	{ href: "/", label: "Home" },
+	{ href: "/events", label: "Events" },
+];
 ---
+
+<Hamburger />
 <nav>
 	<ul>
-		{links.map(({href, label}) => <li>
-			<a href={href}>
-				{label}
-			</a>
-		</li>)}
+		{
+			links.map(({ href, label }) => (
+				<li>
+					<a href={href}>{label}</a>
+				</li>
+			))
+		}
 	</ul>
 </nav>
 <style>
