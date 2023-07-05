@@ -25,20 +25,25 @@ const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ""}`;
 		<title>{formattedTitle}</title>
 	</head>
 	<body>
-		<div id="nav-container">
+		<!-- OLD VERSION OF THE NAV BAR
+		<div id="nav-container" style="border: solid 1px red">
 			<NavBar />
 		</div>
+		-->
 		<div id="main">
 			<Header />
 			<slot />
 		</div>
+		<!-- OLD SCRIPT TO CONTROL HAMBURGER MENU
 		<script>
 			document
 				.querySelector(".hamburger")
-				.addEventListener("click", () =>
-					document.querySelector("nav").classList.toggle("expanded")
-				);
+				.addEventListener("click", () => {
+					console.log("in hamburger onclick");
+					document.querySelector("nav").classList.toggle("expanded");
+				});
 		</script>
+			-->
 	</body>
 </html>
 <style is:global>
@@ -65,26 +70,27 @@ const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ""}`;
 		box-sizing: border-box;
 	}
 	body {
-		display: flex;
-		justify-content: space-between;
+		/* display: flex; */
+		/* justify-content: space-between; */
 		min-height: 100vh;
 	}
 	#main {
-		flex-grow: 1;
+		/* flex-grow: 1; */
+		min-height: 100vh;
 	}
 	#nav-container {
-		flex-grow: 1;
+		/* flex-grow: 1; */
 	}
-	.expanded {
-		display: unset;
-	}
-	@media screen and (min-width: 636px) {
-		nav {
-			margin-left: 5em;
-			display: block;
-			position: static;
-			width: auto;
-			background: none;
-		}
-	}
+	/* .expanded { */
+	/* 	display: unset; */
+	/* } */
+	/* @media screen and (min-width: 636px) { */
+	/* 	nav { */
+	/* 		margin-left: 5em; */
+	/* 		display: block; */
+	/* 		position: static; */
+	/* 		width: auto; */
+	/* 		background: none; */
+	/* 	} */
+	/* } */
 </style>
