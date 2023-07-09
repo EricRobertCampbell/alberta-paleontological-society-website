@@ -1,11 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import { APS_FACEBOOK_LINK } from "../../old/src/utilities/constants";
+import { APS_FACEBOOK_LINK, APS_YOUTUBE_LINK } from "../utility";
 ---
 
 <Layout title="Alberta Paleontological Society">
-	<main style="border: solid 1px black">
+	<main>
 		<section>
 			<p class="hero-text">
 				The Alberta Palaeontological Society (APS) is a non-profit
@@ -40,15 +40,23 @@ import { APS_FACEBOOK_LINK } from "../../old/src/utilities/constants";
 			</ul>
 		</section>
 		<section>
-			<p>
+			<p>Connect with us!</p>
+			<div id="social-links">
 				<a href={APS_FACEBOOK_LINK}>
 					<img
+						class="social-img"
 						src="/logos/f_logo_RGB-Blue_58.png"
-						style={{ height: "1em", verticalAlign: "middle" }}
+						style={{ verticalAlign: "middle" }}
 					/></a
 				>
-				Visit us on FaceBook!{" "}
-			</p>
+				<a href={APS_YOUTUBE_LINK}>
+					<img
+						class="social-img"
+						src="/logos/yt_logo_rgb_light.png"
+						style={{ verticalAlign: "middle" }}
+					/></a
+				>
+			</div>
 		</section>
 		<section>
 			<h3>The APS has a new book for sale!</h3>{" "}
@@ -59,24 +67,18 @@ import { APS_FACEBOOK_LINK } from "../../old/src/utilities/constants";
 				}}
 			>
 				<h4 style={{ textAlign: "center" }}>APS Books for Sale</h4>
-				<div
-					style={{
-						display: "flex",
-						flexDirection: "row",
-						justifyContent: "center",
-					}}
-				>
+				<div id="book-pictures" style={{}}>
+					<a href="APSBooks#hopejohnson">
+						<img
+							alt="Now There Was a Lady!"
+							src="/ladycoversmall.jpg"
+						/>
+					</a>
 					<a href="APSBooks#commonvertebratefossils">
 						<img
 							alt="Guide to Common Vertebrate Fossils from the Cretaceous of Albera"
 							src="/guidetofossilssmall.jpg"
 							style={{ marginRight: "8px" }}
-						/>
-					</a>
-					<a href="APSBooks#hopejohnson">
-						<img
-							alt="Now There Was a Lady!"
-							src="/ladycoversmall.jpg"
 						/>
 					</a>
 				</div>
@@ -100,9 +102,14 @@ import { APS_FACEBOOK_LINK } from "../../old/src/utilities/constants";
 </Layout>
 
 <style>
+	section {
+		padding-bottom: 8px;
+	}
+
 	section:not(:last-of-type) {
 		margin: 3px 0px;
-		border-bottom: 1px solid black;
+		margin-bottom: 8px;
+		border-bottom: solid 1px black;
 	}
 	main {
 		margin: auto;
@@ -113,39 +120,27 @@ import { APS_FACEBOOK_LINK } from "../../old/src/utilities/constants";
 		font-weight: 800;
 		margin: 0;
 	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+	img.social-img {
+		height: 3rem;
+		padding: 4px;
 	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
+
+	#book-pictures {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
 	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
+
+	#book-pictures a {
+		text-align: center;
 	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-	img#facebook-logo {
-		height: 1rem;
+
+	/* Making it responsive  - these styles should be applied for the desktop version*/
+	@media screen and (min-width: 768px) {
+		#book-pictures {
+			flex-direction: row;
+			justify-content: center;
+		}
 	}
 </style>

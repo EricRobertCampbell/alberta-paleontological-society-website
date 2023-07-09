@@ -30,16 +30,22 @@ import NavLinks from "./NavLinks.astro";
 				class="logo"
 			/>
 		</div>
+		<nav id="main-menu">
+			<NavLinks />
+		</nav>
 	</div>
 
 	<!-- Main section for the mobile / hamburger menu -->
 	<!-- Hidden input for the hamburger menu -->
 	<input type="checkbox" id="hamburger-input" />
 	<label for="hamburger-input" id="hamburger-menu">
-		<div id="hamburger-icon">
-			<span class="hamburger-line line1"></span>
-			<span class="hamburger-line line2"></span>
-			<span class="hamburger-line line3"></span>
+		<div id="hamburger-header-components">
+			<div id="hamburger-icon">
+				<span class="hamburger-line line1"></span>
+				<span class="hamburger-line line2"></span>
+				<span class="hamburger-line line3"></span>
+			</div>
+			<h1 id="sidebar-h1">Alberta Paleontological Society</h1>
 		</div>
 		<nav id="sidebar-menu">
 			<NavLinks />
@@ -52,7 +58,8 @@ import NavLinks from "./NavLinks.astro";
 	header {
 		position: sticky;
 		top: 0px;
-		border: solid 1px red;
+		background-color: white;
+		padding-bottom: 16px;
 	}
 
 	/* Making the hamburger menu pop in and out */
@@ -81,6 +88,7 @@ import NavLinks from "./NavLinks.astro";
 		height: 32px;
 		/* padding: 4px; */
 		z-index: 999;
+		flex-shrink: 0;
 	}
 	#hamburger-icon .hamburger-line {
 		display: block;
@@ -148,6 +156,16 @@ import NavLinks from "./NavLinks.astro";
 		visibility: hidden;
 	}
 
+	#hamburger-header-components {
+		display: flex;
+		flex-direction: row;
+	}
+
+	#sidebar-h1 {
+		text-align: center;
+		flex-grow: 1;
+	}
+
 	/* Making it responsive  - these styles should be applied for the desktop version*/
 	@media screen and (min-width: 768px) {
 		/* Show the main header on the desktop version */
@@ -169,6 +187,37 @@ import NavLinks from "./NavLinks.astro";
 			flex-direction: row;
 			justify-content: center;
 			align-items: flex-start;
+		}
+
+		#sidebar-h1 {
+			visibility: hidden;
+			display: none;
+		}
+
+		#main-menu {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
+		#main-menu :global(ul) {
+			list-style: none;
+			display: flex;
+			flex-direction: row;
+		}
+
+		#main-menu :global(li) {
+			padding: 8px 16px;
+			display: block;
+		}
+
+		#main-menu :global(a) {
+			text-decoration: none;
+			transition: 0.3s;
+		}
+
+		#main-menu :global(a):hover {
+			background-color: green;
 		}
 	}
 </style>
