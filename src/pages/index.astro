@@ -67,7 +67,7 @@ import { APS_FACEBOOK_LINK, APS_YOUTUBE_LINK } from "../utility";
 				}}
 			>
 				<h4 style={{ textAlign: "center" }}>APS Books for Sale</h4>
-				<div id="book-pictures" style={{}}>
+				<div id="book-pictures">
 					<a href="APSBooks#hopejohnson">
 						<img
 							alt="Now There Was a Lady!"
@@ -102,6 +102,10 @@ import { APS_FACEBOOK_LINK, APS_YOUTUBE_LINK } from "../utility";
 </Layout>
 
 <style>
+	html {
+		background-color: var(--background-colour-medium);
+		color: var(--accent-colour-text);
+	}
 	section {
 		padding-bottom: 8px;
 	}
@@ -134,6 +138,7 @@ import { APS_FACEBOOK_LINK, APS_YOUTUBE_LINK } from "../utility";
 
 	#book-pictures a {
 		text-align: center;
+		padding: var(--theme-spacing-base);
 	}
 
 	/* Making it responsive  - these styles should be applied for the desktop version*/
@@ -142,5 +147,55 @@ import { APS_FACEBOOK_LINK, APS_YOUTUBE_LINK } from "../utility";
 			flex-direction: row;
 			justify-content: center;
 		}
+	}
+
+	/* Variables */
+	:root {
+		--theme-spacing-base: 4px;
+
+		--background-colour-hue: 35;
+		--background-colour-saturation: 50%;
+		--background-colour-luminance: 87%;
+		--background-colour-light: hsl(
+			var(--background-colour-hue),
+			var(--background-colour-saturation),
+			calc(var(--background-colour-luminance) + 10%)
+		);
+		--background-colour-medium: hsl(
+			var(--background-colour-hue),
+			var(--background-colour-saturation),
+			calc(var(--background-colour-luminance) + 0%)
+		);
+		--background-colour-dark: hsl(
+			var(--background-colour-hue),
+			var(--background-colour-saturation),
+			calc(var(--background-colour-luminance) - 10%)
+		);
+
+		--accent-colour-hue: 126;
+		--accent-colour-saturation: 61%;
+		--accent-colour-luminance: 87%;
+		--accent-colour-light: hsl(
+			var(--accent-colour-hue),
+			var(--accent-colour-saturation),
+			calc(var(--accent-colour-luminance) + 10%)
+		);
+		--accent-colour-light: hsl(
+			var(--accent-colour-hue),
+			var(--accent-colour-saturation),
+			calc(var(--accent-colour-luminance) + 0%)
+		);
+		--accent-colour-light: hsl(
+			var(--accent-colour-hue),
+			var(--accent-colour-saturation),
+			calc(var(--accent-colour-luminance) - 10%)
+		);
+		--accent-colour-text: hsl(var(--accent-colour-hue), 90%, 5%);
+
+		--transition-speed-slow: 0.3s;
+		--transition-speed-medium: calc(var(--transition-speed-slow) * 1.5);
+		--transition-speed-fast: calc(var(--transition-speed-slow) * 2);
+
+		--border-radius-medium: var(--theme-spacing-base);
 	}
 </style>

@@ -58,7 +58,7 @@ import NavLinks from "./NavLinks.astro";
 	header {
 		position: sticky;
 		top: 0px;
-		background-color: white;
+		background-color: var(--background-colour-medium);
 		padding-bottom: 16px;
 	}
 
@@ -74,10 +74,32 @@ import NavLinks from "./NavLinks.astro";
 		transition: 0.3s;
 		visibility: hidden;
 		z-index: 5;
+		padding-top: 40px;
+		background-color: var(--background-colour-medium);
 	}
+
+	#sidebar-menu :global(ul) {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* #sidebar-menu :global(li) { */
+	/* 	padding: 8px 16px; */
+	/* 	display: block; */
+	/* } */
+
+	/* #sidebar-menu :global(a) { */
+	/* 	text-decoration: none; */
+	/* 	transition: 0.3s; */
+	/* } */
+
+	/* #sidebar-menu :global(a):hover { */
+	/* 	background-color: var(--accent-colour-light); */
+	/* } */
+
 	#hamburger-input:checked + #hamburger-menu #sidebar-menu {
 		left: 0%;
-		background-color: red;
 		visibility: visible;
 	}
 
@@ -206,18 +228,23 @@ import NavLinks from "./NavLinks.astro";
 			flex-direction: row;
 		}
 
-		#main-menu :global(li) {
-			padding: 8px 16px;
-			display: block;
+		#sidebar-menu {
+			visibility: hidden;
+			display: none;
 		}
 
-		#main-menu :global(a) {
-			text-decoration: none;
-			transition: 0.3s;
-		}
+		/* #main-menu :global(li) { */
+		/* 	padding: 8px 16px; */
+		/* 	display: block; */
+		/* } */
 
-		#main-menu :global(a):hover {
-			background-color: green;
-		}
+		/* #main-menu :global(a) { */
+		/* 	text-decoration: none; */
+		/* 	transition: 0.3s; */
+		/* } */
+
+		/* #main-menu :global(a):hover { */
+		/* 	background-color: green; */
+		/* } */
 	}
 </style>
