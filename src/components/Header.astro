@@ -51,6 +51,7 @@ import NavLinks from "./NavLinks.astro";
 			<NavLinks />
 		</nav>
 	</label>
+	<div class="overlay"></div>
 </header>
 
 <style>
@@ -68,9 +69,9 @@ import NavLinks from "./NavLinks.astro";
 		display: none;
 	}
 	#sidebar-menu {
+		left: -250px;
 		position: fixed;
 		top: 0%;
-		left: -250px;
 		transition: 0.3s;
 		visibility: hidden;
 		z-index: 5;
@@ -82,21 +83,8 @@ import NavLinks from "./NavLinks.astro";
 		list-style: none;
 		display: flex;
 		flex-direction: column;
+		padding: 0 8px;
 	}
-
-	/* #sidebar-menu :global(li) { */
-	/* 	padding: 8px 16px; */
-	/* 	display: block; */
-	/* } */
-
-	/* #sidebar-menu :global(a) { */
-	/* 	text-decoration: none; */
-	/* 	transition: 0.3s; */
-	/* } */
-
-	/* #sidebar-menu :global(a):hover { */
-	/* 	background-color: var(--accent-colour-light); */
-	/* } */
 
 	#hamburger-input:checked + #hamburger-menu #sidebar-menu {
 		left: 0%;
@@ -145,6 +133,26 @@ import NavLinks from "./NavLinks.astro";
 	}
 	#hamburger-input:checked ~ #hamburger-menu .line3 {
 		transform: rotate(-45deg);
+	}
+
+	/* Creating the semi-transparent overlay when the check is visible */
+	.overlay {
+		visibility: hidden;
+		display: none;
+		opacity: 0%;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		width: 100vw;
+		height: 100vh;
+		background: black;
+		transition: opacity var(--transition-speed-medium);
+	}
+
+	#hamburger-input:checked ~ .overlay {
+		visibility: visible;
+		display: block;
+		opacity: 50%;
 	}
 
 	/* Main settings for the desktop header */

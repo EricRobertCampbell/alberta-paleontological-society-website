@@ -31,8 +31,10 @@ const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ""}`;
 		</div>
 		-->
 		<div id="main">
-			<Header />
-			<slot />
+			<div id="main-container">
+				<Header />
+				<slot />
+			</div>
 		</div>
 		<!-- OLD SCRIPT TO CONTROL HAMBURGER MENU
 		<script>
@@ -73,10 +75,19 @@ const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ""}`;
 		/* display: flex; */
 		/* justify-content: space-between; */
 		min-height: 100vh;
+		margin: 0;
+		padding: 0;
 	}
 	#main {
 		/* flex-grow: 1; */
 		min-height: 100vh;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	#main-container {
+		max-width: 1000px;
 	}
 	#nav-container {
 		/* flex-grow: 1; */
