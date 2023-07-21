@@ -1,11 +1,9 @@
 ---
 import { links, pathMatchesDestination } from "../utility";
 const pathName = new URL(Astro.request.url).pathname;
-const currentPath = pathName.replace(/\//g, "");
-console.log({ currentPath });
 
 const matchesDestination = (destination: string) => {
-	return pathMatchesDestination(currentPath, destination);
+	return pathMatchesDestination(pathName, destination);
 };
 ---
 
@@ -29,7 +27,16 @@ const matchesDestination = (destination: string) => {
 										label: subLabel,
 									}) => {
 										return (
-											<li class="nav-li-subheading">
+											<li
+												class={
+													"nav-li-subheading" +
+													(matchesDestination(
+														subDestination
+													)
+														? " active"
+														: "")
+												}
+											>
 												<a href={subDestination}>
 													{subLabel}
 												</a>

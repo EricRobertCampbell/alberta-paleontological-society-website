@@ -188,7 +188,72 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		
+		"events": {
+"2023-03-18-symposium.md": {
+	id: "2023-03-18-symposium.md";
+  slug: "2023-03-18-symposium";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2023-04-11-tyndall-stone-presentation.md": {
+	id: "2023-04-11-tyndall-stone-presentation.md";
+  slug: "2023-04-11-tyndall-stone-presentation";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2023-04-21-monthlyMeeting.md": {
+	id: "2023-04-21-monthlyMeeting.md";
+  slug: "2023-04-21-monthlymeeting";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2023-06-17-warner-field-trip.md": {
+	id: "2023-06-17-warner-field-trip.md";
+  slug: "2023-06-17-warner-field-trip";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2023-07-08-kpg-boundary-field-trip.md": {
+	id: "2023-07-08-kpg-boundary-field-trip.md";
+  slug: "2023-07-08-kpg-boundary-field-trip";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2023-07-14-green-river-field-trip.md": {
+	id: "2023-07-14-green-river-field-trip.md";
+  slug: "2023-07-14-green-river-field-trip";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2023-08-19-danek-bonebed-field-trip.md": {
+	id: "2023-08-19-danek-bonebed-field-trip.md";
+  slug: "2023-08-19-danek-bonebed-field-trip";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2023-09-15-monthlyMeeting.md": {
+	id: "2023-09-15-monthlyMeeting.md";
+  slug: "2023-09-15-monthlymeeting";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2023-09-16-tyndall-stone-field-trip.md": {
+	id: "2023-09-16-tyndall-stone-field-trip.md";
+  slug: "2023-09-16-tyndall-stone-field-trip";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+};
+
 	};
 
 	type DataEntryMap = {
@@ -197,5 +262,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	type ContentConfig = never;
+	type ContentConfig = typeof import("../src/content/config");
 }

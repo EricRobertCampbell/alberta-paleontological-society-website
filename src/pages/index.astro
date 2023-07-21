@@ -1,19 +1,18 @@
 ---
-export const prerender = false;
-
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Event from "../components/Event.astro";
 
 import { getCollection } from "astro:content";
 
-import { APS_FACEBOOK_LINK, APS_YOUTUBE_LINK } from "../utility";
+import {
+	APS_FACEBOOK_LINK,
+	APS_YOUTUBE_LINK,
+	getTodayString,
+} from "../utility";
 
 // get the next event
-const today = new Date();
-const offset = today.getTimezoneOffset();
-const todayWithOffset = new Date(today.getTime() - offset * 60 * 1000);
-const todayString = todayWithOffset.toISOString().split("T")[0];
+const todayString = getTodayString();
 
 const allEvents = await getCollection("events");
 const renderedEvents = (

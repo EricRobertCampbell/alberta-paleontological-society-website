@@ -2,6 +2,7 @@
 import NavBar from "../components/NavBar.astro";
 import Header from "../components/Header.astro";
 import "../styling/variables.css";
+import "../styling/globalStyles.css";
 export interface Props {
 	title?: string;
 	subtitle?: string;
@@ -78,19 +79,4 @@ const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ""}`;
 		max-width: 1000px;
 		padding: 1.5rem;
 	}
-	#nav-container {
-		/* flex-grow: 1; */
-	}
-	/* .expanded { */
-	/* 	display: unset; */
-	/* } */
-	/* @media screen and (min-width: 636px) { */
-	/* 	nav { */
-	/* 		margin-left: 5em; */
-	/* 		display: block; */
-	/* 		position: static; */
-	/* 		width: auto; */
-	/* 		background: none; */
-	/* 	} */
-	/* } */
 </style>

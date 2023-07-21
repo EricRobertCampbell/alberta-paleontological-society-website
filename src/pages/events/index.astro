@@ -13,7 +13,7 @@ const renderedEvents = (
 		})
 	)
 ).sort((e1, e2) => {
-	return -e1.remarkPluginFrontmatter.startDate.localeCompare(
+	return e1.remarkPluginFrontmatter.startDate.localeCompare(
 		e2.remarkPluginFrontmatter.startDate
 	);
 });
