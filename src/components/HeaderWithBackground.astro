@@ -1,0 +1,63 @@
+---
+/**
+ * This is a header (h1, h2, &c.) with a semi-translucent background image. The background image disappears in the mobile view
+ */
+interface Props {
+	background: string;
+	backgroundPositionX?: string;
+	backgroundPositionY?: string;
+	opacity?: number;
+	children: any; // the header element
+}
+
+const {
+	background,
+	backgroundPositionX = "50%",
+	backgroundPositionY = "50%",
+	opacity = 0.3,
+} = Astro.props;
+---
+
+<div class="background-container">
+	<div class="heading-container">
+		<slot />
+	</div>
+</div>
+
+<style
+	define:vars={{
+		backgroundUrl: `url(${background})`,
+		backgroundPositionX,
+		backgroundPositionY,
+		opacityValue: opacity,
+	}}
+>
+	@media screen and (min-width: 768px) {
+		.background-container {
+			height: 100px; /* Adjust the height as needed */
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			z-index: -1;
+		}
+		.background-container::before {
+			content: "";
+			background-image: var(--backgroundUrl);
+			background-size: cover;
+			background-position: var(--backgroundPositionX)
+				var(--backgroundPositionY);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: var(--opacityValue);
+		}
+		.heading-container {
+			position: relative;
+			margin-left: calc(3 * var(--theme-spacing-base));
+			z-index: 2;
+		}
+	}
+</style>

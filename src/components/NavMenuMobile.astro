@@ -1,0 +1,87 @@
+---
+import { links } from "../utility";
+---
+
+<ul>
+	{
+		links.map(({ destination, label, subheadings }) => {
+			return (
+				<details>
+					<summary
+						class:list={subheadings ? ["subheadings-present"] : []}
+					>
+						<a href={destination}>{label}</a>
+					</summary>
+					{subheadings && (
+						<ul>
+							{subheadings.map(
+								({
+									destination: subDestination,
+									label: subLabel,
+								}) => (
+									<li>
+										<a href={subDestination}>{subLabel}</a>
+									</li>
+								)
+							)}
+						</ul>
+					)}
+				</details>
+			);
+		})
+	}
+</ul>
+
+<style>
+	ul {
+		list-style-type: none;
+		margin-left: 12px;
+	}
+
+	/* Styling the summary / details view */
+	summary {
+		display: block;
+		/* margin: 8px; */
+	}
+
+	summary.subheadings-present::after {
+		/* margin-left: var(--theme-spacing-base); */
+		display: inline-block;
+		content: "\2192";
+		transition: var(--transition-speed-medium);
+		font-size: 1.3rem;
+		font-weight: bold;
+	}
+
+	details[open] summary::after {
+		transform: rotate(90deg);
+	}
+	details {
+		margin: 4px 0;
+	}
+	/* End summary / details view styling */
+
+	details a {
+		margin: 8px 4px;
+		padding: 0px 4px;
+		/* display: block; */
+		transition: background-color var(--transition-speed-medium);
+		border-radius: var(--border-radius-medium);
+		text-decoration: none;
+		color: inherit;
+		font-size: 1.3rem;
+		font-weight: bold;
+	}
+
+	details a:hover {
+		/* display: block; */
+		background-color: var(--background-colour-dark);
+	}
+
+	li a {
+		font-size: 1rem;
+		margin: 4px calc(var(--theme-spacing-base));
+		font-weight: bold;
+		margin: 0;
+	}
+</style>

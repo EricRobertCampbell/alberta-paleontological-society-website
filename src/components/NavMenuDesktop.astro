@@ -1,0 +1,122 @@
+---
+import { links, pathMatchesDestination } from "../utility";
+const pathName = new URL(Astro.request.url).pathname;
+const currentPath = pathName.replace(/\//g, "");
+console.log({ currentPath });
+
+const matchesDestination = (destination: string) => {
+	return pathMatchesDestination(currentPath, destination);
+};
+---
+
+<nav>
+	<ul>
+		{
+			links.map(({ destination, label, subheadings }) => (
+				<li
+					class={
+						"nav-li" +
+						(matchesDestination(destination) ? " active" : "")
+					}
+				>
+					<a href={destination}>{label}</a>
+					{subheadings && (
+						<div class="subheadings">
+							<ul class="subheadings-ul">
+								{subheadings.map(
+									({
+										destination: subDestination,
+										label: subLabel,
+									}) => {
+										return (
+											<li class="nav-li-subheading">
+												<a href={subDestination}>
+													{subLabel}
+												</a>
+											</li>
+										);
+									}
+								)}
+							</ul>
+						</div>
+					)}
+				</li>
+			))
+		}
+	</ul>
+</nav>
+
+<style>
+	nav {
+		background-color: var(--background-colour-medium);
+	}
+	nav > ul {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+	.nav-li,
+	.nav-li-subheading {
+		display: block;
+	}
+
+	.nav-li a,
+	.nav-li-subheading a {
+		margin: 0px 8px;
+		padding: 8px 16px;
+		display: block;
+		transition: background-color var(--transition-speed-medium);
+		border-radius: var(--border-radius-medium);
+		text-decoration: none;
+		color: inherit;
+		font-size: 1.3rem;
+		font-weight: bold;
+	}
+	.nav-li-subheading a {
+		font-size: 1rem;
+		margin: 0 calc(2 * var(--theme-spacing-base));
+		font-weight: normal;
+		margin: 0;
+	}
+
+	.nav-li a:hover {
+		padding: 8px 16px;
+		display: block;
+		background-color: var(--background-colour-dark);
+	}
+
+	li.active {
+		text-decoration-line: underline;
+		text-decoration-color: var(--background-colour-darker);
+		text-decoration-thickness: var(--theme-spacing-base);
+	}
+
+	div.subheadings {
+		/* display: none; */
+		visibility: hidden;
+		opacity: 0;
+		position: absolute;
+		transition: visibility 0s linear var(--transition-speed-medium),
+			opacity var(--transition-speed-medium) linear;
+		background-color: var(--background-colour-light);
+		border-radius: var(--border-radius-medium);
+		padding: 0;
+		margin: 0;
+	}
+	.nav-li:hover div.subheadings {
+		/* display: block; */
+		visibility: visible;
+		opacity: 1;
+		transition-delay: 0s;
+	}
+	div.subheadings ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+	}
+	.subheadings-ul {
+		list-style: none;
+		padding: 0;
+	}
+</style>

@@ -1,36 +1,96 @@
 ---
+import NavBar from "../components/NavBar.astro";
+import Header from "../components/Header.astro";
+import "../styling/variables.css";
 export interface Props {
-	title: string;
+	title?: string;
+	subtitle?: string;
 }
 
-const { title } = Astro.props;
+const defaultTitle = "APS";
+const { title = defaultTitle, subtitle } = Astro.props;
+const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ""}`;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
+		<meta
+			name="description"
+			content="Website for the Alberta Paleontological Society"
+		/>
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/logos/aps-logo.gif" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{formattedTitle}</title>
 	</head>
 	<body>
-		<slot />
+		<Header />
+		<div id="main">
+			<main>
+				<slot />
+			</main>
+		</div>
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
 	html {
 		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
+		background-color: #f6f6f6;
+		margin: 0;
+		padding: 0;
+		background-color: var(--background-colour-medium);
+		color: var(--accent-colour-text);
 	}
 	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+			DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 	}
+	* {
+		box-sizing: border-box;
+	}
+	body {
+		/* display: flex; */
+		/* justify-content: space-between; */
+		min-height: 100vh;
+		margin: 0;
+		/* margin: var(--theme-spacing-base); */
+		padding: 0;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: var(--accent-colour-medium);
+	}
+	#main {
+		/* flex-grow: 1; */
+		min-height: 100vh;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	main {
+		max-width: 1000px;
+		padding: 1.5rem;
+	}
+	#nav-container {
+		/* flex-grow: 1; */
+	}
+	/* .expanded { */
+	/* 	display: unset; */
+	/* } */
+	/* @media screen and (min-width: 636px) { */
+	/* 	nav { */
+	/* 		margin-left: 5em; */
+	/* 		display: block; */
+	/* 		position: static; */
+	/* 		width: auto; */
+	/* 		background: none; */
+	/* 	} */
+	/* } */
 </style>
