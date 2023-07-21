@@ -1,0 +1,10 @@
+---
+interface Props {
+	number: string;
+}
+
+const { number } = Astro.props;
+const destination = `tel:${number}`;
+---
+
+<a href={destination}>{number}</a>

@@ -1,0 +1,11 @@
+---
+interface Props {
+	email: string;
+	subject?: string;
+}
+
+const { email, subject } = Astro.props;
+const destination = `mailto:${email}${subject ? `?subject=${subject}` : ``}`;
+---
+
+<a href={destination}>{email}</a>
