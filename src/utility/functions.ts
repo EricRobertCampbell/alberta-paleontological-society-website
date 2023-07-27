@@ -49,22 +49,40 @@ export const generateEventDateTimeString = (
 };
 
 export const pathMatchesDestination = (path: string, destination: string) => {
-	/* console.log({ path, destination }); */
-	if (path === "") {
-		// we're at the home page
-		/* console.log('Testing agains the home page:', destination === '/') */
-		return destination === "/";
-	}
+	// split into segments
+	const pathSegments = path.split("/").filter((segment) => !!segment);
+	const destinationSegments = destination
+		.split("/")
+		.filter((segment) => !!segment);
 
-	const segments = destination.split("/").filter((elem) => !!elem);
-	/* console.log({ segments }) */
-	const lastSegment = segments.at(-1);
-	/* console.log({ lastSegment, path }) */
-	if (!lastSegment) {
+	// console.log({ pathSegments, destinationSegments });
+
+	if (destinationSegments.length === 0) {
+		return pathSegments.length === 0;
+	}
+	if (destinationSegments.length > pathSegments.length) {
 		return false;
 	}
-	const match = new RegExp(path, "i").test(lastSegment);
-	/* console.log({ match }) */
-	/* console.log() */
-	return match;
+	if (
+		destinationSegments.length <= pathSegments.length &&
+		destinationSegments.every(
+			(destinationSegment, index) =>
+				destinationSegment === pathSegments[index]
+		)
+	) {
+		return true;
+	}
+
+	return false;
+};
+
+/**
+ * Get the YYYY-MM-DD string corresponding to today's date
+ */
+export const getTodayString = () => {
+	const today = new Date();
+	const offset = today.getTimezoneOffset();
+	const todayWithOffset = new Date(today.getTime() - offset * 60 * 1000);
+	const todayString = todayWithOffset.toISOString().split("T")[0];
+	return todayString;
 };

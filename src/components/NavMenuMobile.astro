@@ -1,16 +1,32 @@
 ---
-import { links } from "../utility";
+import { links, pathMatchesDestination } from "../utility";
+
+const path = new URL(Astro.request.url).pathname;
+const matchesDestination = (destination: string) => {
+	return pathMatchesDestination(path, destination);
+};
 ---
 
 <ul>
 	{
 		links.map(({ destination, label, subheadings }) => {
+			const classList = [];
+			if (subheadings) {
+				classList.push("subheadings-present");
+			}
 			return (
 				<details>
-					<summary
-						class:list={subheadings ? ["subheadings-present"] : []}
-					>
-						<a href={destination}>{label}</a>
+					<summary class:list={classList}>
+						<a
+							class:list={
+								matchesDestination(destination)
+									? ["active"]
+									: []
+							}
+							href={destination}
+						>
+							{label}
+						</a>
 					</summary>
 					{subheadings && (
 						<ul>
@@ -19,7 +35,13 @@ import { links } from "../utility";
 									destination: subDestination,
 									label: subLabel,
 								}) => (
-									<li>
+									<li
+										class:list={
+											matchesDestination(subDestination)
+												? ["active"]
+												: []
+										}
+									>
 										<a href={subDestination}>{subLabel}</a>
 									</li>
 								)
@@ -35,13 +57,12 @@ import { links } from "../utility";
 <style>
 	ul {
 		list-style-type: none;
-		margin-left: 12px;
+		margin-left: calc(3 * var(--theme-spacing-base));
 	}
 
 	/* Styling the summary / details view */
 	summary {
 		display: block;
-		/* margin: 8px; */
 	}
 
 	summary.subheadings-present::after {
@@ -62,8 +83,9 @@ import { links } from "../utility";
 	/* End summary / details view styling */
 
 	details a {
-		margin: 8px 4px;
-		padding: 0px 4px;
+		margin: calc(2 * var(--theme-spacing-base))
+			calc(1 * var(--theme-spacing-base));
+		padding: 0px var(--theme-spacing-base);
 		/* display: block; */
 		transition: background-color var(--transition-speed-medium);
 		border-radius: var(--border-radius-medium);
@@ -74,14 +96,22 @@ import { links } from "../utility";
 	}
 
 	details a:hover {
-		/* display: block; */
 		background-color: var(--background-colour-dark);
 	}
 
+	li {
+		margin-top: calc(2 * var(--theme-spacing-base));
+	}
 	li a {
 		font-size: 1rem;
-		margin: 4px calc(var(--theme-spacing-base));
+			calc(var(--theme-spacing-base));
 		font-weight: bold;
-		margin: 0;
+	}
+
+	/* Styling the active part of the path */
+	.active {
+		text-decoration-line: underline;
+		text-decoration-color: var(--background-colour-darker);
+		text-decoration-thickness: var(--theme-spacing-base);
 	}
 </style>
