@@ -1,0 +1,163 @@
+---
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+import HeadingWithBackground from "../components/HeadingWithBackground.astro";
+import EmailLink from "../components/EmailLink.astro";
+import PhoneLink from "../components/PhoneLink.astro";
+---
+
+<Layout subtitle="Store">
+	<HeadingWithBackground
+		background="/headingBackgrounds/noseHill2.jpg"
+		backgroundPositionY="45%"
+	>
+		<h1>Store</h1>
+	</HeadingWithBackground>
+
+	<section>
+		<h2>Books for Sale</h2>
+		<section class="sale-item" id="commonvertebratefossils">
+			<h3>
+				Book 1 - Guide to Common Vertebrate Fossils from the Cretaceous
+				of Alberta
+			</h3>
+			<div class="item-content">
+				<div class="item-picture">
+					<img src="guidetofossilssmall.jpg" />
+				</div>
+
+				<p>
+					Use this book to identify your fossils using Hope Johnson's
+					and other illustrators' detailed and labelled technical
+					renderings of the dinosaurs, fish, lizards, amphibians,
+					marine reptiles and turtles from the Alberta Cretaceous.
+					This is a valuable guide for amateur fossil enthusiasts
+					which includes 234 pages and illustrated with 144 drawings
+					in a coil binding for ease of use.
+				</p>
+
+				<p>
+					Included here is a link to several <a
+						href="/store/booksamplepages.pdf">sample pages</a
+					> that are a good representation of the content.
+				</p>
+
+				<p>
+					To order a copy, print a copy of the <a
+						href="/store/book1.pdf">book 1 order form</a
+					>, then fill out and send in as per instructions on the
+					form.
+				</p>
+			</div>
+		</section>
+
+		<br />
+
+		<section class="item-sale-item" id="hopejohnson">
+			<h3>
+				Book 2 - Now There Was a Lady!, Hope Johnson, LL.D., 1916 - 2010
+			</h3>
+			<div class="item-content">
+				<div class="item-picture">
+					<img src="ladycoversmall.jpg" />
+				</div>
+				<p>
+					<b
+						>By Darren Tanke, edited and published by the Alberta
+						Palaeontological Society,</b
+					>
+				</p>
+				<p>
+					with forewords by palaeontologist Dr. Philip J. Currie,
+					artist Allan Jensen and geologist, museologist, naturalist
+					and writer, David A.E. Spalding.
+				</p>
+				<p>
+					The 2010 passing of Hope Johnson marked the end of an era
+					for Alberta’s verte­brate palaeontology communities. Her
+					death affected other disciplines, too, as she travelled in
+					many circles within the province for 65 years. How many
+					among us can truly say they never knew her personally, saw
+					her art work, or learned to identify Alberta prairie plants,
+					or Late Cretaceous bones and teeth through her fossil
+					identification books? During much of her middle and later
+					life, and especially during the late 1950s to 1980s, Hope
+					was a well-known and respected powerhouse in the Albertan
+					amateur and professional vertebrate palae­ontological
+					communities. She was also heavily involved in the naturalist
+					and visual arts communities as well as charitable
+					organizations. This book focuses on her extensive activities
+					in Alberta vertebrate palaeontology and provides examples of
+					some of her fossil and botanical drawings and paintings.
+					Coil bound, 283 pages; extensively illustrated in black and
+					white, with 30-page colour section showcasing Hope Johnson’s
+					art. Includes index.
+				</p>
+				<p>
+					To order a copy, print a copy of the <a
+						href="/store/book2.pdf">book 2 order form</a
+					>, then fill out and send in as per instructions on the
+					form.
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<h2>To Order</h2>
+	<p>
+		Print and fill out the appropriate form. Then mail it along with a
+		payment to APS at the address provided on the order form. If paying by
+		Interac e-Transfer, fill out the form, scan and email the completed form
+		to Mona Trick at <EmailLink email="giftshop@albertapaleo.org" />.
+	</p>
+
+	<p>
+		To obtain cost of shipping, domestic or international, please contact
+		Mona Trick at <EmailLink email="giftshop@albertapaleo.org" />
+		or call <PhoneLink number="(587) 578-4579" />.
+	</p>
+
+	<p>
+		To save the cost of shipping, you may also purchase a copy directly at
+		any <a href="/events/"> APS event</a>, including at our <a
+			href="/events/monthlymeetings/"
+		>
+			monthly meetings.
+		</a> We will have copies on hand available for sale.
+	</p>
+
+	<style>
+		div.item-content {
+			display: flex;
+			align-items: flex-start;
+			flex-direction: column;
+		}
+		div.item-picture {
+			align-self: center;
+			/* float: left; */
+		}
+		img {
+			margin: calc(4 * var(--theme-spacing-base));
+		}
+		section.sale-item {
+			display: inline-block;
+		}
+
+		/* desktop view */
+		@media screen and (min-width: 768px) {
+			div.item-content {
+				display: block;
+			}
+			div.item-picture {
+				align-self: revert;
+				float: left;
+			}
+			img {
+				margin: 0 calc(4 * var(--theme-spacing-base))
+					calc(4 * var(--theme-spacing-base))
+					calc(4 * var(--theme-spacing-base));
+			}
+		}
+	</style>
+</Layout>

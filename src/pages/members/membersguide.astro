@@ -1,0 +1,43 @@
+---
+export const prerender = true;
+
+import Layout from "../../layouts/Layout.astro";
+import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
+---
+
+<Layout subtitle="Members' Guide">
+	<HeadingWithBackground
+		background="/headingBackgrounds/waynePetrifiedWood1.jpg"
+		backgroundPositionY="60%"
+	>
+		<h1>Members' Guide</h1>
+	</HeadingWithBackground>
+
+	<p>
+		Discover the world of paleontology through the Alberta Paleontological
+		Society's Member's Guide. This resource offers information about the
+		society's bylaws, mission, and collaborative community.
+	</p>
+	<p>
+		It also contains practical information for both those new to fossils and
+		seasoned collectors about identifying fossils, starting your collection,
+		and exploring fossil-rich locations. Additionally, there are links to
+		additional resources, such as websites, journals, and maps for further
+		exploration.
+	</p>
+	<div id="guide-information">
+		<a href="/membership/guide.pdf">
+			<img
+				src="/membership/guide9cover.jpg"
+				alt="Cover of the members' guide showing a fossil ammonite"
+			/>
+		</a>
+	</div>
+</Layout>
+
+<style>
+	#guide-information {
+		display: flex;
+		justify-content: center;
+	}
+</style>

@@ -1,0 +1,34 @@
+---
+export const prerender = true;
+
+import Layout from "../../layouts/Layout.astro";
+import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
+---
+
+<Layout subtitle="Open Source Publications">
+	<HeadingWithBackground background="/headingBackgrounds/canyonCreek1.jpg">
+		<h1>Open Source Publications with Emphasis on Local Content</h1>
+	</HeadingWithBackground>
+
+	<p>
+		The APS Library includes popular and technical books on all sorts of
+		subjects related to paleontology. The following documents are available
+		to members and can be signed out on a short term basis or can be
+		downloaded here.
+	</p>
+
+	<ul>
+		<li>
+			<a href="/openSourcePublications/noad1.pdf"
+				>Fossil hunting day trips from Calgary, Alberta</a
+			> , generously donated by APS member, John Noad.
+		</li>
+		<li>
+			<a href="/openSourcePublications/mundy.pdf">
+				Stratigraphy, Sedimentology, Structural History and Exploration
+				History of the Mississippian at Moose Mountain Southwestern
+				Alberta Foothills</a
+			> , generously donated by APS member, Dr. David Mundy.
+		</li>
+	</ul>
+</Layout>

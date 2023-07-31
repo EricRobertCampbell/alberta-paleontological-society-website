@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import EmailLink from "../../components/EmailLink.astro";
 import PhoneLink from "../../components/PhoneLink.astro";
-import HeaderWithBackground from "../../components/HeaderWithBackground.astro";
+import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
 import { getCollection } from "astro:content";
 import Event from "../../components/Event.astro";
 
@@ -23,12 +23,12 @@ const renderedEvents = (
 ---
 
 <Layout subtitle="Field Trips">
-	<HeaderWithBackground
+	<HeadingWithBackground
 		background="/assets/knudsensFarmIntro.jpg"
 		backgroundPositionY="30%"
 	>
 		<h1>Field Trips</h1>
-	</HeaderWithBackground>
+	</HeadingWithBackground>
 	<p>Field trips are open to members only!</p>
 
 	<p>

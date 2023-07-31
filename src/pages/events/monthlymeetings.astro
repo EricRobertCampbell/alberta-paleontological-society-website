@@ -1,9 +1,7 @@
 ---
-export const prerender = false;
-
 import Layout from "../../layouts/Layout.astro";
 import EmailLink from "../../components/EmailLink.astro";
-import HeaderWithBackground from "../../components/HeaderWithBackground.astro";
+import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
 import Event from "../../components/Event.astro";
 
 import { getCollection } from "astro:content";
@@ -45,12 +43,12 @@ if (renderedEvents.length > 0) {
 ---
 
 <Layout subtitle="Monthly Meetings">
-	<HeaderWithBackground
+	<HeadingWithBackground
 		background="/assets/devilsCouleeMuseum.jpg"
 		backgroundPositionY="37%"
 	>
 		<h1>Monthly Meetings</h1>
-	</HeaderWithBackground>
+	</HeadingWithBackground>
 	<p>
 		Monthly seminars and meetings are open to the public and generally occur
 		on the third Friday of each month.

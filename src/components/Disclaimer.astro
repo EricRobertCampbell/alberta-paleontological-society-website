@@ -1,0 +1,20 @@
+---
+import type { DisclaimersFrontmatter } from "../content/config";
+import LinkToTop from "../components/LinkToTop.astro";
+
+interface Props {
+	frontmatter: DisclaimersFrontmatter;
+	last: boolean;
+}
+
+const { frontmatter, last } = Astro.props;
+
+const { title, id } = frontmatter;
+---
+
+<section id={id}>
+	<h3>{title}</h3>
+	<slot />
+	<LinkToTop />
+	{!last ? <hr /> : null}
+</section>
