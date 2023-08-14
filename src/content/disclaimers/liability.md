@@ -1,6 +1,6 @@
 ---
-title: Liability,
-id: liability,
+title: Liability
+id: liability
 index: 6
 ---
 
