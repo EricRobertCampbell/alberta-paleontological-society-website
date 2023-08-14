@@ -19,7 +19,7 @@ const convertDateString = (dateString: string): string => {
 		dateStyle: "full",
 		timeZone: "America/Edmonton",
 	};
-	return convertDateToUTC(new Date(dateString)).toLocaleDateString(
+	return convertDateToUTC(new Date(dateString + "T00:00")).toLocaleDateString(
 		locale,
 		options
 	);
