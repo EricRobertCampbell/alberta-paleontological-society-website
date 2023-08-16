@@ -1,0 +1,71 @@
+---
+export const prerender = true;
+
+import Layout from "../../layouts/Layout.astro";
+import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
+import { getCollection, getEntry } from "astro:content";
+
+const allBulletins = await getCollection("bulletins");
+const allBulletinVolumes = await getCollection("bulletinVolumes");
+console.log(allBulletins);
+const mapping = {}; // keys are the volume number, entries are the associated bulletins
+for (let bulletin of allBulletins) {
+	const volume = await getEntry(bulletin.data.volume);
+	if (volume.data.number in mapping) {
+		mapping[volume.data.number].push(bulletin);
+	} else {
+		mapping[volume.data.number] = [bulletin];
+	}
+}
+---
+
+<Layout subtitle="Bulletin Archives">
+	<HeadingWithBackground
+		background="/headingBackgrounds/upperKananaskisLake1.jpg"
+		backgroundPositionY="20%"
+	>
+		<h1>Bulletin Archives</h1>
+	</HeadingWithBackground>
+	<div id="sections-container">
+		{
+			Object.entries(mapping)
+				.sort((a, b) => {
+					return b[0] - a[0];
+				})
+				.map(([volumeNumber, bulletins]) => {
+					const associatedVolume = allBulletinVolumes.find(
+						(v) => v.data.number == volumeNumber
+					);
+					return (
+						<section id={volumeNumber}>
+							<h3>
+								Volume {volumeNumber} (
+								{associatedVolume.data.year})
+							</h3>
+							<ul>
+								{bulletins.map((bulletin) => {
+									return (
+										<li>
+											<a href={bulletin.data.location}>
+												Number {bulletin.data.number} (
+												{bulletin.data.month})
+											</a>
+										</li>
+									);
+								})}
+							</ul>
+						</section>
+					);
+				})
+		}
+	</div>
+</Layout>
+<style>
+	@media screen and (min-width: 768px) {
+		#sections-container {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: calc(2 * var(--theme-spacing-base));
+		}
+	}
+</style>

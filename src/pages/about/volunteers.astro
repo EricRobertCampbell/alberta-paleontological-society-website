@@ -1,0 +1,43 @@
+---
+export const prerender = true;
+
+import Layout from "../../layouts/Layout.astro";
+import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
+import EmailLink from "../../components/EmailLink.astro";
+---
+
+<Layout subtitle="Volunteers">
+	<HeadingWithBackground
+		background="/headingBackgrounds/field1.jpg"
+		backgroundPositionY="55%"
+	>
+		<h1>Volunteering Opportunities</h1>
+	</HeadingWithBackground>
+
+	<h2>Committees</h2>
+	<p>
+		At the Alberta Paleontological Society, our community thrives on
+		passionate individuals who want to be part of something extraordinary.
+		Our committees are the driving force behind our society's initiatives,
+		and we invite you to lend your skills and enthusiasm to make a lasting
+		impact in the world of paleontology.
+	</p>
+	<p>
+		Members that are interested in any committee positions should speak with
+		a member of the board. These positions are filled throughout the year as
+		openings arise. There is no minimum/maximum term requirement and
+		attendance of board meetings is optional.
+	</p>
+	<p>The following comittees are looking for help:</p>
+	<ul>
+		<li>Fossil Collections</li>
+		<li>Library</li>
+		<li>Public Outreach</li><li>Webmaster</li>
+		<li>Social</li><li>Symposium</li>
+	</ul>
+	<p>
+		To find out more please contact Cory Gross at <EmailLink
+			email="president1@albertapaleo.org"
+		/>.
+	</p>
+</Layout>

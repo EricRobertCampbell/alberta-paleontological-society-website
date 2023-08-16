@@ -1,0 +1,26 @@
+---
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+import HeadingWithBackground from "../components/HeadingWithBackground.astro";
+---
+
+<Layout subtitle="Hope Johnson Award">
+	<HeadingWithBackground
+		background="/headingBackgrounds/wayne1.jpg"
+		backgroundPositionY="20%"
+	>
+		<h1>Hope Johnson Award</h1>
+	</HeadingWithBackground>
+
+	<p>
+		The Hope Johnson Award was created in 2019 to recognize accomplishments
+		of non-professionals in palaeontology. An award of $250 will be given
+		annually. See the attached document which describes the criteria to
+		qualify and how to apply.
+	</p><p>
+		<a href="/awards/hopejohnsonaward.pdf"
+			>Hope Johnson Award, award for non professionals</a
+		>
+	</p>
+</Layout>

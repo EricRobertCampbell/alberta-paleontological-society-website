@@ -1,0 +1,167 @@
+---
+export const prerender = true;
+
+import Layout from "../../layouts/Layout.astro";
+import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
+import WhosWhoPersonRow, {
+	Person,
+} from "../../components/WhosWhoPersonRow.astro";
+
+const people: Record<string, Person> = {
+	cory: {
+		name: "Cory Gross",
+		email: "president1@albertapaleo.org",
+		telephone: "(403) 617-2079",
+	},
+	coryPublicOutreach: {
+		name: "Cory Gross",
+		email: "educate@albertapaleo.org",
+		telephone: "(403) 617-2079",
+	},
+	emily: {
+		name: "Emily Bamforth",
+		email: "vicepres@albertapaleo.org",
+		telephone: "(587) 771-0662",
+	},
+	mona: {
+		name: "Mona Trick",
+		email: "giftshop@albertapaleo.org",
+		telephone: "(587) 578-4579",
+	},
+	vaclav: { name: "Vaclav Marsovsky", telephone: "(403) 547-0182" },
+	wayne: {
+		name: "Wayne Braunberger",
+		email: "pastpres@albertapaleo.org",
+		telephone: "(403) 278-5154",
+	},
+	howard: {
+		name: "Howard Allen",
+		email: "editor2@albertapaleo.org",
+		telephone: "(403) 274-1858",
+	},
+	howardMembership: {
+		name: "Howard Allen",
+		email: "membership@albertapaleo.org",
+		telephone: "(403) 274-1858",
+	},
+	harold: {
+		name: "Harold Whittaker",
+		email: "programs1@albertapaleo.org",
+		telephone: "(403) 286-0349",
+	},
+	keith: {
+		name: "Keith Mychaluk",
+		email: "fieldtrips@albertapaleo.org",
+		telephone: "(403) 228-3211",
+	},
+	georgia: {
+		name: "Georgia Hoffman",
+		telephone: "(403) 228-7729",
+	},
+	virginia: {
+		name: "Virginia Goodman",
+		telephone: "(403) 256-7007",
+	},
+};
+---
+
+<Layout subtitle="Who's Who?">
+	<HeadingWithBackground
+		background="/headingBackgrounds/upperKananaskisShale1.jpg"
+	>
+		<h1>Who's Who?</h1>
+	</HeadingWithBackground>
+
+	<p>
+		Welcome to the "Who's Who" page of the Alberta Paleontological Society!
+		Here, you'll discover the dedicated individuals who drive our society's
+		mission forward. The following includes our passionate directors and
+		committee heads, each contributing their unique expertise and enthusiasm
+		to the world of paleontology.
+	</p>
+
+	<p>
+		We're always eager to expand our team and welcome fresh perspectives. If
+		you share our love for paleontology and want to be a part of our
+		exciting journey, consider <a href="/about/volunteers/"
+			>joining us as a volunteer!</a
+		> By becoming a part of the Alberta Paleontological Society, you'll have
+		the chance to make a meaningful impact and contribute to the fascinating
+		world of prehistoric discovery.
+	</p>
+
+	<section>
+		<h2>Executive</h2>
+		<table>
+			<thead>
+				<tr>
+					<th scope="column"> Title</th>
+					<th scope="column"> Name</th>
+					<th scope="column"> Email</th>
+					<th scope="column"> Telephone</th>
+				</tr>
+			</thead>
+			<tbody>
+				<WhosWhoPersonRow title="President" person={people.cory} />
+				<WhosWhoPersonRow
+					title="Vice President"
+					person={people.emily}
+				/>
+				<WhosWhoPersonRow title="Treasurer" person={people.mona} />
+				<WhosWhoPersonRow title="Secretary" person={people.vaclav} />
+				<WhosWhoPersonRow
+					title="Past President"
+					person={people.wayne}
+				/>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h2>Directors and Committees</h2>
+		<table>
+			<thead>
+				<tr>
+					<th scope="column"> Title</th>
+					<th scope="column"> Name</th>
+					<th scope="column"> Email</th>
+					<th scope="column"> Telephone</th>
+				</tr>
+			</thead>
+			<tbody>
+				{
+					Object.entries({
+						Editor: "howard",
+						Membership: "howardMembership",
+						"Program Co-Ordinator": "harold",
+						"Field Trip Co-Ordinator": "keith",
+						"Fossil Collection": "howard",
+						Librarian: "georgia",
+						Social: "virginia",
+						"Public Outreach / Education": "coryPublicOutreach",
+						Website: "vaclav",
+						"APS Symposium": "mona",
+					}).map(([title, name]) => {
+						return (
+							<WhosWhoPersonRow
+								title={title}
+								person={people[name]}
+							/>
+						);
+					})
+				}
+			</tbody>
+		</table>
+	</section>
+</Layout>
+
+<style>
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+	thead {
+		border-bottom: var(--theme-spacing-base) solid
+			var(--background-colour-darker);
+	}
+</style>
