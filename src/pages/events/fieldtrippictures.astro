@@ -1,0 +1,128 @@
+---
+export const prerender = true;
+
+import Layout from "../../layouts/Layout.astro";
+import HeadingWithBackgrounds from "../../components/HeadingWithBackground.astro";
+
+interface FieldTripPictures {
+	title: string;
+	pictures: Array<FieldTripPicture>;
+}
+
+interface FieldTripPicture {
+	thumbnail: string;
+	location: string;
+	caption: string;
+}
+
+const allPictures: Array<FieldTripPictures> = [
+	{
+		title: "June Field trip 2021-1 to Tyndall Stone, Calgary",
+		pictures: [
+			{
+				thumbnail: "/fieldTripPictures/2021-1/tyndallSmall.jpg",
+				location: "/fieldTripPictures/2021-1/tyndallBig.jpg",
+				caption: "Ordovician limestone from Manitoba",
+			},
+		],
+	},
+	{
+		title: "June Field trip 2021-2 to Manyberries",
+		pictures: [
+			{
+				thumbnail: "/fieldTripPictures/2021-2/manyberriesSmall.jpg",
+				location: "/fieldTripPictures/2021-2/manyberriesLarge.jpg",
+				caption: "Dinosaur Park Formation, Cretaceous",
+			},
+		],
+	},
+	{
+		title: "July Field trip 2021-3 to Dry Island",
+		pictures: [
+			{
+				thumbnail: "/fieldTripPictures/2021-3/dryIslandSmall.jpg",
+				location: "/fieldTripPictures/2021-3/dryIslandLarge.jpg",
+				caption: "Horseshoe Canyon Formation, Cretaceous",
+			},
+		],
+	},
+	{
+		title: " August Field trip 2021-4 to Stanley Glacier",
+		pictures: [
+			{
+				thumbnail: "/fieldTripPictures/2021-4/stanleySmall.jpg",
+				location: "/fieldTripPictures/2021-4/stanleyLarge.jpg",
+				caption: "Cathedral Formation, Cambrian",
+			},
+		],
+	},
+];
+---
+
+<Layout subtitle="Field Trip Pictures">
+	<HeadingWithBackgrounds
+		background="/headingBackgrounds/canyonCreek2.jpg"
+		backgroundPositionY="30%"
+	>
+		<h1>Field Trip Pictures</h1>
+	</HeadingWithBackgrounds>
+	<p>
+		The following are some pictures taken by our members of previous field
+		trips. If you are interested in attending, see the <a
+			href="/events/fieldtrips"
+		>
+			field trips page
+		</a> for current and upcoming field trips!
+	</p>
+	<section>
+		<h2>Field Trip Pictures 2021</h2>
+		{
+			allPictures.map((fieldTripPictures) => {
+				return (
+					<section>
+						<h3 class="field-trip-title">
+							{fieldTripPictures.title}
+						</h3>
+						{fieldTripPictures.pictures &&
+						fieldTripPictures.pictures.length > 0 ? (
+							<div class="field-trip-pictures">
+								{fieldTripPictures.pictures.map((picture) => {
+									return (
+										<figure>
+											<a href={picture.location}>
+												<img
+													src={picture.thumbnail}
+													alt={picture.caption}
+												/>
+											</a>
+											<figcaption>
+												{picture.caption}
+											</figcaption>
+										</figure>
+									);
+								})}
+							</div>
+						) : null}
+					</section>
+				);
+			})
+		}
+	</section>
+</Layout>
+
+<style>
+	.field-trip-pictures {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	figure {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.field-trip-title {
+		text-align: center;
+	}
+</style>

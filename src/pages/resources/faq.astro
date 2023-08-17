@@ -1,0 +1,48 @@
+---
+export const prerender = true;
+
+import Layout from "../../layouts/Layout.astro";
+import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
+
+import { getCollection } from "astro:content";
+
+const allQuestions = (await getCollection("faqs")).sort((a, b) => {
+	return a.data.order - b.data.order;
+});
+console.log({ allQuestions });
+const allRenderedQuestions = await Promise.all(
+	allQuestions.map(async (event) => await event.render())
+);
+---
+
+<Layout subtitle="FAQ">
+	<HeadingWithBackground background="/headingBackgrounds/noseHill1.jpg">
+		<h1>Frequently Asked Questions</h1>
+	</HeadingWithBackground>
+	{
+		allRenderedQuestions.map((q) => {
+			const originalQuestion = allQuestions.find(
+				(originalQ) =>
+					originalQ.data.question ===
+					q.remarkPluginFrontmatter.question
+			);
+			return (
+				<section id={`${originalQuestion.slug}`}>
+					<p class="question">{originalQuestion.data.question}</p>
+					<q.Content />
+				</section>
+			);
+		})
+	}
+</Layout>
+
+<style>
+	p.question {
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
+	section:not(:last-of-type) {
+		margin-bottom: calc(4 * var(--theme-spacing-base));
+		border-bottom: solid 1px black;
+	}
+</style>
