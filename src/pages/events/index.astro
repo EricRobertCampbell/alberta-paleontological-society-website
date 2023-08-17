@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 
 import Layout from "../../layouts/Layout.astro";
 import Event from "../../components/Event.astro";
-import HeaderWithBackground from "../../components/HeaderWithBackground.astro";
+import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
 
 const allEvents = await getCollection("events");
 const renderedEvents = (
@@ -20,12 +20,12 @@ const renderedEvents = (
 ---
 
 <Layout subtitle="Events">
-	<HeaderWithBackground
+	<HeadingWithBackground
 		background="/assets/devilsCoulee.jpg"
 		backgroundPositionY="33%"
 	>
 		<h1>Events</h1>
-	</HeaderWithBackground>
+	</HeadingWithBackground>
 	<p>
 		We hold a variety of events, from our monthly meetings, to lectures, to
 		field trips all over Alberta!
