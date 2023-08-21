@@ -10,6 +10,8 @@ import {
 	APS_YOUTUBE_LINK,
 	getTodayString,
 } from "../utility";
+import initialImage from "../../public/assets/warner_1.jpg";
+console.log({ initialImage });
 
 // get the next event
 const todayString = getTodayString();
@@ -35,6 +37,7 @@ let nextEvent;
 if (renderedEvents.length > 0) {
 	nextEvent = renderedEvents[renderedEvents.length - 1];
 }
+/* src="https://mychn.org/wp-content/uploads/2022/04/frustrated-young-african-american-businessman-having-bad-headache-768x577.jpg" */
 ---
 
 <Layout title="Alberta Paleontological Society">
@@ -167,7 +170,7 @@ if (renderedEvents.length > 0) {
 
 <style>
 	section {
-		padding-bottom: 8px;
+		padding-bottom: calc(3 * var(--theme-spacing-base));
 	}
 
 	section:not(:last-of-type) {
@@ -207,7 +210,9 @@ if (renderedEvents.length > 0) {
 
 	#initial-image {
 		float: left;
-		margin: var(--theme-spacing-base);
+		margin-right: calc(4 * var(--theme-spacing-base));
+		margin-top: calc(1 * var(--theme-spacing-base));
+		margin-bottom: 0;
 		width: 40%;
 	}
 </style>
