@@ -10,5 +10,5 @@ order: 3
   parking areas. The University does charge a small fee for parking.
 </p>
 <p>
-  A map of the parking areas can also be found on the last page of the <a href="guide3web">Members' Guide</a>.
+  A map of the parking areas can also be found on the last page of the <a href="/members/membersguide">Members' Guide</a>.
 </p>

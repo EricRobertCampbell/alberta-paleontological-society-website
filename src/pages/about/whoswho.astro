@@ -7,6 +7,8 @@ import WhosWhoPersonRow, {
 	Person,
 } from "../../components/WhosWhoPersonRow.astro";
 
+// this is a dumb way of doing this
+// TODO do it properly
 const people: Record<string, Person> = {
 	cory: {
 		name: "Cory Gross",
@@ -62,6 +64,15 @@ const people: Record<string, Person> = {
 		name: "Virginia Goodman",
 		telephone: "(403) 256-7007",
 	},
+	lacey: {
+		name: "Lacey Holoboff",
+		telephone: "(403) 894-0698",
+		email: "programs1@albertapaleo.org",
+	},
+	eric: {
+		name: "Eric Campbell",
+		telephone: "(587) 226-6980",
+	},
 };
 ---
 
@@ -73,19 +84,19 @@ const people: Record<string, Person> = {
 	</HeadingWithBackground>
 
 	<p>
-		Welcome to the "Who's Who" page of the Alberta Paleontological Society!
+		Welcome to the "Who's Who" page of the Alberta Palaeontological Society!
 		Here, you'll discover the dedicated individuals who drive our society's
 		mission forward. The following includes our passionate directors and
 		committee heads, each contributing their unique expertise and enthusiasm
-		to the world of paleontology.
+		to the world of palaeontology.
 	</p>
 
 	<p>
 		We're always eager to expand our team and welcome fresh perspectives. If
-		you share our love for paleontology and want to be a part of our
+		you share our love for palaeontology and want to be a part of our
 		exciting journey, consider <a href="/about/volunteers/"
 			>joining us as a volunteer!</a
-		> By becoming a part of the Alberta Paleontological Society, you'll have
+		> By becoming a part of the Alberta Palaeontological Society, you'll have
 		the chance to make a meaningful impact and contribute to the fascinating
 		world of prehistoric discovery.
 	</p>
@@ -133,13 +144,13 @@ const people: Record<string, Person> = {
 					Object.entries({
 						Editor: "howard",
 						Membership: "howardMembership",
-						"Program Co-Ordinator": "harold",
+						"Program Co-Ordinator": "lacey",
 						"Field Trip Co-Ordinator": "keith",
 						"Fossil Collection": "howard",
 						Librarian: "georgia",
 						Social: "virginia",
 						"Public Outreach / Education": "coryPublicOutreach",
-						Website: "vaclav",
+						Website: "eric",
 						"APS Symposium": "mona",
 					}).map(([title, name]) => {
 						return (
