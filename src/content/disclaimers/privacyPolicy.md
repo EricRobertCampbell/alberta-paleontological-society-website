@@ -1,5 +1,5 @@
 ---
-title: Alberta Paleontological Society Privacy Policy and Disclaimers
+title: Alberta Palaeontological Society Privacy Policy and Disclaimers
 id: privacyPolicy
 index: 0
 ---

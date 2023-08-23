@@ -1,0 +1,25 @@
+---
+export const prerender = true;
+
+import Layout from "../../layouts/Layout.astro";
+import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
+---
+
+<Layout subtitle="AGM">
+	<HeadingWithBackground
+		background="/headingBackgrounds/uofaDunkleosteus.jpg"
+		backgroundPositionY="55%"
+	>
+		<h1>Annual General Meeting</h1>
+	</HeadingWithBackground>
+	<p>
+		The Society's Annual General Meeting will take place in May of each
+		year. This gathering is intended for the purpose of electing Officers
+		and Directors, making changes to the Bylaws, and addressing any other
+		matters that the Board presents to the Society.
+	</p>
+	<p>
+		Check back here later for information about the agenda and other
+		procedures!
+	</p>
+</Layout>
