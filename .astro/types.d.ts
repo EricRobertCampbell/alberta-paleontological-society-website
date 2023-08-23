@@ -310,6 +310,48 @@ declare module 'astro:content' {
   collection: "events";
   data: InferEntrySchema<"events">
 } & { render(): Render[".md"] };
+"2023-10-20-monthlyMeeting.md": {
+	id: "2023-10-20-monthlyMeeting.md";
+  slug: "2023-10-20-monthlymeeting";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2023-11-05-fossilSorting1.md": {
+	id: "2023-11-05-fossilSorting1.md";
+  slug: "2023-11-05-fossilsorting1";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2023-11-26-fossilSorting2.md": {
+	id: "2023-11-26-fossilSorting2.md";
+  slug: "2023-11-26-fossilsorting2";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2023-12-10-fossilSorting3.md": {
+	id: "2023-12-10-fossilSorting3.md";
+  slug: "2023-12-10-fossilsorting3";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2024-03-16-paleoSymposium1.md": {
+	id: "2024-03-16-paleoSymposium1.md";
+  slug: "2024-03-16-paleosymposium1";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2024-03-17-paleoSymposium2.md": {
+	id: "2024-03-17-paleoSymposium2.md";
+  slug: "2024-03-17-paleosymposium2";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
 };
 "faqs": {
 "becomeAPaleontologist.md": {
