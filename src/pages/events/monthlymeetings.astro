@@ -21,25 +21,21 @@ const renderedEvents = (
 	)
 )
 	.filter((e) => {
-		console.log({
-			startDate: e.remarkPluginFrontmatter.startDate,
-			todayString,
-		});
 		return (
 			e.remarkPluginFrontmatter.startDate > todayString &&
 			e.remarkPluginFrontmatter.type === "Monthly Meeting"
 		);
 	})
 	.sort((e1, e2) => {
-		return -e1.remarkPluginFrontmatter.startDate.localeCompare(
+		return e1.remarkPluginFrontmatter.startDate.localeCompare(
 			e2.remarkPluginFrontmatter.startDate
 		);
 	});
 
-let nextEvent;
-if (renderedEvents.length > 0) {
-	nextEvent = renderedEvents[renderedEvents.length - 1];
-}
+/* let nextEvent; */
+/* if (renderedEvents.length > 0) { */
+/* 	nextEvent = renderedEvents[renderedEvents.length - 1]; */
+/* } */
 ---
 
 <Layout subtitle="Monthly Meetings">
@@ -90,15 +86,19 @@ if (renderedEvents.length > 0) {
 	</p>
 
 	{
-		nextEvent && (
+		renderedEvents.length > 0 && (
 			<>
-				<h2>Next Meeting</h2>
-				<Event
-					frontmatter={nextEvent.remarkPluginFrontmatter}
-					last={true}
-				>
-					<nextEvent.Content />
-				</Event>
+				<h2>Upcoming Event{renderedEvents.length > 1 ? "s" : ""}</h2>
+				{renderedEvents.map((event, index, allEvents) => {
+					return (
+						<Event
+							frontmatter={event.remarkPluginFrontmatter}
+							last={index === allEvents.length - 1}
+						>
+							<event.Content />
+						</Event>
+					);
+				})}
 			</>
 		)
 	}
