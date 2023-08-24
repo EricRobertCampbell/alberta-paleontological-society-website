@@ -83,10 +83,22 @@ const faqsCollection = defineCollection({
 	schema: faqsSchema,
 });
 
+const announcementSchema = z.object({
+	title: z.string(),
+	startDate: z.string(),
+	endDate: z.string(),
+});
+const announcementCollection = defineCollection({
+	type: "content",
+	schema: announcementSchema,
+});
+export type AnnouncementFrontmatter = z.infer<typeof announcementSchema>;
+
 export const collections = {
 	events: eventCollection,
 	disclaimers: disclaimersCollection,
 	bulletins: bulletinsCollection,
 	bulletinVolumes: bulletinVolumesCollection,
 	faqs: faqsCollection,
+	announcements: announcementCollection,
 };

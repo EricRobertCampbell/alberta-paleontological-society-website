@@ -20,6 +20,8 @@ virtually. Families are encouraged to bring fossils to our
 identification booth where APS members will do their best to provide you
 with information.
 
+This second day will feature workshops on topics related to palaeontology in Alberta. Stay tuned for more information!
+
 See the [symposium page](/events/symposium) for additional details.
 
 View a <a href="https://youtu.be/neXG3Y0q-O8">brief video</a> of the 2018

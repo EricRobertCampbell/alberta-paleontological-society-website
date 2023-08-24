@@ -188,7 +188,23 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"disclaimers": {
+		"announcements": {
+"2023-09-symposium-announcement.md": {
+	id: "2023-09-symposium-announcement.md";
+  slug: "2023-09-symposium-announcement";
+  body: string;
+  collection: "announcements";
+  data: InferEntrySchema<"announcements">
+} & { render(): Render[".md"] };
+"2023-fossil-sorting.md": {
+	id: "2023-fossil-sorting.md";
+  slug: "2023-fossil-sorting";
+  body: string;
+  collection: "announcements";
+  data: InferEntrySchema<"announcements">
+} & { render(): Render[".md"] };
+};
+"disclaimers": {
 "contactUs.md": {
 	id: "contactUs.md";
   slug: "contactus";

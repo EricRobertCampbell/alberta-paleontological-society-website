@@ -20,6 +20,8 @@ virtually. Families are encouraged to bring fossils to our
 identification booth where APS members will do their best to provide you
 with information.
 
+The first day will include lectures by notable paleontologists, an opportunity to have APS members identify your fossils, and a host of other events! Stay tuned for additional inforamtion.
+
 See the [symposium page](/events/symposium) for additional details.
 
 View a <a href="https://youtu.be/neXG3Y0q-O8">brief video</a> of the 2018

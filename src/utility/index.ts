@@ -3,6 +3,7 @@ export {
 	generateEventDateTimeString,
 	pathMatchesDestination,
 	getTodayString,
+	formatDate,
 } from "./functions";
 export type { LinkInformation } from "./navLinks";
 export { links } from "./navLinks";
