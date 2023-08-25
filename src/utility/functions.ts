@@ -23,7 +23,7 @@ const convertDateString = (dateString: string): string => {
 	// const realDate = new Date(
 	// 	baseDate.getTime() + baseDate.getTimezoneOffset() * 60 * 1000
 	// );
-	const realDate = new Date(`${dateString}T00:00:00-06:00`);
+	const realDate = new Date(`${dateString}T00:00:00-07:00`);
 	return realDate.toLocaleString(locale, options);
 
 	// return convertDateToUTC(new Date(dateString + "T00:00")).toLocaleDateString(
