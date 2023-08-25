@@ -8,6 +8,7 @@ const EVENT_TYPES = [
 	"Symposium",
 	"Field Trip",
 	"Special Joint Meeting of the APS and the CSPG BASS Division",
+	"Fossil Sorting",
 ] as const;
 const eventSchema = z.object({
 	title: z.string(),
