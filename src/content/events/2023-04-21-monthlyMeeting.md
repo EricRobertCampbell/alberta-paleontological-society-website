@@ -17,5 +17,3 @@ Speaker: Dr. Emily Bamforth, Philip J. Currie Dinosaur Museum and University of 
 **Exploring for Algal Stromatolites in North America and Africa - the Journey Continues.** [Abstract](/presentationAbstracts/koning.pdf)
 
 Speaker: Tako Koning, Geological Consultant, APS and CEGA Member
-
-The meeting on will also include our AGM. We will have our annual elections this evening for the officers and directors of the APS board. Go to the [ Annual General Meeting ](/events/agm) tab on this website for description of the agenda for this meeting.

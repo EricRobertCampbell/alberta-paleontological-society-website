@@ -12,7 +12,7 @@ Sunday, March 19, 2023, from 9:00AM - 4:00PM: Workshops
 
 (in conjunction with the Mount Royal University Earth and Environmental Sciences and CSPG Paleontological Division)
 
-This symposium will contain presentations from a mix of amateur and professional paleontologists. The aim is to showcase paleontology to the general public and to provide an opportunity for contact between the Alberta Paleontological Society, industry, government, and educational facilities. The event is free and all are welcome to attend or join virtually. Families are encouraged to bring fossils to our identification booth where APS members will do their best to provide you with information.
+This symposium will contain presentations from a mix of amateur and professional palaeontologists. The aim is to showcase palaeontology to the general public and to provide an opportunity for contact between the Alberta Palaeontological Society, industry, government, and educational facilities. The event is free and all are welcome to attend or join virtually. Families are encouraged to bring fossils to our identification booth where APS members will do their best to provide you with information.
 
 We are calling for Posters for this event. Deadline for submission of abstracts for publication is **February 15, 2023**.
 

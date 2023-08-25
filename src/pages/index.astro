@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Event from "../components/Event.astro";
+import Announcement from "../components/Announcement.astro";
 
 import { getCollection } from "astro:content";
 
@@ -9,6 +10,7 @@ import {
 	APS_FACEBOOK_LINK,
 	APS_YOUTUBE_LINK,
 	getTodayString,
+	formatDate,
 } from "../utility";
 
 // get the next event
@@ -35,9 +37,38 @@ let nextEvent;
 if (renderedEvents.length > 0) {
 	nextEvent = renderedEvents[renderedEvents.length - 1];
 }
+
+const allAnnouncements = (await getCollection("announcements"))
+	.filter(({ data }) => {
+		// NB This is horrifying. There definitely needs to be a better way of doing this
+		// TODO sort out this nonsense
+		let [year, month, day] = getTodayString().split("-");
+		day = Number(day) + 2;
+		const today = new Date([year, month, day].join("-"));
+		const startDate = new Date(data.startDate);
+		const endDate = new Date(data.endDate);
+		console.log({
+			today,
+			startDate,
+			endDate,
+			/* today2, today3 */
+		});
+		return today >= startDate && today <= endDate;
+	})
+	.sort((a1, a2) => {
+		return (
+			new Date(a1.data.startDate).getTime() -
+			new Date(a2.data.startDate).getTime()
+		);
+	});
+const renderedAnnouncements = await Promise.all(
+	allAnnouncements.map(async (announcement) => {
+		return await announcement.render();
+	})
+);
 ---
 
-<Layout title="Alberta Paleontological Society">
+<Layout title="Alberta Palaeontological Society">
 	<section>
 		<img
 			src={"/assets/warner_1_low.jpg"}
@@ -45,18 +76,18 @@ if (renderedEvents.length > 0) {
 			alt="APS members listening to a description of the Devil's Coulee fossil locality"
 		/>
 		<p>
-			The Alberta Paleontological Society (APS) is a non-profit
+			The Alberta Palaeontological Society (APS) is a non-profit
 			organization founded in 1986. Our main goal is to promote the
-			science of paleontology through study and education. The APS makes
+			science of palaeontology through study and education. The APS makes
 			important contributions to the field by discovering new findings and
 			responsibly collecting, curating, and displaying significant fossil
 			specimens. We are passionate about educating the general public,
-			sharing knowledge about paleontological discoveries, and fostering
+			sharing knowledge about palaeontological discoveries, and fostering
 			an appreciation for the ancient past.
 		</p>
 
 		<p>
-			Moreover, the society is committed to preserving paleontological
+			Moreover, the society is committed to preserving palaeontological
 			materials for the benefit of future generations. To achieve our
 			mission, the APS actively collaborates with professional and
 			academic communities, working together to safeguard and enhance the
@@ -64,10 +95,32 @@ if (renderedEvents.length > 0) {
 		</p>
 
 		<p>
-			The Alberta Paleontological Society is dedicated to spreading the
-			wonders of paleontology, ensuring that people of all ages can
+			The Alberta Palaeontological Society is dedicated to spreading the
+			wonders of palaeontology, ensuring that people of all ages can
 			explore and appreciate the fascinating world of prehistoric life.
 		</p>
+		{
+			renderedAnnouncements.length > 0 ? (
+				<section>
+					<h2>Announcements</h2>
+					{renderedAnnouncements.map(
+						(announcement, index, allAnnouncements) => {
+							const { Content, headings } = announcement;
+							return (
+								<Announcement
+									frontmatter={
+										announcement.remarkPluginFrontmatter
+									}
+									last={index === allAnnouncements.length - 1}
+								>
+									<Content />
+								</Announcement>
+							);
+						}
+					)}
+				</section>
+			) : null
+		}
 	</section>
 	{
 		nextEvent && (
@@ -89,8 +142,8 @@ if (renderedEvents.length > 0) {
 	<section>
 		<h3>Become a Member!</h3>
 		<p>
-			Become a member of the Alberta Paleontological Society and unlock a
-			world of paleontological discovery. Engage with fellow enthusiasts,
+			Become a member of the Alberta Palaeontological Society and unlock a
+			world of palaeontological discovery. Engage with fellow enthusiasts,
 			support fossil education, and gain exclusive access to field trips
 			and resources that enrich your understanding of prehistoric life. <a
 				href="/members/"

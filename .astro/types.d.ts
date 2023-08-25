@@ -188,7 +188,23 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"disclaimers": {
+		"announcements": {
+"2023-09-symposium-announcement.md": {
+	id: "2023-09-symposium-announcement.md";
+  slug: "2023-09-symposium-announcement";
+  body: string;
+  collection: "announcements";
+  data: InferEntrySchema<"announcements">
+} & { render(): Render[".md"] };
+"2023-fossil-sorting.md": {
+	id: "2023-fossil-sorting.md";
+  slug: "2023-fossil-sorting";
+  body: string;
+  collection: "announcements";
+  data: InferEntrySchema<"announcements">
+} & { render(): Render[".md"] };
+};
+"disclaimers": {
 "contactUs.md": {
 	id: "contactUs.md";
   slug: "contactus";
@@ -306,6 +322,48 @@ declare module 'astro:content' {
 "2023-09-16-tyndall-stone-field-trip.md": {
 	id: "2023-09-16-tyndall-stone-field-trip.md";
   slug: "2023-09-16-tyndall-stone-field-trip";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2023-10-20-monthlyMeeting.md": {
+	id: "2023-10-20-monthlyMeeting.md";
+  slug: "2023-10-20-monthlymeeting";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2023-11-05-fossilSorting1.md": {
+	id: "2023-11-05-fossilSorting1.md";
+  slug: "2023-11-05-fossilsorting1";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2023-11-26-fossilSorting2.md": {
+	id: "2023-11-26-fossilSorting2.md";
+  slug: "2023-11-26-fossilsorting2";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2023-12-10-fossilSorting3.md": {
+	id: "2023-12-10-fossilSorting3.md";
+  slug: "2023-12-10-fossilsorting3";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2024-03-16-paleoSymposium1.md": {
+	id: "2024-03-16-paleoSymposium1.md";
+  slug: "2024-03-16-paleosymposium1";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2024-03-17-paleoSymposium2.md": {
+	id: "2024-03-17-paleoSymposium2.md";
+  slug: "2024-03-17-paleosymposium2";
   body: string;
   collection: "events";
   data: InferEntrySchema<"events">
