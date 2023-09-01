@@ -6,6 +6,7 @@ import HeadingWithBackground from "../../components/HeadingWithBackground.astro"
 import WhosWhoPersonRow, {
 	Person,
 } from "../../components/WhosWhoPersonRow.astro";
+import WhosWhoPersonCard from "../../components/WhosWhoPersonCard.astro";
 
 // this is a dumb way of doing this
 // TODO do it properly
@@ -74,6 +75,26 @@ const people: Record<string, Person> = {
 		telephone: "(587) 226-6980",
 	},
 };
+
+const executive: Array<{ title: string; person: Person }> = [
+	{ title: "President", person: people.cory },
+	{ title: "Vice President", person: people.emily },
+	{ title: "Treasurer", person: people.mona },
+	{ title: "Secretary", person: people.vaclav },
+	{ title: "Past President", person: people.wayne },
+];
+const directorsAndCommittees: Array<{ title: string; person: Person }> = [
+	{ title: "Editor", person: people.howard },
+	{ title: "Membership", person: people.howardMembership },
+	{ title: "Program Co-Ordinator", person: people.lacey },
+	{ title: "Field Trip Co-Ordinator", person: people.keith },
+	{ title: "Fossil Collection", person: people.howard },
+	{ title: "Librarian", person: people.georgia },
+	{ title: "Social", person: people.virginia },
+	{ title: "Public Outreach / Education", person: people.coryPublicOutreach },
+	{ title: "Website", person: people.eric },
+	{ title: "APS Symposium", person: people.mona },
+];
 ---
 
 <Layout subtitle="Who's Who?">
@@ -103,34 +124,14 @@ const people: Record<string, Person> = {
 
 	<section>
 		<h2>Executive</h2>
-		<table>
-			<thead>
-				<tr>
-					<th scope="column"> Title</th>
-					<th scope="column"> Name</th>
-					<th scope="column"> Email</th>
-					<th scope="column"> Telephone</th>
-				</tr>
-			</thead>
-			<tbody>
-				<WhosWhoPersonRow title="President" person={people.cory} />
-				<WhosWhoPersonRow
-					title="Vice President"
-					person={people.emily}
-				/>
-				<WhosWhoPersonRow title="Treasurer" person={people.mona} />
-				<WhosWhoPersonRow title="Secretary" person={people.vaclav} />
-				<WhosWhoPersonRow
-					title="Past President"
-					person={people.wayne}
-				/>
-			</tbody>
-		</table>
-	</section>
-
-	<section>
-		<h2>Directors and Committees</h2>
-		<table>
+		<div class="mobile">
+			{
+				executive.map(({ title, person }) => {
+					return <WhosWhoPersonCard title={title} person={person} />;
+				})
+			}
+		</div>
+		<table class="desktop">
 			<thead>
 				<tr>
 					<th scope="column"> Title</th>
@@ -141,28 +142,45 @@ const people: Record<string, Person> = {
 			</thead>
 			<tbody>
 				{
-					Object.entries({
-						Editor: "howard",
-						Membership: "howardMembership",
-						"Program Co-Ordinator": "lacey",
-						"Field Trip Co-Ordinator": "keith",
-						"Fossil Collection": "howard",
-						Librarian: "georgia",
-						Social: "virginia",
-						"Public Outreach / Education": "coryPublicOutreach",
-						Website: "eric",
-						"APS Symposium": "mona",
-					}).map(([title, name]) => {
+					executive.map(({ title, person }) => {
 						return (
-							<WhosWhoPersonRow
-								title={title}
-								person={people[name]}
-							/>
+							<WhosWhoPersonRow title={title} person={person} />
 						);
 					})
 				}
 			</tbody>
 		</table>
+	</section>
+
+	<section>
+		<h2>Directors and Committees</h2>
+
+		<table class="desktop">
+			<thead>
+				<tr>
+					<th scope="column"> Title</th>
+					<th scope="column"> Name</th>
+					<th scope="column"> Email</th>
+					<th scope="column"> Telephone</th>
+				</tr>
+			</thead>
+			<tbody>
+				{
+					directorsAndCommittees.map(({ title, person }) => {
+						return (
+							<WhosWhoPersonRow title={title} person={person} />
+						);
+					})
+				}
+			</tbody>
+		</table>
+		<div class="mobile">
+			{
+				directorsAndCommittees.map(({ title, person }) => {
+					return <WhosWhoPersonCard title={title} person={person} />;
+				})
+			}
+		</div>
 	</section>
 </Layout>
 
@@ -174,5 +192,21 @@ const people: Record<string, Person> = {
 	thead {
 		border-bottom: var(--theme-spacing-base) solid
 			var(--background-colour-darker);
+	}
+	.desktop {
+		visibility: hidden;
+		display: none;
+	}
+
+	/* Desktop */
+	@media screen and (min-width: 768px) {
+		.desktop {
+			visibility: visible;
+			display: revert;
+		}
+		.mobile {
+			visibility: hidden;
+			display: none;
+		}
 	}
 </style>

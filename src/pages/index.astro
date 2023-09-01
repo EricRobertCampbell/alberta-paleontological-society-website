@@ -47,12 +47,6 @@ const allAnnouncements = (await getCollection("announcements"))
 		const today = new Date([year, month, day].join("-"));
 		const startDate = new Date(data.startDate);
 		const endDate = new Date(data.endDate);
-		console.log({
-			today,
-			startDate,
-			endDate,
-			/* today2, today3 */
-		});
 		return today >= startDate && today <= endDate;
 	})
 	.sort((a1, a2) => {

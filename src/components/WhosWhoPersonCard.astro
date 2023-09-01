@@ -1,0 +1,66 @@
+---
+import { Person } from "./WhosWhoPersonRow.astro";
+import EmailLink from "./EmailLink.astro";
+import PhoneLink from "./PhoneLink.astro";
+
+export interface Props {
+	title: string;
+	person: Person;
+}
+
+const { person, title } = Astro.props;
+const { name, email, telephone } = person;
+---
+
+<div>
+	<h3>
+		{title}
+	</h3>
+	<h4>
+		{name}
+	</h4>
+	<ul>
+		{
+			email && (
+				<li>
+					Email: <EmailLink email={email} />
+				</li>
+			)
+		}
+		{
+			telephone && (
+				<li>
+					Telephone: <PhoneLink number={telephone} />
+				</li>
+			)
+		}
+	</ul>
+</div>
+
+<style>
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		margin: var(--theme-spacing-base) 0;
+		padding: 0;
+	}
+	h3,
+	h4 {
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+	div {
+		border: solid 1px var(--background-colour-dark);
+		border-radius: var(--theme-spacing-base);
+		margin: calc(4 * var(--theme-spacing-base));
+		padding: calc(2 * var(--theme-spacing-base));
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+	}
+</style>
