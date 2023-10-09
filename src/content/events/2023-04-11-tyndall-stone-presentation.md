@@ -1,9 +1,9 @@
 ---
 title: "Tyndall Stone: Discovering Ordovician - Age Fossils in the Tyndall in Calgary's Downtown and Inner - City Areas."
-startDate: "2023-04-11"
-startTime: "12 Noon"
-endTime: "1 PM"
-type: "Special Joint Meeting of the APS and the CSPG BASS Division"
+startDate: '2023-04-11'
+startTime: '12 Noon'
+endTime: '1 PM'
+type: 'Special Joint Meeting of the APS and the CSPG BASS Division'
 ---
 
 Speaker: Tako Koning, P. Geol

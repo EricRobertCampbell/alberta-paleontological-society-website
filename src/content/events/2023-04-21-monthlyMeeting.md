@@ -1,9 +1,9 @@
 ---
-title: "Monthly Meeting: April 2023"
-startDate: "2023-04-21"
-startTime: "7:30 PM"
-endTime: "9 PM"
-type: "Monthly Meeting"
+title: 'Monthly Meeting: April 2023'
+startDate: '2023-04-21'
+startTime: '7:30 PM'
+endTime: '9 PM'
+type: 'Monthly Meeting'
 ---
 
 #### Short Presentation

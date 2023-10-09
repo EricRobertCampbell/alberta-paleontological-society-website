@@ -1,23 +1,26 @@
 {
-  "name": "alberta-paleontological-society-website",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "test": "vitest",
-    "coverage": "vitest run --coverage"
-  },
-  "dependencies": {
-    "@astrojs/netlify": "^2.2.0",
-    "astro": "^2.9.0",
-    "prettier": "^2.8.8"
-  },
-  "devDependencies": {
-    "prettier-plugin-astro": "^0.10.0",
-    "vitest": "^0.33.0"
-  }
+    "name": "alberta-paleontological-society-website",
+    "type": "module",
+    "version": "1.2.0",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro",
+        "test": "vitest",
+        "coverage": "vitest run --coverage"
+    },
+    "dependencies": {
+        "@astrojs/netlify": "^2.2.0",
+        "astro": "^2.9.0",
+        "prettier": "^2.8.8"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^17.7.2",
+        "@commitlint/config-conventional": "^17.7.0",
+        "husky": "^8.0.3",
+        "prettier-plugin-astro": "^0.10.0",
+        "vitest": "^0.33.0"
+    }
 }

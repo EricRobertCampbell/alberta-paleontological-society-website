@@ -347,6 +347,13 @@ declare module 'astro:content' {
   collection: "events";
   data: any
 } & { render(): Render[".md"] };
+"2023-11-17-monthlyMeeting.md": {
+	id: "2023-11-17-monthlyMeeting.md";
+  slug: "2023-11-17-monthlymeeting";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
 "2023-11-26-fossilSorting2.md": {
 	id: "2023-11-26-fossilSorting2.md";
   slug: "2023-11-26-fossilsorting2";
