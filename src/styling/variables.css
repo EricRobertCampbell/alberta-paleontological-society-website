@@ -1,59 +1,59 @@
 /* Variables */
 :root {
-	--theme-spacing-base: 4px;
+    --theme-spacing-base: 4px;
 
-	--background-colour-hue: 35;
-	--background-colour-saturation: 50%;
-	--background-colour-luminance: 87%;
-	--background-colour-light: hsl(
-		var(--background-colour-hue),
-		var(--background-colour-saturation),
-		calc(var(--background-colour-luminance) + 10%)
-	);
-	--background-colour-medium: hsl(
-		var(--background-colour-hue),
-		var(--background-colour-saturation),
-		calc(var(--background-colour-luminance) + 0%)
-	);
-	--background-colour-dark: hsl(
-		var(--background-colour-hue),
-		var(--background-colour-saturation),
-		calc(var(--background-colour-luminance) - 10%)
-	);
-	--background-colour-darker: hsl(
-		var(--background-colour-hue),
-		var(--background-colour-saturation),
-		calc(var(--background-colour-luminance) - 20%)
-	);
+    --background-colour-hue: 35;
+    --background-colour-saturation: 50%;
+    --background-colour-luminance: 87%;
+    --background-colour-light: hsl(
+        var(--background-colour-hue),
+        var(--background-colour-saturation),
+        calc(var(--background-colour-luminance) + 10%)
+    );
+    --background-colour-medium: hsl(
+        var(--background-colour-hue),
+        var(--background-colour-saturation),
+        calc(var(--background-colour-luminance) + 0%)
+    );
+    --background-colour-dark: hsl(
+        var(--background-colour-hue),
+        var(--background-colour-saturation),
+        calc(var(--background-colour-luminance) - 10%)
+    );
+    --background-colour-darker: hsl(
+        var(--background-colour-hue),
+        var(--background-colour-saturation),
+        calc(var(--background-colour-luminance) - 20%)
+    );
 
-	--accent-colour-hue: 150;
-	--accent-colour-saturation: 100%;
-	--accent-colour-luminance: 20%;
-	--accent-colour-light: hsl(
-		var(--accent-colour-hue),
-		var(--accent-colour-saturation),
-		calc(var(--accent-colour-luminance) + 10%)
-	);
-	--accent-colour-medium: hsl(
-		var(--accent-colour-hue),
-		var(--accent-colour-saturation),
-		calc(var(--accent-colour-luminance) + 0%)
-	);
-	--accent-colour-dark: hsl(
-		var(--accent-colour-hue),
-		var(--accent-colour-saturation),
-		calc(var(--accent-colour-luminance) - 10%)
-	);
-	--accent-colour-darker: hsl(
-		var(--accent-colour-hue),
-		var(--accent-colour-saturation),
-		calc(var(--accent-colour-luminance) - 20%)
-	);
-	--accent-colour-text: hsl(var(--accent-colour-hue), 90%, 5%);
+    --accent-colour-hue: 150;
+    --accent-colour-saturation: 100%;
+    --accent-colour-luminance: 20%;
+    --accent-colour-light: hsl(
+        var(--accent-colour-hue),
+        var(--accent-colour-saturation),
+        calc(var(--accent-colour-luminance) + 10%)
+    );
+    --accent-colour-medium: hsl(
+        var(--accent-colour-hue),
+        var(--accent-colour-saturation),
+        calc(var(--accent-colour-luminance) + 0%)
+    );
+    --accent-colour-dark: hsl(
+        var(--accent-colour-hue),
+        var(--accent-colour-saturation),
+        calc(var(--accent-colour-luminance) - 10%)
+    );
+    --accent-colour-darker: hsl(
+        var(--accent-colour-hue),
+        var(--accent-colour-saturation),
+        calc(var(--accent-colour-luminance) - 20%)
+    );
+    --accent-colour-text: hsl(var(--accent-colour-hue), 90%, 5%);
 
-	--transition-speed-slow: 0.3s;
-	--transition-speed-medium: calc(var(--transition-speed-slow) * 1.5);
-	--transition-speed-fast: calc(var(--transition-speed-slow) * 2);
+    --transition-speed-slow: 0.3s;
+    --transition-speed-medium: calc(var(--transition-speed-slow) * 1.5);
+    --transition-speed-fast: calc(var(--transition-speed-slow) * 2);
 
-	--border-radius-medium: var(--theme-spacing-base);
+    --border-radius-medium: var(--theme-spacing-base);
 }

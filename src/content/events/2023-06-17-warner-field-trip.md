@@ -1,9 +1,9 @@
 ---
 title: Devil’s Coulee Museum and field tour, Warner, AB
-startDate: "2023-06-17"
-startTime: "10 AM"
-endTime: "4 PM"
-type: "Field Trip"
+startDate: '2023-06-17'
+startTime: '10 AM'
+endTime: '4 PM'
+type: 'Field Trip'
 ---
 
 Leader: Mona Trick

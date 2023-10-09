@@ -1,6 +1,6 @@
 ---
 title: Danek Bone-bed and University of Alberta Paleo-Lab tour, Edmonton, AB.
-startDate: "2023-08-19"
+startDate: '2023-08-19'
 type: Field Trip
 image:
     src: /assets/University_of_Alberta_sign.jpg

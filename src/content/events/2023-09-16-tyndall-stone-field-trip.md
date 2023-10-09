@@ -1,6 +1,6 @@
 ---
 title: Fossils-in-Tyndall Building Stone, Walking tour, Calgary, AB.
-startDate: "2023-09-16"
+startDate: '2023-09-16'
 type: Field Trip
 image:
     src: /assets/trip2021-1tyndallbig.jpg

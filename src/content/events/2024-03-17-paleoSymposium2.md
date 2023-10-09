@@ -1,9 +1,9 @@
 ---
-title: "APS Symposium 2024 Day 2"
-startDate: "2024-03-17"
-startTime: "9:00 AM"
-endTime: "4:00 PM"
-type: "Symposium"
+title: 'APS Symposium 2024 Day 2'
+startDate: '2024-03-17'
+startTime: '9:00 AM'
+endTime: '4:00 PM'
+type: 'Symposium'
 ---
 
 In conjunction with Mount Royal University Earth and Environmental

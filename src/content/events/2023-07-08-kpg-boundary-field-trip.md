@@ -1,6 +1,6 @@
 ---
 title: K/Pg boundary, Knudsen’s Farm, Huxley, AB.
-startDate: "2023-07-08"
+startDate: '2023-07-08'
 type: Field Trip
 ---
 

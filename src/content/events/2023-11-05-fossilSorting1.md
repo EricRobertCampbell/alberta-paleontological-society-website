@@ -1,9 +1,9 @@
 ---
-title: "Fossil Sorting Opportunity"
-startDate: "2023-11-05"
-startTime: "1:00 PM"
-endTime: "3:30 PM"
-type: "Fossil Sorting"
+title: 'Fossil Sorting Opportunity'
+startDate: '2023-11-05'
+startTime: '1:00 PM'
+endTime: '3:30 PM'
+type: 'Fossil Sorting'
 ---
 
 We wil be searching for and sorting micro fossils from matrix again this fall and winter.
