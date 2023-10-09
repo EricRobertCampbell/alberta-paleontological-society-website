@@ -4,20 +4,18 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.3.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.2.0...v1.3.0) (2023-10-09)
 
-
 ### Features
 
-* added november presentation ([27278fb](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/27278fb62c722e1a140c55ee78ef72157259154a)), closes [#79](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/79)
-
+-   added november presentation ([27278fb](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/27278fb62c722e1a140c55ee78ef72157259154a)), closes [#79](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/79)
 
 ### Bug Fixes
 
-* additional review comments ([b93dc8d](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/b93dc8d3c4a6243f3bc77afb07f921dddff47947)), closes [#76](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/76)
-* fixed date display hopefully ([073beaa](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/073beaa27002e9fd8cf4ec55c310256ef443c936))
-* fixed time display ([826be1f](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/826be1f16f6768e152862c18b0bd14e91ce4e621))
-* fixed time zone display correctly this time ([da391af](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/da391af7027e9244a81c5b6a3a175b72fdae639b))
-* set server timezone ([8c77c36](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/8c77c3675c8d83a5d349e30c06c51f96c03b9c56)), closes [#42](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/42)
-* times are displayed correctly ([f8eb40f](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/f8eb40f4b87eb21c507c4ca3899e9e4b9da5de16)), closes [#87](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/87)
+-   additional review comments ([b93dc8d](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/b93dc8d3c4a6243f3bc77afb07f921dddff47947)), closes [#76](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/76)
+-   fixed date display hopefully ([073beaa](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/073beaa27002e9fd8cf4ec55c310256ef443c936))
+-   fixed time display ([826be1f](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/826be1f16f6768e152862c18b0bd14e91ce4e621))
+-   fixed time zone display correctly this time ([da391af](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/da391af7027e9244a81c5b6a3a175b72fdae639b))
+-   set server timezone ([8c77c36](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/8c77c3675c8d83a5d349e30c06c51f96c03b9c56)), closes [#42](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/42)
+-   times are displayed correctly ([f8eb40f](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/f8eb40f4b87eb21c507c4ca3899e9e4b9da5de16)), closes [#87](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/87)
 
 ## 1.2.0 (2023-10-09)
 
