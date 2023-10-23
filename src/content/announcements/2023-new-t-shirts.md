@@ -6,7 +6,9 @@ endDate: '2024-02-24'
 
 We have a new t-shirt design by our own President, Cory Gross!
 
-<img src="/announcement-media/APSShirt2-medium.png" alt="The new t-shirt design" width="600" />
+<div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+<img src="/announcement-media/APSShirt2-medium.png" alt="The new t-shirt design" style="width: 80%;" />
+</div>
 
 In his own words,
 
@@ -14,6 +16,8 @@ In his own words,
 
 You can see the finished shirt below:
 
-<img src="/announcement-media/APSShirt2-shirt-cropped.jpg" alt="A picture of the new t-shirt with the design" width="600" />
+<div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+<img src="/announcement-media/APSShirt2-shirt-cropped.jpg" alt="A picture of the new t-shirt with the design" style="width: 80%" />
+</div>
 
 They are available for purchase in person at our [meetings](/events/monthlymeetings) at a cost of $20 for APS members and $15 for non-members.
