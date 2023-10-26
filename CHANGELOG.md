@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.3.2...v1.4.0) (2023-10-26)
+
+
+### Features
+
+* added new t-shirt design announcement ([f066df8](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/f066df8a16e249bc64af0f7033fefc69566b198f)), closes [#97](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/97)
+
+
+### Bug Fixes
+
+* changelog ignore when formatting ([62dc3f6](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/62dc3f61ab1e27384f1ff37c3ac0c1d63c69d51c)), closes [#90](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/90)
+
 ### [1.3.2](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.3.1...v1.3.2) (2023-10-22)
 
 
