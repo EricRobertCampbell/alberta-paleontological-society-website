@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 * fixed broken t-shirt announcement ([36ed5d4](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/36ed5d4c59952fec344fd644c32e6ba514656bce)), closes [#100](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/100)
 
+
 ## [1.4.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.3.2...v1.4.0) (2023-10-26)
 
 
