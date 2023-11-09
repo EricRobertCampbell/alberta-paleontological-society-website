@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.4.1...v1.5.0) (2023-11-09)
+
+
+### Features
+
+* added new microfossil sorting dates ([36613ec](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/36613ec1d3f31396bf53c4f9afb58dd3acf33466)), closes [#103](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/103)
+* added new t-shirt design announcement ([54b61da](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/54b61dae3c0ddb1e8420510f94ed867465155292)), closes [#97](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/97)
+
 ### [1.4.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.4.0...v1.4.1) (2023-10-27)
 
 
