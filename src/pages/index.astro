@@ -1,71 +1,71 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Event from "../components/Event.astro";
-import Announcement from "../components/Announcement.astro";
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card.astro'
+import Event from '../components/Event.astro'
+import Announcement from '../components/Announcement.astro'
 
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content'
 
 import {
 	APS_FACEBOOK_LINK,
 	APS_YOUTUBE_LINK,
 	getTodayString,
 	formatDate,
-} from "../utility";
+} from '../utility'
 
 // get the next event
-const todayString = getTodayString();
+const todayString = getTodayString()
 
-const allEvents = await getCollection("events");
+const allEvents = await getCollection('events')
 const renderedEvents = (
 	await Promise.all(
 		allEvents.map(async (event) => {
-			return await event.render();
+			return await event.render()
 		})
 	)
 )
 	.filter((e) => {
-		return e.remarkPluginFrontmatter.startDate > todayString;
+		return e.remarkPluginFrontmatter.startDate > todayString
 	})
 	.sort((e1, e2) => {
 		return -e1.remarkPluginFrontmatter.startDate.localeCompare(
 			e2.remarkPluginFrontmatter.startDate
-		);
-	});
+		)
+	})
 
-let nextEvent;
+let nextEvent
 if (renderedEvents.length > 0) {
-	nextEvent = renderedEvents[renderedEvents.length - 1];
+	nextEvent = renderedEvents[renderedEvents.length - 1]
 }
 
-const allAnnouncements = (await getCollection("announcements"))
+const allAnnouncements = (await getCollection('announcements'))
 	.filter(({ data }) => {
 		// NB This is horrifying. There definitely needs to be a better way of doing this
 		// TODO sort out this nonsense
-		let [year, month, day] = getTodayString().split("-");
-		day = Number(day) + 2;
-		const today = new Date([year, month, day].join("-"));
-		const startDate = new Date(data.startDate);
-		const endDate = new Date(data.endDate);
-		return today >= startDate && today <= endDate;
+		let [year, month, day] = getTodayString().split('-')
+		day = Number(day) + 2
+		const today = new Date([year, month, day].join('-'))
+		const startDate = new Date(data.startDate)
+		const endDate = new Date(data.endDate)
+		return today >= startDate && today <= endDate
 	})
 	.sort((a1, a2) => {
 		return (
-			new Date(a1.data.startDate).getTime() -
-			new Date(a2.data.startDate).getTime()
-		);
-	});
+			new Date(a2.data.startDate).getTime() -
+			new Date(a1.data.startDate).getTime()
+		)
+	})
 const renderedAnnouncements = await Promise.all(
 	allAnnouncements.map(async (announcement) => {
-		return await announcement.render();
+		return await announcement.render()
 	})
-);
+)
 ---
 
 <Layout title="Alberta Palaeontological Society">
 	<section>
 		<img
-			src={"/assets/warner_1_low.jpg"}
+			src={'/assets/warner_1_low.jpg'}
 			id="initial-image"
 			alt="APS members listening to a description of the Devil's Coulee fossil locality"
 		/>
@@ -99,7 +99,7 @@ const renderedAnnouncements = await Promise.all(
 					<h2>Announcements</h2>
 					{renderedAnnouncements.map(
 						(announcement, index, allAnnouncements) => {
-							const { Content, headings } = announcement;
+							const { Content, headings } = announcement
 							return (
 								<Announcement
 									frontmatter={
@@ -109,7 +109,7 @@ const renderedAnnouncements = await Promise.all(
 								>
 									<Content />
 								</Announcement>
-							);
+							)
 						}
 					)}
 				</section>
@@ -127,7 +127,7 @@ const renderedAnnouncements = await Promise.all(
 					<nextEvent.Content />
 				</Event>
 				<p>
-					For more information, see our{" "}
+					For more information, see our{' '}
 					<a href="/events/">events page</a>.
 				</p>
 			</section>
@@ -157,7 +157,7 @@ const renderedAnnouncements = await Promise.all(
 				<img
 					class="social-img"
 					src="/logos/f_logo_RGB-Blue_58.png"
-					style={{ verticalAlign: "middle" }}
+					style={{ verticalAlign: 'middle' }}
 					title="Facebook"
 				/></a
 			>
@@ -165,21 +165,21 @@ const renderedAnnouncements = await Promise.all(
 				<img
 					class="social-img"
 					src="/logos/yt_logo_rgb_light.png"
-					style={{ verticalAlign: "middle" }}
+					style={{ verticalAlign: 'middle' }}
 					title="YouTube"
 				/></a
 			>
 		</div>
 	</section>
 	<section>
-		<h3>The APS has a new book for sale!</h3>{" "}
+		<h3>The APS has a new book for sale!</h3>{' '}
 		<div
 			style={{
-				display: "flex",
-				flexDirection: "column",
+				display: 'flex',
+				flexDirection: 'column',
 			}}
 		>
-			<h4 style={{ textAlign: "center" }}>APS Books for Sale</h4>
+			<h4 style={{ textAlign: 'center' }}>APS Books for Sale</h4>
 			<div id="book-pictures">
 				<a href="store#hopejohnson">
 					<img
@@ -191,7 +191,7 @@ const renderedAnnouncements = await Promise.all(
 					<img
 						alt="Guide to Common Vertebrate Fossils from the Cretaceous of Albera"
 						src="/guidetofossilssmall.jpg"
-						style={{ marginRight: "8px" }}
+						style={{ marginRight: '8px' }}
 					/>
 				</a>
 			</div>
@@ -201,7 +201,7 @@ const renderedAnnouncements = await Promise.all(
 				how to purchase a copy and other details. These books will also be
 				available for purchase at our monthly meetings.
 			</p>
-		</div>{" "}
+		</div>{' '}
 	</section>
 	<section>
 		<h2>Privacy Policy</h2>
