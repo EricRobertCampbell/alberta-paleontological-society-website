@@ -15,6 +15,8 @@ No fee for this event. It is open to the public and it is a good family event.
 
 Registration is not required, but if you contact me, Mona Trick, (587) 578-4579 or email giftshop@albertapaleo.org, and let me know if you are planning to attend, then I’ll be able to inform you in case we need to cancel a session. No experience is required. Bring tweezers to pick the tiny fossils from the soil and a pen to label your finds.
 
+Due to the use of microscopes and the delicate nature of the fossils we’re collecting, there is a minimum age of 12 for all participants.
+
 ### Dates:
 
 -   Sunday November 5

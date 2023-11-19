@@ -25,6 +25,8 @@ you if we need to cancel this session. No experience is required. Bring tweezers
 pointed ends) or a small paint brush to pick the tiny fossils from the soil and a pen to
 label your finds. Parking is free at Mount Royal University on Sundays.
 
+Due to the use of microscopes and the delicate nature of the fossils we’re collecting, there is a minimum age of 12 for all participants.
+
 <figure>
 <img style="width: 80%;" src="/events/20231105_fossilSorting.jpg" />
 <figcaption>Under the guidance of Dr. Alex Dutchak (shown lower right), volunteers search
