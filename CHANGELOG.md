@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.4.1...v1.6.0) (2023-11-19)
+
+
+### Features
+
+* added event and announcement for december social ([0e57770](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/0e57770e1e065851550c0de1b6ba71d220764adc)), closes [#111](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/111)
+* added new microfossil sorting dates ([bad6ca2](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/bad6ca2b467dd3b53341ac3a5e9f95c026e0c01c)), closes [#103](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/103)
+* added new t-shirt design announcement ([54b61da](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/54b61dae3c0ddb1e8420510f94ed867465155292)), closes [#97](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/97)
+* added order form and t-shirt to store ([061d708](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/061d7087a5680fdca6551443b720a29656c30120)), closes [#108](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/108)
+
 ## [1.5.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.4.1...v1.5.0) (2023-11-09)
 
 
