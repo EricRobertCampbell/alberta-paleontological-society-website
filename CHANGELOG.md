@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.6.0...v1.6.1) (2023-11-21)
+
+
+### Bug Fixes
+
+* updated fossil sorting announcements to include minimum age ([f1ad38e](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/f1ad38e61c0c6ad54ed4ee9387bbcdf3e4e59eee)), closes [#115](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/115)
+
 ## [1.6.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.4.1...v1.6.0) (2023-11-19)
 
 
