@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.4.1...v1.9.0) (2023-11-23)
+
+
+### Features
+
+* added event and announcement for december social ([b1da81d](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/b1da81d029a94ad4b473b22db1ca8401b39d717e)), closes [#111](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/111)
+* added new microfossil sorting dates ([bad6ca2](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/bad6ca2b467dd3b53341ac3a5e9f95c026e0c01c)), closes [#103](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/103)
+* added new t-shirt design announcement ([54b61da](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/54b61dae3c0ddb1e8420510f94ed867465155292)), closes [#97](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/97)
+* added order form and t-shirt to store ([061d708](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/061d7087a5680fdca6551443b720a29656c30120)), closes [#108](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/108)
+
+
+### Bug Fixes
+
+* added september 2024 date ([84d73f2](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/84d73f2fd9c25a7ac517e0d62e6a568c375e21ff)), closes [#119](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/119)
+* updated fossil sorting announcements to include minimum age ([ae5923b](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/ae5923b9d41b47455c8f1c090b80ca7e1f403d6a)), closes [#115](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/115)
+
 ### [1.8.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.8.0...v1.8.1) (2023-11-23)
 
 
