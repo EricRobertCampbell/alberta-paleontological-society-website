@@ -1,6 +1,6 @@
 ---
 title: New Location for APS Videos On YouTube!
-startDate: '2023-12-01'
+startDate: '2023-11-28'
 endDate: '2023-12-17'
 ---
 
