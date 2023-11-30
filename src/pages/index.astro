@@ -49,6 +49,7 @@ const allAnnouncements = (await getCollection('announcements'))
 		const startDate = new Date(data.startDate)
 		const endDate = new Date(data.endDate)
 		dates.push({
+			getTodayString: getTodayString(),
 			today,
 			startDate,
 			endDate,
