@@ -1,5 +1,5 @@
 ---
-title: 'APS Symposium 2024 Day 1'
+title: 'APS Symposium 2024'
 startDate: '2024-03-16'
 startTime: '9:00 AM'
 endTime: '5:00 PM'
@@ -9,7 +9,7 @@ type: 'Symposium'
 In conjunction with Mount Royal University Earth and Environmental
 Sciences and the CEGA Paleontology Division, we are pleased to announce
 that the 27<sup>th</sup> annual Alberta Paleontological Society Symposium
-will take place on Saturday, March 16, 2024 with workshops on Sunday, March 17.
+will take place on Saturday, March 16, 2024.
 
 This symposium will contain presentations from a mix of amateur and
 professional palaeontologists. The aim is to showcase palaeontology to
@@ -24,5 +24,5 @@ The first day will include lectures by notable paleontologists, an opportunity t
 
 See the [symposium page](/events/symposium) for additional details.
 
-View a <a href="https://youtu.be/neXG3Y0q-O8">brief video</a> of the 2018
+You can view a <a href="https://www.youtube.com/playlist?list=PLIbLEoMjr_5N6TiqYkZwFSTqoHC13T-WT">selection of videos</a> of the 2023
 symposium.

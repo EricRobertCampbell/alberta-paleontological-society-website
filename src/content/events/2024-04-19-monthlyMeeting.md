@@ -6,4 +6,6 @@ endTime: '9 PM'
 type: 'Monthly Meeting'
 ---
 
-Speakers TBD
+**An Update on the Romer Gap in the Fossil Record**
+
+Speaker: Dr Jason Anderson
