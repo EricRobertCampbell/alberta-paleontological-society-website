@@ -9,6 +9,6 @@ type: 'Monthly Meeting'
 #### Regular Presentation
 
 **Reading the Fossil Record: how fossils from China reveal the origin and
-evolutionary history of the last primate in North American before the arrival of humans.**
+evolutionary history of the last primate in North American before the arrival of humans.** [Abstract](</presentationAbstracts/2023/Kathleen Rust Abstract Biography January 19 2024.pdf>)
 
-Speaker: Kathleen Rust
+Speaker: Kathleen Rust, PhD Candidate researching early primate evolution and systematics at the University of Kansas Biodiversity Institute and department of Ecology and Evolutionary Biology
