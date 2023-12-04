@@ -3,6 +3,7 @@ export const prerender = true
 
 import Layout from '../../layouts/Layout.astro'
 import HeadingWithBackground from '../../components/HeadingWithBackground.astro'
+import EmailLink from '../../components/EmailLink.astro'
 ---
 
 <Layout subtitle="Symposium">
@@ -38,5 +39,30 @@ import HeadingWithBackground from '../../components/HeadingWithBackground.astro'
 		</a> on our <a href="https://www.youtube.com/@AlbertaPaleo">
 			YouTube channel
 		</a>.
+	</p>
+
+	For additional information, see <a
+		href="/symposium/2024/Paleo2024Circular1MDT.pdf">circular 1</a
+	>.
+
+	<h3>Posters</h3>
+
+	<p>
+		The APS invites you to submit a poster for the symposium! If you are an
+		avocational or professional palaeontologist and have been doing
+		research, we would love for you to submit your poster for the symposium.
+		Any area related to palaeontology is suitable. For additional
+		information, including information about the format and how to create
+		it, please see <a href="/symposium/2024/Paleo2024Circular1MDT.pdf"
+			>circular 1</a
+		>.
+	</p>
+
+	<p>
+		All posters should be submitted to our poster coordinator, Matthew
+		Rhodes, at <EmailLink
+			email="posters@albertapaleo.org"
+			subject="Paleo 2024 Poster Submission"
+		/>. The deadline for submission is February 15, 2024.
 	</p>
 </Layout>
