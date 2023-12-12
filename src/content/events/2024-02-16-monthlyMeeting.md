@@ -10,9 +10,9 @@ We have two feature presentations this month!
 
 #### Regular Presentation
 
-**Bone Microstructure: Implications for Paleontological Soft Tissue Reconstruction.**
+**Bone Cells to Big Dinos: Using Liquid Crystal Polarimetry as a New Tool to Learn about Fossil Vertebrates.**
 
-Speaker: Amber Whitebone, PhD Candidate on Evolutionary Biology at University of New England - Enthesis
+Speaker: Amber Whitebone, PhD Candidate on Evolutionary Biology at University of New England
 
 **Unveiling Ancient Life Through Combined Quantitative and Traditional Paleontological Approaches.**
 
