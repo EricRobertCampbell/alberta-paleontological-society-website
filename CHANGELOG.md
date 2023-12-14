@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.11.2...v1.12.0) (2023-12-14)
+
+
+### Features
+
+* symposium circular 2 and schedule ([992bd0f](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/992bd0f5be2241cfcf9f32219822197f74676088)), closes [#148](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/148)
+
 ### [1.11.2](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.11.1...v1.11.2) (2023-12-12)
 
 
