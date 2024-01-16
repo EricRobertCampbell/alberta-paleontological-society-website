@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.14.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.13.1...v1.14.0) (2024-01-16)
+
+
+### Features
+
+* new open source publication ([6421314](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/64213141b85be63ff3cd6cb2f2bdbffe7e0f087f)), closes [#154](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/154)
+
+
+### Bug Fixes
+
+* clarified poster deadlines ([0dcbea6](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/0dcbea6d80ef335fb41698ebab2c760e356dd258)), closes [#156](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/156)
+* corrected t-shirt prices ([53b63ff](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/53b63ff90cef35e4b79d8b55721f0f1da1e62fc0)), closes [#155](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/155)
+
 ### [1.13.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.13.0...v1.13.1) (2024-01-06)
 
 
