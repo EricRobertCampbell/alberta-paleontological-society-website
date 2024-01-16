@@ -20,4 +20,4 @@ You can see the finished shirt below:
 <img src="/announcement-media/APSShirt2-shirt-cropped.jpg" alt="A picture of the new t-shirt with the design" style="width: 80%" />
 </div>
 
-They are available for purchase in person at our [meetings](/events/monthlymeetings) or by using <a href="/store/TshirtOrderForm20231107.pdf">this order form</a> at a cost of $20 for APS members and $15 for non-members.
+They are available for purchase in person at our [meetings](/events/monthlymeetings) or by using <a href="/store/TshirtOrderForm20231107.pdf">this order form</a> at a cost of $15 for APS members and $20 for non-members.
