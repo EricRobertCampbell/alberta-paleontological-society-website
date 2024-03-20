@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.15.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.14.0...v1.15.0) (2024-03-20)
+
+
+### Features
+
+* added 2023 bulletins ([8d0cf0c](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/8d0cf0c1b61d665790d925f737d65c92ad0604a9)), closes [#159](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/159)
+
+
+### Bug Fixes
+
+* typo in jessica theodor's name ([1085395](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/1085395317f70947201fefb0a41c1935a74dc580)), closes [#160](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/160)
+
 ## [1.14.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.13.1...v1.14.0) (2024-01-16)
 
 
