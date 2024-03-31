@@ -3,6 +3,18 @@ export const prerender = true;
 
 import Layout from "../../layouts/Layout.astro";
 import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
+
+/* <p> */
+/* 	<p> */
+/* 		The Society's Annual General Meeting will take place in May of each */
+/* 		year. This gathering is intended for the purpose of electing Officers */
+/* 		and Directors, making changes to the Bylaws, and addressing any other */
+/* 		matters that the Board presents to the Society. */
+/* 	</p> */
+/* 	<p> */
+/* 		Check back here later for information about the agenda and other */
+/* 		procedures! */
+/* 	</p> */
 ---
 
 <Layout subtitle="AGM">
@@ -12,14 +24,58 @@ import HeadingWithBackground from "../../components/HeadingWithBackground.astro"
 	>
 		<h1>Annual General Meeting</h1>
 	</HeadingWithBackground>
-	<p>
-		The Society's Annual General Meeting will take place in May of each
-		year. This gathering is intended for the purpose of electing Officers
-		and Directors, making changes to the Bylaws, and addressing any other
-		matters that the Board presents to the Society.
-	</p>
-	<p>
-		Check back here later for information about the agenda and other
-		procedures!
-	</p>
+<h2>Notice of Annual General Meeting</h2>
+
+<p>
+	Friday, May 10, 2024
+</p>
+</h3>
+
+Each member 18 years of age or older shall be entitled to one vote. Votes must be made in person and not by proxy or otherwise.
+<p>
+Outline for the AGM :
+<ol class="alpha">
+	<li>
+		Adoption of the agenda;
+	</li>
+	<li>
+		Adoption of the minutes of the previous AGM;
+	</li>
+	<li>
+		Review of the financial statements and auditor's report;
+	</li>
+	<li>
+		Appointment of the Auditors for 2024;
+	</li>
+	<li>
+		Election of the officers and directors;
+	</li>
+</ol>
+
+<p>
+Motions that will be voted upon at the 2024 AGM.
+<p>
+<ol>
+	<li>
+		Appointment of the audiors<br>
+	</li>
+</ol>
+
+<ul>
+<li>
+	<a href="/agm/2024/agmminutes2023.pdf">Annual General Meeting Minutes May 12, 2023</a>
+</li>
+<li>
+	<a href="/agm/2024/APSAuditSummary2023RevAndExpenses.pdf">2023 Financial Statements and Auditor's Report (PDF)</a>
+</li>
+<li>
+	<a href="/agm/2024/audit2023.pptx">2023 Financial Statements and Auditor's Report (PowerPoint)</a>
+</li>
+</ul>
 </Layout>
+
+<style>
+ol.alpha {
+	list-style-type: lower-alpha;
+}
+</style>
