@@ -1,5 +1,5 @@
 ---
-title: Fossils-in-Tyndall Building Stone, Walking tour, Calgary, AB.
+title: Tyndall building stone walking tour, Calgary
 startDate: '2023-09-16'
 type: Field Trip
 image:
@@ -9,6 +9,6 @@ image:
 
 Leader: Tako Koning
 
-Once again, Tako Koning has agreed to conduct his popular tour of Calgary buildings clad with Ordovician-aged Red River Formation limestone originally quarried in Tyndall, Manitoba. See impressively preserved fossils of corals, gastropods, starfish, orthocones and even algae at Calgary landmarks like the historic Bank of Montreal building. This will be a walking tour of several buildings in downtown Calgary, the community of Kensington and the SAIT campus and is suitable for all ages.
+Once again, Tako Koning has agreed to conduct his popular tour of Calgary structures adorned in Ordovician-aged Red River Formation limestone originally quarried in Tyndall, Manitoba. See im-pressively preserved fossils of corals, gastropods, orthocones and receptaculitids at Calgary landmarks like the historic Bank of Montreal building. This will be a walking tour of several buildings in downtown Calgary, the community of Kensington and the SAIT campus and is suitable for all ages. The fee is $10.
 
 **Registration deadline is September 1, 2023.**
