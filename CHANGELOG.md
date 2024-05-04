@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.20.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.19.0...v1.20.0) (2024-05-04)
+
+
+### Features
+
+* added ctv symposium link ([8f4b701](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/8f4b7010ab303d4782bb37de4c3504ff6b98adbd)), closes [#171](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/171)
+
 ## [1.19.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.18.0...v1.19.0) (2024-04-27)
 
 
