@@ -543,6 +543,69 @@ declare module 'astro:content' {
   collection: "events";
   data: InferEntrySchema<"events">
 } & { render(): Render[".md"] };
+"2025-01-17-monthlyMeeting.md": {
+	id: "2025-01-17-monthlyMeeting.md";
+  slug: "2025-01-17-monthlymeeting";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2025-02-21-monthlyMeeting.md": {
+	id: "2025-02-21-monthlyMeeting.md";
+  slug: "2025-02-21-monthlymeeting";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2025-03-1516-symposium.md": {
+	id: "2025-03-1516-symposium.md";
+  slug: "2025-03-1516-symposium";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2025-04-11-monthlyMeeting.md": {
+	id: "2025-04-11-monthlyMeeting.md";
+  slug: "2025-04-11-monthlymeeting";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2025-05-09-monthlyMeeting.md": {
+	id: "2025-05-09-monthlyMeeting.md";
+  slug: "2025-05-09-monthlymeeting";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2025-09-19-monthlyMeeting.md": {
+	id: "2025-09-19-monthlyMeeting.md";
+  slug: "2025-09-19-monthlymeeting";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2025-10-17-monthlyMeeting.md": {
+	id: "2025-10-17-monthlyMeeting.md";
+  slug: "2025-10-17-monthlymeeting";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2025-11-21-monthlyMeeting.md": {
+	id: "2025-11-21-monthlyMeeting.md";
+  slug: "2025-11-21-monthlymeeting";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2025-12-12-monthlyMeeting.md": {
+	id: "2025-12-12-monthlyMeeting.md";
+  slug: "2025-12-12-monthlymeeting";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
 };
 "faqs": {
 "becomeAPaleontologist.md": {
