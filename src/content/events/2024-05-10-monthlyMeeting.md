@@ -8,7 +8,7 @@ type: 'Monthly Meeting'
 
 #### Regular Presentation
 
-**Dinosaurs or Dragons: the cultural identity of fossils**
+**Dinosaurs or Dragons: the cultural identity of fossils** [Abstract](</presentationAbstracts/2023/Dinosaurs or Dragons Abstract.pdf>)
 
 Speaker: Gavin Bradley, Science MOOC Coordinator and ATS Assistant Lecturer, Faculty of Science at the University of Alberta
 
