@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.22.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.21.0...v1.22.0) (2024-05-26)
+
+
+### Features
+
+* added abstract and modified dorothy field trip ([ca7bd19](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/ca7bd197aa8171720bbdcf9c91a1a022871ad4a7)), closes [#176](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/176) [#177](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/177)
+
 ## [1.21.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.20.0...v1.21.0) (2024-05-10)
 
 
