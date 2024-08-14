@@ -245,6 +245,27 @@ declare module 'astro:content' {
   collection: "announcements";
   data: InferEntrySchema<"announcements">
 } & { render(): Render[".md"] };
+"2024-08-fossilSorting1.md": {
+	id: "2024-08-fossilSorting1.md";
+  slug: "2024-08-fossilsorting1";
+  body: string;
+  collection: "announcements";
+  data: InferEntrySchema<"announcements">
+} & { render(): Render[".md"] };
+"2024-10-fossilSorting2.md": {
+	id: "2024-10-fossilSorting2.md";
+  slug: "2024-10-fossilsorting2";
+  body: string;
+  collection: "announcements";
+  data: InferEntrySchema<"announcements">
+} & { render(): Render[".md"] };
+"2024-11-fossilSorting3.md": {
+	id: "2024-11-fossilSorting3.md";
+  slug: "2024-11-fossilsorting3";
+  body: string;
+  collection: "announcements";
+  data: InferEntrySchema<"announcements">
+} & { render(): Render[".md"] };
 };
 "disclaimers": {
 "contactUs.md": {
@@ -529,9 +550,30 @@ declare module 'astro:content' {
   collection: "events";
   data: InferEntrySchema<"events">
 } & { render(): Render[".md"] };
+"2024-10-20-fossilSorting1.md": {
+	id: "2024-10-20-fossilSorting1.md";
+  slug: "2024-10-20-fossilsorting1";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
 "2024-11-15-monthlyMeeting.md": {
 	id: "2024-11-15-monthlyMeeting.md";
   slug: "2024-11-15-monthlymeeting";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2024-11-17-fossilSorting2.md": {
+	id: "2024-11-17-fossilSorting2.md";
+  slug: "2024-11-17-fossilsorting2";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2024-12-01-fossilSorting3.md": {
+	id: "2024-12-01-fossilSorting3.md";
+  slug: "2024-12-01-fossilsorting3";
   body: string;
   collection: "events";
   data: InferEntrySchema<"events">
