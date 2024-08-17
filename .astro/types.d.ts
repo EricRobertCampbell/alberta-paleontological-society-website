@@ -245,6 +245,13 @@ declare module 'astro:content' {
   collection: "announcements";
   data: InferEntrySchema<"announcements">
 } & { render(): Render[".md"] };
+"2024-08-17-rtmp-sleepin.md": {
+	id: "2024-08-17-rtmp-sleepin.md";
+  slug: "2024-08-17-rtmp-sleepin";
+  body: string;
+  collection: "announcements";
+  data: InferEntrySchema<"announcements">
+} & { render(): Render[".md"] };
 "2024-08-fossilSorting1.md": {
 	id: "2024-08-fossilSorting1.md";
   slug: "2024-08-fossilsorting1";
@@ -567,6 +574,13 @@ declare module 'astro:content' {
 "2024-11-17-fossilSorting2.md": {
 	id: "2024-11-17-fossilSorting2.md";
   slug: "2024-11-17-fossilsorting2";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2024-11-22-rtmp-sleepin.md": {
+	id: "2024-11-22-rtmp-sleepin.md";
+  slug: "2024-11-22-rtmp-sleepin";
   body: string;
   collection: "events";
   data: InferEntrySchema<"events">
