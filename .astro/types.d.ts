@@ -1665,6 +1665,23 @@ declare module 'astro:content' {
   data: InferEntrySchema<"bulletins">
 };
 };
+"fossils": {
+"aps.1992.12": {
+	id: "aps.1992.12";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2022.69": {
+	id: "aps.2022.69";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.87.12": {
+	id: "aps.87.12";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+};
 
 	};
 
