@@ -1,0 +1,14 @@
+---
+const { props } = Astro;
+---
+<button {...props} >
+	<slot />
+</button>
+
+<style>
+	button {
+		background-color: var(--background-colour-medium);
+		border: solid 2px var(--background-colour-darker);
+		border-radius: var(--border-radius-medium);
+	}
+</style>

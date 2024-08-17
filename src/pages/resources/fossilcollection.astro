@@ -2,6 +2,11 @@
 import Layout from "../../layouts/Layout.astro";
 import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
 import EmailLink from "../../components/EmailLink.astro";
+import { THREE_D_SCAN_LOCATION } from '../../utility/constants.ts'
+import { getCollection } from 'astro:content'
+import ThreeDScanDialog from '../../components/ThreeDScanDialog.astro'
+
+const fossils = await getCollection('fossils')
 ---
 
 <Layout subtitle="Fossil Collection">
@@ -61,4 +66,57 @@ import EmailLink from "../../components/EmailLink.astro";
 	<p>
 		Donations are currently not being accepted due to storage limitations.
 	</p>
+
+	<h3>Digital Collection</h3>
+
+	<p>We are working on getting our extensive collections digitized! Please check back here regularly for progress</p>
+
+{ fossils.length > 0 ? 
+<table>
+	<thead>
+		<tr>
+			<th scope="col">Accession Number</th>
+			<th scope="col">Description</th>
+			<th scope="col">Scans?</th>
+		</tr>
+	</thead>
+	<tbody>
+		{
+			fossils.map(fossil => <tr>
+				<td>{fossil.id.toUpperCase()}</td>
+				<td>{fossil.data.description}</td>
+				<td>{fossil.data.threeDScans.map(scan => <ThreeDScanDialog accessionNumber={fossil.id} filename={scan.filename} attribution={scan.attribution} description={fossil.data.description} />)}</td>
+			</tr>)
+		}
+	</tbody>
+</table>
+: null }
+
 </Layout>
+
+<style>
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+	thead {
+		border-bottom: var(--theme-spacing-base) solid
+			var(--background-colour-darker);
+	}
+	td {
+		padding-bottom: calc(2 * var(--theme-spacing-base));
+		padding-left: 0;
+		padding-right: 0;
+		vertical-align: middle;
+	}
+	tr {
+		transition: background-color var(--transition-speed-medium);
+	}
+	tr:hover {
+		background-color: var(--background-colour-dark);
+	}
+	td {
+		padding-left: calc(2 * var(--theme-spacing-base));
+		padding-right: calc(2 * var(--theme-spacing-base));
+	}
+</style>

@@ -90,7 +90,6 @@ const renderedEvents = (
 				event.dataset.startdate >= todayString &&
 				event.dataset.enddate <= todayString
 		);
-		console.log({ todaysEvents });
 		const todaySection = document.querySelector("#events-today");
 		todaysEvents.forEach((eventToday, index, allEventsToday) =>
 			todaySection.appendChild(eventToday)

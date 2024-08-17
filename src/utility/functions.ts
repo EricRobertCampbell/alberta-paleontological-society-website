@@ -62,7 +62,7 @@ export const pathMatchesDestination = (path: string, destination: string) => {
         .split('/')
         .filter((segment) => !!segment)
 
-    // console.log({ pathSegments, destinationSegments });
+    //console.log({ pathSegments, destinationSegments });
 
     if (destinationSegments.length === 0) {
         return pathSegments.length === 0
