@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.24.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.23.0...v1.24.0) (2024-08-17)
+
+
+### Features
+
+* added rtmp sleepin field trip info ([17ba850](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/17ba850a14f7bc12f846395c82455beb07ae83ad)), closes [#181](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/181)
+
 ## [1.23.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.22.0...v1.23.0) (2024-08-14)
 
 
