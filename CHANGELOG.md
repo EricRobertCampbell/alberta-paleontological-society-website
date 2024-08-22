@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.25.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.24.1...v1.25.0) (2024-08-22)
+
+
+### Features
+
+* ability to display a 3d scan ([a30ff5d](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/a30ff5df2c9759190675d3d83c39e07134c7ef36)), closes [#183](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/183)
+
 ### [1.24.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.24.0...v1.24.1) (2024-08-22)
 
 
