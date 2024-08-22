@@ -30,7 +30,7 @@ Your ticket includes:
 -   Palaeontology activities
 -   Full-day admission to the museum
 
-This is a fantastic event for kids & families, but we require at least one adult per five children.
+This is a fantastic event for kids & families, but we require at least one adult per five children. Please note also that only children between **5 - 13 years old** are eligible to attend.
 
 **Space is limited** — we’re only accepting the first 20 registrants, so don’t delay!
 
