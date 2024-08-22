@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.24.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.24.0...v1.24.1) (2024-08-22)
+
+
+### Bug Fixes
+
+* updated rtmp sleepin with ages of the children ([f4386cf](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/f4386cf37c04999812b51bba2409a8bb3c286f90)), closes [#184](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/184)
+
 ## [1.24.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.23.0...v1.24.0) (2024-08-17)
 
 
