@@ -6,9 +6,11 @@ interface Props {
     description: string;
 	filename: string;
 	attribution: string;
+    index: number;
+    total: number;
 }
 
-const {accessionNumber, filename, attribution, description} = Astro.props;
+const {accessionNumber, filename, attribution, description, index, total} = Astro.props;
 const filenameIdentifier = filename.replace(/\./g, '-')
 ---
 
@@ -23,7 +25,7 @@ const filenameIdentifier = filename.replace(/\./g, '-')
 </div>
 </dialog>
 <Button data-identifier="three-d-scan-open-button" data-filename={filename}>
-	Open 
+    Open{total > 1 ? ` (${index + 1}/${total})` : ''}
 </Button>
 
 

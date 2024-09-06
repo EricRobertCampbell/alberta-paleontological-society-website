@@ -110,12 +110,14 @@ const FossilCollection = defineCollection({
     schema: z.object({
         // NB the accession number is the id (name of the file) - it will appear as the id
         description: z.string(), // a description of the fossil
-        threeDScans: z.array(
-            z.object({
-                filename: z.string(),
-                attribution: z.string(),
-            })
-        ),
+        threeDScans: z
+            .array(
+                z.object({
+                    filename: z.string(),
+                    attribution: z.string(),
+                })
+            )
+            .optional(),
     }),
 })
 

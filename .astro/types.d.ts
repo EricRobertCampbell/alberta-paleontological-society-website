@@ -1666,18 +1666,183 @@ declare module 'astro:content' {
 };
 };
 "fossils": {
+"aps.1985.13": {
+	id: "aps.1985.13";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.1985.26": {
+	id: "aps.1985.26";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.1985.31": {
+	id: "aps.1985.31";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.1986.02": {
+	id: "aps.1986.02";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.1986.15": {
+	id: "aps.1986.15";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.1986.37": {
+	id: "aps.1986.37";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.1986.49": {
+	id: "aps.1986.49";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.1987.12": {
+	id: "aps.1987.12";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.1987.13": {
+	id: "aps.1987.13";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.1990.04": {
+	id: "aps.1990.04";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.1992.06": {
+	id: "aps.1992.06";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
 "aps.1992.12": {
 	id: "aps.1992.12";
   collection: "fossils";
   data: InferEntrySchema<"fossils">
 };
-"aps.2022.69": {
-	id: "aps.2022.69";
+"aps.1992.14": {
+	id: "aps.1992.14";
   collection: "fossils";
   data: InferEntrySchema<"fossils">
 };
-"aps.87.12": {
-	id: "aps.87.12";
+"aps.1992.15": {
+	id: "aps.1992.15";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.1992.16": {
+	id: "aps.1992.16";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.1992.19": {
+	id: "aps.1992.19";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.1992.20": {
+	id: "aps.1992.20";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2002.01": {
+	id: "aps.2002.01";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2003.01": {
+	id: "aps.2003.01";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2003.02": {
+	id: "aps.2003.02";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2004.26": {
+	id: "aps.2004.26";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2004.29": {
+	id: "aps.2004.29";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2004.32": {
+	id: "aps.2004.32";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2004.33": {
+	id: "aps.2004.33";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2006.41": {
+	id: "aps.2006.41";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2006.63": {
+	id: "aps.2006.63";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2006.64": {
+	id: "aps.2006.64";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2013.03": {
+	id: "aps.2013.03";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2013.05": {
+	id: "aps.2013.05";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2013.08": {
+	id: "aps.2013.08";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2013.09": {
+	id: "aps.2013.09";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2013.11": {
+	id: "aps.2013.11";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2013.12": {
+	id: "aps.2013.12";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2013.14": {
+	id: "aps.2013.14";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2022.063": {
+	id: "aps.2022.063";
+  collection: "fossils";
+  data: InferEntrySchema<"fossils">
+};
+"aps.2022.69": {
+	id: "aps.2022.69";
   collection: "fossils";
   data: InferEntrySchema<"fossils">
 };
