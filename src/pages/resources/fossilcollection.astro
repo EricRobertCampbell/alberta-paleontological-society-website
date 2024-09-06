@@ -85,7 +85,7 @@ const fossils = await getCollection('fossils')
 			fossils.map(fossil => <tr>
 				<td>{fossil.id.toUpperCase()}</td>
 				<td>{fossil.data.description}</td>
-				<td>{fossil.data.threeDScans.map(scan => <ThreeDScanDialog accessionNumber={fossil.id} filename={scan.filename} attribution={scan.attribution} description={fossil.data.description} />)}</td>
+				<td>{(fossil.data.threeDScans || []).map((scan, index, allScans) => <ThreeDScanDialog accessionNumber={fossil.id} filename={scan.filename} attribution={scan.attribution} description={fossil.data.description} index={index} total={allScans.length} />)}</td>
 			</tr>)
 		}
 	</tbody>
