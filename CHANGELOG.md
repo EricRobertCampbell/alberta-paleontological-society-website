@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.27.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.26.0...v1.27.0) (2024-09-13)
+
+
+### Features
+
+* added announcement about online September meeting ([3b87873](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/3b87873a9265257495357f9f67d34af886e8b48e)), closes [#193](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/193)
+* added monthly speakers ([4cf9ffe](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/4cf9ffea4500d2b37576426295b287664f3dfb1a)), closes [#192](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/192)
+* marked the Howard Johnson book as being out of print ([c485e5f](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/c485e5fb3f34c0de628453d70cfc85aebd5fca98)), closes [#191](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/191)
+
 ## [1.26.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.25.0...v1.26.0) (2024-09-06)
 
 
