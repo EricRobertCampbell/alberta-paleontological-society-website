@@ -6,4 +6,4 @@ endTime: '9 PM'
 type: 'Monthly Meeting'
 ---
 
-Speakers TBD
+Main Speaker: **Dr. Darla Zelenitsky** - topic TBA

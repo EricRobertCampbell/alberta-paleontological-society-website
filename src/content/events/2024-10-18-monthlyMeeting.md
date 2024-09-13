@@ -6,4 +6,4 @@ endTime: '9 PM'
 type: 'Monthly Meeting'
 ---
 
-Speakers TBD
+Speakers TBA

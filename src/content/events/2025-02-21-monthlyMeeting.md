@@ -6,4 +6,4 @@ endTime: '9 PM'
 type: 'Monthly Meeting'
 ---
 
-Speakers TBD
+Main Speaker: **Dr. Chris Jass** - "Research at the Mammoth Site of Hot Springs, South Dakota"
