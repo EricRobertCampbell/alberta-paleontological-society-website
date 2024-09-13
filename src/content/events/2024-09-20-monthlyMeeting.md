@@ -6,4 +6,6 @@ endTime: '9 PM'
 type: 'Monthly Meeting'
 ---
 
-Speakers TBD
+Main Speaker: **Emily Bamforth** will be speaking on "Fifty Years at Pipestone Creek: New discoveries and insights from Canada’s densest dinosaur bonebed in the Late Cretaceous Wapiti Formation, northwest Alberta."
+
+Note that this meeting will be **online only**. Please monitor your email for the Zoom link, which will be sent out before the meeting.

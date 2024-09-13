@@ -6,4 +6,6 @@ endTime: '9 PM'
 type: 'Monthly Meeting'
 ---
 
-Speakers TBD
+**APS Social!**
+
+Join us for our December potluck social! Bring any fossils or anything else you'd like to share and a dish to share. We look forward to seeing you there!

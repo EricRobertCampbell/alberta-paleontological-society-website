@@ -6,4 +6,6 @@ endTime: '9 PM'
 type: 'Monthly Meeting'
 ---
 
-Speakers TBD
+Main Speaker: **Sally Hurst** will be speaking about palaeontological regulations in Alberta and Australia.
+
+Short Talk: **Tako Koning** - topic TBA

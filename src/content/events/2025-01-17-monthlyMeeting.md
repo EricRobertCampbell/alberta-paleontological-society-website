@@ -6,4 +6,6 @@ endTime: '9 PM'
 type: 'Monthly Meeting'
 ---
 
-Speakers TBD
+**Student Speakers!**
+
+Stay tuned - we have a number of students lined up to present on their latest projects and research.
