@@ -126,6 +126,9 @@ import PhoneLink from '../components/PhoneLink.astro'
 		<section class="item-sale-item" id="hopejohnson">
 			<h3>
 				Book 2 - Now There Was a Lady!, Hope Johnson, LL.D., 1916 - 2010
+				<span class="out-of-print-span">
+					<em>Out of Print</em>
+				</span>
 			</h3>
 			<div class="item-content">
 				<div class="item-picture">
@@ -163,11 +166,10 @@ import PhoneLink from '../components/PhoneLink.astro'
 					white, with 30-page colour section showcasing Hope Johnson’s
 					art. Includes index.
 				</p>
-				<p>
-					To order a copy, print a copy of the <a
-						href="/store/book2.pdf">book 2 order form</a
-					>, then fill out and send in as per instructions on the
-					form.
+				<p class="out-of-print-p">
+					This book is currently out of print, but individual copies can be printed on demand. Pricing will reflect the cost of printing single copies. Contact <a href="mailto:giftshop@albertapaleo.org?subject=Ordering Howard Johnson Book">
+						Mona Trick
+					</a> if you are interested.
 				</p>
 			</div>
 		</section>
@@ -211,6 +213,13 @@ import PhoneLink from '../components/PhoneLink.astro'
 		}
 		section.sale-item {
 			display: inline-block;
+		}
+		.out-of-print-span {
+			color: var(--error-colour-medium);
+			padding-left: calc(2 * var(--theme-spacing-base));
+		}
+		.out-of-print-p {
+		color: var(--error-colour-medium);
 		}
 
 		/* desktop view */
