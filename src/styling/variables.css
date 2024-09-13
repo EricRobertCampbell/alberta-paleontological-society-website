@@ -51,6 +51,38 @@
     );
     --accent-colour-text: hsl(var(--accent-colour-hue), 90%, 5%);
 
+    /* Base error colour settings */
+    --error-colour-hue: 0; /* Red hue */
+    --error-colour-saturation: 80%; /* Saturation level */
+    --error-colour-lightness: 50%; /* Base lightness */
+
+    /* Variants based on lightness */
+    --error-colour-lighter: hsl(
+        var(--error-colour-hue),
+        var(--error-colour-saturation),
+        calc(var(--error-colour-lightness) + 30%)
+    );
+    --error-colour-light: hsl(
+        var(--error-colour-hue),
+        var(--error-colour-saturation),
+        calc(var(--error-colour-lightness) + 15%)
+    );
+    --error-colour-medium: hsl(
+        var(--error-colour-hue),
+        var(--error-colour-saturation),
+        var(--error-colour-lightness)
+    );
+    --error-colour-dark: hsl(
+        var(--error-colour-hue),
+        var(--error-colour-saturation),
+        calc(var(--error-colour-lightness) - 15%)
+    );
+    --error-colour-darker: hsl(
+        var(--error-colour-hue),
+        var(--error-colour-saturation),
+        calc(var(--error-colour-lightness) - 30%)
+    );
+
     --transition-speed-slow: 0.3s;
     --transition-speed-medium: calc(var(--transition-speed-slow) * 1.5);
     --transition-speed-fast: calc(var(--transition-speed-slow) * 2);
