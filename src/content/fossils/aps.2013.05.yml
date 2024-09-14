@@ -1,4 +1,7 @@
 description: Hadrosaur caudal vertebra (centrum)
+identification: Hadrosauridae
+locality: Montana, USA. Locality not recorded.
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.2013.05.glb
       attribution: Atharva Roy, 2024

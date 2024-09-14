@@ -1,4 +1,7 @@
 description: Vertebral centrum of crocodile
+identification: Eusuchia
+locality: Montana, USA. Locality not recorded.
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.2013.11.glb
       attribution: Atharva Roy, 2024

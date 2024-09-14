@@ -1,4 +1,8 @@
 description: Ceratopsid horn core
+formation: Belly River Group
+identification: Ceratopsidae
+locality: S of Deadlodge Canyon, SE of Dinosaur Provincial Park, Alberta
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.1992.20.glb
       attribution: Atharva Roy, 2024

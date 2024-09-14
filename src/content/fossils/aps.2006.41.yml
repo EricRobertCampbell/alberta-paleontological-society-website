@@ -1,4 +1,8 @@
 description: Small theropod phalanges (5)
+formation: Dinosaur Park
+identification: Theropoda
+locality: Red Rock Coulee area, Alberta.
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.2006.41a.glb
       attribution: Atharva Roy, 2024

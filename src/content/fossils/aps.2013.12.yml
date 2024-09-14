@@ -1,4 +1,7 @@
 description: Small vertebral (caudal) centrum of crocodile
+identification: Eusuchia
+locality: Montana, USA. Locality not recorded.
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.2013.12.glb
       attribution: Atharva Roy, 2024

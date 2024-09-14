@@ -1,4 +1,8 @@
 description: Fragment of ceratopsian? Skull?
+formation: Belly River Group
+identification: Unknown- possibly ceratopsian
+locality: 'Exact locality not recorded. Southern Alberta, Canada '
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.2022.063.glb
       attribution: Atharva Roy, 2024

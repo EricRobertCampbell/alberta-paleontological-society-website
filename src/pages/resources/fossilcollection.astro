@@ -69,7 +69,7 @@ const fossils = await getCollection('fossils')
 
 	<h3>Digital Collection</h3>
 
-	<p>We are working on getting our extensive collections digitized! Please check back here regularly for progress</p>
+	<p>We are working on getting our extensive collections digitized! Please check back here regularly for progress.</p>
 
 { fossils.length > 0 ? 
 <table>
@@ -77,7 +77,19 @@ const fossils = await getCollection('fossils')
 		<tr>
 			<th scope="col">Accession Number</th>
 			<th scope="col">Description</th>
-			<th scope="col">Scans?</th>
+			<th scope="col">
+				Identification
+			</th>
+			<th scope="col">
+				Formation
+			</th>
+			<th scope="col">
+				Time Span
+			</th>
+			<th scope="col">
+				Locality
+			</th>
+			<th scope="col">Scans</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -85,6 +97,10 @@ const fossils = await getCollection('fossils')
 			fossils.map(fossil => <tr>
 				<td>{fossil.id.toUpperCase()}</td>
 				<td>{fossil.data.description}</td>
+				<td>{fossil.data.identification || "Unknown"}</td>
+				<td>{fossil.data.formation || "Unknown"}</td>
+				<td>{fossil.data.timespan || "Unknown"}</td>
+				<td>{fossil.data.locality || "Unknown"}</td>
 				<td>{(fossil.data.threeDScans || []).map((scan, index, allScans) => <ThreeDScanDialog accessionNumber={fossil.id} filename={scan.filename} attribution={scan.attribution} description={fossil.data.description} index={index} total={allScans.length} />)}</td>
 			</tr>)
 		}

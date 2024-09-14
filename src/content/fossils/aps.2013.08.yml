@@ -1,4 +1,7 @@
 description: Ungual phalanx of ornithomimid
+identification: Ornithomimidae
+locality: Montana, USA. Locality not recorded.
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.2013.08.glb
       attribution: Atharva Roy, 2024

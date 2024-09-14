@@ -1,4 +1,8 @@
 description: Hadrosaur jaw fragment
+formation: Dinosaur Park
+identification: Hadrosauridae
+locality: Waterfall Coulee, Alberta
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.2004.33.glb
       attribution: Atharva Roy, 2024

@@ -1,4 +1,8 @@
 description: 'Hadrosaur Skin Impression'
+formation: Belly River Group
+identification: Theropoda
+locality: South of Deadlodge Canyon, SE of Dinosaur Provincial Park, Alberta
+timespan: Late Cretaceous
 threeDScans:
     - filename: 'APS.1992.12.glb'
       attribution: 'Atharva Roy, 2024'

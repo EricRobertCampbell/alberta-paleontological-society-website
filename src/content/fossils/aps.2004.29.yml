@@ -1,4 +1,8 @@
 description: Dinosaur ungual phalanx
+formation: Dinosaur Park
+identification: Hadrosauridae
+locality: Waterfall Coulee, Alberta
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.2004.29.glb
       attribution: Atharva Roy, 2024

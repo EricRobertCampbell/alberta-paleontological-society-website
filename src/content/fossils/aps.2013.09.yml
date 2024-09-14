@@ -1,4 +1,7 @@
 description: Jaw fragment of juvenile hadrosaur
+identification: Hadrosauridae
+locality: Montana, USA. Locality not recorded.
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.2013.09.glb
       attribution: Atharva Roy, 2024

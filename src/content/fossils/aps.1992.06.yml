@@ -1,4 +1,8 @@
 description: Tyrannosaur tooth
+formation: Belly River Group
+identification: Tyrannosauridae
+locality: South of Deadlodge Canyon, SE of Dinosaur Provincial Park, Alberta
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.92.06.glb
       attribution: Atharva Roy, 2024

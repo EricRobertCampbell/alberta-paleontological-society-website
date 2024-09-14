@@ -1,4 +1,8 @@
 description: Dinosaur phalanx
+formation: Dinosaur Park
+identification: Hadrosauridae
+locality: Princess, Alberta
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.2004.26.glb
       attribution: Atharva Roy, 2024

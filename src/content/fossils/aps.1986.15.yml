@@ -1,4 +1,8 @@
 description: Mosasaur tooth
+formation: Annona-Ozan
+identification: Mosasauridae
+locality: North Sulphur River, Fannin Co., TX, USA
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.86.15.glb
       attribution: Atharva Roy, 2024

@@ -94,22 +94,15 @@ const announcementCollection = defineCollection({
 })
 export type AnnouncementFrontmatter = z.infer<typeof announcementSchema>
 
-const ThreeDScansCollection = defineCollection({
-    type: 'data',
-    schema: z.object({
-        accessionNumber: reference('fossils'), // the accession number of the fossil
-        title: z.string(), // the title of the 3D scan
-        src: z.string(), // the location of the 3D scan (a .glb file) - DO NOT include the directory here! This should only be the filename
-        alt: z.string().optional(), // the alt text for the 3D scan
-        attribution: z.string(), // the attribution for the 3D scan - e.g. the name of the person who created it along with the date
-    }),
-})
-
 const FossilCollection = defineCollection({
     type: 'data',
     schema: z.object({
         // NB the accession number is the id (name of the file) - it will appear as the id
         description: z.string(), // a description of the fossil
+        identification: z.string().optional(), // the identification of the fossil
+        formation: z.string().optional(), // the formation the fossil was found in
+        timespan: z.string().optional(), // the timespan the fossil is from
+        locality: z.string().optional(), // the locality the fossil was found in
         threeDScans: z
             .array(
                 z.object({

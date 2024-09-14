@@ -1,4 +1,8 @@
 description: Tooth of hadrosaur
+formation: Belly River Group
+identification: 'Hadrosauridae '
+locality: West of Iddesleigh, Alberta
+timespan: 'Late Cretaceous '
 threeDScans:
     - filename: APS.85.26.glb
       attribution: Atharva Roy, 2024

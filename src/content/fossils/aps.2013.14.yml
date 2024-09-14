@@ -1,4 +1,7 @@
 description: Jaw fragment of champsosaur
+identification: 'Champsosaurus '
+locality: Montana, USA. Locality not recorded.
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.2013.14.glb
       attribution: Atharva Roy, 2024

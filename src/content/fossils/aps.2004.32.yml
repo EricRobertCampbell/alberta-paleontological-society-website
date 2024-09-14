@@ -1,4 +1,8 @@
 description: Belemnites
+formation: Fernie?
+identification: Belemnite
+locality: Kannaskis area, Alberta
+timespan: Jurassic
 threeDScans:
     - filename: APS.2004.32a.glb
       attribution: Atharva Roy, 2024

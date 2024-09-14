@@ -1,4 +1,8 @@
 description: Theropod manus phalanx
+formation: Belly River Group
+identification: Theropoda
+locality: South of Deadlodge Canyon, SE of Dinosaur Provincial Park, Alberta
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.92.14.glb
       attribution: Atharva Roy, 2024

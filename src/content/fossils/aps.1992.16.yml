@@ -1,4 +1,8 @@
 description: Ornithomimid hand bone
+formation: Belly River Group
+identification: Ornithomimidae
+locality: South of Deadlodge Canyon, SE of Dinosaur Provincial Park, Alberta
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.92.16.glb
       attribution: Atharva Roy, 2024
