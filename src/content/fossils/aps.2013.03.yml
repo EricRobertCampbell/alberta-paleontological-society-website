@@ -1,4 +1,7 @@
 description: Hadrosaur pedal phalanx
+identification: Hadrosauridae
+locality: Montana, USA. Locality not recorded.
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.2013.03.glb
       attribution: Atharva Roy, 2024

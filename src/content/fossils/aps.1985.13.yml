@@ -1,4 +1,10 @@
 description: Dorsal vertebrae of Champsosaurus natator
+formation: Dinosaur Park
+identification: 'Champsosaurus natator'
+locality:
+    Exact locality not recorded. Probably from Wolf (or Wolfe) Coulee, a popular
+    collecting area prior to expansion of Dinosaur Provincial Park.
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.85.13.glb
       attribution: Atharva Roy, 2024

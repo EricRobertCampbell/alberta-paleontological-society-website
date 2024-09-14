@@ -1,4 +1,8 @@
 description: Hadrosaur jaw section
+formation: Belly River Group
+identification: Hadrosauridae
+locality: On the creek badlands, W of Steveville, Alberta
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.92.19.glb
       attribution: Atharva Roy, 2024

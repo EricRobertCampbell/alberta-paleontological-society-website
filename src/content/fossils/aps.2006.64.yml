@@ -1,4 +1,8 @@
 description: Crocodile caudal vertebra
+formation: Dinosaur Park
+identification: Eusuchia
+locality: Red Rock Coulee area, Alberta.
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.2006.64.glb
       attribution: Atharva Roy, 2024

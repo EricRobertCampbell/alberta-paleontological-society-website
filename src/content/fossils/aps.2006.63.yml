@@ -1,4 +1,8 @@
 description: Ornithomimid or small theropod ungual phalanx
+formation: Dinosaur Park
+identification: Theropoda
+locality: Red Rock Coulee area, Alberta.
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.2006.63.glb
       attribution: Atharva Roy, 2024

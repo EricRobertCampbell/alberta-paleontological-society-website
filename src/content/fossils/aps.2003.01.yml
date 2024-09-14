@@ -1,4 +1,8 @@
 description: Hadrosaur phalanx
+formation: Belly River Group
+identification: Hadrosauridae
+locality: Waterfall coulee, Alberta.
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.2003.01.glb
       attribution: Atharva Roy, 2024

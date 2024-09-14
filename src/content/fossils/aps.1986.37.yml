@@ -1,4 +1,8 @@
 description: Ornithomimid ungual phalanx
+formation: Late Cretaceous
+identification: Ornithomimidae
+locality: SE Alberta
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.86.37.glb
       attribution: Atharva Roy, 2024

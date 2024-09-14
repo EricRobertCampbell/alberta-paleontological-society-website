@@ -1,4 +1,7 @@
 description: Nodosaur scute
+identification: Nodosauridae
+locality: N of One Tree Creek, across from Steveville, Alberta
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.87.13.glb
       attribution: Atharva Roy, 2024

@@ -1,4 +1,8 @@
 description: Hadrosaur phalanx
+formation: Belly River Group
+identification: Hadrosauridae
+locality: 'Exact locality not recorded. Southern Alberta, Canada '
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.2022.69.glb
       attribution: Atharva Roy, 2024

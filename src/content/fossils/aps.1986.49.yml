@@ -1,4 +1,8 @@
 description: Phalanges from the manus of a hadrosaur
+formation: Belly River Group
+identification: 'Hadrosauridae '
+locality: NE of Brooks, Alberta
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.86.49B.glb
       attribution: Atharva Roy, 2024

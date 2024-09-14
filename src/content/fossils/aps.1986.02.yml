@@ -1,4 +1,8 @@
 description: Ornithomimid phalanx
+formation: Belly River Group
+identification: 'Ornithomimidae '
+locality: West of Iddesleigh, Alberta
+timespan: Late Cretaceous
 threeDScans:
     - filename: APS.86.02.glb
       attribution: Atharva Roy, 2024
