@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.29.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.28.0...v1.29.0) (2024-09-17)
+
+
+### Features
+
+* added 3d scan tutorial video ([9857a06](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/9857a066e415970854fa0e44994c71928e0ff7f9)), closes [#197](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/197)
+* added abstract for 2024-09-18 presentation ([a735e88](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/a735e88f46ea18ba70db99cda326b54f925e52e7)), closes [#196](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/196)
+* added Atharva's presentation to October 2024 meeting ([da4c927](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/da4c927af4fc48a0a1003f56c2edc6321432678e)), closes [#200](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/200)
+
+
+### Bug Fixes
+
+* updated fossil location information ([5d17a26](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/5d17a26c12be70ddf7f68748fe2304664b0a5559)), closes [#199](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/199)
+
 ## [1.28.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.27.0...v1.28.0) (2024-09-14)
 
 
