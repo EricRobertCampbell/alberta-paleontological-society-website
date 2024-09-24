@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.29.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.29.0...v1.29.1) (2024-09-24)
+
+
+### Bug Fixes
+
+* overflow problems ([215b403](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/215b4033ab00e0190f29fdfe4e753e6824b94925)), closes [#188](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/188) [#202](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/202)
+* updated fossil sorting location ([dee39dc](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/dee39dcb3017ce57aba00320659cf8c91afc14f0)), closes [#203](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/203)
+
 ## [1.29.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.28.0...v1.29.0) (2024-09-17)
 
 
