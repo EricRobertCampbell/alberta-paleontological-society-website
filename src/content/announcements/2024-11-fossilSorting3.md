@@ -8,10 +8,9 @@ endDate: '2024-12-31'
 
 Aid the research of **Dr. Jessica Theodor** and **Dr. Alex Dutchak** of the University of
 Calgary by searching the matrix (soil) from the Cypress Hills Formation (Middle Eocene)
-of Saskatchewan to find tiny fossils. We will be using microscopes in a different room
-at Mount Royal University because construction has closed the room we used
-previously. We will post the location on the [APS website](www.albertapaleo.org), as
-soon as Mount Royal University provides the new location. Join us from 1:00 until 3:30
+of Saskatchewan to find tiny fossils. We will be using microscopes in **room B114
+at Mount Royal University** because construction has closed the room we used
+previously. Join us from 1:00 until 3:30
 pm. on the following Sundays:
 
 -   **December 1, 2024**
