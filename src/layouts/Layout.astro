@@ -56,11 +56,8 @@ const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ""}`;
 		box-sizing: border-box;
 	}
 	body {
-		/* display: flex; */
-		/* justify-content: space-between; */
 		min-height: 100vh;
 		margin: 0;
-		/* margin: var(--theme-spacing-base); */
 		padding: 0;
 	}
 	h1,
@@ -82,5 +79,6 @@ const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ""}`;
 	main {
 		max-width: 1000px;
 		padding: 1.5rem;
+		overflow-x: auto;
 	}
 </style>
