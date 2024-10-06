@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import "../styling/variables.css";
 import "../styling/globalStyles.css";
 export interface Props {
@@ -37,6 +38,7 @@ const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ""}`;
 				<slot />
 			</main>
 		</div>
+		<Footer />
 	</body>
 </html>
 <style is:global>

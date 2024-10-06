@@ -3,12 +3,11 @@ import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
 import Event from '../components/Event.astro'
 import Announcement from '../components/Announcement.astro'
+import SocialsLinks from '../components/SocialsLinks.astro'
 
 import { getCollection } from 'astro:content'
 
 import {
-	APS_FACEBOOK_LINK,
-	APS_YOUTUBE_LINK,
 	getTodayString,
 	formatDate,
 } from '../utility'
@@ -164,24 +163,7 @@ const renderedAnnouncements = await Promise.all(
 			Connect with us to get the latest news, pictures, and recordings of
 			our presentations.
 		</p>
-		<div id="social-links">
-			<a href={APS_FACEBOOK_LINK}>
-				<img
-					class="social-img"
-					src="/logos/f_logo_RGB-Blue_58.png"
-					style={{ verticalAlign: 'middle' }}
-					title="Facebook"
-				/></a
-			>
-			<a href={APS_YOUTUBE_LINK}>
-				<img
-					class="social-img"
-					src="/logos/yt_logo_rgb_light.png"
-					style={{ verticalAlign: 'middle' }}
-					title="YouTube"
-				/></a
-			>
-		</div>
+		<SocialsLinks size={2} />
 	</section>
 	<section>
 		<div
