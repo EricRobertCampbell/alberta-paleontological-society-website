@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.31.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.30.0...v1.31.0) (2024-10-06)
+
+
+### Features
+
+* removed hope johnson book from homepage ([0f0c726](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/0f0c726f28cfa06e5ab02993dec70c70321c54a2)), closes [#207](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/207)
+* updated rtmp sleep in announcements ([4798617](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/4798617a5816e31104470cf25f0ad86170f01371)), closes [#210](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/210)
+* updated socials ([10f1a19](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/10f1a19d0ed4e463406a12fb70f9d701eb18e96e)), closes [#205](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/205) [#206](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/206)
+
 ## [1.30.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.29.1...v1.30.0) (2024-10-06)
 
 
