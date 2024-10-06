@@ -34,13 +34,13 @@ This is a fantastic event for kids & families, but we require at least one adult
 
 **Space is limited** — we’re only accepting the first 20 registrants, so don’t delay!
 
-This program often fills up quickly, so the deadline for registration is **October 1**!
+This program often fills up quickly, so the deadline for registration is **October 21**!
 
 **Additional Information**: Visit [Royal Tyrrell Museum Camp-Ins](https://www.tyrrellmuseum.com/whats_on/activities/camp-ins) for more details.
 
 This is a rare opportunity during the winter months when palaeontology events are usually scarce, so invite friends and family who share your interest in ancient life. Even if they’re not yet APS members, this could be the perfect introduction!
 
-To sign up, use [this form](</fieldTrips/2024/rtmp-sleepin/RTMP - Field Trip Sign Up.pdf>) or see the [field trip page](https://albertapaleo.org/events/fieldtrips) on the APS website.
+To sign up, use [this form](</fieldTrips/2024/rtmp-sleepin/RTMP - Field Trip Sign Up - Deadline Extended.pdf>) or see the [field trip page](https://albertapaleo.org/events/fieldtrips) on the APS website.
 
 Don't miss out on this "Dinovember" adventure!
 
