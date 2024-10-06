@@ -1,0 +1,22 @@
+---
+import SocialsLinks from './SocialsLinks.astro'
+
+const thisYear = new Date().getFullYear()
+---
+
+<footer>
+	<SocialsLinks />
+	<p>&copy; {thisYear} - Alberta Palaeontological Society</p>
+</footer>
+
+<style>
+	footer {
+		background-color: var(--background-colour-dark);
+		color: var(--accent-colour-text);
+		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+</style>
