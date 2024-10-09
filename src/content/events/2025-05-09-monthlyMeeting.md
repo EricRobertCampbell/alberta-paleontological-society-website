@@ -6,6 +6,6 @@ endTime: '9 PM'
 type: 'Monthly Meeting'
 ---
 
-Speakers TBD
+Main Talk: **Ashley Hall** will present on the Palaeontology Outreach Program at the Museum of the Rockies
 
 This meeting will include our annual AGM. Please come prepared to vote on the new board members.
