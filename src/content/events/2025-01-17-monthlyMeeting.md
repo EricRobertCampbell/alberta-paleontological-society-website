@@ -9,3 +9,5 @@ type: 'Monthly Meeting'
 **Student Speakers!**
 
 Stay tuned - we have a number of students lined up to present on their latest projects and research.
+
+In addition, **Mona Trick** will be presenting on the Royal Ontario Museum.

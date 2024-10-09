@@ -6,6 +6,6 @@ endTime: '9 PM'
 type: 'Monthly Meeting'
 ---
 
-Main Speaker: **Sally Hurst** will be speaking about palaeontological regulations in Alberta and Australia.
+Main Speaker: **Sally Hurst** of Macquarie University, Australia, will be speaking on "Paleontological Regulations in Alberta and Australia". This talk will be online.
 
-Short Talk: **Tako Koning** - topic TBA
+Short Talk: **Tako Koning**, P. Geol., Senior Geologist and **Dr. Dale Leckie**, author and adjunct professor in the Faculty of Earth, Energy and Environment, University of Calgary will be speaking on "Great Sands Hills, S.W. Saskatchewan: One of the Largest Sets of Sand Dunes in Canada". This talk will be in person.
