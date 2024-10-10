@@ -10,4 +10,4 @@ type: 'Monthly Meeting'
 
 Stay tuned - we have a number of students lined up to present on their latest projects and research.
 
-In addition, **Mona Trick** will be presenting on the Royal Ontario Museum.
+Short Talk: **Mona Trick**, P.Eng., APS Lifetime Member: "Royal Ontario Museum, June 2024" [Abstract & Bio](/presentationAbstracts/2024/ROMTalkAbstractAndBio.pdf)
