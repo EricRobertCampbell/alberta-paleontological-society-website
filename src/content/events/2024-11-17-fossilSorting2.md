@@ -10,7 +10,7 @@ type: 'Fossil Sorting'
 
 Aid the research of **Dr. Jessica Theodor** and **Dr. Alex Dutchak** of the University of
 Calgary by searching the matrix (soil) from the Cypress Hills Formation (Middle Eocene)
-of Saskatchewan to find tiny fossils. We will be using microscopes in **room B114
+of Saskatchewan to find tiny fossils. We will be using microscopes in **room B140
 at Mount Royal University** because construction has closed the room we used
 previously. Join us from 1:00 until 3:30
 pm. on the following Sundays:
