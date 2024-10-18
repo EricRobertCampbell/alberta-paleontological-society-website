@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.33.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.32.2...v1.33.0) (2024-10-18)
+
+
+### Features
+
+* removed rtmp sleep in sign up information ([82682dc](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/82682dcd15f3876ef421b7dd5faa3bd5da4ac44d)), closes [#218](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/218)
+
 ### [1.32.2](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.32.1...v1.32.2) (2024-10-17)
 
 ### [1.32.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.32.0...v1.32.1) (2024-10-10)
