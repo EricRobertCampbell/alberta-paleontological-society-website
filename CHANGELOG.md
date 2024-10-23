@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.34.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.33.0...v1.34.0) (2024-10-23)
+
+
+### Features
+
+* updated sally hurst title and abstract ([884e28d](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/884e28d3b682ae45fa2f7d145938a840ad1e093c)), closes [#220](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/220)
+
 ## [1.33.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.32.2...v1.33.0) (2024-10-18)
 
 
