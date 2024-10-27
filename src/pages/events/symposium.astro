@@ -4,6 +4,25 @@ export const prerender = true
 import Layout from '../../layouts/Layout.astro'
 import HeadingWithBackground from '../../components/HeadingWithBackground.astro'
 import EmailLink from '../../components/EmailLink.astro'
+
+const internalNavLinks: Array<{title: string, id: string}> = [
+	{
+		title: 'Speaker Schedule',
+		id: 'speaker-schedule'
+	},
+	{
+		title: 'Workshop',
+		id: 'workshop'
+	},
+	{
+		title: 'Posters',
+		id: 'posters'
+	},
+	{
+		title: 'Previous Symposia',
+		id: 'previous-symposia'
+	}
+]
 ---
 
 <Layout subtitle="Symposium">
@@ -11,41 +30,242 @@ import EmailLink from '../../components/EmailLink.astro'
 		<h1>Alberta Paleontological Society Symposium</h1>
 	</HeadingWithBackground>
 
-	<h2>Paleo 2024 - APS Symposium 2024</h2>
+	<h2>Paleo 2025 - APS Symposium 2025</h2>
+	<p class="subtitle">Saturday, March 15 &mdash; Sunday, March 16</p>
+	<p class="subtitle">
+		Mount Royal University, Calgary, Alberta
+	</p>
 
-	<p>This event is done for this year! You can find a playlist with a selection of recorded talks at <a href="https://www.youtube.com/playlist?list=PLIbLEoMjr_5NJoPQJpN-0VJPJ-xDXMrxO">the Paleo 2024 playlist on our YouTube channel</a> or you can view a selection of talks from the 2023 symposium at the<a 
-			href="https://www.youtube.com/playlist?list=PLIbLEoMjr_5N6TiqYkZwFSTqoHC13T-WT" 
- 	> 
-	Paleo 2023 playlist
- 	</a>. You can also see some coverage from <a href="https://calgary.ctvnews.ca/the-alberta-palaeontological-society-hosting-its-annual-symposium-open-to-dinosaur-enthusiasts-of-all-ages-1.6809606">CTV</a> about the 2024 symposium, featuring Cory Gross and Tako Koning.</p>
+	 <p> 
+	 	In conjunction with Mount Royal University Earth and Environmental 
+	 	Sciences and the CEGA Paleontology Division, we are pleased to announce 
+	 	that the 28<sup>th</sup> annual Alberta Palaeontological Society Symposium 
+		will take place on Saturday, March 15, 2025 from 9:00AM - 4:30PM. In addition, we will have a workshop on Sunday, March 16, 2025 from 9:00AM - 12:00pm on 3D fossil scanning.
+	 </p> 
 
-	<p>Thanks to everyone, epecially the speakers, who made this event possible!</p>
+	 <p> 
+	 	This symposium will contain presentations from a mix of amateur and 
+	 	professional palaeontologists. The aim is to showcase palaeontology to 
+	 	the general public and to provide an opportunity for contact between the 
+	 	Alberta Palaeontological Society, industry, government and educational 
+	 	facilities. The event is free and all are welcome to attend or join 
+	 	virtually. Families are encouraged to bring fossils to our 
+	 	identification booth where APS members will do their best to provide you 
+	 	with information. 
+	 </p> 
 
-	<p>The Paleo 2025 Symposium will take place from Saturday, March 15 &mdash; Sunday, March 16. Make sure to save the date!</p>
+	<nav id=internal-nav>
+		<ul>
+			{
+				internalNavLinks.map(({title, id}) => (
+				<li><a href={`#${id}`}>
+						<span>
+							{title}
+						</span>
+				</a></li>
+				))
+			}
+		</ul>
+	</nav>
+
+	<section id="speaker-schedule">
+		<h3>
+			Speaker Schedule
+		</h3>
+		<a id="schedule-download" class="button" href="/symposium/2025/Paleo2025SpeakerSchedule.pdf" target="_blank" rel="noopener noreferrer">Download Schedule</a>
+  <p><strong>All talks will be held in the Jenkins Theatre, Main Building, lower level of Mount Royal University.</strong></p>
+
+  <table>
+    <tr>
+      <th>Time</th>
+      <th>Sessions</th>
+    </tr>
+    <tr>
+      <td>9:00 - 9:15 am</td>
+      <td>Opening Statements.<br><em>Cory Gross, APS President</em><br>Symposium Introduction.<br><em>Mona Trick, APS Symposium Chair</em></td>
+    </tr>
+    <tr>
+      <td>9:15 – 10:15 am</td>
+      <td>Squid Games: Challenges in Ammonite Paleoecology.<br><em>Dr. Cam Tsujita, Department of Earth Sciences, Western University, London, Ontario</em></td>
+    </tr>
+    <tr>
+      <td>10:15 – 10:30 am</td>
+      <td>Coffee Break</td>
+    </tr>
+    <tr>
+      <td>10:30 – 11:00 am</td>
+      <td>Changes in Dinosaur Diversity in Response to Continental Fragmentation.<br><em>Dr. Matthew J. Vavrek, Cutbank Palaeontological Consulting</em></td>
+    </tr>
+    <tr>
+      <td>11:00 – 12:00 pm</td>
+      <td>Overview and Update on the Kaskie Hadrosaur Project in Dinosaur Provincial Park.<br><em>Darren H. Tanke, Senior Technician II, Royal Tyrrell Museum of Palaeontology, Drumheller, Alberta</em></td>
+    </tr>
+    <tr>
+      <td>12:00 – 1:00 pm</td>
+      <td>Lunch Break</td>
+    </tr>
+    <tr>
+      <td>1:00 – 2:00 pm</td>
+      <td>Utilizing Sedimentology to Reconstruct Dinosaurian Environments.<br><em>Dr. Jon Noad, Stantec Consulting; University of Adelaide</em></td>
+    </tr>
+    <tr>
+      <td>2:00 – 3:00 pm</td>
+	  <td>Posters &amp; Displays Breakout Session and coffee break.<br><em>Poster presenters are requested to be with their posters.</em></td>
+    </tr>
+    <tr>
+      <td>3:00 – 3:30 pm</td>
+      <td>New insights into amphibian anatomy, evolution and ecology from the Paleozoic of Atlantic Canada.<br><em>Dr. Hillary Maddin, Carleton University, Ottawa, Ontario</em></td>
+    </tr>
+    <tr>
+      <td>3:30 – 4:30 pm</td>
+      <td>Tyrant Lizard Kings and Queens: A Tale of Canadian T. rexes.<br><em>Dr. Emily Bamforth, Philip J. Currie Dinosaur Museum</em></td>
+    </tr>
+    <tr>
+      <td>4:30 pm</td>
+      <td>Closing remarks for Paleo 2025.<br><em>Mona Trick, APS Symposium Chair</em></td>
+    </tr>
+  </table>
+	</section>
+
+	<section id="workshop">
+		<h3>
+			Workshop
+		</h3>
+
+		<h4>3D Imaging of Fossils</h4>
+		<a id="workshop-description-download" class="button" target="_blank" rel="noopener noreferrer" href="/symposium/2025/Workshop Description - 3D Imaging of Fossils.pdf">Download Workshop Description</a>
+<p><strong>Date:</strong> Sunday, March 16th, 2025</p>
+<p><strong>Location:</strong> Room B140, Main Building, Mount Royal University</p>
+<p><strong>Time:</strong> 9:00 am to 12:00 noon</p>
+<p><strong>Fee:</strong> $20.00 per person (No GST charged)</p>
+
+<h5>Registration</h5>
+<p>Please register by emailing <a href="mailto:giftshop@albertapaleo.org">giftshop@albertapaleo.org</a> or register at one of the monthly meetings, or by mailing your cheque to the Society’s mailing address at:</p>
+<p>P.O. Box 68024 Crowfoot PO, Calgary, Alberta, T3G 3N8</p>
+<p>Pay via cash, cheque, or Interac E-transfer to payee: <a href="mailto:giftshop@albertapaleo.org">giftshop@albertapaleo.org</a>. Make cheques payable to the Alberta Palaeontological Society. The deadline for registration is March 9, 2025.</p>
+
+<h5>Presenters</h5>
+<p>Dr. Emily Bamforth and Jackson Sweder (Curator and Head Technician at the Philip J. Currie Dinosaur Museum) and Atharva Roy (APS)</p>
+
+<h5>Description</h5>
+<p>The use of three-dimensional (3D) imaging technology is becoming widespread in paleontology, having applications for field work, collections management, research, exhibits, and outreach. Much of this technology is now available to the public and easy to use, meaning that anyone with a smartphone, tablet, or laptop can create three-dimensional digital copies of their favorite fossils.</p>
+<p>In this workshop, participants will:</p>
+<ul>
+  <li>Learn about the many uses of 3D imaging technology in paleontology.</li>
+  <li>Be introduced to two specific types of 3D imaging: photogrammetry using the MetaScan and PolyCam applications, and 3D surface scanning using a hand-held light scanner.</li>
+  <li>See a demonstration of both types of technology used in real time.</li>
+  <li>Have an opportunity to 3D scan their own fossil.</li>
+  <li>Learn about the editing programs available to make 3D scans into 3D printable files.</li>
+</ul>
+
+<h5>Suggested Items</h5>
+<ul>
+  <li>A fossil, ideally 2 cm to 10 cm in length, to 3D image. Note that we will also have some fossils available to try scanning.</li>
+  <li>If participants wish to try photogrammetry on their own devices (smartphones, tablets etc.), we recommend downloading and installing either <a href="https://metascan.ai/">MetaScan</a> or <a href="https://poly.cam/tools/photogrammetry">PolyCam</a>. Both applications have a free trial option.</li>
+  <li>Note pad and paper for taking notes.</li>
+</ul>
+
+<p>Registration is limited to 20 participants in each session, so register early.</p>
+	</section>
+
+	 <section id="posters">
+		<h3>
+			Posters
+		</h3>
+
+		<p>
+			The APS invites you to submit a poster for the symposium! If you are
+			an avocational or professional palaeontologist and have been doing
+			research, we would love for you to submit your poster for the
+			symposium. Any area related to palaeontology is suitable. We will post additional information (submission guidelines, deadlines, &amp;c.) soon, but for now if you are interested please email Matthew Rhodes at <EmailLink email="posters@albertapaleo.org" subject="Paleo 2025 Poster Submission" />.
+		</p>
+	</section>
+
+	<section id="previous-symposia">
+		<h3>
+			Previous Symposia
+		</h3>
+		For recordings from previous years, please see the following YouTube playlists:
+		<ul>
+			<li>
+				<a href="https://www.youtube.com/playlist?list=PLIbLEoMjr_5N6TiqYkZwFSTqoHC13T-WT">Paleo 2023</a>		
+			</li>
+			<li>
+				<a href="https://www.youtube.com/playlist?list=PLIbLEoMjr_5NJoPQJpN-0VJPJ-xDXMrxO">Paleo 2024</a>
+			</li>
+		</ul>
+		<p>Thanks to everyone, epecially the speakers, who make these events possible!</p>
+	</section>
 </Layout>
 
 <style>
-	table {
-		border-collapse: separate;
-		border-spacing: 0 calc(4 * var(--theme-spacing-base));
+	em {
+		font-weight: bold;
 	}
-	tr {
-		padding-bottom: calc(8 * var(--theme-spacing-base));
+	table {
+		/* width: 100%; */
+		border-collapse: collapse;
+		overflow-x: scroll;
+	}
+	thead {
+		border-bottom: var(--theme-spacing-base) solid
+			var(--background-colour-darker);
 	}
 	td {
-		vertical-align: top;
+		padding-bottom: calc(2 * var(--theme-spacing-base));
+		padding-left: 0;
+		padding-right: 0;
+		vertical-align: middle;
 	}
-	td:nth-of-type(1) {
+	tr {
+		transition: background-color var(--transition-speed-medium);
+	}
+	tr:hover {
+		background-color: var(--background-colour-dark);
+	}
+	td {
+		padding-left: calc(2 * var(--theme-spacing-base));
+		padding-right: calc(2 * var(--theme-spacing-base));
+	}
+
+	nav#internal-nav {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-overflow: auto;
+	}
+	nav#internal-nav ul {
+		display: flex;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	nav#internal-nav ul li {
+		margin: 0.5rem;
+	}
+	nav#internal-nav ul li a {
+		color: var(--theme-colour);
+		text-decoration: none;
 		font-weight: bold;
-		width: auto;
-		white-space: nowrap;
 	}
-	td:nth-of-type(2) {
-		padding-left: calc(4 * var(--theme-spacing-base));
-		word-wrap: break-word;
+	/* nav#internal-nav ul li a:hover { */
+	/* } */
+	nav#internal-nav ul li a span {
+		display: inline-block;
+		padding: 0.5rem;
+		border-radius: var(--border-radius-medium);
+		transition: background-color var(--transition-speed-medium);
 	}
-	emph {
+	nav#internal-nav ul li a span:hover {
+		background-color: var(--background-colour-dark);
+	}
+	p.subtitle {
+		margin: 0;
+		padding: 0;
 		font-weight: bold;
+	}
+	h2 {
+		margin-bottom: 0.5rem;
 	}
 </style>
 

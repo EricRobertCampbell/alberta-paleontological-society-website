@@ -1,1 +1,8 @@
 /* Mostly class-based styles which should apply to the whole site */
+.button {
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: var(--border-radius-medium);
+    color: black;
+    background-color: var(--background-colour-dark);
+}
