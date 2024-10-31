@@ -280,6 +280,34 @@ declare module 'astro:content' {
   collection: "announcements";
   data: InferEntrySchema<"announcements">
 } & { render(): Render[".md"] };
+"2024-12-fossilSorting1.md": {
+	id: "2024-12-fossilSorting1.md";
+  slug: "2024-12-fossilsorting1";
+  body: string;
+  collection: "announcements";
+  data: InferEntrySchema<"announcements">
+} & { render(): Render[".md"] };
+"2025-01-fossilSorting2.md": {
+	id: "2025-01-fossilSorting2.md";
+  slug: "2025-01-fossilsorting2";
+  body: string;
+  collection: "announcements";
+  data: InferEntrySchema<"announcements">
+} & { render(): Render[".md"] };
+"2025-01-fossilSorting3.md": {
+	id: "2025-01-fossilSorting3.md";
+  slug: "2025-01-fossilsorting3";
+  body: string;
+  collection: "announcements";
+  data: InferEntrySchema<"announcements">
+} & { render(): Render[".md"] };
+"2025-02-fossilSorting4.md": {
+	id: "2025-02-fossilSorting4.md";
+  slug: "2025-02-fossilsorting4";
+  body: string;
+  collection: "announcements";
+  data: InferEntrySchema<"announcements">
+} & { render(): Render[".md"] };
 };
 "disclaimers": {
 "contactUs.md": {
@@ -606,6 +634,13 @@ declare module 'astro:content' {
   collection: "events";
   data: InferEntrySchema<"events">
 } & { render(): Render[".md"] };
+"2025-01-12-fossilSorting1.md": {
+	id: "2025-01-12-fossilSorting1.md";
+  slug: "2025-01-12-fossilsorting1";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
 "2025-01-17-monthlyMeeting.md": {
 	id: "2025-01-17-monthlyMeeting.md";
   slug: "2025-01-17-monthlymeeting";
@@ -613,9 +648,30 @@ declare module 'astro:content' {
   collection: "events";
   data: InferEntrySchema<"events">
 } & { render(): Render[".md"] };
+"2025-01-26-fossilSorting2.md": {
+	id: "2025-01-26-fossilSorting2.md";
+  slug: "2025-01-26-fossilsorting2";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2025-02-02-fossilSorting3.md": {
+	id: "2025-02-02-fossilSorting3.md";
+  slug: "2025-02-02-fossilsorting3";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
 "2025-02-21-monthlyMeeting.md": {
 	id: "2025-02-21-monthlyMeeting.md";
   slug: "2025-02-21-monthlymeeting";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".md"] };
+"2025-03-02-fossilSorting4.md": {
+	id: "2025-03-02-fossilSorting4.md";
+  slug: "2025-03-02-fossilsorting4";
   body: string;
   collection: "events";
   data: InferEntrySchema<"events">
