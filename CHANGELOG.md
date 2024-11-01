@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.37.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.36.0...v1.37.0) (2024-11-01)
+
+
+### Features
+
+* paleo 2025 symposium announcement ([85151ff](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/85151ff0c09da60c704bf5216195e63d16193943)), closes [#228](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/228)
+
 ## [1.36.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.35.0...v1.36.0) (2024-10-31)
 
 
