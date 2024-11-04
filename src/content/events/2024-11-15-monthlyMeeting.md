@@ -8,4 +8,4 @@ type: 'Monthly Meeting'
 
 Main Speaker: **Sally Hurst** of Macquarie University, Australia, will be speaking on "Human-Fossil Interactions in Ancient and Modern Contexts". This talk will be online. [Abstract](/presentationAbstracts/2024/hurstAbstract.pdf)
 
-Short Talk: **Tako Koning**, P. Geol., Senior Geologist and **Dr. Dale Leckie**, author and adjunct professor in the Faculty of Earth, Energy and Environment, University of Calgary will be speaking on "Great Sands Hills, S.W. Saskatchewan: One of the Largest Sets of Sand Dunes in Canada". This talk will be in person.
+Short Talk: **Tako Koning**, P. Geol., Senior Geologist and **Dr. Dale Leckie**, author and adjunct professor in the Faculty of Earth, Energy and Environment, University of Calgary will be speaking on "The Great Sands Hills, Southwest Saskatchewan: Among the Largest Active Sand Dunes in Canada". This talk will be in person. [Abstract](/presentationAbstracts/2024/koningLeckieAbstract.pdf)
