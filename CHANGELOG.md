@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.38.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.37.0...v1.38.0) (2024-11-04)
+
+
+### Features
+
+* updated koning and leckie talk with new title and abstract ([0d695e9](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/0d695e935f9f7792e0f91140e0cfa3466c42828f)), closes [#230](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/230)
+
 ## [1.37.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.36.0...v1.37.0) (2024-11-01)
 
 
