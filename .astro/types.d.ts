@@ -273,6 +273,13 @@ declare module 'astro:content' {
   collection: "announcements";
   data: InferEntrySchema<"announcements">
 } & { render(): Render[".md"] };
+"2024-11-13-currie-lecture.md": {
+	id: "2024-11-13-currie-lecture.md";
+  slug: "2024-11-13-currie-lecture";
+  body: string;
+  collection: "announcements";
+  data: InferEntrySchema<"announcements">
+} & { render(): Render[".md"] };
 "2024-11-fossilSorting3.md": {
 	id: "2024-11-fossilSorting3.md";
   slug: "2024-11-fossilsorting3";
