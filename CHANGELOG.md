@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.39.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.38.0...v1.39.0) (2024-11-10)
+
+
+### Features
+
+* added announcement for the currie lecture ([d175a1f](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/d175a1f5788d9f9db703c244222d9529866693c3)), closes [#232](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/232)
+
 ## [1.38.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.37.0...v1.38.0) (2024-11-04)
 
 
