@@ -1,10 +1,8 @@
 ---
 title: Search for Microfossils this Winter, 2025
 startDate: '2025-02-03'
-endDate: '2025-03-01'
+endDate: '2025-03-02'
 ---
-
-**by Mona Trick**
 
 Aid the research of **Dr. Jessica Theodor** and **Dr. Alex Dutchak** of the University of
 Calgary by searching the matrix (soil) from the Cypress Hills Formation (Middle Eocene)
