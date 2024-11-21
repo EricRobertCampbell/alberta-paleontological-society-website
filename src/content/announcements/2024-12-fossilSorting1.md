@@ -1,7 +1,7 @@
 ---
 title: Search for Microfossils this Winter, 2025
 startDate: '2024-12-01'
-endDate: '2024-12-30'
+endDate: '2025-01-12'
 ---
 
 **by Mona Trick**

@@ -280,9 +280,23 @@ declare module 'astro:content' {
   collection: "announcements";
   data: InferEntrySchema<"announcements">
 } & { render(): Render[".md"] };
+"2024-11-dinosaurProvincialParkJobPosting.md": {
+	id: "2024-11-dinosaurProvincialParkJobPosting.md";
+  slug: "2024-11-dinosaurprovincialparkjobposting";
+  body: string;
+  collection: "announcements";
+  data: InferEntrySchema<"announcements">
+} & { render(): Render[".md"] };
 "2024-11-fossilSorting3.md": {
 	id: "2024-11-fossilSorting3.md";
   slug: "2024-11-fossilsorting3";
+  body: string;
+  collection: "announcements";
+  data: InferEntrySchema<"announcements">
+} & { render(): Render[".md"] };
+"2024-11-mike-clark-scholarship.md": {
+	id: "2024-11-mike-clark-scholarship.md";
+  slug: "2024-11-mike-clark-scholarship";
   body: string;
   collection: "announcements";
   data: InferEntrySchema<"announcements">
