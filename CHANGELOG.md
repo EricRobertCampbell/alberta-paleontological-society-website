@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.41.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.40.0...v1.41.0) (2024-11-26)
+
+
+### Features
+
+* added paleo 2025 circular to website ([d8dca6a](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/d8dca6a9f0a69a9c61e0b7f4b8abd9e40708df80)), closes [#236](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/236)
+
 ## [1.40.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.39.0...v1.40.0) (2024-11-21)
 
 
