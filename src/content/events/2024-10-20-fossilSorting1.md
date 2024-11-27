@@ -15,9 +15,9 @@ at Mount Royal University** because construction has closed the room we used
 previously. Join us from 1:00 until 3:30
 pm. on the following Sundays:
 
--   **October 20, 2024**
--   November 17, 2024
--   December 1, 2024
+- **October 20, 2024**
+- November 17, 2024
+- December 1, 2024
 
 We are very grateful to Mount Royal University for allowing us to use their microscopes
 and lab.

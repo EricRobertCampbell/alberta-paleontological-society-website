@@ -13,22 +13,22 @@ The Alberta Palaeontological Society is excited to invite you to a special overn
 
 **Itinerary**:
 
--   Friday Evening:
-    -   6:30 PM: Arrive at the museum
-    -   Participate in fun palaeontology activities
-    -   Enjoy snacks
-    -   Lights out for the night
--   Saturday Morning:
-    -   Breakfast
-    -   Explore the galleries!
+- Friday Evening:
+    - 6:30 PM: Arrive at the museum
+    - Participate in fun palaeontology activities
+    - Enjoy snacks
+    - Lights out for the night
+- Saturday Morning:
+    - Breakfast
+    - Explore the galleries!
 
 **Price**: $51 per person
 
 Your ticket includes:
 
--   Evening Snacks & Breakfast
--   Palaeontology activities
--   Full-day admission to the museum
+- Evening Snacks & Breakfast
+- Palaeontology activities
+- Full-day admission to the museum
 
 This is a fantastic event for kids & families, but we require at least one adult per five children. Please note also that only children between **5 - 13 years old** and their adults are eligible to attend.
 

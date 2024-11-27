@@ -17,9 +17,9 @@ Registration is not required, but if you contact me, Mona Trick, (587) 578-4579 
 
 ### Dates:
 
--   **Sunday November 5**
--   Sunday November 26
--   Sunday December 10
+- **Sunday November 5**
+- Sunday November 26
+- Sunday December 10
 
 ### Location
 

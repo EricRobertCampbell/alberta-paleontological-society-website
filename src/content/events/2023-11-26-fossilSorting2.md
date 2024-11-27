@@ -19,9 +19,9 @@ Due to the use of microscopes and the delicate nature of the fossils we’re col
 
 ### Dates:
 
--   Sunday November 5
--   **Sunday November 26**
--   Sunday December 10
+- Sunday November 5
+- **Sunday November 26**
+- Sunday December 10
 
 ### Location
 

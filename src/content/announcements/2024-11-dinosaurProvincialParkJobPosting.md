@@ -19,16 +19,16 @@ Interpreters, including the Paleontology Interpretation Specialist, lead visitor
 
 Primary Duties:
 
--   Development, delivery, and evaluation of high quality interpretive, outreach and/or educational public programming
--   Including organization, delivery, and leadership of a guided paleontological excavation program
--   Train/ mentor seasonal interpreters in paleontology and support ongoing professional development.
--   Assist supervisory and land and resource management teams in facilitating landscape and fossil resource protection.
--   Conduct research on various subjects and provide expertise in paleontology
+- Development, delivery, and evaluation of high quality interpretive, outreach and/or educational public programming
+- Including organization, delivery, and leadership of a guided paleontological excavation program
+- Train/ mentor seasonal interpreters in paleontology and support ongoing professional development.
+- Assist supervisory and land and resource management teams in facilitating landscape and fossil resource protection.
+- Conduct research on various subjects and provide expertise in paleontology
 
 To be successful, you should also have experience with:
 
--   Working in remote outdoor and extreme heat settings
--   Program development and program planning.
+- Working in remote outdoor and extreme heat settings
+- Program development and program planning.
 
 The requirements include university graduation in a related field such as palaeontology, biology, geology and natural resource management. They will consider experience in lieu of education (one year experience is equivalent to one year of education).
 

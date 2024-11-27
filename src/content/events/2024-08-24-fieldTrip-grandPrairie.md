@@ -24,12 +24,12 @@ You can select both parts or just a single part of this trip (for example only t
 
 **Part 1—Grande Prairie**
 
--   “Diggers”—Tour Philip J. Currie Dinosaur Museum and dig in Pipestone Creek Bone Bed (maximum 10.) Adult:$212.00; Child (12–17):$174.00.
--   OR“Fossil Preparators”—Tour Philip J. Currie Dinosaur Museum and prepare fossils in the lab (maximum 5). Adult:$12.00; Child (12–17):$6.00
+- “Diggers”—Tour Philip J. Currie Dinosaur Museum and dig in Pipestone Creek Bone Bed (maximum 10.) Adult:$212.00; Child (12–17):$174.00.
+- OR“Fossil Preparators”—Tour Philip J. Currie Dinosaur Museum and prepare fossils in the lab (maximum 5). Adult:$12.00; Child (12–17):$6.00
 
 **Part 2—Grande Cache**
 
--   Tour Dinosaur Tracks (maximum 20) Adult or child (12–17): $40.00
+- Tour Dinosaur Tracks (maximum 20) Adult or child (12–17): $40.00
 
 To register for this and any other trips, download and complete [the field trip permission form](/events/2024FieldTrips/2024%20FT%20registration.pdf).
 

@@ -6,8 +6,8 @@ endDate: '2024-11-30'
 
 We have some exciting news! The dates and speakers for the 2025 Alberta Paleo Symposium have been set. It will be held on the following dates:
 
--   Symposium: **March 15, 2025**
--   Workshop: **March 16, 2025**
+- Symposium: **March 15, 2025**
+- Workshop: **March 16, 2025**
 
 On Saturday, we'll have an exciting range of speakers from around Canada. There will also be a selection of booths, poster presesentations, and other events for palaeontological enthusiasts of all ages. Best of all, it is completely free to attend!
 

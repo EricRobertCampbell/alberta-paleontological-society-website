@@ -10,7 +10,7 @@ of Saskatchewan to find tiny fossils. We will be using microscopes in **room B14
 at Mount Royal University**. Join us from 1:00 until 3:30
 pm. on the following Sundays:
 
--   **March 2, 2025**
+- **March 2, 2025**
 
 We are very grateful to Mount Royal University for allowing us to use their microscopes
 and lab.
