@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.42.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.41.0...v1.42.0) (2024-11-27)
+
+
+### Features
+
+* added mollie black announcement ([70a8d27](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/70a8d276dd0354f387dce85ff53220f1a3bea31c)), closes [#238](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/238)
+
 ## [1.41.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.40.0...v1.41.0) (2024-11-26)
 
 
