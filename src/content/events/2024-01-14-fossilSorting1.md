@@ -8,11 +8,11 @@ type: 'Fossil Sorting'
 
 Winter blues? You can still find fossils in the dark depths of winter at the APS microfossil sorting sessions on the following Sunday afternoons:
 
--   **January 14, 2024**
--   January 28, 2024
--   February 11, 2024
--   February 25, 2024
--   March 10, 2024
+- **January 14, 2024**
+- January 28, 2024
+- February 11, 2024
+- February 25, 2024
+- March 10, 2024
 
 We will be using microscopes in room B213 at Mount Royal University (Main Building)
 from 1:00 until 3:30 pm. We will be aiding the research of Dr. Jessica Theodor and Dr.

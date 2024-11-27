@@ -15,8 +15,8 @@ Saskatchewan to find teeth, scales, skull elements and other fossils from mammal
 reptiles and amphibians. We will be using microscopes in room B140 in the Main
 Building of Mount Royal University from 1:00 until 3:30 pm. on the following Sundays:
 
--   **February 2, 2025**
--   March 2, 2025
+- **February 2, 2025**
+- March 2, 2025
 
 Registration is not required, but if you let Mona Trick (cell: <a href="tel:(587) 578-4579">(587) 578-4579</a> or
 <a href="mailto:giftshop@albertapaleo.org">giftshop@albertapaleo.org</a>) know that you are planning to attend, then she can inform

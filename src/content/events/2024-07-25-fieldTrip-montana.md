@@ -11,10 +11,10 @@ The Upper Cretaceous Hell Creek Formation in Montana is world-famous for its cac
 
 **Proposed Itinerary**
 
--   Thursday, July 25: Travel to Jordan, MT.
--   Friday, July 26 and Saturday, July 27: Caravan (40 minutes) each day to and from Jason Phipps Ranch; Expect long, hot days with lunch in the field with no facilities.
--   Sunday, July 28: TBD: Explore nearby Bearpaw Formation invertebrate sites and/or museum tour.
--   Monday, July 29: Return to Calgary.
+- Thursday, July 25: Travel to Jordan, MT.
+- Friday, July 26 and Saturday, July 27: Caravan (40 minutes) each day to and from Jason Phipps Ranch; Expect long, hot days with lunch in the field with no facilities.
+- Sunday, July 28: TBD: Explore nearby Bearpaw Formation invertebrate sites and/or museum tour.
+- Monday, July 29: Return to Calgary.
 
 Jordan is a 9-hour drive from Calgary (excluding the time required to cross the USA-Canada border, which can be quite variable). Participants will have to find their own way to and from Jordan. NOTE! There are very limited basic accommodations in Jordan (Garfield Motel, K&K RV Park, Old Dorm RV Park and Motel 200) with camping likely the best option (Contact Keith for more information). Participants will have to make their own sleeping and travel arrangements to and from Jordan. The fee for collecting on Jason’s ranch is us$125 cash per person, PER DAY (total US $250 for two days—payable to Jason directly on July 26). There may be additional fees so watch for updates in future issues of the Bulletin. There are no restrictions for attendance but motel space could be a limiting factor.
 
