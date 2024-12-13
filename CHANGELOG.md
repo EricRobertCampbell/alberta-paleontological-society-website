@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.45.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.44.1...v1.45.0) (2024-12-13)
+
+
+### Features
+
+* updated 2024 trivia contest ([57ca131](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/57ca13146c95da4723efd1c40fe335faed207ae3))
+
 ### [1.44.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.44.0...v1.44.1) (2024-12-11)
 
 ## [1.44.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.43.1...v1.44.0) (2024-12-11)
