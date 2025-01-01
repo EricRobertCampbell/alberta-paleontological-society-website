@@ -6,8 +6,12 @@ endTime: '9 PM'
 type: 'Monthly Meeting'
 ---
 
-**Student Speakers!**
+Short Talk: **Mona Trick**, P.Eng., APS Lifetime Member: "Royal Ontario Museum: Early Life Exhibit" [Abstract & Bio](/presentationAbstracts/2024/ROMTalkAbstractAndBio.pdf)
 
-Stay tuned - we have a number of students lined up to present on their latest projects and research.
+Main Talk: **Dr. Jon Noad** Dinosaurs Going Postal!
 
-Short Talk: **Mona Trick**, P.Eng., APS Lifetime Member: "Royal Ontario Museum, June 2024" [Abstract & Bio](/presentationAbstracts/2024/ROMTalkAbstractAndBio.pdf)
+<figure style="display:flex; align-items: center; justify-content: center; flex-direction: column;">
+    <img src="/events/january2025-announcement.png" alt="An announcement poster for the event" style="max-width: 80%;">
+    <figcaption>
+    </figcaption>
+</figure>
