@@ -1,7 +1,7 @@
 ---
 title: 'Survey: What Would You Do If You Found a Fossil?'
 startDate: '2024-11-25'
-endDate: '2024-12-31'
+endDate: '2025-01-15'
 ---
 
 What would you do if you found a fossil? If you live in British Columbia, Alberta, Saskatchewan, or Manitoba we want to hear from you! Complete [this 10 minute survey](https://www.surveymonkey.ca/r/7CRY8N7) to tell us and be entered in a draw to win a gift card!
