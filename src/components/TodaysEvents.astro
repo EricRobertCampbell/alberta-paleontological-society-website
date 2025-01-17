@@ -1,0 +1,107 @@
+---
+// NB This is a good idea, but it should really make an API call of some sort
+// USE EXTREME CAUTION
+import { getCollection } from "astro:content";
+
+import Layout from "../../layouts/Layout.astro";
+import Event from "../../components/Event.astro";
+import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
+
+const allEvents = await getCollection("events");
+const renderedEvents = (
+	await Promise.all(
+		allEvents.map(async (event) => {
+			return await event.render();
+		})
+	)
+).sort((e1, e2) => {
+	return e1.remarkPluginFrontmatter.startDate.localeCompare(
+		e2.remarkPluginFrontmatter.startDate
+	);
+});
+---
+<section id="events-today">
+	<h2>Today's Events</h2>
+</section>
+<script>
+	// Get the date string for today
+	const today = new Date();
+	const offset = today.getTimezoneOffset();
+	const todayWithOffset = new Date(today.getTime() - offset * 60 * 1000);
+	const todayString = todayWithOffset.toISOString().split("T")[0];
+
+	// sort out past events - we want to hide these
+	const allEvents = Array.from(
+		document.querySelectorAll('section[data-type="event"]')
+	);
+	// now move any events today into that section. If any are present, unhide the section
+	const todaysEvents = allEvents.filter(
+		(event) =>
+			event.dataset.startdate >= todayString &&
+			event.dataset.enddate <= todayString
+	);
+	const todaySection = document.querySelector("#events-today");
+	todaysEvents.forEach((eventToday, index, allEventsToday) =>
+		todaySection.appendChild(eventToday)
+	);
+	if (todaysEvents.length > 0) {
+		todaySection.classList.add("active");
+	}
+
+	// Change the title of the heading to "Upcoming Events" if we have javascript
+	document.querySelector("#events-heading").innerText = "Upcoming Events";
+</script>
+<style>
+	summary h2 {
+		display: inline;
+	}
+
+	details {
+		display: none;
+		visibility: hidden;
+	}
+	details.active {
+		display: block;
+		visibility: visible;
+	}
+
+	#events-today {
+		display: none;
+		visibility: hidden;
+		border-radius: var(--border-radius-medium);
+		border: solid 2px var(--background-colour-darker);
+		padding: calc(2 * var(--theme-spacing-base));
+		margin-top: calc(2 * var(--theme-spacing-base));
+		box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+	}
+	#events-today.active {
+		display: block;
+		visibility: visible;
+	}
+
+	/* Desktop settings */
+	/* @media screen and (min-width: 768px) { */
+	/* 	.background-container { */
+	/* 		height: 100px; /1* Adjust the height as needed *1/ */
+	/* 		position: relative; */
+	/* 		display: flex; */
+	/* 		flex-direction: column; */
+	/* 		justify-content: center; */
+	/* 	} */
+	/* 	.background-container::before { */
+	/* 		content: ""; */
+	/* 		background-image: url("/assets/devilsCoulee.jpg"); */
+	/* 		background-size: cover; */
+	/* 		background-position: 50% 33%; */
+	/* 		position: absolute; */
+	/* 		top: 0; */
+	/* 		left: 0; */
+	/* 		width: 100%; */
+	/* 		height: 100%; */
+	/* 		opacity: 0.3; */
+	/* 	} */
+	/* 	.background-container h1 { */
+	/* 		margin-left: calc(3 * var(--theme-spacing-base)); */
+	/* 	} */
+	/* } */
+</style>
