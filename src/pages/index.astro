@@ -4,6 +4,7 @@ import Card from '../components/Card.astro'
 import Event from '../components/Event.astro'
 import Announcement from '../components/Announcement.astro'
 import SocialsLinks from '../components/SocialsLinks.astro'
+import TodaysEvents from '../components/TodaysEvents.astro'
 
 import { getCollection } from 'astro:content'
 
@@ -24,7 +25,7 @@ const renderedEvents = (
 	)
 )
 	.filter((e) => {
-		return e.remarkPluginFrontmatter.startDate > todayString
+		return e.remarkPluginFrontmatter.startDate >= todayString
 	})
 	.sort((e1, e2) => {
 		return -e1.remarkPluginFrontmatter.startDate.localeCompare(
@@ -104,6 +105,7 @@ const renderedAnnouncements = await Promise.all(
 			wonders of palaeontology, ensuring that people of all ages can
 			explore and appreciate the fascinating world of prehistoric life.
 		</p>
+		<!-- <TodaysEvents /> -->
 		{
 			renderedAnnouncements.length > 0 ? (
 				<section>
