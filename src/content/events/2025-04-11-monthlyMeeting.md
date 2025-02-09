@@ -6,4 +6,5 @@ endTime: '9 PM'
 type: 'Monthly Meeting'
 ---
 
-Main Speaker: **Dr. Darla Zelenitsky** - topic TBA
+Main Speaker: **François Therrien, Ph.D. Curator of Dinosaur Palaeoecology, Royal Tyrrell
+Museum of Palaeontology** - "Cretaceous-Paleogene mass extinction"

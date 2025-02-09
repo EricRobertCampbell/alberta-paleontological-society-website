@@ -6,4 +6,4 @@ endTime: '9 PM'
 type: 'Monthly Meeting'
 ---
 
-Speakers TBD
+**Dr. Chris Jass, Royal Alberta Museum** - Topic TBD

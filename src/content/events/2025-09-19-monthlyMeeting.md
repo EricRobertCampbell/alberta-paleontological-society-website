@@ -6,4 +6,4 @@ endTime: '9 PM'
 type: 'Monthly Meeting'
 ---
 
-Speakers TBD
+**Dr. Jessica Theodor, University of Calgary** - "New species found at John Day Fossil Beds"

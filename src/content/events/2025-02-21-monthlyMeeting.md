@@ -6,4 +6,5 @@ endTime: '9 PM'
 type: 'Monthly Meeting'
 ---
 
-Main Speaker: **Dr. Chris Jass** - "Research at the Mammoth Site of Hot Springs, South Dakota"
+Main Speaker: **Dr. James Kirkland, Utah’s State Paleontologist** - "Eggs, Nests, and Dinosaur Behavior: Evidence from the Morrison Formation,
+Colorado Plateau" [Abstract](</presentationAbstracts/2025/Kirkland Morrison abstract.pdf>)
