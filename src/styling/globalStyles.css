@@ -6,3 +6,7 @@
     color: black;
     background-color: var(--background-colour-dark);
 }
+
+figcaption {
+    text-align: center;
+}
