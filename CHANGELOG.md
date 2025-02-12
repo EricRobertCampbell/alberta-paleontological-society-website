@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.47.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.46.6...v1.47.0) (2025-02-12)
+
+
+### Features
+
+* added ashley hall abstract and bio ([1cebf03](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/1cebf03e2e2da072596fcf43b62792a00e6693cc))
+
 ### [1.46.6](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.46.5...v1.46.6) (2025-02-11)
 
 ### [1.46.5](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.46.4...v1.46.5) (2025-02-09)
