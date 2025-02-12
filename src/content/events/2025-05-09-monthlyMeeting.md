@@ -6,6 +6,6 @@ endTime: '9 PM'
 type: 'Monthly Meeting'
 ---
 
-Main Talk: **Ashley Hall** will present on the Palaeontology Outreach Program at the Museum of the Rockies
+Main Talk: **Ashley Hall** will present on "A Brief History on the Evolution of Birds". [Abstract](/presentationAbstracts/2025/ashleyHallAbstract.pdf) [Bio](/presentationAbstracts/2025/ashleyHallBio.pdf)
 
 This meeting will include our annual AGM. Please come prepared to vote on the new board members.
