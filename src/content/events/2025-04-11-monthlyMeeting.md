@@ -7,4 +7,4 @@ type: 'Monthly Meeting'
 ---
 
 Main Speaker: **François Therrien, Ph.D. Curator of Dinosaur Palaeoecology, Royal Tyrrell
-Museum of Palaeontology** - "Cretaceous-Paleogene mass extinction"
+Museum of Palaeontology** - "What really killed the dinosaurs? A look at the latest developments" [Abstract](/presentationAbstracts/2025/APSApril11_2025TherrienAbstract.pdf)
