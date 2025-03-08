@@ -21,7 +21,10 @@ export const links: Array<LinkInformation> = [
                 destination: '/events/fieldtrippictures',
                 label: 'Field Trip Pictures',
             },
-            { destination: '/events/agm', label: 'Annual General Meeting' },
+            {
+                destination: '/events/agm/2025',
+                label: 'Annual General Meeting',
+            },
             { destination: '/events/symposium', label: 'Symposium' },
         ],
     },
