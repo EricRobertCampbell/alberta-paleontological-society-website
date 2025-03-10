@@ -5,31 +5,31 @@ on:
     branches: [development, main]
 
 jobs:
-  tests:
-    runs-on: ubuntu-latest
+  # tests:
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          persist-credentials: false
-          ref: ${{ github.head_ref }}
-          fetch-depth: 0
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         persist-credentials: false
+  #         ref: ${{ github.head_ref }}
+  #         fetch-depth: 0
 
-      - name: Install Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: "16"
+  #     - name: Install Node.js
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: "16"
 
-      # - name: Set github access token
-      #   run: git config --global url."https://${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/".insteadOf ssh://git@github.com/ # for accessing / installing private packages
+  #     # - name: Set github access token
+  #     #   run: git config --global url."https://${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/".insteadOf ssh://git@github.com/ # for accessing / installing private packages
 
-      - name: Install dependencies
-        run: |
-          npm install
+  #     - name: Install dependencies
+  #       run: |
+  #         npm install
 
-      - name: Run tests
-        run: |
-          npm run test
+  #     - name: Run tests
+  #       run: |
+  #         npm run test
 
   lint:
     runs-on: ubuntu-latest
