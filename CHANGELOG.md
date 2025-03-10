@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.50.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.49.1...v1.50.0) (2025-03-10)
+
+
+### Features
+
+* upgraded astro 2 -> 5 ([647a9fd](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/647a9fd5a9f77a2546abe73b7dce5b01a875d358)), closes [#93](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/93)
+
 ### [1.49.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.49.0...v1.49.1) (2025-03-08)
 
 ## [1.49.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.48.3...v1.49.0) (2025-02-27)
