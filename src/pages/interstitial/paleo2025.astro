@@ -117,6 +117,27 @@ const title = 'Paleo 2025!';
 					</section>
 					<section>
 						<h3>
+							Monthly Talks Sponsored By
+						</h3>
+						<ul>
+							<li>
+								Alberta Palaeontological Society
+							</li>
+							<li>
+								Mount Royal University
+							</li>
+							<li>
+								Canadian Energy Geoscience Association
+							</li>
+						</ul>
+						<div class="white-container sponsor-logo-container">
+							<img src="/logos/aps-logo.gif" style="max-height: 200px;" alt="Alberta Palaeontological Society Logo" />
+							<img src="/logos/MRU_logo1.png" alt="Mount Royal University Logo" />
+							<img src="/logos/CEGA_logo.png" />
+						</div>
+					</section>
+					<section>
+						<h3>
 							Mount Royal University
 						</h3>
 						<div style="background-color: white; padding: 0.5rem;">
@@ -125,7 +146,7 @@ const title = 'Paleo 2025!';
 					</section>
 					<section>
 						<h3>
-							CEGA
+							Canadian Energy Geoscience Association
 						</h3>
 						<div style="background-color: white; padding: 0.5rem;">
 							<img src="/logos/CEGA_logo.png" />
@@ -295,5 +316,15 @@ const title = 'Paleo 2025!';
 		justify-content: center;
 		gap: 2rem;
 	}
+	.white-container {
+		background-color: white;
+	}
+	.sponsor-logo-container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+		place-items: center;
+	}
+
 </style>
 
