@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.53.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.53.0...v1.53.1) (2025-03-26)
+
+
+### Bug Fixes
+
+* removed paleo2025 abstract volume from april 2025 interstitial slides ([e2569ff](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/e2569ff4f990cea5729e63d8049204a8cd33f484))
+
 ## [1.53.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.52.0...v1.53.0) (2025-03-26)
 
 
