@@ -76,7 +76,7 @@ const renderedEvents = (
 			(event) => event.dataset.enddate < todayString
 		);
 		const pastFieldTripsDetails = document.querySelector("#past-events");
-		pastEvents.forEach((pastEvent) =>
+		[...pastEvents ].reverse().forEach((pastEvent) =>
 			pastFieldTripsDetails.appendChild(pastEvent)
 		);
 
