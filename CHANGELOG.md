@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.54.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.53.1...v1.54.0) (2025-04-18)
+
+
+### Features
+
+* past events in reverse chronological order and leslie presentation ([9afbd48](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/9afbd48bbbfcb961a227d06db8bba8c54e2cb691))
+
 ### [1.53.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.53.0...v1.53.1) (2025-03-26)
 
 
