@@ -28,3 +28,5 @@ is $10.
 To register for this and any other trips, download and complete [the field trip permission form](/fieldTrips/2025/APSFieldTripsForm2025.pdf).
 
 **Registration deadline is July 1.**
+
+<div style="display: flex; align-items: center; justify-content: center; padding-bottom: 8px;"><img src="/fieldTrips/2025/dinosaurTrackwaysAndBonebed-small.png" style="max-width: min(50%, 400px)"></div>

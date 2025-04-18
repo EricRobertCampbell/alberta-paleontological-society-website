@@ -73,3 +73,5 @@ the Beartooth Highway re-opens in the spring—otherwise you will encounter some
 To register for this and any other trips, download and complete [the field trip permission form](/fieldTrips/2025/APSFieldTripsForm2025.pdf).
 
 **Registration deadline is July 15.**
+
+<div style="display: flex; align-items: center; justify-content: center; padding-bottom: 8px;"><img src="/fieldTrips/2025/grasshopperGlacier-small.png" style="max-width: min(50%, 400px)"></div>
