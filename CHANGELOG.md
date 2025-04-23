@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.58.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.57.0...v1.58.0) (2025-04-23)
+
+
+### Features
+
+* updated field trips with RTMP sleepover ([a7781a7](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/a7781a76dee52e5d7fb3660ad1f63074ecff72b6))
+
 ## [1.57.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.56.0...v1.57.0) (2025-04-22)
 
 
