@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.59.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.59.0...v1.59.1) (2025-04-25)
+
+
+### Bug Fixes
+
+* updated november 2025 rtmp sleep over dates ([ae0bafc](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/ae0bafce78ce6a3234c62678ca616187611f3b54))
+
 ## [1.59.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.58.0...v1.59.0) (2025-04-25)
 
 
