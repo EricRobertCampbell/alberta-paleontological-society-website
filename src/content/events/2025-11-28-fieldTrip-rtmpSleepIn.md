@@ -1,13 +1,13 @@
 ---
 title: Dinovember Sleepover!
-startDate: '2025-11-21'
-endDate: '2025-11-22'
+startDate: '2025-11-28'
+endDate: '2025-11-29'
 type: 'Field Trip'
 ---
 
 **Save the date!**
 
-We're planning another overnight adventure at the Royal Tyrrell Museum this Nov 21–22 (dates TBD). Fossils, fun, and a night at the museum!
+We're planning another overnight adventure at the Royal Tyrrell Museum this Nov 28–29 (dates to be finalized). Fossils, fun, and a night at the museum!
 
 Details from last year: March 2025 Bulletin.
 
