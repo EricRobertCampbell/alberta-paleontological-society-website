@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.60.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.59.1...v1.60.0) (2025-05-03)
+
+
+### Features
+
+* added audited books for 2025 agm ([f5fb101](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/f5fb101c61bfe1be117cf81626b0c4bf8e13422e))
+
 ### [1.59.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.59.0...v1.59.1) (2025-04-25)
 
 
