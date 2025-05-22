@@ -118,6 +118,32 @@ const renderedEvents = (
 		/> or phone at <PhoneLink number="(403) 809-3211" />.
 	</p>
 
+	<section>
+		<h2>
+			Forms
+		</h2>
+			<ul class="field-trip-forms-list">
+				<li>
+					<a href="/fieldTrips/2025/APSFieldTripsForm2025.pdf">2025 Registration Form</a>
+				</li>
+				<li>
+					<a href="/fieldTrips/2025/forms/APS_Adult_Waiver.pdf">
+						Adult Waiver
+					</a>
+				</li>
+				<li>
+					<a href="/fieldTrips/2025/forms/APS_Minor_Waiver.pdf">
+						Minor Waiver
+					</a>
+				</li>
+				<li>
+					<a href="/fieldTrips/2025/forms/APS_ER_ContactMedInfo.pdf">
+						Medical and Emergency Contact Information
+					</a>
+				</li>
+			</ul>
+	</section>
+
 	<h2>Field Trips</h2>
 	{
 		renderedEvents.map((event, index, allEvents) => {
@@ -171,5 +197,10 @@ const renderedEvents = (
 	details.active {
 		display: block;
 		visibility: visible;
+	}
+	ul.field-trip-forms-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
 	}
 </style>
