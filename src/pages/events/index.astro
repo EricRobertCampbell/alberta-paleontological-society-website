@@ -13,9 +13,17 @@ const renderedEvents = (
 		})
 	)
 ).sort((e1, e2) => {
-	return e1.remarkPluginFrontmatter.startDate.localeCompare(
-		e2.remarkPluginFrontmatter.startDate
-	);
+	const startDates: Array<string> = [e1, e2].map(e => {
+	let startDate: string = ''
+	if (e.remarkPluginFrontmatter.startDate) {
+	startDate = e.remarkPluginFrontmatter.startDate;
+	} else if (e.remarkPluginFrontmatter.start) {
+	startDate = e.remarkPluginFrontmatter.start.toISOString().split("T")[0];
+	} 
+	return startDate
+	}
+	)
+	return startDates[0].localeCompare(startDates[1]);
 });
 ---
 
@@ -87,8 +95,14 @@ const renderedEvents = (
 		// now move any events today into that section. If any are present, unhide the section
 		const todaysEvents = allEvents.filter(
 			(event) =>
-				event.dataset.startdate >= todayString &&
-				event.dataset.enddate <= todayString
+			{
+				// check: is the start of the event >= today and the end of the event <= today? Then it's today! Have to check both because e.g. an event that spans three days should show up on all of those days.
+				// Remember that these are the rendered event components!
+				// BTW This is a garbage way of doing this
+				// TODO fix this
+				return todayString >= event.dataset.startdate &&
+					todayString <= event.dataset.enddate;
+			}
 		);
 		const todaySection = document.querySelector("#events-today");
 		todaysEvents.forEach((eventToday, index, allEventsToday) =>
