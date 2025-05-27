@@ -12,9 +12,15 @@ const EVENT_TYPES = [
 ] as const
 const eventSchema = z.object({
     title: z.string(),
-    startDate: z.string(),
+    start: z.date().optional(),
+    end: z.date().optional(),
+    // @deprecated
+    startDate: z.string().optional(),
+    // @deprecated
     startTime: z.string().optional(),
+    // @deprecated
     endDate: z.string().optional(),
+    // @deprecated
     endTime: z.string().optional(),
     image: z
         .object({

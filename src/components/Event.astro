@@ -6,13 +6,19 @@ interface Props {
 	last: boolean;
 }
 const { frontmatter, last } = Astro.props;
-const { title, startDate, startTime, endDate, endTime, type, image } =
+const { title, startDate, startTime, endDate, endTime, type, image, start, end } =
 	frontmatter;
+const actualStartDate = start ? start.toISOString().split("T")[0] : startDate;
+const actualEndDate = end ? end.toISOString().split("T")[0] : endDate;
 const eventDateTimeString = generateEventDateTimeString(
-	startDate,
-	startTime,
-	endDate,
-	endTime
+{
+start,
+end,
+startDate,
+startTime,
+endDate,
+endTime
+}
 );
 
 const containerClassList = ["container"];
@@ -23,8 +29,8 @@ if (image) {
 
 <section
 	class:list={last ? [] : ["not-last"]}
-	data-startdate={startDate}
-	data-enddate={endDate ? endDate : startDate}
+	data-startdate={actualStartDate}
+	data-enddate={actualEndDate ? actualEndDate : actualStartDate}
 	data-type="event"
 >
 	<p class="event-type">

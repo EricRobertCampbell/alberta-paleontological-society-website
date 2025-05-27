@@ -21,15 +21,26 @@ const renderedEvents = (
 	)
 )
 	.filter((e) => {
+	const actualEndDate = e.remarkPluginFrontmatter.endDate || e.remarkPluginFrontmatter.startDate; // because some events (ones going on over only one date) have only the start date; assumption is that if there is no end date, the start date is the end date
 		return (
-			e.remarkPluginFrontmatter.startDate > todayString &&
-			e.remarkPluginFrontmatter.type === "Monthly Meeting"
-		);
+		e.remarkPluginFrontmatter.type === 'Monthly Meeting' && ( ( e.remarkPluginFrontmatter.end && e.remarkPluginFrontmatter.end >= today ) || 
+		(
+		actualEndDate && actualEndDate >= todayString
+		)
+		)		);
 	})
 	.sort((e1, e2) => {
-		return e1.remarkPluginFrontmatter.startDate.localeCompare(
-			e2.remarkPluginFrontmatter.startDate
-		);
+	const startDates: Array<string> = [e1, e2].map(e => {
+	let startDate: string = ''
+	if (e.remarkPluginFrontmatter.startDate) {
+	startDate = e.remarkPluginFrontmatter.startDate;
+	} else if (e.remarkPluginFrontmatter.start) {
+	startDate = e.remarkPluginFrontmatter.start.toISOString().split("T")[0];
+	} 
+	return startDate
+	}
+	)
+	return startDates[0].localeCompare(startDates[1]);
 	});
 
 /* let nextEvent; */
