@@ -14,7 +14,8 @@ import {
 } from '../utility'
 
 // get the next event
-const todayString = getTodayString()
+const todayString = getTodayString();
+const now = new Date();
 
 const allEvents = await getCollection('events')
 const renderedEvents = (
@@ -25,12 +26,22 @@ const renderedEvents = (
 	)
 )
 	.filter((e) => {
+		if (e.remarkPluginFrontmatter.start) {
+			return e.remarkPluginFrontmatter.start >= now
+		}	
 		return e.remarkPluginFrontmatter.startDate >= todayString
 	})
 	.sort((e1, e2) => {
-		return -e1.remarkPluginFrontmatter.startDate.localeCompare(
-			e2.remarkPluginFrontmatter.startDate
-		)
+	let dates: Array<string> = [e1, e2].map(e => {
+		if (e.remarkPluginFrontmatter.start) {
+			return e.remarkPluginFrontmatter.start.toISOString().split('T')[0]
+		} else if (e.remarkPluginFrontmatter.startDate) {
+			return e.remarkPluginFrontmatter.startDate
+		} 
+		return ""
+	})
+	const [firstDate, secondDate] = dates
+	return secondDate.localeCompare(firstDate)
 	})
 
 let nextEvent
