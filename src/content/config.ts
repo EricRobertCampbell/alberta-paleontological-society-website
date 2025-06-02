@@ -9,6 +9,7 @@ const EVENT_TYPES = [
     'Field Trip',
     'Special Joint Meeting of the APS and the CSPG BASS Division',
     'Fossil Sorting',
+    'External', // e.g. an event hosted by another organization that the APS is promoting
 ] as const
 const eventSchema = z.object({
     title: z.string(),
@@ -30,6 +31,8 @@ const eventSchema = z.object({
         })
         .optional(),
     type: z.enum(EVENT_TYPES),
+    host: z.string().optional(), // the host of the event, e.g. "Alberta Palaeontological Society". Only include this if host is not the APS.
+    detailsLink: z.string().optional(), // a link to more details about the event, e.g. a Google Calendar event or a Facebook event
 })
 
 const eventCollection = defineCollection({

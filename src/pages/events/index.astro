@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { filterAPSEvents } from '../../utility/filters'
 
 import Layout from "../../layouts/Layout.astro";
 import Event from "../../components/Event.astro";
@@ -12,7 +13,8 @@ const renderedEvents = (
 			return await event.render();
 		})
 	)
-).sort((e1, e2) => {
+	).filter((e) => filterAPSEvents({host: e.remarkPluginFrontmatter.host}))
+	.sort((e1, e2) => {
 	const startDates: Array<string> = [e1, e2].map(e => {
 	let startDate: string = ''
 	if (e.remarkPluginFrontmatter.startDate) {
