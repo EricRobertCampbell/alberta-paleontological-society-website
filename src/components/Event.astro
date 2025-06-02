@@ -6,7 +6,7 @@ interface Props {
 	last: boolean;
 }
 const { frontmatter, last } = Astro.props;
-const { title, startDate, startTime, endDate, endTime, type, image, start, end } =
+const { title, startDate, startTime, endDate, endTime, type, image, start, end, host, detailsLink } =
 	frontmatter;
 const actualStartDate = start ? start.toISOString().split("T")[0] : startDate;
 const actualEndDate = end ? end.toISOString().split("T")[0] : endDate;
@@ -34,7 +34,7 @@ if (image) {
 	data-type="event"
 >
 	<p class="event-type">
-		{type}
+		{type}{host ? ` - hosted by ${host}` : ""}
 	</p>
 	<h3 class="event-title">{title}</h3>
 	<p class="event-time">
@@ -60,6 +60,16 @@ if (image) {
 		<div class="content-container">
 			<slot />
 		</div>
+		{
+		detailsLink ? <p>
+
+				For more details, see 
+				<a href={detailsLink}>
+					{
+						detailsLink
+					}
+			</a>.</p> : null
+		}
 	</div>
 </section>
 
