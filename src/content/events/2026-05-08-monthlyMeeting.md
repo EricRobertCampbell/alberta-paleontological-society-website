@@ -1,8 +1,7 @@
 ---
 title: 'Monthly Meeting: May 2026'
-startDate: '2026-05-08'
-startTime: '7:30 PM'
-endTime: '9 PM'
+start: 2026-05-08T19:30:00-06:00
+end: 2026-05-08T21:00:00-06:00
 type: 'Monthly Meeting'
 ---
 

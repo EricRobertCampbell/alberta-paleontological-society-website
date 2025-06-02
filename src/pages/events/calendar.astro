@@ -1,0 +1,231 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import EmailLink from "../../components/EmailLink.astro";
+import Event from '../../components/Event.astro';
+import EventCalendar from '../../components/EventCalendar/EventCalendar.astro';
+import Button from '../../components/Button.astro';
+import { getCollection } from "astro:content";
+
+/**
+* Validates that a string represents a year
+*/
+const validateYearString = (yearString: string) => {
+  const year = parseInt(yearString, 10);
+  return !Number.isNaN(year) && Number.isFinite(year)
+};
+
+const validateMonthString = (monthString: string) => {
+  const month = parseInt(monthString, 10);
+  return !Number.isNaN(month) && Number.isFinite(month) && month >= 1 && month <= 12;
+};
+
+  /**
+ * Returns the full month name and year, e.g., "March 2025".
+ * @param year - The full year (e.g., 2025)
+ * @param month - The month number (1 for January, 12 for December)
+ * @returns A string in the format "Month Year"
+ */
+function formatMonthYear(year: number, month: number): string {
+  const date = new Date(year, month - 1); // JS months are 0-indexed
+  return date.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+}
+
+const {url} = Astro
+const searchParams = new URLSearchParams(url.search);
+const now = new Date();
+const defaultYear = now.getFullYear();
+const defaultMonth = now.getMonth() + 1; // Months are 0-indexed in JavaScript
+const rawYear = searchParams.get('year') 
+const rawMonth = searchParams.get('month')
+const partial = searchParams.get('partial') === 'true'
+
+const year = validateYearString(rawYear) ? rawYear : defaultYear.toString();
+const month = validateMonthString(rawMonth) ? rawMonth.padStart(2, '0') : defaultMonth.toString().padStart(2, '0');
+
+const nextMonth = month === '12' ? '01' : (parseInt(month) + 1).toString().padStart(2, '0');
+const nextYear = month === '12' ? (parseInt(year) + 1).toString() : year;
+const prevMonth = month === '01' ? '12' : (parseInt(month) - 1).toString().padStart(2, '0');
+const prevYear = month === '01' ? (parseInt(year) - 1).toString() : year;
+
+const allEvents = await getCollection("events");
+const filteredEvents = allEvents.filter(( event ) => {
+console.log({event})
+  const {data} = event;
+  if (data.start && data.end) {
+    const startDate = new Date(data.start);
+    const endDate = new Date(data.end);
+    return startDate.getFullYear() <= parseInt(year) && 
+         startDate.getMonth() + 1 <= parseInt(month) &&
+         endDate.getFullYear() >= parseInt(year) && 
+         endDate.getMonth() + 1 >= parseInt(month);
+    }
+    else if (data.startDate) {
+      // NB for now we don't care about the start / end time, just the date
+      const actualStartDate = data.startDate
+      const actualEndDate = data.endDate || actualStartDate; // sometimes we only include the start date
+      const [ startYear, startMonth ] = actualStartDate.split('-');
+      const [endYear, endMonth ] = actualEndDate.split('-');
+      return startYear <= year && 
+        startMonth <= month &&
+        endYear >= year && 
+        endMonth >= month;
+    } 
+})
+const renderedEvents = await Promise.all(filteredEvents.sort((a, b) => {
+  const dateA = a.data.start ?? (a.data.startDate ? new Date(a.data.startDate) : null);
+  const dateB = b.data.start ?? (b.data.startDate ? new Date(b.data.startDate) : null);
+
+  if (!dateA || !dateB) {
+    return 0; // fallback if either date is missing
+  } 
+  return dateA.getTime() - dateB.getTime();
+}).map(async (event) => {
+  const rendered = await event.render();
+  return {
+  ...rendered,
+  id: event.id
+  }
+}));
+const calendarEvents = filteredEvents.map((event) => {
+  let startDate: string;
+  if (event.data.start) {
+    startDate = event.data.start.toISOString().split('T')[0]; // Extract just the date part
+  } else if (event.data.startDate) {
+    startDate = event.data.startDate;
+  } else {
+    startDate = '';
+  }
+  let endDate: string;
+  if (event.data.end) {
+    endDate = event.data.end.toISOString().split('T')[0]; // Extract just the date part
+  } else if (event.data.endDate) {
+    endDate = event.data.endDate;
+  } else {
+    endDate = startDate; // Default to start date if no end date is provided
+  }
+  const {title, type } = event.data;
+  return {
+  id: event.id,
+  startDate,
+  endDate,
+  title,
+  type
+  }
+});
+console.log('data', renderedEvents[0]);
+console.log({calendarEvents})
+---
+
+{partial ? <div id="calendar-content" view-transition-name='event-calendar-content'>
+  <EventCalendar year={year} month={month} events={calendarEvents}/>
+  <hr class="post-event-calendar" />
+  {
+  renderedEvents.map((event, index, allEvents) => {
+  const { Content, headings, id } = event;
+  return (
+  <Event
+    id={id}
+    frontmatter={event.remarkPluginFrontmatter}
+    last={index === allEvents.length - 1}
+  >
+  <Content />
+  </Event>
+  );
+  })
+  }
+</div> :
+<Layout subtitle="Calendar">
+<h1>Calendar</h1>
+<p>This calendar brings together palaeontological events from around the region and beyond, including public lectures, field trips, conferences, and museum exhibitions. It’s a helpful resource for anyone interested in palaeontology, from amateur enthusiasts to professional researchers.</p>
+
+<p>Events are listed to the best of our knowledge and are updated regularly. Whether you're looking to attend a fossil talk, join a dig, or simply stay informed about what's going on in the palaeo world, we hope you'll find something of interest.</p>
+
+<p>If you know of an upcoming event that you think should be included, please feel free to contact us at <EmailLink email='eric.campbell@albertapaleo.org' subject='Palaeontological event details / correction' /> with the details. I'd be happy to add it to the calendar!</p>
+<div id="calendar-header" view-transition-name='event-calendar-content'>
+  <Button type="button" id="back-button">
+    &loarr; Back
+  </Button>
+  <h2 id="calendar-header-content">
+    {formatMonthYear(parseInt(year), parseInt(month))}
+  </h2>
+  <Button type="button" id="next-button">
+    Next &roarr;
+  </Button>
+</div>
+<div id="calendar-content">
+  <EventCalendar year={year} month={month} events={calendarEvents} />
+  <hr class="post-event-calendar" />
+  {
+  renderedEvents.map((event, index, allEvents) => {
+  const { Content, headings, id } = event;
+  return (
+  <Event
+  id={id}
+  frontmatter={event.remarkPluginFrontmatter}
+  last={index === allEvents.length - 1}
+  >
+  <Content />
+  </Event>
+  );
+  })
+  }
+</div>
+</Layout>
+<script is:inline>
+  /**
+ * Returns the full month name and year, e.g., "March 2025".
+ * @param year - The full year (e.g., 2025)
+ * @param month - The month number (1 for January, 12 for December)
+ * @returns A string in the format "Month Year"
+ */
+function formatMonthYear(year, month) {
+  const date = new Date(year, month - 1); // JS months are 0-indexed
+  return date.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+}
+
+document.getElementById('back-button').addEventListener('click', () => {
+  const url = new URL(window.location.href);
+  const searchParams = new URLSearchParams(url.search);
+  const year = parseInt(searchParams.get('year') || new Date().getFullYear(), 10);
+  const month = parseInt(searchParams.get('month') || (new Date().getMonth() + 1), 10);
+  window.navigateToMonth(year, month - 1);
+
+  const calendarHeader = document.getElementById('calendar-header-content');
+  if (calendarHeader) {
+    calendarHeader.textContent = formatMonthYear(year, month - 1);
+  } else {
+    console.error('Calendar header element not found');
+  }
+});
+document.getElementById('next-button').addEventListener('click', () => {
+  const url = new URL(window.location.href);
+  const searchParams = new URLSearchParams(url.search);
+  const year = parseInt(searchParams.get('year') || new Date().getFullYear(), 10);
+  const month = parseInt(searchParams.get('month') || (new Date().getMonth() + 1), 10);
+  window.navigateToMonth(year, month + 1);
+
+  const calendarHeader = document.getElementById('calendar-header-content');
+  if (calendarHeader) {
+    calendarHeader.textContent = formatMonthYear(year, month + 1);
+  } else {
+    console.error('Calendar header element not found');
+  }
+});
+</script>
+<style>
+  #calendar-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: calc(2 * var(--theme-spacing-base));
+  }
+  .post-event-calendar {
+  margin: calc(2 * var(--theme-spacing-base)) auto;
+  border: none;
+  border-top: 4px solid; /* or choose a specific color */
+  width: 50%; /* or 100%, or any desired width */
+  }
+</style>
+}
