@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.64.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.63.0...v1.64.0) (2025-06-02)
+
+
+### Features
+
+* added `start` and `end` attributes to event schema ([272b9a2](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/272b9a2f4527c37b17c4d0884f1b953b9cefac12)), closes [#244](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/244)
+
 ## [1.63.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.62.0...v1.63.0) (2025-05-22)
 
 
