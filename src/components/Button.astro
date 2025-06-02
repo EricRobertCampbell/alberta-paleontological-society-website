@@ -10,5 +10,10 @@ const { props } = Astro;
 		background-color: var(--background-colour-medium);
 		border: solid 2px var(--background-colour-darker);
 		border-radius: var(--border-radius-medium);
+		box-shadow: 0 var(--theme-spacing-base) var(--theme-spacing-base) rgba(0, 0, 0, 0.2); /* Moderate shadow */
+		transition: box-shadow 0.3s ease;
+	}
+	button:hover {
+		box-shadow: none;
 	}
 </style>

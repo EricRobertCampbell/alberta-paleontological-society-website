@@ -1,4 +1,5 @@
 /* Mostly class-based styles which should apply to the whole site */
+
 .button {
     text-decoration: none;
     padding: 0.5rem;
@@ -22,8 +23,7 @@ a {
     background-position: 0 100%;
     background-repeat: no-repeat;
     background-size: 100% calc(0.75 * var(--theme-spacing-base));
-    transition:
-        background-size var(--transition-speed-slow) ease,
+    transition: background-size var(--transition-speed-slow) ease,
         background-position var(--transition-speed-slow) ease;
 }
 /* Email links */
@@ -60,4 +60,39 @@ a:hover {
     background: none;
     text-decoration: none;
     transition: none;
+}
+
+/* view transitions */
+::view-transition-old(event-calendar-content),
+::view-transition-new(event-calendar-content) {
+    animation-duration: 200ms;
+    animation-timing-function: ease;
+}
+::view-transition-old(event-calendar-content) {
+    animation-name: fade-out;
+}
+::view-transition-new(event-calendar-content) {
+    animation-name: fade-in;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0.5;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0.5;
+        transform: translateY(-8px);
+    }
 }

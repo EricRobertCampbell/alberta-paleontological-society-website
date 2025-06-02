@@ -10,3 +10,5 @@ export const SOCIAL_MEDIA_LINKS = {
     mastodon: APS_MASTODON_LINK,
 }
 export const THREE_D_SCAN_LOCATION = '/fossilCollection/3dScans/'
+
+export const APS_HOST_NAME = 'APS' // name to use in the event `host` attribute to indicate that it's the APS

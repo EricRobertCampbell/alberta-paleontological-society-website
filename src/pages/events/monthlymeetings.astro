@@ -1,10 +1,11 @@
 ---
+import { getCollection } from "astro:content";
+import { filterAPSEvents } from "../../utility/filters";
 import Layout from "../../layouts/Layout.astro";
 import EmailLink from "../../components/EmailLink.astro";
 import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
 import Event from "../../components/Event.astro";
 
-import { getCollection } from "astro:content";
 
 // get the next monthly meeting
 const today = new Date();
@@ -21,6 +22,10 @@ const renderedEvents = (
 	)
 )
 	.filter((e) => {
+	const isApsEvents = filterAPSEvents({host: e.remarkPluginFrontmatter.host});
+	if (!isApsEvents) {
+		return false;
+	}
 	const actualEndDate = e.remarkPluginFrontmatter.endDate || e.remarkPluginFrontmatter.startDate; // because some events (ones going on over only one date) have only the start date; assumption is that if there is no end date, the start date is the end date
 		return (
 		e.remarkPluginFrontmatter.type === 'Monthly Meeting' && ( ( e.remarkPluginFrontmatter.end && e.remarkPluginFrontmatter.end >= today ) || 
