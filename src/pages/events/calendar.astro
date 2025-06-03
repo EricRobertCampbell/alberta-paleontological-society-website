@@ -1,10 +1,86 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import EmailLink from "../../components/EmailLink.astro";
+import Event from '../../components/Event.astro';
+import { getCollection } from "astro:content";
+
+/**
+* Validates that a string represents a year
+*/
+const validateYearString = (yearString: string) => {
+  const year = parseInt(yearString, 10);
+  return !Number.isNaN(year) && Number.isFinite(year)
+};
+
+const validateMonthString = (monthString: string) => {
+  const month = parseInt(monthString, 10);
+  return !Number.isNaN(month) && Number.isFinite(month) && month >= 1 && month <= 12;
+};
+
+const {url} = Astro
+const searchParams = new URLSearchParams(url.search);
+const now = new Date();
+const defaultYear = now.getFullYear();
+const defaultMonth = now.getMonth() + 1; // Months are 0-indexed in JavaScript
+const rawYear = searchParams.get('year') 
+const rawMonth = searchParams.get('month')
+
+const year = validateYearString(rawYear) ? rawYear : defaultYear.toString();
+const month = validateMonthString(rawMonth) ? rawMonth.padStart(2, '0') : defaultMonth.toString().padStart(2, '0');
+
+const nextMonth = month === '12' ? '01' : (parseInt(month) + 1).toString().padStart(2, '0');
+const nextYear = month === '12' ? (parseInt(year) + 1).toString() : year;
+const prevMonth = month === '01' ? '12' : (parseInt(month) - 1).toString().padStart(2, '0');
+const prevYear = month === '01' ? (parseInt(year) - 1).toString() : year;
+
+const allEvents = await getCollection("events");
+const filteredEvents = allEvents.filter(( event ) => {
+  const {data} = event;
+  if (data.start && data.end) {
+    const startDate = new Date(data.start);
+    const endDate = new Date(data.end);
+    return startDate.getFullYear() <= parseInt(year) && 
+         startDate.getMonth() + 1 <= parseInt(month) &&
+         endDate.getFullYear() >= parseInt(year) && 
+         endDate.getMonth() + 1 >= parseInt(month);
+    }
+    else if (data.startDate) {
+      // NB for now we don't care about the start / end time, just the date
+      const actualStartDate = data.startDate
+      const actualEndDate = data.endDate || actualStartDate; // sometimes we only include teh start date
+      return true
+    } 
+})
+const renderedEvents = await filteredEvents.map(async (event) => {
+  return await event.render();
+});
+console.log(renderedEvents)
 ---
 
 <Layout subtitle="Calendar">
 	<h1>Calendar</h1>
+    <p>
+      getting events for {year}-{month}
+    </p>
+    <a href={`/events/calendar?year=${prevYear}&month=${prevMonth}`}>
+      Back
+    </a>
+    <a href={`/events/calendar?year=${nextYear}&month=${nextMonth}`}>
+      Next
+    </a>
+    {
+      renderedEvents.map((event, index, allEvents) => {
+        const { Content, headings } = event;
+        return (
+          <Event
+            frontmatter={event.remarkPluginFrontmatter}
+            last={index === allEvents.length - 1}
+          >
+            <Content />
+          </Event>
+        );
+      })
+    }
 	<p>This calendar brings together palaeontological events from around the region and beyond, including public lectures, field trips, conferences, and museum exhibitions. It’s a helpful resource for anyone interested in palaeontology, from amateur enthusiasts to professional researchers.</p>
 
   <p>Events are listed to the best of our knowledge and are updated regularly. Whether you're looking to attend a fossil talk, join a dig, or simply stay informed about what's going on in the palaeo world, we hope you'll find something of interest.</p>
