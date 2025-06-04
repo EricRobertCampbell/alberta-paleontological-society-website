@@ -1,0 +1,14 @@
+---
+interface Props {
+	day: number;
+}
+const {day} = Astro.props;
+---
+
+<div class="event-calendar-day-cell">
+{day}
+</div>
+
+<style>
+	.event-calendar-day-cell {}
+</style>

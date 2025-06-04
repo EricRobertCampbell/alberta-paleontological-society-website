@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import EmailLink from "../../components/EmailLink.astro";
 import Event from '../../components/Event.astro';
+import EventCalendar from '../../components/EventCalendar/EventCalendar.astro';
 import { getCollection } from "astro:content";
 
 /**
@@ -47,14 +48,18 @@ const filteredEvents = allEvents.filter(( event ) => {
     else if (data.startDate) {
       // NB for now we don't care about the start / end time, just the date
       const actualStartDate = data.startDate
-      const actualEndDate = data.endDate || actualStartDate; // sometimes we only include teh start date
-      return true
+      const actualEndDate = data.endDate || actualStartDate; // sometimes we only include the start date
+      const [ startYear, startMonth ] = actualStartDate.split('-');
+      const [endYear, endMonth ] = actualEndDate.split('-');
+      return startYear <= year && 
+        startMonth <= month &&
+        endYear >= year && 
+        endMonth >= month;
     } 
 })
-const renderedEvents = await filteredEvents.map(async (event) => {
+const renderedEvents = await Promise.all(filteredEvents.map(async (event) => {
   return await event.render();
-});
-console.log(renderedEvents)
+}));
 ---
 
 <Layout subtitle="Calendar">
@@ -68,6 +73,7 @@ console.log(renderedEvents)
     <a href={`/events/calendar?year=${nextYear}&month=${nextMonth}`}>
       Next
     </a>
+    <EventCalendar year={year} month={month} />
     {
       renderedEvents.map((event, index, allEvents) => {
         const { Content, headings } = event;
