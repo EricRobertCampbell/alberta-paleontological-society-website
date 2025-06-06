@@ -25,6 +25,7 @@ const defaultYear = now.getFullYear();
 const defaultMonth = now.getMonth() + 1; // Months are 0-indexed in JavaScript
 const rawYear = searchParams.get('year') 
 const rawMonth = searchParams.get('month')
+const partial = searchParams.get('partial') === 'true'
 
 const year = validateYearString(rawYear) ? rawYear : defaultYear.toString();
 const month = validateMonthString(rawMonth) ? rawMonth.padStart(2, '0') : defaultMonth.toString().padStart(2, '0');
@@ -62,34 +63,62 @@ const renderedEvents = await Promise.all(filteredEvents.map(async (event) => {
 }));
 ---
 
+{partial ? <div id="calendar-content">Test {year}-{month}</div> :
 <Layout subtitle="Calendar">
-	<h1>Calendar</h1>
-    <p>
-      getting events for {year}-{month}
-    </p>
-    <a href={`/events/calendar?year=${prevYear}&month=${prevMonth}`}>
-      Back
-    </a>
-    <a href={`/events/calendar?year=${nextYear}&month=${nextMonth}`}>
-      Next
-    </a>
-    <EventCalendar year={year} month={month} />
-    {
-      renderedEvents.map((event, index, allEvents) => {
-        const { Content, headings } = event;
-        return (
-          <Event
-            frontmatter={event.remarkPluginFrontmatter}
-            last={index === allEvents.length - 1}
-          >
-            <Content />
-          </Event>
-        );
-      })
-    }
-	<p>This calendar brings together palaeontological events from around the region and beyond, including public lectures, field trips, conferences, and museum exhibitions. It’s a helpful resource for anyone interested in palaeontology, from amateur enthusiasts to professional researchers.</p>
+<h1>Calendar</h1>
+<p>
+  getting events for {year}-{month}
+</p>
+<button type="button" id="back-button">
+  Back
+</button>
+<button type="button" id="next-button">
+  Next
+</button>
+<!-- <a href={`/events/calendar?year=${prevYear}&month=${prevMonth}`}> -->
+<!--   Back -->
+<!-- </a> -->
+<!-- <a href={`/events/calendar?year=${nextYear}&month=${nextMonth}`}> -->
+<!--   Next -->
+<!-- </a> -->
+<div id="calendar-content">
+  <EventCalendar year={year} month={month} />
+  {
+  renderedEvents.map((event, index, allEvents) => {
+  const { Content, headings } = event;
+  return (
+  <Event
+  frontmatter={event.remarkPluginFrontmatter}
+  last={index === allEvents.length - 1}
+  >
+  <Content />
+  </Event>
+  );
+  })
+  }
+</div>
+<p>This calendar brings together palaeontological events from around the region and beyond, including public lectures, field trips, conferences, and museum exhibitions. It’s a helpful resource for anyone interested in palaeontology, from amateur enthusiasts to professional researchers.</p>
 
-  <p>Events are listed to the best of our knowledge and are updated regularly. Whether you're looking to attend a fossil talk, join a dig, or simply stay informed about what's going on in the palaeo world, we hope you'll find something of interest.</p>
+<p>Events are listed to the best of our knowledge and are updated regularly. Whether you're looking to attend a fossil talk, join a dig, or simply stay informed about what's going on in the palaeo world, we hope you'll find something of interest.</p>
 
-  <p>If you know of an upcoming event that you think should be included, please feel free to contact us at <EmailLink email='eric.campbell@albertapaleo.org' subject='Palaeontological event details / correction' /> with the details. I'd be happy to add it to the calendar!</p>
+<p>If you know of an upcoming event that you think should be included, please feel free to contact us at <EmailLink email='eric.campbell@albertapaleo.org' subject='Palaeontological event details / correction' /> with the details. I'd be happy to add it to the calendar!</p>
 </Layout>
+<script is:inline>
+document.getElementById('back-button').addEventListener('click', () => {
+  console.log('back button clicked');
+  const url = new URL(window.location.href);
+  const searchParams = new URLSearchParams(url.search);
+  const year = parseInt(searchParams.get('year') || new Date().getFullYear(), 10);
+  const month = parseInt(searchParams.get('month') || (new Date().getMonth() + 1), 10);
+  window.navigateToMonth(year, month - 1);
+});
+document.getElementById('next-button').addEventListener('click', () => {
+  console.log('next button clicked');
+  const url = new URL(window.location.href);
+  const searchParams = new URLSearchParams(url.search);
+  const year = parseInt(searchParams.get('year') || new Date().getFullYear(), 10);
+  const month = parseInt(searchParams.get('month') || (new Date().getMonth() + 1), 10);
+  window.navigateToMonth(year, month + 1);
+});
+</script>
+}
