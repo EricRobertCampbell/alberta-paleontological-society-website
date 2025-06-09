@@ -18,6 +18,17 @@ const validateMonthString = (monthString: string) => {
   return !Number.isNaN(month) && Number.isFinite(month) && month >= 1 && month <= 12;
 };
 
+  /**
+ * Returns the full month name and year, e.g., "March 2025".
+ * @param year - The full year (e.g., 2025)
+ * @param month - The month number (1 for January, 12 for December)
+ * @returns A string in the format "Month Year"
+ */
+function formatMonthYear(year: number, month: number): string {
+  const date = new Date(year, month - 1); // JS months are 0-indexed
+  return date.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+}
+
 const {url} = Astro
 const searchParams = new URLSearchParams(url.search);
 const now = new Date();
@@ -63,24 +74,40 @@ const renderedEvents = await Promise.all(filteredEvents.map(async (event) => {
 }));
 ---
 
-{partial ? <div id="calendar-content">Test {year}-{month}</div> :
+{partial ? <div id="calendar-content">
+  <EventCalendar year={year} month={month} />
+  {
+  renderedEvents.map((event, index, allEvents) => {
+  const { Content, headings } = event;
+  return (
+  <Event
+  frontmatter={event.remarkPluginFrontmatter}
+  last={index === allEvents.length - 1}
+  >
+  <Content />
+  </Event>
+  );
+  })
+  }
+</div> :
 <Layout subtitle="Calendar">
 <h1>Calendar</h1>
-<p>
-  getting events for {year}-{month}
-</p>
-<button type="button" id="back-button">
-  Back
-</button>
-<button type="button" id="next-button">
-  Next
-</button>
-<!-- <a href={`/events/calendar?year=${prevYear}&month=${prevMonth}`}> -->
-<!--   Back -->
-<!-- </a> -->
-<!-- <a href={`/events/calendar?year=${nextYear}&month=${nextMonth}`}> -->
-<!--   Next -->
-<!-- </a> -->
+<p>This calendar brings together palaeontological events from around the region and beyond, including public lectures, field trips, conferences, and museum exhibitions. It’s a helpful resource for anyone interested in palaeontology, from amateur enthusiasts to professional researchers.</p>
+
+<p>Events are listed to the best of our knowledge and are updated regularly. Whether you're looking to attend a fossil talk, join a dig, or simply stay informed about what's going on in the palaeo world, we hope you'll find something of interest.</p>
+
+<p>If you know of an upcoming event that you think should be included, please feel free to contact us at <EmailLink email='eric.campbell@albertapaleo.org' subject='Palaeontological event details / correction' /> with the details. I'd be happy to add it to the calendar!</p>
+<div id="calendar-header">
+  <button type="button" id="back-button">
+    Back
+  </button>
+  <h2 id="calendar-header-content">
+    {formatMonthYear(parseInt(year), parseInt(month))}
+  </h2>
+  <button type="button" id="next-button">
+    Next
+  </button>
+</div>
 <div id="calendar-content">
   <EventCalendar year={year} month={month} />
   {
@@ -97,13 +124,19 @@ const renderedEvents = await Promise.all(filteredEvents.map(async (event) => {
   })
   }
 </div>
-<p>This calendar brings together palaeontological events from around the region and beyond, including public lectures, field trips, conferences, and museum exhibitions. It’s a helpful resource for anyone interested in palaeontology, from amateur enthusiasts to professional researchers.</p>
-
-<p>Events are listed to the best of our knowledge and are updated regularly. Whether you're looking to attend a fossil talk, join a dig, or simply stay informed about what's going on in the palaeo world, we hope you'll find something of interest.</p>
-
-<p>If you know of an upcoming event that you think should be included, please feel free to contact us at <EmailLink email='eric.campbell@albertapaleo.org' subject='Palaeontological event details / correction' /> with the details. I'd be happy to add it to the calendar!</p>
 </Layout>
 <script is:inline>
+  /**
+ * Returns the full month name and year, e.g., "March 2025".
+ * @param year - The full year (e.g., 2025)
+ * @param month - The month number (1 for January, 12 for December)
+ * @returns A string in the format "Month Year"
+ */
+function formatMonthYear(year: number, month: number): string {
+  const date = new Date(year, month - 1); // JS months are 0-indexed
+  return date.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+}
+
 document.getElementById('back-button').addEventListener('click', () => {
   console.log('back button clicked');
   const url = new URL(window.location.href);
@@ -111,6 +144,14 @@ document.getElementById('back-button').addEventListener('click', () => {
   const year = parseInt(searchParams.get('year') || new Date().getFullYear(), 10);
   const month = parseInt(searchParams.get('month') || (new Date().getMonth() + 1), 10);
   window.navigateToMonth(year, month - 1);
+
+  const calendarHeader = document.getElementById('calendar-header-content');
+  if (calendarHeader) {
+    calendarHeader.textContent = formatMonthYear(year, month - 1);
+  } else {
+    console.error('Calendar header element not found');
+    
+  }
 });
 document.getElementById('next-button').addEventListener('click', () => {
   console.log('next button clicked');
@@ -119,6 +160,22 @@ document.getElementById('next-button').addEventListener('click', () => {
   const year = parseInt(searchParams.get('year') || new Date().getFullYear(), 10);
   const month = parseInt(searchParams.get('month') || (new Date().getMonth() + 1), 10);
   window.navigateToMonth(year, month + 1);
+
+  const calendarHeader = document.getElementById('calendar-header-content');
+  if (calendarHeader) {
+    calendarHeader.textContent = formatMonthYear(year, month - 1);
+  } else {
+    console.error('Calendar header element not found');
+    
+  }
 });
 </script>
+<style>
+  #calendar-header {
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: center;
+  }
+</style>
 }
