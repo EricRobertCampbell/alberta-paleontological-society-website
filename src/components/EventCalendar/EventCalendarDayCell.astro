@@ -1,12 +1,24 @@
 ---
 interface Props {
 	day: number;
+	events: Array<{
+		startDate: string; // YYYY-MM-DD
+		endDate: string; // YYYY-MM-DD
+		title: string;
+	}>;
 }
 const {day} = Astro.props;
 ---
 
 <div class="event-calendar-day-cell">
 {day}
+{
+	events.map((event) => {
+		return <span>
+			{event.title}
+		</span>
+	})
+}
 </div>
 
 <style>

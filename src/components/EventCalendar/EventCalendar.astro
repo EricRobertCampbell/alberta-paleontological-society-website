@@ -4,9 +4,9 @@ interface Props {
 	month: number;
 	year: number;
 	events: Array<{
-		date: string; // ISO date string
+		startDate: string; // YYYY-MM-DD
+		endDate: string; // YYYY-MM-DD
 		title: string;
-		description?: string;
 	}>;
 }
 const { month, year, events } = Astro.props;
@@ -24,9 +24,14 @@ const days = new Array(getDaysInMonth(year, month)).fill(0).map((_, index) => in
 
 <div class="event-calendar">
 	{
-		days.map(day => (
-			<EventCalendarDayCell day={day} />
-		))
+	days.map(day => { 
+	const daysEvents = events.filter(event => {
+		const startDay = event.startDate.split('-')[2];
+		const endDay = event.endDate.split('-')[2];
+		return day >= parseInt(startDay) && day <= parseInt(endDay);
+	})
+	return <EventCalendarDayCell day={day} events={daysEvents} />
+	})
 	}
 </div>
 

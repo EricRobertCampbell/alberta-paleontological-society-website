@@ -72,10 +72,34 @@ const filteredEvents = allEvents.filter(( event ) => {
 const renderedEvents = await Promise.all(filteredEvents.map(async (event) => {
   return await event.render();
 }));
+const calendarEvents = filteredEvents.map((event) => {
+  let startDate: string;
+  if (event.data.start) {
+    startDate = event.data.start.toISOString().split('T')[0]; // Extract just the date part
+  } else if (event.data.startDate) {
+    startDate = event.data.startDate;
+  } else {
+    startDate = '';
+  }
+  let endDate: string;
+  if (event.data.end) {
+    endDate = event.data.end.toISOString().split('T')[0]; // Extract just the date part
+  } else if (event.data.endDate) {
+    endDate = event.data.endDate;
+  } else {
+    endDate = startDate; // Default to start date if no end date is provided
+  }
+  const title = event.data.title;
+  return {
+  startDate,
+  endDate,
+  title,
+  }
+});
 ---
 
 {partial ? <div id="calendar-content">
-  <EventCalendar year={year} month={month} />
+  <EventCalendar year={year} month={month} events={calendarEvents}/>
   {
   renderedEvents.map((event, index, allEvents) => {
   const { Content, headings } = event;
@@ -132,7 +156,7 @@ const renderedEvents = await Promise.all(filteredEvents.map(async (event) => {
  * @param month - The month number (1 for January, 12 for December)
  * @returns A string in the format "Month Year"
  */
-function formatMonthYear(year: number, month: number): string {
+function formatMonthYear(year, month) {
   const date = new Date(year, month - 1); // JS months are 0-indexed
   return date.toLocaleString('en-US', { month: 'long', year: 'numeric' });
 }
@@ -150,7 +174,6 @@ document.getElementById('back-button').addEventListener('click', () => {
     calendarHeader.textContent = formatMonthYear(year, month - 1);
   } else {
     console.error('Calendar header element not found');
-    
   }
 });
 document.getElementById('next-button').addEventListener('click', () => {
@@ -166,12 +189,12 @@ document.getElementById('next-button').addEventListener('click', () => {
     calendarHeader.textContent = formatMonthYear(year, month - 1);
   } else {
     console.error('Calendar header element not found');
-    
   }
 });
 </script>
 <style>
   #calendar-header {
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: space-between;
