@@ -96,10 +96,12 @@ const calendarEvents = filteredEvents.map((event) => {
   title,
   }
 });
+console.log({calendarEvents})
 ---
 
 {partial ? <div id="calendar-content">
   <EventCalendar year={year} month={month} events={calendarEvents}/>
+  <hr class="post-event-calendar" />
   {
   renderedEvents.map((event, index, allEvents) => {
   const { Content, headings } = event;
@@ -133,7 +135,8 @@ const calendarEvents = filteredEvents.map((event) => {
   </button>
 </div>
 <div id="calendar-content">
-  <EventCalendar year={year} month={month} />
+  <EventCalendar year={year} month={month} events={calendarEvents} />
+  <hr class="post-event-calendar" />
   {
   renderedEvents.map((event, index, allEvents) => {
   const { Content, headings } = event;
@@ -199,6 +202,12 @@ document.getElementById('next-button').addEventListener('click', () => {
     flex-direction: row;
     align-items: space-between;
     justify-content: center;
+  }
+  .post-event-calendar {
+  margin: calc(2 * var(--theme-spacing-base)) auto;
+  border: none;
+  border-top: 4px solid; /* or choose a specific color */
+  width: 50%; /* or 100%, or any desired width */
   }
 </style>
 }
