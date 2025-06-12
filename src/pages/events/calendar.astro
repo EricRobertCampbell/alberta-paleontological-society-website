@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import EmailLink from "../../components/EmailLink.astro";
 import Event from '../../components/Event.astro';
 import EventCalendar from '../../components/EventCalendar/EventCalendar.astro';
+import Button from '../../components/Button.astro';
 import { getCollection } from "astro:content";
 
 /**
@@ -124,15 +125,15 @@ console.log({calendarEvents})
 
 <p>If you know of an upcoming event that you think should be included, please feel free to contact us at <EmailLink email='eric.campbell@albertapaleo.org' subject='Palaeontological event details / correction' /> with the details. I'd be happy to add it to the calendar!</p>
 <div id="calendar-header">
-  <button type="button" id="back-button">
-    Back
-  </button>
+  <Button type="button" id="back-button">
+    &loarr; Back
+  </Button>
   <h2 id="calendar-header-content">
     {formatMonthYear(parseInt(year), parseInt(month))}
   </h2>
-  <button type="button" id="next-button">
-    Next
-  </button>
+  <Button type="button" id="next-button">
+    Next &roarr;
+  </Button>
 </div>
 <div id="calendar-content">
   <EventCalendar year={year} month={month} events={calendarEvents} />
@@ -200,8 +201,9 @@ document.getElementById('next-button').addEventListener('click', () => {
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: space-between;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: calc(2 * var(--theme-spacing-base));
   }
   .post-event-calendar {
   margin: calc(2 * var(--theme-spacing-base)) auto;

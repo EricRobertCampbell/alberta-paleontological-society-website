@@ -42,6 +42,11 @@ const days = [...extraDays, ...monthDays];
 
 <div class="event-calendar">
 	{
+	['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map((day) => <span class="day-of-week">
+			{day}
+		</span>)
+	}
+	{
 	days.map(day => { 
 	const daysEvents = events.filter(event => {
 		if (!day) {
@@ -60,5 +65,13 @@ const days = [...extraDays, ...monthDays];
 	.event-calendar {
 		display: grid;
 		grid-template-columns: repeat(7, 1fr);
+	}
+	.day-of-week {
+		font-weight: bold;
+		text-align: center;
+		padding: calc(var(--theme-spacing-base));
+		background-color: var(--accent-colour-light);
+		border-bottom: 1px solid var(--accent-colour-dark);
+		margin-bottom: calc(var(--theme-spacing-base));
 	}
 </style>
