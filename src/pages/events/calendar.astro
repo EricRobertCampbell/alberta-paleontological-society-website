@@ -100,7 +100,7 @@ const calendarEvents = filteredEvents.map((event) => {
 console.log({calendarEvents})
 ---
 
-{partial ? <div id="calendar-content">
+{partial ? <div id="calendar-content" view-transition-name='event-calendar-content'>
   <EventCalendar year={year} month={month} events={calendarEvents}/>
   <hr class="post-event-calendar" />
   {
@@ -124,7 +124,7 @@ console.log({calendarEvents})
 <p>Events are listed to the best of our knowledge and are updated regularly. Whether you're looking to attend a fossil talk, join a dig, or simply stay informed about what's going on in the palaeo world, we hope you'll find something of interest.</p>
 
 <p>If you know of an upcoming event that you think should be included, please feel free to contact us at <EmailLink email='eric.campbell@albertapaleo.org' subject='Palaeontological event details / correction' /> with the details. I'd be happy to add it to the calendar!</p>
-<div id="calendar-header">
+<div id="calendar-header" view-transition-name='event-calendar-content'>
   <Button type="button" id="back-button">
     &loarr; Back
   </Button>
