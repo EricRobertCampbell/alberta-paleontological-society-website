@@ -20,8 +20,8 @@ const matchesDestination = (destination: string) => {
 						<a
 							class:list={
 								matchesDestination(destination)
-									? ["active"]
-									: []
+		  ? ["active", "reset-link-style"]
+									: ["reset-link-style"]
 							}
 							href={destination}
 						>
@@ -42,7 +42,7 @@ const matchesDestination = (destination: string) => {
 												: []
 										}
 									>
-										<a href={subDestination}>{subLabel}</a>
+										<a class="reset-link-style" href={subDestination}>{subLabel}</a>
 									</li>
 								)
 							)}
