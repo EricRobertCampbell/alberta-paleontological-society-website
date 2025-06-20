@@ -17,7 +17,7 @@ const matchesDestination = (destination: string) => {
 						(matchesDestination(destination) ? " active" : "")
 					}
 				>
-					<a href={destination}>{label}</a>
+					<a class="reset-link-style" href={destination}>{label}</a>
 					{subheadings && (
 						<div class="subheadings">
 							<ul class="subheadings-ul">
@@ -37,7 +37,7 @@ const matchesDestination = (destination: string) => {
 														: "")
 												}
 											>
-												<a href={subDestination}>
+												<a class="reset-link-style" href={subDestination}>
 													{subLabel}
 												</a>
 											</li>

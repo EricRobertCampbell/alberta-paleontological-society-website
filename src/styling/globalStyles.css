@@ -10,3 +10,52 @@
 figcaption {
     text-align: center;
 }
+
+a {
+    text-decoration: none;
+    color: var(--accent-colour-text);
+    background-image: linear-gradient(
+        var(--accent-colour-light),
+        var(--accent-colour-light)
+    );
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% calc(0.5 * var(--theme-spacing-base));
+    transition: background-size var(--transition-speed-slow) ease,
+        background-position var(--transition-speed-slow) ease;
+}
+/* Email links */
+a[href^='mailto:'] {
+    --underline-colour: var(--accent-colour-light);
+    background-image: linear-gradient(
+        var(--underline-colour),
+        var(--underline-colour)
+    );
+}
+
+/* Telephone links */
+a[href^='tel:'] {
+    --underline-colour: var(--accent-colour-light);
+    background-image: linear-gradient(
+        var(--underline-colour),
+        var(--underline-colour)
+    );
+}
+
+a:hover {
+    background-position: 0 0%;
+    background-size: 100% 100%;
+}
+
+.reset-link-style {
+    all: unset;
+    display: inline;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.no-underline-effect {
+    background: none;
+    text-decoration: none;
+    transition: none;
+}
