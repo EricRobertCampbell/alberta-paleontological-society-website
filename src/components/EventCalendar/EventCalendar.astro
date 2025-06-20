@@ -1,0 +1,79 @@
+---
+import EventCalendarDayCell from './EventCalendarDayCell.astro';
+interface Props {
+	month: number;
+	year: number;
+	events: Array<{
+		startDate: string; // YYYY-MM-DD
+		endDate: string; // YYYY-MM-DD
+		title: string;
+		id: string;
+		type: string;
+	}>;
+}
+const { month, year, events } = Astro.props;
+console.log('eventCalendar:', {month, year, events})
+/**
+ * Returns the number of days in a given month and year.
+ * @param year - The full year (e.g., 2025)
+ * @param month - The month (1-indexed: 1 = January, 12 = December)
+ * @returns The number of days in the specified month
+ */
+function getDaysInMonth(year: number, month: number): number {
+  return new Date(year, month, 0).getDate();
+}
+/**
+* Returns the number of leading placeholder days ("extra days")
+* to add before the first day of a month so the calendar starts on Sunday.
+* 
+* @param year - The year of the calendar month
+* @param month - The month (1-indexed, i.e. January = 1)
+* @returns Number of placeholder days to add before the first of the month
+*/
+function getExtraDays(year: number, month: number): number {
+const firstDay = new Date(year, month - 1, 1).getDay(); // 0 = Sunday, 6 = Saturday
+return firstDay; // already 0 if Sunday, otherwise 1–6
+}
+
+const monthDays = new Array(getDaysInMonth(year, month)).fill(0).map((_, index) => index + 1);
+const extraDays = Array.from({length: getExtraDays(year, month)
+}).fill('')
+const days = [...extraDays, ...monthDays];
+
+---
+
+<div class="event-calendar">
+	{
+	['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map((day) => <span class="day-of-week">
+			{day}
+		</span>)
+	}
+	{
+	days.map(day => { 
+	const daysEvents = events.filter(event => {
+		if (!day) {
+			return false;
+		}
+		const startDay = event.startDate.split('-')[2];
+		const endDay = event.endDate.split('-')[2];
+		return day >= parseInt(startDay) && day <= parseInt(endDay);
+	})
+	return <EventCalendarDayCell day={day} events={daysEvents} />
+	})
+	}
+</div>
+
+<style>
+	.event-calendar {
+		display: grid;
+		grid-template-columns: repeat(7, 1fr);
+	}
+	.day-of-week {
+		font-weight: bold;
+		text-align: center;
+		padding: calc(var(--theme-spacing-base));
+		background-color: var(--accent-colour-light);
+		border-bottom: 1px solid var(--accent-colour-dark);
+		margin-bottom: calc(var(--theme-spacing-base));
+	}
+</style>

@@ -1,9 +1,11 @@
 ---
+import { getCollection } from "astro:content";
+import { filterExternalEvents } from '../../utility/filters'
+
 import Layout from "../../layouts/Layout.astro";
 import EmailLink from "../../components/EmailLink.astro";
 import PhoneLink from "../../components/PhoneLink.astro";
 import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
-import { getCollection } from "astro:content";
 import Event from "../../components/Event.astro";
 
 const allEvents = await getCollection("events");
@@ -14,7 +16,13 @@ const renderedEvents = (
 		})
 	)
 )
-	.filter((e) => e.remarkPluginFrontmatter.type === "Field Trip")
+	.filter((e) => {
+		const isExternal = filterExternalEvents({host: e.remarkPluginFrontmatter.host});
+		if (isExternal) {
+			return false;
+		}
+		return e.remarkPluginFrontmatter.type === "Field Trip" 
+	})
 	.sort((e1, e2) => {
 		return e1.remarkPluginFrontmatter.startDate.localeCompare(
 			e2.remarkPluginFrontmatter.startDate

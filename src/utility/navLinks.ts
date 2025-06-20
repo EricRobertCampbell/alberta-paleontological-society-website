@@ -18,6 +18,10 @@ export const links: Array<LinkInformation> = [
                 label: 'Field Trips',
             },
             {
+                destination: '/events/calendar',
+                label: 'Calendar',
+            },
+            {
                 destination: '/events/fieldtrippictures',
                 label: 'Field Trip Pictures',
             },

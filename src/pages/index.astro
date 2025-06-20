@@ -26,6 +26,10 @@ const renderedEvents = (
 	)
 )
 	.filter((e) => {
+		if (e.remarkPluginFrontmatter.host && e.remarkPluginFrontmatter.host !== 'APS') {
+			return false
+			
+		}
 		if (e.remarkPluginFrontmatter.start) {
 			return e.remarkPluginFrontmatter.start >= now
 		}	
