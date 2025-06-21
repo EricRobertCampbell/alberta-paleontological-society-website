@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.67.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.66.0...v1.67.0) (2025-06-21)
+
+
+### Features
+
+* update st. mary trip: max 30 ([3224285](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/322428583e9a1593d4353ed9275ad85ebae0a3cf))
+
 ## [1.66.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.65.0...v1.66.0) (2025-06-21)
 
 
