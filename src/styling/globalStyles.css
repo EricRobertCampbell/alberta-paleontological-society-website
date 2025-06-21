@@ -22,7 +22,8 @@ a {
     background-position: 0 100%;
     background-repeat: no-repeat;
     background-size: 100% calc(0.75 * var(--theme-spacing-base));
-    transition: background-size var(--transition-speed-slow) ease,
+    transition:
+        background-size var(--transition-speed-slow) ease,
         background-position var(--transition-speed-slow) ease;
 }
 /* Email links */
