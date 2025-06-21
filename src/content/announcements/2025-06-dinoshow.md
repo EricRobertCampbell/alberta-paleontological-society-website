@@ -16,11 +16,11 @@ Whether you're a student, collector, fossil hunter, museum guide, or lifelong su
 
 No TV experience required - just serious dino love.
 
-Apply now by sending the following information to [tjduverne@gmail.com](tjduverne@gmail.com):
+Apply now by sending the following information to tjduverne@gmail.com:
 
-- Name
-- Age and location
-- Short bio about your dino obsession
-- Recent photo
-- Quick intro video (optional)
-- Social media links (if any)
+-   Name
+-   Age and location
+-   Short bio about your dino obsession
+-   Recent photo
+-   Quick intro video (optional)
+-   Social media links (if any)
