@@ -25,6 +25,8 @@ is a single-day trip. Raymond is about a 3-hour drive
 from Calgary (or 30 mins from Lethbridge). The fee
 is $10.
 
+Due to the size of the site, this field trip will be capped at 30 participants. Please register early to avoid disappointment!
+
 To register for this and any other trips, download and complete [the field trip permission form](/fieldTrips/2025/APSFieldTripsForm2025.pdf).
 
 **Registration deadline is July 1.**
