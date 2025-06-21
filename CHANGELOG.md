@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.68.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.67.0...v1.68.0) (2025-06-21)
+
+
+### Features
+
+* announcement about new dino tv show ([bbf77cf](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/bbf77cf8e12f6e657b1df108b9c92ba56ce83442))
+
 ## [1.67.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.66.0...v1.67.0) (2025-06-21)
 
 
