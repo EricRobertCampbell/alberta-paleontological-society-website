@@ -12,6 +12,7 @@ figcaption {
 }
 
 a {
+    padding: calc(0.25 * var(--theme-spacing-base));
     text-decoration: none;
     color: var(--accent-colour-text);
     background-image: linear-gradient(
@@ -20,9 +21,8 @@ a {
     );
     background-position: 0 100%;
     background-repeat: no-repeat;
-    background-size: 100% calc(0.5 * var(--theme-spacing-base));
-    transition:
-        background-size var(--transition-speed-slow) ease,
+    background-size: 100% calc(0.75 * var(--theme-spacing-base));
+    transition: background-size var(--transition-speed-slow) ease,
         background-position var(--transition-speed-slow) ease;
 }
 /* Email links */

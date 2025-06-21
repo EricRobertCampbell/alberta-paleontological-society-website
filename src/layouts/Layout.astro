@@ -29,6 +29,9 @@ const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ""}`;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/logos/aps-logo.gif" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<title>{formattedTitle}</title>
 	</head>
 	<body>
@@ -43,7 +46,8 @@ const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ""}`;
 </html>
 <style is:global>
 	html {
-		font-family: system-ui, sans-serif;
+		font-family: "Roboto", system-ui, sans-serif;
+		line-height: 1.5;
 		background-color: #f6f6f6;
 		margin: 0;
 		padding: 0;
@@ -69,6 +73,7 @@ const formattedTitle = `${title}${subtitle ? ` | ${subtitle}` : ""}`;
 	h4,
 	h5,
 	h6 {
+		font-family: "Lexend Deca", system-ui, sans-serif;
 		color: var(--accent-colour-medium);
 	}
 	#main {
