@@ -1,0 +1,58 @@
+---
+import { getEventTypeClass } from './utility'
+
+interface Props {
+	events: Array<{
+		startDate: string; // YYYY-MM-DD
+		endDate: string; // YYYY-MM-DD
+		title: string;
+		id: string;
+		type: string;
+	}>;
+}
+const { events } = Astro.props;
+const eventTypes = Array.from(new Set(events.map(event => event.type)));
+---
+{eventTypes.length > 0 &&
+<div class="event-calendar-legend">
+	<h2>
+		Legend
+	</h2>
+	<div class="event-calendar-item-container">
+		{
+		eventTypes.map(type => (
+		<div class="event-type">
+			<span class:list={["event-type-icon", getEventTypeClass(type)]}></span>
+			<span class="event-type-label">{type}</span>
+		</div>
+		))
+		}
+	</div>
+</div>
+}
+
+<style>
+	.event-calendar-legend {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: calc(2 * var(--theme-spacing-base));
+	}
+	.event-calendar-item-container {
+		display: flex;
+		flex-direction: row;
+		gap: calc(4 * var(--theme-spacing-base));
+	}
+	.event-type {
+		display: flex;
+		align-items: center;
+		gap: calc(1 * var(--theme-spacing-base));
+	}
+	.event-type-icon {
+		width: 1.5rem;
+		height: 1.5rem;
+		border-radius: 50%;
+		display: inline-block;
+	}
+</style>
