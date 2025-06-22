@@ -1,5 +1,7 @@
 ---
 import EventCalendarDayCell from './EventCalendarDayCell.astro';
+import EventCalendarLegend from './EventCalendarLegend.astro';
+
 interface Props {
 	month: number;
 	year: number;
@@ -62,6 +64,7 @@ const days = [...extraDays, ...monthDays];
 	})
 	}
 </div>
+<EventCalendarLegend events={events} />
 
 <style>
 	.event-calendar {
