@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.70.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.69.0...v1.70.0) (2025-06-26)
+
+
+### Features
+
+* added legend to event calendar ([332f25e](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/332f25e052336090138e37c5ca7bf087b104985b))
+* new calendar component ([0724ae9](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/0724ae93d30f8903406c49b0c2c37804f3e637f3)), closes [#246](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/246)
+
+
+### Bug Fixes
+
+* overflow scroll on calendar component ([ba94600](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/ba94600d048001c11db4009c84f5c2bfd5d054a8)), closes [#246](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/246)
+
 ## [1.69.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.68.1...v1.69.0) (2025-06-26)
 
 
