@@ -39,22 +39,22 @@
                                 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js') +
                             '?config=' +
                             (i.config || 'TeX-AMS_HTML-full')
-                    ;(i.tex2jax = { ...e.tex2jax, ...a.tex2jax }),
+                    ;((i.tex2jax = { ...e.tex2jax, ...a.tex2jax }),
                         (i.mathjax = i.config = null),
                         (function (t, e) {
                             let n = document.querySelector('head'),
                                 a = document.createElement('script')
-                            ;(a.type = 'text/javascript'), (a.src = t)
+                            ;((a.type = 'text/javascript'), (a.src = t))
                             let i = () => {
                                 'function' == typeof e && (e.call(), (e = null))
                             }
-                            ;(a.onload = i),
+                            ;((a.onload = i),
                                 (a.onreadystatechange = () => {
                                     'loaded' === this.readyState && i()
                                 }),
-                                n.appendChild(a)
+                                n.appendChild(a))
                         })(s, function () {
-                            MathJax.Hub.Config(i),
+                            ;(MathJax.Hub.Config(i),
                                 MathJax.Hub.Queue([
                                     'Typeset',
                                     MathJax.Hub,
@@ -67,8 +67,8 @@
                                         MathJax.Hub,
                                         t.currentSlide,
                                     ])
-                                })
-                        })
+                                }))
+                        }))
                 },
             }
         },
@@ -96,11 +96,11 @@
             const n = (t) =>
                 new Promise((e, n) => {
                     const a = document.createElement('script')
-                    ;(a.type = 'text/javascript'),
+                    ;((a.type = 'text/javascript'),
                         (a.onload = e),
                         (a.onerror = n),
                         (a.src = t),
-                        document.head.append(a)
+                        document.head.append(a))
                 })
             return {
                 id: 'katex',
@@ -115,24 +115,25 @@
                         h = d + u + '/dist/contrib/mhchem.min.js',
                         x = d + u + '/dist/contrib/auto-render.min.js',
                         m = [d + u + '/dist/katex.min.js']
-                    s.extensions &&
+                    ;(s.extensions &&
                         s.extensions.includes('mhchem') &&
                         m.push(h),
-                        m.push(x)
+                        m.push(x))
                     const f = () => {
-                        renderMathInElement(a.getSlidesElement(), c), t.layout()
+                        ;(renderMathInElement(a.getSlidesElement(), c),
+                            t.layout())
                     }
-                    ;((t) => {
+                    ;(((t) => {
                         let e = document.createElement('link')
-                        ;(e.rel = 'stylesheet'),
+                        ;((e.rel = 'stylesheet'),
                             (e.href = t),
-                            document.head.appendChild(e)
+                            document.head.appendChild(e))
                     })(p),
                         (async function (t) {
                             for (const e of t) await n(e)
                         })(m).then(() => {
                             t.isReady() ? f() : t.on('ready', f.bind(this))
-                        })
+                        }))
                 },
             }
         },
@@ -157,10 +158,10 @@
                     },
                     startup: {
                         ready: () => {
-                            MathJax.startup.defaultReady(),
+                            ;(MathJax.startup.defaultReady(),
                                 MathJax.startup.promise.then(() => {
                                     t.layout()
-                                })
+                                }))
                         },
                     },
                 }
@@ -170,17 +171,17 @@
                     t = n
                     let a = t.getConfig().mathjax3 || {},
                         i = { ...e, ...a }
-                    ;(i.tex = { ...e.tex, ...a.tex }),
+                    ;((i.tex = { ...e.tex, ...a.tex }),
                         (i.options = { ...e.options, ...a.options }),
-                        (i.startup = { ...e.startup, ...a.startup })
+                        (i.startup = { ...e.startup, ...a.startup }))
                     let s =
                         i.mathjax ||
                         'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
-                    ;(i.mathjax = null),
+                    ;((i.mathjax = null),
                         (window.MathJax = i),
                         (function (t, e) {
                             let n = document.createElement('script')
-                            ;(n.type = 'text/javascript'),
+                            ;((n.type = 'text/javascript'),
                                 (n.id = 'MathJax-script'),
                                 (n.src = t),
                                 (n.async = !0),
@@ -188,12 +189,12 @@
                                     'function' == typeof e &&
                                         (e.call(), (e = null))
                                 }),
-                                document.head.appendChild(n)
+                                document.head.appendChild(n))
                         })(s, function () {
                             t.addEventListener('slidechanged', function (t) {
                                 MathJax.typeset()
                             })
-                        })
+                        }))
                 },
             }
         },
