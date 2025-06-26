@@ -5,6 +5,8 @@ endDate: '2025-07-12'
 type: 'Field Trip'
 ---
 
+**NOTE**: This field trip is currently full. You can still register to be added to the waiting list.
+
 **Leaders: Les Wingerter & Keith Mychaluk**
 
 APS member Les Wingerter will guide our group
