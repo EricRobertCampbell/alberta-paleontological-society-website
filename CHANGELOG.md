@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.69.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.68.1...v1.69.0) (2025-06-26)
+
+
+### Features
+
+* field trip full notification ([e75bdef](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/e75bdef0a09465789f887052f2d48775a0297d1f))
+
 ### [1.68.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.68.0...v1.68.1) (2025-06-21)
 
 
