@@ -17,7 +17,7 @@
      */ return () => {
         let e, t, n, o, i, l, s
         function r() {
-            ;(t = document.createElement('div')),
+            ;((t = document.createElement('div')),
                 t.classList.add('searchbox'),
                 (t.style.position = 'absolute'),
                 (t.style.top = '10px'),
@@ -41,7 +41,7 @@
                     'keyup',
                     function (t) {
                         if (13 === t.keyCode)
-                            t.preventDefault(),
+                            (t.preventDefault(),
                                 (function () {
                                     if (l) {
                                         var t = n.value
@@ -56,21 +56,21 @@
                                         o.length > i &&
                                             (e.slide(o[i].h, o[i].v), i++))
                                 })(),
-                                (l = !1)
+                                (l = !1))
                         else l = !0
                     },
                     !1
                 ),
-                d()
+                d())
         }
         function a() {
-            t || r(), (t.style.display = 'inline'), n.focus(), n.select()
+            ;(t || r(), (t.style.display = 'inline'), n.focus(), n.select())
         }
         function d() {
-            t || r(), (t.style.display = 'none'), s && s.remove()
+            ;(t || r(), (t.style.display = 'none'), s && s.remove())
         }
         function c() {
-            t || r(), 'inline' !== t.style.display ? a() : d()
+            ;(t || r(), 'inline' !== t.style.display ? a() : d())
         }
         function f(t, n) {
             var o = document.getElementById(t) || document.body,
@@ -81,8 +81,8 @@
                 a = 0,
                 d = '',
                 c = []
-            ;(this.setRegex = function (e) {
-                ;(e = e.trim()), (d = new RegExp('(' + e + ')', 'i'))
+            ;((this.setRegex = function (e) {
+                ;((e = e.trim()), (d = new RegExp('(' + e + ')', 'i')))
             }),
                 (this.getRegex = function () {
                     return d
@@ -109,21 +109,21 @@
                                     y = !1
                                 for (n = 0; n < h; n++)
                                     c[n].h === p.h && c[n].v === p.v && (y = !0)
-                                y || c.push(p),
+                                ;(y || c.push(p),
                                     r[f[0].toLowerCase()] ||
                                         (r[f[0].toLowerCase()] =
-                                            s[a++ % s.length])
+                                            s[a++ % s.length]))
                                 var g = document.createElement(i)
-                                g.appendChild(document.createTextNode(f[0])),
+                                ;(g.appendChild(document.createTextNode(f[0])),
                                     (g.style.backgroundColor =
                                         r[f[0].toLowerCase()]),
                                     (g.style.fontStyle = 'inherit'),
-                                    (g.style.color = '#000')
+                                    (g.style.color = '#000'))
                                 var v = t.splitText(f.index)
-                                ;(v.nodeValue = v.nodeValue.substring(
+                                ;((v.nodeValue = v.nodeValue.substring(
                                     f[0].length
                                 )),
-                                    t.parentNode.insertBefore(g, v)
+                                    t.parentNode.insertBefore(g, v))
                             }
                     }
                 }),
@@ -143,12 +143,12 @@
                             this.hiliteWords(o),
                             c
                         )
-                })
+                }))
         }
         return {
             id: 'search',
             init: (t) => {
-                ;(e = t),
+                ;((e = t),
                     e.registerKeyboardShortcut('CTRL + Shift + F', 'Search'),
                     document.addEventListener(
                         'keydown',
@@ -158,7 +158,7 @@
                                 (e.preventDefault(), c())
                         },
                         !1
-                    )
+                    ))
             },
             open: a,
             close: d,

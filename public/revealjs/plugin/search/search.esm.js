@@ -7,7 +7,7 @@
 const e = () => {
     let e, t, n, l, o, i, r
     function s() {
-        ;(t = document.createElement('div')),
+        ;((t = document.createElement('div')),
             t.classList.add('searchbox'),
             (t.style.position = 'absolute'),
             (t.style.top = '10px'),
@@ -31,7 +31,7 @@ const e = () => {
                 'keyup',
                 function (t) {
                     if (13 === t.keyCode)
-                        t.preventDefault(),
+                        (t.preventDefault(),
                             (function () {
                                 if (i) {
                                     var t = n.value
@@ -46,21 +46,21 @@ const e = () => {
                                     l.length > o &&
                                         (e.slide(l[o].h, l[o].v), o++))
                             })(),
-                            (i = !1)
+                            (i = !1))
                     else i = !0
                 },
                 !1
             ),
-            d()
+            d())
     }
     function a() {
-        t || s(), (t.style.display = 'inline'), n.focus(), n.select()
+        ;(t || s(), (t.style.display = 'inline'), n.focus(), n.select())
     }
     function d() {
-        t || s(), (t.style.display = 'none'), r && r.remove()
+        ;(t || s(), (t.style.display = 'none'), r && r.remove())
     }
     function c() {
-        t || s(), 'inline' !== t.style.display ? a() : d()
+        ;(t || s(), 'inline' !== t.style.display ? a() : d())
     }
     function p(t, n) {
         var l = document.getElementById(t) || document.body,
@@ -71,8 +71,8 @@ const e = () => {
             a = 0,
             d = '',
             c = []
-        ;(this.setRegex = function (e) {
-            ;(e = e.trim()), (d = new RegExp('(' + e + ')', 'i'))
+        ;((this.setRegex = function (e) {
+            ;((e = e.trim()), (d = new RegExp('(' + e + ')', 'i')))
         }),
             (this.getRegex = function () {
                 return d
@@ -99,18 +99,20 @@ const e = () => {
                                 y = !1
                             for (n = 0; n < h; n++)
                                 c[n].h === f.h && c[n].v === f.v && (y = !0)
-                            y || c.push(f),
+                            ;(y || c.push(f),
                                 s[p[0].toLowerCase()] ||
-                                    (s[p[0].toLowerCase()] = r[a++ % r.length])
+                                    (s[p[0].toLowerCase()] = r[a++ % r.length]))
                             var g = document.createElement(o)
-                            g.appendChild(document.createTextNode(p[0])),
+                            ;(g.appendChild(document.createTextNode(p[0])),
                                 (g.style.backgroundColor =
                                     s[p[0].toLowerCase()]),
                                 (g.style.fontStyle = 'inherit'),
-                                (g.style.color = '#000')
+                                (g.style.color = '#000'))
                             var v = t.splitText(p.index)
-                            ;(v.nodeValue = v.nodeValue.substring(p[0].length)),
-                                t.parentNode.insertBefore(g, v)
+                            ;((v.nodeValue = v.nodeValue.substring(
+                                p[0].length
+                            )),
+                                t.parentNode.insertBefore(g, v))
                         }
                 }
             }),
@@ -125,14 +127,17 @@ const e = () => {
             (this.apply = function (e) {
                 if (null != e && e)
                     return (
-                        this.remove(), this.setRegex(e), this.hiliteWords(l), c
+                        this.remove(),
+                        this.setRegex(e),
+                        this.hiliteWords(l),
+                        c
                     )
-            })
+            }))
     }
     return {
         id: 'search',
         init: (t) => {
-            ;(e = t),
+            ;((e = t),
                 e.registerKeyboardShortcut('CTRL + Shift + F', 'Search'),
                 document.addEventListener(
                     'keydown',
@@ -142,7 +147,7 @@ const e = () => {
                             (e.preventDefault(), c())
                     },
                     !1
-                )
+                ))
         },
         open: a,
         close: d,
