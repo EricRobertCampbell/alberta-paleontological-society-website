@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { filterAPSEvents } from "../../utility/filters";
+import { splitIsoString } from "../../utility/dates";
 import Layout from "../../layouts/Layout.astro";
 import EmailLink from "../../components/EmailLink.astro";
 import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
@@ -28,7 +29,7 @@ const renderedEvents = (
 	}
 	const actualEndDate = e.remarkPluginFrontmatter.endDate || e.remarkPluginFrontmatter.startDate; // because some events (ones going on over only one date) have only the start date; assumption is that if there is no end date, the start date is the end date
 		return (
-		e.remarkPluginFrontmatter.type === 'Monthly Meeting' && ( ( e.remarkPluginFrontmatter.end && e.remarkPluginFrontmatter.end >= today ) || 
+		e.remarkPluginFrontmatter.type === 'Monthly Meeting' && ( ( e.remarkPluginFrontmatter.end && new Date(e.remarkPluginFrontmatter.end) >= today ) || 
 		(
 		actualEndDate && actualEndDate >= todayString
 		)
@@ -38,9 +39,9 @@ const renderedEvents = (
 	const startDates: Array<string> = [e1, e2].map(e => {
 	let startDate: string = ''
 	if (e.remarkPluginFrontmatter.startDate) {
-	startDate = e.remarkPluginFrontmatter.startDate;
+		startDate = e.remarkPluginFrontmatter.startDate;
 	} else if (e.remarkPluginFrontmatter.start) {
-	startDate = e.remarkPluginFrontmatter.start.toISOString().split("T")[0];
+		startDate = splitIsoString(e.remarkPluginFrontmatter.start).date;
 	} 
 	return startDate
 	}

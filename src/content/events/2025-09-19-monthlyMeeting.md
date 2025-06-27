@@ -1,7 +1,7 @@
 ---
 title: 'Monthly Meeting: September 2025'
-start: 2025-09-19T19:30:00-06:00
-end: 2025-09-19T21:00:00-06:00
+start: '2025-09-19T19:30:00-06:00'
+end: '2025-09-19T21:00:00-06:00'
 type: 'Monthly Meeting'
 ---
 

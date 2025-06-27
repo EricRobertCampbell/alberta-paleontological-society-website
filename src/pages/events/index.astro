@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { filterAPSEvents } from '../../utility/filters'
+import { splitIsoString } from '../../utility/dates';
 
 import Layout from "../../layouts/Layout.astro";
 import Event from "../../components/Event.astro";
@@ -20,7 +21,7 @@ const renderedEvents = (
 	if (e.remarkPluginFrontmatter.startDate) {
 	startDate = e.remarkPluginFrontmatter.startDate;
 	} else if (e.remarkPluginFrontmatter.start) {
-	startDate = e.remarkPluginFrontmatter.start.toISOString().split("T")[0];
+	startDate = splitIsoString(e.remarkPluginFrontmatter.start).date;
 	} 
 	return startDate
 	}
