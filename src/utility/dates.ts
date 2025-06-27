@@ -7,3 +7,14 @@ export const isDateBetween = (
 ): boolean => {
     return date >= start && date <= end
 }
+
+export const splitIsoString = (s: string) => {
+    const [datePart] = s.split('T')
+    const [year, month, day] = datePart.split('-')
+    return {
+        year: parseInt(year),
+        month: parseInt(month),
+        day: parseInt(day),
+        date: datePart,
+    }
+}

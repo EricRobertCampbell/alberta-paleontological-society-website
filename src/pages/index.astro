@@ -5,6 +5,7 @@ import Event from '../components/Event.astro'
 import Announcement from '../components/Announcement.astro'
 import SocialsLinks from '../components/SocialsLinks.astro'
 import TodaysEvents from '../components/TodaysEvents.astro'
+import { splitIsoString } from '../utility/dates'
 
 import { getCollection } from 'astro:content'
 
@@ -31,14 +32,14 @@ const renderedEvents = (
 			
 		}
 		if (e.remarkPluginFrontmatter.start) {
-			return e.remarkPluginFrontmatter.start >= now
+			return new Date(e.remarkPluginFrontmatter.start) >= now
 		}	
 		return e.remarkPluginFrontmatter.startDate >= todayString
 	})
 	.sort((e1, e2) => {
 	let dates: Array<string> = [e1, e2].map(e => {
 		if (e.remarkPluginFrontmatter.start) {
-			return e.remarkPluginFrontmatter.start.toISOString().split('T')[0]
+			return splitIsoString(e.remarkPluginFrontmatter.start).date;
 		} else if (e.remarkPluginFrontmatter.startDate) {
 			return e.remarkPluginFrontmatter.startDate
 		} 

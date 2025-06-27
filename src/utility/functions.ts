@@ -1,4 +1,5 @@
 import type { EventFrontmatter } from '../content/config'
+import { splitIsoString } from './dates'
 
 /**
  * https://stackoverflow.com/questions/39223481/incorrect-date-shown-in-new-date-in-javascript
@@ -94,8 +95,7 @@ export const generateEventDateTimeString = ({
         }
         if (end) {
             const sameDate = start
-                ? start.toISOString().split('T')[0] ===
-                  end.toISOString().split('T')[0]
+                ? splitIsoString(start).date === splitIsoString(end).date
                 : false // if there's no start, we can't compare dates
             endString = dateToDisplayFormat(end, { date: !sameDate })
         }

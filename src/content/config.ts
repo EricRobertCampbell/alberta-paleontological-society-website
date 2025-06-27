@@ -13,8 +13,18 @@ const EVENT_TYPES = [
 ] as const
 const eventSchema = z.object({
     title: z.string(),
-    start: z.date().optional(),
-    end: z.date().optional(),
+    start: z
+        .string()
+        .refine((val) => !isNaN(Date.parse(val)), {
+            message: 'Invalid ISO date string',
+        })
+        .optional(),
+    end: z
+        .string()
+        .refine((val) => !isNaN(Date.parse(val)), {
+            message: 'Invalid ISO date string',
+        })
+        .optional(),
     // @deprecated
     startDate: z.string().optional(),
     // @deprecated

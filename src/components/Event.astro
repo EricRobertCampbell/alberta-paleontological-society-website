@@ -1,6 +1,7 @@
 ---
 import { generateEventDateTimeString } from "../utility";
 import type { EventFrontmatter } from "../content/config";
+import { splitIsoString } from '../utility/dates'
 interface Props {
 	frontmatter: EventFrontmatter;
 	last: boolean;
@@ -9,8 +10,8 @@ interface Props {
 const { frontmatter, last, id } = Astro.props;
 const { title, startDate, startTime, endDate, endTime, type, image, start, end, host, detailsLink } =
 	frontmatter;
-const actualStartDate = start ? start.toISOString().split("T")[0] : startDate;
-const actualEndDate = end ? end.toISOString().split("T")[0] : endDate;
+const actualStartDate = start ? splitIsoString(start).date : startDate;
+const actualEndDate = end ? splitIsoString(end).date : endDate;
 const eventDateTimeString = generateEventDateTimeString(
 {
 start,
