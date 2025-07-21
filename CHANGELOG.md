@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.72.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.71.0...v1.72.0) (2025-07-21)
+
+
+### Features
+
+* added palaeo palooza as an event ([bb01e89](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/bb01e89c0b3a52d3d4eea91cd944a6a303e20849))
+
 ## [1.71.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.70.1...v1.71.0) (2025-07-21)
 
 
