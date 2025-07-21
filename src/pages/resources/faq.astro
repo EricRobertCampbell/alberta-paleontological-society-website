@@ -9,7 +9,6 @@ import { getCollection } from "astro:content";
 const allQuestions = (await getCollection("faqs")).sort((a, b) => {
 	return a.data.order - b.data.order;
 });
-console.log({ allQuestions });
 const allRenderedQuestions = await Promise.all(
 	allQuestions.map(async (event) => await event.render())
 );

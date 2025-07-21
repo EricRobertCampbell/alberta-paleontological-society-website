@@ -54,7 +54,6 @@ const filteredEvents = allEvents.filter(( event ) => {
   if (data.start && data.end) {
     const {year: startYear, month: startMonth} = splitIsoString(data.start);
     const {year: endYear, month: endMonth} = splitIsoString(data.end);
-    console.log({startYear, startMonth, endYear, endMonth})
     return startYear <= parseInt(year) && 
          startMonth <= parseInt(month) &&
          endYear >= parseInt(year) && 
