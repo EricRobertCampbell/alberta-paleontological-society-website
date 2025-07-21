@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.71.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.70.1...v1.71.0) (2025-07-21)
+
+
+### Features
+
+* added burgess shale events & announcements ([98f1c6a](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/98f1c6a7fed2e1abd2f5d2d8d144b888a97dfe45))
+
 ### [1.70.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.70.0...v1.70.1) (2025-06-27)
 
 
