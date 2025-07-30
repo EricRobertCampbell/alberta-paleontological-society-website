@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.74.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.73.0...v1.74.0) (2025-07-30)
+
+
+### Features
+
+* added microfossil sorting dates for 2025 ([53a2af8](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/53a2af882915562e21bbac7e8636d651e5622e50))
+
 ## [1.73.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.72.1...v1.73.0) (2025-07-30)
 
 
