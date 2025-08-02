@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.75.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.74.0...v1.75.0) (2025-08-02)
+
+
+### Features
+
+* updated devils coulee evening event ([01e1d6e](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/01e1d6e5c744e475f9b510ac89a008ff63de0a49))
+
 ## [1.74.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.73.0...v1.74.0) (2025-07-30)
 
 
