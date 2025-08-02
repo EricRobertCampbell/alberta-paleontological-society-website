@@ -1,6 +1,6 @@
 ---
 title: "Devil's Coulee - Fossil Site Sunset Tour"
-startDate: '2025-08-02'
+startDate: '2025-08-09'
 type: 'External'
 host: "Devil's Coulee Dinosaur Heritage Museum"
 ---
