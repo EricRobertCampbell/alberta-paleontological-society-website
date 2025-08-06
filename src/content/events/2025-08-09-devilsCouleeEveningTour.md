@@ -9,7 +9,7 @@ host: "Devil's Coulee Dinosaur Heritage Museum"
     <img src="/events/2025/external/devilsCouleeEvening.jpg" alt="A Tyrannosaurus rex in profile, shaded by the evening light." style="max-width: 60%;">
 </figure>
 
-🌅 Sunset Fossil Site Tour -- August 2 🦴✨
+🌅 Sunset Fossil Site Tour -- August 9 🦴✨
 
 Join us for an unforgettable evening exploring Devil's Coulee as the sun sets!
 
