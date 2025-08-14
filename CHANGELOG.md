@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.76.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.75.1...v1.76.0) (2025-08-14)
+
+
+### Features
+
+* abstracts for september & october presentations ([058b02a](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/058b02aa4b105a086a2b5a837095ed7c2eebf41c))
+
 ### [1.75.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.75.0...v1.75.1) (2025-08-06)
 
 
