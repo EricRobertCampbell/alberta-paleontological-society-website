@@ -24,9 +24,16 @@ const renderedEvents = (
 		return e.remarkPluginFrontmatter.type === "Field Trip" 
 	})
 	.sort((e1, e2) => {
-		return e1.remarkPluginFrontmatter.startDate.localeCompare(
-			e2.remarkPluginFrontmatter.startDate
+		const actualStart1 = e1.remarkPluginFrontmatter.startDate || e1.remarkPluginFrontmatter.start;
+		const actualStart2 = e2.remarkPluginFrontmatter.startDate || e1.remarkPluginFrontmatter.start;
+		if (!actualStart1 || !actualStart2) {
+			return 0;
+		}
+		const comparison = actualStart1.localeCompare(actualStart2);
+		console.log(
+			`Comparing ${actualStart1} to ${actualStart2}: ${comparison}`
 		);
+		return comparison;
 	});
 ---
 
@@ -38,6 +45,84 @@ const renderedEvents = (
 		<h1>Field Trips</h1>
 	</HeadingWithBackground>
 	<p>Field trips are open to members only!</p>
+
+	<section>
+		<h2>
+			Dinovember 2025 Royal Tyrrell Museum Sleep-In!
+		</h2>
+
+		<p>
+			The Alberta Palaeontological Society is excited to invite you to a special overnight event at the Royal Tyrrell Museum of Palaeontology in Drumheller, Alberta!
+		</p>
+
+		<p>
+			<strong>Date</strong>: Friday, November 28 - Saturday, November 29
+		</p>
+
+		<p>
+			<strong>
+				Itinerary
+			</strong>
+		</p>
+
+		<ul>
+			<li>
+				<strong>Friday Evening</strong>
+				<ul>
+					<li>6:30 PM: Arrive at the museum</li>
+					<li>Participate in fun palaeontology activities</li>
+					<li>Enjoy snacks</li>
+					<li>Lights out for the night</li>
+				</ul>
+			</li>
+			<li><strong>Saturday Morning</strong>
+				<ul>
+					<li>Breakfast</li>
+					<li>Explore the galleries!</li>
+				</ul>
+			</li>
+		</ul>
+
+		<strong>Price</strong>: $54 per person
+
+		<p>
+			Your ticket includes:
+		</p>
+
+<ul>
+	<li>Evening Snacks &amp; Breakfast</li>
+	<li>Palaeontology activities</li>
+	<li>Full-day admission to the museum</li>
+</ul>
+
+<p>
+	This is a fantastic event for kids &amp; families, but we require at least one adult per five children. Please note also that only children between <strong>5 - 13 years old</strong> and their adults are eligible to attend. Unfortunately, <strong>no unacompanied adults are allowed!</strong>
+</p>
+
+<p>
+	<strong>Space is limited</strong> — we're only accepting the first 15 registrants, so don't delay!
+</p>
+
+<p>
+	This program often fills up quickly, so the deadline for registration is <strong>Friday, October 24!</strong>
+</p>
+
+<p>
+	<strong>Registration</strong>: Please see the [field trips page](/events/fieldtrips/) on the APS website for more information on how to register.
+</p>
+
+<p>
+	<strong>Additional Information</strong>: Visit <a href="https://www.tyrrellmuseum.com/whats_on/activities/camp-ins">Royal Tyrrell Museum Camp-Ins</a> for more details.
+</p>
+
+	<p>
+		This is a rare opportunity during the winter months when palaeontology events are usually scarce, so invite friends and family who share your interest in ancient life. Even if they're not yet APS members, this could be the perfect introduction!
+	</p>
+		<p>To register, please fill out the <a href="/fieldTrips/2025/Dinovember Field Trip Sign Up-fillable.pdf">sign up sheet</a>.</p>
+	</section>
+
+	<hr />
+
 
 	<h2>Registration and Payment</h2>
 
