@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.78.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.77.0...v1.78.0) (2025-09-01)
+
+
+### Features
+
+* pjcdm 10 year anniversary ([a21e27d](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/a21e27ded6382b1783e13a2971573b4c3a3c1ad7))
+
 ## [1.77.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.76.0...v1.77.0) (2025-08-22)
 
 
