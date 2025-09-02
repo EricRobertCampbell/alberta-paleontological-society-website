@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.79.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.78.1...v1.79.0) (2025-09-02)
+
+
+### Features
+
+* rtmp albertosaurus bonebed hike ([4dfe1be](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/4dfe1be56ddd326adc1db26fca420856b2443fed))
+
 ### [1.78.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.78.0...v1.78.1) (2025-09-02)
 
 
