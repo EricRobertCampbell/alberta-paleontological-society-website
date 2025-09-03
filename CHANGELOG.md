@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.80.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.79.0...v1.80.0) (2025-09-03)
+
+
+### Features
+
+* rtmp silent disco ([b5c7a4e](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/b5c7a4e86f46e2d6777788b5faf39484ecf7b199))
+
 ## [1.79.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.78.1...v1.79.0) (2025-09-02)
 
 
