@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.82.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.82.0...v1.82.1) (2025-09-10)
+
+
+### Bug Fixes
+
+* updated rtmp dinovember 2025 registration form ([cd8387d](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/cd8387dd280681d42951f5c116d9daea1bbd4246))
+
 ## [1.82.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.81.1...v1.82.0) (2025-09-07)
 
 
