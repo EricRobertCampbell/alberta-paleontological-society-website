@@ -15,11 +15,14 @@ const executive: Array<{ title: string; person: Person }> = [
 	{ title: "Past President", person: roles.pastPresident },
 ];
 
-const directorsAndCommittees: Array<{ title: string; person: Person }> = [
+const directors: Array<{ title: string; person: Person }> = [
 	{ title: "Editor", person: roles.editor },
 	{ title: "Membership", person: roles.membership },
 	{ title: "Program Co-Ordinator", person: roles.programCoordinator },
 	{ title: "Field Trip Co-Ordinator", person: roles.fieldTripCoordinator },
+]
+
+const committees: Array<{ title: string; person: Person }> = [
 	{ title: "Fossil Collection", person: roles.fossilCollection },
 	{ title: "Librarian", person: roles.librarian },
 	{ title: "Social", person: roles.social },
@@ -27,8 +30,6 @@ const directorsAndCommittees: Array<{ title: string; person: Person }> = [
 	{ title: "Website", person: roles.webmaster },
 	{ title: "APS Symposium", person: roles.symposium },
 ];
-console.log('executive', executive)
-console.log({directorsAndCommittees})
 ---
 
 <Layout subtitle="Who's Who?">
@@ -87,7 +88,7 @@ console.log({directorsAndCommittees})
 	</section>
 
 	<section>
-		<h2>Directors and Committees</h2>
+		<h2>Directors</h2>
 
 		<table class="desktop">
 			<thead>
@@ -100,7 +101,7 @@ console.log({directorsAndCommittees})
 			</thead>
 			<tbody>
 				{
-					directorsAndCommittees.map(({ title, person }) => {
+					directors.map(({ title, person }) => {
 						return (
 							<WhosWhoPersonRow title={title} person={person} />
 						);
@@ -110,7 +111,38 @@ console.log({directorsAndCommittees})
 		</table>
 		<div class="mobile">
 			{
-				directorsAndCommittees.map(({ title, person }) => {
+				directors.map(({ title, person }) => {
+					return <WhosWhoPersonCard title={title} person={person} />;
+				})
+			}
+		</div>
+	</section>
+
+	<section>
+		<h2>Committees</h2>
+
+		<table class="desktop">
+			<thead>
+				<tr>
+					<th scope="column"> Title</th>
+					<th scope="column"> Name</th>
+					<th scope="column"> Email</th>
+					<th scope="column"> Telephone</th>
+				</tr>
+			</thead>
+			<tbody>
+				{
+					committees.map(({ title, person }) => {
+						return (
+							<WhosWhoPersonRow title={title} person={person} />
+						);
+					})
+				}
+			</tbody>
+		</table>
+		<div class="mobile">
+			{
+				committees.map(({ title, person }) => {
 					return <WhosWhoPersonCard title={title} person={person} />;
 				})
 			}
