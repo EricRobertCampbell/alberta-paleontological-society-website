@@ -6,6 +6,7 @@ import Layout from "../../layouts/Layout.astro";
 import EmailLink from "../../components/EmailLink.astro";
 import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
 import Event from "../../components/Event.astro";
+import { roles } from '../../utility/constants'
 
 
 // get the next monthly meeting
@@ -53,6 +54,10 @@ const renderedEvents = (
 /* if (renderedEvents.length > 0) { */
 /* 	nextEvent = renderedEvents[renderedEvents.length - 1]; */
 /* } */
+const { programCoordinator } = roles;
+if (!programCoordinator) {
+	throw new Error("Unable to find program coordinator role!")
+}
 ---
 
 <Layout subtitle="Monthly Meetings">
@@ -69,9 +74,9 @@ const renderedEvents = (
 
 	<p>
 		If you would like to receive emails about upcoming events or further
-		information about the scheduled events, contact Lacey Holoboff at <EmailLink
-			email="programs1@albertapaleo.org"
-		/>.
+		information about the scheduled events, contact {programCoordinator.name}{programCoordinator.email && <> at <EmailLink
+																				   email={programCoordinator.email}
+		/></>}.
 	</p>
 
 	<p>

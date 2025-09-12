@@ -7,6 +7,9 @@ import EmailLink from "../../components/EmailLink.astro";
 import PhoneLink from "../../components/PhoneLink.astro";
 import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
 import Event from "../../components/Event.astro";
+import { roles} from '../../utility/constants';
+
+const { fieldTripCoordinator } = roles;
 
 const allEvents = await getCollection("events");
 const renderedEvents = (
@@ -105,7 +108,7 @@ const renderedEvents = (
 </p>
 
 <p>
-	<strong>Registration</strong>: Please see the [field trips page](/events/fieldtrips/) on the APS website for more information on how to register.
+	<strong>Registration</strong>: Please see the <a href='/events/fieldtrips'>field trips page</a> on the APS website for more information on how to register.
 </p>
 
 <p>
@@ -126,8 +129,7 @@ const renderedEvents = (
 	<p>
 		To register for a field trip, print off and fill out the <a
 															   href="/fieldTrips/2025/APSFieldTripsForm2025.pdf">sign up sheet</a
-		>, then mail to Keith at the address indicated on the sign up sheet
-		along with the field trip fee.
+		>, then mail to {fieldTripCoordinator.name} at the address indicated on the sign up sheet along with the field trip fee.
 	</p>
 
 	<p>
@@ -203,9 +205,9 @@ const renderedEvents = (
 	<h2>Questions about field trips?</h2>
 
 	<p>
-		Contact Keith Mychaluk, the APS Fieldtrip Coordinator by e-mail at <EmailLink
-			email="fieldtrips@albertapaleo.org"
-		/> or phone at <PhoneLink number="(403) 809-3211" />.
+		Contact {fieldTripCoordinator.name}, the APS Fieldtrip Coordinator{fieldTripCoordinator.email && <> by e-mail at <EmailLink
+			email={fieldTripCoordinator.email}
+		/></>}{fieldTripCoordinator.telephone && <> or phone at <PhoneLink number={fieldTripCoordinator.telephone} /></>}.
 	</p>
 
 	<section>
