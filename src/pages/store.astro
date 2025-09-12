@@ -5,6 +5,9 @@ import Layout from '../layouts/Layout.astro'
 import HeadingWithBackground from '../components/HeadingWithBackground.astro'
 import EmailLink from '../components/EmailLink.astro'
 import PhoneLink from '../components/PhoneLink.astro'
+import { roles } from '../utility/constants'
+
+const { president, giftShop } = roles;
 ---
 
 <Layout subtitle="Store">
@@ -28,8 +31,7 @@ import PhoneLink from '../components/PhoneLink.astro'
 				</div>
 
 				<p>
-					We have a new t-shirt design by our own President, Cory
-					Gross!
+					We have a new t-shirt design by our own President, {president.name}!
 				</p>
 				<p>In his own words,</p>
 
@@ -168,7 +170,7 @@ import PhoneLink from '../components/PhoneLink.astro'
 				</p>
 				<p class="out-of-print-p">
 					This book is currently out of print, but individual copies can be printed on demand. Pricing will reflect the cost of printing single copies. Contact <a href="mailto:giftshop@albertapaleo.org?subject=Ordering Howard Johnson Book">
-						Mona Trick
+						{giftShop.name}
 					</a> if you are interested.
 				</p>
 			</div>
@@ -180,12 +182,12 @@ import PhoneLink from '../components/PhoneLink.astro'
 		Print and fill out the appropriate form. Then mail it along with a
 		payment to APS at the address provided on the order form. If paying by
 		Interac e-Transfer, fill out the form, scan and email the completed form
-		to Mona Trick at <EmailLink email="giftshop@albertapaleo.org" />.
+		to {giftShop.name} at <EmailLink email="giftshop@albertapaleo.org" />.
 	</p>
 
 	<p>
 		To obtain cost of shipping, domestic or international, please contact
-		Mona Trick at <EmailLink email="giftshop@albertapaleo.org" />
+		{giftShop.name} at <EmailLink email="giftshop@albertapaleo.org" />
 		or call <PhoneLink number="(587) 578-4579" />.
 	</p>
 

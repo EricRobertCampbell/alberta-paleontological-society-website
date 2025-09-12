@@ -4,6 +4,9 @@ export const prerender = true;
 import Layout from "../../layouts/Layout.astro";
 import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
 import EmailLink from "../../components/EmailLink.astro";
+import { roles } from "../../utility/constants";
+
+const { treasurer } = roles;
 ---
 
 <Layout subtitle="Membership">
@@ -72,7 +75,7 @@ import EmailLink from "../../components/EmailLink.astro";
 		<p>
 			<a href="/membership/appform.pdf">APS Membership Form</a>
 		</p><p>
-			then scan your completed form and email it to Mona Trick at <EmailLink
+			then scan your completed form and email it to {treasurer.name} at <EmailLink
 				email="giftshop@albertapaleo.org"
 			/>.
 		</p>
@@ -82,7 +85,7 @@ import EmailLink from "../../components/EmailLink.astro";
 		</p>
 
 		<p>
-			use our fillable PDF form and email it to Mona Trick at the above
+			use our fillable PDF form and email it to {treasurer.name} at the above
 			email address and pay by Interac e-Transfer.
 		</p><p>
 			<a href="/membership/appformfillable.pdf"

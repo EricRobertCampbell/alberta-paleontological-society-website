@@ -2,6 +2,9 @@
 import Layout from "../../layouts/Layout.astro";
 import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
 import EmailLink from "../../components/EmailLink.astro";
+import { roles } from "../../utility/constants";
+
+const { editor } = roles;
 ---
 
 <Layout subtitle="Bulletin">
@@ -57,27 +60,24 @@ import EmailLink from "../../components/EmailLink.astro";
 
 	<h3>Submissions</h3>
 	<p>
+		Submissions / articles can be e-mailed to the editor at <EmailLink
+			email={editor.email}
+		/>.
+	</p>
+	- or -
+	<p>
 		Submissions / articles can be sent to: <address>
-			Howard Allen, Bulletin Editor<br />
+			{editor.name}, Bulletin Editor<br />
 			c/o Alberta Palaeontological Society<br />
 			P.O. Box 68024, Crowfoot Postal Outlet<br />
 			Calgary, Alberta T3G 3N8<br />
 			Canada
 		</address>
-		- or - <address>
-			Howard Allen<br />Editor, APS Bulletin<br />7828 Hunterslea Cr.,
-			N.W.<br />Calgary, Alberta T2K 4M2<br />Canada
-		</address>
 	</p>
 
-	<p>
-		You may also e-mail the editor at <EmailLink
-			email="editor2@albertapaleo.org"
-		/>.
-	</p>
 
 	<p>
-		Howard can take your submissions electronically and can handle most
+		{editor.name} can take your submissions electronically and can handle most
 		common formats.
 	</p>
 

@@ -132,4 +132,8 @@ export const roles: Record<string, Person> = {
         ...people.mona,
         email: "giftshop@albertapaleo.org",
     },
+    giftShop: {
+        ...people.mona,
+        email: "giftshop@albertapaleo.org",
+    },
 } as const;

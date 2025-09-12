@@ -4,6 +4,9 @@ export const prerender = true;
 import Layout from "../../layouts/Layout.astro";
 import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
 import EmailLink from "../../components/EmailLink.astro";
+import { roles } from "../../utility/constants";
+
+const { president } = roles;
 ---
 
 <Layout subtitle="Volunteers">
@@ -37,7 +40,7 @@ import EmailLink from "../../components/EmailLink.astro";
 		<li>Social</li><li>Symposium</li>
 	</ul>
 	<p>
-		To find out more please contact Cory Gross at <EmailLink
+		To find out more please contact {president.name} at <EmailLink
 			email="president1@albertapaleo.org"
 		/>.
 	</p>
