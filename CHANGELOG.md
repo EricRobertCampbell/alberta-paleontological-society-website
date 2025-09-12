@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.83.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.82.1...v1.83.0) (2025-09-12)
+
+
+### Features
+
+* rearranged people ([062bd2d](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/062bd2d4a92a88b8954c7e4c15ee7f7a5a749b24))
+* replaced hard-coded with variables (names and phone) ([e02bc1d](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/e02bc1d43c2a1d6e7b973e094dab66e277cd9a9d))
+* split directors and committees ([5772df7](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/5772df71015c09fb5049e22f338e1be3b2b139da))
+
 ### [1.82.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.82.0...v1.82.1) (2025-09-10)
 
 
