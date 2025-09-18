@@ -1,0 +1,9 @@
+---
+export const prerender = true
+
+// Dynamically determine the current symposium year
+const currentYear = 2026
+
+// Redirect to the current year's symposium page
+return Astro.redirect(`/events/symposium/${currentYear}`)
+---
