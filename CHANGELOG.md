@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.88.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.87.0...v1.88.0) (2025-09-25)
+
+
+### Features
+
+* call for posters (gacpd) ([43ab2d9](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/43ab2d9ef57a1bc1da5293ef6dd83499927e9741))
+
 ## [1.87.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.86.0...v1.87.0) (2025-09-19)
 
 
