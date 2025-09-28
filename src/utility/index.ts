@@ -7,3 +7,10 @@ export {
 } from './functions'
 export type { LinkInformation } from './navLinks'
 export { links } from './navLinks'
+export { 
+    sortEventsByDate, 
+    sortEventsAsc,
+    sortEventsDesc,
+    getEndDate, 
+    getStartDate 
+} from './eventSorting'

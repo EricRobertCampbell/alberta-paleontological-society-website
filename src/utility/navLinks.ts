@@ -18,6 +18,10 @@ export const links: Array<LinkInformation> = [
                 label: 'Field Trips',
             },
             {
+                destination: '/events/fossilsorting',
+                label: 'Fossil Sorting',
+            },
+            {
                 destination: '/events/calendar',
                 label: 'Calendar',
             },
