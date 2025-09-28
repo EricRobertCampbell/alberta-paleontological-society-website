@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { filterExternalEvents } from '../../utility/filters'
+import { sortEventsByDate } from '../../utility/eventSorting'
 
 import Layout from "../../layouts/Layout.astro";
 import EmailLink from "../../components/EmailLink.astro";
@@ -12,29 +13,23 @@ import { roles} from '../../utility/constants';
 const { fieldTripCoordinator } = roles;
 
 const allEvents = await getCollection("events");
-const renderedEvents = (
-	await Promise.all(
-		allEvents.map(async (event) => {
-			return await event.render();
-		})
-	)
-)
-	.filter((e) => {
-		const isExternal = filterExternalEvents({host: e.remarkPluginFrontmatter.host});
-		if (isExternal) {
-			return false;
-		}
-		return e.remarkPluginFrontmatter.type === "Field Trip" 
+const renderedEvents = await Promise.all(
+	allEvents.map(async (event) => {
+		return await event.render();
 	})
-	.sort((e1, e2) => {
-		const actualStart1 = e1.remarkPluginFrontmatter.startDate || e1.remarkPluginFrontmatter.start;
-		const actualStart2 = e2.remarkPluginFrontmatter.startDate || e1.remarkPluginFrontmatter.start;
-		if (!actualStart1 || !actualStart2) {
-			return 0;
-		}
-		const comparison = actualStart1.localeCompare(actualStart2);
-		return comparison;
-	});
+);
+
+// Filter for field trip events only
+const fieldTripEvents = renderedEvents.filter((e) => {
+	const isExternal = filterExternalEvents({host: e.remarkPluginFrontmatter.host});
+	if (isExternal) {
+		return false;
+	}
+	return e.remarkPluginFrontmatter.type === "Field Trip";
+});
+
+// Sort events into past and upcoming using utility function
+const { upcomingEvents, pastEvents } = sortEventsByDate(fieldTripEvents);
 ---
 
 <Layout subtitle="Field Trips">
@@ -236,45 +231,39 @@ const renderedEvents = (
 			</ul>
 	</section>
 
-	<h2>Field Trips</h2>
-	{
-		renderedEvents.map((event, index, allEvents) => {
+	<h2>Upcoming Field Trips</h2>
+	{upcomingEvents.length > 0 ? (
+		upcomingEvents.map((event, index, allEvents) => {
 			const { Content, headings } = event;
 			return (
 				<Event
-					frontmatter={event.remarkPluginFrontmatter}
+					frontmatter={event.remarkPluginFrontmatter as any}
 					last={index === allEvents.length - 1}
 				>
 					<Content />
 				</Event>
 			);
 		})
-	}
-	<details id="past-field-trips">
-		<summary><h2>Past Field Trips</h2></summary>
-	</details>
-	<script>
-		const today = new Date();
-		const offset = today.getTimezoneOffset();
-		const todayWithOffset = new Date(today.getTime() - offset * 60 * 1000);
-		const todayString = todayWithOffset.toISOString().split("T")[0];
-
-		const allEvents = Array.from(
-			document.querySelectorAll('section[data-type="event"]')
-		);
-		const pastEvents = allEvents.filter(
-			(event) => event.dataset.enddate < todayString
-		);
-		const pastFieldTripsDetails =
-			document.querySelector("#past-field-trips");
-		[...pastEvents ].reverse().forEach((pastEvent) =>
-			pastFieldTripsDetails.appendChild(pastEvent)
-		);
-
-		if (pastEvents.length > 0) {
-			pastFieldTripsDetails.classList.add("active");
-		}
-	</script>
+	) : (
+		<p>No upcoming field trips are currently scheduled. Check back soon for new dates!</p>
+	)}
+	
+	{pastEvents.length > 0 && (
+		<details open>
+			<summary><h2>Past Field Trips</h2></summary>
+			{pastEvents.map((event, index, allEvents) => {
+				const { Content, headings } = event;
+				return (
+					<Event
+						frontmatter={event.remarkPluginFrontmatter as any}
+						last={index === allEvents.length - 1}
+					>
+						<Content />
+					</Event>
+				);
+			})}
+		</details>
+	)}
 </Layout>
 
 <style>
@@ -282,14 +271,6 @@ const renderedEvents = (
 		display: inline;
 	}
 
-	details {
-		display: none;
-		visibility: hidden;
-	}
-	details.active {
-		display: block;
-		visibility: visible;
-	}
 	ul.field-trip-forms-list {
 		list-style: none;
 		padding: 0;

@@ -1,59 +1,32 @@
 ---
 import { getCollection } from "astro:content";
 import { filterAPSEvents } from "../../utility/filters";
-import { splitIsoString } from "../../utility/dates";
+import { sortEventsByDate } from "../../utility/eventSorting";
 import Layout from "../../layouts/Layout.astro";
 import EmailLink from "../../components/EmailLink.astro";
 import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
 import Event from "../../components/Event.astro";
 import { roles } from '../../utility/constants'
 
-
-// get the next monthly meeting
-const today = new Date();
-const offset = today.getTimezoneOffset();
-const todayWithOffset = new Date(today.getTime() - offset * 60 * 1000);
-const todayString = todayWithOffset.toISOString().split("T")[0];
-
 const allEvents = await getCollection("events");
-const renderedEvents = (
-	await Promise.all(
-		allEvents.map(async (event) => {
-			return await event.render();
-		})
-	)
-)
-	.filter((e) => {
+const renderedEvents = await Promise.all(
+	allEvents.map(async (event) => {
+		return await event.render();
+	})
+);
+
+// Filter for Monthly Meeting events only
+const monthlyMeetingEvents = renderedEvents.filter((e) => {
 	const isApsEvents = filterAPSEvents({host: e.remarkPluginFrontmatter.host});
 	if (!isApsEvents) {
 		return false;
 	}
-	const actualEndDate = e.remarkPluginFrontmatter.endDate || e.remarkPluginFrontmatter.startDate; // because some events (ones going on over only one date) have only the start date; assumption is that if there is no end date, the start date is the end date
-		return (
-		e.remarkPluginFrontmatter.type === 'Monthly Meeting' && ( ( e.remarkPluginFrontmatter.end && new Date(e.remarkPluginFrontmatter.end) >= today ) || 
-		(
-		actualEndDate && actualEndDate >= todayString
-		)
-		)		);
-	})
-	.sort((e1, e2) => {
-	const startDates: Array<string> = [e1, e2].map(e => {
-	let startDate: string = ''
-	if (e.remarkPluginFrontmatter.startDate) {
-		startDate = e.remarkPluginFrontmatter.startDate;
-	} else if (e.remarkPluginFrontmatter.start) {
-		startDate = splitIsoString(e.remarkPluginFrontmatter.start).date;
-	} 
-	return startDate
-	}
-	)
-	return startDates[0].localeCompare(startDates[1]);
-	});
+	return e.remarkPluginFrontmatter.type === 'Monthly Meeting';
+});
 
-/* let nextEvent; */
-/* if (renderedEvents.length > 0) { */
-/* 	nextEvent = renderedEvents[renderedEvents.length - 1]; */
-/* } */
+// Get upcoming monthly meetings using utility function
+const { upcomingEvents } = sortEventsByDate(monthlyMeetingEvents);
+
 const { programCoordinator } = roles;
 if (!programCoordinator) {
 	throw new Error("Unable to find program coordinator role!")
@@ -107,21 +80,25 @@ if (!programCoordinator) {
 		>
 	</p>
 
-	{
-		renderedEvents.length > 0 && (
-			<>
-				<h2>Upcoming Event{renderedEvents.length > 1 ? "s" : ""}</h2>
-				{renderedEvents.map((event, index, allEvents) => {
-					return (
-						<Event
-							frontmatter={event.remarkPluginFrontmatter}
-							last={index === allEvents.length - 1}
-						>
-							<event.Content />
-						</Event>
-					);
-				})}
-			</>
-		)
-	}
+	{upcomingEvents.length > 0 ? (
+		<>
+			<h2>Upcoming Meeting{upcomingEvents.length > 1 ? "s" : ""}</h2>
+			{upcomingEvents.map((event, index, allEvents) => {
+				const { Content } = event;
+				return (
+					<Event
+						frontmatter={event.remarkPluginFrontmatter as any}
+						last={index === allEvents.length - 1}
+					>
+						<Content />
+					</Event>
+				);
+			})}
+		</>
+	) : (
+		<>
+			<h2>Upcoming Meetings</h2>
+			<p>No upcoming monthly meetings are currently scheduled. Check back soon for new dates!</p>
+		</>
+	)}
 </Layout>

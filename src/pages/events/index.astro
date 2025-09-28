@@ -1,32 +1,38 @@
 ---
 import { getCollection } from "astro:content";
 import { filterAPSEvents } from '../../utility/filters'
-import { splitIsoString } from '../../utility/dates';
+import { sortEventsByDate } from '../../utility/eventSorting'
 
 import Layout from "../../layouts/Layout.astro";
 import Event from "../../components/Event.astro";
 import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
 
 const allEvents = await getCollection("events");
-const renderedEvents = (
-	await Promise.all(
-		allEvents.map(async (event) => {
-			return await event.render();
-		})
-	)
-	).filter((e) => filterAPSEvents({host: e.remarkPluginFrontmatter.host}))
-	.sort((e1, e2) => {
-	const startDates: Array<string> = [e1, e2].map(e => {
-	let startDate: string = ''
-	if (e.remarkPluginFrontmatter.startDate) {
-	startDate = e.remarkPluginFrontmatter.startDate;
-	} else if (e.remarkPluginFrontmatter.start) {
-	startDate = splitIsoString(e.remarkPluginFrontmatter.start).date;
-	} 
-	return startDate
-	}
-	)
-	return startDates[0].localeCompare(startDates[1]);
+const renderedEvents = await Promise.all(
+	allEvents.map(async (event) => {
+		return await event.render();
+	})
+);
+
+// Filter for APS events only
+const apsEvents = renderedEvents.filter((e) => filterAPSEvents({host: e.remarkPluginFrontmatter.host}));
+
+// Sort events into past and upcoming using utility function
+const { upcomingEvents, pastEvents } = sortEventsByDate(apsEvents);
+
+// Get current date for today's events section
+const today = new Date();
+const offset = today.getTimezoneOffset();
+const todayWithOffset = new Date(today.getTime() - offset * 60 * 1000);
+const todayString = todayWithOffset.toISOString().split('T')[0];
+
+// Find today's events from upcoming events
+const todaysEvents = upcomingEvents.filter((event) => {
+	const startDate = event.remarkPluginFrontmatter.startDate || 
+		(event.remarkPluginFrontmatter.start ? event.remarkPluginFrontmatter.start.split('T')[0] : '');
+	const endDate = event.remarkPluginFrontmatter.endDate || 
+		(event.remarkPluginFrontmatter.end ? event.remarkPluginFrontmatter.end.split('T')[0] : startDate);
+	return todayString >= startDate && todayString <= endDate;
 });
 ---
 
@@ -50,101 +56,68 @@ const renderedEvents = (
 		>
 	</p>
 
-	<section id="events-today">
-		<h2>Today's Events</h2>
-	</section>
+	{todaysEvents.length > 0 && (
+		<section class="todays-events">
+			<h2>Today's Events</h2>
+			{todaysEvents.map((event, index, allEvents) => {
+				const { Content, headings } = event;
+				return (
+					<Event
+						frontmatter={event.remarkPluginFrontmatter as any}
+						last={index === allEvents.length - 1}
+					>
+						<Content />
+					</Event>
+				);
+			})}
+		</section>
+	)}
 
-	<h2 id="events-heading">Events</h2>
-	{
-		renderedEvents.map((event, index, allEvents) => {
+	<h2>Upcoming Events</h2>
+	{upcomingEvents.length > 0 ? (
+		upcomingEvents.map((event, index, allEvents) => {
 			const { Content, headings } = event;
 			return (
 				<Event
-					frontmatter={event.remarkPluginFrontmatter}
+					frontmatter={event.remarkPluginFrontmatter as any}
 					last={index === allEvents.length - 1}
 				>
 					<Content />
 				</Event>
 			);
 		})
-	}
+	) : (
+		<p>No upcoming events are currently scheduled. Check back soon!</p>
+	)}
 
-	<details id="past-events">
-		<summary><h2>Past Events</h2></summary>
-	</details>
-	<script>
-		// Get the date string for today
-		const today = new Date();
-		const offset = today.getTimezoneOffset();
-		const todayWithOffset = new Date(today.getTime() - offset * 60 * 1000);
-		const todayString = todayWithOffset.toISOString().split("T")[0];
-
-		// sort out past events - we want to hide these
-		const allEvents = Array.from(
-			document.querySelectorAll('section[data-type="event"]')
-		);
-		const pastEvents = allEvents.filter(
-			(event) => event.dataset.enddate < todayString
-		);
-		const pastFieldTripsDetails = document.querySelector("#past-events");
-		[...pastEvents ].reverse().forEach((pastEvent) =>
-			pastFieldTripsDetails.appendChild(pastEvent)
-		);
-
-		if (pastEvents.length > 0) {
-			pastFieldTripsDetails.classList.add("active");
-		}
-
-		// now move any events today into that section. If any are present, unhide the section
-		const todaysEvents = allEvents.filter(
-			(event) =>
-			{
-				// check: is the start of the event >= today and the end of the event <= today? Then it's today! Have to check both because e.g. an event that spans three days should show up on all of those days.
-				// Remember that these are the rendered event components!
-				// BTW This is a garbage way of doing this
-				// TODO fix this
-				return todayString >= event.dataset.startdate &&
-					todayString <= event.dataset.enddate;
-			}
-		);
-		const todaySection = document.querySelector("#events-today");
-		todaysEvents.forEach((eventToday, index, allEventsToday) =>
-			todaySection.appendChild(eventToday)
-		);
-		if (todaysEvents.length > 0) {
-			todaySection.classList.add("active");
-		}
-
-		// Change the title of the heading to "Upcoming Events" if we have javascript
-		document.querySelector("#events-heading").innerText = "Upcoming Events";
-	</script>
+	{pastEvents.length > 0 && (
+		<details open>
+			<summary><h2>Past Events</h2></summary>
+			{pastEvents.map((event, index, allEvents) => {
+				const { Content, headings } = event;
+				return (
+					<Event
+						frontmatter={event.remarkPluginFrontmatter as any}
+						last={index === allEvents.length - 1}
+					>
+						<Content />
+					</Event>
+				);
+			})}
+		</details>
+	)}
 </Layout>
 <style>
 	summary h2 {
 		display: inline;
 	}
 
-	details {
-		display: none;
-		visibility: hidden;
-	}
-	details.active {
-		display: block;
-		visibility: visible;
-	}
-
-	#events-today {
-		display: none;
-		visibility: hidden;
+	.todays-events {
 		border-radius: var(--border-radius-medium);
 		border: solid 2px var(--background-colour-darker);
 		padding: calc(2 * var(--theme-spacing-base));
 		margin-top: calc(2 * var(--theme-spacing-base));
 		box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
-	}
-	#events-today.active {
-		display: block;
-		visibility: visible;
 	}
 
 	/* Desktop settings */
