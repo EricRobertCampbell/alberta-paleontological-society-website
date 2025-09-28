@@ -1,7 +1,7 @@
 {
     "name": "alberta-paleontological-society-website",
     "type": "module",
-    "version": "1.91.0",
+    "version": "1.91.1",
     "scripts": {
         "dev": "TZ=UTC astro dev",
         "start": "astro dev",
