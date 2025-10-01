@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.91.2](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.91.1...v1.91.2) (2025-10-01)
+
+
+### Bug Fixes
+
+* updated fossil sorting page to include room number ([59cf4e3](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/59cf4e36a64a0117342666de10e1fce9be0dd831))
+
 ### [1.91.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.91.0...v1.91.1) (2025-09-28)
 
 ## [1.91.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.90.0...v1.91.0) (2025-09-28)
