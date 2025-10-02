@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.94.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.93.0...v1.94.0) (2025-10-02)
+
+
+### Features
+
+* event image handling ([240e5a7](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/240e5a70b8548da236513fa88f23277e1936c39e))
+
 ## [1.93.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.92.0...v1.93.0) (2025-10-02)
 
 
