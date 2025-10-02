@@ -22,11 +22,6 @@ endDate,
 endTime
 }
 );
-
-const containerClassList = ["container"];
-if (image) {
-	containerClassList.push("image-present");
-}
 ---
 
 <section
@@ -43,26 +38,23 @@ if (image) {
 	<p class="event-time">
 		{eventDateTimeString}
 	</p>
-	<div class:list={containerClassList}>
-		{
-			image && (
-				<div class="image-container">
-					<figure>
-						<img
-							class="event-hero-image"
-							src={image.src}
-							alt={image.alt}
-						/>
-					</figure>
-					{image.attribution && (
-						<figcaption>{image.attribution}</figcaption>
-					)}
-				</div>
-			)
-		}
-		<div class="content-container">
-			<slot />
-		</div>
+	{
+		image && (
+			<figure class="hero-figure">
+				<img
+					class="event-hero-image"
+					src={image.src}
+					alt={image.alt}
+				/>
+				{image.attribution && (
+					<figcaption>{image.attribution}</figcaption>
+				)}
+			</figure>
+		)
+	}
+	<div class="content-container">
+		<slot />
+	</div>
 		{
 		detailsLink ? <p>
 
@@ -77,20 +69,16 @@ if (image) {
 </section>
 
 <style>
-	.container.image-present {
+	.hero-figure {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-	}
-	.image-container {
-		max-width: 40%;
-		height: auto;
-		margin-right: calc(2 * var(--theme-spacing-base));
+		flex-direction: column;
+		margin: 0;
 	}
 	.event-hero-image {
+		max-width: 60%;
 		height: auto;
-		width: 100%;
 	}
 	section.not-last {
 		margin: 3px 0px;
@@ -111,17 +99,7 @@ if (image) {
 		font-size: 1rem;
 		margin: var(--theme-spacing-base) 0;
 	}
-	figure {
-		margin: 0;
-	}
 	figcaption {
 		font-size: 0.5rem;
-	}
-
-	/* Desktop settings */
-	@media screen and (min-width: 768px) {
-		.container.image-present {
-			flex-direction: row;
-		}
 	}
 </style>
