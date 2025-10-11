@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.96.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.95.0...v1.96.0) (2025-10-11)
+
+
+### Features
+
+* added chis jass abstract for november meeting ([8630854](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/86308541c78f76bae297e51a347e50508d46df3a))
+* added rtmp public webcast events ([149a5aa](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/149a5aaf888e740356d3e57433ba5788c069b5c5))
+
 ## [1.95.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.94.0...v1.95.0) (2025-10-11)
 
 
