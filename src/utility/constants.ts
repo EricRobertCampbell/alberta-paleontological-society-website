@@ -26,81 +26,81 @@ export interface Person {
 // Define people with their personal information
 export const people: Record<string, Person> = {
     cory: {
-        name: "Cory Gross",
-        telephone: "(403) 617-2079",
+        name: 'Cory Gross',
+        telephone: '(403) 617-2079',
     },
     emily: {
-        name: "Emily Bamforth",
-        telephone: "(587) 771-0662",
+        name: 'Emily Bamforth',
+        telephone: '(587) 771-0662',
     },
     mona: {
-        name: "Mona Trick",
-        telephone: "(587) 578-4579",
+        name: 'Mona Trick',
+        telephone: '(587) 578-4579',
     },
-    vaclav: { 
-        name: "Vaclav Marsovsky", 
-        telephone: "(403) 547-0182" 
+    vaclav: {
+        name: 'Vaclav Marsovsky',
+        telephone: '(403) 547-0182',
     },
     wayne: {
-        name: "Wayne Braunberger",
-        telephone: "(403) 278-5154",
+        name: 'Wayne Braunberger',
+        telephone: '(403) 278-5154',
     },
     howard: {
-        name: "Howard Allen",
-        telephone: "(403) 274-1858",
+        name: 'Howard Allen',
+        telephone: '(403) 274-1858',
     },
     georgia: {
-        name: "Georgia Hoffman",
-        telephone: "(403) 228-7729",
+        name: 'Georgia Hoffman',
+        telephone: '(403) 228-7729',
     },
     virginia: {
-        name: "Virginia Goodman",
-        telephone: "(403) 256-7007",
+        name: 'Virginia Goodman',
+        telephone: '(403) 256-7007',
     },
     lacey: {
-        name: "Lacey Holoboff",
-        telephone: "(403) 894-0698",
+        name: 'Lacey Holoboff',
+        telephone: '(403) 894-0698',
     },
     matthew: {
-        name: "Matthew Rhodes",
+        name: 'Matthew Rhodes',
     },
     walter: {
         name: 'Walter DiMattia',
     },
     eric: {
         name: 'Eric Campbell',
-        telephone: '(587) 226-6980'
-    }
-};
+        telephone: '(587) 226-6980',
+    },
+}
 
 // Define roles with role-specific emails
 export const roles: Record<string, Person> = {
     president: {
         ...people.cory,
-        email: "president1@albertapaleo.org",
+        email: 'president1@albertapaleo.org',
     },
     vicePresident: {
         ...people.emily,
-        email: "vicepres@albertapaleo.org",
+        email: 'vicepres@albertapaleo.org',
     },
     treasurer: {
         ...people.mona,
-        email: "giftshop@albertapaleo.org",
+        email: 'giftshop@albertapaleo.org',
     },
     secretary: {
         ...people.vaclav,
     },
     pastPresident: {
         ...people.wayne,
-        email: "pastpres@albertapaleo.org",
+        email: 'pastpres@albertapaleo.org',
     },
     editor: {
         ...people.matthew,
-        email: "editor2@albertapaleo.org",
+        email: 'editor2@albertapaleo.org',
     },
     membership: {
         ...people.howard,
-        email: "membership@albertapaleo.org",
+        email: 'membership@albertapaleo.org',
     },
     programCoordinator: {
         ...people.walter,
@@ -108,11 +108,11 @@ export const roles: Record<string, Person> = {
     },
     fieldTripCoordinator: {
         ...people.eric,
-        email: 'fieldtrips@albertapaleo.org'
+        email: 'fieldtrips@albertapaleo.org',
     },
     fossilCollection: {
         ...people.howard,
-        email: "editor2@albertapaleo.org",
+        email: 'editor2@albertapaleo.org',
     },
     librarian: {
         ...people.georgia,
@@ -122,18 +122,18 @@ export const roles: Record<string, Person> = {
     },
     publicOutreach: {
         ...people.cory,
-        email: "educate@albertapaleo.org",
+        email: 'educate@albertapaleo.org',
     },
     webmaster: {
         ...people.eric,
-        email: 'webmaster@albertapaleo.org'
+        email: 'webmaster@albertapaleo.org',
     },
     symposium: {
         ...people.mona,
-        email: "giftshop@albertapaleo.org",
+        email: 'symposium@albertapaleo.org',
     },
     giftShop: {
         ...people.mona,
-        email: "giftshop@albertapaleo.org",
+        email: 'giftshop@albertapaleo.org',
     },
-} as const;
+} as const
