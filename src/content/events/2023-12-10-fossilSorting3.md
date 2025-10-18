@@ -1,8 +1,7 @@
 ---
 title: 'Fossil Sorting Opportunity'
-startDate: '2023-12-10'
-startTime: '1:00 PM'
-endTime: '3:30 PM'
+start: '2023-12-10T13:00:00-07:00'
+end: '2023-12-10T15:30:00-07:00'
 type: 'Fossil Sorting'
 ---
 

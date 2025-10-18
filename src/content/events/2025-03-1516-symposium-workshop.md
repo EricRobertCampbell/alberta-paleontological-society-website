@@ -1,9 +1,7 @@
 ---
 title: 'Paleo 2025 Symposium - Workshop'
-startDate: '2025-03-16'
-startTime: '9:00 AM'
-endDate: '2025-03-16'
-endTime: '12 PM (Noon)'
+start: '2025-03-16T09:00:00-06:00'
+end: '2025-03-16T12:00:00-06:00'
 type: 'Symposium'
 ---
 

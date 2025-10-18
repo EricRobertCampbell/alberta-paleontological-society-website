@@ -1,8 +1,7 @@
 ---
 title: 'Fossil Sorting Session'
-startDate: '2024-01-28'
-startTime: '1:00 PM'
-endTime: '3:30 PM'
+start: '2024-01-28T13:00:00-07:00'
+end: '2024-01-28T15:30:00-07:00'
 type: 'Fossil Sorting'
 ---
 

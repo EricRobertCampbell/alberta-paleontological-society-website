@@ -1,8 +1,7 @@
 ---
 title: 'APS Symposium 2024'
-startDate: '2024-03-16'
-startTime: '9:00 AM'
-endTime: '4:30 PM'
+start: '2024-03-16T09:00:00-06:00'
+end: '2024-03-16T16:30:00-06:00'
 type: 'Symposium'
 ---
 

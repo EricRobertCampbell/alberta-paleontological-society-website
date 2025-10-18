@@ -1,8 +1,7 @@
 ---
 title: 'Monthly Meeting: February 2025'
-startDate: '2025-02-21'
-startTime: '7:30 PM'
-endTime: '9 PM'
+start: '2025-02-21T19:30:00-07:00'
+end: '2025-02-21T21:00:00-07:00'
 type: 'Monthly Meeting'
 ---
 

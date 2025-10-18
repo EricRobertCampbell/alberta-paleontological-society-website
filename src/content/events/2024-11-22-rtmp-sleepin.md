@@ -1,9 +1,7 @@
 ---
 title: Dinovember Sleepover at the Royal Tyrrell Museum!
-startDate: '2024-11-22'
-endDate: '2024-11-23'
-startTime: '6:30 PM'
-endTime: '11:00 AM'
+start: '2024-11-22T18:30:00-07:00'
+end: '2024-11-23T11:00:00-07:00'
 type: 'Field Trip'
 ---
 

@@ -1,9 +1,7 @@
 ---
 title: Alberta Paleontological Society's 26th Annual Symposium
-startDate: '2023-03-18'
-startTime: '9:00AM'
-endDate: '2023-03-19'
-endTime: '4:00PM'
+start: '2023-03-18T09:00:00-06:00'
+end: '2023-03-19T16:00:00-06:00'
 type: 'Symposium'
 ---
 

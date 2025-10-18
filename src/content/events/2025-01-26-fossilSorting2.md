@@ -1,8 +1,7 @@
 ---
 title: Search for Microfossils this Winter, 2025
-startDate: '2025-01-26'
-startTime: '1:00 PM'
-endTime: '3:30 PM'
+start: '2025-01-26T13:00:00-07:00'
+end: '2025-01-26T15:30:00-07:00'
 type: 'Fossil Sorting'
 ---
 

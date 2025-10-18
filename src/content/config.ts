@@ -28,11 +28,7 @@ const eventSchema = z.object({
     // @deprecated
     startDate: z.string().optional(),
     // @deprecated
-    startTime: z.string().optional(),
-    // @deprecated
     endDate: z.string().optional(),
-    // @deprecated
-    endTime: z.string().optional(),
     image: z
         .object({
             src: z.string(),

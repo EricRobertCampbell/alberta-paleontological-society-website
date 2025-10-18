@@ -1,5 +1,5 @@
 ---
-title: K/Pg Boundary, Knudsen’s Farm, Huxley, AB
+title: K/Pg Boundary, Knudsen's Farm, Huxley, AB
 startDate: '2024-07-06'
 type: 'Field Trip'
 ---

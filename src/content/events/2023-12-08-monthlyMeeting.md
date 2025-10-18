@@ -1,8 +1,7 @@
 ---
 title: 'Monthly Meeting: December 2023 - Potluck and Social!'
-startDate: '2023-12-08'
-startTime: '7:30 PM'
-endTime: '9 PM'
+start: '2023-12-08T19:30:00-07:00'
+end: '2023-12-08T21:00:00-07:00'
 type: 'Monthly Meeting'
 ---
 

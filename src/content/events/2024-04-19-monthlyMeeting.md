@@ -1,8 +1,7 @@
 ---
 title: 'Monthly Meeting: April 2024'
-startDate: '2024-04-19'
-startTime: '7:30 PM'
-endTime: '9 PM'
+start: '2024-04-19T19:30:00-06:00'
+end: '2024-04-19T21:00:00-06:00'
 type: 'Monthly Meeting'
 ---
 
