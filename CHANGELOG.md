@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.97.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.96.2...v1.97.0) (2025-10-18)
+
+
+### Features
+
+* added claude.md ([559a702](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/559a7022b94044e11f5715bf504604dc9b9d3927))
+
 ### [1.96.2](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.96.1...v1.96.2) (2025-10-17)
 
 
