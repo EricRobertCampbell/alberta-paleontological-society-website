@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.98.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.97.0...v1.98.0) (2025-10-18)
+
+
+### Features
+
+* removed startTime and endTime attributes ([45e9f4c](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/45e9f4c6b7464b134cb160799945ac24337a66f8))
+
 ## [1.97.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.96.2...v1.97.0) (2025-10-18)
 
 
