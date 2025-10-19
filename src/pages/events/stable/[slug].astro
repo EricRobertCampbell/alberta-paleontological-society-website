@@ -1,0 +1,138 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import Event from "../../../components/Event.astro";
+import { getStartDate } from "../../../utility/eventSorting";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+	const allEvents = await getCollection("events");
+
+	// Sort events by start date (ascending)
+	const sortedEvents = [...allEvents].sort((a, b) => {
+		const dateA = getStartDate(a.data);
+		const dateB = getStartDate(b.data);
+		return dateA.localeCompare(dateB);
+	});
+
+	return sortedEvents.map((event, index) => {
+		const previousEvent = index > 0 ? sortedEvents[index - 1] : null;
+		const nextEvent = index < sortedEvents.length - 1 ? sortedEvents[index + 1] : null;
+
+		return {
+			params: { slug: event.slug },
+			props: {
+				event,
+				previousEvent: previousEvent ? { slug: previousEvent.slug, title: previousEvent.data.title } : null,
+				nextEvent: nextEvent ? { slug: nextEvent.slug, title: nextEvent.data.title } : null,
+			},
+		};
+	});
+}
+
+const { event, previousEvent, nextEvent } = Astro.props;
+const { Content } = await event.render();
+---
+
+<Layout subtitle={event.data.title}>
+	<div class="event-page-container">
+		<Event
+			frontmatter={event.data as any}
+			last={true}
+		>
+			<Content />
+		</Event>
+
+		<nav class="event-navigation">
+			{previousEvent ? (
+				<a href={`/events/stable/${previousEvent.slug}`} class="nav-button previous">
+					<span class="nav-label">← Previous Event</span>
+					<span class="nav-title">{previousEvent.title}</span>
+				</a>
+			) : (
+				<div></div>
+			)}
+
+			{nextEvent ? (
+				<a href={`/events/stable/${nextEvent.slug}`} class="nav-button next">
+					<span class="nav-label">Next Event →</span>
+					<span class="nav-title">{nextEvent.title}</span>
+				</a>
+			) : (
+				<div></div>
+			)}
+		</nav>
+	</div>
+</Layout>
+
+<style>
+	.event-page-container {
+		width: 100%;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.event-navigation {
+		display: flex;
+		justify-content: space-between;
+		gap: var(--theme-spacing-base);
+		margin-top: calc(3 * var(--theme-spacing-base));
+		padding-top: calc(2 * var(--theme-spacing-base));
+		border-top: solid 1px var(--background-colour-darker);
+	}
+
+	.nav-button {
+		display: flex;
+		flex-direction: column;
+		padding: var(--theme-spacing-base);
+		border: solid calc(0.5 * var(--theme-spacing-base)) var(--accent-colour-medium);
+		border-radius: var(--border-radius-medium);
+		text-decoration: none;
+		background-image: none;
+		background: none;
+		max-width: 45%;
+	}
+
+	.nav-button:hover {
+		background-color: var(--background-colour-darker);
+		border-color: var(--accent-colour-dark);
+	}
+
+	.nav-button.previous {
+		text-align: left;
+	}
+
+	.nav-button.next {
+		text-align: right;
+		align-items: flex-end;
+	}
+
+	.nav-label {
+		font-size: 0.875rem;
+		color: var(--accent-colour-dark);
+		font-weight: 600;
+		margin-bottom: calc(0.5 * var(--theme-spacing-base));
+	}
+
+	.nav-title {
+		font-size: 0.875rem;
+		color: var(--text-colour);
+	}
+
+	/* Mobile responsive */
+	@media screen and (max-width: 768px) {
+		.event-navigation {
+			flex-direction: column;
+		}
+
+		.nav-button {
+			max-width: 100%;
+		}
+
+		.nav-button.next {
+			align-items: flex-start;
+			text-align: left;
+		}
+	}
+</style>

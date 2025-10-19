@@ -10,7 +10,8 @@ import HeadingWithBackground from "../../components/HeadingWithBackground.astro"
 const allEvents = await getCollection("events");
 const renderedEvents = await Promise.all(
 	allEvents.map(async (event) => {
-		return await event.render();
+		const rendered = await event.render();
+		return { ...rendered, slug: event.slug };
 	})
 );
 
@@ -60,11 +61,13 @@ const todaysEvents = upcomingEvents.filter((event) => {
 		<section class="todays-events">
 			<h2>Today's Events</h2>
 			{todaysEvents.map((event, index, allEvents) => {
-				const { Content, headings } = event;
+				const { Content, slug } = event;
 				return (
 					<Event
 						frontmatter={event.remarkPluginFrontmatter as any}
 						last={index === allEvents.length - 1}
+						showPermalink={true}
+						slug={slug}
 					>
 						<Content />
 					</Event>
@@ -76,11 +79,13 @@ const todaysEvents = upcomingEvents.filter((event) => {
 	<h2>Upcoming Events</h2>
 	{upcomingEvents.length > 0 ? (
 		upcomingEvents.map((event, index, allEvents) => {
-			const { Content, headings } = event;
+			const { Content, slug } = event;
 			return (
 				<Event
 					frontmatter={event.remarkPluginFrontmatter as any}
 					last={index === allEvents.length - 1}
+					showPermalink={true}
+					slug={slug}
 				>
 					<Content />
 				</Event>
@@ -94,11 +99,13 @@ const todaysEvents = upcomingEvents.filter((event) => {
 		<details open>
 			<summary><h2>Past Events</h2></summary>
 			{pastEvents.map((event, index, allEvents) => {
-				const { Content, headings } = event;
+				const { Content, slug } = event;
 				return (
 					<Event
 						frontmatter={event.remarkPluginFrontmatter as any}
 						last={index === allEvents.length - 1}
+						showPermalink={true}
+						slug={slug}
 					>
 						<Content />
 					</Event>

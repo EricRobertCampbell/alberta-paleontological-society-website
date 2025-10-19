@@ -22,7 +22,8 @@ const allEvents = await getCollection('events')
 const renderedEvents = (
 	await Promise.all(
 		allEvents.map(async (event) => {
-			return await event.render()
+			const rendered = await event.render()
+			return { ...rendered, slug: event.slug }
 		})
 	)
 )
@@ -152,6 +153,8 @@ const renderedAnnouncements = await Promise.all(
 				<Event
 					frontmatter={nextEvent.remarkPluginFrontmatter}
 					last={true}
+					showPermalink={true}
+					slug={nextEvent.slug}
 				>
 					<nextEvent.Content />
 				</Event>

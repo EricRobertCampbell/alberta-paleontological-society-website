@@ -15,7 +15,8 @@ const { fieldTripCoordinator } = roles;
 const allEvents = await getCollection("events");
 const renderedEvents = await Promise.all(
 	allEvents.map(async (event) => {
-		return await event.render();
+		const rendered = await event.render();
+		return { ...rendered, slug: event.slug };
 	})
 );
 
@@ -234,11 +235,13 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fieldTripEvents);
 	<h2>Upcoming Field Trips</h2>
 	{upcomingEvents.length > 0 ? (
 		upcomingEvents.map((event, index, allEvents) => {
-			const { Content, headings } = event;
+			const { Content, slug } = event;
 			return (
 				<Event
 					frontmatter={event.remarkPluginFrontmatter as any}
 					last={index === allEvents.length - 1}
+					showPermalink={true}
+					slug={slug}
 				>
 					<Content />
 				</Event>
@@ -252,11 +255,13 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fieldTripEvents);
 		<details open>
 			<summary><h2>Past Field Trips</h2></summary>
 			{pastEvents.map((event, index, allEvents) => {
-				const { Content, headings } = event;
+				const { Content, slug } = event;
 				return (
 					<Event
 						frontmatter={event.remarkPluginFrontmatter as any}
 						last={index === allEvents.length - 1}
+						showPermalink={true}
+						slug={slug}
 					>
 						<Content />
 					</Event>

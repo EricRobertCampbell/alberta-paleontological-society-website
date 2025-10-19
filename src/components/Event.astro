@@ -6,8 +6,10 @@ interface Props {
 	frontmatter: EventFrontmatter;
 	last: boolean;
 	id?: string;
+	showPermalink?: boolean;
+	slug?: string;
 }
-const { frontmatter, last, id } = Astro.props;
+const { frontmatter, last, id, showPermalink = false, slug } = Astro.props;
 const { title, startDate, startTime, endDate, endTime, type, image, start, end, host, detailsLink } =
 	frontmatter;
 const actualStartDate = start ? splitIsoString(start).date : startDate;
@@ -31,13 +33,22 @@ endTime
 	data-enddate={actualEndDate ? actualEndDate : actualStartDate}
 	data-type="event"
 >
-	<p class="event-type">
-		{type}{host ? ` - hosted by ${host}` : ""}
-	</p>
-	<h3 class="event-title">{title}</h3>
-	<p class="event-time">
-		{eventDateTimeString}
-	</p>
+	<div class="event-header">
+		<div>
+			<p class="event-type">
+				{type}{host ? ` - hosted by ${host}` : ""}
+			</p>
+			<h3 class="event-title">{title}</h3>
+			<p class="event-time">
+				{eventDateTimeString}
+			</p>
+		</div>
+		{showPermalink && slug && (
+			<a href={`/events/stable/${slug}`} class="permalink-button">
+				Permalink
+			</a>
+		)}
+	</div>
 	{
 		image && (
 			<figure class="hero-figure">
@@ -69,6 +80,30 @@ endTime
 </section>
 
 <style>
+	.event-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: calc(2 * var(--theme-spacing-base));
+	}
+
+	.permalink-button {
+		font-size: 0.875rem;
+		padding: calc(0.5 * var(--theme-spacing-base)) var(--theme-spacing-base);
+		border: solid calc(0.5 * var(--theme-spacing-base)) var(--accent-colour-medium);
+		border-radius: var(--border-radius-medium);
+		text-decoration: none;
+		background-image: none;
+		background: none;
+		white-space: nowrap;
+		align-self: flex-start;
+	}
+
+	.permalink-button:hover {
+		background-color: var(--background-colour-darker);
+		border-color: var(--accent-colour-dark);
+	}
+
 	.hero-figure {
 		display: flex;
 		align-items: center;

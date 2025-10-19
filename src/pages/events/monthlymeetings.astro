@@ -11,7 +11,8 @@ import { roles } from '../../utility/constants'
 const allEvents = await getCollection("events");
 const renderedEvents = await Promise.all(
 	allEvents.map(async (event) => {
-		return await event.render();
+		const rendered = await event.render();
+		return { ...rendered, slug: event.slug };
 	})
 );
 
@@ -84,11 +85,13 @@ if (!programCoordinator) {
 		<>
 			<h2>Upcoming Meeting{upcomingEvents.length > 1 ? "s" : ""}</h2>
 			{upcomingEvents.map((event, index, allEvents) => {
-				const { Content } = event;
+				const { Content, slug } = event;
 				return (
 					<Event
 						frontmatter={event.remarkPluginFrontmatter as any}
 						last={index === allEvents.length - 1}
+						showPermalink={true}
+						slug={slug}
 					>
 						<Content />
 					</Event>
