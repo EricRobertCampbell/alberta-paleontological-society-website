@@ -7,7 +7,6 @@ import { getCollection, getEntry } from "astro:content";
 
 const allBulletins = await getCollection("bulletins");
 const allBulletinVolumes = await getCollection("bulletinVolumes");
-console.log(allBulletins);
 const mapping = {}; // keys are the volume number, entries are the associated bulletins
 for (let bulletin of allBulletins) {
 	const volume = await getEntry(bulletin.data.volume);
