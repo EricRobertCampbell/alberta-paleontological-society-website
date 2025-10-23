@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.101.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.100.0...v1.101.0) (2025-10-23)
+
+
+### Features
+
+* palaeo paint night ([71933e3](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/71933e3e1c2902f86c49899a1a5db60285a81c37))
+
 ## [1.100.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.99.0...v1.100.0) (2025-10-22)
 
 
