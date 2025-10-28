@@ -1,0 +1,173 @@
+---
+import { getCollection } from 'astro:content';
+import { getTotalSorted } from '../../utility/graphs/getTotalSorted';
+import BestWorstDays from './BestWorstDays.astro';
+
+// Get the data for the total collected for each date
+interface TotalCollectedData {
+	date: Date;
+	totalGrams: number;
+	notes?: string;
+}
+
+const fossilData = await getCollection('fossilSortingData');
+
+const totalCollectedData: Array<TotalCollectedData> = fossilData.reduce((acc: Array<TotalCollectedData>, fossilEntry) => {
+	const { data } = fossilEntry;
+	if (!data.date) {
+		return acc
+	}
+	const date = new Date(data.date)
+
+	const totalSorted = data.jars.reduce((acc: number, jar) => {
+		const jarChange = getTotalSorted(jar);
+		if (jarChange > 0) {
+			// This is a waste jar -> don't count it
+			return acc
+		}
+		return acc + Math.abs(jarChange)
+	}, 0)
+	
+	// Only add data point if totalSorted is defined and greater than 0
+	if (totalSorted !== undefined && totalSorted !== null && totalSorted > 0) {
+		acc.push({
+			date: date,
+			totalGrams: totalSorted,
+			notes: data.notes
+		})
+	}
+	
+	return acc;
+}, [])
+
+// Sort by date for proper chronological display
+totalCollectedData.sort((a, b) => a.date.getTime() - b.date.getTime())
+
+// Find best and worst days
+const bestDayAmount = totalCollectedData.reduce((best, current) => 
+	current.totalGrams > best.totalGrams ? current : best
+);
+const worstDayAmount = totalCollectedData.reduce((worst, current) => 
+	current.totalGrams < worst.totalGrams ? current : worst
+);
+
+// Serialize data for client-side script
+// Convert dates to ISO strings and ensure numbers are properly typed
+const chartData = totalCollectedData.map(item => ({
+	date: item.date.toISOString().split('T')[0], // Format as YYYY-MM-DD
+	totalGrams: Number(item.totalGrams),
+	notes: item.notes
+}));
+---
+
+<BestWorstDays
+	bestDay={{ date: bestDayAmount.date.toISOString().split('T')[0], value: bestDayAmount.totalGrams }}
+	worstDay={{ date: worstDayAmount.date.toISOString().split('T')[0], value: worstDayAmount.totalGrams }}
+	bestLabel="Most Sorted"
+	worstLabel="Least Sorted"
+	valueFormatter={(value) => `${value.toLocaleString('en-US', { maximumFractionDigits: 0 })}g`}
+/>
+
+<div class="graph-container">
+	<canvas id="amount-sorted-chart"></canvas>
+	</div>
+
+<script define:vars={{ chartData }} defer>
+	// Wait for Chart.js to be available
+	function initChart() {
+		if (typeof Chart === 'undefined') {
+			// Chart.js not loaded yet, try again shortly
+			setTimeout(initChart, 50);
+			return;
+		}
+
+		const ctx = document.getElementById('amount-sorted-chart');
+		if (!ctx) {
+			throw new Error('Canvas element not found');
+		}
+
+		// Get CSS color variable
+		const root = document.documentElement;
+		const accentColor = getComputedStyle(root).getPropertyValue('--accent-colour-5-medium').trim();
+
+		// Parse dates for proper sorting and display
+		const labels = chartData.map(item => item.date);
+		const dataPoints = chartData.map(item => item.totalGrams);
+		const notesData = chartData.map(item => item.notes);
+
+		new Chart(ctx, {
+		type: 'line',
+		data: {
+			labels: labels,
+			datasets: [{
+				label: 'Total Amount Sorted (grams)',
+				data: dataPoints,
+				borderColor: accentColor,
+				backgroundColor: accentColor.replace(')', ', 0.2)').replace('hsl', 'hsla'),
+				tension: 0.1,
+				fill: true
+			}]
+		},
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			scales: {
+				x: {
+					title: {
+						display: true,
+						text: 'Date'
+					},
+					ticks: {
+						maxRotation: 45,
+						minRotation: 45
+					}
+				},
+				y: {
+					beginAtZero: true,
+					title: {
+						display: true,
+						text: 'Amount Sorted (grams)'
+					}
+				}
+			},
+			plugins: {
+				title: {
+					display: true,
+					text: 'Total Amount Sorted Over Time'
+				},
+				legend: {
+					display: true,
+					position: 'top'
+				},
+				tooltip: {
+					callbacks: {
+						afterBody: (tooltipItems) => {
+							const tooltipIndex = tooltipItems[0].dataIndex;
+							const notes = notesData[tooltipIndex];
+							if (notes) {
+								return `\nNote: ${notes}`;
+							}
+							return '';
+						}
+					}
+				}
+			}
+		}
+		});
+	}
+
+	initChart();
+</script>
+
+<style>
+	.graph-container {
+		width: 100%;
+		height: 400px;
+	}
+
+	.graph-container canvas {
+		width: 100%;
+		height: 100%;
+	}
+</style>
+

@@ -1,0 +1,84 @@
+---
+interface Props {
+	bestDay: {
+		date: string;
+		value: number;
+	};
+	worstDay: {
+		date: string;
+		value: number;
+	};
+	bestLabel: string;
+	worstLabel: string;
+	valueFormatter: (value: number) => string;
+}
+
+const { bestDay, worstDay, bestLabel, worstLabel, valueFormatter } = Astro.props;
+
+const formatDate = (dateString: string) => {
+	const date = new Date(dateString);
+	return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+};
+---
+
+<div class="best-worst-days">
+	<div class="stat">
+		<div class="stat-label">{bestLabel}</div>
+		<div class="stat-value">{valueFormatter(bestDay.value)}</div>
+		<div class="stat-date">{formatDate(bestDay.date)}</div>
+	</div>
+	<div class="stat">
+		<div class="stat-label">{worstLabel}</div>
+		<div class="stat-value">{valueFormatter(worstDay.value)}</div>
+		<div class="stat-date">{formatDate(worstDay.date)}</div>
+	</div>
+</div>
+
+<style>
+	.best-worst-days {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.stat {
+		background-color: var(--background-colour-dark);
+		border: 1px solid var(--background-colour-darker);
+		border-radius: var(--border-radius-medium);
+		padding: 1rem;
+	}
+
+	.stat-label {
+		font-size: 0.875rem;
+		color: var(--accent-colour-text);
+		opacity: 0.7;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 0.5rem;
+	}
+
+	.stat-value {
+		font-size: 1.5rem;
+		font-weight: bold;
+		color: var(--accent-colour-medium);
+		margin-bottom: 0.25rem;
+	}
+
+	.stat-date {
+		font-size: 0.875rem;
+		color: var(--accent-colour-text);
+	}
+
+	@media (min-width: 768px) {
+		.best-worst-days {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		.stat {
+			flex: 1;
+		}
+	}
+</style>
+

@@ -1,0 +1,177 @@
+---
+import { getCollection } from 'astro:content';
+import { getTotalSorted } from '../../utility/graphs/getTotalSorted';
+import BestWorstDays from './BestWorstDays.astro';
+
+// Get the data for efficiency (grams sorted per person per session) for each date
+interface EfficiencyData {
+	date: Date;
+	efficiency: number; // grams sorted per person per session
+	notes?: string;
+}
+
+const fossilData = await getCollection('fossilSortingData');
+
+const efficiencyData: Array<EfficiencyData> = fossilData.reduce((acc: Array<EfficiencyData>, fossilEntry) => {
+	const { data } = fossilEntry;
+	if (!data.date || data.totalPeople === undefined || data.totalPeople === 0) {
+		return acc
+	}
+	const date = new Date(data.date)
+
+	// Calculate total grams sorted (same logic as AmountSortedGraph)
+	const totalSorted = data.jars.reduce((acc: number, jar) => {
+		const jarChange = getTotalSorted(jar);
+		if (jarChange > 0) {
+			// This is a waste jar -> don't count it
+			return acc
+		}
+		return acc + Math.abs(jarChange)
+	}, 0)
+
+	// Calculate efficiency: grams sorted per person per session
+	const efficiency = totalSorted / data.totalPeople
+
+	// Only add if efficiency is defined, not null, and greater than 0
+	if (efficiency !== undefined && efficiency !== null && !isNaN(efficiency) && efficiency > 0) {
+		acc.push({
+			date: date,
+			efficiency: efficiency,
+			notes: data.notes
+		})
+	}
+	
+	return acc;
+}, [])
+
+// Sort by date for proper chronological display
+efficiencyData.sort((a, b) => a.date.getTime() - b.date.getTime())
+
+// Find best and worst days
+const bestDayEfficiency = efficiencyData.reduce((best, current) => 
+	current.efficiency > best.efficiency ? current : best
+);
+const worstDayEfficiency = efficiencyData.reduce((worst, current) => 
+	current.efficiency < worst.efficiency ? current : worst
+);
+
+// Serialize data for client-side script
+// Convert dates to ISO strings and ensure numbers are properly typed
+const chartData = efficiencyData.map(item => ({
+	date: item.date.toISOString().split('T')[0], // Format as YYYY-MM-DD
+	efficiency: Number(item.efficiency.toFixed(2)), // Round to 2 decimal places
+	notes: item.notes
+}));
+---
+
+<BestWorstDays
+	bestDay={{ date: bestDayEfficiency.date.toISOString().split('T')[0], value: bestDayEfficiency.efficiency }}
+	worstDay={{ date: worstDayEfficiency.date.toISOString().split('T')[0], value: worstDayEfficiency.efficiency }}
+	bestLabel="Most Efficient"
+	worstLabel="Least Efficient"
+	valueFormatter={(value) => `${value.toFixed(2)}g/person`}
+/>
+
+<div class="graph-container">
+	<canvas id="efficiency-chart"></canvas>
+</div>
+
+<script define:vars={{ chartData }} defer>
+	// Wait for Chart.js to be available
+	function initChart() {
+		if (typeof Chart === 'undefined') {
+			// Chart.js not loaded yet, try again shortly
+			setTimeout(initChart, 50);
+			return;
+		}
+
+		const ctx = document.getElementById('efficiency-chart');
+		if (!ctx) {
+			throw new Error('Canvas element not found');
+		}
+
+		// Get CSS color variable
+		const root = document.documentElement;
+		const accentColor = getComputedStyle(root).getPropertyValue('--accent-colour-1-medium').trim();
+
+		// Parse dates for proper sorting and display
+		const labels = chartData.map(item => item.date);
+		const dataPoints = chartData.map(item => item.efficiency);
+		const notesData = chartData.map(item => item.notes);
+
+		new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: labels,
+				datasets: [{
+					label: 'Grams Sorted per Person per Session',
+					data: dataPoints,
+					borderColor: accentColor,
+					backgroundColor: accentColor.replace(')', ', 0.2)').replace('hsl', 'hsla'),
+					tension: 0.1,
+					fill: true
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				scales: {
+					x: {
+						title: {
+							display: true,
+							text: 'Date'
+						},
+						ticks: {
+							maxRotation: 45,
+							minRotation: 45
+						}
+					},
+					y: {
+						beginAtZero: true,
+						title: {
+							display: true,
+							text: 'Grams per Person per Session'
+						}
+					}
+				},
+				plugins: {
+					title: {
+						display: true,
+						text: 'Sorting Efficiency Over Time'
+					},
+					legend: {
+						display: true,
+						position: 'top'
+					},
+					tooltip: {
+						callbacks: {
+							afterBody: (tooltipItems) => {
+								const tooltipIndex = tooltipItems[0].dataIndex;
+								const notes = notesData[tooltipIndex];
+								if (notes) {
+									return `\nNote: ${notes}`;
+								}
+								return '';
+							}
+						}
+					}
+				}
+			}
+		});
+	}
+
+	initChart();
+</script>
+
+<style>
+	.graph-container {
+		width: 100%;
+		height: 400px;
+	}
+
+	.graph-container canvas {
+		width: 100%;
+		height: 100%;
+	}
+</style>
+

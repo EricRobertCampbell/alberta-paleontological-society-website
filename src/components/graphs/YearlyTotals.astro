@@ -1,0 +1,149 @@
+---
+import { getCollection } from 'astro:content';
+import { getTotalSorted } from '../../utility/graphs/getTotalSorted';
+
+const fossilData = await getCollection('fossilSortingData');
+
+// Calculate data grouped by year
+interface YearData {
+	year: number;
+	gramsSorted: number;
+	personHours: number;
+}
+
+const yearDataMap = new Map<number, YearData>();
+
+fossilData.forEach((fossilEntry) => {
+	const { data } = fossilEntry;
+	if (!data.date) return;
+	
+	const date = new Date(data.date);
+	const year = date.getFullYear();
+	
+	if (!yearDataMap.has(year)) {
+		yearDataMap.set(year, {
+			year: year,
+			gramsSorted: 0,
+			personHours: 0
+		});
+	}
+	
+	const yearData = yearDataMap.get(year)!;
+	
+	// Calculate grams sorted
+	const totalSorted = data.jars.reduce((acc: number, jar) => {
+		const jarChange = getTotalSorted(jar);
+		if (jarChange > 0) {
+			// Waste jar
+			return acc;
+		}
+		return acc + Math.abs(jarChange);
+	}, 0);
+	
+	yearData.gramsSorted += totalSorted;
+	
+	// Calculate person-hours
+	if (data.totalPeople && data.sessionDurationMinutes) {
+		const hours = data.sessionDurationMinutes / 60;
+		yearData.personHours += data.totalPeople * hours;
+	}
+});
+
+const sortedYears = Array.from(yearDataMap.values()).sort((a, b) => b.year - a.year);
+---
+
+<div class="yearly-totals">
+	<h3>Yearly Totals</h3>
+	<div class="totals-grid">
+		<div class="total-item">
+			<div class="total-label">Amount Sorted</div>
+			<div class="total-values">
+				{sortedYears.map(yearData => (
+					<div class="year-value">
+						<span class="year">{yearData.year}</span>
+						<span class="value">{yearData.gramsSorted.toLocaleString('en-US', { maximumFractionDigits: 0 })}g</span>
+					</div>
+				))}
+			</div>
+		</div>
+		<div class="total-item">
+			<div class="total-label">Person-Hours</div>
+			<div class="total-values">
+				{sortedYears.map(yearData => (
+					<div class="year-value">
+						<span class="year">{yearData.year}</span>
+						<span class="value">{yearData.personHours.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}h</span>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	.yearly-totals {
+		margin-bottom: 2rem;
+	}
+	
+	.yearly-totals h3 {
+		font-size: 1.25rem;
+		margin-bottom: 1rem;
+		color: var(--accent-colour-medium);
+	}
+	
+	.totals-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+	
+	.total-item {
+		background-color: var(--background-colour-dark);
+		border: 1px solid var(--background-colour-darker);
+		border-radius: var(--border-radius-medium);
+		padding: 1rem;
+	}
+	
+	.total-label {
+		font-size: 0.875rem;
+		color: var(--accent-colour-text);
+		opacity: 0.7;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 0.75rem;
+	}
+	
+	.total-values {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	
+	.year-value {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.5rem 0;
+		border-bottom: 1px solid var(--background-colour-darker);
+	}
+	
+	.year-value:last-child {
+		border-bottom: none;
+	}
+	
+	.year-value .year {
+		font-weight: bold;
+		color: var(--accent-colour-medium);
+	}
+	
+	.year-value .value {
+		color: var(--accent-colour-text);
+	}
+	
+	@media (min-width: 768px) {
+		.totals-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+</style>
+

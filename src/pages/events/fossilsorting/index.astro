@@ -1,14 +1,15 @@
 ---
 import { getCollection } from "astro:content";
-import { filterExternalEvents } from '../../utility/filters'
-import { sortEventsByDate } from '../../utility/eventSorting'
+import { filterExternalEvents } from '../../../utility/filters'
+import { sortEventsByDate } from '../../../utility/eventSorting'
 
-import Layout from "../../layouts/Layout.astro";
-import EmailLink from "../../components/EmailLink.astro";
-import PhoneLink from "../../components/PhoneLink.astro";
-import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
-import Event from "../../components/Event.astro";
-import { roles} from '../../utility/constants';
+import Layout from "../../../layouts/Layout.astro";
+import EmailLink from "../../../components/EmailLink.astro";
+import PhoneLink from "../../../components/PhoneLink.astro";
+import HeadingWithBackground from "../../../components/HeadingWithBackground.astro";
+import Event from "../../../components/Event.astro";
+import FossilSortingGraphs from '../../../components/FossilSorting/FossilSortingGraphs.astro'
+import { roles} from '../../../utility/constants';
 
 const { giftShop } = roles;
 
@@ -43,6 +44,10 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fossilSortingEvents);
 	
 	<p>
 		Join us for exciting microfossil sorting sessions where you can help advance paleontological research while discovering tiny treasures from millions of years ago! These sessions are open to anyone interested in getting involved in palaeontology and provide a unique opportunity to work with microscopes and contribute to ongoing scientific research.
+	</p>
+
+	<p>
+		Are you disappointed by the lack of graphs or statistics on this page? You're in luck! Check out some of our <a href="/events/fossilsorting/data/">statistics and data visualizations</a>.
 	</p>
 
 	<section>
@@ -101,6 +106,12 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fossilSortingEvents);
 			email={giftShop.email}
 			subject="Fossil Sorting Session"
 		/></>}{giftShop.telephone && <> or phone at <PhoneLink number={giftShop.telephone} /></>}.
+	</p>
+
+	<h2>Data and Statistics</h2>
+	
+	<p>
+		Interested in exploring data about our fossil sorting sessions? Visit our <a href="/events/fossilsorting/data/">data exploration page</a> to see statistics, trends, and insights from our microfossil sorting efforts.
 	</p>
 
 	<h2>Upcoming Fossil Sorting Sessions</h2>

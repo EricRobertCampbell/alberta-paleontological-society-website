@@ -1,0 +1,161 @@
+---
+import { getCollection } from 'astro:content';
+import BestWorstDays from './BestWorstDays.astro';
+
+// Get the data for the number of people sorting for each date
+interface PeopleSortingData {
+	date: Date;
+	totalPeople: number;
+	notes?: string;
+}
+
+const fossilData = await getCollection('fossilSortingData');
+
+const peopleSortingData: Array<PeopleSortingData> = fossilData.reduce((acc: Array<PeopleSortingData>, fossilEntry) => {
+	const { data } = fossilEntry;
+	if (!data.date || data.totalPeople === undefined || data.totalPeople === null || data.totalPeople === 0) {
+		return acc
+	}
+	const date = new Date(data.date)
+	
+	// Add the data point to the accumulator
+	acc.push({
+		date: date,
+		totalPeople: data.totalPeople,
+		notes: data.notes
+	})
+	
+	return acc;
+}, [])
+
+// Sort by date for proper chronological display
+peopleSortingData.sort((a, b) => a.date.getTime() - b.date.getTime())
+
+// Find best and worst days
+const bestDayPeople = peopleSortingData.reduce((best, current) => 
+	current.totalPeople > best.totalPeople ? current : best
+);
+const worstDayPeople = peopleSortingData.reduce((worst, current) => 
+	current.totalPeople < worst.totalPeople ? current : worst
+);
+
+// Serialize data for client-side script
+// Convert dates to ISO strings and ensure numbers are properly typed
+const chartData = peopleSortingData.map(item => ({
+	date: item.date.toISOString().split('T')[0], // Format as YYYY-MM-DD
+	totalPeople: Number(item.totalPeople),
+	notes: item.notes
+}));
+---
+
+<BestWorstDays
+	bestDay={{ date: bestDayPeople.date.toISOString().split('T')[0], value: bestDayPeople.totalPeople }}
+	worstDay={{ date: worstDayPeople.date.toISOString().split('T')[0], value: worstDayPeople.totalPeople }}
+	bestLabel="Most People"
+	worstLabel="Fewest People"
+	valueFormatter={(value) => `${value} ${value === 1 ? 'person' : 'people'}`}
+/>
+
+<div class="graph-container">
+	<canvas id="people-sorting-chart"></canvas>
+</div>
+
+<script define:vars={{ chartData }} defer>
+	// Wait for Chart.js to be available
+	function initChart() {
+		if (typeof Chart === 'undefined') {
+			// Chart.js not loaded yet, try again shortly
+			setTimeout(initChart, 50);
+			return;
+		}
+
+		const ctx = document.getElementById('people-sorting-chart');
+		if (!ctx) {
+			throw new Error('Canvas element not found');
+		}
+
+		// Get CSS color variable
+		const root = document.documentElement;
+		const accentColor = getComputedStyle(root).getPropertyValue('--accent-colour-4-medium').trim();
+
+		// Parse dates for proper sorting and display
+		const labels = chartData.map(item => item.date);
+		const dataPoints = chartData.map(item => item.totalPeople);
+		const notesData = chartData.map(item => item.notes);
+
+		new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: labels,
+				datasets: [{
+					label: 'Number of People Sorting',
+					data: dataPoints,
+					borderColor: accentColor,
+					backgroundColor: accentColor.replace(')', ', 0.2)').replace('hsl', 'hsla'),
+					tension: 0.1,
+					fill: true
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				scales: {
+					x: {
+						title: {
+							display: true,
+							text: 'Date'
+						},
+						ticks: {
+							maxRotation: 45,
+							minRotation: 45
+						}
+					},
+					y: {
+						beginAtZero: true,
+						title: {
+							display: true,
+							text: 'Number of People'
+						}
+					}
+				},
+				plugins: {
+					title: {
+						display: true,
+						text: 'People Sorting Over Time'
+					},
+					legend: {
+						display: true,
+						position: 'top'
+					},
+					tooltip: {
+						callbacks: {
+							afterBody: (tooltipItems) => {
+								const tooltipIndex = tooltipItems[0].dataIndex;
+								const notes = notesData[tooltipIndex];
+								if (notes) {
+									return `\nNote: ${notes}`;
+								}
+								return '';
+							}
+						}
+					}
+				}
+			}
+		});
+	}
+
+	initChart();
+</script>
+
+<style>
+	.graph-container {
+		width: 100%;
+		height: 400px;
+	}
+
+	.graph-container canvas {
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
