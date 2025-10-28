@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.103.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.102.0...v1.103.0) (2025-10-28)
+
+
+### Features
+
+* added usask paint night ([01d9fe8](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/01d9fe81911a56c42a4ca45b9359e5cd97c816af))
+
 ## [1.102.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.101.0...v1.102.0) (2025-10-25)
 
 
