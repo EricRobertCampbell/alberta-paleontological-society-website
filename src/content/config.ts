@@ -1,4 +1,5 @@
 import { defineCollection, reference, z } from 'astro:content'
+import { file } from 'astro/loaders'
 
 /*
  * Events
@@ -129,6 +130,25 @@ const FossilCollection = defineCollection({
     }),
 })
 
+const FossilSortingDataCollection = defineCollection({
+    loader: file('src/content/fossilSortingData/fossilSortingData.json'),
+    schema: z.object({
+        date: z.string(), // a string representing the date
+        jars: z.array(
+            // information on each individual jar. This includes (sometimes) both the sorted and unsorted jars
+            z.object({
+                id: z.string().optional(),
+                initialWeightGrams: z.number().optional(),
+                finalWeightGrams: z.number().optional(),
+            })
+        ),
+        sessionDurationMinutes: z.number().optional(), // the total duration of the session
+        totalPeople: z.number().optional(), // total people who were sorting
+        totalTakenBeforeMeasurement: z.number().optional(), // Number of people who took a bunch of the matrix before I got to measure the jars
+        notes: z.string().optional(), // any additional notes about this session
+    }),
+})
+
 export const collections = {
     events: eventCollection,
     disclaimers: disclaimersCollection,
@@ -137,4 +157,5 @@ export const collections = {
     faqs: faqsCollection,
     announcements: announcementCollection,
     fossils: FossilCollection,
+    fossilSortingData: FossilSortingDataCollection,
 }

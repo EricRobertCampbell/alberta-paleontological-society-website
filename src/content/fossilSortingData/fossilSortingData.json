@@ -1,0 +1,216 @@
+[
+	{
+		"id": "2024-02-25",
+		"date": "2024-02-25",
+		"jars": [
+			{
+				"id": "Jar 1",
+				"initialWeightGrams": 704,
+				"finalWeightGrams": 579
+			},
+			{
+				"id": "Jar 2",
+				"initialWeightGrams": 2373,
+				"finalWeightGrams": 1819
+			}
+		],
+		"sessionDurationMinutes": 150,
+		"totalPeople": 17,
+		"totalTakenBeforeMeasurement": 1
+	},
+	{
+		"id": "2024-03-10",
+		"date": "2024-03-10",
+		"jars": [
+			{
+				"id": "Jar 2",
+				"initialWeightGrams": 1540,
+				"finalWeightGrams": 1193
+			},
+			{
+				"id": "Waste #1",
+				"initialWeightGrams": 782,
+				"finalWeightGrams": 1396
+			}
+		],
+		"sessionDurationMinutes": 150,
+		"totalTakenBeforeMeasurement": 7
+	},
+	{
+		"id": "2024-10-20",
+		"date": "2024-10-20",
+		"jars": [
+			{
+				"id": "Jar 2",
+				"initialWeightGrams": 1212,
+				"finalWeightGrams": 594
+			},
+			{
+				"id": "Jar 3",
+				"initialWeightGrams": 2352,
+				"finalWeightGrams": 2162
+			},
+			{
+				"id": "Waste 1",
+				"initialWeightGrams": 581,
+				"finalWeightGrams": 580
+			},
+			{
+				"id": "Waste 2",
+				"finalWeightGrams": 1372
+			}
+		],
+		"sessionDurationMinutes": 150,
+		"totalTakenBeforeMeasurement": 7
+	},
+	{
+		"id": "2024-11-17",
+		"date": "2024-11-17",
+		"jars": [
+			{
+				"id": "#7",
+				"initialWeightGrams": 616
+			},
+			{
+				"id": "#2",
+				"initialWeightGrams": 594
+			},
+			{
+				"id": "#2 sorted",
+				"initialWeightGrams": 1377,
+				"finalWeightGrams": 1902
+			},
+			{
+				"id": "#3 unsorted",
+				"initialWeightGrams": 2163,
+				"finalWeightGrams": 1623
+			}
+		],
+		"sessionDurationMinutes": 150,
+		"totalPeople": 22,
+		"totalTakenBeforeMeasurement": 0
+	},
+	{
+		"id": "2024-12-01",
+		"date": "2024-12-01",
+		"jars": [
+			{
+				"id": "#2 sorted",
+				"initialWeightGrams": 1907,
+				"finalWeightGrams": 2573
+			},
+			{
+				"id": "#3 unsorted",
+				"initialWeightGrams": 1628,
+				"finalWeightGrams": 952
+			}
+		],
+		"sessionDurationMinutes": 150,
+		"totalPeople": 19,
+		"totalTakenBeforeMeasurement": 0
+	},
+	{
+		"id": "2025-01-12",
+		"date": "2025-01-12",
+		"jars": [
+			{
+				"id": "#1 Sorted",
+				"initialWeightGrams": 583,
+				"finalWeightGrams": 1258
+			},
+			{
+				"id": "#2 unsorted",
+				"initialWeightGrams": 2344,
+				"finalWeightGrams": 1975
+			},
+			{
+				"id": "#3 Unsorted",
+				"initialWeightGrams": 949,
+				"finalWeightGrams": 621
+			}
+		],
+		"sessionDurationMinutes": 150,
+		"totalPeople": 26,
+		"totalTakenBeforeMeasurement": 0
+	},
+	{
+		"id": "2025-01-26",
+		"date": "2025-01-26",
+		"jars": [
+			{
+				"id": "Sorted #1",
+				"initialWeightGrams": 1258,
+				"finalWeightGrams": 2251
+			},
+			{
+				"id": "Unsorted #2",
+				"initialWeightGrams": 1989,
+				"finalWeightGrams": 991
+			}
+		],
+		"sessionDurationMinutes": 150,
+		"totalPeople": 20,
+		"totalTakenBeforeMeasurement": 0
+	},
+	{
+		"id": "2025-02-02",
+		"date": "2025-02-02",
+		"jars": [
+			{
+				"id": "#2 unsorted",
+				"initialWeightGrams": 877
+			},
+			{
+				"id": "#3 unsorted",
+				"initialWeightGrams": 621
+			},
+			{
+				"id": "#7 unsorted",
+				"initialWeightGrams": 2409,
+				"finalWeightGrams": 1904
+			}
+		],
+		"sessionDurationMinutes": 150,
+		"totalPeople": 17,
+		"totalTakenBeforeMeasurement": 1
+	},
+	{
+		"id": "2025-03-02",
+		"date": "2025-03-02",
+		"jars": [
+			{
+				"id": "Sorted",
+				"initialWeightGrams": 1486,
+				"finalWeightGrams": 2461
+			},
+			{
+				"id": "Unsorted #7",
+				"initialWeightGrams": 1900,
+				"finalWeightGrams": 901
+			}
+		],
+		"sessionDurationMinutes": 150,
+		"totalPeople": 24,
+		"totalTakenBeforeMeasurement": 0
+	},
+	{
+		"id": "2025-10-26",
+		"date": "2025-10-26",
+		"jars": [
+			{
+				"id": "Unsorted tiny one",
+				"initialWeightGrams": 278,
+				"finalWeightGrams": 36
+			},
+			{
+				"id": "Unlabelled jar",
+				"initialWeightGrams": 2382,
+				"finalWeightGrams": 2255
+			}
+		],
+		"sessionDurationMinutes": 150,
+		"totalPeople": 26,
+		"totalTakenBeforeMeasurement": 0,
+		"notes": "This data is suspect. The final weight for the Unsorted tiny one jar was actually taken from a different jar of the same type since the jar was emptied then disposed of before I could weight it."
+	}
+]

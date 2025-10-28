@@ -1,0 +1,22 @@
+---
+interface Props {
+	children: any;
+}
+
+const { children } = Astro.props;
+---
+
+<div class="alert">
+	<slot />
+</div>
+
+<style>
+	.alert {
+		background-color: var(--background-colour-dark);
+		border-left: 3px solid var(--accent-colour-medium);
+		border-radius: var(--border-radius-medium);
+		padding: 1rem;
+		margin-top: 1.5rem;
+		color: var(--accent-colour-text);
+	}
+</style>
