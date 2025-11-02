@@ -1,13 +1,13 @@
 ---
-title: "Museum Skills Workshops: Ice Age Crash Course"
-start: "2025-11-27T17:30:00-07:00"
-end: "2025-11-27T20:00:00-07:00"
+title: 'Museum Skills Workshops: Ice Age Crash Course'
+start: '2025-11-27T17:30:00-07:00'
+end: '2025-11-27T20:00:00-07:00'
 type: 'External'
 host: 'Royal Alberta Museum'
 image:
-  src: "/events/2025/external/ram-iceAgeFossils.jpg"
-  alt: "Photo of a collections drawer containing many partial and full samples of ice age animal fossils and bones"
-detailsLink: "https://royalalbertamuseum.ca/whats-on"
+    src: '/events/2025/external/ram-iceAgeFossils.jpg'
+    alt: 'Photo of a collections drawer containing many partial and full samples of ice age animal fossils and bones'
+detailsLink: 'https://royalalbertamuseum.ca/whats-on'
 ---
 
 How do you know the difference between a Mastodon and a Mammoth tooth? How about a Bison's foot from a Horse's? These skills and many more are key for palaeontologists as they piece together Alberta's frozen past.

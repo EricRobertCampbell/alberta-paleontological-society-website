@@ -1,13 +1,13 @@
 ---
-title: "Presentation: Dino Dentist"
-start: "2025-10-19T14:30:00-06:00"
-end: "2025-10-19T15:00:00-06:00"
+title: 'Presentation: Dino Dentist'
+start: '2025-10-19T14:30:00-06:00'
+end: '2025-10-19T15:00:00-06:00'
 type: 'External'
 host: 'Royal Alberta Museum'
 image:
-  src: "/events/2025/external/ram-dinoDentist.jpg"
-  alt: "A huge model of a dino skull. A giant red fake toothbrush can be seen behind the dino's open mouth."
-detailsLink: "https://royalalbertamuseum.ca/whats-on"
+    src: '/events/2025/external/ram-dinoDentist.jpg'
+    alt: "A huge model of a dino skull. A giant red fake toothbrush can be seen behind the dino's open mouth."
+detailsLink: 'https://royalalbertamuseum.ca/whats-on'
 ---
 
 Oh my! What big teeth you have! Feast your eyes on some dino skulls and learn about the science of chewing.

@@ -101,7 +101,8 @@ a:hover {
 /* Background colours for events */
 .event-monthly-meeting {
     background-color: var(--accent-colour-1-medium);
-    border: calc(0.5 * var(--theme-spacing-base)) solid var(--accent-colour-1-dark);
+    border: calc(0.5 * var(--theme-spacing-base)) solid
+        var(--accent-colour-1-dark);
 }
 .event-monthly-meeting:hover {
     background-color: var(--accent-colour-1-light);
@@ -109,7 +110,8 @@ a:hover {
 }
 .event-field-trip {
     background-color: var(--accent-colour-2-light);
-    border: calc(0.5 * var(--theme-spacing-base)) solid var(--accent-colour-2-dark);
+    border: calc(0.5 * var(--theme-spacing-base)) solid
+        var(--accent-colour-2-dark);
 }
 .event-field-trip:hover {
     background-color: var(--accent-colour-2-lighter);
@@ -117,7 +119,8 @@ a:hover {
 }
 .event-symposium {
     background-color: var(--accent-colour-2-light);
-    border: calc(0.5 * var(--theme-spacing-base)) solid var(--accent-colour-2-dark);
+    border: calc(0.5 * var(--theme-spacing-base)) solid
+        var(--accent-colour-2-dark);
 }
 .event-symposium:hover {
     background-color: var(--accent-colour-2-lighter);
@@ -125,7 +128,8 @@ a:hover {
 }
 .event-fossil-sorting {
     background-color: var(--accent-colour-3-light);
-    border: calc(0.5 * var(--theme-spacing-base)) solid var(--accent-colour-3-dark);
+    border: calc(0.5 * var(--theme-spacing-base)) solid
+        var(--accent-colour-3-dark);
 }
 .event-fossil-sorting:hover {
     background-color: var(--accent-colour-3-lighter);
@@ -133,7 +137,8 @@ a:hover {
 }
 .event-external {
     background-color: var(--background-colour-dark);
-    border: calc(0.5 * var(--theme-spacing-base)) solid var(--background-colour-darker);
+    border: calc(0.5 * var(--theme-spacing-base)) solid
+        var(--background-colour-darker);
 }
 .event-external:hover {
     background-color: var(--background-colour-medium);
@@ -141,7 +146,8 @@ a:hover {
 }
 .event-default {
     background-color: var(--background-colour-dark);
-    border: calc(0.5 * var(--theme-spacing-base)) solid var(--background-colour-darker);
+    border: calc(0.5 * var(--theme-spacing-base)) solid
+        var(--background-colour-darker);
 }
 .event-default:hover {
     background-color: var(--background-colour-medium);

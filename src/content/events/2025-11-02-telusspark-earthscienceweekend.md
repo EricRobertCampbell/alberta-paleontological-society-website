@@ -5,8 +5,8 @@ end: '2025-11-02T16:00:00-07:00'
 type: 'External'
 host: 'Telus Spark'
 image:
-  src: '/events/2025/external/telusspark-earthscienceweekend.jpg'
-  alt: 'Earth Science Weekend at Telus Spark'
+    src: '/events/2025/external/telusspark-earthscienceweekend.jpg'
+    alt: 'Earth Science Weekend at Telus Spark'
 detailsLink: 'https://www.sparkscience.ca/earth-science-weekend'
 ---
 

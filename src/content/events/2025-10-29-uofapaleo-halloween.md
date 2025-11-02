@@ -5,8 +5,8 @@ end: '2025-10-29T19:00:00-06:00'
 type: 'External'
 host: 'University of Alberta Palaeontological Society'
 image:
-  src: '/events/2025/external/uofaps-halloween.jpg'
-  alt: 'U of A Paleontology Society Halloween Event'
+    src: '/events/2025/external/uofaps-halloween.jpg'
+    alt: 'U of A Paleontology Society Halloween Event'
 detailsLink: 'https://www.eas.ualberta.ca/paleo/?page=home'
 ---
 

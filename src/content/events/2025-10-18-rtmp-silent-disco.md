@@ -1,10 +1,11 @@
 ---
 title: "RTMP's Silent Disco"
-start: "2025-10-18T19:00:00-06:00"
-end: "2025-10-18T23:00:00-06:00"
+start: '2025-10-18T19:00:00-06:00'
+end: '2025-10-18T23:00:00-06:00'
 type: 'External'
 host: 'Royal Tyrrell Museum of Palaeontology'
 ---
+
 <figure style="display:flex; align-items: center; justify-content: center; flex-direction: column;">
     <img src="/events/2025/external/rtmpsilentdisco.png" alt="A stylized image of a triceratops skeleton wearing s scarf and listening to a tape player" style="max-width: 50%;">
 </figure>

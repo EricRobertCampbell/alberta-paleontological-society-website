@@ -1,13 +1,13 @@
 ---
-title: "Rock & Fossil Road Show In-Person"
-start: "2025-11-15T10:00:00-07:00"
-end: "2025-11-15T14:00:00-07:00"
+title: 'Rock & Fossil Road Show In-Person'
+start: '2025-11-15T10:00:00-07:00'
+end: '2025-11-15T14:00:00-07:00'
 type: 'External'
 host: 'Geological Survey of Canada & Airdrie Public Library'
 image:
-  src: "/events/2025/external/airdrie-rock-fossil-show.png"
-  alt: "Rock and Fossil Road Show promotional image"
-detailsLink: "https://bookings.yourapl.ca/event/3915908"
+    src: '/events/2025/external/airdrie-rock-fossil-show.png'
+    alt: 'Rock and Fossil Road Show promotional image'
+detailsLink: 'https://bookings.yourapl.ca/event/3915908'
 ---
 
 Ever wonder if that weird rock in your garage is actually a dinosaur tooth or a million-year-old fossil?
@@ -29,6 +29,6 @@ Perfect for curious kids, science-loving adults, educators, collectors, and anyo
 **Time:** 10:00 AM - 2:00 PM  
 **Location:** Community Living Room, Airdrie Public Library  
 **Audience:** All Ages  
-**Cost:** FREE  
+**Cost:** FREE
 
 [Register Here](https://bookings.yourapl.ca/event/3915908)

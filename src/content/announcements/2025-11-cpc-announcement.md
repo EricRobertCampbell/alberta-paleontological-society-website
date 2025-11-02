@@ -11,6 +11,7 @@ endDate: '2025-11-22'
 Mark your calendars! The GAC Paleontology Division will be hosting a free virtual Canadian Paleontology Conference November 21st-22nd, 2025. This event is open to everyone!
 
 **Registration Instructions:** To register, please send the following information via email to [gac.paleontology@gmail.com](mailto:gac.paleontology@gmail.com) by November 17:
+
 - Your name and affiliation (if applicable)
 - Whether or not you are a student
 

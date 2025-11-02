@@ -13,6 +13,7 @@ Mark your calendars! The GAC Paleontology Division will be hosting a free virtua
 For more information on registration, posters, talks, timing, and more, see [the circular](/events/2025/external/gacpd/CPC%202025%20First%20Circular.pdf).
 
 **Registration Instructions:** To register, please send the following information via email to [gac.paleontology@gmail.com](mailto:gac.paleontology@gmail.com) by November 17:
+
 - Your name and affiliation (if applicable)
 - Whether or not you are a student
 
