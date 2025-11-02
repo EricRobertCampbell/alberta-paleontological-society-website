@@ -29,21 +29,21 @@ npm run coverage
 
 ### Framework and Rendering
 
--   **Framework**: Astro 5 with SSR (`output: 'server'`)
--   **Adapter**: Netlify (`@astrojs/netlify`)
--   **Timezone handling**: Development uses UTC (`TZ=UTC`), production uses America/Edmonton (configured in `netlify.toml`)
+- **Framework**: Astro 5 with SSR (`output: 'server'`)
+- **Adapter**: Netlify (`@astrojs/netlify`)
+- **Timezone handling**: Development uses UTC (`TZ=UTC`), production uses America/Edmonton (configured in `netlify.toml`)
 
 ### Content Collections
 
 The site uses Astro's Content Collections (defined in `src/content/config.ts`) for structured content:
 
--   **events**: Markdown content with frontmatter for society events (monthly meetings, symposiums, field trips, fossil sorting). Events support both ISO datetime strings (`start`/`end`) and legacy date fields (`startDate`/`endDate`). Event types are defined in `EVENT_TYPES` constant.
--   **announcements**: Time-bound announcements with `startDate` and `endDate` for display control
--   **bulletins**: YAML data files referencing bulletin PDFs in `/public/bulletinArchives/`
--   **bulletinVolumes**: YAML data organizing bulletins by year
--   **faqs**: Markdown content with ordering
--   **disclaimers**: Markdown content for legal/privacy sections
--   **fossils**: YAML data for the fossil collection, including 3D scan references
+- **events**: Markdown content with frontmatter for society events (monthly meetings, symposiums, field trips, fossil sorting). Events support both ISO datetime strings (`start`/`end`) and legacy date fields (`startDate`/`endDate`). Event types are defined in `EVENT_TYPES` constant.
+- **announcements**: Time-bound announcements with `startDate` and `endDate` for display control
+- **bulletins**: YAML data files referencing bulletin PDFs in `/public/bulletinArchives/`
+- **bulletinVolumes**: YAML data organizing bulletins by year
+- **faqs**: Markdown content with ordering
+- **disclaimers**: Markdown content for legal/privacy sections
+- **fossils**: YAML data for the fossil collection, including 3D scan references
 
 ### Directory Structure
 
@@ -80,8 +80,8 @@ public/                # Static assets
 
 Events are transitioning from legacy date fields to ISO datetime strings:
 
--   **Modern**: `start` and `end` fields with ISO 8601 strings (e.g., `2025-04-11T19:00:00`)
--   **Legacy**: `startDate`, `endDate`, `startTime`, `endTime` fields (deprecated)
+- **Modern**: `start` and `end` fields with ISO 8601 strings (e.g., `2025-04-11T19:00:00`)
+- **Legacy**: `startDate`, `endDate`, `startTime`, `endTime` fields (deprecated)
 
 The homepage (`src/pages/index.astro`) filters and sorts events, removing external events and past events. Date utilities in `src/utility/dates.ts` handle timezone conversions and date comparisons.
 
@@ -95,14 +95,14 @@ This project uses Conventional Commits enforced by commitlint via Husky pre-comm
 
 ### Styling
 
--   Uses CSS custom properties defined in `src/styling/variables.css`
--   Global styles in `src/styling/globalStyles.css`
--   Font families: "Lexend Deca" (headings), "Roboto" (body text)
--   Maximum content width: 1000px
+- Uses CSS custom properties defined in `src/styling/variables.css`
+- Global styles in `src/styling/globalStyles.css`
+- Font families: "Lexend Deca" (headings), "Roboto" (body text)
+- Maximum content width: 1000px
 
 ## Important Notes
 
--   The bulletin naming convention follows the pattern: `bulletin{volume}{issue}.pdf` (e.g., `bulletin011.pdf` for Volume 1, Issue 1)
--   Bulletin YAML files in `src/content/bulletins/` reference the PDF location via the `location` field
--   The site handles both member events and external events, but external events are filtered from the homepage
--   When working with dates, always consider timezone handling (UTC in dev, America/Edmonton in production)
+- The bulletin naming convention follows the pattern: `bulletin{volume}{issue}.pdf` (e.g., `bulletin011.pdf` for Volume 1, Issue 1)
+- Bulletin YAML files in `src/content/bulletins/` reference the PDF location via the `location` field
+- The site handles both member events and external events, but external events are filtered from the homepage
+- When working with dates, always consider timezone handling (UTC in dev, America/Edmonton in production)

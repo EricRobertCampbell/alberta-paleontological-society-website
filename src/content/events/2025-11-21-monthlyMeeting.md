@@ -5,9 +5,8 @@ end: '2025-11-21T21:00:00-07:00'
 type: 'Monthly Meeting'
 ---
 
-
 **Fifty+ Years of Research at the Mammoth Site of Hot Springs, SD**
-*Chris Jass, Ph.D. Curator at Royal Alberta Museum, Edmonton, Alberta*
+_Chris Jass, Ph.D. Curator at Royal Alberta Museum, Edmonton, Alberta_
 
 **Abstract/Summary**
 Research on Ice Age vertebrates of the Black Hills took a “mammoth” leap in 1974, with the discovery of The Mammoth Site of Hot Springs, SD. Fifty years (and over 60 mammoths) later, we’re still working to understand what the site can tell us about mammoths and the Ice Age record of the Black Hills. New research has recently revised age estimates for the site, and new projects continue to refine our knowledge of the site. Along with that work, additional research on Pleistocene sites in Black Hills caves is filling in gaps in the Ice Age record, particularly with respect to our understanding of small mammal taxa. Join us to learn about an incredible in situ mammoth locality, and on-going, regional work to reveal the Ice Age history of the Black Hills of South Dakota.

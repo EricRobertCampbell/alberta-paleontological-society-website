@@ -5,8 +5,8 @@ end: '2025-10-23T19:00:00-06:00'
 type: 'External'
 host: 'University of Alberta Palaeontological Society'
 image:
-  src: '/events/2025/external/uofaps-caldwell.jpg'
-  alt: 'Dr. Mike Caldwell, Professor of Palaeontology'
+    src: '/events/2025/external/uofaps-caldwell.jpg'
+    alt: 'Dr. Mike Caldwell, Professor of Palaeontology'
 detailsLink: 'https://www.eas.ualberta.ca/paleo/?page=home'
 ---
 
