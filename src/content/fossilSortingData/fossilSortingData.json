@@ -211,6 +211,26 @@
         "sessionDurationMinutes": 150,
         "totalPeople": 26,
         "totalTakenBeforeMeasurement": 0,
-        "notes": "This data is suspect. The final weight for the Unsorted tiny one jar was actually taken from a different jar of the same type since the jar was emptied then disposed of before I could weight it."
+        "notes": "This data is suspect. The final weight for the Unsorted tiny one jar was actually taken from a different jar of the same type since the jar was emptied then disposed of before I could weight it. Also, several people were sorting for a different project (so they are counted in the list of people but weren't really sorting.)"
+    },
+    {
+        "id": "2025-11-02",
+        "date": "2025-11-02",
+        "jars": [
+            {
+                "id": "Already sorted",
+                "initialWeightGrams": 36,
+                "finalWeightGrams": 692
+            },
+            {
+                "id": "#7",
+                "initialWeightGrams": 2266,
+                "finalWeightGrams": 1647
+            }
+        ],
+        "sessionDurationMinutes": 150,
+        "totalPeople": 20,
+        "totalTakenBeforeMeasurement": 0,
+        "notes": "Several people were sorting for a different project (so they are counted in the list of people but weren't really sorting.)"
     }
 ]
