@@ -9,7 +9,8 @@
         "preview": "astro preview",
         "astro": "astro",
         "test": "vitest",
-        "coverage": "vitest run --coverage"
+        "coverage": "vitest run --coverage",
+        "generate-thumbnails": "tsx scripts/generate-thumbnails.ts"
     },
     "dependencies": {
         "@astrojs/netlify": "^6.2.2",
@@ -23,6 +24,8 @@
         "@commitlint/config-conventional": "^17.7.0",
         "husky": "^8.0.3",
         "prettier-plugin-astro": "^0.10.0",
+        "sharp": "^0.33.5",
+        "tsx": "^4.7.0",
         "vitest": "^3.0.8"
     }
 }

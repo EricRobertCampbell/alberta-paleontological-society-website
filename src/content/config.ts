@@ -12,20 +12,16 @@ const EVENT_TYPES = [
     'Fossil Sorting',
     'External', // e.g. an event hosted by another organization that the APS is promoting
 ] as const
+const isoDateString = z
+    .string()
+    .refine((val) => !isNaN(Date.parse(val)), {
+        message: 'Invalid ISO date string',
+    })
+
 const eventSchema = z.object({
     title: z.string(),
-    start: z
-        .string()
-        .refine((val) => !isNaN(Date.parse(val)), {
-            message: 'Invalid ISO date string',
-        })
-        .optional(),
-    end: z
-        .string()
-        .refine((val) => !isNaN(Date.parse(val)), {
-            message: 'Invalid ISO date string',
-        })
-        .optional(),
+    start: isoDateString.optional(),
+    end: isoDateString.optional(),
     // @deprecated
     startDate: z.string().optional(),
     // @deprecated
@@ -110,6 +106,22 @@ const announcementCollection = defineCollection({
 })
 export type AnnouncementFrontmatter = z.infer<typeof announcementSchema>
 
+const fossilSortingImageSchema = z.object({
+    id: z.string(),
+    date: isoDateString,
+    src: z.string(),
+    thumbnailSrc: z.string(),
+    description: z.string(),
+    finderCredit: z.string(),
+    photoCredit: z.string(),
+    tags: z.array(z.string()).default([]),
+})
+const fossilSortingImagesCollection = defineCollection({
+    loader: file('src/content/fossilSortingImages/images.json'),
+    schema: fossilSortingImageSchema,
+})
+export type FossilSortingImage = z.infer<typeof fossilSortingImageSchema>
+
 const FossilCollection = defineCollection({
     type: 'data',
     schema: z.object({
@@ -156,6 +168,7 @@ export const collections = {
     bulletinVolumes: bulletinVolumesCollection,
     faqs: faqsCollection,
     announcements: announcementCollection,
+    fossilSortingImages: fossilSortingImagesCollection,
     fossils: FossilCollection,
     fossilSortingData: FossilSortingDataCollection,
 }
