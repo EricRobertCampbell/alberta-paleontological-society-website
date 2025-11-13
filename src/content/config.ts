@@ -12,11 +12,9 @@ const EVENT_TYPES = [
     'Fossil Sorting',
     'External', // e.g. an event hosted by another organization that the APS is promoting
 ] as const
-const isoDateString = z
-    .string()
-    .refine((val) => !isNaN(Date.parse(val)), {
-        message: 'Invalid ISO date string',
-    })
+const isoDateString = z.string().refine((val) => !isNaN(Date.parse(val)), {
+    message: 'Invalid ISO date string',
+})
 
 const eventSchema = z.object({
     title: z.string(),
