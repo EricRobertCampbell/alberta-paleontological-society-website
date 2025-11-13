@@ -5,4 +5,8 @@ end: '2026-01-16T21:00:00-07:00'
 type: 'Monthly Meeting'
 ---
 
-Speakers TBD
+**Paleo-Entomological Themed Meeting**
+
+_Andre Mueller, McGill; Ben Egan/Katie Kreutzer, Royal Saskatchewan Museum_
+
+Title TBA

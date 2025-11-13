@@ -5,4 +5,6 @@ end: '2026-04-17T21:00:00-06:00'
 type: 'Monthly Meeting'
 ---
 
-Speakers TBD
+_Dr. Darla K. Zelenitsky, University of Calgary_
+
+Title TBA
