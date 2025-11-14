@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.111.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.110.0...v1.111.0) (2025-11-14)
+
+
+### Features
+
+* new events ([82a0acb](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/82a0acbe57e87f36405b8a24b8f80a7c2a9c49dc))
+
 ## [1.110.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.109.0...v1.110.0) (2025-11-14)
 
 
