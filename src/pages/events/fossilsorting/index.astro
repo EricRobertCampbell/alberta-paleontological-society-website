@@ -171,13 +171,13 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fossilSortingEvents);
 	)}
 	
 	{pastEvents.length > 0 && (
-		<details open>
+		<details>
 			<summary><h2>Past Fossil Sorting Sessions</h2></summary>
 			{pastEvents.map((event, index, allEvents) => {
 				const { Content, slug } = event;
 				return (
 					<Event
-						frontmatter={event.remarkPluginFrontmatter as any}
+						frontmatter={event.remarkPluginFrontmatter}
 						last={index === allEvents.length - 1}
 						showPermalink={true}
 						slug={slug}
