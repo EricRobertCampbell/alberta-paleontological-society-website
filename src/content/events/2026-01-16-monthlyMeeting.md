@@ -44,4 +44,14 @@ Born in Calgary and raised in Medicine Hat, Alberta, Andre Mueller has always be
 ## Ben Egan
 _University of Regina_
 
-**Title:** TBA
+**Title:** Describing a new species of Staphylinid beetle from Dominican amber
+
+**Abstract**
+
+As a preservation medium, ambers can exquisitely record faunal and botanical inclusions typically lost in the fossil record. In our study we report the first fossil members of Alloraphes from Dominican amber, extending the genus' range to the Miocene and confirming their presence on Caribbean Island of Hispaniola. Using CT-scan data from the Canadian Light Source we were able to create three dimensional models to accurately describe the new species. These small (< 1 mm) staphylinid beetles inhabit leaf litter and would typically have been lost in the fossil record if it were not for amber. Given the remarkable evolutionary status that Dominican insect genera demonstrate it is possible the genus is still present on the island today awaiting discovery.
+
+**Biography**
+
+Ben Egan is a PhD candidate at the University of Regina currently applying non-traditional isotope systems to fossil material. Growing up in England, Ben studied for his undergraduate degree at Durham University where he was given the option to intern at the Royal Saskatchewan Museum describing insect inclusions in amber. After this experience, Ben decided to return to Canada for graduate studies.
+
+[Abstract & Bio](/presentationAbstracts/2025/Ben%20Egan%20abstract%20for%20APS%20January%2016%202026.pdf)
