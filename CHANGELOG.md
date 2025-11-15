@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.115.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.114.0...v1.115.0) (2025-11-15)
+
+
+### Features
+
+* added ben egan abstract ([89f600b](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/89f600b447071a7246f087487849336acffa9a2c))
+
 ## [1.114.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.113.1...v1.114.0) (2025-11-15)
 
 
