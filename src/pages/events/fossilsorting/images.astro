@@ -51,6 +51,25 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 		</p>
 	</section>
 
+	<details class="search" id="image-search">
+		<summary>Search images</summary>
+		<div class="search__controls">
+			<label for="search-input" class="visually-hidden">Search terms</label>
+			<input id="search-input" type="text" placeholder="Search description, finder, photo, tags…" />
+			<button id="search-button" class="search__button" type="button">Search</button>
+			<button id="search-reset" class="search__button search__button--secondary" type="button">Reset</button>
+		</div>
+		<p id="search-status" class="search__status" hidden>Searching...</p>
+		<p id="search-empty" class="search__empty" hidden>No images found.</p>
+		<div id="search-error" class="search__error" hidden>
+			<p class="search__error-title">An error occurred while searching.</p>
+			<details>
+				<summary>Details</summary>
+				<pre id="search-error-details"></pre>
+			</details>
+		</div>
+	</details>
+
 	<section class="gallery" id="image-gallery">
 		{initialImages.map((image) => (
 			<article class="gallery-card" data-image-id={image.id}>
@@ -113,6 +132,14 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 <script type="module">
 	const gallery = document.querySelector("#image-gallery");
 	const loadMoreButton = document.querySelector("#load-more-images");
+	const searchContainer = document.querySelector("#image-search");
+	const searchInput = document.querySelector("#search-input");
+	const searchButton = document.querySelector("#search-button");
+	const searchReset = document.querySelector("#search-reset");
+	const searchStatus = document.querySelector("#search-status");
+	const searchEmpty = document.querySelector("#search-empty");
+	const searchError = document.querySelector("#search-error");
+	const searchErrorDetails = document.querySelector("#search-error-details");
 	const modal = document.querySelector("#image-modal");
 	const modalPicture = document.querySelector("#image-modal-picture");
 	const modalDescription = document.querySelector("#image-modal-description");
@@ -196,6 +223,132 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 			loadMoreButton.dataset.lastId = "";
 		}
 	};
+
+	const clearGallery = () => {
+		if (!gallery) return;
+		gallery.innerHTML = "";
+	};
+
+	const renderImages = (images) => {
+		if (!gallery || !Array.isArray(images)) return;
+		images.forEach((image, index) => {
+			setTimeout(() => {
+				const card = createCard(image);
+				gallery.append(card);
+				// Ensure the browser applies the initial styles before toggling visibility
+				// so the transition runs reliably across browsers.
+				// eslint-disable-next-line @typescript-eslint/no-unused-expressions
+				card.offsetWidth;
+				requestAnimationFrame(() => {
+					card.classList.add("is-visible");
+				});
+			}, index * 100);
+		});
+	};
+
+	const setSearching = (isSearching) => {
+		if (!searchStatus) return;
+		searchStatus.hidden = !isSearching;
+	};
+
+	const clearSearchIndicators = () => {
+		if (searchEmpty) searchEmpty.hidden = true;
+		if (searchError) searchError.hidden = true;
+		if (searchErrorDetails) searchErrorDetails.textContent = "";
+	};
+
+	const showEmpty = () => {
+		if (searchEmpty) searchEmpty.hidden = false;
+	};
+
+	const showError = (error) => {
+		if (!searchError) return;
+		searchError.hidden = false;
+		if (searchErrorDetails) {
+			searchErrorDetails.textContent = String(error?.message ?? error ?? "Unknown error");
+		}
+	};
+
+	const performSearch = async (query) => {
+		try {
+			setSearching(true);
+			clearSearchIndicators();
+			if (loadMoreButton) {
+				loadMoreButton.hidden = true;
+			}
+			const url = new URL("/api/fossil-sorting-images", window.location.origin);
+			if (query) {
+				url.searchParams.set("q", query);
+			}
+			const response = await fetch(url.toString());
+			if (!response.ok) {
+				throw new Error(`Search failed (${response.status})`);
+			}
+			const payload = await response.json();
+			clearGallery();
+			const images = Array.isArray(payload.images) ? payload.images : [];
+			if (images.length === 0) {
+				showEmpty();
+			} else {
+				renderImages(images);
+			}
+		} catch (error) {
+			console.error(error);
+			clearGallery();
+			showError(error);
+		} finally {
+			setSearching(false);
+		}
+	};
+
+	const performReset = async () => {
+		try {
+			setSearching(true);
+			clearSearchIndicators();
+			const url = new URL("/api/fossil-sorting-images", window.location.origin);
+			const response = await fetch(url.toString());
+			if (!response.ok) {
+				throw new Error(`Reset failed (${response.status})`);
+			}
+			const payload = await response.json();
+			clearGallery();
+			const images = Array.isArray(payload.images) ? payload.images : [];
+			if (images.length === 0) {
+				showEmpty();
+			} else {
+				renderImages(images);
+			}
+			if (payload.nextCursor && loadMoreButton) {
+				loadMoreButton.dataset.lastId = payload.nextCursor;
+			}
+			updateLoadMoreVisibility(Boolean(payload.hasMore));
+		} catch (error) {
+			console.error(error);
+			clearGallery();
+			showError(error);
+		} finally {
+			setSearching(false);
+		}
+	};
+
+	searchButton?.addEventListener("click", () => {
+		const q = (searchInput?.value ?? "").trim();
+		void performSearch(q);
+	});
+
+	searchInput?.addEventListener("keydown", (event) => {
+		if (event.key === "Enter") {
+			const q = (searchInput?.value ?? "").trim();
+			void performSearch(q);
+		}
+	});
+
+	searchReset?.addEventListener("click", () => {
+		if (searchInput) {
+			searchInput.value = "";
+		}
+		void performReset();
+	});
 
 	const openModal = (button) => {
 		modalPicture.src = button.dataset.fullSrc ?? "";
@@ -311,6 +464,81 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 </script>
 
 <style is:global>
+	.visually-hidden {
+		position: absolute;
+		height: 1px; width: 1px;
+		overflow: hidden;
+		clip: rect(1px, 1px, 1px, 1px);
+		white-space: nowrap;
+	}
+
+	.search {
+		margin: 1rem 0 1.5rem 0;
+	}
+
+	.search__controls {
+		display: grid;
+		grid-template-columns: 1fr auto auto;
+		gap: 0.5rem;
+		margin-top: 0.5rem;
+	}
+
+	.search__controls input[type="text"] {
+		padding: 0.6rem 0.75rem;
+		border-radius: 0.5rem;
+		border: 1px solid var(--background-colour-darker);
+		background: var(--background-colour-lightest);
+		color: var(--text-colour);
+	}
+
+	.search__button {
+		padding: 0.6rem 0.9rem;
+		border-radius: 9999px;
+		border: none;
+		font-size: 0.95rem;
+		font-weight: 600;
+		cursor: pointer;
+		background: var(--aps-teal);
+		color: var(--background-colour-lightest);
+	}
+
+	.search__button--secondary {
+		background: var(--background-colour-darker);
+		color: var(--text-colour-lightest);
+	}
+
+	.search__status {
+		margin: 0.5rem 0 0 0;
+		font-style: italic;
+		color: var(--text-colour-lightest);
+	}
+
+	.search__empty {
+		margin: 0.5rem 0 0 0;
+		color: var(--text-colour-lightest);
+	}
+
+	.search__error {
+		margin: 0.5rem 0 0 0;
+		padding: 0.75rem 1rem;
+		border-radius: 0.5rem;
+		background: color-mix(in srgb, var(--error-colour-medium) 12%, transparent);
+		border: 1px solid color-mix(in srgb, var(--error-colour-medium) 35%, transparent);
+	}
+
+	.search__error-title {
+		margin: 0 0 0.25rem 0;
+		font-weight: 600;
+	}
+
+	#search-error-details {
+		margin: 0.25rem 0 0 0;
+		max-width: 100%;
+		overflow: auto;
+		white-space: pre-wrap;
+		font-size: 0.9rem;
+		color: var(--text-colour);
+	}
 	.intro {
 		display: grid;
 		gap: 1rem;
