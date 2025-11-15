@@ -1,0 +1,102 @@
+---
+import { getCollection } from "astro:content";
+
+const title = 'Fossil Sorting Slideshow';
+
+// Fetch all fossil sorting images from content collection
+const allImages = await getCollection('fossilSortingImages');
+const images = allImages.map((entry) => entry.data);
+
+// Shuffle images (random order at build time for prerendered output)
+for (let i = images.length - 1; i > 0; i--) {
+	const j = Math.floor(Math.random() * (i + 1));
+	[images[i], images[j]] = [images[j], images[i]];
+}
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+
+		<title>{title}</title>
+
+		<link rel="stylesheet" href="/revealjs/dist/reset.css" />
+		<link rel="stylesheet" href="/revealjs/dist/reveal.css" />
+		<link rel="stylesheet" href="/revealjs/dist/theme/black.css" />
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>{title}</h1>
+					<h3>Images from recent APS microfossil sorting sessions</h3>
+				</section>
+				{images.map((img) => (
+					<section>
+						<figure class="slide-figure">
+							<img
+								src={img.src}
+								alt={img.description}
+								class="slide-image"
+							/>
+							<figcaption class="slide-caption">
+								<p class="slide-description">{img.description}</p>
+								<p class="slide-credit"><strong>Finder:</strong> {img.finderCredit}</p>
+							</figcaption>
+						</figure>
+					</section>
+				))}
+			</div>
+		</div>
+
+		<script src="/revealjs/dist/reveal.js" type="text/javascript"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				autoSlide: 5000,
+				loop: true,
+				width: 960,
+				height: 700,
+			});
+		</script>
+	</body>
+</html>
+
+<style>
+	.slide-figure {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+		margin: 0;
+	}
+	.slide-image {
+		max-height: 70vh;
+		max-width: 90vw;
+		height: auto;
+		width: auto;
+		object-fit: contain;
+		background: #000;
+	}
+	.slide-caption {
+		display: grid;
+		gap: 0.25rem;
+	}
+	.slide-description {
+		margin: 0;
+		font-size: 1.1rem;
+		font-weight: 600;
+	}
+	.slide-credit {
+		margin: 0;
+		font-size: 0.95rem;
+		opacity: 0.85;
+	}
+</style>
+
+
