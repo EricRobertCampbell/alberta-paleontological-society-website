@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.118.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.117.0...v1.118.0) (2025-11-18)
+
+
+### Features
+
+* added uofaps speaker event ([b005f23](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/b005f234ed717c286152b79a146e4fd1cbde3ac0))
+* updated abstracts & bios ([c2bb3c7](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/c2bb3c7840e40753b54ea58ec2160f5c51c30d86))
+
 ## [1.117.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.116.0...v1.117.0) (2025-11-18)
 
 
