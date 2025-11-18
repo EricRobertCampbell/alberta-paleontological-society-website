@@ -258,5 +258,75 @@
         "finderCredit": "Eric Campbell",
         "photoCredit": "Eric Campbell",
         "tags": ["reptile", "jaw", "tooth", "fragment"]
+    },
+    {
+        "id": "2025-11-02-24BCECCE-3030-4DFC-AA05-13B518814FE9_4_5005_c",
+        "date": "2025-11-02",
+        "src": "/fossil-sorting-images/2025-11-02-24BCECCE-3030-4DFC-AA05-13B518814FE9_4_5005_c.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-02-24BCECCE-3030-4DFC-AA05-13B518814FE9_4_5005_c-thumbnail.jpeg",
+        "description": "Lizard maxilla",
+        "finderCredit": "Atharva Roy",
+        "photoCredit": "Atharva Roy",
+        "tags": ["lizard", "maxilla", "jaw", "reptile"]
+    },
+    {
+        "id": "2025-11-02-460ADCA9-557A-4019-BBE4-20E47E4BF820_4_5005_c",
+        "date": "2025-11-02",
+        "src": "/fossil-sorting-images/2025-11-02-460ADCA9-557A-4019-BBE4-20E47E4BF820_4_5005_c.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-02-460ADCA9-557A-4019-BBE4-20E47E4BF820_4_5005_c-thumbnail.jpeg",
+        "description": "Carnivoran tooth",
+        "finderCredit": "Atharva Roy",
+        "photoCredit": "Atharva Roy",
+        "tags": ["carnivoran", "tooth", "mammal"]
+    },
+    {
+        "id": "2025-11-02-50C0AEC9-01F2-4E35-9C5E-8A6A50AC647B_4_5005_c",
+        "date": "2025-11-02",
+        "src": "/fossil-sorting-images/2025-11-02-50C0AEC9-01F2-4E35-9C5E-8A6A50AC647B_4_5005_c.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-02-50C0AEC9-01F2-4E35-9C5E-8A6A50AC647B_4_5005_c-thumbnail.jpeg",
+        "description": "Maybe a marsupial molar?",
+        "finderCredit": "Atharva Roy",
+        "photoCredit": "Atharva Roy",
+        "tags": ["marsupial", "molar", "tooth", "mammal"]
+    },
+    {
+        "id": "2025-11-02-8BDAC972-4E6B-448D-8655-1156AF5534FE_4_5005_c",
+        "date": "2025-11-02",
+        "src": "/fossil-sorting-images/2025-11-02-8BDAC972-4E6B-448D-8655-1156AF5534FE_4_5005_c.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-02-8BDAC972-4E6B-448D-8655-1156AF5534FE_4_5005_c-thumbnail.jpeg",
+        "description": "Lower left molar from Hyopsodus",
+        "finderCredit": "Atharva Roy",
+        "photoCredit": "Atharva Roy",
+        "tags": ["hyopsodus", "molar", "tooth", "mammal"]
+    },
+    {
+        "id": "2025-11-02-A055BC12-76AB-4408-A355-3AB2AC36CBC3_4_5005_c",
+        "date": "2025-11-02",
+        "src": "/fossil-sorting-images/2025-11-02-A055BC12-76AB-4408-A355-3AB2AC36CBC3_4_5005_c.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-02-A055BC12-76AB-4408-A355-3AB2AC36CBC3_4_5005_c-thumbnail.jpeg",
+        "description": "Mammal astragalus",
+        "finderCredit": "Atharva Roy",
+        "photoCredit": "Atharva Roy",
+        "tags": ["mammal", "astragalus", "bone", "ankle"]
+    },
+    {
+        "id": "2025-11-02-BEA83619-A598-4B0E-A496-8DAACF8261F0_4_5005_c",
+        "date": "2025-11-02",
+        "src": "/fossil-sorting-images/2025-11-02-BEA83619-A598-4B0E-A496-8DAACF8261F0_4_5005_c.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-02-BEA83619-A598-4B0E-A496-8DAACF8261F0_4_5005_c-thumbnail.jpeg",
+        "description": "Mammal astragalus",
+        "finderCredit": "Atharva Roy",
+        "photoCredit": "Atharva Roy",
+        "tags": ["mammal", "astragalus", "bone", "ankle"]
+    },
+    {
+        "id": "2025-11-02-F389D00A-67A5-4DDA-B288-CD0D25E523F5_4_5005_c",
+        "date": "2025-11-02",
+        "src": "/fossil-sorting-images/2025-11-02-F389D00A-67A5-4DDA-B288-CD0D25E523F5_4_5005_c.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-02-F389D00A-67A5-4DDA-B288-CD0D25E523F5_4_5005_c-thumbnail.jpeg",
+        "description": "Lizard maxilla",
+        "finderCredit": "Atharva Roy",
+        "photoCredit": "Atharva Roy",
+        "tags": ["lizard", "maxilla", "jaw", "reptile"]
     }
 ]
