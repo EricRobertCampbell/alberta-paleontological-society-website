@@ -20,7 +20,7 @@ Amber's chemical structure has allowed for the excellent preservation of both pr
 
 Katie is in her final year of undergraduate studies at the University of Regina, pursuing a B.Sc. Hons. majoring in Geology. She has been an NSERC student researcher in the Department of Earth Science since 2023, researching a variety of topics, including amber isotopes and inclusions in southern Saskatchewan. This project, which has expanded into her undergrad thesis, is supervised by Dr. Ryan McKellar, Dr. Maria Velez, and Dr. Leslie Robbins at the Royal Saskatchewan Museum and University of Regina. Katie hopes to continue combining geochemistry and paleontology by pursuing an M.Sc. in Geology in the Fall of 2026.
 
-[Abstract & Bio](/presentationAbstracts/2025/Katie%20Kreutzer%20abstract%20for%20APS%20January%2016%202026.pdf)
+[Abstract & Bio](/presentationAbstracts/2026/Katie%20Kreutzer%20abstract%20for%20APS%20January%2016%202026.pdf)
 
 ---
 
@@ -37,7 +37,7 @@ Impression fossils can preserve large insect fossils not commonly found in amber
 
 Born in Calgary and raised in Medicine Hat, Alberta, Andre Mueller has always been passionate about prehistoric life, especially the underappreciated areas of paleontology. Currently a Master's student studying at McGill University in Montreal, he regularly conducts fieldwork in Dinosaur Provincial Park and the surrounding area. Much of his research focuses on Cretaceous plant and insect fossils from across Canada, such as the Redmond Formation of Labrador and the Dinosaur Park Formation of Alberta. Andre has made several paleoentomological discoveries, including the description of Canada's first dinosaur-aged dragonfly, Cordualadensa acorni, and the description of three new mayfly species from Labrador.
 
-[Abstract & Bio](/presentationAbstracts/2025/Andre%20Mueller%20abstract%20for%20APS%20January%2016%202026.pdf)
+[Abstract & Bio](/presentationAbstracts/2026/Andre%20Mueller%20abstract%20for%20APS%20January%2016%202026.pdf)
 
 ---
 
@@ -54,4 +54,4 @@ As a preservation medium, ambers can exquisitely record faunal and botanical inc
 
 Ben Egan is a PhD candidate at the University of Regina currently applying non-traditional isotope systems to fossil material. Growing up in England, Ben studied for his undergraduate degree at Durham University where he was given the option to intern at the Royal Saskatchewan Museum describing insect inclusions in amber. After this experience, Ben decided to return to Canada for graduate studies.
 
-[Abstract & Bio](/presentationAbstracts/2025/Ben%20Egan%20abstract%20for%20APS%20January%2016%202026.pdf)
+[Abstract & Bio](/presentationAbstracts/2026/Ben%20Egan%20abstract%20for%20APS%20January%2016%202026.pdf)
