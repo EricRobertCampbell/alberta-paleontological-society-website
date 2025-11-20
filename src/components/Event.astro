@@ -2,6 +2,8 @@
 import { generateEventDateTimeString } from "../utility";
 import type { EventFrontmatter } from "../content/config";
 import { splitIsoString } from '../utility/dates'
+import { getEntry } from 'astro:content'
+import Talk from './Talk.astro'
 interface Props {
 	frontmatter: EventFrontmatter;
 	last: boolean;
@@ -10,20 +12,25 @@ interface Props {
 	slug?: string;
 }
 const { frontmatter, last, id, showPermalink = false, slug } = Astro.props;
-const { title, startDate, startTime, endDate, endTime, type, image, start, end, host, detailsLink } =
+const { title, startDate, endDate, type, image, start, end, host, detailsLink, talks } =
 	frontmatter;
 const actualStartDate = start ? splitIsoString(start).date : startDate;
 const actualEndDate = end ? splitIsoString(end).date : endDate;
-const eventDateTimeString = generateEventDateTimeString(
-{
-start,
-end,
-startDate,
-startTime,
-endDate,
-endTime
-}
-);
+const eventDateTimeString = generateEventDateTimeString({
+    start,
+    end,
+    startDate,
+    endDate,
+});
+
+// Resolve talk references
+const resolvedTalks = talks ? (await Promise.all(
+	talks.map(async (talkRef) => {
+		const talk = await getEntry('talks', talkRef);
+		console.log({talk})
+		return talk;
+	})
+) ): [];
 ---
 
 <section
@@ -76,6 +83,19 @@ endTime
 					}
 			</a>.</p> : null
 		}
+	{
+		resolvedTalks && resolvedTalks.length > 0 && (
+			<div class="talks-container">
+				{resolvedTalks.map((talk) => (
+					<Talk 
+						title={talk.data.title}
+						speaker={talk.data.speaker}
+						youtubeLink={talk.data.youtubeLink} 
+					/>
+				))}
+			</div>
+		)
+	}
 </section>
 
 <style>
@@ -135,5 +155,13 @@ endTime
 	}
 	figcaption {
 		font-size: 0.5rem;
+	}
+	.talks-container {
+		margin-top: calc(2 * var(--theme-spacing-base));
+		padding-top: calc(2 * var(--theme-spacing-base));
+		border-top: solid 1px var(--accent-colour-medium);
+		display: flex;
+		flex-direction: column;
+		gap: calc(2 * var(--theme-spacing-base));
 	}
 </style>

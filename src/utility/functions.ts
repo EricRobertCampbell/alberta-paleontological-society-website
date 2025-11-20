@@ -75,9 +75,9 @@ interface EventDateTimeStringParams {
     start: EventFrontmatter['start']
     end: EventFrontmatter['end']
     startDate: EventFrontmatter['startDate']
-    startTime: EventFrontmatter['startTime']
+    startTime?: string
     endDate: EventFrontmatter['endDate']
-    endTime: EventFrontmatter['endTime']
+    endTime?: string
 }
 export const generateEventDateTimeString = ({
     start,

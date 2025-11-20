@@ -34,6 +34,7 @@ const eventSchema = z.object({
     type: z.enum(EVENT_TYPES),
     host: z.string().optional(), // the host of the event, e.g. "Alberta Palaeontological Society". Only include this if host is not the APS.
     detailsLink: z.string().optional(), // a link to more details about the event, e.g. a Google Calendar event or a Facebook event
+    talks: z.array(reference('talk')).optional(), // optional list of talks associated with the event
 })
 
 const eventCollection = defineCollection({
@@ -42,6 +43,22 @@ const eventCollection = defineCollection({
 })
 
 export type EventFrontmatter = z.infer<typeof eventSchema>
+
+/*
+ * Talks
+ */
+const talkSchema = z.object({
+    title: z.string().optional(),
+    speaker: z.string().optional(),
+    youtubeLink: z.string().optional(), // YouTube URL (e.g. https://www.youtube.com/watch?v=VIDEO_ID or https://youtu.be/VIDEO_ID)
+})
+
+const talkCollection = defineCollection({
+    type: 'content',
+    schema: talkSchema,
+})
+
+export type TalkFrontmatter = z.infer<typeof talkSchema>
 
 /*
  * Disclaimers / Privacy Policy
@@ -161,6 +178,7 @@ const FossilSortingDataCollection = defineCollection({
 
 export const collections = {
     events: eventCollection,
+    talks: talkCollection,
     disclaimers: disclaimersCollection,
     bulletins: bulletinsCollection,
     bulletinVolumes: bulletinVolumesCollection,
