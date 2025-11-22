@@ -176,3 +176,26 @@ export const formatDate = (date?: string) => {
 
     return [year, month, day].join('-')
 }
+
+/**
+ * Extracts the ID from a content collection reference.
+ * References can be either a string ID or an object with an 'id' property,
+ * depending on how the collection was resolved.
+ *
+ * @param ref - A reference that can be either a string or an object with an 'id' property
+ * @returns The string ID if it can be extracted, otherwise null
+ */
+export const extractReferenceId = (
+    ref: string | { id: string } | null | undefined
+): string | null => {
+    if (!ref) {
+        return null
+    }
+    if (typeof ref === 'string') {
+        return ref
+    }
+    if (typeof ref === 'object' && ref !== null && 'id' in ref) {
+        return ref.id
+    }
+    return null
+}

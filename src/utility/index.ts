@@ -4,6 +4,7 @@ export {
     pathMatchesDestination,
     getTodayString,
     formatDate,
+    extractReferenceId,
 } from './functions'
 export type { LinkInformation } from './navLinks'
 export { links } from './navLinks'

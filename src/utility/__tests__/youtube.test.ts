@@ -19,7 +19,7 @@ describe('extractYouTubeVideoId', () => {
             expected: 'dQw4w9WgXcQ',
             description: 'watch URL with http',
         },
-        
+
         // Watch URLs with query parameters
         {
             url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=123',
@@ -36,7 +36,7 @@ describe('extractYouTubeVideoId', () => {
             expected: 'dQw4w9WgXcQ',
             description: 'watch URL with fragment',
         },
-        
+
         // Short URLs (youtu.be)
         {
             url: 'https://youtu.be/dQw4w9WgXcQ',
@@ -63,7 +63,7 @@ describe('extractYouTubeVideoId', () => {
             expected: 'dQw4w9WgXcQ',
             description: 'short URL with multiple query parameters',
         },
-        
+
         // Embed URLs
         {
             url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
@@ -85,14 +85,14 @@ describe('extractYouTubeVideoId', () => {
             expected: 'dQw4w9WgXcQ',
             description: 'embed URL with fragment',
         },
-        
+
         // Video IDs with underscores and hyphens
         {
-            url: 'https://www.youtube.com/watch?v=abc123_-XY',
-            expected: 'abc123_-XY',
+            url: 'https://www.youtube.com/watch?v=abc123_-XYZ',
+            expected: 'abc123_-XYZ',
             description: 'video ID with underscores and hyphens',
         },
-        
+
         // Invalid URLs
         {
             url: 'https://www.youtube.com/watch',
@@ -208,4 +208,3 @@ describe('getYouTubeEmbedUrl', () => {
         expect(getYouTubeEmbedUrl(undefined)).toBe(null)
     })
 })
-

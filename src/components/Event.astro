@@ -1,5 +1,5 @@
 ---
-import { generateEventDateTimeString } from "../utility";
+import { generateEventDateTimeString, extractReferenceId } from "../utility";
 import type { EventFrontmatter } from "../content/config";
 import { splitIsoString } from '../utility/dates'
 import { getEntry } from 'astro:content'
@@ -26,12 +26,7 @@ const eventDateTimeString = generateEventDateTimeString({
 // Resolve talk references
 const resolvedTalks = talks ? (await Promise.all(
 	talks.map(async (talkRef) => {
-		let actualTalkRef;
-		if (typeof talkRef === 'string') {
-			actualTalkRef = talkRef;
-		} else if (typeof talkRef === 'object' && talkRef !== null && 'id' in talkRef) {
-			actualTalkRef = talkRef.id
-		} 
+		const actualTalkRef = extractReferenceId(talkRef);
 		if (!actualTalkRef) {
 			return null;
 		}
