@@ -24,13 +24,14 @@ const eventDateTimeString = generateEventDateTimeString({
 });
 
 // Resolve talk references
-const resolvedTalks = talks ? (await Promise.all(
-	talks.map(async (talkRef) => {
-		const talk = await getEntry('talks', talkRef);
-		console.log({talk})
-		return talk;
-	})
-) ): [];
+const resolvedTalks = []
+// const resolvedTalks = talks ? (await Promise.all(
+// 	talks.map(async (talkRef) => {
+// 		const talk = await getEntry('talks', talkRef);
+// 		console.log({talk})
+// 		return talk;
+// 	})
+// ) ): [];
 ---
 
 <section
