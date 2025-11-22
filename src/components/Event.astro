@@ -24,14 +24,28 @@ const eventDateTimeString = generateEventDateTimeString({
 });
 
 // Resolve talk references
-const resolvedTalks = []
-// const resolvedTalks = talks ? (await Promise.all(
-// 	talks.map(async (talkRef) => {
-// 		const talk = await getEntry('talks', talkRef);
-// 		console.log({talk})
-// 		return talk;
-// 	})
-// ) ): [];
+const resolvedTalks = talks ? (await Promise.all(
+	talks.map(async (talkRef) => {
+		let actualTalkRef;
+		if (typeof talkRef === 'string') {
+			actualTalkRef = talkRef;
+		} else if (typeof talkRef === 'object' && talkRef !== null && 'id' in talkRef) {
+			actualTalkRef = talkRef.id
+		} 
+		if (!actualTalkRef) {
+			return null;
+		}
+		try {
+			console.log('Getting talk with ref', actualTalkRef);
+			const talk = await getEntry('talks', actualTalkRef);
+			console.log({talk});
+			return talk;
+		} catch(e) {
+			console.error('Error getting talk with ref', talkRef, e)
+			return null;
+		}
+	})
+)).filter(t => !!t): [];
 ---
 
 <section
