@@ -5,6 +5,6 @@ end: '2026-12-11T21:00:00-07:00'
 type: 'Monthly Meeting'
 ---
 
-**APS Social!**
+**APS December Social!**
 
-Join us for our December potluck social! Bring any fossils or anything else you'd like to share and a dish to share. We look forward to seeing you there!
+We're hosting our annual December potluck! Please bring a snack to share and any fossils or palaeontological finds you'd like to show off. It's a great opportunity to connect with fellow members and share your discoveries from the year. Hope to see you there!

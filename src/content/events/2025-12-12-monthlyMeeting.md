@@ -7,4 +7,4 @@ type: 'Monthly Meeting'
 
 **APS December Social!**
 
-We're hosting our annual December potluck! Please bring a dish to share and any fossils or paleontological finds you'd like to show off. It's a great opportunity to connect with fellow members and share your discoveries from the year. Hope to see you there!
+We're hosting our annual December potluck! Please bring a snack to share and any fossils or palaeontological finds you'd like to show off. It's a great opportunity to connect with fellow members and share your discoveries from the year. Hope to see you there!
