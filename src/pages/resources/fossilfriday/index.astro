@@ -1,0 +1,104 @@
+---
+export const prerender = true;
+
+import Layout from "../../../layouts/Layout.astro";
+import HeadingWithBackground from "../../../components/HeadingWithBackground.astro";
+import { getCollection } from "astro:content";
+
+const allFossilFridays = await getCollection("fossilFriday");
+
+// Sort by date, most recent first
+const sortedFossilFridays = [...allFossilFridays].sort((a, b) => {
+	const dateA = a.data.date;
+	const dateB = b.data.date;
+	return dateB.localeCompare(dateA); // Descending order (most recent first)
+});
+---
+
+<Layout subtitle="Fossil Friday">
+	<HeadingWithBackground background="/headingBackgrounds/tinyFossil1.jpg">
+		<h1>Fossil Friday</h1>
+	</HeadingWithBackground>
+
+	<p>
+		Browse our collection of Fossil Friday posts, featuring fascinating fossil discoveries and specimens.
+	</p>
+
+	<ul class="fossil-friday-list">
+		{sortedFossilFridays.map((entry) => {
+			const dateParts = entry.data.date.split('-');
+			const dateSlug = entry.data.date; // yyyy-mm-dd format
+			const displayDate = new Date(entry.data.date).toLocaleDateString('en-CA', {
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric',
+			});
+			
+			return (
+				<li>
+					<a href={`/resources/fossilfriday/${dateSlug}`} class="fossil-friday-link">
+						<span class="fossil-friday-date">{displayDate}</span>
+						<span class="fossil-friday-title">
+							{entry.data.title || 'Fossil Friday'}
+						</span>
+					</a>
+				</li>
+			);
+		})}
+	</ul>
+</Layout>
+
+<style>
+	.fossil-friday-list {
+		list-style: none;
+		padding: 0;
+		margin: calc(2 * var(--theme-spacing-base)) 0;
+	}
+
+	.fossil-friday-list li {
+		margin-bottom: calc(0.5 * var(--theme-spacing-base));
+	}
+
+	.fossil-friday-link {
+		display: flex;
+		flex-direction: column;
+		padding: var(--theme-spacing-base);
+		border: solid 1px var(--background-colour-darker);
+		border-radius: var(--border-radius-medium);
+		text-decoration: none;
+		background-image: none;
+		transition: background-color 0.2s, border-color 0.2s;
+	}
+
+	.fossil-friday-link:hover {
+		background-color: var(--background-colour-darker);
+		border-color: var(--accent-colour-medium);
+	}
+
+	.fossil-friday-date {
+		font-size: 0.875rem;
+		color: var(--accent-colour-medium);
+		margin-bottom: calc(0.25 * var(--theme-spacing-base));
+	}
+
+	.fossil-friday-title {
+		font-size: 1rem;
+		color: var(--text-colour);
+		font-weight: 500;
+	}
+
+	/* Desktop: horizontal layout */
+	@media screen and (min-width: 768px) {
+		.fossil-friday-link {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.fossil-friday-date {
+			margin-bottom: 0;
+			margin-right: var(--theme-spacing-base);
+		}
+	}
+</style>
+

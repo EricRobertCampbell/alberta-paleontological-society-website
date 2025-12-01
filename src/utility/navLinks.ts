@@ -50,6 +50,7 @@ export const links: Array<LinkInformation> = [
                 destination: '/resources/bulletinarchives',
                 label: 'Bulletin Archives',
             },
+            { destination: '/resources/fossilfriday', label: 'Fossil Friday' },
             { destination: '/resources/links', label: 'Links' },
             {
                 destination: '/resources/opensourcepublications',

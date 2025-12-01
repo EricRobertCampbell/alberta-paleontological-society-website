@@ -121,7 +121,8 @@ const announcementCollection = defineCollection({
 })
 export type AnnouncementFrontmatter = z.infer<typeof announcementSchema>
 
-const fossilSortingImageSchema = z.object({
+// Legacy collection - kept for migration purposes
+const fossilSortingImageLegacySchema = z.object({
     id: z.string(),
     date: isoDateString,
     src: z.string(),
@@ -131,11 +132,43 @@ const fossilSortingImageSchema = z.object({
     photoCredit: z.string(),
     tags: z.array(z.string()).default([]),
 })
-const fossilSortingImagesCollection = defineCollection({
+const fossilSortingImagesLegacyCollection = defineCollection({
     loader: file('src/content/fossilSortingImages/images.json'),
+    schema: fossilSortingImageLegacySchema,
+})
+export type FossilSortingImageLegacy = z.infer<typeof fossilSortingImageLegacySchema>
+
+// New collections - separate images and specimens
+const fossilSortingImageSchema = z.object({
+    id: z.string(),
+    src: z.string(),
+    thumbnailSrc: z.string(),
+    description: z.string(),
+    photoCredit: z.string(),
+})
+
+const fossilSortingSpecimenSchema = z.object({
+    id: z.string(),
+    date: isoDateString,
+    description: z.string(),
+    finderCredit: z.string(),
+    photoCredit: z.string(),
+    tags: z.array(z.string()).default([]),
+    images: z.array(reference('fossilSortingImages')), // Array of references to images
+})
+
+const fossilSortingImagesCollection = defineCollection({
+    loader: file('src/content/fossilSortingImages/collection.json'),
     schema: fossilSortingImageSchema,
 })
+
+const fossilSortingSpecimensCollection = defineCollection({
+    loader: file('src/content/fossilSortingSpecimens/collection.json'),
+    schema: fossilSortingSpecimenSchema,
+})
+
 export type FossilSortingImage = z.infer<typeof fossilSortingImageSchema>
+export type FossilSortingSpecimen = z.infer<typeof fossilSortingSpecimenSchema>
 
 const FossilCollection = defineCollection({
     type: 'data',
@@ -176,6 +209,29 @@ const FossilSortingDataCollection = defineCollection({
     }),
 })
 
+/*
+ * Fossil Friday
+ */
+const fossilFridayImageSchema = z.object({
+    src: z.string(), // path to the image
+    credit: z.string(), // credit/attribution for the image
+    description: z.string(), // description of the image
+})
+
+const fossilFridaySchema = z.object({
+    title: z.string().optional(), // optional title for the Fossil Friday post
+    date: isoDateString, // date when the Fossil Friday was posted
+    images: z.array(fossilFridayImageSchema), // list of images with credits and descriptions
+})
+
+const fossilFridayCollection = defineCollection({
+    type: 'content',
+    schema: fossilFridaySchema,
+})
+
+export type FossilFridayFrontmatter = z.infer<typeof fossilFridaySchema>
+export type FossilFridayImage = z.infer<typeof fossilFridayImageSchema>
+
 export const collections = {
     events: eventCollection,
     talks: talkCollection,
@@ -184,7 +240,10 @@ export const collections = {
     bulletinVolumes: bulletinVolumesCollection,
     faqs: faqsCollection,
     announcements: announcementCollection,
+    fossilSortingImagesLegacy: fossilSortingImagesLegacyCollection, // Legacy - kept for migration
     fossilSortingImages: fossilSortingImagesCollection,
+    fossilSortingSpecimens: fossilSortingSpecimensCollection,
     fossils: FossilCollection,
     fossilSortingData: FossilSortingDataCollection,
+    fossilFriday: fossilFridayCollection,
 }

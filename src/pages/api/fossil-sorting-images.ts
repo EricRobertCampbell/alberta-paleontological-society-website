@@ -1,15 +1,74 @@
 import type { APIRoute } from 'astro'
 import { getCollection, type CollectionEntry } from 'astro:content'
-import type { FossilSortingImage } from '../../content/config'
+import type { FossilSortingSpecimen, FossilSortingImage } from '../../content/config'
+import { extractReferenceId } from '../../utility/functions'
 
 const PAGE_SIZE = 20
 const CACHE_MAX_AGE_SECONDS = 60
 
-const sortImages = (
-    entries: Array<CollectionEntry<'fossilSortingImages'>>
+// Transform specimen to API format (with first image as thumbnail)
+type SpecimenAPIFormat = {
+    id: string
+    date: string
+    description: string
+    finderCredit: string
+    photoCredit: string
+    tags: Array<string>
+    thumbnailSrc: string
+    src: string
+    images: Array<{
+        id: string
+        src: string
+        thumbnailSrc: string
+        description: string
+        photoCredit: string
+    }>
+}
+
+// Helper to extract IDs from references (handles both strings and reference objects)
+const extractImageIds = (
+    imageRefs: Array<string | { id: string }>
+): Array<string> => {
+    return imageRefs
+        .map((ref) => extractReferenceId(ref))
+        .filter((id): id is string => id !== null)
+}
+
+// Helper to resolve image IDs to image objects
+const resolveImages = (
+    imageRefs: Array<string | { id: string }>,
+    imageEntries: Array<CollectionEntry<'fossilSortingImages'>>
 ): Array<FossilSortingImage> => {
-    return entries
-        .map((entry) => entry.data)
+    const imageMap = new Map(
+        imageEntries.map((entry) => [entry.data.id, entry.data])
+    )
+    const imageIds = extractImageIds(imageRefs)
+    return imageIds
+        .map((id) => imageMap.get(id))
+        .filter((img): img is FossilSortingImage => img !== undefined)
+}
+
+const sortSpecimens = (
+    specimenEntries: Array<CollectionEntry<'fossilSortingSpecimens'>>,
+    imageEntries: Array<CollectionEntry<'fossilSortingImages'>>
+): Array<SpecimenAPIFormat> => {
+    return specimenEntries
+        .map((entry) => {
+            const specimen = entry.data
+            const resolvedImages = resolveImages(specimen.images, imageEntries)
+            const firstImage = resolvedImages[0]
+            return {
+                id: specimen.id,
+                date: specimen.date,
+                description: specimen.description,
+                finderCredit: specimen.finderCredit,
+                photoCredit: specimen.photoCredit,
+                tags: specimen.tags,
+                thumbnailSrc: firstImage?.thumbnailSrc ?? '',
+                src: firstImage?.src ?? '',
+                images: resolvedImages,
+            }
+        })
         .sort((a, b) => {
             const dateDiff =
                 new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -21,19 +80,17 @@ const sortImages = (
 }
 
 export const GET: APIRoute = async ({ request }) => {
-    // // Artificial delay to test client-side loading states
-    // await new Promise((resolve) => setTimeout(resolve, 5000))
-    // throw new Error('BANG!')
+    const allSpecimens = await getCollection('fossilSortingSpecimens')
     const allImages = await getCollection('fossilSortingImages')
-    const sortedImages = sortImages(allImages)
+    const sortedSpecimens = sortSpecimens(allSpecimens, allImages)
 
     const url = new URL(request.url)
     const afterId = url.searchParams.get('afterId')
     const q = url.searchParams.get('q')
 
-    // Handle search query by filtering all images across id, description, credits, and tags.
+    // Handle search query by filtering specimens across id, description, credits, tags, and image descriptions
     if (q && q.length > 0) {
-        const filtered = filterImagesByQuery(sortedImages, q)
+        const filtered = filterSpecimensByQuery(sortedSpecimens, q)
 
         return new Response(
             JSON.stringify({
@@ -54,20 +111,20 @@ export const GET: APIRoute = async ({ request }) => {
     let startIndex = 0
 
     if (afterId) {
-        const index = sortedImages.findIndex((image) => image.id === afterId)
-        startIndex = index === -1 ? sortedImages.length : index + 1
+        const index = sortedSpecimens.findIndex((specimen) => specimen.id === afterId)
+        startIndex = index === -1 ? sortedSpecimens.length : index + 1
     }
 
-    const selectedImages = sortedImages.slice(
+    const selectedSpecimens = sortedSpecimens.slice(
         startIndex,
         startIndex + PAGE_SIZE
     )
-    const lastReturned = selectedImages[selectedImages.length - 1]
-    const hasMore = startIndex + PAGE_SIZE < sortedImages.length
+    const lastReturned = selectedSpecimens[selectedSpecimens.length - 1]
+    const hasMore = startIndex + PAGE_SIZE < sortedSpecimens.length
 
     return new Response(
         JSON.stringify({
-            images: selectedImages,
+            images: selectedSpecimens,
             hasMore,
             nextCursor: hasMore && lastReturned ? lastReturned.id : null,
         }),
@@ -81,20 +138,23 @@ export const GET: APIRoute = async ({ request }) => {
     )
 }
 
-const filterImagesByQuery = (
-    images: Array<FossilSortingImage>,
+const filterSpecimensByQuery = (
+    specimens: Array<SpecimenAPIFormat>,
     query: string
-): Array<FossilSortingImage> => {
+): Array<SpecimenAPIFormat> => {
     const q = query.toLowerCase().trim()
-    if (!q) return images
+    if (!q) return specimens
 
-    return images.filter((image) => {
+    return specimens.filter((specimen) => {
         const haystacks: Array<string> = [
-            image.id ?? '',
-            image.description ?? '',
-            image.finderCredit ?? '',
-            image.photoCredit ?? '',
-            ...(Array.isArray(image.tags) ? image.tags : []),
+            specimen.id ?? '',
+            specimen.description ?? '',
+            specimen.finderCredit ?? '',
+            specimen.photoCredit ?? '',
+            ...(Array.isArray(specimen.tags) ? specimen.tags : []),
+            // Also search in image descriptions and photo credits
+            ...specimen.images.map((img) => img.description ?? ''),
+            ...specimen.images.map((img) => img.photoCredit ?? ''),
         ].map((s) => String(s).toLowerCase())
         return haystacks.some((h) => h.includes(q))
     })

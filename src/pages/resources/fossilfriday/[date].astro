@@ -1,0 +1,256 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import HeadingWithBackground from "../../../components/HeadingWithBackground.astro";
+import { splitIsoString } from "../../../utility/dates";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+	const allFossilFridays = await getCollection("fossilFriday");
+
+	// Sort by date (ascending for navigation)
+	const sortedFossilFridays = [...allFossilFridays].sort((a, b) => {
+		return a.data.date.localeCompare(b.data.date);
+	});
+
+	return sortedFossilFridays.map((entry, index) => {
+		const dateSlug = entry.data.date; // yyyy-mm-dd format
+		const previousEntry = index > 0 ? sortedFossilFridays[index - 1] : null;
+		const nextEntry = index < sortedFossilFridays.length - 1 ? sortedFossilFridays[index + 1] : null;
+
+		return {
+			params: { date: dateSlug },
+			props: {
+				entry,
+				previousEntry: previousEntry
+					? { date: previousEntry.data.date, title: previousEntry.data.title || 'Fossil Friday' }
+					: null,
+				nextEntry: nextEntry
+					? { date: nextEntry.data.date, title: nextEntry.data.title || 'Fossil Friday' }
+					: null,
+			},
+		};
+	});
+}
+
+const { entry, previousEntry, nextEntry } = Astro.props;
+const { Content } = await entry.render();
+const displayDate = new Date(entry.data.date).toLocaleDateString('en-CA', {
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric',
+});
+---
+
+<Layout subtitle={entry.data.title || 'Fossil Friday'}>
+	<HeadingWithBackground background="/headingBackgrounds/tinyFossil1.jpg">
+		<h1>Fossil Friday</h1>
+	</HeadingWithBackground>
+
+	<div class="fossil-friday-page-container">
+		<article class="fossil-friday-post">
+			<header class="fossil-friday-header">
+				<h2>{entry.data.title || 'Fossil Friday'}</h2>
+				<time datetime={entry.data.date} class="fossil-friday-date">
+					{displayDate}
+				</time>
+			</header>
+
+			<div class="images-container">
+				{entry.data.images.map((image) => (
+					<figure class="fossil-image">
+						<img src={image.src} alt={image.description} />
+						<figcaption>
+							<p class="image-description">{image.description}</p>
+							<p class="image-credit">Credit: {image.credit}</p>
+						</figcaption>
+					</figure>
+				))}
+			</div>
+
+			<div class="content-container">
+				<Content />
+			</div>
+		</article>
+
+		<nav class="fossil-friday-navigation">
+			{previousEntry ? (
+				<a
+					href={`/resources/fossilfriday/${previousEntry.date}`}
+					class="nav-button previous"
+				>
+					<span class="nav-label">← Previous Fossil Friday</span>
+					<span class="nav-title">{previousEntry.title}</span>
+				</a>
+			) : (
+				<button class="nav-button previous" disabled>
+					<span class="nav-label">← Previous Fossil Friday</span>
+					<span class="nav-title">None</span>
+				</button>
+			)}
+
+			{nextEntry ? (
+				<a
+					href={`/resources/fossilfriday/${nextEntry.date}`}
+					class="nav-button next"
+				>
+					<span class="nav-label">Next Fossil Friday →</span>
+					<span class="nav-title">{nextEntry.title}</span>
+				</a>
+			) : (
+				<button class="nav-button next" disabled>
+					<span class="nav-label">Next Fossil Friday →</span>
+					<span class="nav-title">None</span>
+				</button>
+			)}
+		</nav>
+	</div>
+</Layout>
+
+<style>
+	.fossil-friday-page-container {
+		width: 100%;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.fossil-friday-post {
+		margin-bottom: calc(3 * var(--theme-spacing-base));
+	}
+
+	.fossil-friday-header {
+		margin-bottom: calc(2 * var(--theme-spacing-base));
+	}
+
+	.fossil-friday-header h2 {
+		margin: 0;
+		margin-bottom: calc(0.5 * var(--theme-spacing-base));
+	}
+
+	.fossil-friday-date {
+		font-size: 0.875rem;
+		color: var(--accent-colour-medium);
+		display: block;
+	}
+
+	.images-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--theme-spacing-base);
+		margin-bottom: var(--theme-spacing-base);
+	}
+
+	.fossil-image {
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.fossil-image img {
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+		border-radius: 4px;
+	}
+
+	.fossil-image figcaption {
+		margin-top: calc(0.5 * var(--theme-spacing-base));
+		font-size: 0.9rem;
+	}
+
+	.image-description {
+		margin: 0;
+		margin-bottom: calc(0.25 * var(--theme-spacing-base));
+	}
+
+	.image-credit {
+		margin: 0;
+		color: var(--accent-colour-medium);
+		font-style: italic;
+	}
+
+	.content-container {
+		margin-top: var(--theme-spacing-base);
+	}
+
+	.fossil-friday-navigation {
+		display: flex;
+		justify-content: space-between;
+		gap: var(--theme-spacing-base);
+		margin-top: calc(3 * var(--theme-spacing-base));
+		padding-top: calc(2 * var(--theme-spacing-base));
+		border-top: solid 1px var(--background-colour-darker);
+	}
+
+	.nav-button {
+		display: flex;
+		flex-direction: column;
+		padding: var(--theme-spacing-base);
+		border: solid calc(0.5 * var(--theme-spacing-base)) var(--accent-colour-medium);
+		border-radius: var(--border-radius-medium);
+		text-decoration: none;
+		background-image: none;
+		background: none;
+		max-width: 45%;
+		cursor: pointer;
+		font-family: inherit;
+		font-size: inherit;
+	}
+
+	.nav-button:hover:not(:disabled) {
+		background-color: var(--background-colour-darker);
+		border-color: var(--accent-colour-dark);
+	}
+
+	.nav-button:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+		border-color: var(--background-colour-darker);
+	}
+
+	.nav-button.previous {
+		text-align: left;
+	}
+
+	.nav-button.next {
+		text-align: right;
+		align-items: flex-end;
+	}
+
+	.nav-label {
+		font-size: 0.875rem;
+		color: var(--accent-colour-dark);
+		font-weight: 600;
+		margin-bottom: calc(0.5 * var(--theme-spacing-base));
+	}
+
+	.nav-title {
+		font-size: 0.875rem;
+		color: var(--text-colour);
+	}
+
+	/* Desktop: 2 column grid for images */
+	@media screen and (min-width: 768px) {
+		.images-container {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	/* Mobile responsive navigation */
+	@media screen and (max-width: 768px) {
+		.fossil-friday-navigation {
+			flex-direction: column;
+		}
+
+		.nav-button {
+			max-width: 100%;
+		}
+
+		.nav-button.next {
+			align-items: flex-start;
+			text-align: left;
+		}
+	}
+</style>
+

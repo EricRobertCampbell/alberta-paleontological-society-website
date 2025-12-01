@@ -2,14 +2,50 @@
 import Layout from "../../../layouts/Layout.astro";
 import HeadingWithBackground from "../../../components/HeadingWithBackground.astro";
 import { getCollection } from "astro:content";
+import { extractReferenceId } from '../../../utility/functions';
 
 const INITIAL_LIMIT = 20
 
+const fossilSortingSpecimens = await getCollection("fossilSortingSpecimens");
 const fossilSortingImages = await getCollection("fossilSortingImages");
-const sortedImages = fossilSortingImages
-    .map((entry) => ({
-        ...entry.data,
-    }))
+
+// Create a map of image IDs to image objects
+const imageMap = new Map(
+    fossilSortingImages.map((entry) => [entry.data.id, entry.data])
+);
+
+// Helper to extract IDs from references (handles both strings and reference objects)
+function extractImageIds(imageRefs: Array<string | { id: string }>): Array<string> {
+    return imageRefs
+        .map((ref) => extractReferenceId(ref))
+        .filter((id): id is string => id !== null);
+}
+
+// Helper to resolve image IDs to image objects
+function resolveImages(imageRefs: Array<string | { id: string }>) {
+    const imageIds = extractImageIds(imageRefs);
+    return imageIds
+        .map((id) => imageMap.get(id))
+        .filter((img) => img !== undefined);
+}
+
+const sortedSpecimens = fossilSortingSpecimens
+    .map((entry) => {
+        const specimen = entry.data;
+        const resolvedImages = resolveImages(specimen.images);
+        const firstImage = resolvedImages[0];
+        return {
+            id: specimen.id,
+            date: specimen.date,
+            description: specimen.description,
+            finderCredit: specimen.finderCredit,
+            photoCredit: specimen.photoCredit,
+            tags: specimen.tags,
+            thumbnailSrc: firstImage?.thumbnailSrc ?? '',
+            src: firstImage?.src ?? '',
+            images: resolvedImages,
+        };
+    })
     .sort((a, b) => {
         const dateDiff = new Date(b.date).getTime() - new Date(a.date).getTime();
         if (dateDiff !== 0) {
@@ -25,9 +61,9 @@ function formatDateString(dateStr: string): string {
 	return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
-const initialImages = sortedImages.slice(0, INITIAL_LIMIT);
-const remainingImages = sortedImages.length - initialImages.length;
-const initialLastId = initialImages.length ? initialImages[initialImages.length - 1].id : null;
+const initialSpecimens = sortedSpecimens.slice(0, INITIAL_LIMIT);
+const remainingSpecimens = sortedSpecimens.length - initialSpecimens.length;
+const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimens.length - 1].id : null;
 ---
 
 <Layout subtitle="Fossil Sorting Images">
@@ -71,35 +107,35 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 	</details>
 
 	<section class="gallery" id="image-gallery">
-		{initialImages.map((image) => (
-			<article class="gallery-card" data-image-id={image.id}>
+		{initialSpecimens.map((specimen) => (
+			<article class="gallery-card" data-specimen-id={specimen.id}>
 				<button
 					type="button"
 					class="gallery-card__button"
-					data-image-id={image.id}
-					data-full-src={image.src}
-					data-description={image.description}
-					data-finder={image.finderCredit}
-					data-photo={image.photoCredit}
-					data-date={image.date}
-					data-tags={JSON.stringify(image.tags)}
+					data-specimen-id={specimen.id}
+					data-description={specimen.description}
+					data-finder={specimen.finderCredit}
+					data-photo={specimen.photoCredit}
+					data-date={specimen.date}
+					data-tags={JSON.stringify(specimen.tags)}
+					data-images={JSON.stringify(specimen.images)}
 				>
 					<img
 						class="gallery-card__image"
-						src={image.thumbnailSrc}
+						src={specimen.thumbnailSrc}
 						loading="lazy"
-						alt={image.description}
+						alt={specimen.description}
 					/>
 					<div class="gallery-card__details">
-						<p class="gallery-card__description">{image.description}</p>
-						<p class="gallery-card__date"><strong>Date:</strong> {formatDateString(image.date)}</p>
+						<p class="gallery-card__description">{specimen.description}</p>
+						<p class="gallery-card__date"><strong>Date:</strong> {formatDateString(specimen.date)}</p>
 					</div>
 				</button>
 			</article>
 		))}
 	</section>
 
-	{remainingImages > 0 && (
+	{remainingSpecimens > 0 && (
 		<div class="load-more">
 			<button
 				id="load-more-images"
@@ -115,7 +151,14 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 		<div class="image-modal__backdrop" data-close-modal></div>
 		<div class="image-modal__content">
 			<button class="image-modal__close" type="button" data-close-modal aria-label="Close image dialog">×</button>
-			<img id="image-modal-picture" alt="" />
+			<div class="image-modal__slideshow">
+				<button class="image-modal__prev" type="button" aria-label="Previous image" id="image-modal-prev">‹</button>
+				<div class="image-modal__image-container">
+					<img id="image-modal-picture" alt="" />
+					<div class="image-modal__image-counter" id="image-modal-counter"></div>
+				</div>
+				<button class="image-modal__next" type="button" aria-label="Next image" id="image-modal-next">›</button>
+			</div>
 			<div class="image-modal__text">
 				<p id="image-modal-description" class="image-modal__description"></p>
 				<div class="image-modal__credits">
@@ -147,6 +190,12 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 	const modalPhoto = document.querySelector("#image-modal-photo");
 	const modalDate = document.querySelector("#image-modal-date");
 	const modalTags = document.querySelector("#image-modal-tags");
+	const modalPrev = document.querySelector("#image-modal-prev");
+	const modalNext = document.querySelector("#image-modal-next");
+	const modalCounter = document.querySelector("#image-modal-counter");
+	
+	let currentImages = [];
+	let currentImageIndex = 0;
 
 	const formatDateString = (dateStr) => {
 		// Parse date string (YYYY-MM-DD) without timezone issues
@@ -177,29 +226,29 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 		return div.innerHTML;
 	};
 
-	const createCard = (image) => {
+	const createCard = (specimen) => {
 		const card = document.createElement("article");
 		card.className = "gallery-card fade-in";
-		card.dataset.imageId = image.id;
+		card.dataset.specimenId = specimen.id;
 
-		const formattedDate = formatDateString(image.date);
-		const safeDescription = escapeHtml(image.description ?? "");
+		const formattedDate = formatDateString(specimen.date);
+		const safeDescription = escapeHtml(specimen.description ?? "");
 
 		card.innerHTML = `
 			<button
 				type="button"
 				class="gallery-card__button"
-				data-image-id="${image.id}"
-				data-full-src="${image.src}"
+				data-specimen-id="${specimen.id}"
 				data-description="${safeDescription}"
-				data-finder="${escapeHtml(image.finderCredit ?? "")}"
-				data-photo="${escapeHtml(image.photoCredit ?? "")}"
-				data-date="${image.date}"
-				data-tags='${JSON.stringify(image.tags ?? [])}'
+				data-finder="${escapeHtml(specimen.finderCredit ?? "")}"
+				data-photo="${escapeHtml(specimen.photoCredit ?? "")}"
+				data-date="${specimen.date}"
+				data-tags='${JSON.stringify(specimen.tags ?? [])}'
+				data-images='${JSON.stringify(specimen.images ?? [])}'
 			>
 				<img
 					class="gallery-card__image"
-					src="${image.thumbnailSrc}"
+					src="${specimen.thumbnailSrc}"
 					loading="lazy"
 					alt="${safeDescription}"
 				/>
@@ -229,11 +278,11 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 		gallery.innerHTML = "";
 	};
 
-	const renderImages = (images) => {
-		if (!gallery || !Array.isArray(images)) return;
-		images.forEach((image, index) => {
+	const renderImages = (specimens) => {
+		if (!gallery || !Array.isArray(specimens)) return;
+		specimens.forEach((specimen, index) => {
 			setTimeout(() => {
-				const card = createCard(image);
+				const card = createCard(specimen);
 				gallery.append(card);
 				// Ensure the browser applies the initial styles before toggling visibility
 				// so the transition runs reliably across browsers.
@@ -286,11 +335,11 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 			}
 			const payload = await response.json();
 			clearGallery();
-			const images = Array.isArray(payload.images) ? payload.images : [];
-			if (images.length === 0) {
+			const specimens = Array.isArray(payload.images) ? payload.images : [];
+			if (specimens.length === 0) {
 				showEmpty();
 			} else {
-				renderImages(images);
+				renderImages(specimens);
 			}
 		} catch (error) {
 			console.error(error);
@@ -312,11 +361,11 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 			}
 			const payload = await response.json();
 			clearGallery();
-			const images = Array.isArray(payload.images) ? payload.images : [];
-			if (images.length === 0) {
+			const specimens = Array.isArray(payload.images) ? payload.images : [];
+			if (specimens.length === 0) {
 				showEmpty();
 			} else {
-				renderImages(images);
+				renderImages(specimens);
 			}
 			if (payload.nextCursor && loadMoreButton) {
 				loadMoreButton.dataset.lastId = payload.nextCursor;
@@ -350,12 +399,46 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 		void performReset();
 	});
 
+	const updateModalImage = (imageIndex) => {
+		if (!currentImages || currentImages.length === 0) return;
+		
+		const image = currentImages[imageIndex];
+		if (!image) return;
+		
+		modalPicture.src = image.src ?? "";
+		modalPicture.alt = image.description ?? "";
+		modalPhoto.textContent = image.photoCredit ?? "";
+		
+		// Update counter
+		if (modalCounter) {
+			modalCounter.textContent = `${imageIndex + 1} / ${currentImages.length}`;
+		}
+		
+		// Update navigation buttons
+		if (modalPrev) {
+			modalPrev.disabled = currentImages.length <= 1;
+			modalPrev.hidden = currentImages.length <= 1;
+		}
+		if (modalNext) {
+			modalNext.disabled = currentImages.length <= 1;
+			modalNext.hidden = currentImages.length <= 1;
+		}
+	};
+
 	const openModal = (button) => {
-		modalPicture.src = button.dataset.fullSrc ?? "";
-		modalPicture.alt = button.dataset.description ?? "";
+		// Parse images from data attribute
+		try {
+			currentImages = JSON.parse(button.dataset.images ?? "[]");
+		} catch (error) {
+			console.error("Failed to parse images", error);
+			currentImages = [];
+		}
+		
+		currentImageIndex = 0;
+		
+		// Set specimen-level information
 		modalDescription.textContent = button.dataset.description ?? "";
 		modalFinder.textContent = button.dataset.finder ?? "";
-		modalPhoto.textContent = button.dataset.photo ?? "";
 		
 		// Format the date for display
 		const dateStr = button.dataset.date ?? "";
@@ -372,12 +455,27 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 			console.error("Failed to parse tags", error);
 			modalTags.innerHTML = "";
 		}
+		
+		// Update image display
+		updateModalImage(0);
 
 		if (typeof modal.showModal === "function" && !modal.open) {
 			modal.showModal();
 		} else {
 			modal.setAttribute("open", "");
 		}
+	};
+	
+	const navigateImage = (direction) => {
+		if (!currentImages || currentImages.length === 0) return;
+		
+		if (direction === 'next') {
+			currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+		} else if (direction === 'prev') {
+			currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+		}
+		
+		updateModalImage(currentImageIndex);
 	};
 
 	const closeModal = () => {
@@ -392,6 +490,24 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 		const button = event.target.closest(".gallery-card__button");
 		if (!button) return;
 		openModal(button);
+	});
+	
+	modalPrev?.addEventListener("click", () => {
+		navigateImage('prev');
+	});
+	
+	modalNext?.addEventListener("click", () => {
+		navigateImage('next');
+	});
+	
+	// Keyboard navigation
+	document.addEventListener("keydown", (event) => {
+		if (!modal || !modal.open) return;
+		if (event.key === "ArrowLeft") {
+			navigateImage('prev');
+		} else if (event.key === "ArrowRight") {
+			navigateImage('next');
+		}
 	});
 
 	modal?.addEventListener("click", (event) => {
@@ -413,7 +529,7 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 		const lastId = loadMoreButton.dataset.lastId || 
 			Array.from(gallery.querySelectorAll(".gallery-card"))
 				.pop()
-				?.dataset.imageId;
+				?.dataset.specimenId;
 
 		try {
 			const url = new URL("/api/fossil-sorting-images", window.location.origin);
@@ -427,11 +543,11 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 			}
 
 			const payload = await response.json();
-			const newImages = Array.isArray(payload.images) ? payload.images : [];
+			const newSpecimens = Array.isArray(payload.images) ? payload.images : [];
 
-			newImages.forEach((image, index) => {
+			newSpecimens.forEach((specimen, index) => {
 				setTimeout(() => {
-					const card = createCard(image);
+					const card = createCard(specimen);
 					gallery.append(card);
 					// Ensure the browser applies the initial styles before toggling visibility
 					// so the transition runs reliably across browsers.
@@ -727,11 +843,78 @@ const initialLastId = initialImages.length ? initialImages[initialImages.length 
 		outline-offset: calc(var(--theme-spacing-base) * 0.5);
 	}
 
+	.image-modal__slideshow {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #000;
+	}
+
+	.image-modal__image-container {
+		position: relative;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
 	.image-modal__content img {
 		width: 100%;
 		height: auto;
 		object-fit: contain;
 		background: #000;
+	}
+
+	.image-modal__prev,
+	.image-modal__next {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: rgba(0, 0, 0, 0.6);
+		color: #fff;
+		border: none;
+		font-size: 2rem;
+		width: 3rem;
+		height: 3rem;
+		border-radius: 50%;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 10;
+		transition: background 150ms ease;
+	}
+
+	.image-modal__prev:hover:not(:disabled),
+	.image-modal__next:hover:not(:disabled) {
+		background: rgba(0, 0, 0, 0.8);
+	}
+
+	.image-modal__prev:disabled,
+	.image-modal__next:disabled {
+		opacity: 0.3;
+		cursor: not-allowed;
+	}
+
+	.image-modal__prev {
+		left: 1rem;
+	}
+
+	.image-modal__next {
+		right: 1rem;
+	}
+
+	.image-modal__image-counter {
+		position: absolute;
+		bottom: 1rem;
+		right: 1rem;
+		background: rgba(0, 0, 0, 0.6);
+		color: #fff;
+		padding: 0.5rem 1rem;
+		border-radius: 9999px;
+		font-size: 0.9rem;
+		font-weight: 500;
 	}
 
 	.image-modal__text {

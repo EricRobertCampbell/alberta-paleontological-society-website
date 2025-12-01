@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
 import Event from '../components/Event.astro'
 import Announcement from '../components/Announcement.astro'
+import FossilFriday from '../components/FossilFriday.astro'
 import SocialsLinks from '../components/SocialsLinks.astro'
 import TodaysEvents from '../components/TodaysEvents.astro'
 import { splitIsoString } from '../utility/dates'
@@ -89,6 +90,8 @@ const renderedAnnouncements = await Promise.all(
 		return await announcement.render()
 	})
 )
+
+// FossilFriday component will fetch data client-side based on user's timezone
 ---
 
 <Layout title="Alberta Palaeontological Society">
@@ -145,6 +148,7 @@ const renderedAnnouncements = await Promise.all(
 				</section>
 			) : null
 		}
+		<FossilFriday />
 	</section>
 	{
 		nextEvent && (

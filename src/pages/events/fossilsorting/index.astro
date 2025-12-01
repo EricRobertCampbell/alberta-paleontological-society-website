@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import { filterExternalEvents } from '../../../utility/filters'
 import { sortEventsByDate } from '../../../utility/eventSorting'
+import { extractReferenceId } from '../../../utility/functions'
 
 import Layout from "../../../layouts/Layout.astro";
 import EmailLink from "../../../components/EmailLink.astro";
@@ -13,9 +14,26 @@ import { roles} from '../../../utility/constants';
 
 const { giftShop } = roles;
 
-// Get a random fossil sorting image
+// Get a random fossil sorting specimen
+const fossilSortingSpecimens = await getCollection("fossilSortingSpecimens");
 const fossilSortingImages = await getCollection("fossilSortingImages");
-const randomImage = fossilSortingImages[Math.floor(Math.random() * fossilSortingImages.length)]?.data;
+// console.log({fossilSortingSpecimens, fossilSortingImages})
+
+// Create a map of image IDs to image objects
+const imageMap = new Map(
+    fossilSortingImages.map((entry) => [entry.data.id, entry.data])
+);
+
+const randomSpecimenEntry = fossilSortingSpecimens[Math.floor(Math.random() * fossilSortingSpecimens.length)];
+console.log({randomSpecimenEntry})
+const randomSpecimen = randomSpecimenEntry?.data;
+console.log({randomSpecimen})
+const firstImageRef = randomSpecimen?.images?.[0];
+console.log({firstImageRef})
+const firstImageId = firstImageRef ? extractReferenceId(firstImageRef) : null;
+console.log({firstImageId})
+const randomImage = firstImageId ? imageMap.get(firstImageId) : undefined;
+console.log({randomImage})
 
 // Helper function to format date string (YYYY-MM-DD) without timezone issues
 function formatDateString(dateStr: string): string {
@@ -57,21 +75,21 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fossilSortingEvents);
 		Join us for exciting microfossil sorting sessions where you can help advance paleontological research while discovering tiny treasures from millions of years ago! These sessions are open to anyone interested in getting involved in palaeontology and provide a unique opportunity to work with microscopes and contribute to ongoing scientific research.
 	</p>
 
-	{randomImage && (
+	{randomImage && randomSpecimen && (
 		<section class="random-fossil">
 			<h2>Featured Discovery</h2>
 			<div class="random-fossil__content">
 				<img
 					src={randomImage.src}
-					alt={randomImage.description}
+					alt={randomSpecimen.description}
 					class="random-fossil__image"
 					loading="lazy"
 				/>
 				<div class="random-fossil__details">
-					<p class="random-fossil__description">{randomImage.description}</p>
-					<p class="random-fossil__date"><strong>Date:</strong> {formatDateString(randomImage.date)}</p>
+					<p class="random-fossil__description">{randomSpecimen.description}</p>
+					<p class="random-fossil__date"><strong>Date:</strong> {formatDateString(randomSpecimen.date)}</p>
 					<p class="random-fossil__credits">
-						<strong>Finder:</strong> {randomImage.finderCredit}<br />
+						<strong>Finder:</strong> {randomSpecimen.finderCredit}<br />
 						<strong>Photo:</strong> {randomImage.photoCredit}
 					</p>
 				</div>
