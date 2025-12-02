@@ -158,12 +158,12 @@ const fossilSortingSpecimenSchema = z.object({
 })
 
 const fossilSortingImagesCollection = defineCollection({
-    loader: file('src/content/fossilSortingImages/collection.json'),
+    loader: file('src/content/fossilSortingSpecimens/images.json'),
     schema: fossilSortingImageSchema,
 })
 
 const fossilSortingSpecimensCollection = defineCollection({
-    loader: file('src/content/fossilSortingSpecimens/collection.json'),
+    loader: file('src/content/fossilSortingSpecimens/specimens.json'),
     schema: fossilSortingSpecimenSchema,
 })
 
