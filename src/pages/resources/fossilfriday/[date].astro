@@ -57,7 +57,7 @@ const displayDate = new Date(entry.data.date).toLocaleDateString('en-CA', {
 				</time>
 			</header>
 
-			<div class="images-container">
+			<div class={`images-container ${entry.data.images.length === 1 ? 'single-image' : ''}`}>
 				{entry.data.images.map((image) => (
 					<figure class="fossil-image">
 						<img src={image.src} alt={image.description} />
@@ -139,6 +139,13 @@ const displayDate = new Date(entry.data.date).toLocaleDateString('en-CA', {
 		grid-template-columns: 1fr;
 		gap: var(--theme-spacing-base);
 		margin-bottom: var(--theme-spacing-base);
+	}
+
+	.images-container.single-image {
+		justify-items: center;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.fossil-image {
@@ -232,7 +239,7 @@ const displayDate = new Date(entry.data.date).toLocaleDateString('en-CA', {
 
 	/* Desktop: 2 column grid for images */
 	@media screen and (min-width: 768px) {
-		.images-container {
+		.images-container:not(.single-image) {
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}

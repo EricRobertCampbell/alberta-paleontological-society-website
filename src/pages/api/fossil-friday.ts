@@ -12,7 +12,9 @@ export const GET: APIRoute = async ({ request }) => {
 	// Validate parameters
 	if (!year || !month || !day) {
 		return new Response(
-			JSON.stringify({ error: 'Missing required parameters: year, month, day' }),
+			JSON.stringify({
+				error: 'Missing required parameters: year, month, day',
+			}),
 			{
 				status: 400,
 				headers: {
@@ -29,7 +31,9 @@ export const GET: APIRoute = async ({ request }) => {
 
 	if (isNaN(yearNum) || isNaN(monthNum) || isNaN(dayNum)) {
 		return new Response(
-			JSON.stringify({ error: 'Invalid parameters: year, month, and day must be numbers' }),
+			JSON.stringify({
+				error: 'Invalid parameters: year, month, and day must be numbers',
+			}),
 			{
 				status: 400,
 				headers: {
@@ -53,23 +57,23 @@ export const GET: APIRoute = async ({ request }) => {
 	})
 
 	if (!matchingEntry) {
-		return new Response(
-			JSON.stringify(null),
-			{
-				status: 200,
-				headers: {
-					'Content-Type': 'application/json',
-					'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
-				},
-			}
-		)
+		return new Response(JSON.stringify(null), {
+			status: 200,
+			headers: {
+				'Content-Type': 'application/json',
+				'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
+			},
+		})
 	}
 
 	// Render the entry to get the Content component
 	const rendered = await matchingEntry.render()
-	
+	console.log({ rendered })
+
 	// Render the Content component to HTML using the wrapper component
-	const contentResult = await FossilFridayContent.render({ Content: rendered.Content })
+	const contentResult = await FossilFridayContent.render({
+		Content: rendered.Content,
+	})
 	const contentHtml = contentResult.html
 
 	// Return the data
@@ -89,4 +93,3 @@ export const GET: APIRoute = async ({ request }) => {
 		}
 	)
 }
-

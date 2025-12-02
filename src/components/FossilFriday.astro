@@ -66,6 +66,7 @@
 		const offset = today.getTimezoneOffset()
 		const todayWithOffset = new Date(today.getTime() - offset * 60 * 1000)
 		const todayString = todayWithOffset.toISOString().split('T')[0]
+		console.log({todayString})
 		
 		// Extract year, month, day from the date string (YYYY-MM-DD)
 		const [year, month, day] = todayString.split('-')
@@ -80,6 +81,7 @@
 			}
 			
 			const data = await response.json()
+			console.log({data})
 			
 			// If no entry found, don't render anything
 			if (!data) {
@@ -90,35 +92,29 @@
 			const container = document.getElementById('fossil-friday-container')
 			if (!container) return
 			
-			let html = '<section class="fossil-friday">'
+			// Build images HTML
+			const imagesHtml = data.images && Array.isArray(data.images)
+				? data.images.map((image: { src: string; description: string; credit: string }) => `
+					<figure class="fossil-image">
+						<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.description)}" />
+						<figcaption>
+							<p class="image-description">${escapeHtml(image.description)}</p>
+							<p class="image-credit">Credit: ${escapeHtml(image.credit)}</p>
+						</figcaption>
+					</figure>
+				`).join('')
+				: ''
 			
-			if (data.title) {
-				html += `<h2>${escapeHtml(data.title)}</h2>`
-			}
-			
-			html += '<div class="images-container">'
-			
-			if (data.images && Array.isArray(data.images)) {
-				data.images.forEach((image: { src: string; description: string; credit: string }) => {
-					html += `
-						<figure class="fossil-image">
-							<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.description)}" />
-							<figcaption>
-								<p class="image-description">${escapeHtml(image.description)}</p>
-								<p class="image-credit">Credit: ${escapeHtml(image.credit)}</p>
-							</figcaption>
-						</figure>
-					`
-				})
-			}
-			
-			html += '</div>'
-			
-			if (data.content) {
-				html += `<div class="content-container">${data.content}</div>`
-			}
-			
-			html += '</section>'
+			// Build the complete HTML using a template string
+			const html = `
+				<section class="fossil-friday">
+					${data.title ? `<h2>Fossil Friday - ${escapeHtml(data.title)}</h2>` : ''}
+					<div class="images-container">
+						${imagesHtml}
+					</div>
+					${data.content ? `<div class="content-container">${data.content}</div>` : ''}
+				</section>
+			`
 			
 			container.innerHTML = html
 		} catch (error) {
