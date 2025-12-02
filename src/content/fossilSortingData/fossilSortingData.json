@@ -234,5 +234,25 @@
         "totalPeople": 20,
         "totalTakenBeforeMeasurement": 0,
         "notes": "Several people were sorting for a different project (so they are counted in the list of people but weren't really sorting.)"
+    },
+    {
+        "id": "2025-11-23",
+        "date": "2025-11-23",
+        "jars": [
+            {
+                "id": "Already sorted",
+                "initialWeightGrams": 35,
+                "finalWeightGrams": 542
+            },
+            {
+                "id": "#7",
+                "initialWeightGrams": 1647,
+                "finalWeightGrams": 692
+            }
+        ],
+        "sessionDurationMinutes": 150,
+        "totalPeople": 23,
+        "totalTakenBeforeMeasurement": 0,
+        "notes": "Several people were sorting for a different project (so they are counted in the list of people but weren't really sorting.)"
     }
 ]
