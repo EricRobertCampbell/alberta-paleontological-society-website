@@ -121,30 +121,13 @@ const announcementCollection = defineCollection({
 })
 export type AnnouncementFrontmatter = z.infer<typeof announcementSchema>
 
-// Legacy collection - kept for migration purposes
-const fossilSortingImageLegacySchema = z.object({
-    id: z.string(),
-    date: isoDateString,
-    src: z.string(),
-    thumbnailSrc: z.string(),
-    description: z.string(),
-    finderCredit: z.string(),
-    photoCredit: z.string(),
-    tags: z.array(z.string()).default([]),
-})
-const fossilSortingImagesLegacyCollection = defineCollection({
-    loader: file('src/content/fossilSortingImages/images.json'),
-    schema: fossilSortingImageLegacySchema,
-})
-export type FossilSortingImageLegacy = z.infer<typeof fossilSortingImageLegacySchema>
-
 // New collections - separate images and specimens
 const fossilSortingImageSchema = z.object({
     id: z.string(),
     src: z.string(),
     thumbnailSrc: z.string(),
     description: z.string(),
-    photoCredit: z.string(),
+    credit: z.string(),
 })
 
 const fossilSortingSpecimenSchema = z.object({
@@ -152,7 +135,6 @@ const fossilSortingSpecimenSchema = z.object({
     date: isoDateString,
     description: z.string(),
     finderCredit: z.string(),
-    photoCredit: z.string(),
     tags: z.array(z.string()).default([]),
     images: z.array(reference('fossilSortingImages')), // Array of references to images
 })
@@ -240,7 +222,6 @@ export const collections = {
     bulletinVolumes: bulletinVolumesCollection,
     faqs: faqsCollection,
     announcements: announcementCollection,
-    fossilSortingImagesLegacy: fossilSortingImagesLegacyCollection, // Legacy - kept for migration
     fossilSortingImages: fossilSortingImagesCollection,
     fossilSortingSpecimens: fossilSortingSpecimensCollection,
     fossils: FossilCollection,

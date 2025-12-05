@@ -3,8 +3,14 @@ import Layout from "../../../layouts/Layout.astro";
 import HeadingWithBackground from "../../../components/HeadingWithBackground.astro";
 import { getCollection } from "astro:content";
 import { extractReferenceId } from '../../../utility/functions';
+import { filterSpecimensByQuery } from '../../../utility/fossilSorting';
 
 const INITIAL_LIMIT = 20
+
+// Get query parameter from URL
+const { url } = Astro;
+const searchParams = new URLSearchParams(url.search);
+const searchQuery = searchParams.get("q")?.trim() || "";
 
 const fossilSortingSpecimens = await getCollection("fossilSortingSpecimens");
 const fossilSortingImages = await getCollection("fossilSortingImages");
@@ -39,7 +45,6 @@ const sortedSpecimens = fossilSortingSpecimens
             date: specimen.date,
             description: specimen.description,
             finderCredit: specimen.finderCredit,
-            photoCredit: specimen.photoCredit,
             tags: specimen.tags,
             thumbnailSrc: firstImage?.thumbnailSrc ?? '',
             src: firstImage?.src ?? '',
@@ -61,8 +66,13 @@ function formatDateString(dateStr: string): string {
 	return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
-const initialSpecimens = sortedSpecimens.slice(0, INITIAL_LIMIT);
-const remainingSpecimens = sortedSpecimens.length - initialSpecimens.length;
+// If there's a search query, filter and use filtered results; otherwise use initial slice
+const initialSpecimens = searchQuery
+    ? filterSpecimensByQuery(sortedSpecimens, searchQuery)
+    : sortedSpecimens.slice(0, INITIAL_LIMIT);
+const remainingSpecimens = searchQuery
+    ? 0 
+    : sortedSpecimens.length - initialSpecimens.length;
 const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimens.length - 1].id : null;
 ---
 
@@ -87,11 +97,11 @@ const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimen
 		</p>
 	</section>
 
-	<details class="search" id="image-search">
+	<details class="search" id="image-search" open={!!searchQuery}>
 		<summary>Search images</summary>
 		<div class="search__controls">
 			<label for="search-input" class="visually-hidden">Search terms</label>
-			<input id="search-input" type="text" placeholder="Search description, finder, photo, tags…" />
+			<input id="search-input" type="text" placeholder="Search description, finder, photo, tags…" value={searchQuery} />
 			<button id="search-button" class="search__button" type="button">Search</button>
 			<button id="search-reset" class="search__button search__button--secondary" type="button">Reset</button>
 		</div>
@@ -107,15 +117,20 @@ const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimen
 	</details>
 
 	<section class="gallery" id="image-gallery">
-		{initialSpecimens.map((specimen) => (
+		{initialSpecimens.length === 0 ? (
+			<p class="search__empty">No images found.</p>
+		) : (
+			initialSpecimens.map((specimen) => (
 			<article class="gallery-card" data-specimen-id={specimen.id}>
+				{specimen.images.length > 1 && (
+					<div class="gallery-card__badge">+{specimen.images.length - 1}</div>
+				)}
 				<button
 					type="button"
 					class="gallery-card__button"
 					data-specimen-id={specimen.id}
 					data-description={specimen.description}
 					data-finder={specimen.finderCredit}
-					data-photo={specimen.photoCredit}
 					data-date={specimen.date}
 					data-tags={JSON.stringify(specimen.tags)}
 					data-images={JSON.stringify(specimen.images)}
@@ -132,10 +147,11 @@ const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimen
 					</div>
 				</button>
 			</article>
-		))}
+		))
+		)}
 	</section>
 
-	{remainingSpecimens > 0 && (
+	{remainingSpecimens > 0 && !searchQuery && (
 		<div class="load-more">
 			<button
 				id="load-more-images"
@@ -160,13 +176,18 @@ const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimen
 				<button class="image-modal__next" type="button" aria-label="Next image" id="image-modal-next">›</button>
 			</div>
 			<div class="image-modal__text">
+				<p id="image-modal-id" class="image-modal__id"></p>
 				<p id="image-modal-description" class="image-modal__description"></p>
+				<p id="image-modal-photo-description" class="image-modal__photo-description"></p>
 				<div class="image-modal__credits">
 					<p class="image-modal__credit"><strong>Finder:</strong> <span id="image-modal-finder"></span></p>
 					<p class="image-modal__credit"><strong>Photo:</strong> <span id="image-modal-photo"></span></p>
 					<p class="image-modal__date"><strong>Date:</strong> <span id="image-modal-date"></span></p>
 				</div>
 				<div class="image-modal__tags" id="image-modal-tags" aria-label="Image tags"></div>
+				<p class="image-modal__correction-link">
+					Have corrections or additional information about this fossil? Email <a id="image-modal-email-link" href="">eric.campbell@albertapaleo.org</a>!
+				</p>
 			</div>
 		</div>
 	</dialog>
@@ -185,11 +206,14 @@ const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimen
 	const searchErrorDetails = document.querySelector("#search-error-details");
 	const modal = document.querySelector("#image-modal");
 	const modalPicture = document.querySelector("#image-modal-picture");
+	const modalId = document.querySelector("#image-modal-id");
 	const modalDescription = document.querySelector("#image-modal-description");
+	const modalPhotoDescription = document.querySelector("#image-modal-photo-description");
 	const modalFinder = document.querySelector("#image-modal-finder");
 	const modalPhoto = document.querySelector("#image-modal-photo");
 	const modalDate = document.querySelector("#image-modal-date");
 	const modalTags = document.querySelector("#image-modal-tags");
+	const modalEmailLink = document.querySelector("#image-modal-email-link");
 	const modalPrev = document.querySelector("#image-modal-prev");
 	const modalNext = document.querySelector("#image-modal-next");
 	const modalCounter = document.querySelector("#image-modal-counter");
@@ -233,15 +257,17 @@ const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimen
 
 		const formattedDate = formatDateString(specimen.date);
 		const safeDescription = escapeHtml(specimen.description ?? "");
+		const imageCount = Array.isArray(specimen.images) ? specimen.images.length : 0;
+		const badgeHtml = imageCount > 1 ? `<div class="gallery-card__badge">+${imageCount - 1}</div>` : "";
 
 		card.innerHTML = `
+			${badgeHtml}
 			<button
 				type="button"
 				class="gallery-card__button"
 				data-specimen-id="${specimen.id}"
 				data-description="${safeDescription}"
 				data-finder="${escapeHtml(specimen.finderCredit ?? "")}"
-				data-photo="${escapeHtml(specimen.photoCredit ?? "")}"
 				data-date="${specimen.date}"
 				data-tags='${JSON.stringify(specimen.tags ?? [])}'
 				data-images='${JSON.stringify(specimen.images ?? [])}'
@@ -325,11 +351,21 @@ const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimen
 			if (loadMoreButton) {
 				loadMoreButton.hidden = true;
 			}
-			const url = new URL("/api/fossil-sorting-images", window.location.origin);
+			
+			// Update URL with query parameter
+			const url = new URL(window.location.href);
 			if (query) {
 				url.searchParams.set("q", query);
+			} else {
+				url.searchParams.delete("q");
 			}
-			const response = await fetch(url.toString());
+			window.history.pushState({}, "", url.toString());
+			
+			const apiUrl = new URL("/api/fossil-sorting-images", window.location.origin);
+			if (query) {
+				apiUrl.searchParams.set("q", query);
+			}
+			const response = await fetch(apiUrl.toString());
 			if (!response.ok) {
 				throw new Error(`Search failed (${response.status})`);
 			}
@@ -354,8 +390,18 @@ const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimen
 		try {
 			setSearching(true);
 			clearSearchIndicators();
-			const url = new URL("/api/fossil-sorting-images", window.location.origin);
-			const response = await fetch(url.toString());
+			
+			// Remove query parameter from URL
+			const url = new URL(window.location.href);
+			url.searchParams.delete("q");
+			window.history.pushState({}, "", url.toString());
+			
+			if (searchInput) {
+				searchInput.value = "";
+			}
+			
+			const apiUrl = new URL("/api/fossil-sorting-images", window.location.origin);
+			const response = await fetch(apiUrl.toString());
 			if (!response.ok) {
 				throw new Error(`Reset failed (${response.status})`);
 			}
@@ -407,7 +453,8 @@ const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimen
 		
 		modalPicture.src = image.src ?? "";
 		modalPicture.alt = image.description ?? "";
-		modalPhoto.textContent = image.photoCredit ?? "";
+		modalPhoto.textContent = image.credit ?? "";
+		modalPhotoDescription.textContent = image.description ?? "";
 		
 		// Update counter
 		if (modalCounter) {
@@ -437,8 +484,16 @@ const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimen
 		currentImageIndex = 0;
 		
 		// Set specimen-level information
+		const specimenId = button.dataset.specimenId ?? "";
+		modalId.textContent = specimenId;
 		modalDescription.textContent = button.dataset.description ?? "";
 		modalFinder.textContent = button.dataset.finder ?? "";
+		
+		// Set email link with subject
+		if (modalEmailLink && specimenId) {
+			const subject = encodeURIComponent(`Correction / Information about ${specimenId}`);
+			modalEmailLink.href = `mailto:eric.campbell@albertapaleo.org?subject=${subject}`;
+		}
 		
 		// Format the date for display
 		const dateStr = button.dataset.date ?? "";
@@ -577,6 +632,17 @@ const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimen
 	if (loadMoreButton) {
 		updateLoadMoreVisibility(true);
 	}
+
+	// Check for query parameter on page load
+	// If there's already a query parameter, the page was server-rendered with results
+	// so we don't need to perform the search again, just ensure the UI state is correct
+	const urlParams = new URLSearchParams(window.location.search);
+	const initialQuery = urlParams.get("q");
+	if (initialQuery && searchInput) {
+		// The input value is already set from server-side rendering
+		// The search details should already be open from server-side rendering
+		// No need to perform search again as results are already rendered
+	}
 </script>
 
 <style is:global>
@@ -665,8 +731,9 @@ const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimen
 
 	.gallery {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		grid-template-columns: repeat(auto-fill, 220px);
 		gap: 1.5rem;
+		justify-content: start;
 	}
 
 	.gallery-card {
@@ -676,6 +743,25 @@ const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimen
 		overflow: hidden;
 		transform: translateY(0);
 		transition: transform 150ms ease, box-shadow 150ms ease;
+		position: relative;
+	}
+
+	.gallery-card__badge {
+		position: absolute;
+		top: 0.75rem;
+		right: 0.75rem;
+		background: var(--background-colour-dark);
+		color: var(--background-colour-lightest);
+		border-radius: 50%;
+		width: 2rem;
+		height: 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 0.85rem;
+		font-weight: 600;
+		z-index: 10;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 	}
 
 	.gallery-card.fade-in {
@@ -924,6 +1010,23 @@ const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimen
 		background-color: var(--background-colour-dark);
 	}
 
+	.image-modal__id {
+		margin: 0;
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: var(--text-colour-lightest);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.image-modal__photo-description {
+		margin: 0;
+		font-size: 0.95rem;
+		font-style: italic;
+		color: var(--text-colour-lightest);
+		opacity: 0.9;
+	}
+
 	.image-modal__credits {
 	}
 
@@ -933,6 +1036,22 @@ const initialLastId = initialSpecimens.length ? initialSpecimens[initialSpecimen
 
 	.image-modal__tags {
 		display: block;
+	}
+
+	.image-modal__correction-link {
+		margin: 1rem 0 0 0;
+		padding-top: 1rem;
+		border-top: 1px solid var(--background-colour-darker);
+		font-size: 0.9rem;
+	}
+
+	.image-modal__correction-link a {
+		color: var(--aps-teal);
+		text-decoration: underline;
+	}
+
+	.image-modal__correction-link a:hover {
+		color: var(--accent-colour-dark);
 	}
 
 	.tag {

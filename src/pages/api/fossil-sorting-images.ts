@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro'
 import { getCollection, type CollectionEntry } from 'astro:content'
 import type { FossilSortingSpecimen, FossilSortingImage } from '../../content/config'
 import { extractReferenceId } from '../../utility/functions'
+import { filterSpecimensByQuery } from '../../utility/fossilSorting'
 
 const PAGE_SIZE = 20
 const CACHE_MAX_AGE_SECONDS = 60
@@ -12,7 +13,6 @@ type SpecimenAPIFormat = {
     date: string
     description: string
     finderCredit: string
-    photoCredit: string
     tags: Array<string>
     thumbnailSrc: string
     src: string
@@ -21,7 +21,7 @@ type SpecimenAPIFormat = {
         src: string
         thumbnailSrc: string
         description: string
-        photoCredit: string
+        credit: string
     }>
 }
 
@@ -62,7 +62,6 @@ const sortSpecimens = (
                 date: specimen.date,
                 description: specimen.description,
                 finderCredit: specimen.finderCredit,
-                photoCredit: specimen.photoCredit,
                 tags: specimen.tags,
                 thumbnailSrc: firstImage?.thumbnailSrc ?? '',
                 src: firstImage?.src ?? '',
@@ -138,24 +137,3 @@ export const GET: APIRoute = async ({ request }) => {
     )
 }
 
-const filterSpecimensByQuery = (
-    specimens: Array<SpecimenAPIFormat>,
-    query: string
-): Array<SpecimenAPIFormat> => {
-    const q = query.toLowerCase().trim()
-    if (!q) return specimens
-
-    return specimens.filter((specimen) => {
-        const haystacks: Array<string> = [
-            specimen.id ?? '',
-            specimen.description ?? '',
-            specimen.finderCredit ?? '',
-            specimen.photoCredit ?? '',
-            ...(Array.isArray(specimen.tags) ? specimen.tags : []),
-            // Also search in image descriptions and photo credits
-            ...specimen.images.map((img) => img.description ?? ''),
-            ...specimen.images.map((img) => img.photoCredit ?? ''),
-        ].map((s) => String(s).toLowerCase())
-        return haystacks.some((h) => h.includes(q))
-    })
-}
