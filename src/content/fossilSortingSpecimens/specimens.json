@@ -477,5 +477,49 @@
         "images": [
             "2025-11-02-F389D00A-67A5-4DDA-B288-CD0D25E523F5_4_5005_c"
         ]
+    },
+    {
+        "id": "apsfs-2025-00033",
+        "date": "2025-11-13",
+        "description": "Mammal molar",
+        "finderCredit": "Matthew Rhodes",
+        "tags": [
+            "mammal",
+            "molar",
+            "tooth"
+        ],
+        "images": [
+            "2025-11-23-matthew-mammalMolar"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00034",
+        "date": "2025-11-13",
+        "description": "Lizard jaw fragment",
+        "finderCredit": "Matthew Rhodes",
+        "tags": [
+            "lizard",
+            "jaw",
+            "fragment",
+            "reptile"
+        ],
+        "images": [
+            "2025-11-23-matthew-lizardJawFragment"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00035",
+        "date": "2025-11-13",
+        "description": "Rodent incisor",
+        "finderCredit": "Matthew Rhodes",
+        "tags": [
+            "rodent",
+            "incisor",
+            "tooth",
+            "mammal"
+        ],
+        "images": [
+            "2025-11-23-matthew-rodentIncisor"
+        ]
     }
 ]

@@ -229,5 +229,26 @@
         "thumbnailSrc": "/fossil-sorting-images/2025-11-02-F389D00A-67A5-4DDA-B288-CD0D25E523F5_4_5005_c-thumbnail.jpeg",
         "description": "",
         "credit": "Atharva Roy"
+    },
+    {
+        "id": "2025-11-23-matthew-mammalMolar",
+        "src": "/fossil-sorting-images/2025-11-23-matthew/20251123_151351 mammalMolar.jpg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-23-matthew/20251123_151351 mammalMolar-thumbnail.jpg",
+        "description": "",
+        "credit": "Matthew Rhodes"
+    },
+    {
+        "id": "2025-11-23-matthew-lizardJawFragment",
+        "src": "/fossil-sorting-images/2025-11-23-matthew/20251123_151351-lizardJawFragment.jpg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-23-matthew/20251123_151351-lizardJawFragment-thumbnail.jpg",
+        "description": "",
+        "credit": "Matthew Rhodes"
+    },
+    {
+        "id": "2025-11-23-matthew-rodentIncisor",
+        "src": "/fossil-sorting-images/2025-11-23-matthew/20251123_151351-rodentIncisor.jpg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-23-matthew/20251123_151351-rodentIncisor-thumbnail.jpg",
+        "description": "",
+        "credit": "Matthew Rhodes"
     }
 ]
