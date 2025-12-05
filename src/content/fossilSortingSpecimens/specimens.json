@@ -237,7 +237,9 @@
         ],
         "images": [
             "2025-11-02-C3DD543F-C2C2-4E79-ABE5-1C984E66E771_1_105_c",
-            "2025-11-02-98B7AE0C-D22B-4D2A-93EB-D12260AD0426_1_105_c"
+            "2025-11-02-98B7AE0C-D22B-4D2A-93EB-D12260AD0426_1_105_c",
+            "2025-11-23-gerhard-P1210450",
+            "2025-11-23-gerhard-P1210454"
         ]
     },
     {
@@ -520,6 +522,79 @@
         ],
         "images": [
             "2025-11-23-matthew-rodentIncisor"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00036",
+        "date": "2025-11-23",
+        "description": "Insectivore tooth (partial)",
+        "finderCredit": "Gerhard Maier",
+        "tags": [
+            "insectivore",
+            "tooth",
+            "mammal",
+            "partial"
+        ],
+        "images": [
+            "2025-11-23-gerhard-P1210571"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00037",
+        "date": "2025-11-23",
+        "description": "Insectivore tooth (partial)",
+        "finderCredit": "Gerhard Maier",
+        "tags": [
+            "insectivore",
+            "tooth",
+            "mammal",
+            "partial"
+        ],
+        "images": [
+            "2025-11-23-gerhard-P1210576_1",
+            "2025-11-23-gerhard-P1210577_1"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00038",
+        "date": "2025-11-23",
+        "description": "Insectivore tooth, I think; missing one root",
+        "finderCredit": "Gerhard Maier",
+        "tags": [
+            "insectivore",
+            "tooth",
+            "mammal"
+        ],
+        "images": [
+            "2025-11-23-gerhard-P1160826"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00040",
+        "date": "2025-11-23",
+        "description": "Marsupial tooth",
+        "finderCredit": "Gerhard Maier",
+        "tags": [
+            "marsupial",
+            "tooth",
+            "mammal"
+        ],
+        "images": [
+            "2025-11-23-gerhard-P1170051"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00041",
+        "date": "2025-11-23",
+        "description": "Fish palatal teeth",
+        "finderCredit": "Gerhard Maier",
+        "tags": [
+            "fish",
+            "tooth",
+            "palatal"
+        ],
+        "images": [
+            "2025-11-23-gerhard-P1170052"
         ]
     }
 ]
