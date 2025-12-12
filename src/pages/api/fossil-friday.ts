@@ -46,7 +46,36 @@ export const GET: APIRoute = async ({ request }) => {
 	// Get all FossilFriday entries
 	const allFossilFridays = await getCollection('fossilFriday')
 
+	// Build comparisons array for debugging
+	const comparisons = allFossilFridays.map((entry) => {
+		const entryParts = splitIsoString(entry.data.date)
+		const isMatch = (
+			entryParts.year === yearNum &&
+			entryParts.month === monthNum &&
+			entryParts.day === dayNum
+		)
+		
+		return {
+			queryParams: {
+				year: yearNum,
+				month: monthNum,
+				day: dayNum,
+			},
+			entryDate: {
+				original: entry.data.date,
+				parsed: {
+					year: entryParts.year,
+					month: entryParts.month,
+					day: entryParts.day,
+				},
+			},
+			match: isMatch,
+		}
+	})
+
 	// Find entry matching the date
+	// Note: Both entryParts (from splitIsoString) and yearNum/monthNum/dayNum are integers,
+	// so the comparison will work correctly (e.g., 5 === 5, not "05" === 5)
 	const matchingEntry = allFossilFridays.find((entry) => {
 		const entryParts = splitIsoString(entry.data.date)
 		return (
@@ -57,7 +86,9 @@ export const GET: APIRoute = async ({ request }) => {
 	})
 
 	if (!matchingEntry) {
-		return new Response(JSON.stringify(null), {
+		return new Response(JSON.stringify({
+			comparisons: comparisons,
+		}), {
 			status: 200,
 			headers: {
 				'Content-Type': 'application/json',
@@ -83,6 +114,7 @@ export const GET: APIRoute = async ({ request }) => {
 			date: matchingEntry.data.date,
 			images: matchingEntry.data.images,
 			content: contentHtml, // HTML string of the content
+			comparisons: comparisons,
 		}),
 		{
 			status: 200,

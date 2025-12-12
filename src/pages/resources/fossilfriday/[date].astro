@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
 import HeadingWithBackground from "../../../components/HeadingWithBackground.astro";
-import { splitIsoString } from "../../../utility/dates";
+import { splitIsoString, formatDateString } from "../../../utility/dates";
 
 export const prerender = true;
 
@@ -36,11 +36,7 @@ export async function getStaticPaths() {
 
 const { entry, previousEntry, nextEntry } = Astro.props;
 const { Content } = await entry.render();
-const displayDate = new Date(entry.data.date).toLocaleDateString('en-CA', {
-	year: 'numeric',
-	month: 'long',
-	day: 'numeric',
-});
+const displayDate = formatDateString(entry.data.date);
 ---
 
 <Layout subtitle={entry.data.title || 'Fossil Friday'}>

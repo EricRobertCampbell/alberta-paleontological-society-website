@@ -4,6 +4,7 @@ export const prerender = true;
 import Layout from "../../../layouts/Layout.astro";
 import HeadingWithBackground from "../../../components/HeadingWithBackground.astro";
 import { getCollection } from "astro:content";
+import { formatDateString } from "../../../utility/dates";
 
 const allFossilFridays = await getCollection("fossilFriday");
 
@@ -26,13 +27,8 @@ const sortedFossilFridays = [...allFossilFridays].sort((a, b) => {
 
 	<ul class="fossil-friday-list">
 		{sortedFossilFridays.map((entry) => {
-			const dateParts = entry.data.date.split('-');
 			const dateSlug = entry.data.date; // yyyy-mm-dd format
-			const displayDate = new Date(entry.data.date).toLocaleDateString('en-CA', {
-				year: 'numeric',
-				month: 'long',
-				day: 'numeric',
-			});
+			const displayDate = formatDateString(entry.data.date);
 			
 			return (
 				<li>

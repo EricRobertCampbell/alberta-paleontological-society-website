@@ -83,8 +83,9 @@
 			const data = await response.json()
 			console.log({data})
 			
-			// If no entry found, don't render anything
-			if (!data) {
+			// If no entry found (data is null or doesn't have title/images), don't render anything
+			// Note: when there's no match, API returns { comparisons: [...] } without title/images
+			if (!data || (!data.title && !data.images)) {
 				return
 			}
 			
