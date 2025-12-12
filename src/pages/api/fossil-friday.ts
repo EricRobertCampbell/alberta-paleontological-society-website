@@ -1,7 +1,6 @@
 import type { APIRoute } from 'astro'
 import { getCollection } from 'astro:content'
 import { splitIsoString } from '../../utility/dates'
-import FossilFridayContent from '../../components/FossilFridayContent.astro'
 
 export const GET: APIRoute = async ({ request }) => {
 	try {
@@ -98,23 +97,12 @@ export const GET: APIRoute = async ({ request }) => {
 			})
 		}
 
-		// Render the entry to get the Content component
-		const rendered = await matchingEntry.render()
-		console.log({ rendered })
-
-		// Render the Content component to HTML using the wrapper component
-		const contentResult = await FossilFridayContent.render({
-			Content: rendered.Content,
-		})
-		const contentHtml = contentResult.html
-
-		// Return the data
+		// Return the data (images and metadata only)
 		return new Response(
 			JSON.stringify({
 				title: matchingEntry.data.title,
 				date: matchingEntry.data.date,
 				images: matchingEntry.data.images,
-				content: contentHtml, // HTML string of the content
 				comparisons: comparisons,
 			}),
 			{

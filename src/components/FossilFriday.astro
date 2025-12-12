@@ -51,6 +51,21 @@
 		margin-top: var(--theme-spacing-base);
 	}
 
+	.fossil-friday-link {
+		margin-top: var(--theme-spacing-base);
+		text-align: center;
+	}
+
+	.fossil-friday-link a {
+		color: var(--accent-colour-dark);
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	.fossil-friday-link a:hover {
+		text-decoration: underline;
+	}
+
 	/* Desktop: 2 column grid */
 	@media screen and (min-width: 768px) {
 		.images-container {
@@ -106,6 +121,9 @@
 				`).join('')
 				: ''
 			
+			// Build the link to the full page (date is in YYYY-MM-DD format)
+			const fullPageUrl = `/resources/fossilfriday/${data.date}`
+			
 			// Build the complete HTML using a template string
 			const html = `
 				<section class="fossil-friday">
@@ -113,7 +131,9 @@
 					<div class="images-container">
 						${imagesHtml}
 					</div>
-					${data.content ? `<div class="content-container">${data.content}</div>` : ''}
+					<div class="fossil-friday-link">
+						<a href="${fullPageUrl}">Read more about this Fossil Friday →</a>
+					</div>
 				</section>
 			`
 			
