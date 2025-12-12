@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.130.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.130.0...v1.130.1) (2025-12-12)
+
+
+### Bug Fixes
+
+* error message returned on fossil friday failure ([06b8e03](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/06b8e032d736b7c1bec7ef310e65fe4212b6e865))
+
 ## [1.130.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.129.0...v1.130.0) (2025-12-12)
 
 
