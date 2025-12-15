@@ -306,5 +306,96 @@
         "thumbnailSrc": "/fossil-sorting-images/2025-11-23-gerhard/P1170052_Fish_Palatine_Tooth_Plate-thumbnail.JPG",
         "description": "",
         "credit": "Gerhard Maier"
+    },
+    {
+        "id": "2025-11-23-eric-2176C691-E28D-46D0-82AD-1307A658C851_1_105_c",
+        "src": "/fossil-sorting-images/2025-11-23-eric/2176C691-E28D-46D0-82AD-1307A658C851_1_105_c-amphibianVertabra-jolindaBotha.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-23-eric/2176C691-E28D-46D0-82AD-1307A658C851_1_105_c-amphibianVertabra-jolindaBotha-thumbnail.jpeg",
+        "description": "Bottom view",
+        "credit": "Eric Campbell"
+    },
+    {
+        "id": "2025-11-23-eric-287DB3A2-83C6-43FD-9166-236BE9B7551C_1_105_c",
+        "src": "/fossil-sorting-images/2025-11-23-eric/287DB3A2-83C6-43FD-9166-236BE9B7551C_1_105_c-multituberculateMolar-ericCampbell.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-23-eric/287DB3A2-83C6-43FD-9166-236BE9B7551C_1_105_c-multituberculateMolar-ericCampbell-thumbnail.jpeg",
+        "description": "",
+        "credit": "Eric Campbell"
+    },
+    {
+        "id": "2025-11-23-eric-350401E7-2844-4DE3-8AD3-A5FA0C8F3FBE_1_105_c",
+        "src": "/fossil-sorting-images/2025-11-23-eric/350401E7-2844-4DE3-8AD3-A5FA0C8F3FBE_1_105_c-marsupialMolar-vaclavMarsovsky.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-23-eric/350401E7-2844-4DE3-8AD3-A5FA0C8F3FBE_1_105_c-marsupialMolar-vaclavMarsovsky-thumbnail.jpeg",
+        "description": "",
+        "credit": "Eric Campbell"
+    },
+    {
+        "id": "2025-11-23-eric-442F488B-C147-44BB-8AD3-CC79A2B50AA3_1_105_c",
+        "src": "/fossil-sorting-images/2025-11-23-eric/442F488B-C147-44BB-8AD3-CC79A2B50AA3_1_105_c-rodentMolar-vaclavMarsovsky.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-23-eric/442F488B-C147-44BB-8AD3-CC79A2B50AA3_1_105_c-rodentMolar-vaclavMarsovsky-thumbnail.jpeg",
+        "description": "",
+        "credit": "Eric Campbell"
+    },
+    {
+        "id": "2025-11-23-eric-7525A3F0-0102-4D3A-9365-BB24C1FB245B_1_105_c",
+        "src": "/fossil-sorting-images/2025-11-23-eric/7525A3F0-0102-4D3A-9365-BB24C1FB245B_1_105_c-amphibianVertabra-jolindaBotha.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-23-eric/7525A3F0-0102-4D3A-9365-BB24C1FB245B_1_105_c-amphibianVertabra-jolindaBotha-thumbnail.jpeg",
+        "description": "Top view",
+        "credit": "Eric Campbell"
+    },
+    {
+        "id": "2025-11-23-eric-830969E7-4BDB-49F6-A419-8B8AB1F2094F_1_105_c",
+        "src": "/fossil-sorting-images/2025-11-23-eric/830969E7-4BDB-49F6-A419-8B8AB1F2094F_1_105_c-rodentMolar-ericCampbell.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-23-eric/830969E7-4BDB-49F6-A419-8B8AB1F2094F_1_105_c-rodentMolar-ericCampbell-thumbnail.jpeg",
+        "description": "",
+        "credit": "Eric Campbell"
+    },
+    {
+        "id": "2025-11-23-eric-94F904F3-E00E-43F7-A919-08AA9B74D6EF_1_105_c",
+        "src": "/fossil-sorting-images/2025-11-23-eric/94F904F3-E00E-43F7-A919-08AA9B74D6EF_1_105_c-rodentMolar-vaclavMarsovsky.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-23-eric/94F904F3-E00E-43F7-A919-08AA9B74D6EF_1_105_c-rodentMolar-vaclavMarsovsky-thumbnail.jpeg",
+        "description": "",
+        "credit": "Eric Campbell"
+    },
+    {
+        "id": "2025-11-23-eric-A2776814-C26D-4A0F-AD06-037C3771D67E_1_105_c",
+        "src": "/fossil-sorting-images/2025-11-23-eric/A2776814-C26D-4A0F-AD06-037C3771D67E_1_105_c-fishBarbSpine-vaclavMarsovsky.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-23-eric/A2776814-C26D-4A0F-AD06-037C3771D67E_1_105_c-fishBarbSpine-vaclavMarsovsky-thumbnail.jpeg",
+        "description": "",
+        "credit": "Eric Campbell"
+    },
+    {
+        "id": "2025-11-23-eric-A3938DDC-2B0C-4179-96B8-56C72A41C38F_1_105_c",
+        "src": "/fossil-sorting-images/2025-11-23-eric/A3938DDC-2B0C-4179-96B8-56C72A41C38F_1_105_c-rodentMolar-vaclavMarsovsky.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-23-eric/A3938DDC-2B0C-4179-96B8-56C72A41C38F_1_105_c-rodentMolar-vaclavMarsovsky-thumbnail.jpeg",
+        "description": "",
+        "credit": "Eric Campbell"
+    },
+    {
+        "id": "2025-11-23-eric-A96225B0-B0C5-4B13-BE83-19E77BDD8463_1_105_c",
+        "src": "/fossil-sorting-images/2025-11-23-eric/A96225B0-B0C5-4B13-BE83-19E77BDD8463_1_105_c-fishFinSpine-ericCampbell.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-23-eric/A96225B0-B0C5-4B13-BE83-19E77BDD8463_1_105_c-fishFinSpine-ericCampbell-thumbnail.jpeg",
+        "description": "",
+        "credit": "Eric Campbell"
+    },
+    {
+        "id": "2025-11-23-eric-C86ECE2E-532C-4CF4-83FA-CA5194C32EE0_1_105_c",
+        "src": "/fossil-sorting-images/2025-11-23-eric/C86ECE2E-532C-4CF4-83FA-CA5194C32EE0_1_105_c-ectypodusMultituberculateUpperMolar-ericCampbell.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-23-eric/C86ECE2E-532C-4CF4-83FA-CA5194C32EE0_1_105_c-ectypodusMultituberculateUpperMolar-ericCampbell-thumbnail.jpeg",
+        "description": "",
+        "credit": "Eric Campbell"
+    },
+    {
+        "id": "2025-11-23-eric-CADE6370-D392-452C-AF4B-FEEE05BFB884_1_105_c",
+        "src": "/fossil-sorting-images/2025-11-23-eric/CADE6370-D392-452C-AF4B-FEEE05BFB884_1_105_c-ungualPhalanx-vaclavMarsovsky.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-23-eric/CADE6370-D392-452C-AF4B-FEEE05BFB884_1_105_c-ungualPhalanx-vaclavMarsovsky-thumbnail.jpeg",
+        "description": "",
+        "credit": "Eric Campbell"
+    },
+    {
+        "id": "2025-11-23-eric-F61A7E29-4A16-4185-876F-27582870589D_1_105_c",
+        "src": "/fossil-sorting-images/2025-11-23-eric/F61A7E29-4A16-4185-876F-27582870589D_1_105_c-condylarthMolar-ericCampbell.jpeg",
+        "thumbnailSrc": "/fossil-sorting-images/2025-11-23-eric/F61A7E29-4A16-4185-876F-27582870589D_1_105_c-condylarthMolar-ericCampbell-thumbnail.jpeg",
+        "description": "",
+        "credit": "Eric Campbell"
     }
 ]

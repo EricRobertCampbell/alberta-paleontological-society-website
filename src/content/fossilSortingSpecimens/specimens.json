@@ -596,5 +596,185 @@
         "images": [
             "2025-11-23-gerhard-P1170052"
         ]
+    },
+    {
+        "id": "apsfs-2025-00042",
+        "date": "2025-11-23",
+        "description": "Amphibian vertebra",
+        "finderCredit": "Jolinda Botha",
+        "tags": [
+            "amphibian",
+            "vertebra",
+            "spine"
+        ],
+        "images": [
+            "2025-11-23-eric-2176C691-E28D-46D0-82AD-1307A658C851_1_105_c",
+            "2025-11-23-eric-7525A3F0-0102-4D3A-9365-BB24C1FB245B_1_105_c"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00043",
+        "date": "2025-11-23",
+        "description": "Multituberculate molar",
+        "finderCredit": "Eric Campbell",
+        "tags": [
+            "multituberculate",
+            "molar",
+            "tooth",
+            "mammal"
+        ],
+        "images": [
+            "2025-11-23-eric-287DB3A2-83C6-43FD-9166-236BE9B7551C_1_105_c"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00044",
+        "date": "2025-11-23",
+        "description": "Marsupial molar",
+        "finderCredit": "Vaclav Marsovsky",
+        "tags": [
+            "marsupial",
+            "molar",
+            "tooth",
+            "mammal"
+        ],
+        "images": [
+            "2025-11-23-eric-350401E7-2844-4DE3-8AD3-A5FA0C8F3FBE_1_105_c"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00045",
+        "date": "2025-11-23",
+        "description": "Rodent molar",
+        "finderCredit": "Vaclav Marsovsky",
+        "tags": [
+            "rodent",
+            "molar",
+            "tooth",
+            "mammal"
+        ],
+        "images": [
+            "2025-11-23-eric-442F488B-C147-44BB-8AD3-CC79A2B50AA3_1_105_c"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00046",
+        "date": "2025-11-23",
+        "description": "Rodent molar",
+        "finderCredit": "Eric Campbell",
+        "tags": [
+            "rodent",
+            "molar",
+            "tooth",
+            "mammal"
+        ],
+        "images": [
+            "2025-11-23-eric-830969E7-4BDB-49F6-A419-8B8AB1F2094F_1_105_c"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00047",
+        "date": "2025-11-23",
+        "description": "Rodent molar",
+        "finderCredit": "Vaclav Marsovsky",
+        "tags": [
+            "rodent",
+            "molar",
+            "tooth",
+            "mammal"
+        ],
+        "images": [
+            "2025-11-23-eric-94F904F3-E00E-43F7-A919-08AA9B74D6EF_1_105_c"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00048",
+        "date": "2025-11-23",
+        "description": "Fish barb spine",
+        "finderCredit": "Vaclav Marsovsky",
+        "tags": [
+            "fish",
+            "barb",
+            "spine",
+            "fin"
+        ],
+        "images": [
+            "2025-11-23-eric-A2776814-C26D-4A0F-AD06-037C3771D67E_1_105_c"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00049",
+        "date": "2025-11-23",
+        "description": "Rodent molar",
+        "finderCredit": "Vaclav Marsovsky",
+        "tags": [
+            "rodent",
+            "molar",
+            "tooth",
+            "mammal"
+        ],
+        "images": [
+            "2025-11-23-eric-A3938DDC-2B0C-4179-96B8-56C72A41C38F_1_105_c"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00050",
+        "date": "2025-11-23",
+        "description": "Fish fin spine",
+        "finderCredit": "Eric Campbell",
+        "tags": [
+            "fish",
+            "fin",
+            "spine"
+        ],
+        "images": [
+            "2025-11-23-eric-A96225B0-B0C5-4B13-BE83-19E77BDD8463_1_105_c"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00051",
+        "date": "2025-11-23",
+        "description": "Ectypodus multituberculate upper molar",
+        "finderCredit": "Eric Campbell",
+        "tags": [
+            "ectypodus",
+            "multituberculate",
+            "molar",
+            "tooth",
+            "mammal"
+        ],
+        "images": [
+            "2025-11-23-eric-C86ECE2E-532C-4CF4-83FA-CA5194C32EE0_1_105_c"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00052",
+        "date": "2025-11-23",
+        "description": "Ungual phalanx",
+        "finderCredit": "Vaclav Marsovsky",
+        "tags": [
+            "ungual",
+            "phalanx",
+            "bone",
+            "mammal"
+        ],
+        "images": [
+            "2025-11-23-eric-CADE6370-D392-452C-AF4B-FEEE05BFB884_1_105_c"
+        ]
+    },
+    {
+        "id": "apsfs-2025-00053",
+        "date": "2025-11-23",
+        "description": "Condylarth molar",
+        "finderCredit": "Eric Campbell",
+        "tags": [
+            "condylarth",
+            "molar",
+            "tooth",
+            "mammal"
+        ],
+        "images": [
+            "2025-11-23-eric-F61A7E29-4A16-4185-876F-27582870589D_1_105_c"
+        ]
     }
 ]
