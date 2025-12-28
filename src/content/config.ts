@@ -18,6 +18,8 @@ const isoDateString = z.string().refine((val) => !isNaN(Date.parse(val)), {
 
 const eventSchema = z.object({
     title: z.string(),
+    subtitle: z.string().optional(),
+    location: z.string().optional(),
     start: isoDateString.optional(),
     end: isoDateString.optional(),
     // @deprecated

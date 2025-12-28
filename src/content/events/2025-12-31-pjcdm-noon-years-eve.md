@@ -4,6 +4,7 @@ start: '2025-12-31T10:00:00-07:00'
 end: '2025-12-31T14:00:00-07:00'
 type: 'External'
 host: 'Philip J. Currie Dinosaur Museum'
+location: 'Wembley, AB'
 image:
     src: '/events/2025/external/pjcdm-noon-years-eve.jpg'
     alt: 'Noon Years Eve Party at Philip J. Currie Dinosaur Museum'
