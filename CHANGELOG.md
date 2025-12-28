@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.133.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.132.1...v1.133.0) (2025-12-28)
+
+
+### Features
+
+* paleo 2026 circular ([c356430](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/c3564301768d8af723a885cc889770efcc978bbd))
+
 ### [1.132.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.132.0...v1.132.1) (2025-12-19)
 
 
