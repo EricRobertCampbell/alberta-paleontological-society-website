@@ -1,0 +1,5 @@
+---
+alwaysApply: true
+---
+
+Please follow the clean coding principle of having more general functions at the top of the file and more specific ones lower down. As a general rule, if functionA calls functionB, then functionA should come first.
