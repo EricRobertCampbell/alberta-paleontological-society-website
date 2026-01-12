@@ -4,6 +4,7 @@ export const prerender = true
 import Layout from '../../../layouts/Layout.astro'
 import HeadingWithBackground from '../../../components/HeadingWithBackground.astro'
 import EmailLink from '../../../components/EmailLink.astro'
+import Alert from '../../../components/Alert.astro'
 
 const internalNavLinks: Array<{title: string, id: string}> = [
 	{
@@ -242,6 +243,12 @@ const schedule: Array<ScheduleItem> = [
 		<h3>
 			Workshops
 		</h3>
+
+		<Alert>
+			<p>
+				To register for a workshop, please fill out the <a href="/symposium/2026/workshopSignup.pdf">registration form</a> and email it to <EmailLink email="giftshop@albertapaleo.org" />.
+			</p>
+		</Alert>
 
 		<p>We have two exciting workshops this year!</p>
 
