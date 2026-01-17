@@ -1,0 +1,535 @@
+---
+import { SOCIAL_MEDIA_LINKS } from '../../utility/constants';
+const title = 'November Meeting!';
+const subtitle = ''
+
+const insertZeroWidthSpace = (s: string) => {
+return s.replace(/\//g, '/\u200B');
+}
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+
+		<title>{title}</title>
+
+		<link rel="stylesheet" href="/revealjs/dist/reset.css" />
+		<link rel="stylesheet" href="/revealjs/dist/reveal.css" />
+		<link rel="stylesheet" href="/revealjs/dist/theme/black.css" />
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>{title}</h1>
+					<h2>
+						{subtitle}
+					</h2>
+					<img style="height: 150px;" src="/logos/aps-logo-black-transparent.png" />
+				</section>
+				<section>
+					<h2>
+						Alberta Palaeontological Society
+					</h2>
+					<img style="height: 300px" src="/logos/aps-logo-black-transparent.png" />
+					<p>
+						Find us online at <a href="https://albertapaleo.org">
+							albertapaleo.org
+						</a>
+					</p>
+				</section>
+				<section>
+					<section>
+						<h2>
+							Connect With Us On Social Media!
+						</h2>
+					</section>
+					<section>
+						<h3>
+							Mastodon
+						</h3>
+						<div class="social-media-container">
+							<div class="social-media">
+								<img src="/logos/socials/mastodon-logo-purple.svg" style="height: 10rem;" />	
+								<p class="word-break">
+									{
+									insertZeroWidthSpace(
+									SOCIAL_MEDIA_LINKS.mastodon
+									)
+									}
+								</p>
+								<img src="/interstitial/mastodon_qr_code.png" />	
+							</div>
+						</div>
+					</section>
+					<section>
+						<h3>
+							Instagram
+						</h3>
+						<div class="social-media-container">
+							<div class="social-media">
+								<img src="/logos/socials/Instagram_Glyph_Gradient.png" />	
+								<p>
+									{insertZeroWidthSpace('@alberta_palaeo_society')}
+								</p>
+								<img src="/interstitial/instagram_qr_code.png" />	
+							</div>
+						</div>
+					</section>
+					<section>
+						<h3>
+							Facebook
+						</h3>
+						<div class="social-media-container">
+							<div class="social-media">
+								<img src="/logos/socials/Facebook_Logo_Primary.png" />	
+								<p class="word-break">
+									{insertZeroWidthSpace(SOCIAL_MEDIA_LINKS.facebook)}
+								</p>
+								<img src="/interstitial/facebook_qr_code.png" />	
+							</div>
+						</div>
+					</section>
+					<section>
+						<h3>
+							Bluesky
+						</h3>
+						<div class="social-media-container">
+							<div class="social-media">
+								<img src="/logos/socials/bluesky_media_kit_logo_transparent_1.png" />	
+								<p class="word-break">
+									{insertZeroWidthSpace(SOCIAL_MEDIA_LINKS.bsky)}
+								</p>
+								<img src="/interstitial/bluesky_qr_code.png" />	
+							</div>
+						</div>
+					</section>
+					<section>
+						<h3>
+						</h3>
+						YouTube
+						<div class="social-media-container">
+							<div class="social-media">
+								<img src="/logos/socials/youtube_social_icon_red.png" />	
+								<p class="word-break">
+									{insertZeroWidthSpace( SOCIAL_MEDIA_LINKS.youtube )}
+								</p>
+								<img src="/interstitial/youtube_qr_code.png" />	
+							</div>
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>
+							Sponsors
+						</h2>
+						<p>
+							Thank you to all of the sponsors who helped make today possible!
+						</p>
+					</section>
+					<section>
+						<h3>
+							Monthly Talks Sponsored By
+						</h3>
+						<ul>
+							<li>
+								Alberta Palaeontological Society
+							</li>
+							<li>
+								Mount Royal University
+							</li>
+							<li>
+								Canadian Energy Geoscience Association
+							</li>
+						</ul>
+						<div class="white-container sponsor-logo-container">
+							<img src="/logos/aps-logo.gif" style="max-height: 200px;" alt="Alberta Palaeontological Society Logo" />
+							<img src="/logos/MRU_logo1.png" alt="Mount Royal University Logo" />
+							<img src="/logos/CEGA_logo.png" />
+						</div>
+					</section>
+					<section>
+						<h3>
+							Mount Royal University
+						</h3>
+						<div style="background-color: white; padding: 0.5rem;">
+							<img src="/logos/MRU_logo1.png" alt="Mount Royal University Logo" />
+						</div>
+					</section>
+					<section>
+						<h3>
+							Canadian Energy Geoscience Association
+						</h3>
+						<div style="background-color: white; padding: 0.5rem;">
+							<img src="/logos/CEGA_logo.png" />
+						</div>
+					</section>
+					<section>
+						<h3>
+							CEGA TECHNICAL DIVISION SPONSOR
+						</h3>
+						<img src="/interstitial/geologicsystems_logo.png" alt="GeoLogic Systems Logo" />
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>
+							Upcoming Events
+						</h2>
+					</section>
+					<section>
+						<h3>
+							Monthly Meeting: February 2026
+						</h3>
+						<p>
+							Friday, February 20, 2026 7:30 PM - 9 PM 
+						</p>
+						<p>
+							Mount Royal University Rm. B108
+						</p>
+						<p>
+							<strong>Ya Ha Tinda fossils</strong>
+						</p>
+						<p>
+							Dr. Jason Pardo, Field Museum of Natural History
+						</p>
+					</section>
+					<section>
+						<h3>
+							Monthly Meeting: April 2026
+						</h3>
+						<p>
+							Friday, April 17, 2026 7:30 PM - 9 PM 
+						</p>
+						<p>
+							Mount Royal University Rm. B108
+						</p>
+						<p>
+							Dr. Darla K. Zelenitsky, University of Calgary
+						</p>
+					</section>
+					<section>
+						<h3>
+							Microfossil Sorting Sessions 2026
+						</h3>
+						<figure style="display:flex; align-items: center; justify-content: center; flex-direction: column;">
+							<img src="/fossil-sorting-images/2025-11-02-0FA567A9-33F1-4667-81C8-CE30C79745D2_1_105_c.jpeg" alt="Rodent molar. Notice the square shape, black enamel, and brownish root." style="max-width: 20%;">
+						</figure>
+						<p>
+							Mount Royal University Rm. B140
+						</p>
+						<p>
+							Help us to find microfossils! This is a great way to get involved with palaeontology.
+						</p>
+						<p>
+							Sundays: Feb. 8, Feb. 22, Mar. 8
+						</p>
+						<p>
+							<a href="https://albertapaleo.org/events/fossilsorting">albertapaleo.org/events/fossilsorting</a>
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>
+							Paleo 2026 Symposium
+						</h2>
+					</section>
+					<section>
+						<p>
+							Save the Date:
+						</p>
+						<p>
+							Saturday, March 14 - Sunday, March 15, 2026
+						</p>
+						<p>
+							Mount Royal University
+						</p>
+					</section>
+					<section>
+						<h3>
+							Symposium Speakers
+						</h3>
+					</section>
+					<section>
+						<h3>
+							Dr. Julien Divay
+						</h3>
+						<p>
+							Palaeoichthyologist, Hon. Research Associate – Royal Tyrrell Museum of Palaeontology
+						</p>
+						<p>
+							Tracing Faunal and Environmental Changes Through Time: The Palaeontological Power of Fish Microvertebrate Fossils
+						</p>
+					</section>
+					<section>
+						<h3>
+							Dr. Melina Jobbins
+						</h3>
+						<p>
+							Palaeobiologist, University of Manitoba
+						</p>
+						<p>
+							Fishes in a Suit of Armour - The Story of Placoderms, One of Our Oldest Jawed Relatives
+						</p>
+					</section>
+					<section>
+						<h3>
+							Darren H. Tanke
+						</h3>
+						<p>
+							Senior Technician II, Royal Tyrrell Museum of Palaeontology, Drumheller, Alberta
+						</p>
+						<p>
+							The Impact of Heavy Industry on Significant Discoveries of Fossil Marine Reptiles in Alberta
+						</p>
+					</section>
+					<section>
+						<h3>
+							Tako Koning
+						</h3>
+						<p>
+							P. Geol, Senior Geologist - Consultant
+						</p>
+						<p>
+							The Driftwood Canyon Fossil Beds, Smithers, Northern British Columbia - An Amazing Well-Preserved and Highly Diverse Eocene-age Terrestrial Paleoecology
+						</p>
+					</section>
+					<section>
+						<h3>
+							Dr. Jon Noad
+						</h3>
+						<p>
+							Stantec Consulting; University of Adelaide
+						</p>
+						<p>
+							Left Behind: Previously Unrecognized Trace Fossils with Stories to Tell
+						</p>
+					</section>
+					<section>
+						<h3>
+							Kano Sasaguchi
+						</h3>
+						<p>
+							Department of Biological Sciences, University of Alberta
+						</p>
+						<p>
+							Alberta's Paleocene Insects: New Insights from a Fossil Legacy
+						</p>
+					</section>
+					<section>
+						<h3>
+							Dr. Emily Bamforth
+						</h3>
+						<p>
+							Curator, Philip J. Currie Dinosaur Museum
+						</p>
+						<p>
+							Three-Horned Faceoff: A Tale of Canadian Triceratops and Why They Matter
+						</p>
+					</section>
+					<section>
+						<h3>
+							Symposium Workshops
+						</h3>
+						<p>
+							<strong>Sunday, March 15, 2026</strong>
+						</p>
+						<p>
+							Mount Royal University Rm. B140
+						</p>
+					</section>
+					<section>
+						<h3>
+							Workshop 1: Early Vertebrate Fossil Identification
+						</h3>
+						<p>
+							9:00 am – 12:00 pm
+						</p>
+						<p>
+							Dr. Melina Jobbins, University of Manitoba
+						</p>
+						<p>
+							$10.00 per person
+						</p>
+					</section>
+					<section>
+						<h3>
+							Workshop 2: Microvertebrate Fish Fossil Identification
+						</h3>
+						<p>
+							1:00 pm – 4:00 pm
+						</p>
+						<p>
+							Dr. Julien Divay, Royal Tyrrell Museum
+						</p>
+						<p>
+							$10.00 per person
+						</p>
+					</section>
+					<section>
+						<h3>
+							For More Information
+						</h3>
+						<p>
+							For additional information on speakers, workshops, and schedules, please visit:
+						</p>
+						<p>
+							<a href="/events/symposium">albertapaleo.org/events/symposium</a>
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>
+							APS Items For Sale
+						</h2>
+					</section>
+					<section>
+						<h3>
+							Memberships
+						</h3>
+						<ul>
+							<li>
+								Contribute back to the society!
+							</li>
+							<li>
+								Receive the APS newsletter!
+							</li>
+							<li>
+								Attend APS field trips and other special events!
+							</li>
+							<li>
+								Discounts on APS merchandise!
+							</li>
+						</ul>
+
+						<hr />
+
+						<ul>
+							<li>
+								Single Membership: $20
+							</li>
+							<li>
+								Family Membership: $25
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h3>
+							Guide to Common Vertebrate Fossils from the Cretaceous of Alberta
+						</h3>
+						<div class="merchandise-container">
+							<img src="/interstitial/guidetofossilssmall.jpg" />
+							<ul>
+								<li>
+									Member: $30
+								</li>
+								<li>
+									Non-Member: $35
+								</li>
+							</ul>
+						</div>
+					</section>
+					<section>
+						<h3>
+							Paleo 2023 Abstracts Volume
+						</h3>
+						<p>
+							Clearance priced: $2
+						</p>
+					</section>
+					<section>
+						<h3>
+							APS T-Shirts
+						</h3>
+						<div class="merchandise-container">
+							<img src="/interstitial/APSShirt2-shirt-cropped.jpg" style="max-height: 25rem;" />
+							<ul>
+								<li>
+									Member: $15
+								</li>
+								<li>
+									Non-Member: $20
+								</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+			</div>
+		</div>
+
+<script src="/revealjs/dist/reveal.js" type="text/javascript"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				autoSlide: 5_000,
+				loop: true,
+				width: 960,
+				height: 700,
+				// Learn about plugins: https://revealjs.com/plugins/
+				// plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+			});
+		</script>
+	</body>
+</html>
+
+<style>
+	.social-media-container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem;
+	}
+	.social-media {
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		gap: 1rem;
+		place-items: center;
+	}
+	.social-media img {
+		height: 10rem;
+	}
+	.merchandise-container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+	}
+	.white-container {
+		background-color: white;
+	}
+	.sponsor-logo-container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+		place-items: center;
+	}
+	.word-break {
+	  word-break: break-word; /* Ensures text wraps */
+	  overflow-wrap: break-word; /* Alternative for better compatibility */
+	  white-space: normal; /* Ensures it can wrap */
+	}
+	.event-picture-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+	}
+	.event-picture-container img {
+		max-height: 70vh;
+		height: auto;
+	}
+</style>
