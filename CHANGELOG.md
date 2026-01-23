@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.139.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.138.1...v1.139.0) (2026-01-23)
+
+
+### Features
+
+* rtmp 2026 speaker events ([1716acf](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/1716acf09da999a129ce0aeac3331d1874867f85))
+
 ### [1.138.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.138.0...v1.138.1) (2026-01-17)
 
 
