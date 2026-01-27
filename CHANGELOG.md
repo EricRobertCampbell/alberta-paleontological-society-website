@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.140.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.139.0...v1.140.0) (2026-01-27)
+
+
+### Features
+
+* rtmp job application event ([f1f99a1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/f1f99a1847d6127c1e57b14026bb4a29a00580bd))
+
 ## [1.139.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.138.1...v1.139.0) (2026-01-23)
 
 
