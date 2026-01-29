@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.141.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.140.0...v1.141.0) (2026-01-29)
+
+
+### Features
+
+* jason pardo abstract ([b35e33e](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/b35e33e79a8172959a16f997f6113cf563b37f71))
+
 ## [1.140.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.139.0...v1.140.0) (2026-01-27)
 
 
