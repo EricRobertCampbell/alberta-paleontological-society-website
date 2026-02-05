@@ -12,7 +12,7 @@ const internalNavLinks: Array<{title: string, id: string}> = [
 		id: 'speaker-schedule'
 	},
 	{
-		title: 'Call for Presentations',
+		title: 'Call for Presentations & Posters',
 		id: 'call-for-presentations'
 	},
 	{
@@ -233,17 +233,24 @@ const schedule: Array<ScheduleItem> = [
 
 	<section id="call-for-presentations">
 		<h3>
-			Call for Presentations
+			Call for Presentations & Posters!
 		</h3>
+		<p class="deadline-warning">Application Deadline: February 15</p>
 		<p>
-			We are now accepting submissions for presentations and posters for Paleo 2026! 
+			We are now accepting submissions for posters for Paleo 2026! 
 			If you are an avocational or professional palaeontologist with research to share, 
 			we would love to hear from you.
 		</p>
-		<p>
-			Submission guidelines and deadlines will be posted here as they become available. 
-			For early inquiries, please contact us at <EmailLink email="symposium@albertapaleo.org" subject="Paleo 2026 Presentation Inquiry" />.
-		</p>
+		<ul>
+			<li>
+				Must submit a request for space, along with an abstract or short paper, to both the
+				Posters &amp; Displays Coordinator at <EmailLink email="posters@albertapaleo.org" /> and the Editor at <EmailLink email="editor2@albertapaleo.org" />
+			</li>
+			<li>Notify us of any special requirements or additional requests</li>
+			<li>
+				See the <a href="/symposium/2026/Paleo2026Circular.pdf">circular</a> for more information
+			</li>
+		</ul>
 	</section>
 
 	<section id="workshops">
@@ -410,6 +417,11 @@ const schedule: Array<ScheduleItem> = [
 	
 	section {
 		margin-bottom: 2rem;
+	}
+
+	.deadline-warning {
+		color: var(--error-colour-medium);
+		font-weight: bold;
 	}
 
 	.schedule-container {
