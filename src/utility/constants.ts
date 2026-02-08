@@ -57,10 +57,6 @@ export const people: Record<string, Person> = {
         name: 'Virginia Goodman',
         telephone: '(403) 256-7007',
     },
-    lacey: {
-        name: 'Lacey Holoboff',
-        telephone: '(403) 894-0698',
-    },
     matthew: {
         name: 'Matthew Rhodes',
     },
@@ -70,6 +66,9 @@ export const people: Record<string, Person> = {
     eric: {
         name: 'Eric Campbell',
         telephone: '(587) 226-6980',
+    },
+    daegan: {
+        name: 'Daegan Kovacs',
     },
 }
 
@@ -99,7 +98,7 @@ export const roles: Record<string, Person> = {
         email: 'editor2@albertapaleo.org',
     },
     membership: {
-        ...people.howard,
+        ...people.daegan,
         email: 'membership@albertapaleo.org',
     },
     programCoordinator: {
