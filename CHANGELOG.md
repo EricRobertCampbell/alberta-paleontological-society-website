@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.143.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.142.0...v1.143.0) (2026-02-08)
+
+
+### Features
+
+* **symposium:** added announcement for call for posters ([e024629](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/e0246294e727bf9169578c4a22d7c4cc6fab6d20))
+
+
+### Bug Fixes
+
+* daegan is now marked as membership coordinator ([9d08121](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/9d0812171893e2442642d58a6fc22f6552ef23cd))
+
 ## [1.142.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.141.0...v1.142.0) (2026-02-05)
 
 
