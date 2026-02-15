@@ -12,6 +12,8 @@ import { roles} from '../../utility/constants';
 
 const { fieldTripCoordinator } = roles;
 
+const CURRENT_YEAR = '2026'
+
 const allEvents = await getCollection("events");
 const renderedEvents = await Promise.all(
 	allEvents.map(async (event) => {
@@ -40,92 +42,16 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fieldTripEvents);
 	>
 		<h1>Field Trips</h1>
 	</HeadingWithBackground>
-	<p>Field trips are open to members only!</p>
 
-	<section>
-		<h2>
-			Dinovember 2025 Royal Tyrrell Museum Sleep-In!
-		</h2>
+	<p>Field trips are at the heart of the Alberta Palaeontological Society. There’s nothing quite like getting out onto the landscape to see where fossils are found and to better understand the ancient worlds they come from. We're incredibly lucky to live in a province surrounded by world-class palaeontological treasures, from sweeping badlands to marine deposits and Ice Age sites.</p>
 
-		<p>
-			The Alberta Palaeontological Society is excited to invite you to a special overnight event at the Royal Tyrrell Museum of Palaeontology in Drumheller, Alberta!
-		</p>
-
-		<p>
-			<strong>Date</strong>: Friday, November 28 - Saturday, November 29
-		</p>
-
-		<p>
-			<strong>
-				Itinerary
-			</strong>
-		</p>
-
-		<ul>
-			<li>
-				<strong>Friday Evening</strong>
-				<ul>
-					<li>6:30 PM: Arrive at the museum</li>
-					<li>Participate in fun palaeontology activities</li>
-					<li>Enjoy snacks</li>
-					<li>Lights out for the night</li>
-				</ul>
-			</li>
-			<li><strong>Saturday Morning</strong>
-				<ul>
-					<li>Breakfast</li>
-					<li>Explore the galleries!</li>
-				</ul>
-			</li>
-		</ul>
-
-		<strong>Price</strong>: $54 per person
-
-		<p>
-			Your ticket includes:
-		</p>
-
-<ul>
-	<li>Evening Snacks &amp; Breakfast</li>
-	<li>Palaeontology activities</li>
-	<li>Full-day admission to the museum</li>
-</ul>
-
-<p>
-	This is a fantastic event for kids &amp; families, but we require at least one adult per five children. Please note also that only children between <strong>5 - 13 years old</strong> and their adults are eligible to attend. Unfortunately, <strong>no unacompanied adults are allowed!</strong>
-</p>
-
-<p>
-	<strong>Space is limited</strong> — we're only accepting the first 15 registrants, so don't delay!
-</p>
-
-<p>
-	This program often fills up quickly, so the deadline for registration is <strong>Friday, October 24!</strong>
-</p>
-
-<p>
-	<strong>Registration</strong>: Please see the <a href='/events/fieldtrips'>field trips page</a> on the APS website for more information on how to register.
-</p>
-
-<p>
-	<strong>Additional Information</strong>: Visit <a href="https://www.tyrrellmuseum.com/whats_on/activities/camp-ins">Royal Tyrrell Museum Camp-Ins</a> for more details.
-</p>
-
-	<p>
-		This is a rare opportunity during the winter months when palaeontology events are usually scarce, so invite friends and family who share your interest in ancient life. Even if they're not yet APS members, this could be the perfect introduction!
-	</p>
-		<p>To register, please fill out the <a href="/fieldTrips/2025/Dinovember Field Trip Sign Up-fillable.pdf">sign up sheet</a>.</p>
-	</section>
-
-	<hr />
-
+	<p>Whether you're brand new to fossils or a seasoned collector, we invite you to join us in the field. Come explore Alberta’s deep past with us. Check out the trips below and sign up for your next adventure!</p>
 
 	<h2>Registration and Payment</h2>
 
 	<p>
-		To register for a field trip, print off and fill out the <a
-															   href="/fieldTrips/2025/APSFieldTripsForm2025.pdf">sign up sheet</a
-		>, then mail to {fieldTripCoordinator.name} at the address indicated on the sign up sheet along with the field trip fee.
+		To register for a field trip, print off and fill out the <a href="/fieldTrips/2026/registration-fillable.pdf">sign up sheet</a
+		>, then follow the instructions there.
 	</p>
 
 	<p>
@@ -134,30 +60,77 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fieldTripEvents);
 		online banking site or mobile app. Bank fees may apply. Payee is
 		<EmailLink
 			email="giftshop@albertapaleo.org"
-			subject="Field Trip Fees for 2025"
-		/>. Please state in the message field: “Field Trip Fees for 2025”. Email
+		   subject={`Field Trip Fees for ${CURRENT_YEAR}`}
+	 />. Please state in the message field: "Field Trip Fees for {CURRENT_YEAR}". Email
 		a scan or photo of the completed registration form to
-		<EmailLink email="fieldtrips@albertapaleo.org" />.
+		<EmailLink email="giftshop@albertapaleo.org" />.
 	</p>
 
+	<h2>Upcoming Field Trips</h2>
+	{upcomingEvents.length > 0 ? (
+		upcomingEvents.map((event, index, allEvents) => {
+			const { Content, slug } = event;
+			return (
+				<Event
+					frontmatter={event.remarkPluginFrontmatter as any}
+					last={index === allEvents.length - 1}
+					showPermalink={true}
+					slug={slug}
+				>
+					<Content />
+				</Event>
+			);
+		})
+	) : (
+		<p>No upcoming field trips are currently scheduled. Check back soon for new dates!</p>
+	)}
+
+	<section>
+		<h2>
+			Forms
+		</h2>
+			<ul class="field-trip-forms-list">
+				<li>
+					<a href="/fieldTrips/2026/registration-fillable.pdf">{CURRENT_YEAR} Registration Form</a>
+				</li>
+				<li>
+					<a href="/fieldTrips/2026/forms/APS_Adult_Waiver.pdf">
+						Adult Waiver
+					</a>
+				</li>
+				<li>
+					<a href="/fieldTrips/2026/forms/APS_Minor_Waiver.pdf">
+						Minor Waiver
+					</a>
+				</li>
+				<li>
+					<a href="/fieldTrips/2026/forms/APS_ER_ContactMedInfo.pdf">
+						Medical and Emergency Contact Information
+					</a>
+				</li>
+			</ul>
+	</section>
+
 	<h2>Field Trip Terms</h2>
+
+	<p>Field trips are open to members only!</p>
+
 	<p>
 		All fees are due at the time of registration. Fees for trips are generally, $10.00, although please check the individual trip.
 		Non-members and unaccompanied minors will not be allowed to attend field
 		trips. All participants are required to have their membership in good
-		standing. Any membership applications received after May 1, 2025 will
+		standing. Any membership applications received after May 1, { CURRENT_YEAR } will
 		not be reviewed and voted on by the Board of Directors until September,
-		2025. Therefore, if you are a non-member and would like to join be sure
-		your application is received prior to May 1, 2025. All participants will
+		{ CURRENT_YEAR }. Therefore, if you are a non-member and would like to join be sure
+		your application is received prior to May 1, {CURRENT_YEAR}. All participants will
 		be required to read and sign a release form (waiver). Detailed
 		information will be provided to all those registered shortly after the
 		registration deadline. After the registration deadline no refunds will
 		be given; however, you will receive the guide for the trip.
 		Registrations are accepted on a first come first served basis so sign up
-		early to avoid disappointment. For the 2025 field trips Keith will be
+		early to avoid disappointment. For the {CURRENT_YEAR} field trips {fieldTripCoordinator.name} will be
 		sending you the waiver and medical forms along with the trip
-		information. This information will be sent to you via email or Canada
-		Post. Please ensure that your addresses are correct and legible when
+		information. This information will be sent to you via email. Please ensure that your email address is correct and legible when
 		sending in registration forms. When you arrive at the meeting place
 		please have all forms completed. All participants are required to have
 		fully completed all waiver and medical forms in order to attend the
@@ -198,7 +171,7 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fieldTripEvents);
 		GUIDELINES.
 	</p>
 
-	<h2>Questions about field trips?</h2>
+	<h2>Questions?</h2>
 
 	<p>
 		Contact {fieldTripCoordinator.name}, the APS Fieldtrip Coordinator{fieldTripCoordinator.email && <> by e-mail at <EmailLink
@@ -206,53 +179,9 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fieldTripEvents);
 		/></>}{fieldTripCoordinator.telephone && <> or phone at <PhoneLink number={fieldTripCoordinator.telephone} /></>}.
 	</p>
 
-	<section>
-		<h2>
-			Forms
-		</h2>
-			<ul class="field-trip-forms-list">
-				<li>
-					<a href="/fieldTrips/2025/APSFieldTripsForm2025.pdf">2025 Registration Form</a>
-				</li>
-				<li>
-					<a href="/fieldTrips/2025/forms/APS_Adult_Waiver.pdf">
-						Adult Waiver
-					</a>
-				</li>
-				<li>
-					<a href="/fieldTrips/2025/forms/APS_Minor_Waiver.pdf">
-						Minor Waiver
-					</a>
-				</li>
-				<li>
-					<a href="/fieldTrips/2025/forms/APS_ER_ContactMedInfo.pdf">
-						Medical and Emergency Contact Information
-					</a>
-				</li>
-			</ul>
-	</section>
-
-	<h2>Upcoming Field Trips</h2>
-	{upcomingEvents.length > 0 ? (
-		upcomingEvents.map((event, index, allEvents) => {
-			const { Content, slug } = event;
-			return (
-				<Event
-					frontmatter={event.remarkPluginFrontmatter as any}
-					last={index === allEvents.length - 1}
-					showPermalink={true}
-					slug={slug}
-				>
-					<Content />
-				</Event>
-			);
-		})
-	) : (
-		<p>No upcoming field trips are currently scheduled. Check back soon for new dates!</p>
-	)}
 	
 	{pastEvents.length > 0 && (
-		<details open>
+		<details>
 			<summary><h2>Past Field Trips</h2></summary>
 			{pastEvents.map((event, index, allEvents) => {
 				const { Content, slug } = event;
@@ -282,3 +211,82 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fieldTripEvents);
 		margin: 0;
 	}
 </style>
+
+
+	<!-- <section> -->
+	<!-- 	<h2> -->
+	<!-- 		Dinovember 2025 Royal Tyrrell Museum Sleep-In! -->
+	<!-- 	</h2> -->
+
+	<!-- 	<p> -->
+	<!-- 		The Alberta Palaeontological Society is excited to invite you to a special overnight event at the Royal Tyrrell Museum of Palaeontology in Drumheller, Alberta! -->
+	<!-- 	</p> -->
+
+	<!-- 	<p> -->
+	<!-- 		<strong>Date</strong>: Friday, November 28 - Saturday, November 29 -->
+	<!-- 	</p> -->
+
+	<!-- 	<p> -->
+	<!-- 		<strong> -->
+	<!-- 			Itinerary -->
+	<!-- 		</strong> -->
+	<!-- 	</p> -->
+
+	<!-- 	<ul> -->
+	<!-- 		<li> -->
+	<!-- 			<strong>Friday Evening</strong> -->
+	<!-- 			<ul> -->
+	<!-- 				<li>6:30 PM: Arrive at the museum</li> -->
+	<!-- 				<li>Participate in fun palaeontology activities</li> -->
+	<!-- 				<li>Enjoy snacks</li> -->
+	<!-- 				<li>Lights out for the night</li> -->
+	<!-- 			</ul> -->
+	<!-- 		</li> -->
+	<!-- 		<li><strong>Saturday Morning</strong> -->
+	<!-- 			<ul> -->
+	<!-- 				<li>Breakfast</li> -->
+	<!-- 				<li>Explore the galleries!</li> -->
+	<!-- 			</ul> -->
+	<!-- 		</li> -->
+	<!-- 	</ul> -->
+
+	<!-- 	<strong>Price</strong>: $54 per person -->
+
+	<!-- 	<p> -->
+	<!-- 		Your ticket includes: -->
+	<!-- 	</p> -->
+
+<!-- <ul> -->
+	<!-- <li>Evening Snacks &amp; Breakfast</li> -->
+	<!-- <li>Palaeontology activities</li> -->
+	<!-- <li>Full-day admission to the museum</li> -->
+<!-- </ul> -->
+
+<!-- <p> -->
+	<!-- This is a fantastic event for kids &amp; families, but we require at least one adult per five children. Please note also that only children between <strong>5 - 13 years old</strong> and their adults are eligible to attend. Unfortunately, <strong>no unacompanied adults are allowed!</strong> -->
+<!-- </p> -->
+
+<!-- <p> -->
+	<!-- <strong>Space is limited</strong> — we're only accepting the first 15 registrants, so don't delay! -->
+<!-- </p> -->
+
+<!-- <p> -->
+	<!-- This program often fills up quickly, so the deadline for registration is <strong>Friday, October 24!</strong> -->
+<!-- </p> -->
+
+<!-- <p> -->
+	<!-- <strong>Registration</strong>: Please see the <a href='/events/fieldtrips'>field trips page</a> on the APS website for more information on how to register. -->
+<!-- </p> -->
+
+<!-- <p> -->
+	<!-- <strong>Additional Information</strong>: Visit <a href="https://www.tyrrellmuseum.com/whats_on/activities/camp-ins">Royal Tyrrell Museum Camp-Ins</a> for more details. -->
+<!-- </p> -->
+
+	<!-- <p> -->
+	<!-- 	This is a rare opportunity during the winter months when palaeontology events are usually scarce, so invite friends and family who share your interest in ancient life. Even if they're not yet APS members, this could be the perfect introduction! -->
+	<!-- </p> -->
+	<!-- 	<p>To register, please fill out the <a href="/fieldTrips/2025/Dinovember Field Trip Sign Up-fillable.pdf">sign up sheet</a>.</p> -->
+	<!-- </section> -->
+
+	<!-- <hr /> -->
+
