@@ -1,0 +1,343 @@
+---
+import { SOCIAL_MEDIA_LINKS } from '../../utility/constants';
+const title = 'April Meeting!';
+
+const insertZeroWidthSpace = (s: string) => {
+return s.replace(/\//g, '/\u200B');
+}
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+
+		<title>{title}</title>
+
+		<link rel="stylesheet" href="/revealjs/dist/reset.css" />
+		<link rel="stylesheet" href="/revealjs/dist/reveal.css" />
+		<link rel="stylesheet" href="/revealjs/dist/theme/black.css" />
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>{title}</h1>
+					<img style="height: 150px;" src="/logos/aps-logo-black-transparent.png" />
+				</section>
+				<section>
+					<h2>
+						Alberta Palaeontological Society
+					</h2>
+					<img style="height: 300px" src="/logos/aps-logo-black-transparent.png" />
+					<p>
+						Find us online at <a href="https://albertapaleo.org">
+							albertapaleo.org
+						</a>
+					</p>
+				</section>
+				<section>
+					<section>
+						<h2>
+							Connect With Us On Social Media!
+						</h2>
+					</section>
+					<section>
+						<h3>
+							Mastodon
+						</h3>
+						<div class="social-media-container">
+							<div class="social-media">
+								<img src="/logos/socials/mastodon-logo-purple.svg" style="height: 10rem;" />	
+								<p class="word-break">
+									{
+									insertZeroWidthSpace(
+									SOCIAL_MEDIA_LINKS.mastodon
+									)
+									}
+								</p>
+								<img src="/interstitial/mastodon_qr_code.png" />	
+							</div>
+						</div>
+					</section>
+					<section>
+						<h3>
+							Instagram
+						</h3>
+						<div class="social-media-container">
+							<div class="social-media">
+								<img src="/logos/socials/Instagram_Glyph_Gradient.png" />	
+								<p>
+									{insertZeroWidthSpace('@alberta_palaeo_society')}
+								</p>
+								<img src="/interstitial/instagram_qr_code.png" />	
+							</div>
+						</div>
+					</section>
+					<section>
+						<h3>
+							Facebook
+						</h3>
+						<div class="social-media-container">
+							<div class="social-media">
+								<img src="/logos/socials/Facebook_Logo_Primary.png" />	
+								<p class="word-break">
+									{insertZeroWidthSpace(SOCIAL_MEDIA_LINKS.facebook)}
+								</p>
+								<img src="/interstitial/facebook_qr_code.png" />	
+							</div>
+						</div>
+					</section>
+					<section>
+						<h3>
+						</h3>
+						YouTube
+						<div class="social-media-container">
+							<div class="social-media">
+								<img src="/logos/socials/youtube_social_icon_red.png" />	
+								<p class="word-break">
+									{insertZeroWidthSpace( SOCIAL_MEDIA_LINKS.youtube )}
+								</p>
+								<img src="/interstitial/youtube_qr_code.png" />	
+							</div>
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>
+							Sponsors
+						</h2>
+						<p>
+							Thank you to all of the sponsors who helped make today possible!
+						</p>
+					</section>
+					<section>
+						<h3>
+							Monthly Talks Sponsored By
+						</h3>
+						<ul>
+							<li>
+								Alberta Palaeontological Society
+							</li>
+							<li>
+								Mount Royal University
+							</li>
+							<li>
+								Canadian Energy Geoscience Association
+							</li>
+						</ul>
+						<div class="white-container sponsor-logo-container">
+							<img src="/logos/aps-logo.gif" style="max-height: 200px;" alt="Alberta Palaeontological Society Logo" />
+							<img src="/logos/MRU_logo1.png" alt="Mount Royal University Logo" />
+							<img src="/logos/CEGA_logo.png" />
+						</div>
+					</section>
+					<section>
+						<h3>
+							Mount Royal University
+						</h3>
+						<div style="background-color: white; padding: 0.5rem;">
+							<img src="/logos/MRU_logo1.png" alt="Mount Royal University Logo" />
+						</div>
+					</section>
+					<section>
+						<h3>
+							Canadian Energy Geoscience Association
+						</h3>
+						<div style="background-color: white; padding: 0.5rem;">
+							<img src="/logos/CEGA_logo.png" />
+						</div>
+					</section>
+					<section>
+						<h3>
+							CEGA TECHNICAL DIVISION SPONSOR
+						</h3>
+						<img src="/interstitial/geologicsystems_logo.png" alt="GeoLogic Systems Logo" />
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>
+							Upcoming Events
+						</h2>
+					</section>
+					<section>
+						<h3>
+							Monthly Meeting: May 2025
+						</h3>
+						<p>
+							Friday, May 9, 2025 7:30 PM - 9 PM 
+						</p>
+						<p>
+							Mount Royal University Rm. B108
+						</p>
+						<p>
+							Ashley Hall, Outreach Program Manager, Museum of the Rockies
+						</p>
+						<p>
+							"A Brief History of the Evolution of Birds"
+						</p>
+						<p>
+							This meeting will also include our annual AGM. Come prepared to vote for the new APS executive!
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>
+							APS Items For Sale
+						</h2>
+					</section>
+					<section>
+						<h3>
+							Memberships
+						</h3>
+						<ul>
+							<li>
+								Contribute back to the society!
+							</li>
+							<li>
+								Receive the APS newsletter!
+							</li>
+							<li>
+								Attend APS field trips and other special events!
+							</li>
+							<li>
+								Discounts on APS merchandise!
+							</li>
+						</ul>
+
+						<hr />
+
+						<ul>
+							<li>
+								Single Membership: $20
+							</li>
+							<li>
+								Family Membership: $25
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h3>
+							Guide to Common Vertebrate Fossils from the Cretaceous of Alberta
+						</h3>
+						<div class="merchandise-container">
+							<img src="/interstitial/guidetofossilssmall.jpg" />
+							<ul>
+								<li>
+									Member: $30
+								</li>
+								<li>
+									Non-Member: $35
+								</li>
+							</ul>
+						</div>
+					</section>
+					<section>
+						<h3>
+							Paleo 2023 Abstracts Volume
+						</h3>
+						<p>
+							Clearance priced: $2
+						</p>
+					</section>
+					<section>
+						<h3>
+							APS T-Shirts
+						</h3>
+						<div class="merchandise-container">
+							<img src="/interstitial/APSShirt2-shirt-cropped.jpg" style="max-height: 25rem;" />
+							<ul>
+								<li>
+									Member: $15
+								</li>
+								<li>
+									Non-Member: $20
+								</li>
+							</ul>
+						</div>
+					</section>
+					<section>
+						<h3>
+							Classic (2015) APS T-Shirts
+						</h3>
+						<p>
+							Only the XL size is available!
+						</p>
+						<div class="merchandise-container">
+							<img src="/interstitial/aps-classic-tshirt-image.jpg" style="max-height: 25rem;" />
+							<ul>
+								<li>
+									Member: $10
+								</li>
+								<li>
+									Non-Member: $15
+								</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+			</div>
+		</div>
+
+<script src="/revealjs/dist/reveal.js" type="text/javascript"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				autoSlide: 5_000,
+				loop: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				// plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+			});
+		</script>
+	</body>
+</html>
+
+<style>
+	.social-media-container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem;
+	}
+	.social-media {
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		gap: 1rem;
+		place-items: center;
+	}
+	.social-media img {
+		height: 10rem;
+	}
+	.merchandise-container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+	}
+	.white-container {
+		background-color: white;
+	}
+	.sponsor-logo-container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+		place-items: center;
+	}
+	.word-break {
+  word-break: break-word; /* Ensures text wraps */
+  overflow-wrap: break-word; /* Alternative for better compatibility */
+  white-space: normal; /* Ensures it can wrap */
+}
+</style>
+

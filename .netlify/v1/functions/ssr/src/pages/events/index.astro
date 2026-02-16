@@ -1,0 +1,155 @@
+---
+import { getCollection } from "astro:content";
+import { filterAPSEvents } from '../../utility/filters'
+import { sortEventsByDate } from '../../utility/eventSorting'
+
+import Layout from "../../layouts/Layout.astro";
+import Event from "../../components/Event.astro";
+import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
+
+const allEvents = await getCollection("events");
+const renderedEvents = await Promise.all(
+	allEvents.map(async (event) => {
+		const rendered = await event.render();
+		return { ...rendered, slug: event.slug };
+	})
+);
+
+// Filter for APS events only
+const apsEvents = renderedEvents.filter((e) => filterAPSEvents({host: e.remarkPluginFrontmatter.host}));
+
+// Sort events into past and upcoming using utility function
+const { upcomingEvents, pastEvents } = sortEventsByDate(apsEvents);
+
+// Get current date for today's events section
+const today = new Date();
+const offset = today.getTimezoneOffset();
+const todayWithOffset = new Date(today.getTime() - offset * 60 * 1000);
+const todayString = todayWithOffset.toISOString().split('T')[0];
+
+// Find today's events from upcoming events
+const todaysEvents = upcomingEvents.filter((event) => {
+	const startDate = event.remarkPluginFrontmatter.startDate || 
+		(event.remarkPluginFrontmatter.start ? event.remarkPluginFrontmatter.start.split('T')[0] : '');
+	const endDate = event.remarkPluginFrontmatter.endDate || 
+		(event.remarkPluginFrontmatter.end ? event.remarkPluginFrontmatter.end.split('T')[0] : startDate);
+	return todayString >= startDate && todayString <= endDate;
+});
+---
+
+<Layout subtitle="Events">
+	<HeadingWithBackground
+		background="/assets/devilsCoulee.jpg"
+		backgroundPositionY="33%"
+	>
+		<h1>Events</h1>
+	</HeadingWithBackground>
+	<p>
+		We hold a variety of events, from our monthly meetings, to lectures, to
+		field trips all over Alberta!
+	</p>
+
+	<p>
+		Our monthly meetings are free and open to the public. They generally
+		take place on the third Friday of each month. For more information, see
+		the events below or visit the <a href="monthlymeetings"
+			>monthly meetings page.</a
+		>
+	</p>
+
+	{todaysEvents.length > 0 && (
+		<section class="todays-events">
+			<h2>Today's Events</h2>
+			{todaysEvents.map((event, index, allEvents) => {
+				const { Content, slug } = event;
+				return (
+					<Event
+						frontmatter={event.remarkPluginFrontmatter as any}
+						last={index === allEvents.length - 1}
+						showPermalink={true}
+						slug={slug}
+					>
+						<Content />
+					</Event>
+				);
+			})}
+		</section>
+	)}
+
+	<h2>Upcoming Events</h2>
+	{upcomingEvents.length > 0 ? (
+		upcomingEvents.map((event, index, allEvents) => {
+			const { Content, slug } = event;
+			return (
+				<Event
+					frontmatter={event.remarkPluginFrontmatter as any}
+					last={index === allEvents.length - 1}
+					showPermalink={true}
+					slug={slug}
+				>
+					<Content />
+				</Event>
+			);
+		})
+	) : (
+		<p>No upcoming events are currently scheduled. Check back soon!</p>
+	)}
+
+	{pastEvents.length > 0 && (
+		<details open>
+			<summary><h2>Past Events</h2></summary>
+			{pastEvents.map((event, index, allEvents) => {
+				const { Content, slug } = event;
+				return (
+					<Event
+						frontmatter={event.remarkPluginFrontmatter as any}
+						last={index === allEvents.length - 1}
+						showPermalink={true}
+						slug={slug}
+					>
+						<Content />
+					</Event>
+				);
+			})}
+		</details>
+	)}
+</Layout>
+<style>
+	summary h2 {
+		display: inline;
+	}
+
+	.todays-events {
+		border-radius: var(--border-radius-medium);
+		border: solid 2px var(--background-colour-darker);
+		padding: calc(2 * var(--theme-spacing-base));
+		margin-top: calc(2 * var(--theme-spacing-base));
+		box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+	}
+
+	/* Desktop settings */
+	/* @media screen and (min-width: 768px) { */
+	/* 	.background-container { */
+	/* 		height: 100px; /1* Adjust the height as needed *1/ */
+	/* 		position: relative; */
+	/* 		display: flex; */
+	/* 		flex-direction: column; */
+	/* 		justify-content: center; */
+	/* 	} */
+	/* 	.background-container::before { */
+	/* 		content: ""; */
+	/* 		background-image: url("/assets/devilsCoulee.jpg"); */
+	/* 		background-size: cover; */
+	/* 		background-position: 50% 33%; */
+	/* 		position: absolute; */
+	/* 		top: 0; */
+	/* 		left: 0; */
+	/* 		width: 100%; */
+	/* 		height: 100%; */
+	/* 		opacity: 0.3; */
+	/* 	} */
+	/* 	.background-container h1 { */
+	/* 		margin-left: calc(3 * var(--theme-spacing-base)); */
+	/* 	} */
+	/* } */
+</style>

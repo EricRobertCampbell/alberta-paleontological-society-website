@@ -22,9 +22,9 @@ const eventSchema = z.object({
     location: z.string().optional(),
     start: isoDateString.optional(),
     end: isoDateString.optional(),
-    // @deprecated
+    // @deprecated - use only when an event has a date but no time
     startDate: z.string().optional(),
-    // @deprecated
+    // @deprecated - use only when an event has a date but no time
     endDate: z.string().optional(),
     image: z
         .object({
