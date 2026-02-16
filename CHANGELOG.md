@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.146.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.145.1...v1.146.0) (2026-02-16)
+
+
+### Features
+
+* added new bugs in deep time event ([a7d0053](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/a7d0053ea2ffc392c36ee2effea2893d91a0a018))
+
 ### [1.145.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.145.0...v1.145.1) (2026-02-16)
 
 ## [1.145.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.144.0...v1.145.0) (2026-02-16)
