@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.147.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.147.0...v1.147.1) (2026-02-21)
+
+
+### Bug Fixes
+
+* ram field trip date incorrect ([ad50d3e](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/ad50d3e220263fa9cb52f58c4bd5aae14b560b03))
+
 ## [1.147.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.146.0...v1.147.0) (2026-02-21)
 
 
