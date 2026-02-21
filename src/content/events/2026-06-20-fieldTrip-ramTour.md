@@ -1,7 +1,7 @@
 ---
 title: Royal Alberta Museum Tour
-start: '2026-06-06T12:45:00-06:00'
-end: '2026-06-06T16:00:00-06:00'
+start: '2026-06-20T12:45:00-06:00'
+end: '2026-06-20T16:00:00-06:00'
 type: 'Field Trip'
 location: 'Royal Alberta Museum, Edmonton'
 image:
@@ -18,10 +18,10 @@ While not part of this trip proper, there's an option to go to the [Jurassic For
 **Royal Alberta Museum Admission (Saturday June 6, 2026):**  
 9810 103A Avenue NW Edmonton T5J 0G2
 
-- Adults (18-64) $21
-- Youth (7-17) $10
-- Senior (65+) $14
-- Children (6 and under) free
+-   Adults (18-64) $21
+-   Youth (7-17) $10
+-   Senior (65+) $14
+-   Children (6 and under) free
 
 **Maximum 30 attendees.**
 
