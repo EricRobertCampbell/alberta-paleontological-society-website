@@ -7,6 +7,8 @@ type: 'Monthly Meeting'
 
 **Paleo-Entomological Themed Meeting**
 
+[YouTube recording](https://www.youtube.com/watch?v=buYbvmKUaq8)
+
 ## Katie Kreutzer
 _University of Regina / Royal Saskatchewan Museum_
 
