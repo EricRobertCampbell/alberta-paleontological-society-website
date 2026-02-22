@@ -238,6 +238,72 @@
         calc(var(--error-colour-lightness) - 30%)
     );
 
+    /* Base info colour settings (brown) */
+    --info-colour-hue: 40;
+    --info-colour-saturation: 75%;
+    --info-colour-lightness: 30%;
+
+    --info-colour-lighter: hsl(
+        var(--info-colour-hue),
+        var(--info-colour-saturation),
+        calc(var(--info-colour-lightness) + 30%)
+    );
+    --info-colour-light: hsl(
+        var(--info-colour-hue),
+        var(--info-colour-saturation),
+        calc(var(--info-colour-lightness) + 15%)
+    );
+    --info-colour-medium: hsl(
+        var(--info-colour-hue),
+        var(--info-colour-saturation),
+        var(--info-colour-lightness)
+    );
+    --info-colour-dark: hsl(
+        var(--info-colour-hue),
+        var(--info-colour-saturation),
+        calc(var(--info-colour-lightness) - 15%)
+    );
+    --info-colour-darker: hsl(
+        var(--info-colour-hue),
+        var(--info-colour-saturation),
+        calc(var(--info-colour-lightness) - 30%)
+    );
+    --info-colour-text: hsl(var(--info-colour-hue), 70%, 10%);
+
+    /* Base warning colour settings (yellow) */
+    --warning-colour-hue: 45;
+    --warning-colour-saturation: 100%;
+    --warning-colour-lightness: 45%;
+
+    --warning-colour-lighter: hsl(
+        var(--warning-colour-hue),
+        var(--warning-colour-saturation),
+        calc(var(--warning-colour-lightness) + 35%)
+    );
+    --warning-colour-light: hsl(
+        var(--warning-colour-hue),
+        var(--warning-colour-saturation),
+        calc(var(--warning-colour-lightness) + 15%)
+    );
+    --warning-colour-medium: hsl(
+        var(--warning-colour-hue),
+        var(--warning-colour-saturation),
+        var(--warning-colour-lightness)
+    );
+    --warning-colour-dark: hsl(
+        var(--warning-colour-hue),
+        var(--warning-colour-saturation),
+        calc(var(--warning-colour-lightness) - 15%)
+    );
+    --warning-colour-darker: hsl(
+        var(--warning-colour-hue),
+        var(--warning-colour-saturation),
+        calc(var(--warning-colour-lightness) - 30%)
+    );
+    --warning-colour-text: hsl(var(--warning-colour-hue), 60%, 20%);
+
+    /* Success uses --accent-colour-* (green) */
+
     --transition-speed-slow: 0.6s;
     --transition-speed-medium: 0.45s;
     --transition-speed-fast: 0.3s;

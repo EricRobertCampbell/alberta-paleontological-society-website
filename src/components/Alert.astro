@@ -1,22 +1,47 @@
 ---
+type AlertType = 'error' | 'warning' | 'success' | 'info';
+
 interface Props {
+	type?: AlertType;
 	children: any;
 }
 
-const { children } = Astro.props;
+const { type = 'info', children } = Astro.props;
 ---
 
-<div class="alert">
+<div class={`alert alert--${type}`}>
 	<slot />
 </div>
 
 <style>
 	.alert {
-		background-color: var(--background-colour-dark);
-		border-left: 3px solid var(--accent-colour-medium);
+		border-left: 3px solid;
 		border-radius: var(--border-radius-medium);
 		padding: 1rem;
 		margin-top: 1.5rem;
+	}
+
+	.alert--info {
+		background-color: var(--background-colour-dark);
+		border-left-color: var(--info-colour-medium);
+		color: var(--info-colour-text);
+	}
+
+	.alert--error {
+		background-color: var(--error-colour-lighter);
+		border-left-color: var(--error-colour-medium);
+		color: var(--error-colour-darker);
+	}
+
+	.alert--warning {
+		background-color: var(--warning-colour-lighter);
+		border-left-color: var(--warning-colour-medium);
+		color: var(--warning-colour-text);
+	}
+
+	.alert--success {
+		background-color: var(--accent-colour-light);
+		border-left-color: var(--accent-colour-medium);
 		color: var(--accent-colour-text);
 	}
 </style>
