@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.150.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.149.0...v1.150.0) (2026-02-23)
+
+
+### Features
+
+* added sold out warning to symposium workshops ([f05177c](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/f05177ce12bb90b570585343942a3ff8ec6406d7))
+
 ## [1.149.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.148.0...v1.149.0) (2026-02-23)
 
 
