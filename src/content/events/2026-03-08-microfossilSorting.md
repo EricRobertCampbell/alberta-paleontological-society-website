@@ -1,7 +1,7 @@
 ---
 title: Search for Microfossils!
-start: '2026-03-08T13:00:00-07:00'
-end: '2026-03-08T15:30:00-07:00'
+start: '2026-03-08T13:00:00-06:00'
+end: '2026-03-08T15:30:00-06:00'
 type: 'Fossil Sorting'
 image:
     src: '/events/2025/fishSkull.jpeg'
@@ -14,4 +14,3 @@ Use microscopes to search for tiny fossils to aid the research of Dr. Jessica Th
 Registration is not required, but if you let Mona Trick (cell: <a href="tel:(587) 578-4579">(587) 578-4579</a> or giftshop@albertapaleo.org) know that you are planning to attend, then she can inform you if we need to cancel this session. No experience is required. Due to the delicate nature of this work, only those 12 years and older are allowed to search for the microfossils. Bring tweezers or a small paint brush to pick the tiny fossils from the soil and a pen to label your finds. All of the fossils found will be kept by the University of Calgary for their research.
 
 We are very grateful to Mount Royal University for allowing us to use their microscopes and lab.
-
