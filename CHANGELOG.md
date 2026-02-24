@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.151.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.151.0...v1.151.1) (2026-02-24)
+
+
+### Bug Fixes
+
+* 2026-03-08 fixed fossil sorting time ([7ca6eb0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/7ca6eb0ff8de8f33ab6fa48164ec17daefd629fa))
+
 ## [1.151.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.150.0...v1.151.0) (2026-02-23)
 
 
