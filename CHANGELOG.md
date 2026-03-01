@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.154.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.153.0...v1.154.0) (2026-03-01)
+
+
+### Features
+
+* ram events march 2026 ([196d81e](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/196d81e82bd6df663757bb008d02024a0aa62626))
+
 ## [1.153.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.152.0...v1.153.0) (2026-03-01)
 
 
