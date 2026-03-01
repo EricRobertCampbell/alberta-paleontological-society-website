@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.153.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.152.0...v1.153.0) (2026-03-01)
+
+
+### Features
+
+* devil's coulee 2026 events ([4d3120b](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/4d3120b6ff8313b324c75e1d1f9870fe98c0d3c6))
+
 ## [1.152.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.151.1...v1.152.0) (2026-03-01)
 
 
