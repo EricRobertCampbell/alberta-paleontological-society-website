@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.156.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.155.0...v1.156.0) (2026-03-03)
+
+
+### Features
+
+* added presentation and poster abstracts for paleo 2026 ([c29523b](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/c29523b752d3907ed80b65af6ad5827dcc51d2c9))
+
+
+### Bug Fixes
+
+* updated julien divay associations ([0e9b321](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/0e9b321cadafa7f0e096f791dbe806a92f9af717))
+
 ## [1.155.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.154.0...v1.155.0) (2026-03-03)
 
 
