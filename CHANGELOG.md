@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.158.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.157.0...v1.158.0) (2026-03-04)
+
+
+### Features
+
+* 2027 meeting dates ([279e348](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/279e3487eb7bfcaa0dc469f5664ddf8ede73852b))
+* agm 2026 announcement ([d702fcb](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/d702fcb718dc2a2d67a1583a2b1b253d336e9b0b))
+* updated april meeting with title ([50b1aa8](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/50b1aa80b2215242391ff684a300a8fabd687d86))
+
 ## [1.157.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.156.0...v1.157.0) (2026-03-04)
 
 
