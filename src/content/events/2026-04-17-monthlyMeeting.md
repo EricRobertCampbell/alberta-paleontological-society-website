@@ -7,4 +7,4 @@ type: 'Monthly Meeting'
 
 _Dr. Darla K. Zelenitsky, University of Calgary_
 
-Title TBA
+**Bird-like Traits of Theropod Dinosaurs**
