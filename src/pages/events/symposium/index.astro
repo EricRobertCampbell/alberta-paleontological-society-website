@@ -6,10 +6,97 @@ import HeadingWithBackground from '../../../components/HeadingWithBackground.ast
 import EmailLink from '../../../components/EmailLink.astro'
 import Alert from '../../../components/Alert.astro'
 
+const SYMPOSIUM_POSTERS: Array<{ title: string; authors: string }> = [
+	{
+		authors: 'Kendra Harrington, Mahdiyeh Gholizadeh, Ryusuke Kimitsuki, Ciara Stewart, and John-Paul Zonneveld',
+		title: 'Latest Middle Triassic tetrapod footprints from the Brown Hill section, Williston Lake, British Columbia, Canada.'
+	},
+	{
+		authors: 'William B. Fenyo, Joshua A. Doyon, and Alison M. Murray',
+		title: 'Isolation of bones from a micro-CT scan of a fossilized regurgitated pellet.'
+	},
+	{
+		authors: 'María Mercedes Gómez, Erin Dillon, Irene García, Brigida De Gracia, and Aaron O\'Dea',
+		title: 'Palaeoecological reconstruction of shark communities across the Isthmus of Panama using fossil dermal denticles.'
+	},
+	{
+		authors: 'Jay Gegner, S. V. Robson, and Jessica Theodor',
+		title: "We're all ears: a comparison of five merycoidodontid petrosals."
+	},
+	{
+		authors: 'Emily L. Bamforth and Jackson Sweder',
+		title: "'Big Sam': A new large skull of Pachyrhinosaurus lakustai from the Campanian (73 Ma) Wapiti Formation of Alberta, Canada, with implications for intraspecies variation"
+	},
+	{
+		authors: 'Joshua A. Doyon',
+		title: 'The mid-Cretaceous marine life of the Northwest Territories, Canada: implications for marine conservation.'
+	},
+	{
+		authors: 'Atharva Roy',
+		title: 'Insights into the Feeding Ecology of Dinosaurs of the Upper Dinosaur Park Formation using Tooth Morphometrics and Principal Component Analysis'
+	},
+	{
+		authors: 'Jordan Sourial, Philip J. Currie, and Eva B. Koppelhus',
+		title: 'Analysis of the skeletal sorting and distribution of bone elements in the Danek Bone Bed (Horseshoe Canyon Fm.)'
+	},
+	{
+		authors: 'Ollie Barnett, Jared T. Voris, Darla K. Zelenitsky, and François Therrien',
+		title: 'Comparative analysis of sinuses and paranasal airways within the clade Ankylosauria from Alberta, Canada'
+	},
+	{
+		authors: 'François Therrien, Jared Voris, Kohei Tanaka, and Darla K. Zelenitsky',
+		title: 'Running abilities of dinosaurs in the tyrannosaur-dominated ecosystems of the uppermost Cretaceous Dinosaur Park, Hell Creek, and Nemegt formations.'
+	},
+	{
+		authors: 'Jack R. Milligan, Taia Wyenberg-Henzler, Jordan Stock, Henry S. Sharpe, Emily L. Bamforth, Nicolás Campione, and Corwin Sullivan',
+		title: 'Taphonomy and palaeoecology of the Deadfall Hills Bonebed of the Wapiti Formation of northern Alberta'
+	},
+	{
+		authors: 'Sebastian Feng and Philip J. Currie',
+		title: 'Environmental Influences on Preservational Biases in the Horseshoe Canyon and Upper Wapiti formations'
+	},
+	{
+		authors: 'Taia Wyenberg-Henzler, Caleb M. Brown, Darren H. Tanke, Phil R. Bell, Nicolás Campione, and Corwin Sullivan',
+		title: 'Distribution and behavioural implications of tooth marks on hadrosaurid cranial elements from the Upper Cretaceous of North America'
+	},
+	{
+		authors: 'Corbin Gomez',
+		title: 'Analysis and description of a partially prepared sub-adult Mosasaurus missouriensis (Squamata, Mosasauridae) from the Bearpaw Formation during the Upper Cretaceous in Western Canada.'
+	},
+	{
+		authors: 'Mollie Black, Jack Milligan, and Jordan Mallon',
+		title: 'A possible pachycephalosaur supraorbital from the Frenchman Formation, southwest Saskatchewan.'
+	},
+	{
+		authors: 'Brennan P. Martens and Royce I. Riturban',
+		title: 'A divers\' guide to Paleozoic filter-feeding radiodonts: Reconstructing the body of hurdiids based on recent studies in phylogenetic relations within Hurdiidae'
+	},
+	{
+		authors: 'Nooshafarin Haghighat',
+		title: 'Late Permian Benthic Foraminiferal Diversity from the Central Persian Gulf (Zagros Basin), Southern Iran.'
+	},
+	{
+		authors: 'Kaiki Kobayashi and Corwin Sullivan',
+		title: 'The epaxial ossified tendon lattice and musculature of Centrosaurus apertus (Ornithischia: Ceratopsidae).'
+	},
+	{
+		authors: 'Tako Koning',
+		title: "Algal Stromatolites—As Old as 3.5 Billion-Years-Old in the Precambrian to Present Day in Shark's Bay, Australia"
+	},
+	{
+		authors: 'Trevor H. Rempert, Brennan P. Martens, and Alexander P. M. Vinkeles Melchers',
+		title: 'A Clidastes mosasaur (Reptilia, Squamata) from the Late Cretaceous of southwestern Arkansas'
+	}
+]
+
 const internalNavLinks: Array<{title: string, id: string}> = [
 	{
 		title: 'Speaker Schedule',
 		id: 'speaker-schedule'
+	},
+	{
+		title: 'Posters',
+		id: 'posters'
 	},
 	{
 		title: 'Call for Presentations & Posters',
@@ -234,6 +321,18 @@ const schedule: Array<ScheduleItem> = [
 			Email your logo submission to <a href="mailto:president1@albertapaleo.org">president1@albertapaleo.org</a>
 		</p>
 	</section> -->
+
+	<section id="posters">
+		<h3>Posters</h3>
+		<div class="posters-container">
+			{SYMPOSIUM_POSTERS.map((poster) => (
+				<div class="poster-item">
+					<div class="poster-title">{poster.title}</div>
+					<div class="poster-authors">{poster.authors}</div>
+				</div>
+			))}
+		</div>
+	</section>
 
 	<section id="call-for-presentations">
 		<h3>
@@ -545,6 +644,31 @@ const schedule: Array<ScheduleItem> = [
 		margin-top: 0.5rem;
 		padding-top: 0.5rem;
 		border-top: 1px solid var(--background-colour-darker);
+	}
+
+	.posters-container {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.poster-item {
+		margin-bottom: 1.5rem;
+	}
+
+	.poster-item:last-child {
+		margin-bottom: 0;
+	}
+
+	.poster-title {
+		font-weight: bold;
+		font-size: 1.15rem;
+		text-align: left;
+	}
+
+	.poster-authors {
+		font-size: 0.95rem;
+		text-align: right;
+		margin-top: 0.25rem;
 	}
 
 	@media (max-width: 768px) {
