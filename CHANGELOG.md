@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.159.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.158.0...v1.159.0) (2026-03-05)
+
+
+### Features
+
+* added posters to the symposium page ([3a69993](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/3a6999398fd4a807bd1972886925a037873d298c))
+* added uofaps research event ([4de5ce5](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/4de5ce52680747ff56a1fc00a7d8c58d035a3f1a))
+* rtmp bones and brews event ([f84d14c](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/f84d14c602a3564f559b711202e0fe4131b5ed9c))
+
 ## [1.158.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.157.0...v1.158.0) (2026-03-04)
 
 
