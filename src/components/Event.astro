@@ -2,6 +2,7 @@
 import { generateEventDateTimeString, extractReferenceId } from "../utility";
 import type { EventFrontmatter } from "../content/config";
 import { splitIsoString } from '../utility/dates'
+import { getHostLogoLocation } from '../utility/filters'
 import { getEntry } from 'astro:content'
 import Talk from './Talk.astro'
 interface Props {
@@ -39,6 +40,8 @@ const resolvedTalks = talks ? (await Promise.all(
 		}
 	})
 )).filter(t => !!t): [];
+
+const hostLogoLocation = getHostLogoLocation({ host });
 ---
 
 <section
@@ -49,14 +52,23 @@ const resolvedTalks = talks ? (await Promise.all(
 	data-type="event"
 >
 	<div class="event-header">
-		<div>
-			<p class="event-type">
-				{type}{host ? ` - hosted by ${host}` : ""}
-			</p>
-			<h3 class="event-title">{title}</h3>
-			<p class="event-time">
-				{eventDateTimeString}
-			</p>
+		<div class="event-header-main">
+			{hostLogoLocation && (
+				<img
+					class="event-host-logo"
+					src={hostLogoLocation}
+					alt=""
+				/>
+			)}
+			<div>
+				<p class="event-type">
+					{type}{host ? ` - hosted by ${host}` : ""}
+				</p>
+				<h3 class="event-title">{title}</h3>
+				<p class="event-time">
+					{eventDateTimeString}
+				</p>
+			</div>
 		</div>
 		{showPermalink && slug && (
 			<a href={`/events/stable/${slug}`} class="permalink-button">
@@ -112,6 +124,20 @@ const resolvedTalks = talks ? (await Promise.all(
 		justify-content: space-between;
 		align-items: flex-start;
 		gap: calc(2 * var(--theme-spacing-base));
+	}
+
+	.event-header-main {
+		display: flex;
+		align-items: center;
+		gap: var(--theme-spacing-base);
+	}
+
+	.event-host-logo {
+		width: 5rem;
+		height: 5rem;
+		object-fit: contain;
+		flex-shrink: 0;
+		align-self: center;
 	}
 
 	.permalink-button {

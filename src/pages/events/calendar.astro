@@ -103,13 +103,14 @@ const calendarEvents = filteredEvents.map((event) => {
   } else {
     endDate = startDate; // Default to start date if no end date is provided
   }
-  const {title, type } = event.data;
+  const { title, type, host } = event.data;
   return {
-  id: event.id,
-  startDate,
-  endDate,
-  title,
-  type
+    id: event.id,
+    startDate,
+    endDate,
+    title,
+    type,
+    host,
   }
 });
 //console.log('data', renderedEvents[0]);

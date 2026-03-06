@@ -1,5 +1,7 @@
 ---
 import { getEventTypeClass } from './utility'
+import { getHostLogoLocation } from '../../utility/filters'
+
 interface Props {
 	day: number;
 	events: Array<{
@@ -8,26 +10,44 @@ interface Props {
 		title: string;
 		id: string;
 		type: string;
+		host?: string;
 	}>;
 }
-const {day, events} = Astro.props;
+const { day, events } = Astro.props;
 ---
 
 <div class="event-calendar-day-cell">
 	<span class="day-number">
 		{day}
 	</span>
-{
-	events.map((event) => {
-		const {id, title} = event;
-		const classes = ['event-title', getEventTypeClass(event.type)];
-		const classAttr = classes.join(' ');
-		if (id) {
-		return <a href={`#${id}`} class:list={['no-underline-effect', classAttr]}>{title}</a>
-		} 
-		return (<div class={classAttr}>{event.title}</div>)
-	})
-}
+	{
+		events.map((event) => {
+			const { id, title, host } = event;
+			const classes = ['event-title', getEventTypeClass(event.type)];
+			const classAttr = classes.join(' ');
+			const logoLocation = getHostLogoLocation({ host });
+			const content = (
+				<>
+					{logoLocation && (
+						<img
+							class="event-calendar-logo"
+							src={logoLocation}
+							alt=""
+						/>
+					)}
+					<span class="event-calendar-title-text">{title}</span>
+				</>
+			);
+			if (id) {
+				return (
+					<a href={`#${id}`} class:list={['no-underline-effect', classAttr]}>
+						{content}
+					</a>
+				);
+			}
+			return <div class={classAttr}>{content}</div>;
+		})
+	}
 </div>
 
 <style>
@@ -43,11 +63,22 @@ const {day, events} = Astro.props;
 		margin-bottom: 0.5rem;
 	}
 	.event-title {
+		display: block;
 		padding: calc(0.5 * var(--theme-spacing-base));
 		border-radius: calc(2 * var(--theme-spacing-base));
 		color: inherit;
 		text-decoration: none;
 		transition: background-color var(--transition-speed-medium) ease;
 		margin-bottom: calc(0.5 * var(--theme-spacing-base));
+		overflow: auto;
 	}
+
+	.event-calendar-logo {
+		float: left;
+		width: 1rem;
+		height: 1rem;
+		object-fit: contain;
+		margin: 0.25rem 0.25rem 0.25rem 0;
+	}
+
 </style>
