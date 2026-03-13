@@ -24,6 +24,7 @@ const HOST_LOGO_MAP: Record<string, string> = {
     'Philip J. Currie Dinosaur Museum': '/logos/pjcdm-logo.svg',
     'Royal Alberta Museum': '/logos/ram_logo.png',
     "Devil's Coulee Dinosaur Heritage Museum": '/logos/devils_coulee_logo.png',
+    'Tumbler Ridge Museum': '/logos/tumbler-ridge-museum.png',
 }
 
 /**
