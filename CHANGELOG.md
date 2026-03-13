@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.164.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.163.0...v1.164.0) (2026-03-13)
+
+
+### Features
+
+* added tumbler ridge museum events & logo ([53c06ac](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/53c06ac8666968a11271ad38f813c87ca27b095e))
+* fossil friday for 2026-03-13 ([bacbb48](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/bacbb4837773188ca48b1f80388056960bf4b06b))
+* pjcdm april paint night ([cb9949c](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/cb9949cabc129578d6b7633f6145ac8a6882bbe2))
+
 ## [1.163.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.162.0...v1.163.0) (2026-03-11)
 
 
