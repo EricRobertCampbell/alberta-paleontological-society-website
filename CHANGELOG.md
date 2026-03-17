@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.167.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.166.1...v1.167.0) (2026-03-17)
+
+
+### Features
+
+* added rtmp first steps webcast event ([f8c0abf](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/f8c0abfc6a82722e4a82a24325c64ce399168b5e))
+
 ### [1.166.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.166.0...v1.166.1) (2026-03-17)
 
 
