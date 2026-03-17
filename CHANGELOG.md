@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.165.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.164.1...v1.165.0) (2026-03-17)
+
+
+### Features
+
+* added tumbler ridge spring break events ([a7520a7](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/a7520a738d345d923fe8b9fa2f060d7da2978ad6))
+
 ### [1.164.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.164.0...v1.164.1) (2026-03-13)
 
 ## [1.164.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.163.0...v1.164.0) (2026-03-13)
