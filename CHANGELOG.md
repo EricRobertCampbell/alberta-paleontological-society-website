@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.166.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.166.0...v1.166.1) (2026-03-17)
+
+
+### Bug Fixes
+
+* update tumbler ridge trip description ([6e841d4](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/6e841d474cdd4068622f3576bb431999c25885fb))
+
 ## [1.166.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.165.0...v1.166.0) (2026-03-17)
 
 
