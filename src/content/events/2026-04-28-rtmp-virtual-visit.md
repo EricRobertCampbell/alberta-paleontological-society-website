@@ -4,6 +4,7 @@ start: '2026-04-28T18:30:00-06:00'
 end: '2026-04-28T19:15:00-06:00'
 type: 'External'
 host: 'Royal Tyrrell Museum of Palaeontology'
+location: 'Online'
 detailsLink: 'https://tyrrellmuseum.com/learn/distance_learning/public_webcasts'
 ---
 

@@ -4,6 +4,7 @@ start: '2026-03-26T16:00:00-06:00'
 end: '2026-03-26T16:30:00-06:00'
 type: 'External'
 host: 'Royal Alberta Museum'
+location: 'Edmonton, Alberta'
 image:
     src: '/events/2025/external/ram-dinoDentist.jpg'
     alt: "A huge model of a dino skull. A giant red fake toothbrush can be seen behind the dino's open mouth."
