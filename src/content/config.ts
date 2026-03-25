@@ -154,6 +154,17 @@ const fossilSortingSpecimensCollection = defineCollection({
 export type FossilSortingImage = z.infer<typeof fossilSortingImageSchema>
 export type FossilSortingSpecimen = z.infer<typeof fossilSortingSpecimenSchema>
 
+const fossilSortingJarTypeSchema = z.enum(['sorted', 'unsorted'])
+const fossilSortingJarSchema = z.object({
+    id: z.string().optional(),
+    type: fossilSortingJarTypeSchema.default('sorted'),
+    initialWeightGrams: z.number().optional(),
+    finalWeightGrams: z.number().optional(),
+})
+
+export type FossilSortingJarType = z.infer<typeof fossilSortingJarTypeSchema>
+export type FossilSortingJar = z.infer<typeof fossilSortingJarSchema>
+
 const FossilCollection = defineCollection({
     type: 'data',
     schema: z.object({
@@ -179,12 +190,8 @@ const FossilSortingDataCollection = defineCollection({
     schema: z.object({
         date: z.string(), // a string representing the date
         jars: z.array(
-            // information on each individual jar. This includes (sometimes) both the sorted and unsorted jars
-            z.object({
-                id: z.string().optional(),
-                initialWeightGrams: z.number().optional(),
-                finalWeightGrams: z.number().optional(),
-            })
+            // information on each individual jar. Only unsorted jars count toward sorted-grams totals (see getSessionGramsSorted).
+            fossilSortingJarSchema
         ),
         sessionDurationMinutes: z.number().optional(), // the total duration of the session
         totalPeople: z.number().optional(), // total people who were sorting

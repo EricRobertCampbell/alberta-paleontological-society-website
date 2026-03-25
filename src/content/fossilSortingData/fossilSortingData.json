@@ -6,12 +6,14 @@
             {
                 "id": "Jar 1",
                 "initialWeightGrams": 704,
-                "finalWeightGrams": 579
+                "finalWeightGrams": 579,
+                "type": "unsorted"
             },
             {
                 "id": "Jar 2",
                 "initialWeightGrams": 2373,
-                "finalWeightGrams": 1819
+                "finalWeightGrams": 1819,
+                "type": "unsorted"
             }
         ],
         "sessionDurationMinutes": 150,
@@ -25,12 +27,14 @@
             {
                 "id": "Jar 2",
                 "initialWeightGrams": 1540,
-                "finalWeightGrams": 1193
+                "finalWeightGrams": 1193,
+                "type": "unsorted"
             },
             {
                 "id": "Waste #1",
                 "initialWeightGrams": 782,
-                "finalWeightGrams": 1396
+                "finalWeightGrams": 1396,
+                "type": "sorted"
             }
         ],
         "sessionDurationMinutes": 150,
@@ -44,21 +48,25 @@
             {
                 "id": "Jar 2",
                 "initialWeightGrams": 1212,
-                "finalWeightGrams": 594
+                "finalWeightGrams": 594,
+                "type": "unsorted"
             },
             {
                 "id": "Jar 3",
                 "initialWeightGrams": 2352,
-                "finalWeightGrams": 2162
+                "finalWeightGrams": 2162,
+                "type": "unsorted"
             },
             {
                 "id": "Waste 1",
                 "initialWeightGrams": 581,
-                "finalWeightGrams": 580
+                "finalWeightGrams": 580,
+                "type": "sorted"
             },
             {
                 "id": "Waste 2",
-                "finalWeightGrams": 1372
+                "finalWeightGrams": 1372,
+                "type": "sorted"
             }
         ],
         "sessionDurationMinutes": 150,
@@ -71,21 +79,25 @@
         "jars": [
             {
                 "id": "#7",
-                "initialWeightGrams": 616
+                "initialWeightGrams": 616,
+                "type": "sorted"
             },
             {
                 "id": "#2",
-                "initialWeightGrams": 594
+                "initialWeightGrams": 594,
+                "type": "sorted"
             },
             {
                 "id": "#2 sorted",
                 "initialWeightGrams": 1377,
-                "finalWeightGrams": 1902
+                "finalWeightGrams": 1902,
+                "type": "sorted"
             },
             {
                 "id": "#3 unsorted",
                 "initialWeightGrams": 2163,
-                "finalWeightGrams": 1623
+                "finalWeightGrams": 1623,
+                "type": "unsorted"
             }
         ],
         "sessionDurationMinutes": 150,
@@ -99,12 +111,14 @@
             {
                 "id": "#2 sorted",
                 "initialWeightGrams": 1907,
-                "finalWeightGrams": 2573
+                "finalWeightGrams": 2573,
+                "type": "sorted"
             },
             {
                 "id": "#3 unsorted",
                 "initialWeightGrams": 1628,
-                "finalWeightGrams": 952
+                "finalWeightGrams": 952,
+                "type": "unsorted"
             }
         ],
         "sessionDurationMinutes": 150,
@@ -118,17 +132,20 @@
             {
                 "id": "#1 Sorted",
                 "initialWeightGrams": 583,
-                "finalWeightGrams": 1258
+                "finalWeightGrams": 1258,
+                "type": "sorted"
             },
             {
                 "id": "#2 unsorted",
                 "initialWeightGrams": 2344,
-                "finalWeightGrams": 1975
+                "finalWeightGrams": 1975,
+                "type": "unsorted"
             },
             {
                 "id": "#3 Unsorted",
                 "initialWeightGrams": 949,
-                "finalWeightGrams": 621
+                "finalWeightGrams": 621,
+                "type": "unsorted"
             }
         ],
         "sessionDurationMinutes": 150,
@@ -142,12 +159,14 @@
             {
                 "id": "Sorted #1",
                 "initialWeightGrams": 1258,
-                "finalWeightGrams": 2251
+                "finalWeightGrams": 2251,
+                "type": "sorted"
             },
             {
                 "id": "Unsorted #2",
                 "initialWeightGrams": 1989,
-                "finalWeightGrams": 991
+                "finalWeightGrams": 991,
+                "type": "unsorted"
             }
         ],
         "sessionDurationMinutes": 150,
@@ -160,16 +179,19 @@
         "jars": [
             {
                 "id": "#2 unsorted",
-                "initialWeightGrams": 877
+                "initialWeightGrams": 877,
+                "type": "unsorted"
             },
             {
                 "id": "#3 unsorted",
-                "initialWeightGrams": 621
+                "initialWeightGrams": 621,
+                "type": "unsorted"
             },
             {
                 "id": "#7 unsorted",
                 "initialWeightGrams": 2409,
-                "finalWeightGrams": 1904
+                "finalWeightGrams": 1904,
+                "type": "unsorted"
             }
         ],
         "sessionDurationMinutes": 150,
@@ -183,12 +205,14 @@
             {
                 "id": "Sorted",
                 "initialWeightGrams": 1486,
-                "finalWeightGrams": 2461
+                "finalWeightGrams": 2461,
+                "type": "sorted"
             },
             {
                 "id": "Unsorted #7",
                 "initialWeightGrams": 1900,
-                "finalWeightGrams": 901
+                "finalWeightGrams": 901,
+                "type": "unsorted"
             }
         ],
         "sessionDurationMinutes": 150,
@@ -202,12 +226,14 @@
             {
                 "id": "Unsorted tiny one",
                 "initialWeightGrams": 278,
-                "finalWeightGrams": 36
+                "finalWeightGrams": 36,
+                "type": "unsorted"
             },
             {
                 "id": "Unlabelled jar",
                 "initialWeightGrams": 2382,
-                "finalWeightGrams": 2255
+                "finalWeightGrams": 2255,
+                "type": "unsorted"
             }
         ],
         "sessionDurationMinutes": 150,
@@ -222,12 +248,14 @@
             {
                 "id": "Already sorted",
                 "initialWeightGrams": 36,
-                "finalWeightGrams": 692
+                "finalWeightGrams": 692,
+                "type": "sorted"
             },
             {
                 "id": "#7",
                 "initialWeightGrams": 2266,
-                "finalWeightGrams": 1647
+                "finalWeightGrams": 1647,
+                "type": "unsorted"
             }
         ],
         "sessionDurationMinutes": 150,
@@ -236,23 +264,145 @@
         "notes": "Several people were sorting for a different project (so they are counted in the list of people but weren't really sorting.)"
     },
     {
-        "id": "2025-11-23",
-        "date": "2025-11-23",
+        "id": "2026-01-11",
+        "date": "2026-01-11",
         "jars": [
             {
                 "id": "Already sorted",
                 "initialWeightGrams": 35,
-                "finalWeightGrams": 542
+                "finalWeightGrams": 435,
+                "type": "sorted"
             },
             {
                 "id": "#7",
-                "initialWeightGrams": 1647,
-                "finalWeightGrams": 692
+                "initialWeightGrams": 1130,
+                "finalWeightGrams": 2336,
+                "type": "unsorted"
+            },
+            {
+                "id": "#7",
+                "initialWeightGrams": 2336,
+                "finalWeightGrams": 2351,
+                "type": "unsorted"
+            },
+            {
+                "id": "Sand bag",
+                "initialWeightGrams": 1160,
+                "finalWeightGrams": 1278,
+                "type": "unsorted"
             }
         ],
         "sessionDurationMinutes": 150,
-        "totalPeople": 23,
+        "totalPeople": 14,
         "totalTakenBeforeMeasurement": 0,
-        "notes": "Several people were sorting for a different project (so they are counted in the list of people but weren't really sorting.)"
+        "notes": ""
+    },
+    {
+        "id": "2026-02-08",
+        "date": "2026-02-08",
+        "jars": [
+            {
+                "id": "Already sorted",
+                "initialWeightGrams": 434,
+                "finalWeightGrams": 35,
+                "type": "sorted"
+            },
+            {
+                "id": "Already sorted",
+                "initialWeightGrams": 35,
+                "finalWeightGrams": 606,
+                "type": "sorted"
+            },
+            {
+                "id": "#7",
+                "initialWeightGrams": 1834,
+                "finalWeightGrams": 1517,
+                "type": "unsorted"
+            }
+        ],
+        "sessionDurationMinutes": 150,
+        "totalPeople": 22,
+        "totalTakenBeforeMeasurement": 10,
+        "notes": ""
+    },
+    {
+        "id": "2026-02-22",
+        "date": "2026-02-22",
+        "jars": [
+            {
+                "id": "Already sorted",
+                "initialWeightGrams": 620,
+                "finalWeightGrams": 35,
+                "type": "sorted"
+            },
+            {
+                "id": "Already sorted",
+                "initialWeightGrams": 35,
+                "finalWeightGrams": 694,
+                "type": "sorted"
+            },
+            {
+                "id": "Already sorted",
+                "initialWeightGrams": 694,
+                "finalWeightGrams": 36,
+                "type": "sorted"
+            },
+            {
+                "id": "Already sorted",
+                "initialWeightGrams": 36,
+                "finalWeightGrams": 306,
+                "type": "sorted"
+            },
+            {
+                "id": "#7",
+                "initialWeightGrams": 1519,
+                "finalWeightGrams": 1068,
+                "type": "unsorted"
+            },
+            {
+                "id": "#7",
+                "initialWeightGrams": 1068,
+                "finalWeightGrams": 2334,
+                "type": "unsorted"
+            },
+            {
+                "id": "#7",
+                "initialWeightGrams": 2334,
+                "finalWeightGrams": 1845,
+                "type": "unsorted"
+            }
+        ],
+        "sessionDurationMinutes": 150,
+        "totalPeople": 19,
+        "totalTakenBeforeMeasurement": 0,
+        "notes": ""
+    },
+    {
+        "id": "2026-03-08",
+        "date": "2026-03-08",
+        "jars": [
+            {
+                "id": "Already sorted",
+                "initialWeightGrams": 305,
+                "finalWeightGrams": 35,
+                "type": "sorted"
+            },
+            {
+                "id": "Already sorted",
+                "initialWeightGrams": 35,
+                "finalWeightGrams": 424,
+                "type": "sorted"
+            },
+            {
+                "id": "#7",
+                "initialWeightGrams": 1848,
+                "finalWeightGrams": 1456,
+                "type": "unsorted"
+            }
+        ],
+        "sessionDurationMinutes": 150,
+        "totalPeople": 14,
+        "totalTakenBeforeMeasurement": 0,
+        "notes": ""
     }
 ]

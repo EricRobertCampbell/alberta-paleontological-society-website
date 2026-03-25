@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { getTotalSorted } from '../../utility/graphs/getTotalSorted';
+import { getSessionGramsSorted } from '../../utility/graphs/getTotalSorted';
 import BestWorstDays from './BestWorstDays.astro';
 
 // Get the data for the total collected for each date
@@ -19,14 +19,7 @@ const totalCollectedData: Array<TotalCollectedData> = fossilData.reduce((acc: Ar
 	}
 	const date = new Date(data.date)
 
-	const totalSorted = data.jars.reduce((acc: number, jar) => {
-		const jarChange = getTotalSorted(jar);
-		if (jarChange > 0) {
-			// This is a waste jar -> don't count it
-			return acc
-		}
-		return acc + Math.abs(jarChange)
-	}, 0)
+	const totalSorted = getSessionGramsSorted(data.jars)
 	
 	// Only add data point if totalSorted is defined and greater than 0
 	if (totalSorted !== undefined && totalSorted !== null && totalSorted > 0) {

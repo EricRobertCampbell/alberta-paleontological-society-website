@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { getTotalSorted } from '../../utility/graphs/getTotalSorted';
+import { getSessionGramsSorted } from '../../utility/graphs/getTotalSorted';
 
 const fossilData = await getCollection('fossilSortingData');
 
@@ -30,15 +30,7 @@ fossilData.forEach((fossilEntry) => {
 	
 	const yearData = yearDataMap.get(year)!;
 	
-	// Calculate grams sorted
-	const totalSorted = data.jars.reduce((acc: number, jar) => {
-		const jarChange = getTotalSorted(jar);
-		if (jarChange > 0) {
-			// Waste jar
-			return acc;
-		}
-		return acc + Math.abs(jarChange);
-	}, 0);
+	const totalSorted = getSessionGramsSorted(data.jars);
 	
 	yearData.gramsSorted += totalSorted;
 	
