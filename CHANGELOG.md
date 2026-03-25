@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.170.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.169.0...v1.170.0) (2026-03-25)
+
+
+### Features
+
+* updated fossil sorting data ([8ec717e](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/8ec717e35a854f653f03b8cd002f23fa3693e720))
+
 ## [1.169.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.168.0...v1.169.0) (2026-03-24)
 
 
