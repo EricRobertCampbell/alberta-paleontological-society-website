@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.171.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.170.0...v1.171.0) (2026-03-27)
+
+
+### Features
+
+* **fossilfriday:** added alt to images ([59b2beb](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/59b2beb27b3d861bd482274f831e081594105fa5))
+* **fossilfriday:** gladiobranchus and aserotaspis ([14670f0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/14670f0032e1882d423b49b67c948a2e85b6a215))
+
 ## [1.170.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.169.0...v1.170.0) (2026-03-25)
 
 
