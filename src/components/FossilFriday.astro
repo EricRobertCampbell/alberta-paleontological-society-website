@@ -110,9 +110,9 @@
 			
 			// Build images HTML
 			const imagesHtml = data.images && Array.isArray(data.images)
-				? data.images.map((image: { src: string; description: string; credit: string }) => `
+				? data.images.map((image: { src: string; alt: string; description: string; credit: string }) => `
 					<figure class="fossil-image">
-						<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.description)}" />
+						<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" title="${escapeHtml(image.description)}" />
 						<figcaption>
 							<p class="image-description">${escapeHtml(image.description)}</p>
 							<p class="image-credit">Credit: ${escapeHtml(image.credit)}</p>

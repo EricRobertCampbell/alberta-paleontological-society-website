@@ -56,7 +56,7 @@ const displayDate = formatDateString(entry.data.date);
 			<div class={`images-container ${entry.data.images.length === 1 ? 'single-image' : ''}`}>
 				{entry.data.images.map((image) => (
 					<figure class="fossil-image">
-						<img src={image.src} alt={image.description} />
+						<img src={image.src} alt={image.alt || image.description || ''} title={image.description} />
 						<figcaption>
 							<p class="image-description">{image.description}</p>
 							<p class="image-credit">Credit: {image.credit}</p>

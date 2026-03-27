@@ -206,7 +206,8 @@ const FossilSortingDataCollection = defineCollection({
 const fossilFridayImageSchema = z.object({
     src: z.string(), // path to the image
     credit: z.string(), // credit/attribution for the image
-    description: z.string(), // description of the image
+    description: z.string(), // caption / visible description of the image
+    alt: z.string(), // concise alternative text for the image (screen readers, etc.)
 })
 
 const fossilFridaySchema = z.object({
