@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.173.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.172.0...v1.173.0) (2026-04-04)
+
+
+### Features
+
+* removed mona's phone number ([ad5947c](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/ad5947cd07a9c2e8f9af2517c9d59a4fa5f7220d))
+
 ## [1.172.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.171.0...v1.172.0) (2026-04-03)
 
 
