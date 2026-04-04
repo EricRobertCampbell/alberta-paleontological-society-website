@@ -4,7 +4,6 @@ export const prerender = true
 import Layout from '../layouts/Layout.astro'
 import HeadingWithBackground from '../components/HeadingWithBackground.astro'
 import EmailLink from '../components/EmailLink.astro'
-import PhoneLink from '../components/PhoneLink.astro'
 import { roles } from '../utility/constants'
 
 const { president, giftShop } = roles;
@@ -187,8 +186,7 @@ const { president, giftShop } = roles;
 
 	<p>
 		To obtain cost of shipping, domestic or international, please contact
-		{giftShop.name} at <EmailLink email="giftshop@albertapaleo.org" />
-		or call <PhoneLink number="(587) 578-4579" />.
+		{giftShop.name} at <EmailLink email="giftshop@albertapaleo.org" />.
 	</p>
 
 	<p>
