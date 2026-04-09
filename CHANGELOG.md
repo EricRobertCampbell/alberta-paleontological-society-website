@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.174.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.173.0...v1.174.0) (2026-04-09)
+
+
+### Features
+
+* removed erroneous rtmp april event ([fbb8ad4](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/fbb8ad433399711ff1999335c563604a430a6188))
+
 ## [1.173.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.172.0...v1.173.0) (2026-04-04)
 
 
