@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.175.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.174.0...v1.175.0) (2026-04-10)
+
+
+### Features
+
+* **fossilfriday:** gar scales ([18563ac](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/18563ac37d125ea34edb4bd75132d52ab2454f4c))
+* updated darla presentation ([04fad88](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/04fad88ee6592022a37d0c424a37fafbab984845))
+
 ## [1.174.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.173.0...v1.174.0) (2026-04-09)
 
 
