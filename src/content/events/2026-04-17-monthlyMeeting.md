@@ -8,7 +8,13 @@ location: 'Calgary, Alberta'
 
 **Bird-like Traits of Theropod Dinosaurs**
 
-_Darla K. Zelenitsky, PhD, Associate Professor, University of Calgary_
+_Darla K. Zelenitsky\*, PhD, Associate Professor, University of Calgary_
+
+\*Please note that our speaker will be presenting remotely.
+
+**Only in person:** This presentation is **only available if you attend the meeting in Calgary** at Mount Royal University (see [Monthly Meetings](/events/monthlymeetings) for room location and maps). It is **not** livestreamed and there is **no** online or remote access for audience members.
+
+**Time:** Friday, April 17, 2026, 7:30 pm MDT
 
 **Abstract**
 
