@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.177.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.176.0...v1.177.0) (2026-04-14)
+
+
+### Features
+
+* added tumbler ridge pro-d camp ([4d21169](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/4d21169a871d0bc000bf9c5f821aeb9a0237b63c))
+
 ## [1.176.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.175.0...v1.176.0) (2026-04-12)
 
 
