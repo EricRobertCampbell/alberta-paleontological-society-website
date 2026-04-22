@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.182.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.181.0...v1.182.0) (2026-04-22)
+
+
+### Features
+
+* added rock and gem show ([010491a](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/010491a8ae3e602a0206952b73ebe1579ac5a158))
+
 ## [1.181.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.180.0...v1.181.0) (2026-04-22)
 
 
