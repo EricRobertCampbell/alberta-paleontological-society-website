@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.181.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.180.0...v1.181.0) (2026-04-22)
+
+
+### Features
+
+* added inglewoodiy festival ammolite workshop ([e2c4fcd](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/e2c4fcdbb3715250bbccfa577e0a763e6cb9f781))
+
 ## [1.180.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.179.0...v1.180.0) (2026-04-17)
 
 
