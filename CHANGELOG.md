@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.185.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.184.0...v1.185.0) (2026-05-08)
+
+
+### Features
+
+* **fossil friday:** preserved crayfish aps1990.011 ([9f7afa2](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/9f7afa289837ecf4af73f66dec345b203b958a85))
+* **interstitial:** may 2026 ([bb68995](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/bb6899524522b7ac0c5a9e06389b9da031538574))
+
 ## [1.184.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.183.0...v1.184.0) (2026-05-01)
 
 
