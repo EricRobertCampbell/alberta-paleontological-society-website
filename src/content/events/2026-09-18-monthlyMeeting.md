@@ -6,4 +6,8 @@ type: 'Monthly Meeting'
 location: 'Calgary, Alberta'
 ---
 
-Speakers TBD
+**Taxonomy, ecology, and tooth replacement within the fish genus _Enchodus_**
+
+_Luke Nelson, University of Alberta_
+
+\*Please note that our speaker will be presenting remotely via Zoom.
