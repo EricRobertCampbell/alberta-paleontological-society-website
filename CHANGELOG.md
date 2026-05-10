@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.186.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.185.0...v1.186.0) (2026-05-10)
+
+
+### Features
+
+* luke nelson september speaker ([41b2c17](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/41b2c1724f7188eb1ad98d754987bc5b9d764810))
+
 ## [1.185.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.184.0...v1.185.0) (2026-05-08)
 
 
