@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.187.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.186.0...v1.187.0) (2026-05-12)
+
+
+### Features
+
+* warning on pipestone creek ([05f1f47](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/05f1f47f0ca9482f0149bb9bf90e7489f0a3dbd1))
+
 ## [1.186.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.185.0...v1.186.0) (2026-05-10)
 
 
