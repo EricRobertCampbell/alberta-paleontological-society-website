@@ -9,11 +9,13 @@ image:
     alt: 'Pipestone Creek Bonebed Tour and Excavation field trip poster'
 ---
 
+<p style="color: red;">NOTE: Only three spots remaining for this trip!</p>
+
 Ever wondered what it's really like to be a palaeontologist? Here's your chance to find out! This trip will start out with a guided tour of labs and collections at the Philip J. Currie Dinosaur Museum, then we'll spend the rest of the day in the field: digging for fossils at the world-famous Pipestone Creek bonebed. There'll be just enough time left at the end to tour the museum and visit the gift shop!
 
 In addition to the tours and fossil dig already mentioned, the price includes a packed lunch from Cafe on 43, snacks, and a Palaeontologist for a Day swag bag.
 
-The Philip J. Currie Dinosaur Museum is the palaeontological cornerstone of the Peace River region, specializing particularly in fossils from the nearby Pipestone Creek bonebed and area. This bonebed contains the remains of hundreds or perhaps thousands of *Pachyrhinosaurus lakustai*, a relative of triceratops, and is one of the densest bonebeds in North America.
+The Philip J. Currie Dinosaur Museum is the palaeontological cornerstone of the Peace River region, specializing particularly in fossils from the nearby Pipestone Creek bonebed and area. This bonebed contains the remains of hundreds or perhaps thousands of _Pachyrhinosaurus lakustai_, a relative of triceratops, and is one of the densest bonebeds in North America.
 
 **Maximum 10 people.** Minimum age is 12 years old and each minor child must be accompanied by one adult.
 
