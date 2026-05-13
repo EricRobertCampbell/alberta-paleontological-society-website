@@ -16,7 +16,7 @@ Building of Mount Royal University from 1:00 until 3:30 pm. on the following Sun
 
 - **March 2, 2025**
 
-Registration is not required, but if you let Mona Trick (cell: <a href="tel:(587) 578-4579">(587) 578-4579</a> or
+Registration is not required, but if you let Mona Trick (cell: <a href="tel:(403) 438-3383">(403) 438-3383</a> or
 <a href="mailto:giftshop@albertapaleo.org">giftshop@albertapaleo.org</a>) know that you are planning to attend, then she can inform
 you if we need to cancel this session. No experience is required. Due to the delicate
 nature of this work, only those 12 years and older are allowed to participate. Bring
