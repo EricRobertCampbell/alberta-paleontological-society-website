@@ -5,10 +5,13 @@ interface Props {
     title?: string;
     speaker?: string;
     youtubeLink?: string;
+    abstractPdf?: string;
+    presentingRemotely?: boolean;
 }
 
-const { title, speaker, youtubeLink } = Astro.props;
+const { title, speaker, youtubeLink, abstractPdf, presentingRemotely } = Astro.props;
 const embedUrl = youtubeLink ? getYouTubeEmbedUrl(youtubeLink) : null;
+const abstractPdfHref = abstractPdf ? encodeURI(abstractPdf) : null;
 ---
 
 <div class="talk-wrapper">
@@ -17,6 +20,11 @@ const embedUrl = youtubeLink ? getYouTubeEmbedUrl(youtubeLink) : null;
             {title && <h4 class="talk-title">{title}</h4>}
             {speaker && <p class="talk-speaker">{speaker}</p>}
         </div>
+    )}
+    {abstractPdfHref && (
+        <p class="talk-abstract-pdf">
+            <a href={abstractPdfHref}>Abstract (PDF)</a>
+        </p>
     )}
     {embedUrl && (
         <div class="talk-video-wrapper">
@@ -28,6 +36,14 @@ const embedUrl = youtubeLink ? getYouTubeEmbedUrl(youtubeLink) : null;
                 allowfullscreen
             />
         </div>
+    )}
+    <div class="talk-body">
+        <slot />
+    </div>
+    {presentingRemotely && (
+        <p class="talk-remote-note">
+            *Please note that our speaker will be presenting remotely.
+        </p>
     )}
 </div>
 
@@ -51,6 +67,32 @@ const embedUrl = youtubeLink ? getYouTubeEmbedUrl(youtubeLink) : null;
         color: var(--accent-colour-medium);
         font-size: 1rem;
     }
+    .talk-abstract-pdf {
+        margin: 0;
+    }
+    .talk-body :global(h2) {
+        margin-top: calc(1.5 * var(--theme-spacing-base));
+        margin-bottom: var(--theme-spacing-base);
+        font-size: 1.125rem;
+    }
+    .talk-body :global(h2:first-child) {
+        margin-top: 0;
+    }
+    .talk-body :global(p) {
+        margin: 0 0 var(--theme-spacing-base);
+    }
+    .talk-body :global(p:last-child) {
+        margin-bottom: 0;
+    }
+    .talk-body:empty {
+        display: none;
+    }
+    .talk-remote-note {
+        margin: 0;
+        font-size: 0.9375rem;
+        font-style: italic;
+        color: var(--accent-colour-medium);
+    }
     .talk-video-wrapper {
         width: 100%;
         aspect-ratio: 16 / 9;
@@ -61,4 +103,3 @@ const embedUrl = youtubeLink ? getYouTubeEmbedUrl(youtubeLink) : null;
         border: none;
     }
 </style>
-

@@ -53,6 +53,10 @@ const talkSchema = z.object({
     title: z.string().optional(),
     speaker: z.string().optional(),
     youtubeLink: z.string().optional(), // YouTube URL (e.g. https://www.youtube.com/watch?v=VIDEO_ID or https://youtu.be/VIDEO_ID)
+    /** Public URL path to a PDF abstract/handout (e.g. /presentationAbstracts/2026/speaker.pdf) */
+    abstractPdf: z.string().optional(),
+    /** When true, a short note is shown that the speaker is presenting remotely */
+    presentingRemotely: z.boolean().optional(),
 })
 
 const talkCollection = defineCollection({

@@ -24,22 +24,30 @@ const eventDateTimeString = generateEventDateTimeString({
     endDate,
 });
 
-// Resolve talk references
-const resolvedTalks = talks ? (await Promise.all(
-	talks.map(async (talkRef) => {
-		const actualTalkRef = extractReferenceId(talkRef);
-		if (!actualTalkRef) {
-			return null;
-		}
-		try {
-			const talk = await getEntry('talks', actualTalkRef);
-			return talk;
-		} catch(e) {
-			console.error('Error getting talk with ref', talkRef, e)
-			return null;
-		}
-	})
-)).filter(t => !!t): [];
+// Resolve talk references and render markdown bodies
+const resolvedTalks = talks
+	? (
+			await Promise.all(
+				talks.map(async (talkRef) => {
+					const actualTalkRef = extractReferenceId(talkRef);
+					if (!actualTalkRef) {
+						return null;
+					}
+					try {
+						const talk = await getEntry('talks', actualTalkRef);
+						if (!talk) {
+							return null;
+						}
+						const { Content } = await talk.render();
+						return { talk, Content };
+					} catch (e) {
+						console.error('Error getting talk with ref', talkRef, e);
+						return null;
+					}
+				})
+			)
+		).filter((t): t is NonNullable<typeof t> => !!t)
+	: [];
 
 const hostLogoLocation = getHostLogoLocation({ host });
 ---
@@ -106,12 +114,16 @@ const hostLogoLocation = getHostLogoLocation({ host });
 	{
 		resolvedTalks && resolvedTalks.length > 0 && (
 			<div class="talks-container">
-				{resolvedTalks.map((talk) => (
-					<Talk 
+				{resolvedTalks.map(({ talk, Content }) => (
+					<Talk
 						title={talk.data.title}
 						speaker={talk.data.speaker}
-						youtubeLink={talk.data.youtubeLink} 
-					/>
+						youtubeLink={talk.data.youtubeLink}
+						abstractPdf={talk.data.abstractPdf}
+						presentingRemotely={talk.data.presentingRemotely}
+					>
+						<Content />
+					</Talk>
 				))}
 			</div>
 		)
