@@ -15,7 +15,7 @@ We will book as a group to take advantage of discounted group admission.
 
 While not part of this trip proper, there's an option to go to the [Jurassic Forest](https://www.jurassicforest.com) (780) 470-2446 located near Gibbons, Alberta to view the animatronic dinosaurs arranged along the hiking trails.
 
-**Royal Alberta Museum Admission (Saturday June 6, 2026):**  
+**Royal Alberta Museum Admission (Saturday June 20, 2026):**  
 9810 103A Avenue NW Edmonton T5J 0G2
 
 -   Adults (18-64) $21
