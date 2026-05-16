@@ -15,9 +15,9 @@ detailsLink: 'https://dinomuseum.ca/events'
 
 Is it a little last-minute? Absolutely. But so is finding a fossil and suddenly becoming famous…
 
-We want to thank our Museum Members for your dedication to dinosaurs, learning and science.
-
 Join us **Friday, April 17 at 6:00 pm** for a night of fossils, fun, and learning whether that “very cool rock” you’ve been holding onto is actually a fossil. Our palaeo experts will show you what to look for! If you’ve got a mystery specimen, bring it in! We’re ready to investigate 🔍
+
+We want to thank our Museum Members for your dedication to dinosaurs, learning and science.
 
 Expect snacks, refreshments, good company, and the chance to hold some amazing fossils from our collection (side effects may include wanting to become a palaeontologist).
 
