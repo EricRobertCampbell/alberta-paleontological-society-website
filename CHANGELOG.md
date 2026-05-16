@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.189.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.188.1...v1.189.0) (2026-05-16)
+
+
+### Features
+
+* fossil friday shark tooth ([9b328c5](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/9b328c51a4aa8649cebff5b74a8233d28d393143))
+
 ### [1.188.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.188.0...v1.188.1) (2026-05-13)
 
 
