@@ -8,7 +8,7 @@ The Alberta Palaeontological Society is excited to announce our field trip sched
 
 - **Saturday, June 20, 2026**: Royal Alberta Museum Tour, Edmonton
 - **Sunday, July 12, 2026**: Stonerose Centre Trip, Republic, Washington
-- **Saturday, July 18, 2026**: Knudsen's Farm Field Trip, Huxley, AB
+- **Saturday, July 25, 2026**: Knudsen's Farm Field Trip, Huxley, AB
 - **Saturday, August 8, 2026**: Canyon Creek Field Trip, Kananaskis Country, AB
 - **Saturday, August 15, 2026**: Tyndall Stone Tour, Calgary, AB
 - **Saturday, August 22, 2026**: Pipestone Creek Bonebed Tour and Excavation, Wembley, AB

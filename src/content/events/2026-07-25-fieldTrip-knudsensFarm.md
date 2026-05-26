@@ -1,7 +1,7 @@
 ---
 title: Knudsen's Farm Field Trip
-startDate: '2026-07-18'
-endDate: '2026-07-18'
+startDate: '2026-07-25'
+endDate: '2026-07-25'
 type: 'Field Trip'
 location: 'Huxley, AB'
 image:
