@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.192.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.191.0...v1.192.0) (2026-05-29)
+
+
+### Features
+
+* pjcdm palaeopalooza 2026 ([b70ba74](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/b70ba740a8ee778b8ab4dabc930b0f99540f1dee))
+
 ## [1.191.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.190.0...v1.191.0) (2026-05-26)
 
 
