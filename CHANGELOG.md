@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.194.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.193.0...v1.194.0) (2026-06-12)
+
+
+### Features
+
+* fossil friday - anomalocaris ([5344e4e](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/5344e4e2d648989d0113acb898493cce7f40215d))
+
 ## [1.193.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.192.0...v1.193.0) (2026-06-10)
 
 
