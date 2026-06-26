@@ -18,7 +18,7 @@ from 1:00 until 3:30 pm. We will be aiding the research of Dr. Jessica Theodor a
 Alex Dutchak of the University of Calgary by finding tiny fossils in the matrix (soil)
 from the Cypress Hills Formation (Middle Eocene) of Saskatchewan. APS is very
 grateful to Mount Royal University for allowing us to use their microscopes and lab.
-Registration is not required, but if you let Mona Trick (tel. <a href="tel:(403) 438-3383">(403) 438-3383</a> or
+Registration is not required, but if you let Mona Trick (tel. <a href="tel:(403) 438-3338">(403) 438-3338</a> or
 <a href="mailto:giftshop@albertapaleo.org">giftshop@albertapaleo.org</a>) know that you are planning to attend, then she can inform
 you if we need to cancel this session. No experience is required. Bring tweezers (with
 pointed ends) or a small paint brush to pick the tiny fossils from the soil and a pen to

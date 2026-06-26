@@ -19,7 +19,7 @@ Use microscopes to search for tiny fossils to aid the research of Dr. Jessica Th
 - November 2, 2025
 - November 23, 2025
 
-Registration is not required, but if you let Mona Trick (cell: <a href="tel:(403) 438-3383">(403) 438-3383</a> or giftshop@albertapaleo.org) know that you are planning to attend, then she can inform you if we need to cancel this session. No experience is required. Due to the delicate nature of this work, only those 12 years and older are allowed to search for the microfossils. Bring tweezers or a small paint brush to pick the tiny fossils from the soil and a pen to label your finds. All of the fossils found will be kept by the University of Calgary for their research.
+Registration is not required, but if you let Mona Trick (cell: <a href="tel:(403) 438-3338">(403) 438-3338</a> or giftshop@albertapaleo.org) know that you are planning to attend, then she can inform you if we need to cancel this session. No experience is required. Due to the delicate nature of this work, only those 12 years and older are allowed to search for the microfossils. Bring tweezers or a small paint brush to pick the tiny fossils from the soil and a pen to label your finds. All of the fossils found will be kept by the University of Calgary for their research.
 
 We are very grateful to Mount Royal University for allowing us to use their microscopes and lab.
 

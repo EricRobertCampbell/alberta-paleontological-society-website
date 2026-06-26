@@ -20,7 +20,7 @@ pm. on the following Sundays:
 We are very grateful to Mount Royal University for allowing us to use their microscopes
 and lab.
 
-Registration is not required, but if you let Mona Trick (cell: <a href="tel:(403) 438-3383">(403) 438-3383</a> or
+Registration is not required, but if you let Mona Trick (cell: <a href="tel:(403) 438-3338">(403) 438-3338</a> or
 <a href="mailto:giftshop@albertapaleo.org">giftshop@albertapaleo.org</a>) know that you are planning to attend, then she can inform
 you if we need to cancel this session. No experience is required. Due to the delicate
 nature of this work, only those 12 years and older are allowed to search for the

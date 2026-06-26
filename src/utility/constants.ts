@@ -35,7 +35,7 @@ export const people: Record<string, Person> = {
     },
     mona: {
         name: 'Mona Trick',
-        telephone: '(403) 438-3383',
+        telephone: '(403) 438-3338',
     },
     vaclav: {
         name: 'Vaclav Marsovsky',
