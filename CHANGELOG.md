@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.196.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.196.0...v1.196.1) (2026-06-26)
+
+
+### Bug Fixes
+
+* updated mona's phone number ([b61f873](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/b61f87343bf33b933ae956e10d7c28503bd564fb))
+
 ## [1.196.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.195.0...v1.196.0) (2026-06-20)
 
 
