@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.197.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.196.1...v1.197.0) (2026-06-26)
+
+
+### Features
+
+* **fossil friday:** metasequoia ([8b8a607](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/8b8a607dfbc8421afd0e239a605252c624378f27))
+
 ### [1.196.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.196.0...v1.196.1) (2026-06-26)
 
 
