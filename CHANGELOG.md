@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.198.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.197.0...v1.198.0) (2026-07-01)
+
+
+### Features
+
+* removed stonerose field trip ([96a0805](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/96a0805459353eff8bb10e48bb4c42c2da0accfe))
+
 ## [1.197.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.196.1...v1.197.0) (2026-06-26)
 
 
