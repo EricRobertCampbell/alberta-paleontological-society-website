@@ -15,6 +15,6 @@ A perennial favourite and staple of the APS field trip program, Tako will again 
 
 **Price:** $10
 
-**Registration deadline: July 1, 2026.**
+**Registration deadline: July 18, 2026.**
 
 To register for this and any other trips, download and complete [the field trip registration form](/fieldTrips/2026/registration-fillable.pdf).
