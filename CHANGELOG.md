@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.200.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.199.0...v1.200.0) (2026-07-07)
+
+
+### Features
+
+* updated knudsens farm deadline ([0d920cf](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/0d920cf7c6e0755914c233fd7782e5b2060b050e))
+
 ## [1.199.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.198.0...v1.199.0) (2026-07-01)
 
 
