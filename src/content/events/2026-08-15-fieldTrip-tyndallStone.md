@@ -17,6 +17,6 @@ The field trip commences in Kensington at 1:00 PM and is complete by 4:30 PM.
 
 **Price:** $10
 
-**Registration deadline: August 1, 2026.**
+**Registration deadline: August 10, 2026.**
 
 To register for this and any other trips, download and complete [the field trip registration form](/fieldTrips/2026/registration-fillable.pdf).
