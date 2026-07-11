@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.201.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.200.0...v1.201.0) (2026-07-11)
+
+
+### Features
+
+* updated tyndall stone trip registration deadline ([c307873](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/c307873540e5228ac005c70157f18c638e14589f))
+
 ## [1.200.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.199.0...v1.200.0) (2026-07-07)
 
 
