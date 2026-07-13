@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.202.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.201.0...v1.202.0) (2026-07-13)
+
+
+### Features
+
+* added jbc talk about burgess shale ([ba86678](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/ba866787418a8d7d8942cdc98b34f38efc3d95c5))
+
 ## [1.201.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.200.0...v1.201.0) (2026-07-11)
 
 
