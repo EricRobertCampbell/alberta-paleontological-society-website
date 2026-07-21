@@ -9,7 +9,7 @@ image:
     alt: 'Pipestone Creek Bonebed Tour and Excavation field trip poster'
 ---
 
-<p style="color: red;">NOTE: Only three spots remaining for this trip!</p>
+<p style="color: red;">NOTE: Only two spots remaining for this trip!</p>
 
 Ever wondered what it's really like to be a palaeontologist? Here's your chance to find out! This trip will start out with a guided tour of labs and collections at the Philip J. Currie Dinosaur Museum, then we'll spend the rest of the day in the field: digging for fossils at the world-famous Pipestone Creek bonebed. There'll be just enough time left at the end to tour the museum and visit the gift shop!
 
