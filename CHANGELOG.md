@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.203.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.202.0...v1.203.0) (2026-07-21)
+
+
+### Features
+
+* added new events ([b40ecff](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/b40ecffb436fdab55446eedd0aea8323208b2969))
+* updated canyon creek trip (aug. 8) to note that it's full ([141ca29](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/141ca296c10b8a471bbdaf5a0c2914d7ba81265e))
+
 ## [1.202.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.201.0...v1.202.0) (2026-07-13)
 
 
