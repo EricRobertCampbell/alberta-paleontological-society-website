@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.205.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.204.0...v1.205.0) (2026-07-31)
+
+
+### Features
+
+* marked pipestone creek trip as full ([54a026c](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/54a026c56d940f2e46f919db9989aa29e171e300))
+
 ## [1.204.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.203.0...v1.204.0) (2026-07-28)
 
 
