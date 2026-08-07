@@ -9,8 +9,6 @@ image:
     alt: 'Canyon Creek Field Trip poster (Session 2)'
 ---
 
-<p style="color: red;">NOTE: This trip is now full.</p>
-
 Due to popular demand, we are offering this trip a second time.
 
 This one-day trip within an easy drive of Calgary is perfect for people who are just getting started with fossil hunting! The Canyon Creek trail / Moose Mountain area preserves many different kinds of sea creatures from the Carboniferous (about 350 Ma) and Jurassic (about 150 Ma), including brachiopods, bryozoans, and ammonites.
