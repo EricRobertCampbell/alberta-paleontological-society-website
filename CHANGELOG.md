@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.207.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.206.0...v1.207.0) (2026-08-07)
+
+
+### Features
+
+* added telus spark talk ([4cf680c](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/4cf680c90ce31e2faf85011caf728aaad93ecb5e))
+* removed notes about the field trips being full ([4d78288](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/4d7828849ccb7421a2767420251bfd00242fbbb4))
+
 ## [1.206.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.205.0...v1.206.0) (2026-08-01)
 
 
