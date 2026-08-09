@@ -11,9 +11,21 @@ image:
 detailsLink: 'https://dinomuseum.ca/night-museum'
 ---
 
-Give your young dinosaur enthusiast an unforgettable night at the Philip J. Currie Dinosaur Museum! They'll explore the museum after hours, enjoy a movie with new friends, dive into dinosaur-themed games and activities, and spend the night surrounded by giants from 73 million years ago.
+The museum closes to the public… but your adventure is just beginning.
 
-It's an unforgettable overnight adventure designed for dinosaur enthusiasts **ages 7–14**. Snacks and breakfast are included.
+Imagine spending the night surrounded by towering dinosaurs, exploring the galleries after hours, and experiencing the Philip J. Currie Dinosaur Museum in a way few ever do.
+
+Night at the Museum is an unforgettable overnight experience where young explorers will enjoy:
+
+- Exclusive after-hours access to the museum
+- Flashlight adventures through the galleries
+- A dinosaur movie on the big screen
+- Games, activities, and hands-on discovery
+- A sleepover beneath incredible dinosaur skeletons
+
+Whether it's their first museum sleepover or their biggest dinosaur adventure yet, this is a night they'll be talking about long after morning arrives.
+
+It's designed for dinosaur enthusiasts **ages 7–14**. Snacks and breakfast are included.
 
 **When:** Friday, August 21 – Saturday, August 22, 2026  
 **Drop-off:** 6:30 PM – 7:00 PM  
@@ -21,4 +33,4 @@ It's an unforgettable overnight adventure designed for dinosaur enthusiasts **ag
 **Pick-up:** 9:15 AM – 9:30 AM  
 **Where:** Philip J. Currie Dinosaur Museum, Wembley, AB
 
-Spaces are limited. Book your Night at the Museum on the [museum website](https://dinomuseum.ca/night-museum).
+Spaces are limited. Reserve your spot on the [museum website](https://dinomuseum.ca/night-museum).
