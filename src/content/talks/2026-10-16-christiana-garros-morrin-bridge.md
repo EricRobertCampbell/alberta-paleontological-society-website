@@ -1,0 +1,17 @@
+---
+title: "New discoveries from the University of Alberta's Morrin Bridge fieldwork"
+speaker: 'Christiana Garros, University of Alberta'
+abstractPdf: '/presentationAbstracts/2026/Christiana Garros APS Abstract October 16, 2026.pdf'
+---
+
+## Bio
+
+Christiana Garros is a palaeontology graduate student at the University of Alberta who recently finished her master's with Dr. Philip Currie and will be beginning her PhD with Dr. Michael Caldwell in the fall. Christiana originally was interested in pursuing medicine but through meeting the wonderful palaeontology community at the University of Alberta, decided to switch tracks. Her interest in medicine led her to specializing in palaeopathology: the study of fossil injuries and diseases, for her master's thesis which led her to develop skills in a variety of areas, especially working with CT data and osteohistology (looking at the microanatomy of thin sections of bone under a microscope). While her thesis was centred on theropods from the Dinosaur Park Formation of Alberta, her PhD will instead involve applying her osteohistology skills to studying the growth and ossification of the skeletons of mosasaurs: an extinct lineage of marine lizards. In the summers, Christiana participates extensively in fieldwork in the badlands of Alberta and she is one of the current leaders of the fieldwork conducted near the town of Morrin Alberta. This fieldwork is special as it is led entirely by graduate students and has been a tremendously fruitful and rewarding experience.
+
+## Abstract
+
+For the past decade, the University of Alberta palaeontology graduate students have run fieldwork near Morrin Bridge, Alberta, excavating dinosaurs from the Horseshoe Canyon Formation (HCF). Less fossiliferous and chronologically younger than the Dinosaur Park Formation, the HCF preserves a diverse dinosaur fauna that includes the well-known genera _Albertosaurus_ and _Edmontosaurus_. From 2015-2020, Morrin Bridge fieldwork from the UofA yielded a juvenile _Edmontosaurus_ skeleton, an unusual troodontid microsite, and the first trackway from the HCF.
+
+Starting in 2021, the UofA has discovered three new and scientifically important _Albertosaurus_ specimens. The first is a partial postcranium, including both legs, that was featured in the 2025 documentary *Walking With Dinosaurs*. The second, discovered during the filming of this documentary, is the first skull bone from a baby _Albertosaurus_: a partial lower jaw. The third is a partial skull preserving the iconic brow horns of this genus.
+
+In 2026, the UofA crew had its most exciting Morrin Bridge year yet, discovering two skeletons of herbivorous dinosaurs within a kilometer of each other. One of these is an _Anchiceratops_, an earlier cousin of _Triceratops_, discovered with its iconic 'butterfly horn' sticking out of a hill. This skeleton is disarticulated, allowing the individual bones to be excavated, removed, and prepared separately. The other skeleton belongs to a hadrosaur (duck-billed dinosaur) with a hollow crest. This skeleton is the first-known crested hadrosaur from the lower layers of the HCF, and shows a unique crest shape that differentiates it from other known species. This is the first new species resulting from the UofA's Morrin Bridge fieldwork. The skull, mandible, and parts of the pelvis were collected this year, but the remainder of the skeleton is massive and articulated. A helicopter lift may be required to excavate this extremely important specimen.
