@@ -106,3 +106,8 @@ This project uses Conventional Commits enforced by commitlint via Husky pre-comm
 - Bulletin YAML files in `src/content/bulletins/` reference the PDF location via the `location` field
 - The site handles both member events and external events, but external events are filtered from the homepage
 - When working with dates, always consider timezone handling (UTC in dev, America/Edmonton in production)
+
+## Code Conventions
+
+- **Utility placement**: Shared helpers belong in `src/utility/` (or a dedicated module). File-local helpers should sit below the component setup or function that calls them when possible. Callers come first; callees lower in the file. See `.cursor/rules/function-order.mdc`.
+- **Commits**: Conventional Commits via commitlint / Husky (see Commit Conventions above).

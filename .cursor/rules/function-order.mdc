@@ -1,5 +1,46 @@
 ---
+description: Function and utility placement conventions
 alwaysApply: true
 ---
 
-Please follow the clean coding principle of having more general functions at the top of the file and more specific ones lower down. As a general rule, if functionA calls functionB, then functionA should come first.
+# Function and utility order
+
+Prefer this placement for helpers:
+
+1. **Shared utilities** — put them in their own module under `src/utility/` (or a focused script/config file) when reused, non-trivial, or clearer on their own.
+2. **Local utilities** — when a helper is only used in one file, keep it in that file **below** the component setup or function that calls it, when possible.
+
+## Call order within a file
+
+More general entry points come first; more specific helpers come lower down. If `functionA` calls `functionB`, then `functionA` should appear above `functionB`.
+
+In Astro frontmatter, put props/setup and derived values first, then local `function` helpers underneath (function declarations are hoisted, so this stays valid).
+
+## Examples
+
+```ts
+// Good — caller first, helper below
+export function sortEvents(events) {
+  return [...events].sort(compareByStart)
+}
+
+function compareByStart(a, b) {
+  return getStartDate(a).localeCompare(getStartDate(b))
+}
+```
+
+```astro
+---
+const { background } = Astro.props
+const id = resolveBackgroundId(background)
+
+function resolveBackgroundId(value: string): string {
+  // ...
+}
+---
+```
+
+```ts
+// Good — shared helper lives in src/utility/
+import { getStartDate } from '../utility/eventSorting'
+```

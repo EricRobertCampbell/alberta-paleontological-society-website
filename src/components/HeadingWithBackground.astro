@@ -1,59 +1,99 @@
 ---
 /**
- * This is a heading (h1, h2, &c.) with a semi-translucent background image. The background image disappears in the mobile view
+ * Page heading with a semi-translucent photo strip behind it on desktop.
+ * On viewports under 768px the image is not selected/downloaded.
+ *
+ * Strips are pre-cropped by `npm run generate-heading-backgrounds` using the
+ * positions in `scripts/heading-backgrounds.config.ts`.
  */
 interface Props {
-	background: string;
-	backgroundPositionX?: string;
-	backgroundPositionY?: string;
-	opacity?: number;
-	children: any; // the header element
+	/**
+	 * Background id (e.g. "canyonCreek1") or a legacy path
+	 * (e.g. "/headingBackgrounds/canyonCreek1.jpg").
+	 * Resolved to optimized strip files under /headingBackgrounds/{id}.{webp,jpg}.
+	 */
+	background: string
+	opacity?: number
+	/** Decorative by default; override only if the photo conveys meaning. */
+	alt?: string
 }
 
-const {
-	background,
-	backgroundPositionX = "50%",
-	backgroundPositionY = "50%",
-	opacity = 0.3,
-} = Astro.props;
+const { background, opacity = 0.3, alt = '' } = Astro.props
+
+const backgroundId = resolveBackgroundId(background)
+const webpSrc = `/headingBackgrounds/${backgroundId}.webp`
+const jpegSrc = `/headingBackgrounds/${backgroundId}.jpg`
+
+/**
+ * Accepts either a bare id or a legacy public path and returns the stem used
+ * by the generated derivatives in /headingBackgrounds.
+ */
+function resolveBackgroundId(value: string): string {
+	const withoutQuery = value.split('?')[0] ?? value
+	const base = withoutQuery.split('/').pop() ?? withoutQuery
+	return base.replace(/\.(jpe?g|png|webp)$/i, '')
+}
 ---
 
 <div class="background-container">
+	<picture>
+		<source
+			media="(min-width: 768px)"
+			type="image/webp"
+			srcset={webpSrc}
+		/>
+		<source
+			media="(min-width: 768px)"
+			type="image/jpeg"
+			srcset={jpegSrc}
+		/>
+		{/* Tiny transparent GIF so mobile does not fetch the photo */}
+		<img
+			class="heading-background-image"
+			src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+			alt={alt}
+			width="2000"
+			height="200"
+			decoding="async"
+			fetchpriority="low"
+		/>
+	</picture>
 	<div class="heading-container">
 		<slot />
 	</div>
 </div>
 
-<style
-	define:vars={{
-		backgroundUrl: `url(${background})`,
-		backgroundPositionX,
-		backgroundPositionY,
-		opacityValue: opacity,
-	}}
->
+<style define:vars={{ opacityValue: opacity }}>
+	.background-container {
+		position: relative;
+	}
+
+	.heading-background-image {
+		display: none;
+	}
+
 	@media screen and (min-width: 768px) {
 		.background-container {
-			height: 100px; /* Adjust the height as needed */
-			position: relative;
+			height: 100px;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+			overflow: hidden;
 			z-index: -1;
 		}
-		.background-container::before {
-			content: "";
-			background-image: var(--backgroundUrl);
-			background-size: cover;
-			background-position: var(--backgroundPositionX)
-				var(--backgroundPositionY);
+
+		.heading-background-image {
+			display: block;
 			position: absolute;
-			top: 0;
-			left: 0;
+			inset: 0;
 			width: 100%;
 			height: 100%;
+			object-fit: cover;
+			object-position: center;
 			opacity: var(--opacityValue);
+			pointer-events: none;
 		}
+
 		.heading-container {
 			position: relative;
 			margin-left: calc(3 * var(--theme-spacing-base));
