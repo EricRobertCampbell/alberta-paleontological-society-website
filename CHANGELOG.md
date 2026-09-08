@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.211.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.210.0...v1.211.0) (2026-09-08)
+
+
+### Features
+
+* dinovember sleepover field trip ([adcb917](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/adcb917536dd006c73e32570d74ddb324c241a14))
+
 ## [1.210.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.209.0...v1.210.0) (2026-09-07)
 
 
