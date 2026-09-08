@@ -8,11 +8,14 @@ import EmailLink from "../../components/EmailLink.astro";
 import PhoneLink from "../../components/PhoneLink.astro";
 import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
 import Event from "../../components/Event.astro";
+import Alert from "../../components/Alert.astro";
 import { roles} from '../../utility/constants';
+import { getTodayString } from '../../utility';
 
 const { fieldTripCoordinator } = roles;
 
 const CURRENT_YEAR = '2026'
+const showSleepoverRegistration = getTodayString() <= '2026-11-01'
 
 const allEvents = await getCollection("events");
 const renderedEvents = await Promise.all(
@@ -42,28 +45,45 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fieldTripEvents);
 		<h1>Field Trips</h1>
 	</HeadingWithBackground>
 
+	{showSleepoverRegistration && (
+		<Alert type="warning">
+			<p>
+				<strong>Dinovember Sleepover at the Royal Tyrrell Museum!</strong>
+			</p>
+			<p>
+				Join us for a special overnight event on Friday, November 13 – Saturday, November 14. The registration deadline is Sunday, November 1. We’ve reserved 10 spots, with additional spots available on a first-come, first-served basis.
+			</p>
+			<p>
+				Fill out the <a href="/fieldTrips/2026/forms/rtmp-sleepin-signup.pdf">sign up form</a> to register, or see the details below.
+			</p>
+		</Alert>
+	)}
+
 	<p>Field trips are at the heart of the Alberta Palaeontological Society. There’s nothing quite like getting out onto the landscape to see where fossils are found and to better understand the ancient worlds they come from. We're incredibly lucky to live in a province surrounded by world-class palaeontological treasures, from sweeping badlands to marine deposits and Ice Age sites.</p>
 
 	<p>Whether you're brand new to fossils or a seasoned collector, we invite you to join us in the field. Come explore Alberta’s deep past with us. Check out the trips below and sign up for your next adventure!</p>
 
-	<h2>Registration and Payment</h2>
+	{showSleepoverRegistration && (
+		<>
+			<h2>Registration and Payment</h2>
 
-	<p>
-		To register for a field trip, print off and fill out the <a href="/fieldTrips/2026/registration-fillable.pdf">sign up sheet</a
-		>, then follow the instructions there.
-	</p>
+			<p>
+				To register for the Dinovember Sleepover, print off and fill out the <a href="/fieldTrips/2026/forms/rtmp-sleepin-signup.pdf">sign up form</a>, then follow the instructions there.
+			</p>
 
-	<p>
-		Continuing from previous years, you will be able to pay field trip fees by
-		Interac E-transfer (Canada only). Follow directions on your bank’s
-		online banking site or mobile app. Bank fees may apply. Payee is
-		<EmailLink
-			email="giftshop@albertapaleo.org"
-		   subject={`Field Trip Fees for ${CURRENT_YEAR}`}
-	 />. Please state in the message field: "Field Trip Fees for {CURRENT_YEAR}". Email
-		a scan or photo of the completed registration form to
-		<EmailLink email="giftshop@albertapaleo.org" />.
-	</p>
+			<p>
+				You will be able to pay field trip fees by
+				Interac E-transfer (Canada only). Follow directions on your bank’s
+				online banking site or mobile app. Bank fees may apply. Payee is
+				<EmailLink
+					email="giftshop@albertapaleo.org"
+				   subject={`Field Trip Fees for ${CURRENT_YEAR}`}
+			 />. Please state in the message field: "RTMP Sleep-in 2026". Email
+				a scan or photo of the completed registration form to
+				<EmailLink email="giftshop@albertapaleo.org" />.
+			</p>
+		</>
+	)}
 
 	<h2>Upcoming Field Trips</h2>
 	{upcomingEvents.length > 0 ? (
@@ -89,9 +109,13 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fieldTripEvents);
 			Forms
 		</h2>
 			<ul class="field-trip-forms-list">
-				<li>
-					<a href="/fieldTrips/2026/registration-fillable.pdf">{CURRENT_YEAR} Registration Form</a>
-				</li>
+				{showSleepoverRegistration && (
+					<li>
+						<a href="/fieldTrips/2026/forms/rtmp-sleepin-signup.pdf">
+							Dinovember Sleepover Sign Up
+						</a>
+					</li>
+				)}
 				<li>
 					<a href="/fieldTrips/2026/forms/APS_Adult_Waiver.pdf">
 						Adult Waiver
