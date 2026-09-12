@@ -84,6 +84,21 @@ const abstractPdfHref = abstractPdf ? encodeURI(abstractPdf) : null;
     .talk-body :global(p:last-child) {
         margin-bottom: 0;
     }
+    .talk-body :global(figure) {
+        margin: 0 0 calc(1.5 * var(--theme-spacing-base));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .talk-body :global(img) {
+        max-width: min(100%, 36rem);
+        height: auto;
+    }
+    .talk-body :global(figcaption) {
+        font-size: 0.875rem;
+        margin-top: calc(0.5 * var(--theme-spacing-base));
+        max-width: min(100%, 36rem);
+    }
     .talk-body:empty {
         display: none;
     }
