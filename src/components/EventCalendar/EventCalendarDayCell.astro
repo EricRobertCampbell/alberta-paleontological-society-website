@@ -12,11 +12,12 @@ interface Props {
 		type: string;
 		host?: string;
 	}>;
+	isToday?: boolean;
 }
-const { day, events } = Astro.props;
+const { day, events, isToday = false } = Astro.props;
 ---
 
-<div class="event-calendar-day-cell">
+<div class:list={['event-calendar-day-cell', { today: isToday }]}>
 	<span class="day-number">
 		{day}
 	</span>
@@ -57,6 +58,10 @@ const { day, events } = Astro.props;
 		flex-direction: column;
 		align-items: center;
 		justify-content: flex-start;
+	}
+	.today {
+		outline: 1px solid black;
+		outline-offset: -1px;
 	}
 	.day-number {
 		font-weight: bold;
