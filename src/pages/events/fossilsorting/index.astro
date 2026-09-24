@@ -130,7 +130,7 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fossilSortingEvents);
 		<ul>
 			<li><strong>Age Restriction:</strong> Due to the delicate nature of this work, only participants 12 years and older are allowed</li>
 			<li><strong>Experience:</strong> No prior experience is required - we welcome beginners!</li>
-			<li><strong>Registration:</strong> While registration is not required, we recommend contacting our coordinator to confirm attendance</li>
+			<li><strong>Registration:</strong> Registration is required. Contact our coordinator and specify which dates you are planning to attend, the number in your party, and your mobile phone and e-mail address</li>
 			<li><strong>Research Contribution:</strong> All fossils found will be kept by the University of Calgary for their research</li>
 		</ul>
 
@@ -147,14 +147,10 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fossilSortingEvents);
 	<h2>Registration and Contact</h2>
 
 	<p>
-		While registration is not required for fossil sorting sessions, we recommend letting our coordinator know if you're planning to attend. This helps us inform participants if we need to cancel a session due to unforeseen circumstances.
-	</p>
-
-	<p>
-		Contact {giftShop.name}, our Fossil Sorting Coordinator{giftShop.email && <> by e-mail at <EmailLink
+		Registration is required. Contact {giftShop.name} ({giftShop.email && <><EmailLink
 			email={giftShop.email}
 			subject="Fossil Sorting Session"
-		/></>}{giftShop.telephone && <> or phone at <PhoneLink number={giftShop.telephone} /></>}.
+		/> or </>}cell: {giftShop.telephone && <PhoneLink number={giftShop.telephone} />} (new number!)) and specify which dates you are planning to attend, the number in your party, and your mobile phone and e-mail address.
 	</p>
 
 	<h2>Data and Statistics</h2>
