@@ -1,6 +1,6 @@
 ---
 title: 'The Driftwood Canyon Fossil Beds, Smithers, Northern British Columbia – An Amazing Well-Preserved and Highly Diverse Eocene-Age Terrestrial Paleoecology'
-speaker: 'Tako Koning, P. Geol., Senior Geologist - Consultant'
+speaker: 'Tako Koning, P. Geol., Senior Geologist - Consultant (in person)'
 abstractPdf: '/presentationAbstracts/2026/APS Driftwood Abstract Biography Tako Koning November 20, 2026.pdf'
 ---
 

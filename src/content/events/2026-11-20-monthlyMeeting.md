@@ -7,3 +7,5 @@ location: 'Calgary, Alberta'
 talks:
   - 2026-11-20-tako-koning-driftwood
 ---
+
+In honour of the APS' 40th anniversary, there will be cake!
