@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro'
+import HeadingWithBackground from '../components/HeadingWithBackground.astro'
+import {
+    publications,
+    trackedPublicationPath,
+} from '../data/publications'
+
+function formatPublishedAt(publishedAt: string | null): string {
+    return publishedAt ?? 'Not set'
+}
+---
+
+<Layout subtitle="Site analytics">
+    <HeadingWithBackground background="tinyFossil1">
+        <h1>Site analytics</h1>
+    </HeadingWithBackground>
+
+    <p>
+        Download counts for Alberta Palaeontological Society publications.
+        This page currently lists the one publication set up for tracking.
+    </p>
+
+    {
+        publications.map((publication) => (
+            <article class="publication">
+                <h2>{publication.title}</h2>
+                <dl>
+                    <dt>Slug</dt>
+                    <dd>{publication.slug}</dd>
+                    <dt>Tracked URL</dt>
+                    <dd>
+                        <code>{trackedPublicationPath(publication.slug)}</code>
+                    </dd>
+                    <dt>Static file</dt>
+                    <dd>
+                        <code>{publication.filePath}</code>
+                    </dd>
+                    <dt>Published</dt>
+                    <dd>{formatPublishedAt(publication.publishedAt)}</dd>
+                    <dt>Downloads</dt>
+                    <dd>
+                        Not recorded yet. Counts will appear here after the
+                        database is connected.
+                    </dd>
+                </dl>
+            </article>
+        ))
+    }
+
+    <p class="note">
+        The tracked download address is not active yet, and the PDF is not in
+        the repository. Requesting it will not download a file.
+    </p>
+</Layout>
+
+<style>
+    .publication {
+        margin-top: 1.5rem;
+        padding: 1rem 1.25rem;
+        background-color: var(--background-colour-light);
+        border-radius: var(--border-radius-medium);
+    }
+
+    dl {
+        display: grid;
+        grid-template-columns: 9rem 1fr;
+        gap: 0.5rem 1rem;
+        margin: 0;
+    }
+
+    dt {
+        font-weight: 700;
+    }
+
+    dd {
+        margin: 0;
+    }
+
+    code {
+        overflow-wrap: anywhere;
+    }
+
+    .note {
+        margin-top: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+        dl {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
