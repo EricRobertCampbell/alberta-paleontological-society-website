@@ -6,14 +6,14 @@ type: 'Field Trip'
 location: 'Royal Tyrrell Museum of Palaeontology, Drumheller, AB'
 image:
     src: '/fieldTrips/2026/rtmpsleepin-deadlineAnnouncement-small.png'
-    alt: 'Promotional poster for the Dinovember sleepover, showing a child sleeping beside a dinosaur under a starry sky. Dates are November 13–14, with a registration deadline of November 1.'
+    alt: 'Promotional poster for the Dinovember sleepover, showing a child sleeping beside a dinosaur under a starry sky. Dates are November 13–14, with a registration deadline of October 11.'
 ---
 
 The Alberta Palaeontological Society is excited to invite you to a special overnight event at the Royal Tyrrell Museum of Palaeontology in Drumheller, Alberta!
 
 **Date**: Friday, November 13 - Saturday, November 14
 
-**Registration Deadline**: Sunday, November 1
+**Registration Deadline**: Sunday, October 11
 
 **Itinerary**:
 

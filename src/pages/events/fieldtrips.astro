@@ -15,7 +15,7 @@ import { getTodayString } from '../../utility';
 const { fieldTripCoordinator } = roles;
 
 const CURRENT_YEAR = '2026'
-const showSleepoverRegistration = getTodayString() <= '2026-11-01'
+const showSleepoverRegistration = getTodayString() <= '2026-10-11'
 
 const allEvents = await getCollection("events");
 const renderedEvents = await Promise.all(
@@ -51,7 +51,7 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fieldTripEvents);
 				<strong>Dinovember Sleepover at the Royal Tyrrell Museum!</strong>
 			</p>
 			<p>
-				Join us for a special overnight event on Friday, November 13 – Saturday, November 14. The registration deadline is Sunday, November 1. We’ve reserved 10 spots, with additional spots available on a first-come, first-served basis.
+				Join us for a special overnight event on Friday, November 13 – Saturday, November 14. The registration deadline is Sunday, October 11. We’ve reserved 10 spots, with additional spots available on a first-come, first-served basis.
 			</p>
 			<p>
 				Fill out the <a href="/fieldTrips/2026/forms/rtmp-sleepin-signup.pdf">sign up form</a> to register, or see the details below.
