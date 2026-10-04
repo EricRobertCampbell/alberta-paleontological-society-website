@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.218.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.217.1...v1.218.0) (2026-10-04)
+
+
+### Features
+
+* new tshirt ([517fb91](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/517fb9112234028338faed55866beeb671d1224b))
+* october 16 interstitial ([2ee390c](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/2ee390c0c9a584d5ab0a1de09b5f741c7c48b21f))
+
 ### [1.217.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.217.0...v1.217.1) (2026-09-29)
 
 
