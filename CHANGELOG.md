@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.219.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.218.0...v1.219.0) (2026-10-09)
+
+
+### Features
+
+* ai skills & workflow ([aa8f8f9](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/aa8f8f906bc44a9a8a26d3f01c38ee60b390939f))
+
 ## [1.218.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.217.1...v1.218.0) (2026-10-04)
 
 
