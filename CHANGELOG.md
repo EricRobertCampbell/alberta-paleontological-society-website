@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. Versions are created by [release-please](https://github.com/googleapis/release-please) from [Conventional Commits](https://www.conventionalcommits.org/).
 
 ### [1.219.2](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.219.1...v1.219.2) (2026-10-10)
 

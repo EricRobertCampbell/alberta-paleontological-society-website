@@ -92,7 +92,7 @@ iss-<number>-<description>
 
 `<number>` is the GitHub issue number when one exists. `<description>` is a short kebab-case summary. Example: `iss-248-todays-events`. If there is no issue number, use a short kebab-case description alone.
 
-Write each commit with the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) formula. This repo's changelog is generated from those messages.
+Write each commit with the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) formula. release-please opens the release pull request on `main` from these messages. `feat` bumps the minor version, `fix` and `content` bump the patch version, and other types such as `chore` do not open a release.
 
 ```text
 <type>[optional scope]: <description>

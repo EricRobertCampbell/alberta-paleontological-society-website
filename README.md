@@ -121,7 +121,18 @@ type(scope): description
 Examples:
 - `feat: add symposium page`
 - `fix: update october meeting interstitial`
-- `chore(release): 1.96.1`
+- `content: add october field trip`
+
+## Releases
+
+Pushes to `main` run [release-please](https://github.com/googleapis/release-please). It opens a release pull request that updates `CHANGELOG.md`, `package.json`, `package-lock.json`, and `.release-please-manifest.json`. Merging that pull request tags `vX.Y.Z` and publishes a GitHub Release.
+
+- `feat` bumps the minor version
+- `fix` and `content` bump the patch version
+- A `BREAKING CHANGE` footer bumps the major version
+- Other types, such as `chore` and `docs`, do not open a release
+
+See [ADR 0001](readme/adr/0001-release-please.md).
 
 ## Deployment
 

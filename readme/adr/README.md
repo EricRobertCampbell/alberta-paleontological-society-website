@@ -31,6 +31,6 @@ Do not write an ADR for trivial implementation details, one-off content edits, o
 
 | ADR | Title | Status |
 | --- | --- | --- |
-| — | _(none yet)_ | — |
+| [0001](0001-release-please.md) | Cut releases with release-please | Accepted |
 
 Add a row here whenever you create an ADR.
