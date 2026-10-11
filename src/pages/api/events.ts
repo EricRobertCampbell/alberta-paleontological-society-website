@@ -1,7 +1,48 @@
 import type { APIRoute } from 'astro'
 import { getCollection } from 'astro:content'
+import type { EventFrontmatter } from '../../content/config'
 import { getStartDate, getEndDate } from '../../utility/eventSorting'
-import { generateEventDateTimeString } from '../../utility/functions'
+
+const includedFields = [
+	'title',
+	'subtitle',
+	'location',
+	'start',
+	'end',
+	'startDate',
+	'endDate',
+	'type',
+	'host',
+	'detailsLink',
+] as const satisfies readonly (keyof EventFrontmatter)[]
+
+/**
+ * Return the event id plus frontmatter fields the weekly-events generator formats itself.
+ * Talk references are omitted. Empty optional strings are omitted.
+ */
+const toEventResponse = (id: string, data: EventFrontmatter) => {
+	const event: Record<string, unknown> = { id }
+
+	for (const field of includedFields) {
+		const value = data[field]
+		if (typeof value === 'string' && value !== '') {
+			event[field] = value
+		}
+	}
+
+	if (data.image?.src) {
+		const image: { src: string; alt: string; attribution?: string } = {
+			src: data.image.src,
+			alt: data.image.alt,
+		}
+		if (data.image.attribution) {
+			image.attribution = data.image.attribution
+		}
+		event.image = image
+	}
+
+	return event
+}
 
 export const GET: APIRoute = async ({ request }) => {
 	try {
@@ -82,26 +123,10 @@ export const GET: APIRoute = async ({ request }) => {
 			return dateA.localeCompare(dateB)
 		})
 
-		// Transform events to the required format
-		const eventsData = sortedEvents.map((event) => {
-			const { title, subtitle, location, type, host, start, end, startDate, endDate } = event.data
-
-			// Generate human-readable date string
-			const dateString = generateEventDateTimeString({
-				start,
-				end,
-				startDate,
-				endDate,
-			})
-
-			return {
-				title: title,
-				subtitle: subtitle || '',
-				date: dateString,
-				host: host || 'Alberta Palaeontological Society',
-				location: location || '',
-			}
-		})
+		// Pass frontmatter through. Display formatting happens in the consumer.
+		const eventsData = sortedEvents.map((event) =>
+			toEventResponse(event.id, event.data)
+		);
 
 		return new Response(
 			JSON.stringify(eventsData),

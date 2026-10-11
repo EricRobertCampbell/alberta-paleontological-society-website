@@ -23,15 +23,26 @@ Returns events filtered by date range.
 
 Returns an array of events that overlap with the specified date range. Events are sorted by start date (ascending).
 
+Each item is the event's content-collection id plus its frontmatter. Dates are the source values (`start` / `end` as ISO datetimes, or `startDate` / `endDate` as `YYYY-MM-DD` when the event has no time). Optional fields are omitted when empty. `host` is included only when the markdown sets it (it is not defaulted to the Alberta Palaeontological Society). `image` is included as stored, with a site-relative `src`. Talk references are not included.
+
 **Success Response (200):**
 ```json
 [
   {
-    "title": "Monthly Meeting",
-    "subtitle": "Guest Speaker: Dr. Jane Smith",
-    "date": "April 11, 2025 at 7:00 PM",
-    "host": "Alberta Palaeontological Society",
-    "location": "University of Alberta"
+    "id": "2026-02-05-rtmp-speaker-series-swallowing-stones",
+    "title": "Swallowing Stones",
+    "subtitle": "Royal Tyrrell Museum Speaker Series 2026",
+    "start": "2026-02-05T11:00:00-07:00",
+    "end": "2026-02-05T13:00:00-07:00",
+    "type": "External",
+    "host": "Royal Tyrrell Museum of Palaeontology",
+    "location": "Royal Tyrrell Museum's Auditorium (and Zoom)",
+    "detailsLink": "https://tyrrellmuseum.com/whats_on/special_events/speaker_series",
+    "image": {
+      "src": "/events/2026/example.jpg",
+      "alt": "Event poster",
+      "attribution": "Photographer Name"
+    }
   }
 ]
 ```
