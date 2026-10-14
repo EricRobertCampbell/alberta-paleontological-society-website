@@ -27,4 +27,4 @@ type: 'Symposium'
 - **Dr. Emily Bamforth**, Curator, Philip J. Currie Dinosaur Museum  
   _Three-Horned Faceoff: A Tale of Canadian Triceratops and Why They Matter_
 
-For more information on talks, posters, workshops, and other details, please see the [symposium page](/events/symposium).
+For more information on talks, posters, workshops, and other details, please see the [symposium page](/events/symposium/2026).

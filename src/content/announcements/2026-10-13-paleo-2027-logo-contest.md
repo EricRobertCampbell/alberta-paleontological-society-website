@@ -25,4 +25,4 @@ The Alberta Palaeontological Society is excited to announce a logo design contes
 
 Email your logo submission to president1@albertapaleo.org
 
-The same details are on the [Paleo 2027 symposium page](/events/symposium/2027).
+The same details are on the [Paleo 2027 symposium page](/events/symposium).

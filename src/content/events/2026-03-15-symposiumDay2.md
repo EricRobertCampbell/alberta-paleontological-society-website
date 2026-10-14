@@ -26,4 +26,4 @@ Participants will get an introduction to different early vertebrate groups, hand
 
 Participants will get hands-on experience with specimens, learn identification features and techniques, discover field and lab methods for collecting and preparing material, and learn how to document morphologies and interpret assemblages.
 
-For more information on talks, posters, workshops, and other details, please see the [symposium page](/events/symposium).
+For more information on talks, posters, workshops, and other details, please see the [symposium page](/events/symposium/2026).
