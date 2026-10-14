@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. Versions are created by [release-please](https://github.com/googleapis/release-please) from [Conventional Commits](https://www.conventionalcommits.org/).
 
+## [1.220.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.219.2...v1.220.0) (2026-10-14)
+
+
+### Features
+
+* fillable 2026 t shirt order form ([db136bc](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/db136bc5b2b1214a1f7422b3dc77551717253b04))
+* hope johnson book ([9a4278c](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/9a4278cc0995c2296c2db2eb067d7d561773253d))
+
+
+### Bug Fixes
+
+* api updates ([47af396](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/47af3962581d8967afa3da7f1a96540d8222bbd0))
+* updated old t shirt sizes ([7941ca8](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/7941ca881472280805540f6972430f987561ae99))
+
+
+### Content
+
+* add speaker photos to upcoming monthly meetings ([e514372](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/e514372b428d702ca0f19f15685ef723a36bbf39))
+
 ### [1.219.2](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.219.1...v1.219.2) (2026-10-10)
 
 ### [1.219.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.219.0...v1.219.1) (2026-10-10)
