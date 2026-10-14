@@ -12,4 +12,3 @@ image:
 **"Twists and Turns in the Evolution of Snakes"**
 
 **Location**: ESB 1-39, University of Alberta
-

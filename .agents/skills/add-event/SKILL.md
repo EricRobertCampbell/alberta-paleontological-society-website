@@ -1,13 +1,13 @@
 ---
 name: add-event
 description: >-
-  Add an Alberta Palaeontological Society event to the content collection,
-  including frontmatter schema, markdown paths, public image and abstract
-  locations, host and type conventions, and where the event is listed. Use
-  when the user runs /add-event or asks to add, create, schedule, or publish
-  an event, monthly meeting, field trip, fossil sorting session, symposium
-  session, talk, or external event. Input may be a long-form description or a
-  URL (poster, email, bulletin, event page, or social post).
+    Add an Alberta Palaeontological Society event to the content collection,
+    including frontmatter schema, markdown paths, public image and abstract
+    locations, host and type conventions, and where the event is listed. Use
+    when the user runs /add-event or asks to add, create, schedule, or publish
+    an event, monthly meeting, field trip, fossil sorting session, symposium
+    session, talk, or external event. Input may be a long-form description or a
+    URL (poster, email, bulletin, event page, or social post).
 ---
 
 # Add an event
@@ -58,14 +58,14 @@ The description supplies every fact it states. The URL fills gaps, supplies `det
 
 `type` must be one of `EVENT_TYPES`:
 
-| type | When | `host` | Listed on |
-| --- | --- | --- | --- |
-| `Monthly Meeting` | APS monthly meeting | omit | Home, `/events/`, `/events/monthlymeetings`, calendar |
-| `Field Trip` | APS field trip | omit | Home, `/events/`, `/events/fieldtrips`, calendar |
-| `Fossil Sorting` | APS microfossil sorting | omit | Home, `/events/`, `/events/fossilsorting`, calendar |
-| `Symposium` | APS symposium day or workshop | omit | Home, `/events/`, calendar. `/events/symposium` is hand-written; do not edit it unless asked |
-| `Special Joint Meeting of the APS and the CSPG BASS Division` | That joint meeting only | omit | Home, `/events/`, calendar |
-| `External` | Another organization, promoted by APS | required, not `APS` | Calendar and `/events/stable/{slug}` only |
+| type                                                          | When                                  | `host`              | Listed on                                                                                    |
+| ------------------------------------------------------------- | ------------------------------------- | ------------------- | -------------------------------------------------------------------------------------------- |
+| `Monthly Meeting`                                             | APS monthly meeting                   | omit                | Home, `/events/`, `/events/monthlymeetings`, calendar                                        |
+| `Field Trip`                                                  | APS field trip                        | omit                | Home, `/events/`, `/events/fieldtrips`, calendar                                             |
+| `Fossil Sorting`                                              | APS microfossil sorting               | omit                | Home, `/events/`, `/events/fossilsorting`, calendar                                          |
+| `Symposium`                                                   | APS symposium day or workshop         | omit                | Home, `/events/`, calendar. `/events/symposium` is hand-written; do not edit it unless asked |
+| `Special Joint Meeting of the APS and the CSPG BASS Division` | That joint meeting only               | omit                | Home, `/events/`, calendar                                                                   |
+| `External`                                                    | Another organization, promoted by APS | required, not `APS` | Calendar and `/events/stable/{slug}` only                                                    |
 
 Listing filters use `host`, not `type`. `filterAPSEvents` in `src/utility/filters.ts` keeps events with no `host` or `host: APS`. Home (`src/pages/index.astro`) uses the same rule. An `External` event without a non-APS `host` shows up as an APS event. An APS trip with some other `host` disappears from the field-trip and fossil-sorting pages.
 
@@ -98,13 +98,13 @@ Event path: `src/content/events/YYYY-MM-DD-slug.md`
 
 Talk path, only when needed: `src/content/talks/YYYY-MM-DD-speaker-topic.md`. Reference that slug (no `.md`) from the event `talks` list. Talk body uses `## Bio` and `## Abstract` when those exist.
 
-| Asset | Save as | Reference as |
-| --- | --- | --- |
-| External poster or flyer | `public/events/{year}/external/{kebab-name}.{jpg,png,webp}` | `/events/{year}/external/{kebab-name}.{ext}` |
-| APS event hero photo | `public/events/{year}/{kebab-name}.{ext}` | `/events/{year}/{kebab-name}.{ext}` |
-| Figure inside the body or talk | `public/events/{year}/{slug}/{kebab-name}.{ext}` | `/events/{year}/{slug}/{kebab-name}.{ext}` |
-| Field trip poster | `public/fieldTrips/{year}/{name}.png` | `/fieldTrips/{year}/{name}.png` |
-| Talk abstract PDF | `public/presentationAbstracts/{year}/{name}.pdf` | `/presentationAbstracts/{year}/{name}.pdf` |
+| Asset                          | Save as                                                     | Reference as                                 |
+| ------------------------------ | ----------------------------------------------------------- | -------------------------------------------- |
+| External poster or flyer       | `public/events/{year}/external/{kebab-name}.{jpg,png,webp}` | `/events/{year}/external/{kebab-name}.{ext}` |
+| APS event hero photo           | `public/events/{year}/{kebab-name}.{ext}`                   | `/events/{year}/{kebab-name}.{ext}`          |
+| Figure inside the body or talk | `public/events/{year}/{slug}/{kebab-name}.{ext}`            | `/events/{year}/{slug}/{kebab-name}.{ext}`   |
+| Field trip poster              | `public/fieldTrips/{year}/{name}.png`                       | `/fieldTrips/{year}/{name}.png`              |
+| Talk abstract PDF              | `public/presentationAbstracts/{year}/{name}.pdf`            | `/presentationAbstracts/{year}/{name}.pdf`   |
 
 Prefer kebab-case filenames with no spaces. Omit `image` when neither the user nor a fetched page provides one. Link the registration PDF already used by other field trips that year; do not add a new form unless the user supplies one.
 
@@ -125,7 +125,7 @@ image:
     alt: 'What the image shows'
     attribution: 'Photo by Name.' # optional; rendered as the caption
 talks:
-  - 2026-11-20-speaker-topic
+    - 2026-11-20-speaker-topic
 ---
 ```
 
@@ -163,11 +163,11 @@ Use this pair when the source gives a day or a range and no clock time. Field tr
 
 ### Which pair
 
-| The source gives | Write |
-| --- | --- |
-| A clock time, including one evening | `start` and `end` |
-| A day, or a range of days, and no clock time | `startDate`, plus `endDate` when the range is more than one day |
-| No date | Neither pair. Tell the user. An undated event is left off the calendar, the events API, and upcoming/past sorting |
+| The source gives                             | Write                                                                                                             |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| A clock time, including one evening          | `start` and `end`                                                                                                 |
+| A day, or a range of days, and no clock time | `startDate`, plus `endDate` when the range is more than one day                                                   |
+| No date                                      | Neither pair. Tell the user. An undated event is left off the calendar, the events API, and upcoming/past sorting |
 
 Do not write midnight, `T00:00:00`, or a guessed time in order to use `start` and `end`.
 

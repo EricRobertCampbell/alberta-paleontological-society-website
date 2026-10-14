@@ -2,6 +2,10 @@ node_modules
 .astro
 dist
 
+# local Netlify build output
+.netlify/build/
+.netlify/v1/
+
 # environment files
 .env
 .DS_Store

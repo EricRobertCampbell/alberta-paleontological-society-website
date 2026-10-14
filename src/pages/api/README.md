@@ -26,28 +26,30 @@ Returns an array of events that overlap with the specified date range. Events ar
 Each item is the event's content-collection id plus its frontmatter. Dates are the source values (`start` / `end` as ISO datetimes, or `startDate` / `endDate` as `YYYY-MM-DD` when the event has no time). Optional fields are omitted when empty. `host` is included only when the markdown sets it (it is not defaulted to the Alberta Palaeontological Society). `image` is included as stored, with a site-relative `src`. Talk references are not included.
 
 **Success Response (200):**
+
 ```json
 [
-  {
-    "id": "2026-02-05-rtmp-speaker-series-swallowing-stones",
-    "title": "Swallowing Stones",
-    "subtitle": "Royal Tyrrell Museum Speaker Series 2026",
-    "start": "2026-02-05T11:00:00-07:00",
-    "end": "2026-02-05T13:00:00-07:00",
-    "type": "External",
-    "host": "Royal Tyrrell Museum of Palaeontology",
-    "location": "Royal Tyrrell Museum's Auditorium (and Zoom)",
-    "detailsLink": "https://tyrrellmuseum.com/whats_on/special_events/speaker_series",
-    "image": {
-      "src": "/events/2026/example.jpg",
-      "alt": "Event poster",
-      "attribution": "Photographer Name"
+    {
+        "id": "2026-02-05-rtmp-speaker-series-swallowing-stones",
+        "title": "Swallowing Stones",
+        "subtitle": "Royal Tyrrell Museum Speaker Series 2026",
+        "start": "2026-02-05T11:00:00-07:00",
+        "end": "2026-02-05T13:00:00-07:00",
+        "type": "External",
+        "host": "Royal Tyrrell Museum of Palaeontology",
+        "location": "Royal Tyrrell Museum's Auditorium (and Zoom)",
+        "detailsLink": "https://tyrrellmuseum.com/whats_on/special_events/speaker_series",
+        "image": {
+            "src": "/events/2026/example.jpg",
+            "alt": "Event poster",
+            "attribution": "Photographer Name"
+        }
     }
-  }
 ]
 ```
 
 **Error Responses:**
+
 - `400`: Missing or invalid parameters
 - `500`: Server error
 
@@ -83,6 +85,7 @@ Returns Fossil Friday entry data for a specific date.
 Returns the Fossil Friday entry matching the specified date, including title, date, and images. If no entry is found, returns an empty object with comparison data for debugging.
 
 **Success Response (200):**
+
 ```json
 {
   "title": "Edmontosaurus",
@@ -98,6 +101,7 @@ Returns the Fossil Friday entry matching the specified date, including title, da
 ```
 
 **Error Responses:**
+
 - `400`: Missing or invalid parameters
 - `500`: Server error
 
@@ -125,6 +129,7 @@ Returns fossil sorting specimens with pagination and search support.
 #### Pagination
 
 When using `afterId` for pagination:
+
 - Returns up to 20 specimens per page
 - Use the `nextCursor` from the response as the `afterId` for the next page
 - If `hasMore` is `false`, there are no more results
@@ -132,6 +137,7 @@ When using `afterId` for pagination:
 #### Search
 
 When using the `q` parameter:
+
 - Searches across multiple fields: ID, description, finder credit, tags, and image descriptions
 - Returns all matching results (no pagination)
 - Case-insensitive search
@@ -141,34 +147,36 @@ When using the `q` parameter:
 Returns an object containing an array of specimens, pagination information, and search metadata.
 
 **Success Response (200):**
+
 ```json
 {
-  "images": [
-    {
-      "id": "specimen-001",
-      "date": "2025-01-15",
-      "description": "Fossil description",
-      "finderCredit": "John Doe",
-      "tags": ["dinosaur", "jurassic"],
-      "thumbnailSrc": "/fossil-sorting-images/thumb.jpg",
-      "src": "/fossil-sorting-images/image.jpg",
-      "images": [
+    "images": [
         {
-          "id": "img-001",
-          "src": "/fossil-sorting-images/image.jpg",
-          "thumbnailSrc": "/fossil-sorting-images/thumb.jpg",
-          "description": "Image description",
-          "credit": "Photographer Name"
+            "id": "specimen-001",
+            "date": "2025-01-15",
+            "description": "Fossil description",
+            "finderCredit": "John Doe",
+            "tags": ["dinosaur", "jurassic"],
+            "thumbnailSrc": "/fossil-sorting-images/thumb.jpg",
+            "src": "/fossil-sorting-images/image.jpg",
+            "images": [
+                {
+                    "id": "img-001",
+                    "src": "/fossil-sorting-images/image.jpg",
+                    "thumbnailSrc": "/fossil-sorting-images/thumb.jpg",
+                    "description": "Image description",
+                    "credit": "Photographer Name"
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "hasMore": true,
-  "nextCursor": "specimen-020"
+    ],
+    "hasMore": true,
+    "nextCursor": "specimen-020"
 }
 ```
 
 **When searching (`q` parameter):**
+
 ```json
 {
   "images": [...],
@@ -178,21 +186,25 @@ Returns an object containing an array of specimens, pagination information, and 
 ```
 
 **Error Responses:**
+
 - `500`: Server error
 
 #### Examples
 
 **Get first page:**
+
 ```
 GET /api/fossil-sorting-images
 ```
 
 **Get next page:**
+
 ```
 GET /api/fossil-sorting-images?afterId=specimen-020
 ```
 
 **Search:**
+
 ```
 GET /api/fossil-sorting-images?q=dinosaur
 ```
@@ -204,6 +216,7 @@ Responses are cached for 60 seconds (`Cache-Control: public, max-age=60`).
 #### Sorting
 
 Specimens are sorted by:
+
 1. Date (newest first)
 2. ID (alphabetically) as a tiebreaker
 
@@ -218,9 +231,10 @@ All endpoints return JSON with the following structure:
 - **Server Error**: HTTP 500 with error message
 
 Error responses follow this format:
+
 ```json
 {
-  "error": "Error message description"
+    "error": "Error message description"
 }
 ```
 
@@ -231,4 +245,3 @@ API endpoints are accessible from the same origin. For cross-origin requests, CO
 ## Rate Limiting
 
 Currently, there are no rate limits on API endpoints. Consider implementing rate limiting for production use if needed.
-

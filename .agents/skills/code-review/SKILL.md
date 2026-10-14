@@ -23,14 +23,14 @@ Orchestrate the specialized review skills. Do not restate their checklists here.
 
 ## Which reviews to run
 
-| Skill | Run when |
-| --- | --- |
-| [general-review](../general-review/SKILL.md) | Every review |
+| Skill                                          | Run when                                                                                                                                                     |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [general-review](../general-review/SKILL.md)   | Every review                                                                                                                                                 |
 | [frontend-review](../frontend-review/SKILL.md) | The diff touches `src/components/**`, `src/layouts/**`, `src/styling/**`, `public/scripts/**`, or UI pages under `src/pages/**` excluding `src/pages/api/**` |
-| [content-review](../content-review/SKILL.md) | The diff touches `src/content/**`, `src/utility/**`, `scripts/**`, or related static assets under `public/` (bulletins, fossils, abstracts, images) |
-| [api-review](../api-review/SKILL.md) | The diff touches `src/pages/api/**` or the API contract docs |
-| [security-review](../security-review/SKILL.md) | The diff touches raw HTML rendering, user-influenced URLs or paths, API input handling, secrets, third-party embeds, or file serving |
-| [testing-review](../testing-review/SKILL.md) | The diff changes behaviour |
+| [content-review](../content-review/SKILL.md)   | The diff touches `src/content/**`, `src/utility/**`, `scripts/**`, or related static assets under `public/` (bulletins, fossils, abstracts, images)          |
+| [api-review](../api-review/SKILL.md)           | The diff touches `src/pages/api/**` or the API contract docs                                                                                                 |
+| [security-review](../security-review/SKILL.md) | The diff touches raw HTML rendering, user-influenced URLs or paths, API input handling, secrets, third-party embeds, or file serving                         |
+| [testing-review](../testing-review/SKILL.md)   | The diff changes behaviour                                                                                                                                   |
 
 A styling-only change runs general-review and frontend-review. A content-copy change with no logic may skip testing-review; say so. Skip security-review when the diff has no security surface. Say which reviews were skipped and why.
 

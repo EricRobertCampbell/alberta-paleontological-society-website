@@ -4,237 +4,127 @@
         "date": "2025-11-02",
         "description": "Rodent molar. Notice the square shape, black enamel, and brownish root.",
         "finderCredit": "Vaclav Marsovsky",
-        "tags": [
-            "rodent",
-            "molar",
-            "tooth",
-            "mammal"
-        ],
-        "images": [
-            "2025-11-02-0FA567A9-33F1-4667-81C8-CE30C79745D2_1_105_c"
-        ]
+        "tags": ["rodent", "molar", "tooth", "mammal"],
+        "images": ["2025-11-02-0FA567A9-33F1-4667-81C8-CE30C79745D2_1_105_c"]
     },
     {
         "id": "apsfs-2025-00002",
         "date": "2025-11-02",
         "description": "Fragment of (reptile) jaw with a single tooth still attached",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "reptile",
-            "jaw",
-            "tooth",
-            "fragment"
-        ],
-        "images": [
-            "2025-11-02-137961F4-F5EC-4977-B98D-DD444D1FECA7_1_105_c"
-        ]
+        "tags": ["reptile", "jaw", "tooth", "fragment"],
+        "images": ["2025-11-02-137961F4-F5EC-4977-B98D-DD444D1FECA7_1_105_c"]
     },
     {
         "id": "apsfs-2025-00003",
         "date": "2025-11-02",
         "description": "Condylarth premolar",
         "finderCredit": "Vaclav Marsovsky",
-        "tags": [
-            "condylarth",
-            "premolar",
-            "tooth",
-            "mammal"
-        ],
-        "images": [
-            "2025-11-02-13E7FC7C-4CB6-4A66-9EB8-38075C68081E_1_105_c"
-        ]
+        "tags": ["condylarth", "premolar", "tooth", "mammal"],
+        "images": ["2025-11-02-13E7FC7C-4CB6-4A66-9EB8-38075C68081E_1_105_c"]
     },
     {
         "id": "apsfs-2025-00004",
         "date": "2025-11-02",
         "description": "Fish skull plate",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "fish",
-            "skull",
-            "bone"
-        ],
-        "images": [
-            "2025-11-02-1D8F56ED-44AB-4494-A3EC-DEF6E8CFC4AB_1_105_c"
-        ]
+        "tags": ["fish", "skull", "bone"],
+        "images": ["2025-11-02-1D8F56ED-44AB-4494-A3EC-DEF6E8CFC4AB_1_105_c"]
     },
     {
         "id": "apsfs-2025-00005",
         "date": "2025-11-02",
         "description": "Base of a fish ray spine",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "fish",
-            "ray",
-            "spine",
-            "fin"
-        ],
-        "images": [
-            "2025-11-02-2BB3439B-993D-4A72-BFBB-7F24EC5F62FB_1_105_c"
-        ]
+        "tags": ["fish", "ray", "spine", "fin"],
+        "images": ["2025-11-02-2BB3439B-993D-4A72-BFBB-7F24EC5F62FB_1_105_c"]
     },
     {
         "id": "apsfs-2025-00006",
         "date": "2025-11-02",
         "description": "Fish tooth (probably gar)",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "fish",
-            "tooth",
-            "gar"
-        ],
-        "images": [
-            "2025-11-02-389235AC-1145-4367-93D4-94B521C8EFA3_1_105_c"
-        ]
+        "tags": ["fish", "tooth", "gar"],
+        "images": ["2025-11-02-389235AC-1145-4367-93D4-94B521C8EFA3_1_105_c"]
     },
     {
         "id": "apsfs-2025-00007",
         "date": "2025-11-02",
         "description": "Middle section of a rodent incisor. The enamel is the black part.",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "rodent",
-            "incisor",
-            "tooth",
-            "mammal"
-        ],
-        "images": [
-            "2025-11-02-4E1793EA-3C02-4FDF-A01C-DC4345A6C5B8_1_105_c"
-        ]
+        "tags": ["rodent", "incisor", "tooth", "mammal"],
+        "images": ["2025-11-02-4E1793EA-3C02-4FDF-A01C-DC4345A6C5B8_1_105_c"]
     },
     {
         "id": "apsfs-2025-00008",
         "date": "2025-11-02",
         "description": "Fish centrum (vertebra), frontal view",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "fish",
-            "vertebra",
-            "centrum",
-            "spine",
-            "frontal"
-        ],
-        "images": [
-            "2025-11-02-5366C374-7496-4960-B2E9-FCFB966D9F81_1_105_c"
-        ]
+        "tags": ["fish", "vertebra", "centrum", "spine", "frontal"],
+        "images": ["2025-11-02-5366C374-7496-4960-B2E9-FCFB966D9F81_1_105_c"]
     },
     {
         "id": "apsfs-2025-00009",
         "date": "2025-11-02",
         "description": "Fish centrum (vertebra), frontal view",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "fish",
-            "vertebra",
-            "centrum",
-            "spine",
-            "frontal"
-        ],
-        "images": [
-            "2025-11-02-62B2CA4A-6DDA-4601-BE1F-4FF02F6B1AEC_1_105_c"
-        ]
+        "tags": ["fish", "vertebra", "centrum", "spine", "frontal"],
+        "images": ["2025-11-02-62B2CA4A-6DDA-4601-BE1F-4FF02F6B1AEC_1_105_c"]
     },
     {
         "id": "apsfs-2025-00010",
         "date": "2025-11-02",
         "description": "Fish skull plate",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "fish",
-            "skull",
-            "bone"
-        ],
-        "images": [
-            "2025-11-02-75C600B9-522F-41FF-8E43-72C563AFE2E3_1_105_c"
-        ]
+        "tags": ["fish", "skull", "bone"],
+        "images": ["2025-11-02-75C600B9-522F-41FF-8E43-72C563AFE2E3_1_105_c"]
     },
     {
         "id": "apsfs-2025-00011",
         "date": "2025-11-02",
         "description": "Insectivore premolar. Notice the high crowns for piercing insect exoskeletons.",
         "finderCredit": "Labib Chowdhury",
-        "tags": [
-            "insectivore",
-            "premolar",
-            "tooth",
-            "mammal"
-        ],
-        "images": [
-            "2025-11-02-78A1F103-2031-4462-89B8-E6AB9C77E3A1_1_105_c"
-        ]
+        "tags": ["insectivore", "premolar", "tooth", "mammal"],
+        "images": ["2025-11-02-78A1F103-2031-4462-89B8-E6AB9C77E3A1_1_105_c"]
     },
     {
         "id": "apsfs-2025-00012",
         "date": "2025-11-02",
         "description": "Condylarth molar, right side, front half",
         "finderCredit": "Vaclav Marsovsky",
-        "tags": [
-            "condylarth",
-            "molar",
-            "tooth",
-            "mammal",
-            "fragment"
-        ],
-        "images": [
-            "2025-11-02-92A3673A-F78F-4E99-854D-7E668D1ACCCC_1_105_c"
-        ]
+        "tags": ["condylarth", "molar", "tooth", "mammal", "fragment"],
+        "images": ["2025-11-02-92A3673A-F78F-4E99-854D-7E668D1ACCCC_1_105_c"]
     },
     {
         "id": "apsfs-2025-00013",
         "date": "2025-11-02",
         "description": "Insective premolar",
         "finderCredit": "Labib Chowdhury",
-        "tags": [
-            "incisor",
-            "tooth",
-            "enamel",
-            "fragment"
-        ],
-        "images": [
-            "2025-11-02-B0899F34-C487-4A4C-BBC7-545E6F697BCB_1_105_c"
-        ]
+        "tags": ["incisor", "tooth", "enamel", "fragment"],
+        "images": ["2025-11-02-B0899F34-C487-4A4C-BBC7-545E6F697BCB_1_105_c"]
     },
     {
         "id": "apsfs-2025-00014",
         "date": "2025-11-02",
         "description": "Fish Centrum",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "insectivore",
-            "premolar",
-            "tooth",
-            "mammal"
-        ],
-        "images": [
-            "2025-11-02-9F96EB90-26EB-480C-A578-FC280845A640_1_105_c"
-        ]
+        "tags": ["insectivore", "premolar", "tooth", "mammal"],
+        "images": ["2025-11-02-9F96EB90-26EB-480C-A578-FC280845A640_1_105_c"]
     },
     {
         "id": "apsfs-2025-00015",
         "date": "2025-11-02",
         "description": "Possibly the enamel coating of an incisor",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "incisor",
-            "tooth",
-            "enamel",
-            "fragment"
-        ],
-        "images": [
-            "2025-11-02-BA1598BC-8CBA-485E-940C-A3B367F01E77_1_105_c"
-        ]
+        "tags": ["incisor", "tooth", "enamel", "fragment"],
+        "images": ["2025-11-02-BA1598BC-8CBA-485E-940C-A3B367F01E77_1_105_c"]
     },
     {
         "id": "apsfs-2025-00016",
         "date": "2025-11-02",
         "description": "Ray tooth plate (lateral view)",
         "finderCredit": "Gerhard Maier",
-        "tags": [
-            "ray",
-            "tooth",
-            "tooth plate",
-            "lateral"
-        ],
+        "tags": ["ray", "tooth", "tooth plate", "lateral"],
         "images": [
             "2025-11-02-C3DD543F-C2C2-4E79-ABE5-1C984E66E771_1_105_c",
             "2025-11-02-98B7AE0C-D22B-4D2A-93EB-D12260AD0426_1_105_c",
@@ -247,309 +137,167 @@
         "date": "2025-11-02",
         "description": "Ray tooth plate (occlusal view)",
         "finderCredit": "Labib Chowdhury",
-        "tags": [
-            "ray",
-            "tooth",
-            "tooth plate",
-            "occlusal"
-        ],
-        "images": [
-            "2025-11-02-C3F26A16-6873-4DBA-9A3E-6A10C005E6AB_1_105_c"
-        ]
+        "tags": ["ray", "tooth", "tooth plate", "occlusal"],
+        "images": ["2025-11-02-C3F26A16-6873-4DBA-9A3E-6A10C005E6AB_1_105_c"]
     },
     {
         "id": "apsfs-2025-00018",
         "date": "2025-11-02",
         "description": "Lagomorph incisors",
         "finderCredit": "Vaclav Marsovsky",
-        "tags": [
-            "lagomorph",
-            "incisor",
-            "tooth",
-            "mammal"
-        ],
-        "images": [
-            "2025-11-02-CB804BFB-FED4-4BCA-A0C0-F5EE4D1C9B39_1_105_c"
-        ]
+        "tags": ["lagomorph", "incisor", "tooth", "mammal"],
+        "images": ["2025-11-02-CB804BFB-FED4-4BCA-A0C0-F5EE4D1C9B39_1_105_c"]
     },
     {
         "id": "apsfs-2025-00019",
         "date": "2025-11-02",
         "description": "Fish fin ray",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "fish",
-            "fin",
-            "ray",
-            "bone"
-        ],
-        "images": [
-            "2025-11-02-D100609B-3E9C-4C8B-A9D9-FDFC231EC45F_1_105_c"
-        ]
+        "tags": ["fish", "fin", "ray", "bone"],
+        "images": ["2025-11-02-D100609B-3E9C-4C8B-A9D9-FDFC231EC45F_1_105_c"]
     },
     {
         "id": "apsfs-2025-00020",
         "date": "2025-11-02",
         "description": "Fish or reptile scale",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "scale",
-            "fish",
-            "reptile"
-        ],
-        "images": [
-            "2025-11-02-D12E7102-9C47-48D4-B95C-B5A2E51BC863_1_105_c"
-        ]
+        "tags": ["scale", "fish", "reptile"],
+        "images": ["2025-11-02-D12E7102-9C47-48D4-B95C-B5A2E51BC863_1_105_c"]
     },
     {
         "id": "apsfs-2025-00021",
         "date": "2025-11-02",
         "description": "Possibly the atlas from a fish?",
         "finderCredit": "Vaclav Marsovsky",
-        "tags": [
-            "fish",
-            "atlas",
-            "vertebra",
-            "spine"
-        ],
-        "images": [
-            "2025-11-02-D4167A70-8998-4A9E-9FC4-02D5684EC3C7_1_105_c"
-        ]
+        "tags": ["fish", "atlas", "vertebra", "spine"],
+        "images": ["2025-11-02-D4167A70-8998-4A9E-9FC4-02D5684EC3C7_1_105_c"]
     },
     {
         "id": "apsfs-2025-00022",
         "date": "2025-11-02",
         "description": "Possibly a phalanx?",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "phalanx",
-            "bone",
-            "fragment"
-        ],
-        "images": [
-            "2025-11-02-D4DA2933-7CEF-4828-B14E-C25E5B288E7F_1_105_c"
-        ]
+        "tags": ["phalanx", "bone", "fragment"],
+        "images": ["2025-11-02-D4DA2933-7CEF-4828-B14E-C25E5B288E7F_1_105_c"]
     },
     {
         "id": "apsfs-2025-00023",
         "date": "2025-11-02",
         "description": "Fish centrum (vertebra), frontal view",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "fish",
-            "vertebra",
-            "centrum",
-            "spine",
-            "frontal"
-        ],
-        "images": [
-            "2025-11-02-DFF9529E-2CA9-4A60-8FF1-09FD5C299128_1_105_c"
-        ]
+        "tags": ["fish", "vertebra", "centrum", "spine", "frontal"],
+        "images": ["2025-11-02-DFF9529E-2CA9-4A60-8FF1-09FD5C299128_1_105_c"]
     },
     {
         "id": "apsfs-2025-00024",
         "date": "2025-11-02",
         "description": "Insectivore incisor. The tooth is the spoon-shaped bit on top and the root is the long part below",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "insectivore",
-            "incisor",
-            "tooth",
-            "mammal"
-        ],
-        "images": [
-            "2025-11-02-F3742FA3-F407-42FE-87D1-FD2EFB236872_1_105_c"
-        ]
+        "tags": ["insectivore", "incisor", "tooth", "mammal"],
+        "images": ["2025-11-02-F3742FA3-F407-42FE-87D1-FD2EFB236872_1_105_c"]
     },
     {
         "id": "apsfs-2025-00025",
         "date": "2025-11-02",
         "description": "Fragment of (reptile) jaw with a single tooth still attached",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "reptile",
-            "jaw",
-            "tooth",
-            "fragment"
-        ],
-        "images": [
-            "2025-11-02-FA589ED5-53CA-4C79-B754-E91987D84584_1_105_c"
-        ]
+        "tags": ["reptile", "jaw", "tooth", "fragment"],
+        "images": ["2025-11-02-FA589ED5-53CA-4C79-B754-E91987D84584_1_105_c"]
     },
     {
         "id": "apsfs-2025-00026",
         "date": "2025-11-02",
         "description": "Lizard maxilla",
         "finderCredit": "Atharva Roy",
-        "tags": [
-            "lizard",
-            "maxilla",
-            "jaw",
-            "reptile"
-        ],
-        "images": [
-            "2025-11-02-24BCECCE-3030-4DFC-AA05-13B518814FE9_4_5005_c"
-        ]
+        "tags": ["lizard", "maxilla", "jaw", "reptile"],
+        "images": ["2025-11-02-24BCECCE-3030-4DFC-AA05-13B518814FE9_4_5005_c"]
     },
     {
         "id": "apsfs-2025-00027",
         "date": "2025-11-02",
         "description": "Carnivoran tooth",
         "finderCredit": "Atharva Roy",
-        "tags": [
-            "carnivoran",
-            "tooth",
-            "mammal"
-        ],
-        "images": [
-            "2025-11-02-460ADCA9-557A-4019-BBE4-20E47E4BF820_4_5005_c"
-        ]
+        "tags": ["carnivoran", "tooth", "mammal"],
+        "images": ["2025-11-02-460ADCA9-557A-4019-BBE4-20E47E4BF820_4_5005_c"]
     },
     {
         "id": "apsfs-2025-00028",
         "date": "2025-11-02",
         "description": "Maybe a marsupial molar?",
         "finderCredit": "Atharva Roy",
-        "tags": [
-            "marsupial",
-            "molar",
-            "tooth",
-            "mammal"
-        ],
-        "images": [
-            "2025-11-02-50C0AEC9-01F2-4E35-9C5E-8A6A50AC647B_4_5005_c"
-        ]
+        "tags": ["marsupial", "molar", "tooth", "mammal"],
+        "images": ["2025-11-02-50C0AEC9-01F2-4E35-9C5E-8A6A50AC647B_4_5005_c"]
     },
     {
         "id": "apsfs-2025-00029",
         "date": "2025-11-02",
         "description": "Lower left molar from Hyopsodus",
         "finderCredit": "Atharva Roy",
-        "tags": [
-            "hyopsodus",
-            "molar",
-            "tooth",
-            "mammal"
-        ],
-        "images": [
-            "2025-11-02-8BDAC972-4E6B-448D-8655-1156AF5534FE_4_5005_c"
-        ]
+        "tags": ["hyopsodus", "molar", "tooth", "mammal"],
+        "images": ["2025-11-02-8BDAC972-4E6B-448D-8655-1156AF5534FE_4_5005_c"]
     },
     {
         "id": "apsfs-2025-00030",
         "date": "2025-11-02",
         "description": "Mammal astragalus",
         "finderCredit": "Atharva Roy",
-        "tags": [
-            "mammal",
-            "astragalus",
-            "bone",
-            "ankle"
-        ],
-        "images": [
-            "2025-11-02-A055BC12-76AB-4408-A355-3AB2AC36CBC3_4_5005_c"
-        ]
+        "tags": ["mammal", "astragalus", "bone", "ankle"],
+        "images": ["2025-11-02-A055BC12-76AB-4408-A355-3AB2AC36CBC3_4_5005_c"]
     },
     {
         "id": "apsfs-2025-00031",
         "date": "2025-11-02",
         "description": "Mammal astragalus",
         "finderCredit": "Atharva Roy",
-        "tags": [
-            "mammal",
-            "astragalus",
-            "bone",
-            "ankle"
-        ],
-        "images": [
-            "2025-11-02-BEA83619-A598-4B0E-A496-8DAACF8261F0_4_5005_c"
-        ]
+        "tags": ["mammal", "astragalus", "bone", "ankle"],
+        "images": ["2025-11-02-BEA83619-A598-4B0E-A496-8DAACF8261F0_4_5005_c"]
     },
     {
         "id": "apsfs-2025-00032",
         "date": "2025-11-02",
         "description": "Lizard maxilla",
         "finderCredit": "Atharva Roy",
-        "tags": [
-            "lizard",
-            "maxilla",
-            "jaw",
-            "reptile"
-        ],
-        "images": [
-            "2025-11-02-F389D00A-67A5-4DDA-B288-CD0D25E523F5_4_5005_c"
-        ]
+        "tags": ["lizard", "maxilla", "jaw", "reptile"],
+        "images": ["2025-11-02-F389D00A-67A5-4DDA-B288-CD0D25E523F5_4_5005_c"]
     },
     {
         "id": "apsfs-2025-00033",
         "date": "2025-11-13",
         "description": "Mammal molar",
         "finderCredit": "Matthew Rhodes",
-        "tags": [
-            "mammal",
-            "molar",
-            "tooth"
-        ],
-        "images": [
-            "2025-11-23-matthew-mammalMolar"
-        ]
+        "tags": ["mammal", "molar", "tooth"],
+        "images": ["2025-11-23-matthew-mammalMolar"]
     },
     {
         "id": "apsfs-2025-00034",
         "date": "2025-11-13",
         "description": "Lizard jaw fragment",
         "finderCredit": "Matthew Rhodes",
-        "tags": [
-            "lizard",
-            "jaw",
-            "fragment",
-            "reptile"
-        ],
-        "images": [
-            "2025-11-23-matthew-lizardJawFragment"
-        ]
+        "tags": ["lizard", "jaw", "fragment", "reptile"],
+        "images": ["2025-11-23-matthew-lizardJawFragment"]
     },
     {
         "id": "apsfs-2025-00035",
         "date": "2025-11-13",
         "description": "Rodent incisor",
         "finderCredit": "Matthew Rhodes",
-        "tags": [
-            "rodent",
-            "incisor",
-            "tooth",
-            "mammal"
-        ],
-        "images": [
-            "2025-11-23-matthew-rodentIncisor"
-        ]
+        "tags": ["rodent", "incisor", "tooth", "mammal"],
+        "images": ["2025-11-23-matthew-rodentIncisor"]
     },
     {
         "id": "apsfs-2025-00036",
         "date": "2025-11-23",
         "description": "Insectivore tooth (partial)",
         "finderCredit": "Gerhard Maier",
-        "tags": [
-            "insectivore",
-            "tooth",
-            "mammal",
-            "partial"
-        ],
-        "images": [
-            "2025-11-23-gerhard-P1210571"
-        ]
+        "tags": ["insectivore", "tooth", "mammal", "partial"],
+        "images": ["2025-11-23-gerhard-P1210571"]
     },
     {
         "id": "apsfs-2025-00037",
         "date": "2025-11-23",
         "description": "Insectivore tooth (partial)",
         "finderCredit": "Gerhard Maier",
-        "tags": [
-            "insectivore",
-            "tooth",
-            "mammal",
-            "partial"
-        ],
+        "tags": ["insectivore", "tooth", "mammal", "partial"],
         "images": [
             "2025-11-23-gerhard-P1210576_1",
             "2025-11-23-gerhard-P1210577_1"
@@ -560,53 +308,31 @@
         "date": "2025-11-23",
         "description": "Insectivore tooth, I think; missing one root",
         "finderCredit": "Gerhard Maier",
-        "tags": [
-            "insectivore",
-            "tooth",
-            "mammal"
-        ],
-        "images": [
-            "2025-11-23-gerhard-P1160826"
-        ]
+        "tags": ["insectivore", "tooth", "mammal"],
+        "images": ["2025-11-23-gerhard-P1160826"]
     },
     {
         "id": "apsfs-2025-00040",
         "date": "2025-11-23",
         "description": "Marsupial tooth",
         "finderCredit": "Gerhard Maier",
-        "tags": [
-            "marsupial",
-            "tooth",
-            "mammal"
-        ],
-        "images": [
-            "2025-11-23-gerhard-P1170051"
-        ]
+        "tags": ["marsupial", "tooth", "mammal"],
+        "images": ["2025-11-23-gerhard-P1170051"]
     },
     {
         "id": "apsfs-2025-00041",
         "date": "2025-11-23",
         "description": "Fish palatal teeth",
         "finderCredit": "Gerhard Maier",
-        "tags": [
-            "fish",
-            "tooth",
-            "palatal"
-        ],
-        "images": [
-            "2025-11-23-gerhard-P1170052"
-        ]
+        "tags": ["fish", "tooth", "palatal"],
+        "images": ["2025-11-23-gerhard-P1170052"]
     },
     {
         "id": "apsfs-2025-00042",
         "date": "2025-11-23",
         "description": "Amphibian vertebra",
         "finderCredit": "Jolinda Botha",
-        "tags": [
-            "amphibian",
-            "vertebra",
-            "spine"
-        ],
+        "tags": ["amphibian", "vertebra", "spine"],
         "images": [
             "2025-11-23-eric-2176C691-E28D-46D0-82AD-1307A658C851_1_105_c",
             "2025-11-23-eric-7525A3F0-0102-4D3A-9365-BB24C1FB245B_1_105_c"
@@ -617,12 +343,7 @@
         "date": "2025-11-23",
         "description": "Multituberculate molar",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "multituberculate",
-            "molar",
-            "tooth",
-            "mammal"
-        ],
+        "tags": ["multituberculate", "molar", "tooth", "mammal"],
         "images": [
             "2025-11-23-eric-287DB3A2-83C6-43FD-9166-236BE9B7551C_1_105_c"
         ]
@@ -632,12 +353,7 @@
         "date": "2025-11-23",
         "description": "Marsupial molar",
         "finderCredit": "Vaclav Marsovsky",
-        "tags": [
-            "marsupial",
-            "molar",
-            "tooth",
-            "mammal"
-        ],
+        "tags": ["marsupial", "molar", "tooth", "mammal"],
         "images": [
             "2025-11-23-eric-350401E7-2844-4DE3-8AD3-A5FA0C8F3FBE_1_105_c"
         ]
@@ -647,12 +363,7 @@
         "date": "2025-11-23",
         "description": "Rodent molar",
         "finderCredit": "Vaclav Marsovsky",
-        "tags": [
-            "rodent",
-            "molar",
-            "tooth",
-            "mammal"
-        ],
+        "tags": ["rodent", "molar", "tooth", "mammal"],
         "images": [
             "2025-11-23-eric-442F488B-C147-44BB-8AD3-CC79A2B50AA3_1_105_c"
         ]
@@ -662,12 +373,7 @@
         "date": "2025-11-23",
         "description": "Rodent molar",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "rodent",
-            "molar",
-            "tooth",
-            "mammal"
-        ],
+        "tags": ["rodent", "molar", "tooth", "mammal"],
         "images": [
             "2025-11-23-eric-830969E7-4BDB-49F6-A419-8B8AB1F2094F_1_105_c"
         ]
@@ -677,12 +383,7 @@
         "date": "2025-11-23",
         "description": "Rodent molar",
         "finderCredit": "Vaclav Marsovsky",
-        "tags": [
-            "rodent",
-            "molar",
-            "tooth",
-            "mammal"
-        ],
+        "tags": ["rodent", "molar", "tooth", "mammal"],
         "images": [
             "2025-11-23-eric-94F904F3-E00E-43F7-A919-08AA9B74D6EF_1_105_c"
         ]
@@ -692,12 +393,7 @@
         "date": "2025-11-23",
         "description": "Fish barb spine",
         "finderCredit": "Vaclav Marsovsky",
-        "tags": [
-            "fish",
-            "barb",
-            "spine",
-            "fin"
-        ],
+        "tags": ["fish", "barb", "spine", "fin"],
         "images": [
             "2025-11-23-eric-A2776814-C26D-4A0F-AD06-037C3771D67E_1_105_c"
         ]
@@ -707,12 +403,7 @@
         "date": "2025-11-23",
         "description": "Rodent molar",
         "finderCredit": "Vaclav Marsovsky",
-        "tags": [
-            "rodent",
-            "molar",
-            "tooth",
-            "mammal"
-        ],
+        "tags": ["rodent", "molar", "tooth", "mammal"],
         "images": [
             "2025-11-23-eric-A3938DDC-2B0C-4179-96B8-56C72A41C38F_1_105_c"
         ]
@@ -722,11 +413,7 @@
         "date": "2025-11-23",
         "description": "Fish fin spine",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "fish",
-            "fin",
-            "spine"
-        ],
+        "tags": ["fish", "fin", "spine"],
         "images": [
             "2025-11-23-eric-A96225B0-B0C5-4B13-BE83-19E77BDD8463_1_105_c"
         ]
@@ -736,13 +423,7 @@
         "date": "2025-11-23",
         "description": "Ectypodus multituberculate upper molar",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "ectypodus",
-            "multituberculate",
-            "molar",
-            "tooth",
-            "mammal"
-        ],
+        "tags": ["ectypodus", "multituberculate", "molar", "tooth", "mammal"],
         "images": [
             "2025-11-23-eric-C86ECE2E-532C-4CF4-83FA-CA5194C32EE0_1_105_c"
         ]
@@ -752,12 +433,7 @@
         "date": "2025-11-23",
         "description": "Ungual phalanx",
         "finderCredit": "Vaclav Marsovsky",
-        "tags": [
-            "ungual",
-            "phalanx",
-            "bone",
-            "mammal"
-        ],
+        "tags": ["ungual", "phalanx", "bone", "mammal"],
         "images": [
             "2025-11-23-eric-CADE6370-D392-452C-AF4B-FEEE05BFB884_1_105_c"
         ]
@@ -767,12 +443,7 @@
         "date": "2025-11-23",
         "description": "Condylarth molar",
         "finderCredit": "Eric Campbell",
-        "tags": [
-            "condylarth",
-            "molar",
-            "tooth",
-            "mammal"
-        ],
+        "tags": ["condylarth", "molar", "tooth", "mammal"],
         "images": [
             "2025-11-23-eric-F61A7E29-4A16-4185-876F-27582870589D_1_105_c"
         ]

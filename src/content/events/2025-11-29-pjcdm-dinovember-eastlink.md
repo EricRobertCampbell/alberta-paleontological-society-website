@@ -16,4 +16,3 @@ Another dino-riffic hands-on experience is coming to Grande Prairie! More detail
 **Location:** Eastlink Centre, Grande Prairie  
 **Age Group:** All Ages  
 **Program Type:** Hands-on activities hosted at the Eastlink Centre
-

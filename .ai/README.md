@@ -4,10 +4,10 @@ Planning and requirements files for agent-assisted work on the Alberta Paleontol
 
 ## Paths
 
-| Kind | Path |
-| --- | --- |
+| Kind         | Path                                 |
+| ------------ | ------------------------------------ |
 | Requirements | `.ai/requirements/<feature-slug>.md` |
-| Plans | `.ai/plans/<feature-slug>/` |
+| Plans        | `.ai/plans/<feature-slug>/`          |
 
 Typical plan directory contents:
 

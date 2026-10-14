@@ -18,4 +18,3 @@ Oh my! What big teeth you have! Feast your eyes on some dino skulls and learn ab
 **Location:** Royal Alberta Museum, Edmonton, various locations  
 **Age Group:** 3 and up  
 **Cost:** Free with admission
-

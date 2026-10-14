@@ -17,18 +17,18 @@ An exclusive adult-focused palaeontology talk with **Dr. Emily Bamforth**, Museu
 **Doors:** 6:00 PM  
 **Talk:** 7:15 PM – 9:00 PM  
 **Where:** Infinity Dome, TELUS Spark Science Centre, Calgary  
-**Cost:** $28.00  
+**Cost:** $28.00
 
-Admission includes access to SUE: The *T. rex* Experience. Light refreshments will also be available for purchase.
+Admission includes access to SUE: The _T. rex_ Experience. Light refreshments will also be available for purchase.
 
-Step into the world of *Tyrannosaurus rex* during a special evening presentation with Dr. Emily Bamforth. Drawing on fossil evidence and current palaeontological research, Dr. Bamforth will explore what scientists are learning about *T. rex* and the ancient ecosystems in which these remarkable dinosaurs lived.
+Step into the world of _Tyrannosaurus rex_ during a special evening presentation with Dr. Emily Bamforth. Drawing on fossil evidence and current palaeontological research, Dr. Bamforth will explore what scientists are learning about _T. rex_ and the ancient ecosystems in which these remarkable dinosaurs lived.
 
-This adult-focused evening offers a rare opportunity to hear directly from a Canadian palaeontologist, explore the science behind one of the world’s most famous dinosaurs, and experience SUE: The *T. rex* Experience after hours.
+This adult-focused evening offers a rare opportunity to hear directly from a Canadian palaeontologist, explore the science behind one of the world’s most famous dinosaurs, and experience SUE: The _T. rex_ Experience after hours.
 
 ### Dr. Emily Bamforth
 
 Dr. Emily Bamforth is the Curator of the Philip J. Currie Dinosaur Museum near Grande Prairie, Alberta, and an adjunct professor at the Universities of Alberta and Saskatchewan. She studies Cretaceous dinosaur ecosystems in northern Alberta and Saskatchewan.
 
-Dr. Bamforth spent eight years working as a paleontologist at the Royal Saskatchewan Museum’s T. rex Discovery Centre in Eastend, SK, working cheek-by-jowl with ‘Scotty’, the World’s Largest *T. rex*.
+Dr. Bamforth spent eight years working as a paleontologist at the Royal Saskatchewan Museum’s T. rex Discovery Centre in Eastend, SK, working cheek-by-jowl with ‘Scotty’, the World’s Largest _T. rex_.
 
 Tickets and more information are available on the [TELUS Spark event page](https://www.sparkscience.ca/tyrant-lizard-kings-and-queens-eh-a-tale-of-canadian-t.rexes).

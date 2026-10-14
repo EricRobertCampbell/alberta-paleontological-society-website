@@ -5,5 +5,5 @@ end: '2026-09-18T21:00:00-06:00'
 type: 'Monthly Meeting'
 location: 'Calgary, Alberta'
 talks:
-  - 2026-09-18-luke-nelson-enchodus
+    - 2026-09-18-luke-nelson-enchodus
 ---

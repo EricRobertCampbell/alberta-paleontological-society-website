@@ -7,24 +7,24 @@ type: 'Symposium'
 **Speakers:**
 
 - **Dr. Julien Divay**, Palaeoichthyologist, Hon. Research Associate – Royal Tyrrell Museum of Palaeontology  
-  *Tracing Faunal and Environmental Changes Through Time: The Palaeontological Power of Fish Microvertebrate Fossils*
+  _Tracing Faunal and Environmental Changes Through Time: The Palaeontological Power of Fish Microvertebrate Fossils_
 
 - **Dr. Melina Jobbins**, Palaeobiologist, University of Manitoba  
-  *Fishes in a Suit of Armour - The Story of Placoderms, One of Our Oldest Jawed Relatives*
+  _Fishes in a Suit of Armour - The Story of Placoderms, One of Our Oldest Jawed Relatives_
 
 - **Darren H. Tanke**, Senior Technician II, Royal Tyrrell Museum of Palaeontology  
-  *The Impact of Heavy Industry on Significant Discoveries of Fossil Marine Reptiles in Alberta*
+  _The Impact of Heavy Industry on Significant Discoveries of Fossil Marine Reptiles in Alberta_
 
 - **Tako Koning**, P. Geol, Senior Geologist - Consultant  
-  *The Driftwood Canyon Fossil Beds, Smithers, Northern British Columbia - An Amazing Well-Preserved and Highly Diverse Eocene-age Terrestrial Paleoecology*
+  _The Driftwood Canyon Fossil Beds, Smithers, Northern British Columbia - An Amazing Well-Preserved and Highly Diverse Eocene-age Terrestrial Paleoecology_
 
 - **Dr. Jon Noad**, Stantec Consulting; University of Adelaide  
-  *Left Behind: Previously Unrecognized Trace Fossils with Stories to Tell*
+  _Left Behind: Previously Unrecognized Trace Fossils with Stories to Tell_
 
 - **Kano Sasaguchi**, Department of Biological Sciences, University of Alberta  
-  *Alberta's Paleocene Insects: New Insights from a Fossil Legacy*
+  _Alberta's Paleocene Insects: New Insights from a Fossil Legacy_
 
 - **Dr. Emily Bamforth**, Curator, Philip J. Currie Dinosaur Museum  
-  *Three-Horned Faceoff: A Tale of Canadian Triceratops and Why They Matter*
+  _Three-Horned Faceoff: A Tale of Canadian Triceratops and Why They Matter_
 
 For more information on talks, posters, workshops, and other details, please see the [symposium page](/events/symposium).

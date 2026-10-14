@@ -91,7 +91,6 @@ const e = () => {
                             for (
                                 var u = t;
                                 null != u && 'SECTION' != u.nodeName;
-
                             )
                                 u = u.parentNode
                             var f = e.getIndices(u),
@@ -120,7 +119,6 @@ const e = () => {
                 for (
                     var e, t = document.getElementsByTagName(o);
                     t.length && (e = t[0]);
-
                 )
                     e.parentNode.replaceChild(e.firstChild, e)
             }),

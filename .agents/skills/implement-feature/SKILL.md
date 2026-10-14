@@ -125,9 +125,9 @@ Examples: an expected abstraction is missing or means something else, the planne
 1. **Document the discovery** in `findings.md`. Record a decision in `decisions.md` when you are proposing one.
 2. **Update** `plan.md` and `checklist.md`. Keep the previous reasoning under `## Revisions` with the date and why it changed.
 3. **Classify the impact.** This repo has no separate impact scale, so use:
-   - **minor** — a detail is wrong, and the approach, scope, and architecture still hold. Record it and continue.
-   - **moderate** — the approach changes, and the objective and architecture still hold. Stop for confirmation.
-   - **major** — scope, requirements, architecture, or the reuse target is wrong. Stop, and recommend `/plan-feature` again.
+    - **minor** — a detail is wrong, and the approach, scope, and architecture still hold. Record it and continue.
+    - **moderate** — the approach changes, and the objective and architecture still hold. Stop for confirmation.
+    - **major** — scope, requirements, architecture, or the reuse target is wrong. Stop, and recommend `/plan-feature` again.
 4. **Present the discrepancy** in this form:
 
 ```text

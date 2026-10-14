@@ -119,6 +119,7 @@ type(scope): description
 ```
 
 Examples:
+
 - `feat: add symposium page`
 - `fix: update october meeting interstitial`
 - `content: add october field trip`

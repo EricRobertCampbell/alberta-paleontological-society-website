@@ -130,7 +130,9 @@ async function processDirectory(
     } catch (error) {
         const errorMessage =
             error instanceof Error ? error.message : String(error)
-        throw new Error(`Error reading directory ${relativePath || dirPath}: ${errorMessage}`)
+        throw new Error(
+            `Error reading directory ${relativePath || dirPath}: ${errorMessage}`
+        )
     }
 
     return processedCount

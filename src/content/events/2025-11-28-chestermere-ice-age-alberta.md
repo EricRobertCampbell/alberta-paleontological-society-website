@@ -29,4 +29,3 @@ Registration required.
 - Parents / guardians must stay in the library if the child is under 8 years old.
 
 [Register here](https://www.chestermerepubliclibrary.com/Events/ice-age-alberta-an-indoor-prehistoric-safari?id=1764370800-967351)
-

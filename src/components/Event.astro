@@ -3,6 +3,7 @@ import { generateEventDateTimeString, extractReferenceId } from "../utility";
 import type { EventFrontmatter } from "../content/config";
 import { splitIsoString } from '../utility/dates'
 import { getHostLogoLocation } from '../utility/filters'
+import { splitAttribution } from '../utility/attributionLinks'
 import { getEntry } from 'astro:content'
 import Talk from './Talk.astro'
 interface Props {
@@ -50,6 +51,9 @@ const resolvedTalks = talks
 	: [];
 
 const hostLogoLocation = getHostLogoLocation({ host });
+const attributionParts = image?.attribution
+	? splitAttribution(image.attribution)
+	: [];
 ---
 
 <section
@@ -92,8 +96,18 @@ const hostLogoLocation = getHostLogoLocation({ host });
 					src={image.src}
 					alt={image.alt}
 				/>
-				{image.attribution && (
-					<figcaption>{image.attribution}</figcaption>
+				{attributionParts.length > 0 && (
+					<figcaption>
+						{attributionParts.map((part) =>
+							part.kind === 'link' ? (
+								<a href={part.href} rel="noopener noreferrer">
+									{part.text}
+								</a>
+							) : (
+								part.text
+							)
+						)}
+					</figcaption>
 				)}
 			</figure>
 		)

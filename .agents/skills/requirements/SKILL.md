@@ -15,10 +15,10 @@ Use this skill before [plan-feature](../plan-feature/SKILL.md) when the requirem
 2. If the request is a bug fix, find the root cause via reproducing the error before writing the rest of the specification. See [Bug fixes](#bug-fixes).
 3. Inspect only enough of the site behaviour to name the visitors and workflows involved (public pages, events, bulletins, fossils, APIs). Do not produce an implementation plan. That is [plan-feature](../plan-feature/SKILL.md).
 4. Separate each statement into one of these classes:
-   - **Requested** — the user or stakeholder asked for this outcome
-   - **Implied** — a reasonable consequence of what they asked for
-   - **Assumption** — something you are treating as true so the spec can be written
-   - **Suggestion** — an implementation or architecture idea from the stakeholder
+    - **Requested** — the user or stakeholder asked for this outcome
+    - **Implied** — a reasonable consequence of what they asked for
+    - **Assumption** — something you are treating as true so the spec can be written
+    - **Suggestion** — an implementation or architecture idea from the stakeholder
 5. A stakeholder suggestion is not a requirement. Record it under Assumptions, labelled as a non-binding suggestion. Do not turn it into a mandatory design.
 6. Suggest improvements related to this issue. Include technical improvements and user-experience improvements. Each one must follow from the issue and the behaviour you inspected. Record them under Suggested Improvements. They are proposals, not requirements. Do not copy them into Functional Requirements, Acceptance Criteria, or Business Rules. Name the improvement and why it matters for this issue. Do not design how to build it.
 7. Write the specification to `.ai/requirements/<feature-slug>.md`. Follow the path and slug rules in `.ai/README.md`.

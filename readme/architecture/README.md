@@ -11,9 +11,9 @@ Longer-lived descriptions of how areas of the APS website work. Use these for in
 ```yaml
 ---
 paths:
-  - src/utility/dates.ts
-  - src/content/config.ts
-  - src/pages/api/**
+    - src/utility/dates.ts
+    - src/content/config.ts
+    - src/pages/api/**
 ---
 ```
 

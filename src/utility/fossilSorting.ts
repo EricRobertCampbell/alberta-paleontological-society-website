@@ -21,7 +21,7 @@ export type SpecimenWithImages = {
 /**
  * Filters specimens by a search query.
  * Searches across id, description, finderCredit, tags, and image descriptions/credits.
- * 
+ *
  * @param specimens - Array of specimens to filter
  * @param query - Search query string
  * @returns Filtered array of specimens matching the query
@@ -47,4 +47,3 @@ export function filterSpecimensByQuery<T extends SpecimenWithImages>(
         return haystacks.some((h) => h.includes(q))
     })
 }
-
