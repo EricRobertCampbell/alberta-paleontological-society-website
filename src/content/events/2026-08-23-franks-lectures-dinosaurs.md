@@ -15,7 +15,7 @@ Featuring Professor of Dinosaur Palaeobiology **Dr. Philip Currie**.
 
 **When:** Sunday, August 23, 2026, 6:00 PM – 8:00 PM  
 **Where:** Franks Community Pub, 8815 99 St NW, Edmonton, AB  
-**Cost:** $28.41 CAD  
+**Cost:** $28.41 CAD
 
 More than a century ago, Alberta became the epicentre of one of the greatest fossil discoveries in history. Beginning with the “Great Canadian Dinosaur Rush” in 1910, hundreds of spectacular dinosaur skeletons were unearthed from Alberta’s Badlands and shipped to museums around the world, forever changing our understanding of prehistoric life.
 

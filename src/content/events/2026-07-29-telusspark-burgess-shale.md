@@ -19,9 +19,9 @@ This will be Dr. Caron’s only public talk in Western Canada during his visit.
 **Doors:** 6:00 PM  
 **Talk:** 7:15 PM – 9:00 PM  
 **Where:** Infinity Dome, TELUS Spark Science Centre, Calgary  
-**Cost:** $28.00  
+**Cost:** $28.00
 
-Admission includes access to SUE: The *T. rex* Experience. Light refreshments will also be available for purchase. Seating is first-come, first-served with limited space—plan to arrive early to secure your spot.
+Admission includes access to SUE: The _T. rex_ Experience. Light refreshments will also be available for purchase. Seating is first-come, first-served with limited space—plan to arrive early to secure your spot.
 
 Nestled high in the Canadian Rocky Mountains of British Columbia, the half-billion-year-old Burgess Shale—one of the world’s most extraordinary fossil sites—offers a rare glimpse into the earliest complex animals on Earth. In this talk, Dr. Caron will take you through the history of Burgess Shale research, from its discovery in the nineteenth century to decades of groundbreaking fieldwork led by the Royal Ontario Museum, and share how these fossils are transforming our understanding of early animal life and evolution.
 

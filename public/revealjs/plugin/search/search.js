@@ -101,7 +101,6 @@
                                 for (
                                     var u = t;
                                     null != u && 'SECTION' != u.nodeName;
-
                                 )
                                     u = u.parentNode
                                 var p = e.getIndices(u),
@@ -131,7 +130,6 @@
                     for (
                         var e, t = document.getElementsByTagName(i);
                         t.length && (e = t[0]);
-
                     )
                         e.parentNode.replaceChild(e.firstChild, e)
                 }),

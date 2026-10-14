@@ -12,9 +12,9 @@ import hljs from 'highlight.js'
         m = 'data-line-number',
         a = /\r\n|\r|\n/g
     function u(e) {
-        for (var n = e.toString(), t = e.anchorNode; 'TD' !== t.nodeName; )
+        for (var n = e.toString(), t = e.anchorNode; 'TD' !== t.nodeName;)
             t = t.parentNode
-        for (var r = e.focusNode; 'TD' !== r.nodeName; ) r = r.parentNode
+        for (var r = e.focusNode; 'TD' !== r.nodeName;) r = r.parentNode
         var o = parseInt(t.dataset.lineNumber),
             a = parseInt(r.dataset.lineNumber)
         if (o == a) return n
@@ -24,14 +24,13 @@ import hljs from 'highlight.js'
         for (
             a < o && ((i = o), (o = a), (a = i), (i = l), (l = s), (s = i));
             0 !== n.indexOf(l);
-
         )
             l = l.slice(1)
-        for (; -1 === n.lastIndexOf(s); ) s = s.slice(0, -1)
+        for (; -1 === n.lastIndexOf(s);) s = s.slice(0, -1)
         for (
             var c = l,
                 u = (function (e) {
-                    for (var n = e; 'TABLE' !== n.nodeName; ) n = n.parentNode
+                    for (var n = e; 'TABLE' !== n.nodeName;) n = n.parentNode
                     return n
                 })(t),
                 d = o + 1;
@@ -161,7 +160,7 @@ import hljs from 'highlight.js'
             var n,
                 t = window.getSelection()
             !(function (e) {
-                for (var n = e; n; ) {
+                for (var n = e; n;) {
                     if (
                         n.className &&
                         -1 !== n.className.indexOf('hljs-ln-code')

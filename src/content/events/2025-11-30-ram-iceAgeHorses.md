@@ -17,4 +17,3 @@ Imagine this place we call Alberta over 10,000 years ago, when Ice Age horses ro
 **Location:** Royal Alberta Museum, Edmonton, at the Roundhouse  
 **Age Group:** 6 and up  
 **Cost:** Free with admission
-

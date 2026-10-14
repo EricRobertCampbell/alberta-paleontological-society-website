@@ -151,7 +151,7 @@
             .replace(/\|/g, (t, e, n) => {
                 let i = !1,
                     s = e
-                for (; --s >= 0 && '\\' === n[s]; ) i = !i
+                for (; --s >= 0 && '\\' === n[s];) i = !i
                 return i ? '|' : ' |'
             })
             .split(/ \|/)
@@ -162,7 +162,7 @@
             n.length > e)
         )
             n.splice(e)
-        else for (; n.length < e; ) n.push('')
+        else for (; n.length < e;) n.push('')
         for (; i < n.length; i++) n[i] = n[i].trim().replace(/\\\|/g, '|')
         return n
     }
@@ -170,7 +170,7 @@
         const i = t.length
         if (0 === i) return ''
         let s = 0
-        for (; s < i; ) {
+        for (; s < i;) {
             const r = t.charAt(i - s - 1)
             if (r !== e || n) {
                 if (r === e || !n) break
@@ -182,7 +182,7 @@
     function S(t, e) {
         if (e < 1) return ''
         let n = ''
-        for (; e > 1; ) (1 & e && (n += t), (e >>= 1), (t += t))
+        for (; e > 1;) (1 & e && (n += t), (e >>= 1), (t += t))
         return n + t
     }
     function T(t, e, n, i) {
@@ -324,7 +324,6 @@
                     t &&
                     ((h = !1), (e = k.exec(t))) &&
                     !this.rules.block.hr.test(t);
-
                 ) {
                     if (
                         ((n = e[0]),
@@ -371,7 +370,6 @@
                             !a.test(p) &&
                             !e.test(p) &&
                             !i.test(t);
-
                         ) {
                             if (p.search(/[^ ]/) >= r || !p.trim())
                                 d += '\n' + p.slice(r)
@@ -672,7 +670,6 @@
                 for (
                     l.lastIndex = 0, e = e.slice(-1 * t.length + n);
                     null != (i = l.exec(e));
-
                 ) {
                     if (
                         ((s = i[1] || i[2] || i[3] || i[4] || i[5] || i[6]), !s)
@@ -1091,7 +1088,6 @@
                 t = t.replace(/\r\n|\r/g, '\n'),
                     this.blockTokens(t, this.tokens);
                 (e = this.inlineQueue.shift());
-
             )
                 this.inlineTokens(e.src, e.tokens)
             return this.tokens
@@ -1106,19 +1102,16 @@
                           (t, e, n) => e + '    '.repeat(n.length)
                       );
                 t;
-
             )
-                if (
-                    !(
-                        this.options.extensions &&
-                        this.options.extensions.block &&
-                        this.options.extensions.block.some(
-                            (i) =>
-                                !!(n = i.call({ lexer: this }, t, e)) &&
-                                ((t = t.substring(n.raw.length)), e.push(n), !0)
-                        )
+                if (!(
+                    this.options.extensions &&
+                    this.options.extensions.block &&
+                    this.options.extensions.block.some(
+                        (i) =>
+                            !!(n = i.call({ lexer: this }, t, e)) &&
+                            ((t = t.substring(n.raw.length)), e.push(n), !0)
                     )
-                )
+                ))
                     if ((n = this.tokenizer.space(t)))
                         ((t = t.substring(n.raw.length)),
                             1 === n.raw.length && e.length > 0
@@ -1238,7 +1231,6 @@
                         ;
                         null !=
                         (r = this.tokenizer.rules.inline.reflinkSearch.exec(l));
-
                     )
                         t.includes(r[0].slice(r[0].lastIndexOf('[') + 1, -1)) &&
                             (l =
@@ -1251,11 +1243,7 @@
                                         .lastIndex
                                 ))
             }
-            for (
-                ;
-                null != (r = this.tokenizer.rules.inline.blockSkip.exec(l));
-
-            )
+            for (; null != (r = this.tokenizer.rules.inline.blockSkip.exec(l));)
                 l =
                     l.slice(0, r.index) +
                     '[' +
@@ -1265,14 +1253,13 @@
             for (
                 ;
                 null != (r = this.tokenizer.rules.inline.escapedEmSt.exec(l));
-
             )
                 ((l =
                     l.slice(0, r.index + r[0].length - 2) +
                     '++' +
                     l.slice(this.tokenizer.rules.inline.escapedEmSt.lastIndex)),
                     this.tokenizer.rules.inline.escapedEmSt.lastIndex--)
-            for (; t; )
+            for (; t;)
                 if (
                     (a || (o = ''),
                     (a = !1),
@@ -1721,7 +1708,6 @@
                                     ? this.parseInline(d.tokens)
                                     : d.text;
                                 n + 1 < S && 'text' === t[n + 1].type;
-
                             )
                                 ((d = t[++n]),
                                     (u +=

@@ -31,4 +31,3 @@ The Earth Science for Society exhibition will inspire an understanding of Earth 
 Knowledge of Earth Science is crucial for responsible collaboration by geoscientists, governments, and companies to find and develop resources for the products and infrastructure that we use in our daily lives.
 
 Increased science literacy is essential for the students of today as they are the decision-makers of tomorrow and the future caretakers of the Earth.
-

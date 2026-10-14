@@ -27,4 +27,3 @@ Each session features **four rounds of dino trivia**:
 **Location:** Tumbler Ridge Museum, Tumbler Ridge, BC
 
 For more details and other museum programs, visit the Tumbler Ridge Museum events page.
-

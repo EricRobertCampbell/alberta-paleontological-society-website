@@ -14,9 +14,9 @@ Scientific sessions (oral and poster presentations) are planned August 25 and 26
 
 **Registration and abstracts**
 
-- Registration opens: May 1, 2026  
-- Abstract submission deadline: Monday, June 1, 2026  
-- Registration and abstract submission will be handled through the FourWaves platform; instructions will follow by email. Advance registration is strongly encouraged (on-site registration will be available).  
+- Registration opens: May 1, 2026
+- Abstract submission deadline: Monday, June 1, 2026
+- Registration and abstract submission will be handled through the FourWaves platform; instructions will follow by email. Advance registration is strongly encouraged (on-site registration will be available).
 - Questions: [gac.paleontology@gmail.com](mailto:gac.paleontology@gmail.com)
 
 **Billings Award**

@@ -117,7 +117,7 @@ class l {
         if (this.stack.length > 1) return this.stack.pop()
     }
     closeAllNodes() {
-        for (; this.closeNode(); );
+        for (; this.closeNode(););
     }
     toJSON() {
         return JSON.stringify(this.rootNode, null, 4)
@@ -206,7 +206,7 @@ function b(e, { joinWith: t }) {
             const t = a
             let n = _(e),
                 i = ''
-            for (; n.length > 0; ) {
+            for (; n.length > 0;) {
                 const e = S.exec(n)
                 if (!e) {
                     i += n
@@ -723,7 +723,7 @@ const oe = n,
                 v.keywordPatternRe.lastIndex = 0
                 let t = v.keywordPatternRe.exec(y),
                     a = ''
-                for (; t; ) {
+                for (; t;) {
                     a += y.substring(e, t.index)
                     const i = R.case_insensitive ? t[0].toLowerCase() : t[0],
                         r = ((n = i), v.keywords[n])
@@ -774,7 +774,7 @@ const oe = n,
             function p(e, t) {
                 let a = 1
                 const n = t.length - 1
-                for (; a <= n; ) {
+                for (; a <= n;) {
                     if (!e._emit[a]) {
                         a++
                         continue
@@ -814,7 +814,7 @@ const oe = n,
                         ;(e['on:end'](t, n), n.isMatchIgnored && (i = !1))
                     }
                     if (i) {
-                        for (; e.endsParent && e.parent; ) e = e.parent
+                        for (; e.endsParent && e.parent;) e = e.parent
                         return e
                     }
                 }
@@ -928,7 +928,7 @@ const oe = n,
             try {
                 if (R.__emitTokens) R.__emitTokens(t, A)
                 else {
-                    for (v.matcher.considerAll(); ; ) {
+                    for (v.matcher.considerAll(); ;) {
                         ;(L++,
                             x ? (x = !1) : v.matcher.considerAll(),
                             (v.matcher.lastIndex = M))
@@ -44500,7 +44500,7 @@ var fs = e(Cs)
             var t,
                 a = window.getSelection()
             !(function (e) {
-                for (var t = e; t; ) {
+                for (var t = e; t;) {
                     if (
                         t.className &&
                         -1 !== t.className.indexOf('hljs-ln-code')
@@ -44515,10 +44515,9 @@ var fs = e(Cs)
                               for (
                                   var t = e.toString(), a = e.anchorNode;
                                   'TD' !== a.nodeName;
-
                               )
                                   a = a.parentNode
-                              for (var n = e.focusNode; 'TD' !== n.nodeName; )
+                              for (var n = e.focusNode; 'TD' !== n.nodeName;)
                                   n = n.parentNode
                               var i = parseInt(a.dataset.lineNumber),
                                   o = parseInt(n.dataset.lineNumber)
@@ -44535,10 +44534,9 @@ var fs = e(Cs)
                                   (c = _),
                                   (_ = s));
                                   0 !== t.indexOf(c);
-
                               )
                                   c = c.slice(1)
-                              for (; -1 === t.lastIndexOf(_); )
+                              for (; -1 === t.lastIndexOf(_);)
                                   _ = _.slice(0, -1)
                               for (
                                   var d = c,
@@ -44546,7 +44544,6 @@ var fs = e(Cs)
                                           for (
                                               var t = e;
                                               'TABLE' !== t.nodeName;
-
                                           )
                                               t = t.parentNode
                                           return t

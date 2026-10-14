@@ -10,6 +10,7 @@ type: 'Monthly Meeting'
 [YouTube recording](https://www.youtube.com/watch?v=buYbvmKUaq8)
 
 ## Katie Kreutzer
+
 _University of Regina / Royal Saskatchewan Museum_
 
 **Title:** First report of Paleocene amber from Estevan, Canada—geochemistry and inclusions
@@ -27,6 +28,7 @@ Katie is in her final year of undergraduate studies at the University of Regina,
 ---
 
 ## Andre Mueller
+
 _McGill University_
 
 **Title:** First Impressions are important! From dragonflies to beetles, new insect impression fossils from the Dinosaur Park Formation provide invaluable insight into Cretaceous life.
@@ -44,6 +46,7 @@ Born in Calgary and raised in Medicine Hat, Alberta, Andre Mueller has always be
 ---
 
 ## Ben Egan
+
 _University of Regina_
 
 **Title:** Describing a new species of Staphylinid beetle from Dominican amber

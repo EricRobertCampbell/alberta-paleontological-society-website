@@ -18,10 +18,10 @@ While not part of this trip proper, there's an option to go to the [Jurassic For
 **Royal Alberta Museum Admission (Saturday June 20, 2026):**  
 9810 103A Avenue NW Edmonton T5J 0G2
 
--   Adults (18-64) $21
--   Youth (7-17) $10
--   Senior (65+) $14
--   Children (6 and under) free
+- Adults (18-64) $21
+- Youth (7-17) $10
+- Senior (65+) $14
+- Children (6 and under) free
 
 **Maximum 30 attendees.**
 

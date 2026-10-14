@@ -22,4 +22,3 @@ Come to our Games with Grads night to get to know some of our palaeontology grad
 - Meet some of our palaeo grad students!
 
 We hope to see you there!
-

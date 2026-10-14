@@ -11,9 +11,9 @@ image:
 detailsLink: 'https://dinomuseum.ca'
 ---
 
-The wishbone (furcula) shows up in *T. rex*, raptors, and the Thanksgiving turkey. It is one of the clues that birds are living dinosaurs.
+The wishbone (furcula) shows up in _T. rex_, raptors, and the Thanksgiving turkey. It is one of the clues that birds are living dinosaurs.
 
-Join the museum for Prehistoric Thanksgiving. Decorate a feathered dinosaur in the Maker's Space, with a prize for the best one, watch *Frankenweenie* and *Goosebumps*, and have hot chocolate while supplies last. Included with regular admission.
+Join the museum for Prehistoric Thanksgiving. Decorate a feathered dinosaur in the Maker's Space, with a prize for the best one, watch _Frankenweenie_ and _Goosebumps_, and have hot chocolate while supplies last. Included with regular admission.
 
 **When:** Saturday, October 10, 2026, 10:00 AM – 2:00 PM  
 **Where:** Philip J. Currie Dinosaur Museum, Wembley, AB

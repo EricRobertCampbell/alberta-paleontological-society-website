@@ -134,7 +134,7 @@ function _(e, t) {
         .replace(/\|/g, (e, t, n) => {
             let s = !1,
                 r = t
-            for (; --r >= 0 && '\\' === n[r]; ) s = !s
+            for (; --r >= 0 && '\\' === n[r];) s = !s
             return s ? '|' : ' |'
         })
         .split(/ \|/)
@@ -145,7 +145,7 @@ function _(e, t) {
         n.length > t)
     )
         n.splice(t)
-    else for (; n.length < t; ) n.push('')
+    else for (; n.length < t;) n.push('')
     for (; s < n.length; s++) n[s] = n[s].trim().replace(/\\\|/g, '|')
     return n
 }
@@ -153,7 +153,7 @@ function y(e, t, n) {
     const s = e.length
     if (0 === s) return ''
     let r = 0
-    for (; r < s; ) {
+    for (; r < s;) {
         const i = e.charAt(s - r - 1)
         if (i !== t || n) {
             if (i === t || !n) break
@@ -165,7 +165,7 @@ function y(e, t, n) {
 function $(e, t) {
     if (t < 1) return ''
     let n = ''
-    for (; t > 1; ) (1 & t && (n += e), (t >>= 1), (e += e))
+    for (; t > 1;) (1 & t && (n += e), (t >>= 1), (e += e))
     return n + e
 }
 function z(e, t, n, s) {
@@ -303,7 +303,6 @@ class S {
                 e &&
                 ((g = !1), (t = x.exec(e))) &&
                 !this.rules.block.hr.test(e);
-
             ) {
                 if (
                     ((n = t[0]),
@@ -347,7 +346,6 @@ class S {
                         !l.test(h) &&
                         !t.test(h) &&
                         !s.test(e);
-
                     ) {
                         if (h.search(/[^ ]/) >= i || !h.trim())
                             u += '\n' + h.slice(i)
@@ -639,7 +637,6 @@ class S {
             for (
                 a.lastIndex = 0, t = t.slice(-1 * e.length + n);
                 null != (s = a.exec(t));
-
             ) {
                 if (((r = s[1] || s[2] || s[3] || s[4] || s[5] || s[6]), !r))
                     continue
@@ -1047,7 +1044,6 @@ class v {
         for (
             e = e.replace(/\r\n|\r/g, '\n'), this.blockTokens(e, this.tokens);
             (t = this.inlineQueue.shift());
-
         )
             this.inlineTokens(t.src, t.tokens)
         return this.tokens
@@ -1062,19 +1058,16 @@ class v {
                       (e, t, n) => t + '    '.repeat(n.length)
                   );
             e;
-
         )
-            if (
-                !(
-                    this.options.extensions &&
-                    this.options.extensions.block &&
-                    this.options.extensions.block.some(
-                        (s) =>
-                            !!(n = s.call({ lexer: this }, e, t)) &&
-                            ((e = e.substring(n.raw.length)), t.push(n), !0)
-                    )
+            if (!(
+                this.options.extensions &&
+                this.options.extensions.block &&
+                this.options.extensions.block.some(
+                    (s) =>
+                        !!(n = s.call({ lexer: this }, e, t)) &&
+                        ((e = e.substring(n.raw.length)), t.push(n), !0)
                 )
-            )
+            ))
                 if ((n = this.tokenizer.space(e)))
                     ((e = e.substring(n.raw.length)),
                         1 === n.raw.length && t.length > 0
@@ -1191,7 +1184,6 @@ class v {
                     ;
                     null !=
                     (i = this.tokenizer.rules.inline.reflinkSearch.exec(a));
-
                 )
                     e.includes(i[0].slice(i[0].lastIndexOf('[') + 1, -1)) &&
                         (a =
@@ -1204,20 +1196,20 @@ class v {
                                     .lastIndex
                             ))
         }
-        for (; null != (i = this.tokenizer.rules.inline.blockSkip.exec(a)); )
+        for (; null != (i = this.tokenizer.rules.inline.blockSkip.exec(a));)
             a =
                 a.slice(0, i.index) +
                 '[' +
                 $('a', i[0].length - 2) +
                 ']' +
                 a.slice(this.tokenizer.rules.inline.blockSkip.lastIndex)
-        for (; null != (i = this.tokenizer.rules.inline.escapedEmSt.exec(a)); )
+        for (; null != (i = this.tokenizer.rules.inline.escapedEmSt.exec(a));)
             ((a =
                 a.slice(0, i.index + i[0].length - 2) +
                 '++' +
                 a.slice(this.tokenizer.rules.inline.escapedEmSt.lastIndex)),
                 this.tokenizer.rules.inline.escapedEmSt.lastIndex--)
-        for (; e; )
+        for (; e;)
             if (
                 (l || (o = ''),
                 (l = !1),
@@ -1638,7 +1630,6 @@ class C {
                         for (
                             p = u.tokens ? this.parseInline(u.tokens) : u.text;
                             n + 1 < $ && 'text' === e[n + 1].type;
-
                         )
                             ((u = e[++n]),
                                 (p +=
@@ -2107,7 +2098,7 @@ const N = '__SCRIPT_END__',
                 c = 0,
                 h = !0,
                 p = []
-            for (; (l = n.exec(e)); )
+            for (; (l = n.exec(e));)
                 ((o = i.test(l[0])),
                     !o && h && p.push([]),
                     (a = e.substring(c, l.index)),
@@ -2236,7 +2227,6 @@ const N = '__SCRIPT_END__',
                     o = o.substring(0, i.index) + o.substring(s.lastIndex),
                         e.nodeValue = o;
                     (l = r.exec(n));
-
                 )
                     l[2] ? t.setAttribute(l[1], l[2]) : t.setAttribute(l[3], '')
                 return !0
@@ -2254,7 +2244,7 @@ const N = '__SCRIPT_END__',
                     const l = t.childNodes[i]
                     if (i > 0) {
                         let e = i - 1
-                        for (; e >= 0; ) {
+                        for (; e >= 0;) {
                             const s = t.childNodes[e]
                             if (
                                 'function' == typeof s.setAttribute &&

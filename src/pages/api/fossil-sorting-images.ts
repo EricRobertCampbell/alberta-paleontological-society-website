@@ -1,6 +1,9 @@
 import type { APIRoute } from 'astro'
 import { getCollection, type CollectionEntry } from 'astro:content'
-import type { FossilSortingSpecimen, FossilSortingImage } from '../../content/config'
+import type {
+    FossilSortingSpecimen,
+    FossilSortingImage,
+} from '../../content/config'
 import { extractReferenceId } from '../../utility/functions'
 import { filterSpecimensByQuery } from '../../utility/fossilSorting'
 
@@ -110,7 +113,9 @@ export const GET: APIRoute = async ({ request }) => {
     let startIndex = 0
 
     if (afterId) {
-        const index = sortedSpecimens.findIndex((specimen) => specimen.id === afterId)
+        const index = sortedSpecimens.findIndex(
+            (specimen) => specimen.id === afterId
+        )
         startIndex = index === -1 ? sortedSpecimens.length : index + 1
     }
 
@@ -136,4 +141,3 @@ export const GET: APIRoute = async ({ request }) => {
         }
     )
 }
-
