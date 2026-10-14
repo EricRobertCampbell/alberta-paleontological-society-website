@@ -1,0 +1,688 @@
+---
+export const prerender = true
+
+import Layout from '../../../layouts/Layout.astro'
+import HeadingWithBackground from '../../../components/HeadingWithBackground.astro'
+import EmailLink from '../../../components/EmailLink.astro'
+import Alert from '../../../components/Alert.astro'
+
+const SYMPOSIUM_POSTERS: Array<{ title: string; authors: string }> = [
+	{
+		authors: 'Kendra Harrington, Mahdiyeh Gholizadeh, Ryusuke Kimitsuki, Ciara Stewart, and John-Paul Zonneveld',
+		title: 'Latest Middle Triassic tetrapod footprints from the Brown Hill section, Williston Lake, British Columbia, Canada.'
+	},
+	{
+		authors: 'William B. Fenyo, Joshua A. Doyon, and Alison M. Murray',
+		title: 'Isolation of bones from a micro-CT scan of a fossilized regurgitated pellet.'
+	},
+	{
+		authors: 'María Mercedes Gómez, Erin Dillon, Irene García, Brigida De Gracia, and Aaron O\'Dea',
+		title: 'Palaeoecological reconstruction of shark communities across the Isthmus of Panama using fossil dermal denticles.'
+	},
+	{
+		authors: 'Jay Gegner, S. V. Robson, and Jessica Theodor',
+		title: "We're all ears: a comparison of five merycoidodontid petrosals."
+	},
+	{
+		authors: 'Emily L. Bamforth and Jackson Sweder',
+		title: "'Big Sam': A new large skull of Pachyrhinosaurus lakustai from the Campanian (73 Ma) Wapiti Formation of Alberta, Canada, with implications for intraspecies variation"
+	},
+	{
+		authors: 'Joshua A. Doyon',
+		title: 'The mid-Cretaceous marine life of the Northwest Territories, Canada: implications for marine conservation.'
+	},
+	{
+		authors: 'Atharva Roy',
+		title: 'Insights into the Feeding Ecology of Dinosaurs of the Upper Dinosaur Park Formation using Tooth Morphometrics and Principal Component Analysis'
+	},
+	{
+		authors: 'Jordan Sourial, Philip J. Currie, and Eva B. Koppelhus',
+		title: 'Analysis of the skeletal sorting and distribution of bone elements in the Danek Bone Bed (Horseshoe Canyon Fm.)'
+	},
+	{
+		authors: 'Ollie Barnett, Jared T. Voris, Darla K. Zelenitsky, and François Therrien',
+		title: 'Comparative analysis of sinuses and paranasal airways within the clade Ankylosauria from Alberta, Canada'
+	},
+	{
+		authors: 'François Therrien, Jared Voris, Kohei Tanaka, and Darla K. Zelenitsky',
+		title: 'Running abilities of dinosaurs in the tyrannosaur-dominated ecosystems of the uppermost Cretaceous Dinosaur Park, Hell Creek, and Nemegt formations.'
+	},
+	{
+		authors: 'Jack R. Milligan, Taia Wyenberg-Henzler, Jordan Stock, Henry S. Sharpe, Emily L. Bamforth, Nicolás Campione, and Corwin Sullivan',
+		title: 'Taphonomy and palaeoecology of the Deadfall Hills Bonebed of the Wapiti Formation of northern Alberta'
+	},
+	{
+		authors: 'Sebastian Feng and Philip J. Currie',
+		title: 'Environmental Influences on Preservational Biases in the Horseshoe Canyon and Upper Wapiti formations'
+	},
+	{
+		authors: 'Taia Wyenberg-Henzler, Caleb M. Brown, Darren H. Tanke, Phil R. Bell, Nicolás Campione, and Corwin Sullivan',
+		title: 'Distribution and behavioural implications of tooth marks on hadrosaurid cranial elements from the Upper Cretaceous of North America'
+	},
+	{
+		authors: 'Corbin Gomez',
+		title: 'Analysis and description of a partially prepared sub-adult Mosasaurus missouriensis (Squamata, Mosasauridae) from the Bearpaw Formation during the Upper Cretaceous in Western Canada.'
+	},
+	{
+		authors: 'Mollie Black, Jack Milligan, and Jordan Mallon',
+		title: 'A possible pachycephalosaur supraorbital from the Frenchman Formation, southwest Saskatchewan.'
+	},
+	{
+		authors: 'Brennan P. Martens and Royce I. Riturban',
+		title: 'A divers\' guide to Paleozoic filter-feeding radiodonts: Reconstructing the body of hurdiids based on recent studies in phylogenetic relations within Hurdiidae'
+	},
+	{
+		authors: 'Nooshafarin Haghighat',
+		title: 'Late Permian Benthic Foraminiferal Diversity from the Central Persian Gulf (Zagros Basin), Southern Iran.'
+	},
+	{
+		authors: 'Kaiki Kobayashi and Corwin Sullivan',
+		title: 'The epaxial ossified tendon lattice and musculature of Centrosaurus apertus (Ornithischia: Ceratopsidae).'
+	},
+	{
+		authors: 'Tako Koning',
+		title: "Algal Stromatolites—As Old as 3.5 Billion-Years-Old in the Precambrian to Present Day in Shark's Bay, Australia"
+	},
+	{
+		authors: 'Trevor H. Rempert, Brennan P. Martens, and Alexander P. M. Vinkeles Melchers',
+		title: 'A Clidastes mosasaur (Reptilia, Squamata) from the Late Cretaceous of southwestern Arkansas'
+	}
+]
+
+const internalNavLinks: Array<{title: string, id: string}> = [
+	{
+		title: 'Speaker Schedule',
+		id: 'speaker-schedule'
+	},
+	{
+		title: 'Posters',
+		id: 'posters'
+	},
+	{
+		title: 'Call for Presentations & Posters',
+		id: 'call-for-presentations'
+	},
+	{
+		title: 'Workshops',
+		id: 'workshops'
+	},
+	{
+		title: 'Registration',
+		id: 'registration'
+	},
+	{
+		title: 'Previous Symposia',
+		id: 'previous-symposia'
+	}
+]
+
+interface ScheduleItem {
+	time: string
+	title: string | Array<string>
+	speaker?: string | Array<string>
+	type?: 'break' | 'presentation' | 'special'
+	note?: string
+}
+
+const schedule: Array<ScheduleItem> = [
+	{
+		time: '9:00 – 9:15 am',
+		title: ['Opening Statements', 'Symposium Introduction'],
+		speaker: ['Cory Gross, APS President', 'Mona Trick, APS Symposium Chair'],
+		type: 'special'
+	},
+	{
+		time: '9:15 – 10:15 am',
+		title: 'Tracing Faunal and Environmental Changes Through Time: The Palaeontological Power of Fish Microvertebrate Fossils',
+		speaker: 'Dr. Julien Divay, Palaeoichthyologist, Cretaceous Research and Canadian Journal of Earth Sciences',
+		type: 'presentation'
+	},
+	{
+		time: '10:15 – 10:30 am',
+		title: 'Coffee break',
+		type: 'break'
+	},
+	{
+		time: '10:30 – 11:30 am',
+		title: 'Fishes in a Suit of Armour - The Story of Placoderms, One of Our Oldest Jawed Relatives',
+		speaker: 'Dr. Melina Jobbins, Palaeobiologist, University of Manitoba',
+		type: 'presentation'
+	},
+	{
+		time: '11:30 – 12:00 pm',
+		title: 'The Impact of Heavy Industry on Significant Discoveries of Fossil Marine Reptiles in Alberta',
+		speaker: 'Darren H. Tanke, Senior Technician II, Royal Tyrrell Museum of Palaeontology, Drumheller, Alberta',
+		type: 'presentation'
+	},
+	{
+		time: '12:00 – 1:00 pm',
+		title: 'Lunch break',
+		type: 'break'
+	},
+	{
+		time: '1:00 – 1:30 pm',
+		title: 'The Driftwood Canyon Fossil Beds, Smithers, Northern British Columbia - An Amazing Well-Preserved and Highly Diverse Eocene-age Terrestrial Paleoecology',
+		speaker: 'Tako Koning, P. Geol, Senior Geologist - Consultant',
+		type: 'presentation'
+	},
+	{
+		time: '1:30 – 2:00 pm',
+		title: 'Left Behind: Previously Unrecognized Trace Fossils with Stories to Tell',
+		speaker: 'Dr. Jon Noad, Stantec Consulting; University of Adelaide',
+		type: 'presentation'
+	},
+	{
+		time: '2:00 – 3:00 pm',
+		title: 'Posters & Displays Breakout Session and coffee break',
+		type: 'break',
+		note: 'Poster presenters are requested to be with their posters'
+	},
+	{
+		time: '3:00 – 3:30 pm',
+		title: 'Alberta\'s Paleocene Insects: New Insights from a Fossil Legacy',
+		speaker: 'Kano Sasaguchi, Department of Biological Sciences, University of Alberta',
+		type: 'presentation'
+	},
+	{
+		time: '3:30 – 4:30 pm',
+		title: 'Three-Horned Faceoff: A Tale of Canadian Triceratops and Why They Matter',
+		speaker: 'Dr. Emily Bamforth, Curator, Philip J. Currie Dinosaur Museum',
+		type: 'presentation'
+	},
+	{
+		time: '4:30 pm',
+		title: 'Closing Remarks for Paleo 2026',
+		speaker: 'Mona Trick, APS Symposium Chair',
+		type: 'special'
+	}
+]
+---
+
+<Layout subtitle="Symposium 2026">
+	<HeadingWithBackground background="uofaMuseum1">
+		<h1>Alberta Paleontological Society Symposium 2026</h1>
+	</HeadingWithBackground>
+
+	<Alert>
+		<p>
+			<strong>Download the Circular:</strong> For everything in one place, 
+			<a href="/symposium/2026/Paleo2026Circular.pdf">download the Paleo 2026 Circular</a>.
+		</p>
+	</Alert>
+
+	<h2>Paleo 2026 - APS Symposium 2026</h2>
+	<p class="subtitle">Saturday, March 14 &mdash; Sunday, March 15, 2026</p>
+	<p class="subtitle">
+		Mount Royal University, Calgary, Alberta
+	</p>
+
+	<!-- <p> -->
+	<!-- 	Planning is underway for the 29<sup>th</sup> annual Alberta Palaeontological Society Symposium! --> 
+	<!-- 	Details about the date, venue, and program will be announced as they become available. -->
+	<!-- </p> -->
+
+	<p>
+		This symposium continues our tradition of featuring presentations from a mix of amateur and 
+		professional palaeontologists. The aim is to showcase palaeontology to the general public and 
+		to provide an opportunity for contact between the Alberta Palaeontological Society, industry, 
+		government, and educational facilities.
+	</p>
+
+	<nav id=internal-nav>
+		<ul>
+			{
+				internalNavLinks.map(({title, id}) => (
+				<li><a class="reset-link-style" href={`#${id}`}>
+						<span>
+							{title}
+						</span>
+				</a></li>
+				))
+			}
+		</ul>
+	</nav>
+
+	<section id="speaker-schedule">
+		<h3>Speaker Schedule</h3>
+		<p><strong>Paleo 2026, March 14, 2026</strong></p>
+		<p><strong>Jenkins Theatre, Main Building Level 1 (lower level), Mount Royal University</strong></p>
+		
+		<div class="schedule-container">
+			{schedule.map((item) => (
+				<div class={`schedule-item schedule-item--${item.type || 'presentation'}`}>
+					<div class="schedule-time">{item.time}</div>
+					<div class="schedule-content">
+						{Array.isArray(item.title) ? (
+							item.title.map((title, idx) => (
+								<div class="schedule-title-group">
+									<div class="schedule-title">{title}</div>
+									{item.speaker && Array.isArray(item.speaker) && (
+										<div class="schedule-speaker">{item.speaker[idx]}</div>
+									)}
+								</div>
+							))
+						) : (
+							<>
+								<div class="schedule-title">{item.title}</div>
+								{item.speaker && (
+									<div class="schedule-speaker">{item.speaker}</div>
+								)}
+							</>
+						)}
+						{item.note && (
+							<div class="schedule-note">{item.note}</div>
+						)}
+					</div>
+				</div>
+			))}
+		</div>
+		<p>
+			<strong>Download the Abstracts Volume:</strong>{' '}
+			<a href="/symposium/2026/Paleo%202026%20Abstracts.pdf">Download the Paleo 2026 Symposium Abstracts (PDF)</a>.
+		</p>
+	</section>
+
+	<!-- <section id="logo-contest">
+		<h3>
+			Logo Contest
+		</h3>
+		<div style="text-align: center; margin: 2rem 0;">
+			<img src="/symposium/2026/logoContest/paleo2026LogoContest.png" alt="Paleo 2026 Logo Contest" style="max-width: 100%; height: auto;" />
+		</div>
+		<p>
+			<strong>Call for Entries: Paleo 2026 Logo Contest!</strong>
+		</p>
+		<p>
+			The Alberta Palaeontological Society is excited to announce a logo design contest for Paleo 2026, our annual symposium bringing together amateur and professional palaeontologists. We're looking for a creative logo that will represent the symposium and capture the spirit of palaeontology in Alberta!
+		</p>
+		<p>
+			<strong>Design Guidelines:</strong>
+		</p>
+		<ul>
+			<li>Must include the text "Paleo 2026"</li>
+			<li>Should reflect palaeontology in Alberta - think fossils, dinosaurs, badlands, local geology, &amp;c.</li>
+			<li>The Symposium will have a fish theme to it and the logo could include some form of fish.</li>
+		</ul>
+		<p>
+			<strong>Deadline:</strong> Sunday, November 9, 2025
+		</p>
+		<p>
+			<strong>Prize:</strong>
+		</p>
+		<ul>
+			<li>A free one-year APS membership</li>
+			<li>Your choice of an APS t-shirt or book</li>
+			<li>Your winning design featured on all Paleo 2026 materials!</li>
+		</ul>
+		<p>
+			<strong>How to Enter:</strong>
+		</p>
+		<p>
+			Email your logo submission to <a href="mailto:president1@albertapaleo.org">president1@albertapaleo.org</a>
+		</p>
+	</section> -->
+
+	<section id="posters">
+		<h3>Posters</h3>
+		<div class="posters-container">
+			{SYMPOSIUM_POSTERS.map((poster) => (
+				<div class="poster-item">
+					<div class="poster-title">{poster.title}</div>
+					<div class="poster-authors">{poster.authors}</div>
+				</div>
+			))}
+		</div>
+	</section>
+
+	<section id="call-for-presentations">
+		<h3>
+			Call for Presentations & Posters!
+		</h3>
+		<p>
+			<strong>Abstracts Volume:</strong>{' '}
+			The full volume of abstracts, including contributed talks and posters, is available as a PDF:&nbsp;
+			<a href="/symposium/2026/Paleo%202026%20Abstracts.pdf">Download the Paleo 2026 Symposium Abstracts</a>.
+		</p>
+		<p class="deadline-warning">Application Deadline: February 15</p>
+		<p>
+			We are now accepting submissions for posters for Paleo 2026! 
+			If you are an avocational or professional palaeontologist with research to share, we would love to hear from you.
+		</p>
+		<ul>
+			<li>
+				Must submit a request for space, along with an abstract or short paper, to both the
+				Posters &amp; Displays Coordinator at <EmailLink email="posters@albertapaleo.org" /> and the Editor at <EmailLink email="editor2@albertapaleo.org" />
+			</li>
+			<li>Notify us of any special requirements or additional requests</li>
+			<li>
+				See the <a href="/symposium/2026/Paleo2026Circular.pdf">circular</a> for more information
+			</li>
+		</ul>
+	</section>
+
+	<section id="workshops">
+		<h3>
+			Workshops
+		</h3>
+
+		<Alert type="error">
+			<p>
+				<strong>Both workshops are sold out.</strong> To be put on a waiting list, please fill out the <a href="/symposium/2026/workshopSignup.pdf">registration form</a> and email it to <EmailLink email="symposium@albertapaleo.org" />. No payment is required until a spot is available.
+			</p>
+		</Alert>
+
+		<!-- <Alert> -->
+		<!-- 	<p> -->
+		<!-- 		To register for a workshop, please fill out the <a href="/symposium/2026/workshopSignup.pdf">registration form</a> and email it to <EmailLink email="giftshop@albertapaleo.org" />. -->
+		<!-- 	</p> -->
+		<!-- </Alert> -->
+
+		<p>We have two exciting workshops this year!</p>
+
+		<h4>Early Vertebrate Fossil Identification and Anatomy – what does it tell us about our own evolution?</h4>
+		<p><strong>Date:</strong> Sunday, March 15, 2026</p>
+		<p><strong>Location:</strong> Room B140, Main Building Level 1 (lower level), Mount Royal University</p>
+		<p><strong>Time:</strong> 9:00 am – 12:00 pm</p>
+		<p><strong>Fee:</strong> $10.00 per person (no GST charged)</p>
+
+
+		<h5>Registration</h5>
+
+		<Alert type="error">
+			<p>
+				<strong>This workshop is sold out.</strong> To be put on a waiting list, please fill out the <a href="/symposium/2026/workshopSignup.pdf">registration form</a> and email it to <EmailLink email="symposium@albertapaleo.org" />. No payment is required until a spot is available.
+			</p>
+		</Alert>
+
+		<!-- <p> -->
+		<!-- 	To register, please fill out the <a href="/symposium/2026/workshopSignup.pdf">registration form</a> and email it to <EmailLink email="giftshop@albertapaleo.org" />. -->
+		<!-- </p> -->
+
+		<h5>Presenter</h5>
+		<p>Dr. Melina Jobbins, Palaeobiologist, Postdoctoral Fellow – University of Manitoba</p>
+
+		<h5>Description</h5>
+		<p>
+			Early vertebrates consist of the first vertebrate groups to have evolved in life's history. They include fossil armoured jawless and jawed fishes, as well as bony and cartilaginous fishes that lived from the Ordovician to the end of the Devonian primarily. Together, these groups are witnesses to the early steps in vertebrate evolution, including the origin of bone, a differentiated skeleton with fins, jaws and teeth, and the transition from water to land through adaptations like lungs and limbs. All these steps were key contributors to the success of this group, allowing vertebrates to rapidly diversify their diets and feeding strategies, colonize new environments, and fill new ecological niches. By doing so, they flourished rapidly soon after their origin to, further down the line, give rise to amphibians, reptiles, birds, and mammals like us. Thus, learning about early vertebrates allows us to understand more about our own origins and early evolution.
+		</p>
+		<p>
+			In this workshop, participants will 1) get an introduction to the different early vertebrate groups, 2) get hands-on experience with specimens (fossils and 3D prints) and comparative material, 3) learn identification tools related to the material at hand and discuss their advantages vs limitations for both the given material and overall, 4) learn how the mode of preservation affects the amount of knowledge that can be extracted from a fossil.
+		</p>
+
+		<h5>Suggested items to bring</h5>
+		<ul>
+			<li>Preferred means for taking pictures of fossils</li>
+			<li>Microscopes may also be used so also think of your preferred means for taking pictures through a microscope lens</li>
+			<li>Notepad and pen/pencil for taking notes and making sketches</li>
+		</ul>
+
+		<h4>Microvertebrate Fish Fossil Identification and Interpretation to Reconstruct Faunal and Environmental Changes</h4>
+		<p><strong>Date:</strong> Sunday, March 15, 2026</p>
+		<p><strong>Location:</strong> Room B140, Main Building Level 1 (lower level), Mount Royal University</p>
+		<p><strong>Time:</strong> 1:00 pm – 4:00 pm</p>
+		<p><strong>Fee:</strong> $10.00 per person (no GST charged)</p>
+
+
+		<h5>Registration</h5>
+		<Alert type="error">
+			<p>
+				<strong>This workshop is sold out.</strong> To be put on a waiting list, please fill out the <a href="/symposium/2026/workshopSignup.pdf">registration form</a> and email it to <EmailLink email="symposium@albertapaleo.org" />. No payment is required until a spot is available.
+			</p>
+		</Alert>
+		<!-- <p> -->
+		<!-- 	To register, please fill out the <a href="/symposium/2026/workshopSignup.pdf">registration form</a> and email it to <EmailLink email="giftshop@albertapaleo.org" />. -->
+		<!-- </p> -->
+
+		<h5>Presenter</h5>
+		<p>Dr. Julien Divay, Palaeoichthyologist, <em>Cretaceous Research</em> and <em>Canadian Journal of Earth Sciences</em></p>
+
+		<h5>Description</h5>
+		<p>
+			Fish microvertebrate fossils—including teeth, scales, and bone fragments—are valuable tools in palaeontological and geological research that are often abundant in sedimentary basins. They represent the best evidence of the past diversity of local faunas, enabling us to reconstruct aquatic ecosystems, time turnover events, track evolutionary changes, and time phylogenetic divergences in fish lineages. Their abundance and diversity also make them excellent sources of palaeobiogeographic information, useful for determining hydrological connections between drainage basins and for dating dispersal events. Additionally, local fish diversities can indicate past environmental conditions such as water temperature, salinity, and habitat type. Thus, fish microvertebrate fossils provide crucial insights into palaeoecology, palaeoclimate, and the geological history of aquatic environments.
+		</p>
+		<p>
+			In this workshop, participants will 1) get hands-on experience with specimens and comparative material, 2) learn and discuss identification features and techniques as well as the particular challenges represented by working with this material, 3) learn field and lab methods used to collect and prepare this material, 4) learn how to document morphologies appropriately, 5) learn methods used to interpret and compare assemblages, and 6) learn about future potential avenues for this research.
+		</p>
+
+		<h5>Suggested items to bring</h5>
+		<ul>
+			<li>Microvertebrate fossil-sorting equipment – e.g., picks, tweezers, fine paint brushes, etc. However, tweezers can be provided for you, if desired.</li>
+			<li>Note pad and pen for taking notes/making sketches.</li>
+			<li>Your favourite means of taking pictures of specimens through a microscope lens.</li>
+		</ul>
+	</section>
+
+	<section id="registration">
+		<h3>
+			Registration
+		</h3>
+		<p>
+			Registration details will be announced closer to the symposium date. As with previous years, 
+			the event will be free and open to the public, with both in-person and virtual attendance options.
+		</p>
+		<p>
+			Stay tuned to our website and newsletter for updates on registration opening dates and procedures.
+		</p>
+	</section>
+
+	<section>
+		<h3>Stay Updated</h3>
+		<p>
+			For the latest information about Paleo 2026, including announcements about dates, venues, 
+			and call for papers, please:
+		</p>
+		<ul>
+			<li>Check back on this page regularly</li>
+			<li>Follow us on social media</li>
+			<li>Attend our monthly meetings</li>
+		</ul>
+	</section>
+
+	<section id="previous-symposia">
+		<h3>
+			Previous Symposia
+		</h3>
+		<p>While you wait for Paleo 2026, you can catch up on previous years:</p>
+		<ul>
+			<li>
+				<a href="/events/symposium/2025">Paleo 2025</a> - Mount Royal University, Calgary
+			</li>
+			<li>
+				<a href="https://www.youtube.com/playlist?list=PLIbLEoMjr_5NJoPQJpN-0VJPJ-xDXMrxO">Paleo 2024</a> - YouTube Playlist
+			</li>
+			<li>
+				<a href="https://www.youtube.com/playlist?list=PLIbLEoMjr_5N6TiqYkZwFSTqoHC13T-WT">Paleo 2023</a> - YouTube Playlist
+			</li>
+		</ul>
+		<p>Thanks to everyone, especially the speakers, who make these events possible!</p>
+	</section>
+
+</Layout>
+
+<style>
+	em {
+		font-weight: bold;
+	}
+	
+	nav#internal-nav {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-overflow: auto;
+	}
+	nav#internal-nav ul {
+		display: flex;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	nav#internal-nav ul li {
+		margin: 0.5rem;
+	}
+	nav#internal-nav ul li a {
+		color: var(--theme-colour);
+		text-decoration: none;
+		font-weight: bold;
+	}
+	nav#internal-nav ul li a span {
+		display: inline-block;
+		padding: 0.5rem;
+		border-radius: var(--border-radius-medium);
+		transition: background-color var(--transition-speed-medium);
+	}
+	nav#internal-nav ul li a span:hover {
+		background-color: var(--background-colour-dark);
+	}
+	p.subtitle {
+		margin: 0;
+		padding: 0;
+		font-weight: bold;
+		font-style: italic;
+	}
+	h2 {
+		margin-bottom: 0.5rem;
+	}
+	
+	section {
+		margin-bottom: 2rem;
+	}
+
+	.deadline-warning {
+		color: var(--error-colour-medium);
+		font-weight: bold;
+	}
+
+	.schedule-container {
+		display: grid;
+		gap: 0.5rem;
+		margin-top: 2rem;
+	}
+
+	.schedule-item {
+		display: grid;
+		grid-template-columns: 200px 1fr;
+		gap: 1.5rem;
+		padding: 1.5rem;
+		border-radius: var(--border-radius-medium);
+		background-color: var(--background-colour);
+		border: 2px solid transparent;
+		transition: all var(--transition-speed-medium);
+		cursor: default;
+	}
+
+	.schedule-item:hover {
+		background-color: var(--accent-colour-1-light);
+		border-color: var(--theme-colour);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.schedule-item--break {
+		background-color: var(--background-colour-darker);
+		opacity: 0.9;
+	}
+
+	.schedule-item--break:hover {
+		background-color: var(--accent-colour-1-light);
+		opacity: 1;
+	}
+
+	.schedule-item--special {
+		background-color: var(--background-colour-dark);
+		border-color: var(--theme-colour);
+	}
+
+	.schedule-item--special:hover {
+		background-color: var(--accent-colour-1-light);
+	}
+
+	.schedule-time {
+		font-weight: bold;
+		color: var(--theme-colour);
+		font-size: 1.1rem;
+		white-space: nowrap;
+	}
+
+	.schedule-content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.schedule-title-group {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.schedule-title-group:last-child {
+		margin-bottom: 0;
+	}
+
+	.schedule-title {
+		font-weight: bold;
+		font-size: 1.1rem;
+		line-height: 1.4;
+	}
+
+	.schedule-item--break .schedule-title {
+		font-style: italic;
+		color: var(--text-colour-secondary);
+	}
+
+	.schedule-speaker {
+		font-style: italic;
+		color: var(--text-colour-secondary);
+		margin-top: 0.25rem;
+	}
+
+	.schedule-note {
+		font-size: 0.9rem;
+		color: var(--text-colour-secondary);
+		font-style: italic;
+		margin-top: 0.5rem;
+		padding-top: 0.5rem;
+		border-top: 1px solid var(--background-colour-darker);
+	}
+
+	.posters-container {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.poster-item {
+		margin-bottom: 1.5rem;
+	}
+
+	.poster-item:last-child {
+		margin-bottom: 0;
+	}
+
+	.poster-title {
+		font-weight: bold;
+		font-size: 1.15rem;
+		text-align: left;
+	}
+
+	.poster-authors {
+		font-size: 0.95rem;
+		text-align: right;
+		margin-top: 0.25rem;
+	}
+
+	@media (max-width: 768px) {
+		.schedule-item {
+			grid-template-columns: 1fr;
+			gap: 0.75rem;
+		}
+
+		.schedule-time {
+			font-size: 1rem;
+		}
+
+		.schedule-title {
+			font-size: 1rem;
+		}
+	}
+</style>

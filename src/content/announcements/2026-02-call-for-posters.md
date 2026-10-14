@@ -14,4 +14,4 @@ Paleo 2026 invites poster submissions for the Paleo 2026 symposium on March 14. 
 
 Submit your poster by February 15 to posters@albertapaleo.org. Let's make this symposium a showcase of discovery from across our entire community!
 
-[More information](https://albertapaleo.org/events/symposium/#call-for-presentations)
+[More information](https://albertapaleo.org/events/symposium/2026/#call-for-presentations)
