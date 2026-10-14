@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. Versions are created by [release-please](https://github.com/googleapis/release-please) from [Conventional Commits](https://www.conventionalcommits.org/).
 
+## [1.221.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.220.0...v1.221.0) (2026-10-14)
+
+
+### Features
+
+* added symposium 2027 logo contest ([7546f43](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/7546f4313d2c548bd817f25fd739743c5bc94db2))
+* made 2027 symposium current ([e609a22](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/e609a220f6d1a4edc8b6f6a1b3b5522f9e39e004))
+
 ## [1.220.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.219.2...v1.220.0) (2026-10-14)
 
 
