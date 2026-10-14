@@ -1,0 +1,85 @@
+---
+export const prerender = true
+
+import Layout from '../../../layouts/Layout.astro'
+import HeadingWithBackground from '../../../components/HeadingWithBackground.astro'
+import EmailLink from '../../../components/EmailLink.astro'
+---
+
+<Layout subtitle="Symposium 2027">
+	<HeadingWithBackground background="uofaMuseum1">
+		<h1>Alberta Paleontological Society Symposium 2027</h1>
+	</HeadingWithBackground>
+
+	<h2>Paleo 2027 - APS Symposium 2027</h2>
+	<p class="subtitle">Saturday, March 13 &mdash; Sunday, March 14, 2027</p>
+	<p class="subtitle">
+		Mount Royal University, Calgary, Alberta
+	</p>
+
+	<p>
+		Planning is underway for the 30<sup>th</sup> annual Alberta Palaeontological Society Symposium.
+		Details about the program will be announced as they become available.
+	</p>
+
+	<section id="logo-contest">
+		<h3>
+			Logo Contest
+		</h3>
+		<p>
+			<strong>Call for Entries: Paleo 2027 Logo Contest!</strong>
+		</p>
+		<p>
+			The Alberta Palaeontological Society is excited to announce a logo design contest for Paleo 2027, our annual symposium bringing together amateur and professional palaeontologists. We're looking for a creative logo that will represent the symposium and capture the spirit of palaeontology in Alberta!
+		</p>
+		<p>
+			<strong>Design Guidelines:</strong>
+		</p>
+		<ul>
+			<li>Must include the text "Paleo 2027"</li>
+			<li>Should reflect palaeontology in Alberta - think fossils, dinosaurs, badlands, local geology, &amp;c.</li>
+		</ul>
+		<p>
+			<strong>Deadline:</strong> Monday, November 9, 2026
+		</p>
+		<p>
+			<strong>Prize:</strong>
+		</p>
+		<ul>
+			<li>A free one-year APS membership</li>
+			<li>Your choice of an APS t-shirt or book</li>
+			<li>Your winning design featured on all Paleo 2027 materials!</li>
+		</ul>
+		<p>
+			<strong>How to Enter:</strong>
+		</p>
+		<p>
+			Email your logo submission to <EmailLink email="president1@albertapaleo.org" />
+		</p>
+	</section>
+
+	<section id="previous-symposia">
+		<h3>
+			Previous Symposia
+		</h3>
+		<ul>
+			<li>
+				<a href="/events/symposium">Paleo 2026</a> - Mount Royal University, Calgary
+			</li>
+			<li>
+				<a href="/events/symposium/2025">Paleo 2025</a> - Mount Royal University, Calgary
+			</li>
+		</ul>
+	</section>
+</Layout>
+
+<style>
+	p.subtitle {
+		margin: 0;
+		padding: 0;
+		font-weight: bold;
+	}
+	h2 {
+		margin-bottom: 0.5rem;
+	}
+</style>
