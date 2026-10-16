@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. Versions are created by [release-please](https://github.com/googleapis/release-please) from [Conventional Commits](https://www.conventionalcommits.org/).
 
+## [1.221.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.221.0...v1.221.1) (2026-10-16)
+
+
+### Content
+
+* waynes fossil world contest ([f6aadfa](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/f6aadfa4088a5c114b8b5a017b9e297724cee3ab))
+
 ## [1.221.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.220.0...v1.221.0) (2026-10-14)
 
 
