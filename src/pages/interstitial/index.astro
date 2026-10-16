@@ -1,0 +1,30 @@
+---
+export const prerender = true
+
+import Layout from '../../layouts/Layout.astro'
+import HeadingWithBackground from '../../components/HeadingWithBackground.astro'
+import { listInterstitialPresentations } from '../../utility/interstitialIndex'
+
+const presentations = listInterstitialPresentations(
+	Object.keys(import.meta.glob('./*.astro'))
+)
+---
+
+<Layout subtitle="Interstitial Presentations">
+	<HeadingWithBackground background="wayne1">
+		<h1>Interstitial Presentations</h1>
+	</HeadingWithBackground>
+	<p>
+		Slideshows played before Alberta Palaeontological Society meetings and
+		the annual symposium.
+	</p>
+	<ul>
+		{
+			presentations.map((presentation) => (
+				<li>
+					<a href={presentation.href}>{presentation.label}</a>
+				</li>
+			))
+		}
+	</ul>
+</Layout>
