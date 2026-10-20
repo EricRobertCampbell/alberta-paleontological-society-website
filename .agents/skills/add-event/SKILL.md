@@ -25,8 +25,8 @@ Record only facts the source states: title, date, clock time, place, host, cost,
 The user's text is the source.
 
 - Take every event fact from that text.
-- Do not fetch anything when the description already has the title and either a clock time or a calendar date, plus the place when it names one.
-- A URL that only points to tickets or further details becomes `detailsLink`. Leave that URL unopened when the description already has those facts.
+- Do not fetch anything when the description already has the title and either a clock time or a calendar date, plus the place when it names one. A social media post is the exception: open it to look for a more permanent `detailsLink`.
+- A URL that only points to tickets or further details becomes `detailsLink`. Leave that URL unopened when the description already has those facts, unless it is a social media post. Open a social post and look for a more permanent page to use as `detailsLink` (see [URL](#url)).
 - Open a URL included in the description when the text defers a missing fact to it (the time, the place, or the poster). If the page and the description disagree, keep the description and say what differed.
 - Save an image only when the user attached one or named a local file. Otherwise omit `image`.
 
@@ -35,14 +35,15 @@ The user's text is the source.
 Open the URL and read the page before writing the file. The page is the source.
 
 - If a login wall, signup wall, or preview hides the event, say what was visible and what was blocked. Stop when the visible page has no title or no date, and ask for a description or a screenshot.
-- Set `detailsLink` to the event's own page. Prefer a specific listing linked from the page over the site homepage or a bare social profile.
+- Set `detailsLink` to a durable page for this event: its own listing, the organizer's event page, or a bulletin. Prefer that listing over the site homepage.
+- A social media post or profile (Facebook, Instagram, X, Bluesky, LinkedIn, or a similar post) is not `detailsLink` unless no more permanent page exists. When the given URL is a social post, open it and follow a link to an event page, organizer listing, or bulletin. Use the social URL only after that search fails, and tell the user the social post was the only source.
 - When the page shows a poster or hero image for this event, save that file under [Files](#files) and set `image`, with `alt` describing what the image shows. If the file cannot be saved, omit `image` and say so.
-- Open one linked page when the current page names a canonical details page or poster and does not itself include the date or time. Do not browse the rest of the site.
+- Open one linked page when the current page names a canonical details page or poster and does not itself include the date or time. Also open one linked page when the current page is a social post and that link is a more permanent source for `detailsLink`. Do not browse the rest of the site.
 - Tell the user which facts were taken from the page.
 
 ### Both
 
-The description supplies every fact it states. The URL fills gaps, supplies `detailsLink`, and supplies the poster. If they disagree, keep the description and mention the disagreement.
+The description supplies every fact it states. The URL fills gaps, supplies `detailsLink`, and supplies the poster. If the URL is a social post, look for a more permanent page and use that as `detailsLink`. If they disagree, keep the description and mention the disagreement.
 
 ## Steps
 
@@ -129,7 +130,7 @@ talks:
 ---
 ```
 
-`detailsLink` is printed after the body as the raw URL. Put named links in the markdown body instead when the sentence needs a label.
+`detailsLink` is printed after the body as the raw URL. Put named links in the markdown body instead when the sentence needs a label. Prefer a durable event page over a social media post; use the social URL only when no more permanent source can be found.
 
 `image.alt` is required whenever `image` is set. Use `attribution` for a photo credit. Posters usually omit it.
 
@@ -195,6 +196,7 @@ Match the neighbouring file of the same type:
 - Every `image.src`, body image, `abstractPdf`, and registration href points at a file that exists under `public/`.
 - Every `talks` entry matches a filename in `src/content/talks/` without `.md`.
 - The event slug is unique in `src/content/events/`.
+- `detailsLink` is not a social media post unless no more permanent page could be found.
 
 Then verify in the browser:
 
