@@ -7,12 +7,14 @@ description: >-
     when the user runs /add-event or asks to add, create, schedule, or publish
     an event, monthly meeting, field trip, fossil sorting session, symposium
     session, talk, or external event. Input may be a long-form description or a
-    URL (poster, email, bulletin, event page, or social post).
+    URL (poster, email, bulletin, event page, or social post). Before writing
+    a file, search existing events and update a match instead of adding a
+    duplicate.
 ---
 
 # Add an event
 
-Adding an event is a content update. Do not create a plan directory or a Vitest test. Do not change schemas, listing pages, or interstitial pages unless the new event cannot be represented with the fields below.
+Adding or updating an event is a content update. Do not create a plan directory or a Vitest test. Do not change schemas, listing pages, or interstitial pages unless the event cannot be represented with the fields below.
 
 Copy the nearest existing file of the same `type` and year, then change only what this event needs. Schema source of truth: `src/content/config.ts` (`eventSchema`, `talkSchema`, `EVENT_TYPES`).
 
@@ -50,10 +52,25 @@ The description supplies every fact it states. The URL fills gaps, supplies `det
 1. Follow [Input](#input) for a long-form description, a URL, or both.
 2. Classify the event (see [Types](#types)).
 3. Choose the date pair (see [Dates](#dates)).
-4. Add the markdown file under `src/content/events/`.
-5. Add a talk file only when this event has a speaker abstract, bio, or YouTube link that should render in the talk block.
-6. Save images and PDFs under `public/` (see [Files](#files)). `image.src` is a site path, never a remote URL.
-7. Check the new entry against [Checks](#checks), then open the calendar month and the stable permalink in the browser.
+4. Search `src/content/events/` for this event (see [Existing events](#existing-events)). When it is already there, update that file. Do not add a second copy.
+5. Otherwise add the markdown file under `src/content/events/`.
+6. Add a talk file only when this event has a speaker abstract, bio, or YouTube link that should render in the talk block. When updating an existing event, update its talk file too if one already exists.
+7. Save images and PDFs under `public/` (see [Files](#files)). `image.src` is a site path, never a remote URL.
+8. Check the entry against [Checks](#checks), then open the calendar month and the stable permalink in the browser.
+
+## Existing events
+
+Search `src/content/events/` before creating a file. The same event may already be listed under a different slug.
+
+Match on the calendar date together with title, type, host, and speaker when the source gives them. A later monthly meeting, fossil sorting session, or field trip is a different event even when the title is similar.
+
+When a file is the same event:
+
+- Update it with facts the new source adds or corrects. Leave every field the new source does not mention as it is.
+- Keep the path and slug when the start date is unchanged. When the start date changed, rename the file so the `YYYY-MM-DD` prefix is the new America/Edmonton start date. Update a talk filename and the event `talks` entry when they embed the old date.
+- Tell the user which file was updated and which facts changed.
+
+When nothing matches, add a new file.
 
 ## Types
 
@@ -195,7 +212,7 @@ Match the neighbouring file of the same type:
 - A known host matches `HOST_LOGO_MAP` exactly.
 - Every `image.src`, body image, `abstractPdf`, and registration href points at a file that exists under `public/`.
 - Every `talks` entry matches a filename in `src/content/talks/` without `.md`.
-- The event slug is unique in `src/content/events/`.
+- The event slug is unique in `src/content/events/`, and this file is the only entry for this event.
 - `detailsLink` is not a social media post unless no more permanent page could be found.
 
 Then verify in the browser:
