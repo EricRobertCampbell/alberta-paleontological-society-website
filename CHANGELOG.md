@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. Versions are created by [release-please](https://github.com/googleapis/release-please) from [Conventional Commits](https://www.conventionalcommits.org/).
 
+## [1.221.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.221.0...v1.221.1) (2026-10-23)
+
+
+### Content
+
+* additional october and november events ([06dd714](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/06dd714460468bed87e42ddd88a8b43b2c4ae303))
+* additional october and november events ([cdc21df](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/cdc21dfd5fe4fb8a01af60d0ad6e80e83ee7632c))
+* more october and november events ([c1a4d9a](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/c1a4d9a84ba9575443d04ccc1ee8903583296ec3))
+* more october and november events ([5e0f787](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/5e0f787eca5dfd016ff560df2b4d6bb12faa6dab))
+* waynes fossil world contest ([f6aadfa](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/f6aadfa4088a5c114b8b5a017b9e297724cee3ab))
+
 ## [1.221.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.220.0...v1.221.0) (2026-10-14)
 
 
