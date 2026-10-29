@@ -43,14 +43,26 @@ const monthDays = new Array(getDaysInMonth(year, month)).fill(0).map((_, index) 
 const extraDays = Array.from({length: getExtraDays(year, month)
 }).fill('')
 const days = [...extraDays, ...monthDays];
+const daysOfWeek = [
+	['Sunday', 'Sun'],
+	['Monday', 'Mon'],
+	['Tuesday', 'Tue'],
+	['Wednesday', 'Wed'],
+	['Thursday', 'Thu'],
+	['Friday', 'Fri'],
+	['Saturday', 'Sat'],
+];
 
 ---
 
 <div class="event-calendar">
 	{
-	['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map((day) => <span class="day-of-week">
-			{day}
-		</span>)
+	daysOfWeek.map(([full, short]) => (
+		<span class="day-of-week">
+			<span class="day-of-week-full">{full}</span>
+			<span class="day-of-week-short">{short}</span>
+		</span>
+	))
 	}
 	{
 	days.map(day => { 
@@ -73,8 +85,8 @@ const days = [...extraDays, ...monthDays];
 <style>
 	.event-calendar {
 		display: grid;
-		grid-template-columns: repeat(7, 1fr);
-		overflow-x: scroll;
+		grid-template-columns: repeat(7, minmax(0, 1fr));
+		container-type: inline-size;
 	}
 	.day-of-week {
 		font-weight: bold;
@@ -83,5 +95,16 @@ const days = [...extraDays, ...monthDays];
 		background-color: var(--accent-colour-light);
 		border-bottom: 1px solid var(--accent-colour-dark);
 		margin-bottom: calc(var(--theme-spacing-base));
+	}
+	.day-of-week-short {
+		display: none;
+	}
+	@container (max-width: 40rem) {
+		.day-of-week-full {
+			display: none;
+		}
+		.day-of-week-short {
+			display: inline;
+		}
 	}
 </style>
