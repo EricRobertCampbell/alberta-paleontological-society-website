@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. Versions are created by [release-please](https://github.com/googleapis/release-please) from [Conventional Commits](https://www.conventionalcommits.org/).
 
+## [1.222.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.221.0...v1.222.0) (2026-10-30)
+
+
+### Features
+
+* event registration deadlines ([67513b9](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/67513b93b34250cddcaeb3e33dd2b2387020837d)), closes [#266](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/266)
+* store link to hope johnson book links to pdf ([68fae5f](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/68fae5f4c5aa88b4e8ce364fffd9ea8f0837e95b))
+
+
+### Content
+
+* additional october and november events ([06dd714](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/06dd714460468bed87e42ddd88a8b43b2c4ae303))
+* additional october and november events ([cdc21df](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/cdc21dfd5fe4fb8a01af60d0ad6e80e83ee7632c))
+* dri events ([0000d29](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/0000d29e6e6a5ca5327eeed95610636ac7872859))
+* more october and november events ([c1a4d9a](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/c1a4d9a84ba9575443d04ccc1ee8903583296ec3))
+* more october and november events ([5e0f787](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/5e0f787eca5dfd016ff560df2b4d6bb12faa6dab))
+* move Dinotour 2027 registration ahead of the itinerary ([13e02b5](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/13e02b590a4e623dd4c1089f9470954722511ff1)), closes [#269](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/issues/269)
+* waynes fossil world contest ([f6aadfa](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/f6aadfa4088a5c114b8b5a017b9e297724cee3ab))
+
 ## [1.221.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.220.0...v1.221.0) (2026-10-14)
 
 
