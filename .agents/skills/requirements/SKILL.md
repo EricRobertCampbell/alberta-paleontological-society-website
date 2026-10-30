@@ -80,4 +80,5 @@ Under Suggested Improvements, list technical and user-experience improvements re
 ## Related
 
 - Planning: [plan-feature](../plan-feature/SKILL.md)
+- Full pass: [runthrough-feature](../runthrough-feature/SKILL.md)
 - Paths: `.ai/README.md`

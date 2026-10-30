@@ -17,6 +17,7 @@ Typical plan directory contents:
 - `decisions.md` — only when a non-obvious choice needs recording
 - `plan-review.md` — written by `/review-plan`
 - `verification.md` — commands and results during `/implement-feature`
+- `comment-triage.md` — written by `/categorize-comments` when triage runs against that plan
 
 Do not create empty placeholder files.
 
@@ -59,5 +60,7 @@ Skills live in `.agents/skills/`:
 - `/plan-feature`
 - `/review-plan`
 - `/implement-feature` (TDD: failing adjacent Vitest test first for behaviour changes; UI work follows `/accessibility-review`)
+- `/runthrough-feature` (plan → review-plan → implement → code-review, deciding through ambiguity)
 - `/add-event` (content-collection event: schema, paths, images, and listing conventions)
 - `/code-review` and the specialized reviews it orchestrates (`/frontend-review`, `/accessibility-review`, `/content-review`, `/api-review`, `/security-review`, `/testing-review`, `/general-review`)
+- `/categorize-comments` (triage review comments by severity, likelihood, and effort)

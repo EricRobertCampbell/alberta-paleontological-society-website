@@ -57,4 +57,6 @@ End with:
 - Implementation: [implement-feature](../implement-feature/SKILL.md)
 - Accessibility: [accessibility-review](../accessibility-review/SKILL.md)
 - Plan review: [review-plan](../review-plan/SKILL.md)
+- Comment triage: [categorize-comments](../categorize-comments/SKILL.md)
+- Full pass: [runthrough-feature](../runthrough-feature/SKILL.md)
 - Paths: `.ai/README.md`
