@@ -14,6 +14,13 @@ image:
 
 Dinotour 2027 is a four-day, family-oriented tour in Grande Prairie, Alberta, July 9–12, 2027. Proceeds support the Dinosaur Research Institute.
 
+**Contact:** Mona Trick at [dinotour@dinosaurresearch.com](mailto:dinotour@dinosaurresearch.com).
+
+**Registration** starts October 1, 2026.
+
+1. Download and complete the [registration form](https://www.dinosaurresearch.com/images/Dinotour2027RegistrationFillablePDF.pdf) for each person and email it to [dinotour@dinosaurresearch.com](mailto:dinotour@dinosaurresearch.com).
+2. Send a deposit of $500.00 CDN per person by cheque, money order, Visa or Mastercard, or e-transfer to [info@dinosaurresearch.com](mailto:info@dinosaurresearch.com).
+
 During the tour you will:
 
 - Learn about the dinosaurs of northern Alberta from Dr. Philip Currie, Dr. Eva Koppelhus, Dr. Corwin Sullivan, and tour coordinator Mona Trick.
@@ -35,11 +42,4 @@ During the tour you will:
 
 **Minimum age:** 12 years old as of July 9, 2027.
 
-**Registration** starts October 1, 2026.
-
-1. Download and complete the [registration form](https://www.dinosaurresearch.com/images/Dinotour2027RegistrationFillablePDF.pdf) for each person and email it to [dinotour@dinosaurresearch.com](mailto:dinotour@dinosaurresearch.com).
-2. Send a deposit of $500.00 CDN per person by cheque, money order, Visa or Mastercard, or e-transfer to [info@dinosaurresearch.com](mailto:info@dinosaurresearch.com).
-
 A detailed [itinerary](https://www.dinosaurresearch.com/images/ItineraryDinotour2027.pdf) is available.
-
-**Contact:** Mona Trick at [dinotour@dinosaurresearch.com](mailto:dinotour@dinosaurresearch.com).
