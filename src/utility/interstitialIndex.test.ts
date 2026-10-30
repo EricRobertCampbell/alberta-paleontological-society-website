@@ -23,11 +23,9 @@ describe('listInterstitialPresentations', () => {
             'src/pages/interstitial/20260220.astro',
         ])
 
-        expect(presentations.map((presentation) => presentation.label)).toEqual([
-            'April 17, 2026',
-            'Paleo 2026',
-            'February 20, 2026',
-        ])
+        expect(presentations.map((presentation) => presentation.label)).toEqual(
+            ['April 17, 2026', 'Paleo 2026', 'February 20, 2026']
+        )
         expect(presentations.map((presentation) => presentation.href)).toEqual([
             '/interstitial/20260417',
             '/interstitial/paleo2026',
@@ -42,9 +40,8 @@ describe('listInterstitialPresentations', () => {
             './20261016.astro',
         ])
 
-        expect(presentations.map((presentation) => presentation.label)).toEqual([
-            'October 16, 2026',
-            'notes',
-        ])
+        expect(presentations.map((presentation) => presentation.label)).toEqual(
+            ['October 16, 2026', 'notes']
+        )
     })
 })
