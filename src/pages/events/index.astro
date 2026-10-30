@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import { filterAPSEvents } from '../../utility/filters'
 import { sortEventsByDate } from '../../utility/eventSorting'
+import { withRegistrationDeadlines } from '../../utility/registrationDeadline'
 
 import Layout from "../../layouts/Layout.astro";
 import Event from "../../components/Event.astro";
@@ -11,12 +12,12 @@ const allEvents = await getCollection("events");
 const renderedEvents = await Promise.all(
 	allEvents.map(async (event) => {
 		const rendered = await event.render();
-		return { ...rendered, slug: event.slug };
+		return { ...rendered, slug: event.slug, id: event.id };
 	})
 );
 
 // Filter for APS events only
-const apsEvents = renderedEvents.filter((e) => filterAPSEvents({host: e.remarkPluginFrontmatter.host}));
+const apsEvents = withRegistrationDeadlines(renderedEvents.filter((e) => filterAPSEvents({host: e.remarkPluginFrontmatter.host})));
 
 // Sort events into past and upcoming using utility function
 const { upcomingEvents, pastEvents } = sortEventsByDate(apsEvents);
@@ -60,15 +61,19 @@ const todaysEvents = upcomingEvents.filter((event) => {
 		<section class="todays-events">
 			<h2>Today's Events</h2>
 			{todaysEvents.map((event, index, allEvents) => {
-				const { Content, slug } = event;
+				const { Content } = event;
 				return (
 					<Event
-						frontmatter={event.remarkPluginFrontmatter as any}
+						id={event.anchorId}
+						frontmatter={event.remarkPluginFrontmatter}
 						last={index === allEvents.length - 1}
 						showPermalink={true}
-						slug={slug}
+						slug={event.sourceSlug}
+						isRegistrationDeadline={event.isRegistrationDeadline}
+						sourceSlug={event.sourceSlug}
+						sourceTitle={event.sourceTitle}
 					>
-						<Content />
+						{Content && <Content />}
 					</Event>
 				);
 			})}
@@ -78,15 +83,19 @@ const todaysEvents = upcomingEvents.filter((event) => {
 	<h2>Upcoming Events</h2>
 	{upcomingEvents.length > 0 ? (
 		upcomingEvents.map((event, index, allEvents) => {
-			const { Content, slug } = event;
+			const { Content } = event;
 			return (
 				<Event
-					frontmatter={event.remarkPluginFrontmatter as any}
+					id={event.anchorId}
+					frontmatter={event.remarkPluginFrontmatter}
 					last={index === allEvents.length - 1}
 					showPermalink={true}
-					slug={slug}
+					slug={event.sourceSlug}
+					isRegistrationDeadline={event.isRegistrationDeadline}
+					sourceSlug={event.sourceSlug}
+					sourceTitle={event.sourceTitle}
 				>
-					<Content />
+					{Content && <Content />}
 				</Event>
 			);
 		})
@@ -98,15 +107,19 @@ const todaysEvents = upcomingEvents.filter((event) => {
 		<details open>
 			<summary><h2>Past Events</h2></summary>
 			{pastEvents.map((event, index, allEvents) => {
-				const { Content, slug } = event;
+				const { Content } = event;
 				return (
 					<Event
-						frontmatter={event.remarkPluginFrontmatter as any}
+						id={event.anchorId}
+						frontmatter={event.remarkPluginFrontmatter}
 						last={index === allEvents.length - 1}
 						showPermalink={true}
-						slug={slug}
+						slug={event.sourceSlug}
+						isRegistrationDeadline={event.isRegistrationDeadline}
+						sourceSlug={event.sourceSlug}
+						sourceTitle={event.sourceTitle}
 					>
-						<Content />
+						{Content && <Content />}
 					</Event>
 				);
 			})}

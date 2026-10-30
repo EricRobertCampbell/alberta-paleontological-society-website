@@ -1,29 +1,55 @@
 ---
-import { generateEventDateTimeString, extractReferenceId } from "../utility";
+import { generateEventDateTimeString, extractReferenceId, getTodayString } from "../utility";
 import type { EventFrontmatter } from "../content/config";
 import { splitIsoString } from '../utility/dates'
 import { getHostLogoLocation } from '../utility/filters'
 import { splitAttribution } from '../utility/attributionLinks'
 import { getEntry } from 'astro:content'
+import {
+	formatRegistrationDeadline,
+	isRegistrationDeadline,
+	isRegistrationDeadlineOpen,
+} from '../utility/registrationDeadline'
 import Talk from './Talk.astro'
 interface Props {
-	frontmatter: EventFrontmatter;
+    frontmatter: EventFrontmatter;
 	last: boolean;
 	id?: string;
 	showPermalink?: boolean;
 	slug?: string;
+	isRegistrationDeadline?: boolean;
+	sourceTitle?: string;
+	sourceSlug?: string;
 }
-const { frontmatter, last, id, showPermalink = false, slug } = Astro.props;
+const {
+	frontmatter,
+	last,
+	id,
+	showPermalink = false,
+	slug,
+	isRegistrationDeadline: deadlineCard = false,
+	sourceTitle,
+	sourceSlug,
+} = Astro.props;
 const { title, startDate, endDate, type, image, start, end, host, detailsLink, talks } =
 	frontmatter;
 const actualStartDate = start ? splitIsoString(start).date : startDate;
 const actualEndDate = end ? splitIsoString(end).date : endDate;
-const eventDateTimeString = generateEventDateTimeString({
-    start,
-    end,
-    startDate,
-    endDate,
-});
+const rawDeadline = frontmatter.registrationDeadline
+const validDeadline =
+	rawDeadline && isRegistrationDeadline(rawDeadline) ? rawDeadline : undefined
+const deadlineClosed =
+	!!validDeadline &&
+	!isRegistrationDeadlineOpen(validDeadline, new Date(), getTodayString())
+const eventDateTimeString =
+	deadlineCard && validDeadline
+		? formatRegistrationDeadline(validDeadline)
+		: generateEventDateTimeString({
+				start,
+				end,
+				startDate,
+				endDate,
+			});
 
 // Resolve talk references and render markdown bodies
 const resolvedTalks = talks
@@ -114,6 +140,21 @@ const attributionParts = image?.attribution
 	}
 	<div class="content-container">
 		<slot />
+		{
+			!deadlineCard && validDeadline && (
+				<p class="registration-deadline">
+					Registration deadline: {formatRegistrationDeadline(validDeadline)}
+				</p>
+			)
+		}
+		{
+			deadlineCard && sourceSlug && (
+				<p>
+					<a href={`/events/stable/${sourceSlug}`}>{sourceTitle}</a>
+				</p>
+			)
+		}
+		{deadlineClosed && <p>Registration is closed.</p>}
 	</div>
 		{
 		detailsLink ? <p>
@@ -212,6 +253,9 @@ const attributionParts = image?.attribution
 		color: var(--accent-colour-medium);
 		font-size: 1rem;
 		margin: var(--theme-spacing-base) 0;
+	}
+	.registration-deadline {
+		color: var(--error-colour-medium);
 	}
 	figcaption {
 		font-size: 0.5rem;

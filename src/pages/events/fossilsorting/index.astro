@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import { filterExternalEvents } from '../../../utility/filters'
 import { sortEventsByDate } from '../../../utility/eventSorting'
+import { withRegistrationDeadlines } from '../../../utility/registrationDeadline'
 import { extractReferenceId } from '../../../utility/functions'
 
 import Layout from "../../../layouts/Layout.astro";
@@ -46,7 +47,7 @@ const allEvents = await getCollection("events");
 const renderedEvents = await Promise.all(
 	allEvents.map(async (event) => {
 		const rendered = await event.render();
-		return { ...rendered, slug: event.slug };
+		return { ...rendered, slug: event.slug, id: event.id };
 	})
 );
 
@@ -60,7 +61,9 @@ const fossilSortingEvents = renderedEvents.filter((e) => {
 });
 
 // Sort events into past and upcoming using utility function
-const { upcomingEvents, pastEvents } = sortEventsByDate(fossilSortingEvents);
+const { upcomingEvents, pastEvents } = sortEventsByDate(
+	withRegistrationDeadlines(fossilSortingEvents)
+);
 ---
 
 <Layout subtitle="Fossil Sorting Sessions">
@@ -167,15 +170,19 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fossilSortingEvents);
 	<h2>Upcoming Fossil Sorting Sessions</h2>
 	{upcomingEvents.length > 0 ? (
 		upcomingEvents.map((event, index, allEvents) => {
-			const { Content, slug } = event;
+			const { Content } = event;
 			return (
 				<Event
-					frontmatter={event.remarkPluginFrontmatter as any}
+					id={event.anchorId}
+					frontmatter={event.remarkPluginFrontmatter}
 					last={index === allEvents.length - 1}
 					showPermalink={true}
-					slug={slug}
+					slug={event.sourceSlug}
+					isRegistrationDeadline={event.isRegistrationDeadline}
+					sourceSlug={event.sourceSlug}
+					sourceTitle={event.sourceTitle}
 				>
-					<Content />
+					{Content && <Content />}
 				</Event>
 			);
 		})
@@ -187,15 +194,19 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fossilSortingEvents);
 		<details>
 			<summary><h2>Past Fossil Sorting Sessions</h2></summary>
 			{pastEvents.map((event, index, allEvents) => {
-				const { Content, slug } = event;
+				const { Content } = event;
 				return (
 					<Event
+						id={event.anchorId}
 						frontmatter={event.remarkPluginFrontmatter}
 						last={index === allEvents.length - 1}
 						showPermalink={true}
-						slug={slug}
+						slug={event.sourceSlug}
+						isRegistrationDeadline={event.isRegistrationDeadline}
+						sourceSlug={event.sourceSlug}
+						sourceTitle={event.sourceTitle}
 					>
-						<Content />
+						{Content && <Content />}
 					</Event>
 				);
 			})}

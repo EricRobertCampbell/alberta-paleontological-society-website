@@ -6,55 +6,37 @@ import Announcement from '../components/Announcement.astro'
 import FossilFriday from '../components/FossilFriday.astro'
 import SocialsLinks from '../components/SocialsLinks.astro'
 import TodaysEvents from '../components/TodaysEvents.astro'
-import { splitIsoString } from '../utility/dates'
-
 import { getCollection } from 'astro:content'
 
 import {
 	getTodayString,
 	formatDate,
 } from '../utility'
+import { selectNextEvent, withRegistrationDeadlines } from '../utility/registrationDeadline'
 
 // get the next event
 const todayString = getTodayString();
 const now = new Date();
 
 const allEvents = await getCollection('events')
-const renderedEvents = (
-	await Promise.all(
-		allEvents.map(async (event) => {
-			const rendered = await event.render()
-			return { ...rendered, slug: event.slug }
-		})
-	)
-)
-	.filter((e) => {
+const nextEvent = selectNextEvent(
+	withRegistrationDeadlines(
+		await Promise.all(
+			allEvents.map(async (event) => {
+				const rendered = await event.render()
+				return { ...rendered, slug: event.slug, id: event.id }
+			})
+		)
+	).filter((e) => {
 		if (e.remarkPluginFrontmatter.host && e.remarkPluginFrontmatter.host !== 'APS') {
 			return false
-			
 		}
 		if (e.remarkPluginFrontmatter.start) {
 			return new Date(e.remarkPluginFrontmatter.start) >= now
-		}	
-		return e.remarkPluginFrontmatter.startDate >= todayString
+		}
+		return (e.remarkPluginFrontmatter.startDate ?? '') >= todayString
 	})
-	.sort((e1, e2) => {
-	let dates: Array<string> = [e1, e2].map(e => {
-		if (e.remarkPluginFrontmatter.start) {
-			return splitIsoString(e.remarkPluginFrontmatter.start).date;
-		} else if (e.remarkPluginFrontmatter.startDate) {
-			return e.remarkPluginFrontmatter.startDate
-		} 
-		return ""
-	})
-	const [firstDate, secondDate] = dates
-	return secondDate.localeCompare(firstDate)
-	})
-
-let nextEvent
-if (renderedEvents.length > 0) {
-	nextEvent = renderedEvents[renderedEvents.length - 1]
-}
+)
 
 let dates = []
 const allAnnouncements = (await getCollection('announcements'))
@@ -158,9 +140,13 @@ const renderedAnnouncements = await Promise.all(
 					frontmatter={nextEvent.remarkPluginFrontmatter}
 					last={true}
 					showPermalink={true}
-					slug={nextEvent.slug}
+					slug={nextEvent.sourceSlug}
+					id={nextEvent.anchorId}
+					isRegistrationDeadline={nextEvent.isRegistrationDeadline}
+					sourceSlug={nextEvent.sourceSlug}
+					sourceTitle={nextEvent.sourceTitle}
 				>
-					<nextEvent.Content />
+					{nextEvent.Content && <nextEvent.Content />}
 				</Event>
 				<p>
 					For more information, see our{' '}

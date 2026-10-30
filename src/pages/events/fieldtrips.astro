@@ -2,6 +2,11 @@
 import { getCollection } from "astro:content";
 import { filterExternalEvents } from '../../utility/filters'
 import { sortEventsByDate } from '../../utility/eventSorting'
+import {
+	formatRegistrationDeadline,
+	isRegistrationDeadlineOpen,
+	withRegistrationDeadlines,
+} from '../../utility/registrationDeadline'
 
 import Layout from "../../layouts/Layout.astro";
 import EmailLink from "../../components/EmailLink.astro";
@@ -15,13 +20,14 @@ import { getTodayString } from '../../utility';
 const { fieldTripCoordinator } = roles;
 
 const CURRENT_YEAR = '2026'
-const showSleepoverRegistration = getTodayString() <= '2026-10-11'
+const todayString = getTodayString()
+const now = new Date()
 
 const allEvents = await getCollection("events");
 const renderedEvents = await Promise.all(
 	allEvents.map(async (event) => {
 		const rendered = await event.render();
-		return { ...rendered, slug: event.slug };
+		return { ...rendered, slug: event.slug, id: event.id };
 	})
 );
 
@@ -33,9 +39,23 @@ const fieldTripEvents = renderedEvents.filter((e) => {
 	}
 	return e.remarkPluginFrontmatter.type === "Field Trip";
 });
+const openRegistrationDeadlines = fieldTripEvents
+	.filter((event) => {
+		const deadline = event.remarkPluginFrontmatter.registrationDeadline
+		return (
+			!!deadline &&
+			isRegistrationDeadlineOpen(deadline, now, todayString)
+		)
+	})
+	.sort((a, b) => {
+		const deadlineA = a.remarkPluginFrontmatter.registrationDeadline ?? ''
+		const deadlineB = b.remarkPluginFrontmatter.registrationDeadline ?? ''
+		return deadlineA.localeCompare(deadlineB)
+	})
 
-// Sort events into past and upcoming using utility function
-const { upcomingEvents, pastEvents } = sortEventsByDate(fieldTripEvents);
+const { upcomingEvents, pastEvents } = sortEventsByDate(
+	withRegistrationDeadlines(fieldTripEvents)
+);
 ---
 
 <Layout subtitle="Field Trips">
@@ -45,17 +65,13 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fieldTripEvents);
 		<h1>Field Trips</h1>
 	</HeadingWithBackground>
 
-	{showSleepoverRegistration && (
+	{openRegistrationDeadlines.length > 0 && (
 		<Alert type="warning">
-			<p>
-				<strong>Dinovember Sleepover at the Royal Tyrrell Museum!</strong>
-			</p>
-			<p>
-				Join us for a special overnight event on Friday, November 13 – Saturday, November 14. The registration deadline is Sunday, October 11. We’ve reserved 10 spots, with additional spots available on a first-come, first-served basis.
-			</p>
-			<p>
-				Fill out the <a href="/fieldTrips/2026/forms/rtmp-sleepin-signup.pdf">sign up form</a> to register, or see the details below.
-			</p>
+			{openRegistrationDeadlines.map((event) => (
+				<p>
+					Registration for <a href={`/events/stable/${event.slug}`}>{event.remarkPluginFrontmatter.title}</a> is open until {formatRegistrationDeadline(event.remarkPluginFrontmatter.registrationDeadline ?? '')}.
+				</p>
+			))}
 		</Alert>
 	)}
 
@@ -63,40 +79,22 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fieldTripEvents);
 
 	<p>Whether you're brand new to fossils or a seasoned collector, we invite you to join us in the field. Come explore Alberta’s deep past with us. Check out the trips below and sign up for your next adventure!</p>
 
-	{showSleepoverRegistration && (
-		<>
-			<h2>Registration and Payment</h2>
-
-			<p>
-				To register for the Dinovember Sleepover, print off and fill out the <a href="/fieldTrips/2026/forms/rtmp-sleepin-signup.pdf">sign up form</a>, then follow the instructions there.
-			</p>
-
-			<p>
-				You will be able to pay field trip fees by
-				Interac E-transfer (Canada only). Follow directions on your bank’s
-				online banking site or mobile app. Bank fees may apply. Payee is
-				<EmailLink
-					email="giftshop@albertapaleo.org"
-				   subject={`Field Trip Fees for ${CURRENT_YEAR}`}
-			 />. Please state in the message field: "RTMP Sleep-in 2026". Email
-				a scan or photo of the completed registration form to
-				<EmailLink email="giftshop@albertapaleo.org" />.
-			</p>
-		</>
-	)}
-
 	<h2>Upcoming Field Trips</h2>
 	{upcomingEvents.length > 0 ? (
 		upcomingEvents.map((event, index, allEvents) => {
-			const { Content, slug } = event;
+			const { Content } = event;
 			return (
 				<Event
-					frontmatter={event.remarkPluginFrontmatter as any}
+					id={event.anchorId}
+					frontmatter={event.remarkPluginFrontmatter}
 					last={index === allEvents.length - 1}
 					showPermalink={true}
-					slug={slug}
+					slug={event.sourceSlug}
+					isRegistrationDeadline={event.isRegistrationDeadline}
+					sourceSlug={event.sourceSlug}
+					sourceTitle={event.sourceTitle}
 				>
-					<Content />
+					{Content && <Content />}
 				</Event>
 			);
 		})
@@ -109,13 +107,6 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fieldTripEvents);
 			Forms
 		</h2>
 			<ul class="field-trip-forms-list">
-				{showSleepoverRegistration && (
-					<li>
-						<a href="/fieldTrips/2026/forms/rtmp-sleepin-signup.pdf">
-							Dinovember Sleepover Sign Up
-						</a>
-					</li>
-				)}
 				<li>
 					<a href="/fieldTrips/2026/forms/APS_Adult_Waiver.pdf">
 						Adult Waiver
@@ -207,15 +198,19 @@ const { upcomingEvents, pastEvents } = sortEventsByDate(fieldTripEvents);
 		<details>
 			<summary><h2>Past Field Trips</h2></summary>
 			{pastEvents.map((event, index, allEvents) => {
-				const { Content, slug } = event;
+				const { Content } = event;
 				return (
 					<Event
-						frontmatter={event.remarkPluginFrontmatter as any}
+						id={event.anchorId}
+						frontmatter={event.remarkPluginFrontmatter}
 						last={index === allEvents.length - 1}
 						showPermalink={true}
-						slug={slug}
+						slug={event.sourceSlug}
+						isRegistrationDeadline={event.isRegistrationDeadline}
+						sourceSlug={event.sourceSlug}
+						sourceTitle={event.sourceTitle}
 					>
-						<Content />
+						{Content && <Content />}
 					</Event>
 				);
 			})}
