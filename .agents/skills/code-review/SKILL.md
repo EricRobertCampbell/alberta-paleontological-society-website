@@ -23,18 +23,19 @@ Orchestrate the specialized review skills. Do not restate their checklists here.
 
 ## Which reviews to run
 
-| Skill                                          | Run when                                                                                                                                                     |
-| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [general-review](../general-review/SKILL.md)   | Every review                                                                                                                                                 |
-| [frontend-review](../frontend-review/SKILL.md) | The diff touches `src/components/**`, `src/layouts/**`, `src/styling/**`, `public/scripts/**`, or UI pages under `src/pages/**` excluding `src/pages/api/**` |
-| [content-review](../content-review/SKILL.md)   | The diff touches `src/content/**`, `src/utility/**`, `scripts/**`, or related static assets under `public/` (bulletins, fossils, abstracts, images)          |
-| [api-review](../api-review/SKILL.md)           | The diff touches `src/pages/api/**` or the API contract docs                                                                                                 |
-| [security-review](../security-review/SKILL.md) | The diff touches raw HTML rendering, user-influenced URLs or paths, API input handling, secrets, third-party embeds, or file serving                         |
-| [testing-review](../testing-review/SKILL.md)   | The diff changes behaviour                                                                                                                                   |
+| Skill                                                            | Run when                                                                                                                                                                                              |
+| ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [general-review](../general-review/SKILL.md)                     | Every review                                                                                                                                                                                          |
+| [frontend-review](../frontend-review/SKILL.md)                   | The diff touches `src/components/**`, `src/layouts/**`, `src/styling/**`, `public/scripts/**`, or UI pages under `src/pages/**` excluding `src/pages/api/**`                                          |
+| [accessibility-review](../accessibility-review/SKILL.md)         | Same UI paths as frontend-review, or the diff adds or changes user-facing image `alt` text, control labels, or other accessible names (including in `src/content/**` when those fields are rendered) |
+| [content-review](../content-review/SKILL.md)                     | The diff touches `src/content/**`, `src/utility/**`, `scripts/**`, or related static assets under `public/` (bulletins, fossils, abstracts, images)                                                   |
+| [api-review](../api-review/SKILL.md)                             | The diff touches `src/pages/api/**` or the API contract docs                                                                                                                                          |
+| [security-review](../security-review/SKILL.md)                   | The diff touches raw HTML rendering, user-influenced URLs or paths, API input handling, secrets, third-party embeds, or file serving                                                                  |
+| [testing-review](../testing-review/SKILL.md)                     | The diff changes behaviour                                                                                                                                                                            |
 
-A styling-only change runs general-review and frontend-review. A content-copy change with no logic may skip testing-review; say so. Skip security-review when the diff has no security surface. Say which reviews were skipped and why.
+A styling-only change runs general-review, frontend-review, and accessibility-review. A content-copy change with no logic may skip testing-review; say so. Skip security-review when the diff has no security surface. Skip accessibility-review when the diff has no user-facing markup, labels, or media alternatives. Say which reviews were skipped and why.
 
-Specialized reviews can be invoked on their own, for example `/content-review` or `/security-review`. When this skill invoked them, they contribute findings and this skill writes the single summary.
+Specialized reviews can be invoked on their own, for example `/content-review`, `/accessibility-review`, or `/security-review`. When this skill invoked them, they contribute findings and this skill writes the single summary.
 
 ## User-facing error messages
 
@@ -54,5 +55,6 @@ End with:
 ## Related
 
 - Implementation: [implement-feature](../implement-feature/SKILL.md)
+- Accessibility: [accessibility-review](../accessibility-review/SKILL.md)
 - Plan review: [review-plan](../review-plan/SKILL.md)
 - Paths: `.ai/README.md`

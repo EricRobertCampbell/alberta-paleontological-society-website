@@ -5,7 +5,7 @@ description: Review an APS website diff for correctness, regressions, error hand
 
 # General review
 
-Review the diff for defects that are not specific to frontend, content, API, security, or test conventions. Those domains have their own skills. Read [findings.md](../code-review/references/findings.md) and use it for every finding.
+Review the diff for defects that are not specific to frontend, accessibility, content, API, security, or test conventions. Those domains have their own skills. Read [findings.md](../code-review/references/findings.md) and use it for every finding.
 
 ## What to review
 

@@ -67,13 +67,13 @@ Do not implement production code for a behaviour change and only add tests after
 1. Understand the task.
 2. Read planning artifacts when they exist.
 3. Read relevant ADRs in `readme/adr/` before making an architectural choice. Skip `README.md` and `TEMPLATE.md` there. Also read matching docs in `readme/architecture/` and project READMEs when relevant.
-4. Inspect the existing implementation and match its patterns. Frontend conventions are in [frontend.md](../code-review/references/frontend.md). Content and utility conventions are in [content.md](../code-review/references/content.md).
+4. Inspect the existing implementation and match its patterns. Frontend conventions are in [frontend.md](../code-review/references/frontend.md). Content and utility conventions are in [content.md](../code-review/references/content.md). For user-facing markup, components, layouts, styling, or client scripts, also follow [accessibility.md](../code-review/references/accessibility.md) and the [accessibility-review](../accessibility-review/SKILL.md) checklist (semantic HTML, names, keyboard, focus, images, forms).
 5. Apply [Test-driven development](#test-driven-development): write the failing adjacent test first for behaviour changes, then implement.
 6. Implement incrementally. Keep shared helpers in `src/utility/` and follow `.cursor/rules/function-order.mdc`.
 7. Run the relevant checks: `npm run test`, and `npm run build` when pages, content schemas, or config may break the Astro build.
-8. Review the resulting diff against the plan, when one exists, and the conventions above.
+8. Review the resulting diff against the plan, when one exists, and the conventions above. For UI changes, check the accessibility checklist before calling the work done.
 9. When a plan directory exists, update `checklist.md` as work is verified, not merely written, and record commands and results in `verification.md`. Add tasks the plan missed. Do not delete a cancelled task; mark it cancelled and say why.
-10. Verify the behaviour. For a UI change, exercise the affected flow in the browser when browser tools are available. If they are not, say what was not verified.
+10. Verify the behaviour. For a UI change, exercise the affected flow in the browser when browser tools are available, including keyboard focus order and control names for new interactive elements. If they are not, say what was not verified.
 11. Apply [ADR consideration](#adr-consideration) and [Doc consideration](#doc-consideration).
 12. A change that alters a documented invariant or architecture flow updates `README.md`, `src/pages/api/README.md`, and/or the matching doc under `readme/architecture/` in the same change.
 13. When a plan directory exists and its checklist is complete, set `Status: Done`. Summarize what changed, what was verified, and any remaining risk. The next step is [code-review](../code-review/SKILL.md).
@@ -174,4 +174,5 @@ Read relevant ADRs before choosing an architecture, not only afterwards.
 - Planning: [plan-feature](../plan-feature/SKILL.md)
 - Plan review: [review-plan](../review-plan/SKILL.md)
 - Code review: [code-review](../code-review/SKILL.md)
+- Accessibility: [accessibility-review](../accessibility-review/SKILL.md)
 - ADR convention: `readme/adr/README.md`

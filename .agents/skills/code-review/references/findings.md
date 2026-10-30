@@ -33,6 +33,9 @@ Established mappings:
 - A new public API route that omits input validation or returns an unclear error for bad input is **Medium**.
 - A date/timezone change that ignores UTC-in-dev / America/Edmonton-in-prod handling is **High** when it can show wrong event times or filters.
 - A user-facing error message that is not descriptive, or that does not provide a set of next steps, is **Medium**.
+- A new or changed primary interactive control with no accessible name, no keyboard path, or a keyboard trap is **High**.
+- Missing or wrong `alt` on a new informative image, or contradictory ARIA that misrepresents control state, is **High** when the task cannot be completed or users are actively misled.
+- Missing visible `:focus-visible` styling after removing the default outline on a new control, or meaning conveyed by colour alone, is **Medium**.
 
 Do not report something merely because you would have implemented it differently.
 
