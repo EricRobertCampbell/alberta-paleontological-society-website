@@ -10,9 +10,9 @@ Wayne's Fossil World, a small museum in Drumheller, is holding a palaeo-art post
 
 Create a 22" by 28" poster of a Late Cretaceous Alberta scene showing predator and prey. The contest is open to Alberta residents in three age categories:
 
--   Junior high: 13–15
--   High school: 16–18
--   Adult: 19+
+- Junior high: 13–15
+- High school: 16–18
+- Adult: 19+
 
 Email submissions only, to [waynesfossilworld@gmail.com](mailto:waynesfossilworld@gmail.com), by **April 1, 2027 at 11:59 pm**.
 

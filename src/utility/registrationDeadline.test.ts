@@ -42,7 +42,9 @@ describe('registrationDeadlineCalendarDate', () => {
 
 describe('formatRegistrationDeadline', () => {
     it('formats a date without inventing a clock time', () => {
-        expect(formatRegistrationDeadline('2026-10-11')).toBe('October 11, 2026')
+        expect(formatRegistrationDeadline('2026-10-11')).toBe(
+            'October 11, 2026'
+        )
     })
 
     it('formats a datetime from the clock time in the string', () => {
@@ -56,12 +58,12 @@ describe('isRegistrationDeadlineOpen', () => {
     const now = new Date('2026-10-11T18:00:00-06:00')
 
     it('stays open through a date-only deadline and closes the next day', () => {
-        expect(isRegistrationDeadlineOpen('2026-10-11', now, '2026-10-11')).toBe(
-            true
-        )
-        expect(isRegistrationDeadlineOpen('2026-10-11', now, '2026-10-12')).toBe(
-            false
-        )
+        expect(
+            isRegistrationDeadlineOpen('2026-10-11', now, '2026-10-11')
+        ).toBe(true)
+        expect(
+            isRegistrationDeadlineOpen('2026-10-11', now, '2026-10-12')
+        ).toBe(false)
     })
 
     it('closes a datetime after that instant and stays open before it', () => {
