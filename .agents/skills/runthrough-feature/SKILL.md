@@ -24,12 +24,12 @@ After code-review, run [categorize-comments](../categorize-comments/SKILL.md) on
 
 These overrides apply only while `/runthrough-feature` is the active skill:
 
-| Child skill rule | During runthrough |
-| --- | --- |
-| `/plan-feature` stops for human review | Continue to `/review-plan` |
-| `/review-plan` waits for human approval before implementation | Treat a non-blocking review as approval. Record `Status: Approved` with the date and that `/runthrough-feature` approved it, then continue to `/implement-feature` |
-| `/implement-feature` expects an explicit implement request as approval | The `/runthrough-feature` invocation is that approval |
-| Open questions or missing requirements would normally stop the work | Decide, record the decision or assumption, and continue when a reasonable choice exists |
+| Child skill rule                                                       | During runthrough                                                                                                                                                  |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `/plan-feature` stops for human review                                 | Continue to `/review-plan`                                                                                                                                         |
+| `/review-plan` waits for human approval before implementation          | Treat a non-blocking review as approval. Record `Status: Approved` with the date and that `/runthrough-feature` approved it, then continue to `/implement-feature` |
+| `/implement-feature` expects an explicit implement request as approval | The `/runthrough-feature` invocation is that approval                                                                                                              |
+| Open questions or missing requirements would normally stop the work    | Decide, record the decision or assumption, and continue when a reasonable choice exists                                                                            |
 
 Do not invent product requirements that the request does not support. Prefer the smallest reversible choice that unblocks the next phase.
 
