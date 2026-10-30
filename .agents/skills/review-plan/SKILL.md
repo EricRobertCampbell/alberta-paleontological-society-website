@@ -103,4 +103,6 @@ Do not begin implementation. The next step is human approval, then [implement-fe
 ## Related
 
 - Planning: [plan-feature](../plan-feature/SKILL.md)
+- Implementation: [implement-feature](../implement-feature/SKILL.md)
+- Full pass: [runthrough-feature](../runthrough-feature/SKILL.md)
 - Severity for test gaps: [findings.md](../code-review/references/findings.md)

@@ -115,4 +115,5 @@ If a requirements file is missing and the request is still ambiguous, write the 
 - Requirements: [requirements](../requirements/SKILL.md)
 - Plan review: [review-plan](../review-plan/SKILL.md)
 - Implementation: [implement-feature](../implement-feature/SKILL.md)
+- Full pass: [runthrough-feature](../runthrough-feature/SKILL.md)
 - Paths: `.ai/README.md`

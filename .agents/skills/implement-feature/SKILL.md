@@ -177,4 +177,6 @@ Read relevant ADRs before choosing an architecture, not only afterwards.
 - Plan review: [review-plan](../review-plan/SKILL.md)
 - Code review: [code-review](../code-review/SKILL.md)
 - Accessibility: [accessibility-review](../accessibility-review/SKILL.md)
+- Full pass: [runthrough-feature](../runthrough-feature/SKILL.md)
+- Comment triage: [categorize-comments](../categorize-comments/SKILL.md)
 - ADR convention: `readme/adr/README.md`
