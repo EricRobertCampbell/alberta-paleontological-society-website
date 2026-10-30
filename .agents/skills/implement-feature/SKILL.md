@@ -42,8 +42,8 @@ Do not follow the plan when the repository contradicts it. Use [Contradictions](
 The repo's integration branch is `main` (Netlify deploys from `main`). When creating a feature branch for implementation work:
 
 1. Fetch and update local `main` from `origin/main`.
-2. Create the feature branch from `main` (for example `git checkout -b <branch> main` or `git switch -c <branch> main`).
-3. Open the pull request with `main` as the base branch.
+2. Create the feature branch from `main` (for example `git checkout -b cursor/iss-248-todays-events main`). Name it as in [Branches and commits](#branches-and-commits).
+3. When the work is complete, open the pull request with `main` as the base branch. The description states what changed and why.
 
 Do not branch from or target `development` unless the user explicitly asks for that.
 
@@ -76,7 +76,9 @@ Do not implement production code for a behaviour change and only add tests after
 10. Verify the behaviour. For a UI change, exercise the affected flow in the browser when browser tools are available, including keyboard focus order and control names for new interactive elements. If they are not, say what was not verified.
 11. Apply [ADR consideration](#adr-consideration) and [Doc consideration](#doc-consideration).
 12. A change that alters a documented invariant or architecture flow updates `README.md`, `src/pages/api/README.md`, and/or the matching doc under `readme/architecture/` in the same change.
-13. When a plan directory exists and its checklist is complete, set `Status: Done`. Summarize what changed, what was verified, and any remaining risk. The next step is [code-review](../code-review/SKILL.md).
+13. When a plan directory exists and its checklist is complete, set `Status: Done`.
+14. Push the branch and open a pull request into `main`, as in [Branches and commits](#branches-and-commits). Leave it open. Do not merge it.
+15. Summarize what changed, what was verified, and any remaining risk. The next step is [code-review](../code-review/SKILL.md).
 
 Do not claim the task is complete because the code was written. Behaviour changes are incomplete until the new tests failed first, then passed with the implementation.
 
@@ -87,10 +89,10 @@ When you create a branch or a commit, follow [Branches and commits](#branches-an
 Name a new implementation branch:
 
 ```text
-iss-<number>-<description>
+cursor/iss-<number>-<brief-description>
 ```
 
-`<number>` is the GitHub issue number when one exists. `<description>` is a short kebab-case summary. Example: `iss-248-todays-events`. If there is no issue number, use a short kebab-case description alone.
+`<number>` is the GitHub issue number. `<brief-description>` is a short lowercase kebab-case summary. Example: `cursor/iss-248-todays-events`. When there is no issue number, use `cursor/<brief-description>`. This matches `.cursor/rules/issue-branches.mdc`.
 
 Write each commit with the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) formula. release-please opens the release pull request on `main` from these messages. `feat` bumps the minor version, `fix` and `content` bump the patch version, and other types such as `chore` do not open a release.
 
@@ -114,7 +116,7 @@ Align "today" filtering with America/Edmonton in production.
 Closes #248
 ```
 
-Only create commits when the user asks for them.
+When the work is complete, push the branch and open a pull request into `main`. The pull request description states what changed and why. When the work closes an issue, end the description with `Closes #<number>`. Leave the pull request open for review. Do not merge it.
 
 ## Contradictions
 
