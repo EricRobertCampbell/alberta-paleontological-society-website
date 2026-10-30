@@ -1,48 +1,6 @@
 import type { APIRoute } from 'astro'
 import { getCollection } from 'astro:content'
-import type { EventFrontmatter } from '../../content/config'
-import { getStartDate, getEndDate } from '../../utility/eventSorting'
-
-const includedFields = [
-    'title',
-    'subtitle',
-    'location',
-    'start',
-    'end',
-    'startDate',
-    'endDate',
-    'type',
-    'host',
-    'detailsLink',
-] as const satisfies readonly (keyof EventFrontmatter)[]
-
-/**
- * Return the event id plus frontmatter fields the weekly-events generator formats itself.
- * Talk references are omitted. Empty optional strings are omitted.
- */
-const toEventResponse = (id: string, data: EventFrontmatter) => {
-    const event: Record<string, unknown> = { id }
-
-    for (const field of includedFields) {
-        const value = data[field]
-        if (typeof value === 'string' && value !== '') {
-            event[field] = value
-        }
-    }
-
-    if (data.image?.src) {
-        const image: { src: string; alt: string; attribution?: string } = {
-            src: data.image.src,
-            alt: data.image.alt,
-        }
-        if (data.image.attribution) {
-            image.attribution = data.image.attribution
-        }
-        event.image = image
-    }
-
-    return event
-}
+import { eventsForApiRange } from '../../utility/registrationDeadline'
 
 export const GET: APIRoute = async ({ request }) => {
     try {
@@ -96,36 +54,15 @@ export const GET: APIRoute = async ({ request }) => {
             )
         }
 
-        // Get all events
         const allEvents = await getCollection('events')
-
-        // Filter events that overlap with the date range
-        // An event overlaps if:
-        // - Event end date >= start_date (event ends on or after the start date)
-        // - Event start date <= end_date (event starts on or before the end date)
-        const filteredEvents = allEvents.filter((event) => {
-            const eventStartDate = getStartDate(event.data)
-            const eventEndDate = getEndDate(event.data)
-
-            // Skip events without valid dates
-            if (!eventStartDate) {
-                return false
-            }
-
-            // Event overlaps if it starts before or on the end_date and ends on or after the start_date
-            return eventStartDate <= endDate && eventEndDate >= startDate
-        })
-
-        // Sort events by start date (ascending)
-        const sortedEvents = [...filteredEvents].sort((a, b) => {
-            const dateA = getStartDate(a.data)
-            const dateB = getStartDate(b.data)
-            return dateA.localeCompare(dateB)
-        })
-
-        // Pass frontmatter through. Display formatting happens in the consumer.
-        const eventsData = sortedEvents.map((event) =>
-            toEventResponse(event.id, event.data)
+        const eventsData = eventsForApiRange(
+            allEvents.map((event) => ({
+                id: event.id,
+                slug: event.slug,
+                data: event.data,
+            })),
+            startDate,
+            endDate
         )
 
         return new Response(JSON.stringify(eventsData), {

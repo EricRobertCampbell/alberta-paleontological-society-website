@@ -23,7 +23,9 @@ Returns events filtered by date range.
 
 Returns an array of events that overlap with the specified date range. Events are sorted by start date (ascending).
 
-Each item is the event's content-collection id plus its frontmatter. Dates are the source values (`start` / `end` as ISO datetimes, or `startDate` / `endDate` as `YYYY-MM-DD` when the event has no time). Optional fields are omitted when empty. `host` is included only when the markdown sets it (it is not defaulted to the Alberta Palaeontological Society). `image` is included as stored, with a site-relative `src`. Talk references are not included.
+Each item is the event's content-collection id plus its frontmatter. Dates are the source values (`start` / `end` as ISO datetimes, or `startDate` / `endDate` as `YYYY-MM-DD` when the event has no time). Optional fields are omitted when empty. `host` is included only when the markdown sets it (it is not defaulted to the Alberta Palaeontological Society). `image` is included as stored, with a site-relative `src`. Talk references are not included. `registrationDeadline` is included when the event sets one. It is either `YYYY-MM-DD` or a datetime with a timezone or offset.
+
+When that deadline's calendar date falls inside the requested range, the array also includes a separate object for the deadline. Its `id` is `{event id}-registration-deadline`, its `title` is `Registration Deadline for {event title}`, and it has `sourceEventId` plus `stablePath` (`/events/stable/{slug}`). A date-only deadline uses `startDate` and `endDate`. A datetime deadline uses `start` and `end`. A range that covers only the event returns the event, including `registrationDeadline`. A range that covers only the deadline returns the deadline object. A range that covers both returns both, ordered by date, with the event before its deadline when the dates are equal.
 
 **Success Response (200):**
 
@@ -39,6 +41,7 @@ Each item is the event's content-collection id plus its frontmatter. Dates are t
         "host": "Royal Tyrrell Museum of Palaeontology",
         "location": "Royal Tyrrell Museum's Auditorium (and Zoom)",
         "detailsLink": "https://tyrrellmuseum.com/whats_on/special_events/speaker_series",
+        "registrationDeadline": "2026-01-20",
         "image": {
             "src": "/events/2026/example.jpg",
             "alt": "Event poster",

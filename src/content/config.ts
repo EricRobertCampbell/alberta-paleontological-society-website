@@ -1,5 +1,6 @@
 import { defineCollection, reference, z } from 'astro:content'
 import { file } from 'astro/loaders'
+import { isRegistrationDeadline } from '../utility/registrationDeadline'
 
 /*
  * Events
@@ -26,6 +27,13 @@ const eventSchema = z.object({
     startDate: z.string().optional(),
     // @deprecated - use only when an event has a date but no time
     endDate: z.string().optional(),
+    registrationDeadline: z
+        .string()
+        .refine(isRegistrationDeadline, {
+            message:
+                'Registration deadline must be YYYY-MM-DD or a datetime with a timezone or offset',
+        })
+        .optional(),
     image: z
         .object({
             src: z.string(),

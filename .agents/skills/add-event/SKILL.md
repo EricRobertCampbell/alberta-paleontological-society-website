@@ -193,6 +193,17 @@ Use only one pair. The heading prefers `start` / `end`, so it shows a time whene
 
 Monthly meetings are 7:30–9:00 p.m., so they use `start` and `end` with `19:30:00` and `21:00:00` and that date's Edmonton offset, and `location: 'Calgary, Alberta'`. Leave the Mount Royal room out of the event body; `/events/monthlymeetings` already describes it.
 
+## Registration deadline
+
+Look for a registration deadline in the user's description and on a fetched page. Record it as `registrationDeadline` when the source states one.
+
+- A day with no clock time is `YYYY-MM-DD`.
+- A clock time is `YYYY-MM-DDTHH:MM:SS` plus a timezone or offset. Use the offset the source states. When the source gives a clock time and no zone, use the America/Edmonton offset for that date, the same rule as [`start` and `end`](#start-and-end).
+- Do not invent a deadline, a midnight time, or a guessed clock time. Leave the field unset when the source does not state one.
+- When updating an event, leave `registrationDeadline` as it is if the new source does not mention a deadline.
+
+The calendar and the event listings read this field. A field-trip body can still mention the deadline in prose when the neighbouring file does.
+
 ## Body
 
 Markdown after the closing `---`. Empty bodies are normal for monthly meetings whose content lives on the talk.
@@ -207,6 +218,7 @@ Match the neighbouring file of the same type:
 ## Checks
 
 - The event uses `start` and `end`, or `startDate` and `endDate`, and not both. A timed event sets both `start` and `end`.
+- `registrationDeadline`, when set, is `YYYY-MM-DD` or a datetime with a timezone or offset. It is omitted when the source states no deadline.
 - `type` is an `EVENT_TYPES` value, quoted the same way as neighbouring files.
 - APS events omit `host`. External events set both `type: External` and a non-APS `host`.
 - A known host matches `HOST_LOGO_MAP` exactly.

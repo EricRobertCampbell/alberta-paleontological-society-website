@@ -4,41 +4,40 @@ import Layout from "../../../layouts/Layout.astro";
 import Event from "../../../components/Event.astro";
 import { getStartDate } from "../../../utility/eventSorting";
 
-export const prerender = true;
+const { slug } = Astro.params;
 
-export async function getStaticPaths() {
-	const allEvents = await getCollection("events");
+const allEvents = slug ? await getCollection("events") : [];
+const sortedEvents = [...allEvents].sort((a, b) => {
+	const dateA = getStartDate(a.data);
+	const dateB = getStartDate(b.data);
+	return dateA.localeCompare(dateB);
+});
+const index = slug ? sortedEvents.findIndex((event) => event.slug === slug) : -1;
+const event = index >= 0 ? sortedEvents[index] : undefined;
+const previousEvent = event && index > 0 ? sortedEvents[index - 1] : null;
+const nextEvent = event && index < sortedEvents.length - 1 ? sortedEvents[index + 1] : null;
+const rendered = event ? await event.render() : null;
+const Content = rendered?.Content;
 
-	// Sort events by start date (ascending)
-	const sortedEvents = [...allEvents].sort((a, b) => {
-		const dateA = getStartDate(a.data);
-		const dateB = getStartDate(b.data);
-		return dateA.localeCompare(dateB);
-	});
-
-	return sortedEvents.map((event, index) => {
-		const previousEvent = index > 0 ? sortedEvents[index - 1] : null;
-		const nextEvent = index < sortedEvents.length - 1 ? sortedEvents[index + 1] : null;
-
-		return {
-			params: { slug: event.slug },
-			props: {
-				event,
-				previousEvent: previousEvent ? { slug: previousEvent.slug, title: previousEvent.data.title } : null,
-				nextEvent: nextEvent ? { slug: nextEvent.slug, title: nextEvent.data.title } : null,
-			},
-		};
-	});
+if (!event) {
+	Astro.response.status = 404;
+	Astro.response.statusText = "Not found";
 }
-
-const { event, previousEvent, nextEvent } = Astro.props;
-const { Content } = await event.render();
 ---
 
+{!event || !Content ? (
+	<Layout subtitle="Event not found">
+		<h1>Event not found</h1>
+		<p>
+			There is no event at this address. See the <a href="/events/">events page</a> for what is listed.
+		</p>
+	</Layout>
+) : (
 <Layout subtitle={event.data.title}>
 	<div class="event-page-container">
 		<Event
-			frontmatter={event.data as any}
+			id={event.id}
+			frontmatter={event.data}
 			last={true}
 		>
 			<Content />
@@ -48,7 +47,7 @@ const { Content } = await event.render();
 			{previousEvent ? (
 				<a href={`/events/stable/${previousEvent.slug}`} class="nav-button previous">
 					<span class="nav-label">← Previous Event</span>
-					<span class="nav-title">{previousEvent.title}</span>
+					<span class="nav-title">{previousEvent.data.title}</span>
 				</a>
 			) : (
 				<div></div>
@@ -57,7 +56,7 @@ const { Content } = await event.render();
 			{nextEvent ? (
 				<a href={`/events/stable/${nextEvent.slug}`} class="nav-button next">
 					<span class="nav-label">Next Event →</span>
-					<span class="nav-title">{nextEvent.title}</span>
+					<span class="nav-title">{nextEvent.data.title}</span>
 				</a>
 			) : (
 				<div></div>
@@ -65,6 +64,7 @@ const { Content } = await event.render();
 		</nav>
 	</div>
 </Layout>
+)}
 
 <style>
 	.event-page-container {

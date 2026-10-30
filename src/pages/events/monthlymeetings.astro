@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import { filterAPSEvents } from "../../utility/filters";
 import { sortEventsByDate } from "../../utility/eventSorting";
+import { withRegistrationDeadlines } from "../../utility/registrationDeadline";
 import Layout from "../../layouts/Layout.astro";
 import EmailLink from "../../components/EmailLink.astro";
 import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
@@ -12,18 +13,18 @@ const allEvents = await getCollection("events");
 const renderedEvents = await Promise.all(
 	allEvents.map(async (event) => {
 		const rendered = await event.render();
-		return { ...rendered, slug: event.slug };
+		return { ...rendered, slug: event.slug, id: event.id };
 	})
 );
 
 // Filter for Monthly Meeting events only
-const monthlyMeetingEvents = renderedEvents.filter((e) => {
+const monthlyMeetingEvents = withRegistrationDeadlines(renderedEvents.filter((e) => {
 	const isApsEvents = filterAPSEvents({host: e.remarkPluginFrontmatter.host});
 	if (!isApsEvents) {
 		return false;
 	}
 	return e.remarkPluginFrontmatter.type === 'Monthly Meeting';
-});
+}));
 
 // Get upcoming monthly meetings using utility function
 const { upcomingEvents } = sortEventsByDate(monthlyMeetingEvents);
@@ -84,15 +85,19 @@ if (!programCoordinator) {
 		<>
 			<h2>Upcoming Meeting{upcomingEvents.length > 1 ? "s" : ""}</h2>
 			{upcomingEvents.map((event, index, allEvents) => {
-				const { Content, slug } = event;
+				const { Content } = event;
 				return (
 					<Event
-						frontmatter={event.remarkPluginFrontmatter as any}
+						id={event.anchorId}
+						frontmatter={event.remarkPluginFrontmatter}
 						last={index === allEvents.length - 1}
 						showPermalink={true}
-						slug={slug}
+						slug={event.sourceSlug}
+						isRegistrationDeadline={event.isRegistrationDeadline}
+						sourceSlug={event.sourceSlug}
+						sourceTitle={event.sourceTitle}
 					>
-						<Content />
+						{Content && <Content />}
 					</Event>
 				);
 			})}

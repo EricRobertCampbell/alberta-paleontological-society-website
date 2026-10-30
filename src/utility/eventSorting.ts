@@ -7,9 +7,9 @@ export interface RenderedEvent {
     [key: string]: any
 }
 
-export interface EventsSortResult {
-    upcomingEvents: any[]
-    pastEvents: any[]
+export interface EventsSortResult<T = any> {
+    upcomingEvents: T[]
+    pastEvents: T[]
 }
 
 /**
@@ -78,15 +78,17 @@ export const sortEventsDesc = sortEventsGenerator(false)
 /**
  * Sort events into past and upcoming based on current date
  */
-export const sortEventsByDate = (events: any[]): EventsSortResult => {
+export function sortEventsByDate<T extends { remarkPluginFrontmatter: any }>(
+    events: T[]
+): EventsSortResult<T> {
     // Get current date for server-side filtering
     const today = new Date()
     const offset = today.getTimezoneOffset()
     const todayWithOffset = new Date(today.getTime() - offset * 60 * 1000)
     const todayString = todayWithOffset.toISOString().split('T')[0]
 
-    const upcomingEvents: any[] = []
-    const pastEvents: any[] = []
+    const upcomingEvents: T[] = []
+    const pastEvents: T[] = []
 
     // Separate events into past and upcoming in a single loop
     events.forEach((event) => {

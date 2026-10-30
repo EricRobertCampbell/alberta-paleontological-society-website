@@ -6,6 +6,12 @@ import EventCalendar from '../../components/EventCalendar/EventCalendar.astro';
 import Button from '../../components/Button.astro';
 import { getCollection } from "astro:content";
 import { splitIsoString } from "../../utility/dates"
+import { getStartDate } from "../../utility/eventSorting"
+import {
+  isRegistrationDeadline,
+  registrationDeadlineCalendarDate,
+  withRegistrationDeadlines,
+} from "../../utility/registrationDeadline"
 
 /**
 * Validates that a string represents a year
@@ -31,6 +37,33 @@ function formatMonthYear(year: number, month: number): string {
   return date.toLocaleString('en-US', { month: 'long', year: 'numeric' });
 }
 
+function eventIsInViewedMonth(data: {
+  start?: string
+  end?: string
+  startDate?: string
+  endDate?: string
+}, viewedYear: string, viewedMonth: string) {
+  if (data.start && data.end) {
+    const {year: startYear, month: startMonth} = splitIsoString(data.start);
+    const {year: endYear, month: endMonth} = splitIsoString(data.end);
+    return startYear <= parseInt(viewedYear) &&
+         startMonth <= parseInt(viewedMonth) &&
+         endYear >= parseInt(viewedYear) &&
+         endMonth >= parseInt(viewedMonth);
+  }
+  if (data.startDate) {
+    const actualStartDate = data.startDate
+    const actualEndDate = data.endDate || actualStartDate
+    const [ startYear, startMonth ] = actualStartDate.split('-');
+    const [endYear, endMonth ] = actualEndDate.split('-');
+    return startYear <= viewedYear &&
+      startMonth <= viewedMonth &&
+      endYear >= viewedYear &&
+      endMonth >= viewedMonth;
+  }
+  return false
+}
+
 const {url} = Astro
 const searchParams = new URLSearchParams(url.search);
 const now = new Date();
@@ -49,63 +82,54 @@ const prevMonth = month === '01' ? '12' : (parseInt(month) - 1).toString().padSt
 const prevYear = month === '01' ? (parseInt(year) - 1).toString() : year;
 
 const allEvents = await getCollection("events");
-const filteredEvents = allEvents.filter(( event ) => {
-  const {data} = event;
-  if (data.start && data.end) {
-    const {year: startYear, month: startMonth} = splitIsoString(data.start);
-    const {year: endYear, month: endMonth} = splitIsoString(data.end);
-    return startYear <= parseInt(year) && 
-         startMonth <= parseInt(month) &&
-         endYear >= parseInt(year) && 
-         endMonth >= parseInt(month);
-    }
-    else if (data.startDate) {
-      // NB for now we don't care about the start / end time, just the date
-      const actualStartDate = data.startDate
-      const actualEndDate = data.endDate || actualStartDate; // sometimes we only include the start date
-      const [ startYear, startMonth ] = actualStartDate.split('-');
-      const [endYear, endMonth ] = actualEndDate.split('-');
-      return startYear <= year && 
-        startMonth <= month &&
-        endYear >= year && 
-        endMonth >= month;
-    } 
+const monthKey = `${year}-${month}`
+const monthSourceEvents = allEvents.filter((event) => {
+  const deadline = event.data.registrationDeadline
+  const deadlineInMonth = !!deadline &&
+    isRegistrationDeadline(deadline) &&
+    registrationDeadlineCalendarDate(deadline).slice(0, 7) === monthKey
+  return eventIsInViewedMonth(event.data, year, month) || deadlineInMonth
 })
-const renderedEvents = await Promise.all(filteredEvents.sort((a, b) => {
-  const dateA = a.data.start ? new Date(a.data.start) : (a.data.startDate ? new Date(a.data.startDate) : null);
-  const dateB = b.data.start ? new Date(b.data.start) : (b.data.startDate ? new Date(b.data.startDate) : null);
-
-  if (!dateA || !dateB) {
-    return 0; // fallback if either date is missing
-  } 
-  return dateA.getTime() - dateB.getTime();
-}).map(async (event) => {
+const renderedEvents = await Promise.all(monthSourceEvents.map(async (event) => {
   const rendered = await event.render();
   return {
-  ...rendered,
-  id: event.id
+    ...rendered,
+    id: event.id,
+    slug: event.slug,
   }
-}));
-const calendarEvents = filteredEvents.map((event) => {
+}))
+const monthEvents = withRegistrationDeadlines(renderedEvents).filter((event) => {
+  if (event.isRegistrationDeadline) {
+    const deadline = event.remarkPluginFrontmatter.registrationDeadline
+    return !!deadline &&
+      isRegistrationDeadline(deadline) &&
+      registrationDeadlineCalendarDate(deadline).slice(0, 7) === monthKey
+  }
+  return eventIsInViewedMonth(event.remarkPluginFrontmatter, year, month)
+}).sort((a, b) => {
+  return getStartDate(a.remarkPluginFrontmatter).localeCompare(getStartDate(b.remarkPluginFrontmatter))
+})
+const calendarEvents = monthEvents.map((event) => {
+  const data = event.remarkPluginFrontmatter
   let startDate: string;
-  if (event.data.start) {
-    startDate = splitIsoString(event.data.start).date;
-  } else if (event.data.startDate) {
-    startDate = event.data.startDate;
+  if (data.start) {
+    startDate = splitIsoString(data.start).date;
+  } else if (data.startDate) {
+    startDate = data.startDate;
   } else {
     startDate = '';
   }
   let endDate: string;
-  if (event.data.end) {
-    endDate = splitIsoString(event.data.end).date;
-  } else if (event.data.endDate) {
-    endDate = event.data.endDate;
+  if (data.end) {
+    endDate = splitIsoString(data.end).date;
+  } else if (data.endDate) {
+    endDate = data.endDate;
   } else {
-    endDate = startDate; // Default to start date if no end date is provided
+    endDate = startDate;
   }
-  const { title, type, host } = event.data;
+  const { title, type, host } = data;
   return {
-    id: event.id,
+    id: event.anchorId,
     startDate,
     endDate,
     title,
@@ -113,23 +137,24 @@ const calendarEvents = filteredEvents.map((event) => {
     host,
   }
 });
-//console.log('data', renderedEvents[0]);
-//console.log({calendarEvents})
 ---
 
 {partial ? <div id="calendar-content" view-transition-name='event-calendar-content'>
   <EventCalendar year={year} month={month} events={calendarEvents}/>
   <hr class="post-event-calendar" />
   {
-  renderedEvents.map((event, index, allEvents) => {
-  const { Content, headings, id } = event;
+  monthEvents.map((event, index, allEvents) => {
+  const { Content } = event;
   return (
   <Event
-    id={id}
+    id={event.anchorId}
     frontmatter={event.remarkPluginFrontmatter}
     last={index === allEvents.length - 1}
+    isRegistrationDeadline={event.isRegistrationDeadline}
+    sourceSlug={event.sourceSlug}
+    sourceTitle={event.sourceTitle}
   >
-  <Content />
+  {Content && <Content />}
   </Event>
   );
   })
@@ -157,15 +182,18 @@ const calendarEvents = filteredEvents.map((event) => {
   <EventCalendar year={year} month={month} events={calendarEvents} />
   <hr class="post-event-calendar" />
   {
-  renderedEvents.map((event, index, allEvents) => {
-  const { Content, headings, id } = event;
+  monthEvents.map((event, index, allEvents) => {
+  const { Content } = event;
   return (
   <Event
-  id={id}
+  id={event.anchorId}
   frontmatter={event.remarkPluginFrontmatter}
   last={index === allEvents.length - 1}
+  isRegistrationDeadline={event.isRegistrationDeadline}
+  sourceSlug={event.sourceSlug}
+  sourceTitle={event.sourceTitle}
   >
-  <Content />
+  {Content && <Content />}
   </Event>
   );
   })
