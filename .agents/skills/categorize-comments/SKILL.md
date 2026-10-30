@@ -28,12 +28,12 @@ Score every comment on all three axes. Use these scales only.
 
 How bad is it if the issue is real and occurs?
 
-| Level | Meaning |
-| --- | --- |
-| **S1 — Critical** | Exploitable security hole, data loss, or data corruption |
-| **S2 — High** | Incorrect user-visible behaviour, security weakness, or significant performance harm |
-| **S3 — Medium** | Defect that can hide until later, missing regression coverage for real behaviour, or maintainability that will become a defect |
-| **S4 — Low** | Minor improvement, style, or polish |
+| Level             | Meaning                                                                                                                        |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| **S1 — Critical** | Exploitable security hole, data loss, or data corruption                                                                       |
+| **S2 — High**     | Incorrect user-visible behaviour, security weakness, or significant performance harm                                           |
+| **S3 — Medium**   | Defect that can hide until later, missing regression coverage for real behaviour, or maintainability that will become a defect |
+| **S4 — Low**      | Minor improvement, style, or polish                                                                                            |
 
 When the comment already carries a [code-review severity](../code-review/references/findings.md), start from that mapping: Critical→S1, High→S2, Medium→S3, Low→S4. Adjust only when the local code shows the stated severity is wrong, and say why.
 
@@ -41,21 +41,21 @@ When the comment already carries a [code-review severity](../code-review/referen
 
 How probable is the failure or cost in normal use of this site?
 
-| Level | Meaning |
-| --- | --- |
-| **L1 — Probable** | Likely in ordinary visitor or editor use, or already observed |
-| **L2 — Occasional** | Plausible on a real path, but not the common case |
-| **L3 — Unlikely** | Narrow edge case, unlikely data shape, or theoretical without evidence |
+| Level               | Meaning                                                                |
+| ------------------- | ---------------------------------------------------------------------- |
+| **L1 — Probable**   | Likely in ordinary visitor or editor use, or already observed          |
+| **L2 — Occasional** | Plausible on a real path, but not the common case                      |
+| **L3 — Unlikely**   | Narrow edge case, unlikely data shape, or theoretical without evidence |
 
 ### Effort
 
 How much work is a sound fix?
 
-| Level | Meaning |
-| --- | --- |
-| **E1 — Small** | Localized change; roughly a short edit and a focused test |
-| **E2 — Moderate** | Several files or a small design tweak; still contained |
-| **E3 — Large** | Broad restructuring, schema/API migration, or a large rewrite of a section |
+| Level             | Meaning                                                                    |
+| ----------------- | -------------------------------------------------------------------------- |
+| **E1 — Small**    | Localized change; roughly a short edit and a focused test                  |
+| **E2 — Moderate** | Several files or a small design tweak; still contained                     |
+| **E3 — Large**    | Broad restructuring, schema/API migration, or a large rewrite of a section |
 
 Rate effort for a proper fix. If a narrow mitigation is much cheaper than a proper fix, note that under the recommendation as a possible **band-aid**.
 
@@ -63,12 +63,12 @@ Rate effort for a proper fix. If a narrow mitigation is much cheaper than a prop
 
 Choose exactly one disposition per comment:
 
-| Disposition | Meaning |
-| --- | --- |
-| **address** | Fix properly now |
+| Disposition  | Meaning                                                          |
+| ------------ | ---------------------------------------------------------------- |
+| **address**  | Fix properly now                                                 |
 | **band-aid** | Apply a small mitigation now; record the proper fix as follow-up |
-| **defer** | Real issue; leave it for a later change |
-| **ignore** | Not worth tracking; preference, obsolete, or incorrect |
+| **defer**    | Real issue; leave it for a later change                          |
+| **ignore**   | Not worth tracking; preference, obsolete, or incorrect           |
 
 ### Decision rules
 
@@ -118,7 +118,7 @@ Use this shape:
 - **Effort:** E3 — Large
 - **Disposition:** defer
 - **Rationale:** …
-- **Suggested follow-up:** …  # required for band-aid and defer; omit for ignore
+- **Suggested follow-up:** … # required for band-aid and defer; omit for ignore
 ```
 
 Number items in the same order as the input when possible. Keep dispositions stable: do not mark something **address** and then skip it without saying why.
