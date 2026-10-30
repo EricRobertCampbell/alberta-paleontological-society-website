@@ -52,6 +52,6 @@ Skills live in `.agents/skills/`:
 - `/requirements`
 - `/plan-feature`
 - `/review-plan`
-- `/implement-feature` (TDD: failing adjacent Vitest test first for behaviour changes)
+- `/implement-feature` (TDD: failing adjacent Vitest test first for behaviour changes; UI work follows `/accessibility-review`)
 - `/add-event` (content-collection event: schema, paths, images, and listing conventions)
-- `/code-review` and the specialized reviews it orchestrates
+- `/code-review` and the specialized reviews it orchestrates (`/frontend-review`, `/accessibility-review`, `/content-review`, `/api-review`, `/security-review`, `/testing-review`, `/general-review`)

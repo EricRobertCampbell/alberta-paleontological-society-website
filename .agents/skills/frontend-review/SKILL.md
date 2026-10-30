@@ -1,6 +1,6 @@
 ---
 name: frontend-review
-description: Review APS Astro component, page, layout, and styling changes for structure, accessibility, and UI consistency. Use when the user runs /frontend-review, or when /code-review reviews a UI change under src/components, src/layouts, src/pages, or src/styling.
+description: Review APS Astro component, page, layout, and styling changes for structure and UI consistency. Use when the user runs /frontend-review, or when /code-review reviews a UI change under src/components, src/layouts, src/pages, or src/styling. For semantic HTML, ARIA, keyboard, focus, and related checks, use /accessibility-review.
 ---
 
 # Frontend review
@@ -12,11 +12,12 @@ Read and apply:
 - [findings.md](../code-review/references/findings.md)
 - [frontend.md](../code-review/references/frontend.md)
 
+Detailed accessibility checks live in [accessibility-review](../accessibility-review/SKILL.md). When `/code-review` runs both, leave those findings to accessibility-review and do not duplicate them here.
+
 ## What to review
 
 - Match surrounding Astro component and page patterns
 - Reuse existing UI components and CSS variables
-- Accessibility of new interactive elements: name, keyboard use, and focus
 - Loading, empty, and error states when the UI depends on fetched or filtered data
 - Client scripts and 3D scan behaviour stay consistent with existing patterns
 - Homepage and event listings preserve external-event filtering and date sorting unless the change is explicitly about those rules

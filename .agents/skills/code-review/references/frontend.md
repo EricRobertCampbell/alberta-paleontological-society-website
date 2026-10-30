@@ -32,9 +32,7 @@ Apply these checks to changes under `src/components/`, `src/layouts/`, `src/page
 
 ## Accessibility
 
-- Interactive elements need an accessible name, keyboard use, and focus behaviour consistent with neighbouring UI.
-- Images need meaningful `alt` text (or an intentional empty alt when decorative).
-- Prefer semantic HTML already used on the site (`nav`, `main`, headings in order).
+Detailed accessibility checks live in [accessibility.md](accessibility.md) and the [accessibility-review](../../accessibility-review/SKILL.md) skill. When reviewing UI consistency only, still avoid shipping interactive elements with no name or keyboard path; report full a11y findings through accessibility-review when that skill is in use.
 
 ## Dates and events in the UI
 
