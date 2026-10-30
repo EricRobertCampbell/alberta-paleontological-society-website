@@ -1,0 +1,24 @@
+---
+description: Branch and pull request conventions for issue and feature work
+alwaysApply: true
+---
+
+# Issue and feature branches
+
+When you implement an issue or a feature, do the work on a new branch created from an up-to-date `main`. Do not commit that work on `main`.
+
+Name the branch:
+
+```text
+cursor/iss-<number>-<brief-description>
+```
+
+`<number>` is the GitHub issue number. `<brief-description>` is a short lowercase kebab-case summary of the change. Example: `cursor/iss-248-todays-events`.
+
+When the work has no GitHub issue, omit the issue segment:
+
+```text
+cursor/<brief-description>
+```
+
+When the work is complete, push the branch and open a pull request into `main`. The pull request description states what changed and why. When the work closes an issue, end the description with `Closes #<number>`. Leave the pull request open for review. Do not merge it.

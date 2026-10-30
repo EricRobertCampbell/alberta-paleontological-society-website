@@ -40,6 +40,12 @@ Status: Draft
 
 Allowed values, in order: `Draft` → `Reviewed` → `Approved` → `Implementing` → `Done`.
 
+## Branches and pull requests
+
+Implementation of an issue or feature happens on a branch named `cursor/iss-<number>-<brief-description>`, created from `main`. `<number>` is the GitHub issue number. `<brief-description>` is a short lowercase kebab-case summary, for example `cursor/iss-248-todays-events`. When there is no issue, use `cursor/<brief-description>`.
+
+When the work is complete, open a pull request into `main` whose description states what changed and why. Leave that pull request open for review.
+
 ## Related docs
 
 - ADRs: `readme/adr/`

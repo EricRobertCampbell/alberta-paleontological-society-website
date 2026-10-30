@@ -90,6 +90,10 @@ Include these sections in `plan.md` when they are relevant. Omit a section that 
 ## Verification
 
 - [ ] Run `npm run test` / `npm run build`
+
+## Delivery
+
+- [ ] Commit on `cursor/iss-<number>-<brief-description>` (or `cursor/<brief-description>` when there is no issue) and open a pull request into `main` that describes the changes. Do not merge it.
 ```
 
 ## Before finishing
