@@ -18,4 +18,3 @@ The Philip J. Currie Dinosaur Museum is bringing fossil digging, fossil cleaning
 **Cost:** Free, all ages
 
 Drop in anytime. No registration needed. The Grande Prairie Public Library is hosting the visit.
-

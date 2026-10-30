@@ -9,7 +9,9 @@ interface ListedEvent<TContent> {
     Content?: TContent
 }
 
-export interface RegistrationDeadlineListItem<TContent> extends ListedEvent<TContent> {
+export interface RegistrationDeadlineListItem<
+    TContent,
+> extends ListedEvent<TContent> {
     anchorId: string
     isRegistrationDeadline: boolean
     sourceSlug: string
@@ -193,9 +195,9 @@ function compareForNextEventSlot(
     a: NextEventCandidate,
     b: NextEventCandidate
 ): number {
-    const byDate = nextEventCalendarDate(b.remarkPluginFrontmatter).localeCompare(
-        nextEventCalendarDate(a.remarkPluginFrontmatter)
-    )
+    const byDate = nextEventCalendarDate(
+        b.remarkPluginFrontmatter
+    ).localeCompare(nextEventCalendarDate(a.remarkPluginFrontmatter))
     if (byDate !== 0) {
         return byDate
     }

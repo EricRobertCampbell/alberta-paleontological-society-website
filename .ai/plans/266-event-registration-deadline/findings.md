@@ -26,15 +26,15 @@ No existing event sets a structured deadline. Prose deadlines stay as they are. 
 
 Each of these loads the `events` collection, renders markdown, and passes `remarkPluginFrontmatter` to `src/components/Event.astro`:
 
-| Surface | File | Filter |
-| --- | --- | --- |
-| Calendar grid and cards | `src/pages/events/calendar.astro` | Month overlap. Grid chips link to `#id`. Cards are the rendered body. |
-| Next event | `src/pages/index.astro` | Drops `host` other than missing or `APS`. Keeps `start >= now` or `startDate >= today`. Sorts descending and takes the last item. `TodaysEvents` is commented out. |
-| Events index | `src/pages/events/index.astro` | `filterAPSEvents`. Today, upcoming, and past. |
-| Monthly meetings | `src/pages/events/monthlymeetings.astro` | APS and `type === 'Monthly Meeting'`. Upcoming only. |
-| Field trips | `src/pages/events/fieldtrips.astro` | Not external, `type === 'Field Trip'`. Upcoming and past. |
-| Fossil sorting | `src/pages/events/fossilsorting/index.astro` | Fossil Sorting type. Upcoming and past. |
-| Stable page | `src/pages/events/stable/[slug].astro` | One event. Previous/next walk the collection by `getStartDate`. `prerender = true`. |
+| Surface                 | File                                         | Filter                                                                                                                                                             |
+| ----------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Calendar grid and cards | `src/pages/events/calendar.astro`            | Month overlap. Grid chips link to `#id`. Cards are the rendered body.                                                                                              |
+| Next event              | `src/pages/index.astro`                      | Drops `host` other than missing or `APS`. Keeps `start >= now` or `startDate >= today`. Sorts descending and takes the last item. `TodaysEvents` is commented out. |
+| Events index            | `src/pages/events/index.astro`               | `filterAPSEvents`. Today, upcoming, and past.                                                                                                                      |
+| Monthly meetings        | `src/pages/events/monthlymeetings.astro`     | APS and `type === 'Monthly Meeting'`. Upcoming only.                                                                                                               |
+| Field trips             | `src/pages/events/fieldtrips.astro`          | Not external, `type === 'Field Trip'`. Upcoming and past.                                                                                                          |
+| Fossil sorting          | `src/pages/events/fossilsorting/index.astro` | Fossil Sorting type. Upcoming and past.                                                                                                                            |
+| Stable page             | `src/pages/events/stable/[slug].astro`       | One event. Previous/next walk the collection by `getStartDate`. `prerender = true`.                                                                                |
 
 `filterAPSEvents` (`src/utility/filters.ts`) keeps events with no host or host `APS`. External events set a non-APS `host`. The calendar does not apply that filter.
 
