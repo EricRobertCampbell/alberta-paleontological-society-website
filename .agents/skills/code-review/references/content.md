@@ -11,6 +11,7 @@ Schemas live in `src/content/config.ts`. Collections include events, talks, anno
 - Prefer modern event datetimes (`start` / `end`) over deprecated date/time fields.
 - Event `type` values must come from `EVENT_TYPES` in `src/content/config.ts`.
 - External events use type `External` and are filtered from the homepage.
+- Do not use `https://atms.alberta.ca` (or any path on that host) in `detailsLink` or event body links. ATMS is a ticketing storefront; stale item URLs bypass organizer booking processes. For Royal Tyrrell Museum events, prefer the tyrrellmuseum.com overview for that program type (for example `/learn/distance_learning/webcasts`, `/learn/distance_learning/public_webcasts`, `/whats_on/special_events/speaker_series`, or the program's own page). An ATMS href in the diff is High.
 
 ## Bulletins
 

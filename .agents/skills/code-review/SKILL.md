@@ -15,11 +15,12 @@ Orchestrate the specialized review skills. Do not restate their checklists here.
 4. Read each chosen skill and every reference it names. Apply those checks to the diff.
 5. Always include [general-review](../general-review/SKILL.md). It checks correctness, maintainability, and docs.
 6. Check user-facing error messages. See [User-facing error messages](#user-facing-error-messages).
-7. Merge the findings into one list. Use the severity scale in [references/findings.md](references/findings.md).
-8. Drop duplicate comments. When two reviews report the same issue, keep one finding, use the higher severity, and name both sources.
-9. Report only issues that are actionable and reasonably well-supported.
-10. Distinguish defects from suggestions.
-11. Number the consolidated findings from 1, in the priority order in [references/findings.md](references/findings.md). Continue that sequence for optional suggestions. The reader uses these numbers to say which items to address or ignore.
+7. When the diff touches event content, links, or registration copy, confirm there is no `atms.alberta.ca` href in `detailsLink` or body text. See [External booking links](#external-booking-links) and [content.md](references/content.md).
+8. Merge the findings into one list. Use the severity scale in [references/findings.md](references/findings.md).
+9. Drop duplicate comments. When two reviews report the same issue, keep one finding, use the higher severity, and name both sources.
+10. Report only issues that are actionable and reasonably well-supported.
+11. Distinguish defects from suggestions.
+12. Number the consolidated findings from 1, in the priority order in [references/findings.md](references/findings.md). Continue that sequence for optional suggestions. The reader uses these numbers to say which items to address or ignore.
 
 ## Which reviews to run
 
@@ -36,6 +37,12 @@ Orchestrate the specialized review skills. Do not restate their checklists here.
 A styling-only change runs general-review, frontend-review, and accessibility-review. A content-copy change with no logic may skip testing-review; say so. Skip security-review when the diff has no security surface. Skip accessibility-review when the diff has no user-facing markup, labels, or media alternatives. Say which reviews were skipped and why.
 
 Specialized reviews can be invoked on their own, for example `/content-review`, `/accessibility-review`, or `/security-review`. When this skill invoked them, they contribute findings and this skill writes the single summary.
+
+## External booking links
+
+Do not accept new or retained links to `https://atms.alberta.ca` (any path on that host) in event `detailsLink`, markdown bodies, or other user-facing copy. ATMS storefront URLs bypass museum booking procedures and can remain purchasable after programs should only be requested through an overview form.
+
+For Royal Tyrrell Museum events, `detailsLink` should be the tyrrellmuseum.com overview for that program type (webcasts, public webcasts, speaker series, or the program's own page), not a per-item ATMS listing. Treat an ATMS href as High when content-review runs; see [content.md](references/content.md).
 
 ## User-facing error messages
 

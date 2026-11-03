@@ -22,4 +22,4 @@ This is a drop-off activity. Parents cannot accompany participants during the wo
 
 **When:** Saturday, November 21, 2026, 11:00 AM – 2:00 PM  
 **Where:** Royal Alberta Museum, 9810 103a Avenue NW, Edmonton, AB  
-**Tickets:** [Register](https://atms.alberta.ca/ram/selection.aspx?item=596)
+**Tickets:** [Register](https://www.royalalbertamuseum.ca/events/junior-museum-skills-workshops/junior-museum-skills-workshops/ice-age-palaeontology)

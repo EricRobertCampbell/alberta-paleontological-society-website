@@ -4,7 +4,7 @@ start: '2025-09-13T10:30:00-06:00'
 end: '2025-09-13T15:00:00-06:00'
 type: 'External'
 host: 'Royal Tyrrell Museum of Palaeontology'
-detailsLink: https://atms.alberta.ca/tyrrellmuseum/Selection.aspx?item=316&sch=206481
+detailsLink: 'https://tyrrellmuseum.com/whats_on/albertosaurus-bonebed-guided-hike'
 ---
 
 <figure style="display:flex; align-items: center; justify-content: center; flex-direction: column;">
