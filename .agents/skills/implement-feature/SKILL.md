@@ -68,17 +68,18 @@ Do not implement production code for a behaviour change and only add tests after
 2. Read planning artifacts when they exist.
 3. Read relevant ADRs in `readme/adr/` before making an architectural choice. Skip `README.md` and `TEMPLATE.md` there. Also read matching docs in `readme/architecture/` and project READMEs when relevant.
 4. Inspect the existing implementation and match its patterns. Frontend conventions are in [frontend.md](../code-review/references/frontend.md). Content and utility conventions are in [content.md](../code-review/references/content.md). For user-facing markup, components, layouts, styling, or client scripts, also follow [accessibility.md](../code-review/references/accessibility.md) and the [accessibility-review](../accessibility-review/SKILL.md) checklist (semantic HTML, names, keyboard, focus, images, forms).
-5. Apply [Test-driven development](#test-driven-development): write the failing adjacent test first for behaviour changes, then implement.
-6. Implement incrementally. Keep shared helpers in `src/utility/` and follow `.cursor/rules/function-order.mdc`.
-7. Run the relevant checks: `npm run test`, and `npm run build` when pages, content schemas, or config may break the Astro build.
-8. Review the resulting diff against the plan, when one exists, and the conventions above. For UI changes, check the accessibility checklist before calling the work done.
-9. When a plan directory exists, update `checklist.md` as work is verified, not merely written, and record commands and results in `verification.md`. Add tasks the plan missed. Do not delete a cancelled task; mark it cancelled and say why.
-10. Verify the behaviour. For a UI change, exercise the affected flow in the browser when browser tools are available, including keyboard focus order and control names for new interactive elements. If they are not, say what was not verified.
-11. Apply [ADR consideration](#adr-consideration) and [Doc consideration](#doc-consideration).
-12. A change that alters a documented invariant or architecture flow updates `README.md`, `src/pages/api/README.md`, and/or the matching doc under `readme/architecture/` in the same change.
-13. When a plan directory exists and its checklist is complete, set `Status: Done`.
-14. Push the branch and open a pull request into `main`, as in [Branches and commits](#branches-and-commits). Leave it open. Do not merge it.
-15. Summarize what changed, what was verified, and any remaining risk. The next step is [code-review](../code-review/SKILL.md).
+5. When adding or editing event content (or any page that links out for tickets or registration), follow [External booking links](#external-booking-links). Never ship an `atms.alberta.ca` href.
+6. Apply [Test-driven development](#test-driven-development): write the failing adjacent test first for behaviour changes, then implement.
+7. Implement incrementally. Keep shared helpers in `src/utility/` and follow `.cursor/rules/function-order.mdc`.
+8. Run the relevant checks: `npm run test`, and `npm run build` when pages, content schemas, or config may break the Astro build.
+9. Review the resulting diff against the plan, when one exists, and the conventions above. For UI changes, check the accessibility checklist before calling the work done. Grep the diff for `atms.alberta.ca` and remove any hit.
+10. When a plan directory exists, update `checklist.md` as work is verified, not merely written, and record commands and results in `verification.md`. Add tasks the plan missed. Do not delete a cancelled task; mark it cancelled and say why.
+11. Verify the behaviour. For a UI change, exercise the affected flow in the browser when browser tools are available, including keyboard focus order and control names for new interactive elements. If they are not, say what was not verified.
+12. Apply [ADR consideration](#adr-consideration) and [Doc consideration](#doc-consideration).
+13. A change that alters a documented invariant or architecture flow updates `README.md`, `src/pages/api/README.md`, and/or the matching doc under `readme/architecture/` in the same change.
+14. When a plan directory exists and its checklist is complete, set `Status: Done`.
+15. Push the branch and open a pull request into `main`, as in [Branches and commits](#branches-and-commits). Leave it open. Do not merge it.
+16. Summarize what changed, what was verified, and any remaining risk. The next step is [code-review](../code-review/SKILL.md).
 
 Do not claim the task is complete because the code was written. Behaviour changes are incomplete until the new tests failed first, then passed with the implementation.
 
@@ -156,6 +157,21 @@ Recommendation:
 
 5. **Wait** for human confirmation before continuing when the impact is moderate or major. Do not unilaterally redefine the implementation.
 6. **Re-plan** when the discrepancy is major. Say that a new `/plan-feature` pass is preferable to patching an inaccurate plan.
+
+## External booking links
+
+Do not link to `https://atms.alberta.ca` or any other URL on that host, in frontmatter (`detailsLink`) or in markdown/HTML bodies. ATMS is a shared ticketing storefront; stale item URLs remain reachable and let visitors buy outside the organizer's booking process.
+
+For Royal Tyrrell Museum (RTMP) events, set `detailsLink` (and any “register” / “more information” body link) to the tyrrellmuseum.com overview for that program type, not a per-session store listing. Examples already used in the repo:
+
+- Webcasts / seasonal public programs → `https://tyrrellmuseum.com/learn/distance_learning/webcasts`
+- Public distance-learning programs → `https://tyrrellmuseum.com/learn/distance_learning/public_webcasts`
+- Speaker series → `https://tyrrellmuseum.com/whats_on/special_events/speaker_series`
+- A named program with its own page → that tyrrellmuseum.com page (for example the Albertosaurus bonebed hike)
+
+When the only URL in the source is an ATMS link, omit `detailsLink` and tell the user rather than pasting the storefront URL. The same rule applies to other museums that use ATMS (for example Royal Alberta Museum): link their public event or overview page instead.
+
+Event content work also follows [add-event](../add-event/SKILL.md).
 
 ## Doc consideration
 

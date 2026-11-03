@@ -38,6 +38,7 @@ Open the URL and read the page before writing the file. The page is the source.
 
 - If a login wall, signup wall, or preview hides the event, say what was visible and what was blocked. Stop when the visible page has no title or no date, and ask for a description or a screenshot.
 - Set `detailsLink` to a durable page for this event: its own listing, the organizer's event page, or a bulletin. Prefer that listing over the site homepage.
+- Never use `https://atms.alberta.ca` (or any path on that host) for `detailsLink` or for links in the event body. ATMS is Alberta's ticketing storefront; old item URLs stay bookable and bypass the organizer's booking process. For Royal Tyrrell Museum events, link the overview page for that program type instead (for example webcasts → `https://tyrrellmuseum.com/learn/distance_learning/webcasts`, speaker series → `https://tyrrellmuseum.com/whats_on/special_events/speaker_series`, or the program's own tyrrellmuseum.com page). If the source only gives an ATMS URL, omit `detailsLink` and say so rather than pasting the storefront link.
 - A social media post or profile (Facebook, Instagram, X, Bluesky, LinkedIn, or a similar post) is not `detailsLink` unless no more permanent page exists. When the given URL is a social post, open it and follow a link to an event page, organizer listing, or bulletin. Use the social URL only after that search fails, and tell the user the social post was the only source.
 - When the page shows a poster or hero image for this event, save that file under [Files](#files) and set `image`, with `alt` describing what the image shows. If the file cannot be saved, omit `image` and say so.
 - Open one linked page when the current page names a canonical details page or poster and does not itself include the date or time. Also open one linked page when the current page is a social post and that link is a more permanent source for `detailsLink`. Do not browse the rest of the site.
@@ -147,7 +148,7 @@ talks:
 ---
 ```
 
-`detailsLink` is printed after the body as the raw URL. Put named links in the markdown body instead when the sentence needs a label. Prefer a durable event page over a social media post; use the social URL only when no more permanent source can be found.
+`detailsLink` is printed after the body as the raw URL. Put named links in the markdown body instead when the sentence needs a label. Prefer a durable event page over a social media post; use the social URL only when no more permanent source can be found. Never use an `atms.alberta.ca` URL in `detailsLink` or in the body.
 
 `image.alt` is required whenever `image` is set. Use `attribution` for a photo credit. Posters usually omit it.
 
@@ -226,6 +227,7 @@ Match the neighbouring file of the same type:
 - Every `talks` entry matches a filename in `src/content/talks/` without `.md`.
 - The event slug is unique in `src/content/events/`, and this file is the only entry for this event.
 - `detailsLink` is not a social media post unless no more permanent page could be found.
+- Neither `detailsLink` nor any body href uses `atms.alberta.ca`. For RTMP events, `detailsLink` is the program-type overview on tyrrellmuseum.com when one exists.
 
 Then verify in the browser:
 

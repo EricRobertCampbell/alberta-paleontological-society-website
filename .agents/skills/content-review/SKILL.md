@@ -21,6 +21,7 @@ Read and apply:
 - Shared date, filter, and sorting logic stays in `src/utility/` rather than duplicated in pages
 - Timezone handling remains correct (UTC in dev, America/Edmonton in production)
 - Function and utility placement follows `.cursor/rules/function-order.mdc`
+- No `atms.alberta.ca` hrefs in event `detailsLink` or bodies; RTMP details links use the program-type overview on tyrrellmuseum.com (see [content.md](../code-review/references/content.md))
 
 ## Output
 
