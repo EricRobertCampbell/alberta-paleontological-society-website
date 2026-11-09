@@ -14,6 +14,6 @@ detailsLink: 'https://www.instagram.com/p/DfchLx3k28z/'
 **Cancelled** due to a power outage. The Philip J. Currie Dinosaur Museum announced that this DINOvember pop-up did not go ahead.
 
 **When:** Saturday, November 7, 2026, 1:00 PM – 3:00 PM (cancelled)  
-**Where:** Grande Cache Tourism & Interpretive Centre, Grande Cache, AB  
+**Where:** Grande Cache Tourism & Interpretive Centre, Grande Cache, AB
 
 The Municipal District of Greenview and the Grande Cache Municipal Library were partners for the planned afternoon.
