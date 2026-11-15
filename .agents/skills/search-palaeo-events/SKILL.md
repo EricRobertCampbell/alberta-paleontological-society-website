@@ -1,11 +1,11 @@
 ---
 name: search-palaeo-events
 description: >-
-  Search for new palaeontological events in or related to Alberta, compare them
-  to existing events in the content collection, and report ready-to-add event
-  data without writing files. Use when the user runs /search-palaeo-events or
-  asks to find, discover, scrape, or survey upcoming museum or palaeo events in
-  Alberta.
+    Search for new palaeontological events in or related to Alberta, compare them
+    to existing events in the content collection, and report ready-to-add event
+    data without writing files. Use when the user runs /search-palaeo-events or
+    asks to find, discover, scrape, or survey upcoming museum or palaeo events in
+    Alberta.
 disable-model-invocation: true
 ---
 
@@ -38,13 +38,13 @@ Prefer upcoming and ongoing events. Mention past events only when they are still
 
 Search every source below. Open the page (or listing) and read what is visible. If a login wall, signup wall, or empty listing blocks content, say what was visible and continue with the other sources.
 
-| Source | Start URL / entry |
-| ------ | ----------------- |
-| Royal Tyrrell Museum | `https://tyrrellmuseum.com/whats_on` (also check speaker series, webcasts, and other program pages linked from What’s On) |
-| Royal Alberta Museum | `https://www.royalalbertamuseum.ca/whats-on` |
-| Philip J. Currie Dinosaur Museum | `https://dinomuseum.ca/events` |
-| Devil's Coulee Dinosaur Museum | `https://www.devilscoulee.com/` |
-| General search | Web search for Alberta palaeontology / dinosaur / fossil events, talks, workshops, and field programs (museums, universities, societies). Prefer organizer pages over social posts. |
+| Source                           | Start URL / entry                                                                                                                                                                   |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Royal Tyrrell Museum             | `https://tyrrellmuseum.com/whats_on` (also check speaker series, webcasts, and other program pages linked from What’s On)                                                           |
+| Royal Alberta Museum             | `https://www.royalalbertamuseum.ca/whats-on`                                                                                                                                        |
+| Philip J. Currie Dinosaur Museum | `https://dinomuseum.ca/events`                                                                                                                                                      |
+| Devil's Coulee Dinosaur Museum   | `https://www.devilscoulee.com/`                                                                                                                                                     |
+| General search                   | Web search for Alberta palaeontology / dinosaur / fossil events, talks, workshops, and field programs (museums, universities, societies). Prefer organizer pages over social posts. |
 
 For each listing that looks relevant, open one durable event or program page when the index lacks date, time, place, or cost. Do not crawl the entire site.
 
@@ -62,12 +62,12 @@ Never use `https://atms.alberta.ca` (or any path on that host) as `detailsLink` 
 
 Match on calendar date together with title, type, host, and speaker when known. A later session of a series is a different event even when the title is similar.
 
-| Result | When | Report |
-| ------ | ---- | ------ |
-| **New** | No matching file | Full create payload (frontmatter + body + notes) |
+| Result               | When                                                   | Report                                                                                                                                                                                                     |
+| -------------------- | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **New**              | No matching file                                       | Full create payload (frontmatter + body + notes)                                                                                                                                                           |
 | **Update suggested** | Same event exists, source has extra or corrected facts | Path of existing file, fields that would change, and suggested new values. Highlight added information, a better `detailsLink`, missing `location`/`image`/`registrationDeadline`, body gaps, or talk data |
-| **Already complete** | Same event exists and the source adds nothing material | Path only; one line that it is already covered |
-| **Uncertain** | Possible match but date/title/host conflict | Existing path(s), why it is ambiguous, and both interpretations |
+| **Already complete** | Same event exists and the source adds nothing material | Path only; one line that it is already covered                                                                                                                                                             |
+| **Uncertain**        | Possible match but date/title/host conflict            | Existing path(s), why it is ambiguous, and both interpretations                                                                                                                                            |
 
 Do not propose a second file for an event that already has a file.
 
