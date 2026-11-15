@@ -37,6 +37,10 @@ const convertDateString = (dateString: string): string => {
  * Formats a date string into a human-readable string using the 'en-CA' locale
  * and the 'America/Edmonton' time zone. Optionally includes the time.
  *
+ * From 1 November 2026, Alberta stays on UTC-6. Hosts whose timezone data is
+ * older than tzdata 2026c still fall back to UTC-7; those instants are shown
+ * on UTC-6 instead.
+ *
  * @param date - A date string (e.g., ISO format) to be formatted.
  * @param options - Optional configuration object.
  * @param options.time - Whether to include the time in the output. Defaults to true.
@@ -51,24 +55,109 @@ const dateToDisplayFormat = (
     const showDate = options.date ?? true
     const parsedDate = new Date(date)
 
-    const datePart = parsedDate.toLocaleDateString(locale, {
-        dateStyle: 'full',
-        timeZone: 'America/Edmonton',
-    })
+    if (Number.isNaN(parsedDate.getTime())) {
+        return joinDisplayParts(
+            formatZonedParts(parsedDate, locale, 'America/Edmonton'),
+            showDate,
+            showTime
+        )
+    }
 
-    const timePart = parsedDate.toLocaleTimeString(locale, {
-        timeStyle: 'short',
-        timeZone: 'America/Edmonton',
-    })
+    const ianaOffset = readEdmontonOffsetMinutes(parsedDate)
+    if (Number.isNaN(ianaOffset)) {
+        return joinDisplayParts(
+            formatZonedParts(parsedDate, locale, 'America/Edmonton'),
+            showDate,
+            showTime
+        )
+    }
 
+    const offsetMinutes = edmontonDisplayOffsetMinutes(
+        parsedDate.getTime(),
+        ianaOffset
+    )
+    return joinDisplayParts(
+        formatAtOffset(parsedDate, offsetMinutes, locale),
+        showDate,
+        showTime
+    )
+}
+
+/**
+ * tzdata 2026c keeps America/Edmonton on UTC-6 from this instant (1 November
+ * 2026, 02:00, the old fallback). Older zone data still switches to UTC-7.
+ */
+const ALBERTA_PERMANENT_UTC6_START_MS = Date.parse('2026-11-01T08:00:00.000Z')
+const MOUNTAIN_DAYLIGHT_OFFSET_MINUTES = -6 * 60
+const MOUNTAIN_STANDARD_OFFSET_MINUTES = -7 * 60
+
+export function edmontonDisplayOffsetMinutes(
+    instantMs: number,
+    ianaOffsetMinutes: number
+): number {
+    const staleMountainStandardTime =
+        instantMs >= ALBERTA_PERMANENT_UTC6_START_MS &&
+        ianaOffsetMinutes === MOUNTAIN_STANDARD_OFFSET_MINUTES
+    if (staleMountainStandardTime) {
+        return MOUNTAIN_DAYLIGHT_OFFSET_MINUTES
+    }
+    return ianaOffsetMinutes
+}
+
+function readEdmontonOffsetMinutes(date: Date): number {
+    const parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/Edmonton',
+        timeZoneName: 'longOffset',
+        hour: 'numeric',
+    }).formatToParts(date)
+    const zoneName =
+        parts.find((part) => part.type === 'timeZoneName')?.value ?? ''
+    const match = zoneName.match(/^(?:GMT|UTC)([+-])(\d{1,2})(?::(\d{2}))?$/)
+    if (!match) {
+        return Number.NaN
+    }
+    const sign = match[1] === '+' ? 1 : -1
+    return sign * (Number(match[2]) * 60 + Number(match[3] ?? '0'))
+}
+
+function formatAtOffset(
+    date: Date,
+    offsetMinutes: number,
+    locale: string
+): { datePart: string; timePart: string } {
+    const shifted = new Date(date.getTime() + offsetMinutes * 60 * 1000)
+    return formatZonedParts(shifted, locale, 'UTC')
+}
+
+function formatZonedParts(
+    date: Date,
+    locale: string,
+    timeZone: string
+): { datePart: string; timePart: string } {
+    return {
+        datePart: date.toLocaleDateString(locale, {
+            dateStyle: 'full',
+            timeZone,
+        }),
+        timePart: date.toLocaleTimeString(locale, {
+            timeStyle: 'short',
+            timeZone,
+        }),
+    }
+}
+
+function joinDisplayParts(
+    parts: { datePart: string; timePart: string },
+    showDate: boolean,
+    showTime: boolean
+): string {
     if (!showTime) {
-        return datePart
+        return parts.datePart
     }
     if (!showDate) {
-        return timePart
+        return parts.timePart
     }
-
-    return `${datePart}, ${timePart}`
+    return `${parts.datePart}, ${parts.timePart}`
 }
 
 interface EventDateTimeStringParams {
