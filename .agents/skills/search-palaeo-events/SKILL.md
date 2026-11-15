@@ -23,6 +23,13 @@ Include an event when it is palaeontology-related **and** either:
 - is hosted or co-hosted by an Alberta museum/society, or
 - is clearly aimed at Alberta audiences (for example an RTMP webcast)
 
+The event must be open to the **general public** (or to the public with ordinary paid admission/tickets). Do **not** list school-only, classroom-only, or grades-only sessions. When a program lists both a public evening and school daytime slots (for example RTMP webcasts), report only the public session(s).
+
+Also skip these recurring museum program types even when they are palaeo-themed:
+
+- Homeschool Days (and similar homeschool-only education days)
+- The Nesting Grounds (and similar parent-and-tot drop-in series at PJCDM)
+
 Skip non-palaeo museum programming (general kids camps, art nights, unrelated exhibitions) unless the listing is about fossils, dinosaurs, Ice Age life, geology of fossils, or similar.
 
 Prefer upcoming and ongoing events. Mention past events only when they are still listed on a source page and the match check is useful.
