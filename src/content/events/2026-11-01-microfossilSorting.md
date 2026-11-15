@@ -1,7 +1,7 @@
 ---
 title: Search for Microfossils this Autumn, 2026
-start: '2026-11-01T13:00:00-07:00'
-end: '2026-11-01T15:30:00-07:00'
+start: '2026-11-01T13:00:00-06:00'
+end: '2026-11-01T15:30:00-06:00'
 type: 'Fossil Sorting'
 image:
     src: '/events/2026/RodentIncisorPhoto.jpg'

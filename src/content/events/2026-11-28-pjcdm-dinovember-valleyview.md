@@ -1,7 +1,7 @@
 ---
 title: 'DINOvember – Valleyview Municipal Library'
-start: '2026-11-28T11:00:00-07:00'
-end: '2026-11-28T15:00:00-07:00'
+start: '2026-11-28T11:00:00-06:00'
+end: '2026-11-28T15:00:00-06:00'
 type: 'External'
 host: 'Philip J. Currie Dinosaur Museum'
 location: 'Valleyview Municipal Library, Valleyview, AB'

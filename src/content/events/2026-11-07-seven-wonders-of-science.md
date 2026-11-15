@@ -1,8 +1,8 @@
 ---
 title: 'Seven Wonders of Science'
 subtitle: 'Petri Dish by Beakerhead'
-start: '2026-11-07T12:30:00-07:00'
-end: '2026-11-07T17:00:00-07:00'
+start: '2026-11-07T12:30:00-06:00'
+end: '2026-11-07T17:00:00-06:00'
 type: 'External'
 host: 'University of Calgary Faculty of Science'
 location: 'EEEL Building, 750 Campus Dr. NW, Calgary'
