@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. Versions are created by [release-please](https://github.com/googleapis/release-please) from [Conventional Commits](https://www.conventionalcommits.org/).
 
+## [1.223.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.223.0...v1.223.1) (2026-11-15)
+
+
+### Content
+
+* additional november events ([b1ea5f0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/b1ea5f01d8abc5edb4f1764c07752752385358d1))
+
 ## [1.223.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.222.0...v1.223.0) (2026-11-15)
 
 
