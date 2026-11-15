@@ -31,9 +31,9 @@ describe('edmontonDisplayOffsetMinutes', () => {
         expect(edmontonDisplayOffsetMinutes(permanentUtc6Start, UTC7)).toBe(
             UTC6
         )
-        expect(
-            edmontonDisplayOffsetMinutes(permanentUtc6Start - 1, UTC7)
-        ).toBe(UTC7)
+        expect(edmontonDisplayOffsetMinutes(permanentUtc6Start - 1, UTC7)).toBe(
+            UTC7
+        )
     })
 })
 
