@@ -1,7 +1,7 @@
 ---
 title: Dinovember Sleepover at the Royal Tyrrell Museum!
-start: '2026-11-13T18:30:00-07:00'
-end: '2026-11-14T10:00:00-07:00'
+start: '2026-11-13T18:30:00-06:00'
+end: '2026-11-14T10:00:00-06:00'
 type: 'Field Trip'
 location: 'Royal Tyrrell Museum of Palaeontology, Drumheller, AB'
 image:

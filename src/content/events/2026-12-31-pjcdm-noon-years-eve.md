@@ -1,7 +1,7 @@
 ---
 title: 'Noon Years Eve'
-start: '2026-12-31T10:00:00-07:00'
-end: '2026-12-31T14:00:00-07:00'
+start: '2026-12-31T10:00:00-06:00'
+end: '2026-12-31T14:00:00-06:00'
 type: 'External'
 host: 'Philip J. Currie Dinosaur Museum'
 location: 'Philip J. Currie Dinosaur Museum, Wembley, AB'

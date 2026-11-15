@@ -1,7 +1,7 @@
 ---
 title: 'DINOvember – Eastlink Centre'
-start: '2026-11-14T11:30:00-07:00'
-end: '2026-11-14T16:30:00-07:00'
+start: '2026-11-14T11:30:00-06:00'
+end: '2026-11-14T16:30:00-06:00'
 type: 'External'
 host: 'Philip J. Currie Dinosaur Museum'
 location: 'Eastlink Centre, Grande Prairie, AB'

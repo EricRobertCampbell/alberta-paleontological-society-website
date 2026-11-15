@@ -1,7 +1,7 @@
 ---
 title: 'DINOvember – Grande Cache (Cancelled)'
-start: '2026-11-07T13:00:00-07:00'
-end: '2026-11-07T15:00:00-07:00'
+start: '2026-11-07T13:00:00-06:00'
+end: '2026-11-07T15:00:00-06:00'
 type: 'External'
 host: 'Philip J. Currie Dinosaur Museum'
 location: 'Grande Cache Tourism & Interpretive Centre, Grande Cache, AB'

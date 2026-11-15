@@ -1,7 +1,7 @@
 ---
 title: 'Earth Science Weekend: Farewell to SUE'
-start: '2026-11-21T10:00:00-07:00'
-end: '2026-11-22T15:00:00-07:00'
+start: '2026-11-21T10:00:00-06:00'
+end: '2026-11-22T15:00:00-06:00'
 type: 'External'
 host: 'TELUS Spark'
 location: "TELUS Spark Science Centre, 220 St. George's Drive NE, Calgary, AB"

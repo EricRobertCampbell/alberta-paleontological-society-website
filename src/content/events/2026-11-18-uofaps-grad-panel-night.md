@@ -1,7 +1,7 @@
 ---
 title: 'Grad Panel Night'
-start: '2026-11-18T17:00:00-07:00'
-end: '2026-11-18T20:00:00-07:00'
+start: '2026-11-18T17:00:00-06:00'
+end: '2026-11-18T20:00:00-06:00'
 type: 'External'
 host: 'University of Alberta Palaeontological Society'
 location: 'ESB 3-26, University of Alberta'

@@ -1,7 +1,7 @@
 ---
 title: 'Art Night'
-start: '2026-11-04T17:00:00-07:00'
-end: '2026-11-04T19:00:00-07:00'
+start: '2026-11-04T17:00:00-06:00'
+end: '2026-11-04T19:00:00-06:00'
 type: 'External'
 host: 'University of Alberta Palaeontological Society'
 location: 'ESB 1-39, University of Alberta'

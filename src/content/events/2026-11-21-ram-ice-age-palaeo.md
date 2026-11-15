@@ -1,8 +1,8 @@
 ---
 title: 'Junior Museum Skills Workshop: Ice Age Palaeontology'
 subtitle: 'Museum Skills Workshop Series'
-start: '2026-11-21T11:00:00-07:00'
-end: '2026-11-21T14:00:00-07:00'
+start: '2026-11-21T11:00:00-06:00'
+end: '2026-11-21T14:00:00-06:00'
 type: 'External'
 host: 'Royal Alberta Museum'
 location: 'Royal Alberta Museum, Edmonton, AB'

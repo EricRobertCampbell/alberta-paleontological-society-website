@@ -1,7 +1,7 @@
 ---
 title: 'Behind the Scenes Webcast'
-start: '2027-02-03T18:00:00-07:00'
-end: '2027-02-03T18:45:00-07:00'
+start: '2027-02-03T18:00:00-06:00'
+end: '2027-02-03T18:45:00-06:00'
 type: 'External'
 host: 'Royal Tyrrell Museum of Palaeontology'
 location: 'Online'

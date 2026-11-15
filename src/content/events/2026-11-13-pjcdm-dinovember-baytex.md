@@ -1,7 +1,7 @@
 ---
 title: 'DINOvember – Baytex Energy Centre'
-start: '2026-11-13T11:00:00-07:00'
-end: '2026-11-13T15:00:00-07:00'
+start: '2026-11-13T11:00:00-06:00'
+end: '2026-11-13T15:00:00-06:00'
 type: 'External'
 host: 'Philip J. Currie Dinosaur Museum'
 location: 'Baytex Energy Centre, Peace River, AB'
