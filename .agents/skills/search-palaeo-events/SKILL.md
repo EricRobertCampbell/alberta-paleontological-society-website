@@ -21,7 +21,8 @@ Include an event when it is palaeontology-related **and** either:
 
 - takes place in Alberta, or
 - is hosted or co-hosted by an Alberta museum/society, or
-- is clearly aimed at Alberta audiences (for example an RTMP webcast)
+- is clearly aimed at Alberta audiences (for example an RTMP webcast), or
+- is hosted by the University of Alberta Palaeontological Society or the University of Saskatchewan Palaeobiology Club (APS promotes both student clubs)
 
 The event must be open to the **general public** (or to the public with ordinary paid admission/tickets). Do **not** list school-only, classroom-only, or grades-only sessions. When a program lists both a public evening and school daytime slots (for example RTMP webcasts), report only the public session(s).
 
@@ -38,13 +39,15 @@ Prefer upcoming and ongoing events. Mention past events only when they are still
 
 Search every source below. Open the page (or listing) and read what is visible. If a login wall, signup wall, or empty listing blocks content, say what was visible and continue with the other sources.
 
-| Source                           | Start URL / entry                                                                                                                                                                   |
-| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Royal Tyrrell Museum             | `https://tyrrellmuseum.com/whats_on` (also check speaker series, webcasts, and other program pages linked from What’s On)                                                           |
-| Royal Alberta Museum             | `https://www.royalalbertamuseum.ca/whats-on`                                                                                                                                        |
-| Philip J. Currie Dinosaur Museum | `https://dinomuseum.ca/events`                                                                                                                                                      |
-| Devil's Coulee Dinosaur Museum   | `https://www.devilscoulee.com/`                                                                                                                                                     |
-| General search                   | Web search for Alberta palaeontology / dinosaur / fossil events, talks, workshops, and field programs (museums, universities, societies). Prefer organizer pages over social posts. |
+| Source                                         | Start URL / entry                                                                                                                                                                                                                                                                                                                                                          |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Royal Tyrrell Museum                           | `https://tyrrellmuseum.com/whats_on` (also check speaker series, webcasts, and other program pages linked from What’s On)                                                                                                                                                                                                                                                   |
+| Royal Alberta Museum                           | `https://www.royalalbertamuseum.ca/whats-on`                                                                                                                                                                                                                                                                                                                                |
+| Philip J. Currie Dinosaur Museum               | `https://dinomuseum.ca/events`                                                                                                                                                                                                                                                                                                                                              |
+| Devil's Coulee Dinosaur Museum                 | `https://www.devilscoulee.com/`                                                                                                                                                                                                                                                                                                                                             |
+| University of Alberta Palaeontological Society | Instagram `https://www.instagram.com/uofaps/` (primary). Follow any durable event or ticket link from a post when present.                                                                                                                                                                                                                                                   |
+| University of Saskatchewan Palaeobiology Club  | Instagram `https://www.instagram.com/usask_pbio_society/`, club page `https://artsandscience.usask.ca/geology/students/undergraduates/palaeobiology-club.php`, and events site `https://campus.hellorubric.com/?s=13202` (also linked from the club Instagram bio / Linktree). Prefer hellorubric or the club page over Instagram for `detailsLink` when a durable listing exists. |
+| General search                                 | Web search for Alberta palaeontology / dinosaur / fossil events, talks, workshops, and field programs (museums, universities, societies). Prefer organizer pages over social posts.                                                                                                                                                                                         |
 
 For each listing that looks relevant, open one durable event or program page when the index lacks date, time, place, or cost. Do not crawl the entire site.
 
