@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. Versions are created by [release-please](https://github.com/googleapis/release-please) from [Conventional Commits](https://www.conventionalcommits.org/).
 
+## [1.223.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.222.0...v1.223.0) (2026-11-15)
+
+
+### Features
+
+* additional palaeo events skill ([335273c](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/335273cfbafb54a2afae7395d8a3b2fb5f136070))
+
+
+### Content
+
+* add Living Dinos Camp and update USask Paint Night ([c488847](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/c48884772ddc8f01627eff7a2dc2e822733626e1))
+* add Nov–Dec palaeo events and tighten event search scope ([619429d](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/619429df0985d38c31bad0449335641dea179794))
+* point RTMP details links at program overviews ([e95954d](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/e95954d8b478e069681d401b16e07f0f97e7bdad))
+* remove outdated Tyrrell bookings link ([e41d10c](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/e41d10c345c5f52298c65e4a397fc340c1f0cc22))
+* update February 2027 talk to Lockhart Pit ([b04b9e1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/b04b9e18f8e697c623014baf7f8f7451bc555f2c))
+
 ## [1.222.0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.221.0...v1.222.0) (2026-10-30)
 
 
