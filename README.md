@@ -104,7 +104,7 @@ Events support both modern and legacy date formats:
 - **Modern**: `start` and `end` fields with ISO 8601 strings (e.g., `2025-04-11T19:00:00`)
 - **Legacy**: `startDate`, `endDate`, `startTime`, `endTime` fields (deprecated)
 
-The development server uses UTC timezone, while production uses America/Edmonton (configured in `netlify.toml`).
+The development server uses UTC timezone, while production uses America/Edmonton (configured in `netlify.toml`). Event clock times are displayed in America/Edmonton. From 1 November 2026 Alberta stays on UTC-6; if the host's timezone data still falls back to UTC-7, those times are corrected so a 19:30 UTC-6 meeting stays 7:30 p.m.
 
 ## API Endpoints
 

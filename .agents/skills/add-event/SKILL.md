@@ -163,12 +163,13 @@ Use one pair. `start` and `end` are datetimes and the heading shows a clock time
 Use this pair when the source gives a clock time.
 
 - Format: ISO 8601 with an America/Edmonton offset, `YYYY-MM-DDTHH:MM:SS±HH:MM`.
-- Daylight time (second Sunday in March through the first Sunday in November) is `-06:00`. Standard time is `-07:00`.
-- The date before `T` is the local calendar date. The calendar matches that prefix. `generateEventDateTimeString` in `src/utility/functions.ts` formats the instant in `America/Edmonton` and includes the time.
+- Through 31 October 2026, daylight time (second Sunday in March through the first Sunday in November) is `-06:00`. Standard time is `-07:00`.
+- From 1 November 2026, Alberta stays on UTC-6 year-round, so the offset is `-06:00`.
+- The date before `T` is the local calendar date. The calendar matches that prefix. `generateEventDateTimeString` in `src/utility/functions.ts` formats the instant in `America/Edmonton` and includes the time. After the permanent UTC-6 change, it still shows that clock time when the host's timezone data falls back to UTC-7.
 - Set both fields. The calendar includes the event only when both `start` and `end` are present.
 - Same-day session: the same calendar date on both fields, with different times. The heading shows the date once and both times.
 - Multi-day event with times: `start` is the first local date and time; `end` is the last.
-- Example: `start: '2026-11-20T19:30:00-07:00'` and `end: '2026-11-20T21:00:00-07:00'`.
+- Example after the change: `start: '2026-11-20T19:30:00-06:00'` and `end: '2026-11-20T21:00:00-06:00'`.
 
 ### `startDate` and `endDate`
 
