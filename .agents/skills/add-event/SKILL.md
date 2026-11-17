@@ -20,7 +20,7 @@ Copy the nearest existing file of the same `type` and year, then change only wha
 
 ## Input
 
-Record only facts the source states: title, date, clock time, place, host, cost, registration, and speaker. Leave unknown fields unset. Do not invent a time, price, or deadline.
+Record only facts the source states: title, date, clock time, place, host, cost, registration, and speaker. Leave unknown fields unset. Do not invent a time, price, or deadline. For `location`, include the city and province when the source states them or when they are certain for that venue (see [Location](#location)).
 
 ### Long-form description
 
@@ -133,7 +133,7 @@ Prefer kebab-case filenames with no spaces. Omit `image` when neither the user n
 ---
 title: 'Event title'
 subtitle: 'Series name' # optional
-location: 'Venue, City, AB' # optional
+location: 'Venue, City, AB' # venue, then city and province when known
 start: '2026-11-20T19:30:00-07:00' # clock time: use start/end, not startDate/endDate
 end: '2026-11-20T21:00:00-07:00'
 type: 'External'
@@ -153,6 +153,15 @@ talks:
 `image.alt` is required whenever `image` is set. Use `attribution` for a photo credit. Posters usually omit it.
 
 Talk fields (`src/content/talks/`): `title`, `speaker`, optional `youtubeLink` (watch URL, not an embed), optional `abstractPdf` (site path), optional `presentingRemotely: true`.
+
+### Location
+
+Write `location` as the venue, then the city and province, whenever the source states them or a well-known venue makes them certain.
+
+- Shape: `Venue, City, AB`. Use the province's postal abbreviation (`AB`, `BC`, `SK`). With no separate venue, write `City, AB`. Monthly meetings stay `Calgary, Alberta`.
+- A familiar venue still gets its city and province when the source names only the building. The Royal Tyrrell Museum of Palaeontology is Drumheller, AB. The University of Alberta and the Royal Alberta Museum are Edmonton, AB. Mount Royal University is Calgary, AB. The University of Saskatchewan is Saskatoon, SK. The Philip J. Currie Dinosaur Museum is Wembley, AB. Tumbler Ridge Museum is Tumbler Ridge, BC.
+- An online event is `Online`.
+- When the city or province cannot be determined, write the place the source gives and tell the user what is missing. Do not guess a city.
 
 ## Dates
 
@@ -221,6 +230,7 @@ Match the neighbouring file of the same type:
 
 - The event uses `start` and `end`, or `startDate` and `endDate`, and not both. A timed event sets both `start` and `end`.
 - `registrationDeadline`, when set, is `YYYY-MM-DD` or a datetime with a timezone or offset. It is omitted when the source states no deadline.
+- `location` includes the city and province when the source or a well-known venue supplies them. An online event is `Online`.
 - `type` is an `EVENT_TYPES` value, quoted the same way as neighbouring files.
 - APS events omit `host`. External events set both `type: External` and a non-APS `host`.
 - A known host matches `HOST_LOGO_MAP` exactly.
