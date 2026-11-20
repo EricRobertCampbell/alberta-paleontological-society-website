@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. Versions are created by [release-please](https://github.com/googleapis/release-please) from [Conventional Commits](https://www.conventionalcommits.org/).
 
+## [1.223.2](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.223.1...v1.223.2) (2026-11-20)
+
+
+### Bug Fixes
+
+* show Alberta event times on permanent UTC-6 ([a9b4923](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/a9b4923b941f1ffcea2a8aff64702c79387ec42c))
+
+
+### Content
+
+* add November events from club Instagram posts ([474ee78](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/474ee78ca86ca83642befc580e7f1d940a3e9ef0))
+* add the 2026 Airdrie Rock 'n' Fossil Show ([720f3e7](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/720f3e7f4f652801b8d4e886f5ea9f689b2fa1a1))
+* add the November 20 meeting interstitial ([663eec0](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/663eec0f860e73344b66104a11f807ae45602461))
+* drop wait-list wording from full sorting sessions ([4cd5658](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/4cd56586af2053607861dd460e61110090a2b3c9))
+* mark November and December microfossil sessions full ([c448826](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/c448826153448b0201895b86996757cb5ffb02b7))
+* publish Paparella's January mosasaur abstract ([0d6f903](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/commit/0d6f9035a7e5d4a81284cfe8abeddfd16f05b678))
+
 ## [1.223.1](https://github.com/EricRobertCampbell/alberta-paleontological-society-website/compare/v1.223.0...v1.223.1) (2026-11-15)
 
 
