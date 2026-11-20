@@ -8,9 +8,9 @@ Join us to search for microfossils on the following Sunday afternoons (1:00–3:
 
 - **October 18, 2026**
 - **November 1, 2026**
-- **November 22, 2026**
-- **December 6, 2026**
+- **November 22, 2026** — This session is full. There is no wait list.
+- **December 6, 2026** — This session is full. There is no wait list.
 
-Registration is required. Contact Mona Trick (<a href="mailto:giftshop@albertapaleo.org">giftshop@albertapaleo.org</a> or cell: <a href="tel:(403) 438-3338">(403) 438-3338</a> (new number!)) and specify which dates you are planning to attend, the number in your party, and your mobile phone and e-mail address.
+The November 22 and December 6 sessions are full. There is no wait list.
 
 For more information, see the [events](/events/) page.
