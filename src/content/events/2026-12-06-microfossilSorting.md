@@ -9,11 +9,11 @@ image:
     attribution: 'Rodent Incisor As Seen Through the Microscope. Photo by Eric Campbell.'
 ---
 
-**NOTE: This session is full.** There is no wait list.
+**NOTE: This session is full.**
 
 Search for tiny fossils using microscopes to aid the research of Dr. Jessica Theodor and Dr. Alex Dutchak of the University of Calgary. We will be examining the matrix (soil) from the Saskatchewan Cypress Hills Formation (Middle Eocene about 50 million years old). We will be using microscopes in room B140 at Mount Royal University (Main Building).
 
-Registration for this session is closed. There is no wait list. No experience is required. Due to the delicate nature of this work, only those 12 years and older are allowed to search for the microfossils. Bring tweezers or a small paint brush to pick the tiny fossils from the soil and a pen to label your finds. All of the fossils found will be kept by the University of Calgary for their research.
+Registration for this session is closed. No experience is required. Due to the delicate nature of this work, only those 12 years and older are allowed to search for the microfossils. Bring tweezers or a small paint brush to pick the tiny fossils from the soil and a pen to label your finds. All of the fossils found will be kept by the University of Calgary for their research.
 
 There is no cost for these sessions because Mount Royal University has generously allowed APS to use their microscopes and lab without charge.
 

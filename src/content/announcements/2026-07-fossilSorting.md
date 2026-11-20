@@ -8,9 +8,9 @@ Join us to search for microfossils on the following Sunday afternoons (1:00–3:
 
 - **October 18, 2026**
 - **November 1, 2026**
-- **November 22, 2026** — This session is full. There is no wait list.
-- **December 6, 2026** — This session is full. There is no wait list.
+- **November 22, 2026** — This session is full.
+- **December 6, 2026** — This session is full.
 
-The November 22 and December 6 sessions are full. There is no wait list.
+The November 22 and December 6 sessions are full.
 
 For more information, see the [events](/events/) page.
