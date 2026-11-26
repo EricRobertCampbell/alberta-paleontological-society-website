@@ -58,7 +58,7 @@ npm run test
 
 ## Technology Stack
 
-- **Framework**: [Astro 5](https://astro.build/) with SSR (`output: 'server'`)
+- **Framework**: [Astro 7](https://astro.build/) with SSR (`output: 'server'`)
 - **Adapter**: `@astrojs/netlify` for Netlify deployment
 - **Testing**: Vitest
 - **3D Rendering**: Three.js for fossil collection 3D scans
