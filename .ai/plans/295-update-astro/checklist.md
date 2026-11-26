@@ -36,4 +36,4 @@
 
 ## Delivery
 
-- [ ] Commit on `cursor/iss-295-update-astro-491a` and update PR #296 into `main` (do not merge). End description with `Closes #295` when the upgrade is complete.
+- [x] Commit on `cursor/iss-295-update-astro-491a` and update PR #296 into `main` (do not merge). End description with `Closes #295` when the upgrade is complete.
