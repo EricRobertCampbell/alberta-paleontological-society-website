@@ -1,5 +1,6 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
+import { contentEntryPublicId } from "../../utility";
 import { filterExternalEvents } from '../../utility/filters'
 import { sortEventsByDate } from '../../utility/eventSorting'
 import {
@@ -15,7 +16,7 @@ import HeadingWithBackground from "../../components/HeadingWithBackground.astro"
 import Event from "../../components/Event.astro";
 import Alert from "../../components/Alert.astro";
 import { roles} from '../../utility/constants';
-import { getTodayString } from '../../utility';
+import { getTodayString } from '../../utility'
 
 const { fieldTripCoordinator } = roles;
 
@@ -26,8 +27,8 @@ const now = new Date()
 const allEvents = await getCollection("events");
 const renderedEvents = await Promise.all(
 	allEvents.map(async (event) => {
-		const rendered = await event.render();
-		return { ...rendered, slug: event.slug, id: event.id };
+		const rendered = await render(event);
+		return { ...rendered, slug: contentEntryPublicId(event), id: event.id };
 	})
 );
 

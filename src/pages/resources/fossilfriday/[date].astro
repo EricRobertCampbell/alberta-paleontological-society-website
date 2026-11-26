@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
 import HeadingWithBackground from "../../../components/HeadingWithBackground.astro";
 import { splitIsoString, formatDateString } from "../../../utility/dates";
@@ -35,7 +35,7 @@ export async function getStaticPaths() {
 }
 
 const { entry, previousEntry, nextEntry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 const displayDate = formatDateString(entry.data.date);
 ---
 

@@ -1,10 +1,10 @@
 ---
 import { generateEventDateTimeString, extractReferenceId, getTodayString } from "../utility";
-import type { EventFrontmatter } from "../content/config";
+import type { EventFrontmatter } from "../content.config";
 import { splitIsoString } from '../utility/dates'
 import { getHostLogoLocation } from '../utility/filters'
 import { splitAttribution } from '../utility/attributionLinks'
-import { getEntry } from 'astro:content'
+import { getEntry, render } from 'astro:content'
 import {
 	formatRegistrationDeadline,
 	isRegistrationDeadline,
@@ -65,7 +65,7 @@ const resolvedTalks = talks
 						if (!talk) {
 							return null;
 						}
-						const { Content } = await talk.render();
+						const { Content } = await render(talk);
 						return { talk, Content };
 					} catch (e) {
 						console.error('Error getting talk with ref', talkRef, e);

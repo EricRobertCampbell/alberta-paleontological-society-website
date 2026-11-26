@@ -4,13 +4,14 @@ export const prerender = true;
 import Layout from "../../layouts/Layout.astro";
 import HeadingWithBackground from "../../components/HeadingWithBackground.astro";
 
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
+import { contentEntryPublicId } from "../../utility";
 
 const allQuestions = (await getCollection("faqs")).sort((a, b) => {
 	return a.data.order - b.data.order;
 });
 const allRenderedQuestions = await Promise.all(
-	allQuestions.map(async (event) => await event.render())
+	allQuestions.map(async (event) => await render(event))
 );
 ---
 
@@ -26,7 +27,7 @@ const allRenderedQuestions = await Promise.all(
 					q.remarkPluginFrontmatter.question
 			);
 			return (
-				<section id={`${originalQuestion.slug}`}>
+				<section id={`${contentEntryPublicId(originalQuestion)}`}>
 					<p class="question">{originalQuestion.data.question}</p>
 					<q.Content />
 				</section>

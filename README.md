@@ -2,7 +2,7 @@
 
 # Alberta Paleontological Society Website
 
-A website for the Alberta Paleontological Society (APS), built with Astro 5 using server-side rendering (SSR) and deployed to Netlify. The site provides information about the society, manages events, hosts bulletin archives, and displays the society's fossil collection with 3D scans.
+A website for the Alberta Paleontological Society (APS), built with Astro 7 using server-side rendering (SSR) and deployed to Netlify. The site provides information about the society, manages events, hosts bulletin archives, and displays the society's fossil collection with 3D scans.
 
 ## Features
 
@@ -17,7 +17,7 @@ A website for the Alberta Paleontological Society (APS), built with Astro 5 usin
 
 ### Prerequisites
 
-- Node.js (v18 or higher)
+- Node.js (v22.23.4 or higher)
 - npm
 
 ### Installation
@@ -58,7 +58,7 @@ npm run test
 
 ## Technology Stack
 
-- **Framework**: [Astro 5](https://astro.build/) with SSR (`output: 'server'`)
+- **Framework**: [Astro 7](https://astro.build/) with SSR (`output: 'server'`)
 - **Adapter**: `@astrojs/netlify` for Netlify deployment
 - **Testing**: Vitest
 - **3D Rendering**: Three.js for fossil collection 3D scans

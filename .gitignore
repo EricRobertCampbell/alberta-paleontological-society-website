@@ -14,3 +14,4 @@ dist
 *:Zone.Identifier
 .sw*
 .DS_Store
+.netlify/

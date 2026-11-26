@@ -1,5 +1,6 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
+import { contentEntryPublicId } from "../../utility";
 import { filterAPSEvents } from "../../utility/filters";
 import { sortEventsByDate } from "../../utility/eventSorting";
 import { withRegistrationDeadlines } from "../../utility/registrationDeadline";
@@ -12,8 +13,8 @@ import { roles } from '../../utility/constants'
 const allEvents = await getCollection("events");
 const renderedEvents = await Promise.all(
 	allEvents.map(async (event) => {
-		const rendered = await event.render();
-		return { ...rendered, slug: event.slug, id: event.id };
+		const rendered = await render(event);
+		return { ...rendered, slug: contentEntryPublicId(event), id: event.id };
 	})
 );
 

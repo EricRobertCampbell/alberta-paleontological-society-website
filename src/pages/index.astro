@@ -6,11 +6,12 @@ import Announcement from '../components/Announcement.astro'
 import FossilFriday from '../components/FossilFriday.astro'
 import SocialsLinks from '../components/SocialsLinks.astro'
 import TodaysEvents from '../components/TodaysEvents.astro'
-import { getCollection } from 'astro:content'
+import { getCollection, render } from 'astro:content'
 
 import {
 	getTodayString,
 	formatDate,
+	contentEntryPublicId,
 } from '../utility'
 import { selectNextEvent, withRegistrationDeadlines } from '../utility/registrationDeadline'
 
@@ -23,8 +24,8 @@ const nextEvent = selectNextEvent(
 	withRegistrationDeadlines(
 		await Promise.all(
 			allEvents.map(async (event) => {
-				const rendered = await event.render()
-				return { ...rendered, slug: event.slug, id: event.id }
+				const rendered = await render(event)
+				return { ...rendered, slug: contentEntryPublicId(event), id: event.id }
 			})
 		)
 	).filter((e) => {
@@ -69,7 +70,7 @@ const allAnnouncements = (await getCollection('announcements'))
 	})
 const renderedAnnouncements = await Promise.all(
 	allAnnouncements.map(async (announcement) => {
-		return await announcement.render()
+		return await render(announcement)
 	})
 )
 
