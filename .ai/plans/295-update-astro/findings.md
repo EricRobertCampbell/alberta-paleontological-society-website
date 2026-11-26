@@ -4,13 +4,13 @@ Requirements: `.ai/requirements/295-update-astro.md`.
 
 ## Current stack
 
-| Package | Declared | Locked |
-| --- | --- | --- |
-| `astro` | `^5.4.2` | `5.4.2` |
-| `@astrojs/netlify` | `^6.2.2` | `6.2.2` |
-| `prettier` | `^2.8.8` | `2.8.8` |
+| Package                 | Declared  | Locked   |
+| ----------------------- | --------- | -------- |
+| `astro`                 | `^5.4.2`  | `5.4.2`  |
+| `@astrojs/netlify`      | `^6.2.2`  | `6.2.2`  |
+| `prettier`              | `^2.8.8`  | `2.8.8`  |
 | `prettier-plugin-astro` | `^0.10.0` | `0.10.0` |
-| `vitest` | `^3.0.8` | `3.0.8` |
+| `vitest`                | `^3.0.8`  | `3.0.8`  |
 
 Newest targets (26 November 2026, America/Edmonton): Astro `7.4.13`, `@astrojs/netlify` `8.2.14` (peer `astro ^7`), Prettier `3.x`, `prettier-plugin-astro` `1.1.2` (peer Prettier `^3.5.3`).
 
@@ -25,20 +25,20 @@ Already on branch `cursor/iss-295-update-astro-491a`:
 
 Config lives only at `src/content/config.ts` (no `src/content.config.ts`).
 
-| Collection | Legacy shape | Files |
-| --- | --- | --- |
-| `events` | `type: 'content'` | `src/content/events/*.md` |
-| `talks` | `type: 'content'` | `src/content/talks/*.md` |
-| `disclaimers` | `type: 'content'` | `src/content/disclaimers/*.md` |
-| `faqs` | `type: 'content'` | `src/content/faqs/*.md` |
-| `announcements` | `type: 'content'` | `src/content/announcements/*.md` |
-| `fossilFriday` | `type: 'content'` | `src/content/fossilFriday/*.md` |
-| `bulletins` | `type: 'data'` | `src/content/bulletins/*.yml` |
-| `bulletinVolumes` | `type: 'data'` | `src/content/bulletinVolumes/*.yml` |
-| `fossils` | `type: 'data'` | `src/content/fossils/*.yml` |
-| `fossilSortingImages` | `loader: file(.../images.json)` | already Content Layer |
-| `fossilSortingSpecimens` | `loader: file(.../specimens.json)` | already Content Layer |
-| `fossilSortingData` | `loader: file(.../fossilSortingData.json)` | already Content Layer |
+| Collection               | Legacy shape                               | Files                               |
+| ------------------------ | ------------------------------------------ | ----------------------------------- |
+| `events`                 | `type: 'content'`                          | `src/content/events/*.md`           |
+| `talks`                  | `type: 'content'`                          | `src/content/talks/*.md`            |
+| `disclaimers`            | `type: 'content'`                          | `src/content/disclaimers/*.md`      |
+| `faqs`                   | `type: 'content'`                          | `src/content/faqs/*.md`             |
+| `announcements`          | `type: 'content'`                          | `src/content/announcements/*.md`    |
+| `fossilFriday`           | `type: 'content'`                          | `src/content/fossilFriday/*.md`     |
+| `bulletins`              | `type: 'data'`                             | `src/content/bulletins/*.yml`       |
+| `bulletinVolumes`        | `type: 'data'`                             | `src/content/bulletinVolumes/*.yml` |
+| `fossils`                | `type: 'data'`                             | `src/content/fossils/*.yml`         |
+| `fossilSortingImages`    | `loader: file(.../images.json)`            | already Content Layer               |
+| `fossilSortingSpecimens` | `loader: file(.../specimens.json)`         | already Content Layer               |
+| `fossilSortingData`      | `loader: file(.../fossilSortingData.json)` | already Content Layer               |
 
 Schemas import `z` from `astro:content`. Events use `reference('talk')` while the exported collection key is `talks` — call sites use `getEntry('talks', ...)`. Bulletins use `reference('bulletinVolumes')`. Specimens use `reference('fossilSortingImages')`.
 
