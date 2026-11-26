@@ -1,4 +1,4 @@
-import type { FossilSortingJar } from '../../content/config'
+import type { FossilSortingJar } from '../../content.config'
 
 /** Total grams of matrix sorted for a session (only unsorted jars; waste jars excluded). */
 export function getSessionGramsSorted(jars: Array<FossilSortingJar>): number {

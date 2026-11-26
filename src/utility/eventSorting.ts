@@ -1,4 +1,4 @@
-import type { EventFrontmatter } from '../content/config'
+import type { EventFrontmatter } from '../content.config'
 
 export interface RenderedEvent {
     remarkPluginFrontmatter: any

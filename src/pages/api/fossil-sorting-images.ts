@@ -3,7 +3,7 @@ import { getCollection, type CollectionEntry } from 'astro:content'
 import type {
     FossilSortingSpecimen,
     FossilSortingImage,
-} from '../../content/config'
+} from '../../content.config'
 import { extractReferenceId } from '../../utility/functions'
 import { filterSpecimensByQuery } from '../../utility/fossilSorting'
 

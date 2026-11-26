@@ -1,6 +1,7 @@
-import { defineCollection, reference, z } from 'astro:content'
-import { file } from 'astro/loaders'
-import { isRegistrationDeadline } from '../utility/registrationDeadline'
+import { defineCollection, reference } from 'astro:content'
+import { z } from 'astro/zod'
+import { file, glob } from 'astro/loaders'
+import { isRegistrationDeadline } from './utility/registrationDeadlineValidation'
 
 /*
  * Events
@@ -44,11 +45,14 @@ const eventSchema = z.object({
     type: z.enum(EVENT_TYPES),
     host: z.string().optional(), // the host of the event, e.g. "Alberta Palaeontological Society". Only include this if host is not the APS.
     detailsLink: z.string().optional(), // a link to more details about the event, e.g. a Google Calendar event or a Facebook event
-    talks: z.array(reference('talk')).optional(), // optional list of talks associated with the event
+    talks: z.array(reference('talks')).optional(), // optional list of talks associated with the event
 })
 
 const eventCollection = defineCollection({
-    type: 'content',
+    loader: glob({
+        pattern: '**/*.{md,mdx}',
+        base: './src/content/events',
+    }),
     schema: eventSchema,
 })
 
@@ -68,7 +72,10 @@ const talkSchema = z.object({
 })
 
 const talkCollection = defineCollection({
-    type: 'content',
+    loader: glob({
+        pattern: '**/*.{md,mdx}',
+        base: './src/content/talks',
+    }),
     schema: talkSchema,
 })
 
@@ -84,7 +91,10 @@ const disclaimersSchema = z.object({
 })
 
 const disclaimersCollection = defineCollection({
-    type: 'content',
+    loader: glob({
+        pattern: '**/*.{md,mdx}',
+        base: './src/content/disclaimers',
+    }),
     schema: disclaimersSchema,
 })
 
@@ -101,7 +111,10 @@ const bulletinsSchema = z.object({
     location: z.string(), // the location for the pdf
 })
 const bulletinsCollection = defineCollection({
-    type: 'data',
+    loader: glob({
+        pattern: '**/*.{yml,yaml}',
+        base: './src/content/bulletins',
+    }),
     schema: bulletinsSchema,
 })
 
@@ -111,7 +124,10 @@ const bulletinVolumesSchema = z.object({
     year: z.number(),
 })
 const bulletinVolumesCollection = defineCollection({
-    type: 'data',
+    loader: glob({
+        pattern: '**/*.{yml,yaml}',
+        base: './src/content/bulletinVolumes',
+    }),
     schema: bulletinVolumesSchema,
 })
 
@@ -120,7 +136,10 @@ const faqsSchema = z.object({
     order: z.number(),
 })
 const faqsCollection = defineCollection({
-    type: 'content',
+    loader: glob({
+        pattern: '**/*.{md,mdx}',
+        base: './src/content/faqs',
+    }),
     schema: faqsSchema,
 })
 
@@ -130,7 +149,10 @@ const announcementSchema = z.object({
     endDate: z.string(),
 })
 const announcementCollection = defineCollection({
-    type: 'content',
+    loader: glob({
+        pattern: '**/*.{md,mdx}',
+        base: './src/content/announcements',
+    }),
     schema: announcementSchema,
 })
 export type AnnouncementFrontmatter = z.infer<typeof announcementSchema>
@@ -178,7 +200,10 @@ export type FossilSortingJarType = z.infer<typeof fossilSortingJarTypeSchema>
 export type FossilSortingJar = z.infer<typeof fossilSortingJarSchema>
 
 const FossilCollection = defineCollection({
-    type: 'data',
+    loader: glob({
+        pattern: '**/*.{yml,yaml}',
+        base: './src/content/fossils',
+    }),
     schema: z.object({
         // NB the accession number is the id (name of the file) - it will appear as the id
         description: z.string(), // a description of the fossil
@@ -229,7 +254,10 @@ const fossilFridaySchema = z.object({
 })
 
 const fossilFridayCollection = defineCollection({
-    type: 'content',
+    loader: glob({
+        pattern: '**/*.{md,mdx}',
+        base: './src/content/fossilFriday',
+    }),
     schema: fossilFridaySchema,
 })
 

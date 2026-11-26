@@ -6,6 +6,7 @@ export {
     formatDate,
     extractReferenceId,
 } from './functions'
+export { contentEntryPublicId } from './contentEntry'
 export type { LinkInformation } from './navLinks'
 export { links } from './navLinks'
 export {

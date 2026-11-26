@@ -1,8 +1,9 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
 import Event from "../../../components/Event.astro";
 import { getStartDate } from "../../../utility/eventSorting";
+import { contentEntryPublicId } from "../../../utility";
 
 const { slug } = Astro.params;
 
@@ -12,11 +13,11 @@ const sortedEvents = [...allEvents].sort((a, b) => {
 	const dateB = getStartDate(b.data);
 	return dateA.localeCompare(dateB);
 });
-const index = slug ? sortedEvents.findIndex((event) => event.slug === slug) : -1;
+const index = slug ? sortedEvents.findIndex((event) => contentEntryPublicId(event) === slug) : -1;
 const event = index >= 0 ? sortedEvents[index] : undefined;
 const previousEvent = event && index > 0 ? sortedEvents[index - 1] : null;
 const nextEvent = event && index < sortedEvents.length - 1 ? sortedEvents[index + 1] : null;
-const rendered = event ? await event.render() : null;
+const rendered = event ? await render(event) : null;
 const Content = rendered?.Content;
 
 if (!event) {
@@ -45,7 +46,7 @@ if (!event) {
 
 		<nav class="event-navigation">
 			{previousEvent ? (
-				<a href={`/events/stable/${previousEvent.slug}`} class="nav-button previous">
+				<a href={`/events/stable/${contentEntryPublicId(previousEvent)}`} class="nav-button previous">
 					<span class="nav-label">← Previous Event</span>
 					<span class="nav-title">{previousEvent.data.title}</span>
 				</a>
@@ -54,7 +55,7 @@ if (!event) {
 			)}
 
 			{nextEvent ? (
-				<a href={`/events/stable/${nextEvent.slug}`} class="nav-button next">
+				<a href={`/events/stable/${contentEntryPublicId(nextEvent)}`} class="nav-button next">
 					<span class="nav-label">Next Event →</span>
 					<span class="nav-title">{nextEvent.data.title}</span>
 				</a>

@@ -1,4 +1,4 @@
-import type { EventFrontmatter } from '../content/config'
+import type { EventFrontmatter } from '../content.config'
 import { splitIsoString } from './dates'
 
 /**

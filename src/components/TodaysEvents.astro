@@ -1,7 +1,7 @@
 ---
 // NB This is a good idea, but it should really make an API call of some sort
 // USE EXTREME CAUTION
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 import Layout from "../../layouts/Layout.astro";
 import Event from "../../components/Event.astro";
@@ -11,7 +11,7 @@ const allEvents = await getCollection("events");
 const renderedEvents = (
 	await Promise.all(
 		allEvents.map(async (event) => {
-			return await event.render();
+			return await render(event);
 		})
 	)
 ).sort((e1, e2) => {

@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro'
 import { getCollection } from 'astro:content'
+import { contentEntryPublicId } from '../../utility/contentEntry'
 import { eventsForApiRange } from '../../utility/registrationDeadline'
 
 export const GET: APIRoute = async ({ request }) => {
@@ -58,7 +59,7 @@ export const GET: APIRoute = async ({ request }) => {
         const eventsData = eventsForApiRange(
             allEvents.map((event) => ({
                 id: event.id,
-                slug: event.slug,
+                slug: contentEntryPublicId(event),
                 data: event.data,
             })),
             startDate,

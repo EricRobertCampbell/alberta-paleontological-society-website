@@ -4,7 +4,8 @@ import EmailLink from "../../components/EmailLink.astro";
 import Event from '../../components/Event.astro';
 import EventCalendar from '../../components/EventCalendar/EventCalendar.astro';
 import Button from '../../components/Button.astro';
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
+import { contentEntryPublicId } from "../../utility";
 import { splitIsoString } from "../../utility/dates"
 import { getStartDate } from "../../utility/eventSorting"
 import {
@@ -91,11 +92,11 @@ const monthSourceEvents = allEvents.filter((event) => {
   return eventIsInViewedMonth(event.data, year, month) || deadlineInMonth
 })
 const renderedEvents = await Promise.all(monthSourceEvents.map(async (event) => {
-  const rendered = await event.render();
+  const rendered = await render(event);
   return {
     ...rendered,
     id: event.id,
-    slug: event.slug,
+    slug: contentEntryPublicId(event),
   }
 }))
 const monthEvents = withRegistrationDeadlines(renderedEvents).filter((event) => {

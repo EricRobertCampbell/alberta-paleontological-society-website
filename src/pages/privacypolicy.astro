@@ -1,7 +1,7 @@
 ---
 export const prerender = true;
 
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Disclaimer from "../components/Disclaimer.astro";
 
@@ -9,7 +9,7 @@ const allDisclaimers = await getCollection("disclaimers");
 const renderedDisclaimers = await Promise.all(
   allDisclaimers
     .sort((a, b) => a.data.index - b.data.index)
-    .map(async (disclaimer) => await disclaimer.render())
+    .map(async (disclaimer) => await render(disclaimer))
 );
 ---
 
