@@ -1,6 +1,7 @@
-Status: Implementing
+Status: Done
 
 Approved: 26 November 2026 (America/Edmonton) by `/runthrough-feature` after non-blocking `/review-plan`.
+Implemented: 26 November 2026 (America/Edmonton).
 
 # Plan: Update to Astro 7.x
 
